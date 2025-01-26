@@ -82,3 +82,16 @@ function uploadFile(file) {
     };
     reader.readAsDataURL(file);
 }
+
+document.addEventListener('paste', function(event) {
+    const items = event.clipboardData.items;
+    for (let i = 0; i < items.length; i++) {
+        if (items[i].type.indexOf('image') !== -1) {
+            const file = items[i].getAsFile();
+            if (file) {
+                showLoadingPopup();
+                uploadFile(file);
+            }
+        }
+    }
+});
