@@ -3,15 +3,11 @@ const fs = require('fs');
 const path = require('path');
 
 exports.handler = async (event) => {
-    // console.log('Event:', event);
     const { file } = JSON.parse(event.body);
     const buffer = Buffer.from(file, 'base64');
-    console.log(fs.readdirSync(path.join('./')));
-    console.log(fs.readdirSync(path.join('/')));
     console.log(fs.readdirSync(path.join('./assets')));
-    const ballsDir = path.join('./assets/balls');
+    const ballsDir = path.join('./assets/compareBalls');
     const ballFiles = fs.readdirSync(ballsDir);
-    console.log('ballFiles:', ballFiles);
     const pixelmatch = (await import("pixelmatch")).default;
 
     let lowestDiff = 9999999999;
@@ -36,7 +32,7 @@ exports.handler = async (event) => {
             country = extractCountryName(file);
         }
 
-        if (numDiff <= 666) {
+        if (numDiff <= 333) {
             foundSimilarity = true;
             return {
                 statusCode: 200,
