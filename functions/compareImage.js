@@ -6,7 +6,7 @@ exports.handler = async (event) => {
     // console.log('Event:', event);
     const { file } = JSON.parse(event.body);
     const buffer = Buffer.from(file, 'base64');
-    console.log(fs.readdirSync(path.join(__dirname, 'assets')));
+    console.log(fs.readdirSync(path.join('./assets')));
     const ballsDir = path.join('./assets/balls');
     const ballFiles = fs.readdirSync(ballsDir);
     console.log('ballFiles:', ballFiles);
