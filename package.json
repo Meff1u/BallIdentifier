@@ -1,0 +1,13 @@
+{
+    "name": "ballidentifier",
+    "version": "1.0.0",
+    "main": "functions/compareImage.js",
+    "license": "MIT",
+    "dependencies": {
+        "pixelmatch": "^6.0.0",
+        "sharp": "^0.33.5"
+    },
+    "scripts": {
+        "build": "npm install sharp@0.33.5 && npm install pixelmatch@6.0.0"
+    }
+}

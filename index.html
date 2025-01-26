@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Ballsdex Identifier</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="assets/logo.png" alt="Logo" class="logo">
+            <h1 class="title">Ballsdex Identifier</h1>
+        </div>
+        <label class="custom-upload-button">
+            <input type="file" class="upload-input" id="fileInput">
+            Upload Image
+        </label>
+    </div>
+    <div id="loadingPopup" class="loading-popup">
+        <div class="spinner"></div>
+        <div class="loading-text">Comparing...</div>
+    </div>
+    <div id="resultPopup" class="result-popup">
+        <button id="closeResultPopup" class="close-btn">x</button>
+        <div id="resultTitle" class="country-name"></div>
+        <img id="resultImage" src="" alt="Country Image">
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

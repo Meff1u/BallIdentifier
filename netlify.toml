@@ -1,0 +1,9 @@
+[build]
+  functions = "functions"
+  command = "npm run build"
+
+[functions]
+  included_files = ["assets/balls"]
+
+[build.environment]
+  NODE_VERSION = "20"
