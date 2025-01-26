@@ -33,6 +33,11 @@ body {
     margin-bottom: 20px;
 }
 
+.title-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .logo {
     width: 120px;
     height: auto;
@@ -44,6 +49,12 @@ body {
 .title {
     font-size: 24px;
     color: #e0e0e0;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #b0b0b0;
+    margin-top: 5px;
 }
 
 .custom-upload-button {
@@ -160,10 +171,4 @@ body {
 
 .loading-popup, .result-popup {
     z-index: 20;
-}
-
-.subtitle {
-    font-size: 16px;
-    color: #b0b0b0;
-    margin-top: 5px;
 }
