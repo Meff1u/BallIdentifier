@@ -161,3 +161,9 @@ body {
 .loading-popup, .result-popup {
     z-index: 20;
 }
+
+.subtitle {
+    font-size: 16px;
+    color: #b0b0b0;
+    margin-top: 5px;
+}
