@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Ballsdex Identifier</title>
+    <title>Ball Identifier</title>
 </head>
 <body>
     <div id="overlay" class="overlay"></div>
@@ -33,6 +33,15 @@
         <button id="closeResultPopup" class="close-btn">x</button>
         <div id="resultTitle" class="country-name"></div>
         <img id="resultImage" src="" alt="Country Image">
+    </div>
+
+    <button id="changelogButton" class="changelog-button">Changelog</button>
+    <div id="changelogModal" class="changelog-modal">
+        <div class="changelog-content">
+            <span id="closeChangelog" class="close">&times;</span>
+            <h2>Changelog</h2>
+            <div id="changelogList"></div>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>

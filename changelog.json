@@ -1,0 +1,11 @@
+{
+    "changes": [
+        {
+            "timestamp": "1737986120",
+            "changes": [
+                "Added changelog function",
+                "Added some Dynastydex balls (still not fully implemented)"
+            ]
+        }
+    ]
+}
