@@ -11,7 +11,7 @@ exports.handler = async (event) => {
         const pngFiles = files.filter(file => file.endsWith('.png'));
         return {
             statusCode: 200,
-            body: JSON.stringify({ count: pngFiles.length + 1 }),
+            body: JSON.stringify({ count: pngFiles.length }),
         };
     } catch (error) {
         return {
