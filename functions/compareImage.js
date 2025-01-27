@@ -3,10 +3,10 @@ const fs = require('fs');
 const path = require('path');
 
 exports.handler = async (event) => {
-    const { file } = JSON.parse(event.body);
+    const { file, dex } = JSON.parse(event.body);
     const buffer = Buffer.from(file, 'base64');
     console.log(fs.readdirSync(path.join('./assets')));
-    const ballsDir = path.join('./assets/compareBalls');
+    const ballsDir = dex === 'Ballsdex' ? path.join('./assets/compareBalls') : path.join('./assets/compareBallsDD');
     const ballFiles = fs.readdirSync(ballsDir);
     const pixelmatch = (await import("pixelmatch")).default;
 

@@ -11,9 +11,15 @@
     <div class="container">
         <img src="assets/logo.png" alt="Logo" class="logo">
         <div class="title-container">
-            <h1 class="title">Ballsdex Identifier</h1>
-            <p class="subtitle">Upload a file or paste a photo from your clipboard!</p>
+            <select id="dexSelector" class="dex-selector">
+                <option value="Ballsdex">Ballsdex</option>
+                <option value="Dynastydex">Dynastydex</option>
+            </select>
+            <h1 class="title">Identifier</h1>
         </div>
+        <p class="subtitle">Upload a file or paste a photo from your clipboard!</p><br>
+        <p class="note">Remember to send exactly the same file from the bot, not a screenshot - otherwise the result may be inconsistent.</p>
+        <p class="note">Dynastydex is not fully implemented yet</p>
         <label class="custom-upload-button">
             <input type="file" class="upload-input" id="fileInput">
             Upload Image

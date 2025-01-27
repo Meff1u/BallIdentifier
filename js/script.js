@@ -29,9 +29,11 @@ function showResultPopup(country) {
     const resultTitle = document.getElementById('resultTitle');
     const resultImage = document.getElementById('resultImage');
     const overlay = document.getElementById('overlay');
+    const selectedDex = document.getElementById('dexSelector').value;
 
     resultTitle.textContent = `${country}`;
-    resultImage.src = `assets/balls/${country}.png`;
+    const folder = selectedDex === 'Dynastydex' ? 'ballsDD' : 'balls';
+    resultImage.src = `assets/${folder}/${country}.png`;
 
     resultPopup.style.display = 'block';
     overlay.style.display = 'block';
@@ -56,13 +58,13 @@ function uploadFile(file) {
     const reader = new FileReader();
     reader.onloadend = () => {
         const base64data = reader.result.split(',')[1];
-        console.log('Base64 data:', base64data);
+        const selectedDex = document.getElementById('dexSelector').value;
         fetch('/.netlify/functions/compareImage', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ file: base64data }),
+            body: JSON.stringify({ file: base64data, dex: selectedDex }),
         })
         .then(response => {
             if (!response.ok) {
@@ -95,3 +97,17 @@ document.addEventListener('paste', function(event) {
         }
     }
 });
+
+document.getElementById('dexSelector').addEventListener('change', function() {
+    const selectedDex = this.value;
+    updateLogo(selectedDex);
+});
+
+function updateLogo(dex) {
+    const logo = document.querySelector('.logo');
+    if (dex === 'Ballsdex') {
+        logo.src = 'assets/logo.png';
+    } else if (dex === 'Dynastydex') {
+        logo.src = 'assets/logoDD.png';
+    }
+}
