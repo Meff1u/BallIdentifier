@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", updateTitleWithBallCount);
+
 document.getElementById("fileInput").addEventListener("change", function () {
     const file = this.files[0];
     if (file) {
@@ -121,7 +123,25 @@ document.addEventListener("paste", function (event) {
 document.getElementById("dexSelector").addEventListener("change", function () {
     const selectedDex = this.value;
     updateLogo(selectedDex);
+    updateTitleWithBallCount();
 });
+
+function updateTitleWithBallCount() {
+    const selectedDex = document.getElementById("dexSelector").value;
+    fetch("/.netlify/functions/countFiles", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ dex: selectedDex }),
+    })
+        .then(response => response.json())
+        .then(data => {
+            const titleElement = document.querySelector(".title");
+            titleElement.textContent = `Identifier (${data.count} balls)`;
+        })
+        .catch(error => console.error("Error fetching ball count:", error));
+}
 
 function updateLogo(dex) {
     const logo = document.querySelector(".logo");

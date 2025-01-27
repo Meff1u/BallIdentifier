@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1737992668",
+            "changes": [
+                "Added 20 Dynastydex balls (about 79% implemention for now)",
+                "Added display of the number of balls for every dex"
+            ]
+        },
+        {
             "timestamp": "1737990594",
             "changes": [
                 "Added 22 Dynastydex balls (about 68% implemention for now)",
