@@ -15,12 +15,15 @@ exports.handler = async (event) => {
 
     const img1 = await sharp(buffer)
         .resize(100, 100)
+        .ensureAlpha()
         .raw()
         .toBuffer({ resolveWithObject: true });
 
     for (let file of ballFiles) {
         console.log(`File: ${file}`);
         const img2 = await sharp(path.join(ballsDir, file))
+            .resize(100, 100)
+            .ensureAlpha()
             .raw()
             .toBuffer({ resolveWithObject: true });
         console.log(`Image 1: ${img1.info.width}x${img1.info.height}`);
