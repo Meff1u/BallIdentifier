@@ -2,9 +2,29 @@ document.getElementById('fileInput').addEventListener('change', function() {
     const file = this.files[0];
     if (file) {
         showLoadingPopup();
-        uploadFile(file);
+        resizeFile(file);
     }
 });
+
+function resizeFile(file) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+        const img = new Image();
+        img.onload = () => {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = 100;
+            canvas.height = 100;
+            ctx.drawImage(img, 0, 0, 100, 100);
+            canvas.toBlob((blob) => {
+                const resizedFile = new File([blob], file.name, { type: file.type });
+                uploadFile(resizedFile);
+            }, file.type);
+        };
+        img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+}
 
 function showLoadingPopup() {
     const loadingPopup = document.getElementById('loadingPopup');
