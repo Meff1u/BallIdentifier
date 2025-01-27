@@ -20,17 +20,16 @@ exports.handler = async (event) => {
         .toBuffer({ resolveWithObject: true });
 
     for (let file of ballFiles) {
-        console.log(`File: ${file}`);
         const img2 = await sharp(path.join(ballsDir, file))
             .resize(100, 100)
             .ensureAlpha()
             .raw()
             .toBuffer({ resolveWithObject: true });
-        console.log(`Image 1: ${img1.info.width}x${img1.info.height}`);
-        console.log(`Image 2: ${img2.info.width}x${img2.info.height}`);
 
         const diff = new Uint8Array(img1.info.width * img1.info.height * 4);
         const numDiff = pixelmatch(img1.data, img2.data, diff, img1.info.width, img1.info.height, { threshold: 0.1 });
+
+        console.log(`File: ${file.split('.')[0]} - Diff: ${numDiff}`);
 
         if (numDiff < lowestDiff) {
             lowestDiff = numDiff;
