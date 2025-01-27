@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1738009456",
+            "changes": [
+                "Minor upload fixes (pasting still dont work well)",
+                "Showing similarity in result window"
+            ]
+        },
+        {
             "timestamp": "1737999322",
             "changes": [
                 "Added footer"

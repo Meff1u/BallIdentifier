@@ -4,29 +4,9 @@ document.getElementById("fileInput").addEventListener("change", function () {
     const file = this.files[0];
     if (file) {
         showLoadingPopup();
-        resizeFile(file);
+        uploadFile(file);
     }
 });
-
-function resizeFile(file) {
-    const reader = new FileReader();
-    reader.onloadend = () => {
-        const img = new Image();
-        img.onload = () => {
-            const canvas = document.createElement("canvas");
-            const ctx = canvas.getContext("2d");
-            canvas.width = 100;
-            canvas.height = 100;
-            ctx.drawImage(img, 0, 0, 100, 100);
-            canvas.toBlob((blob) => {
-                const resizedFile = new File([blob], file.name, { type: file.type });
-                uploadFile(resizedFile);
-            }, file.type);
-        };
-        img.src = reader.result;
-    };
-    reader.readAsDataURL(file);
-}
 
 function showLoadingPopup() {
     const loadingPopup = document.getElementById("loadingPopup");
@@ -46,14 +26,18 @@ function hideLoadingPopup() {
     }, 500);
 }
 
-function showResultPopup(country) {
+function showResultPopup(country, diff) {
     const resultPopup = document.getElementById("resultPopup");
     const resultTitle = document.getElementById("resultTitle");
+    const resultSubtitle = document.getElementById("resultSubtitle");
     const resultImage = document.getElementById("resultImage");
     const overlay = document.getElementById("overlay");
     const selectedDex = document.getElementById("dexSelector").value;
 
     resultTitle.textContent = `${country}`;
+    const similarity = ((10000 - diff) / 10000) * 100;
+    resultSubtitle.textContent = `Similarity: ${similarity.toFixed(2)}%`;
+
     const folder = selectedDex === "Dynastydex" ? "ballsDD" : "balls";
     resultImage.src = `assets/${folder}/${country}.png`;
 
@@ -97,7 +81,7 @@ function uploadFile(file) {
             .then((data) => {
                 console.log("Response data:", data);
                 hideLoadingPopup();
-                showResultPopup(data.country);
+                showResultPopup(data.country, data.diff);
             })
             .catch((error) => {
                 console.error("Error:", error);
@@ -114,7 +98,7 @@ document.addEventListener("paste", function (event) {
             const file = items[i].getAsFile();
             if (file) {
                 showLoadingPopup();
-                resizeFile(file);
+                uploadFile(file);
             }
         }
     }
@@ -135,12 +119,12 @@ function updateTitleWithBallCount() {
         },
         body: JSON.stringify({ dex: selectedDex }),
     })
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
             const titleElement = document.querySelector(".title");
             titleElement.textContent = `Identifier (${data.count} balls)`;
         })
-        .catch(error => console.error("Error fetching ball count:", error));
+        .catch((error) => console.error("Error fetching ball count:", error));
 }
 
 function updateLogo(dex) {

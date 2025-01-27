@@ -21,13 +21,11 @@ exports.handler = async (event) => {
 
     for (let file of ballFiles) {
         const img2 = await sharp(path.join(ballsDir, file))
-            .resize(100, 100)
             .ensureAlpha()
             .raw()
             .toBuffer({ resolveWithObject: true });
 
-        const diff = new Uint8Array(img1.info.width * img1.info.height * 4);
-        const numDiff = pixelmatch(img1.data, img2.data, diff, img1.info.width, img1.info.height, { threshold: 0.1 });
+        const numDiff = pixelmatch(img1.data, img2.data, null, img1.info.width, img1.info.height, { threshold: 0.2 });
 
         console.log(`File: ${file.split('.')[0]} - Diff: ${numDiff}`);
 
@@ -40,7 +38,7 @@ exports.handler = async (event) => {
             foundSimilarity = true;
             return {
                 statusCode: 200,
-                body: JSON.stringify({ country }),
+                body: JSON.stringify({ country: country, diff: numDiff }),
             };
         }
     }
@@ -48,7 +46,7 @@ exports.handler = async (event) => {
     if (!foundSimilarity) {
         return {
             statusCode: 200,
-            body: JSON.stringify({ country }),
+            body: JSON.stringify({ country: country, diff: lowestDiff }),
         };
     }
 };
