@@ -114,7 +114,7 @@ document.addEventListener("paste", function (event) {
             const file = items[i].getAsFile();
             if (file) {
                 showLoadingPopup();
-                uploadFile(file);
+                resizeFile(file);
             }
         }
     }
