@@ -64,6 +64,8 @@ body {
 .note {
     font-size: 12px;
     color: #b0b0b0;
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
 }
 
 .custom-upload-button {

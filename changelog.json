@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1737996608",
+            "changes": [
+                "Added 39 Dynastydex balls (fully implemented)"
+            ]
+        },
+        {
             "timestamp": "1737992668",
             "changes": [
                 "Added 20 Dynastydex balls (about 79% implemention for now)",
