@@ -283,3 +283,19 @@ body {
 .changelog-item li {
     margin-bottom: 5px;
 }
+
+.copy-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #1e88e5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.copy-btn:hover {
+    background-color: #1565c0;
+}

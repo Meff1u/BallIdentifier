@@ -156,3 +156,24 @@ document.getElementById("changelogButton").addEventListener("click", function ()
 document.getElementById("closeChangelog").addEventListener("click", function () {
     document.getElementById("changelogModal").classList.remove("show");
 });
+
+document.getElementById("copyButton").addEventListener("click", function () {
+    const resultTitle = document.getElementById("resultTitle").textContent;
+    const textarea = document.createElement("textarea");
+    textarea.value = resultTitle;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+
+    const copyButton = document.getElementById("copyButton");
+    copyButton.style.backgroundColor = "#00ff00";
+    copyButton.textContent = "Copied!";
+    copyButton.disabled = true;
+
+    setTimeout(function () {
+        copyButton.style.backgroundColor = "";
+        copyButton.textContent = "Copy to clipboard";
+        copyButton.disabled = false;
+    }, 800);
+});
