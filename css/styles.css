@@ -301,3 +301,28 @@ body {
 .copy-btn:hover {
     background-color: #1565c0;
 }
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #121212;
+    color: #e0e0e0;
+    font-size: 14px;
+}
+
+.footer .small-text {
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+.footer .small-text a {
+    color: #1e88e5;
+    text-decoration: none;
+}
+
+.footer .small-text a:hover {
+    text-decoration: underline;
+}
