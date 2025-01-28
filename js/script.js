@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    updateTitleWithBallCount();
     document.getElementById("dexSelector").value = "Ballsdex";
+    updateTitleWithBallCount();
 });
 
 document.getElementById("fileInput").addEventListener("change", function () {
