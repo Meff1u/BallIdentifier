@@ -1,4 +1,7 @@
-document.addEventListener("DOMContentLoaded", updateTitleWithBallCount);
+document.addEventListener("DOMContentLoaded", function () {
+    updateTitleWithBallCount();
+    document.getElementById("dexSelector").value = "Ballsdex";
+});
 
 document.getElementById("fileInput").addEventListener("change", function () {
     const file = this.files[0];
