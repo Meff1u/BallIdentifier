@@ -2,11 +2,36 @@ document.addEventListener("DOMContentLoaded", updateTitleWithBallCount);
 
 document.getElementById("fileInput").addEventListener("change", function () {
     const file = this.files[0];
+    console.log(file);
     if (file) {
         showLoadingPopup();
-        uploadFile(file);
+        resizeFile(file);
     }
 });
+
+function resizeFile(file) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+        const img = new Image();
+        img.src = reader.result;
+        img.onload = () => {
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
+            canvas.width = 100;
+            canvas.height = 100;
+            ctx.drawImage(img, 0, 0, 100, 100);
+            canvas.toBlob((blob) => {
+                const resizedFile = new File([blob], file.name, {
+                    type: "image/png",
+                    lastModified: Date.now(),
+                });
+                showLoadingPopup();
+                uploadFile(resizedFile);
+            });
+        };
+    };
+    reader.readAsDataURL(file);
+}
 
 function showLoadingPopup() {
     const loadingPopup = document.getElementById("loadingPopup");
@@ -96,9 +121,10 @@ document.addEventListener("paste", function (event) {
     for (let i = 0; i < items.length; i++) {
         if (items[i].type.indexOf("image") !== -1) {
             const file = items[i].getAsFile();
+            console.log(file);
             if (file) {
                 showLoadingPopup();
-                uploadFile(file);
+                resizeFile(file);
             }
         }
     }

@@ -15,19 +15,20 @@ exports.handler = async (event) => {
 
     const img1 = await sharp(buffer)
         .resize(100, 100)
+        .removeAlpha()
         .ensureAlpha()
         .raw()
         .toBuffer({ resolveWithObject: true });
 
     for (let file of ballFiles) {
         const img2 = await sharp(path.join(ballsDir, file))
+            .removeAlpha()
             .ensureAlpha()
             .raw()
             .toBuffer({ resolveWithObject: true });
 
         const numDiff = pixelmatch(img1.data, img2.data, null, img1.info.width, img1.info.height, { threshold: 0.2 });
-
-        console.log(`File: ${file.split('.')[0]} - Diff: ${numDiff}`);
+        console.log(`File: ${file}, $: ${(((10000 - numDiff) / 10000) * 100).toFixed(2)}%`);
 
         if (numDiff < lowestDiff) {
             lowestDiff = numDiff;

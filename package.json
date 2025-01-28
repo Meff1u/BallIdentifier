@@ -4,10 +4,11 @@
     "main": "functions/compareImage.js",
     "license": "MIT",
     "dependencies": {
+        "image-hash": "^5.3.2",
         "pixelmatch": "^6.0.0",
         "sharp": "^0.33.5"
     },
     "scripts": {
-        "build": "npm install sharp@0.33.5 && npm install pixelmatch@6.0.0"
+        "build": "npm install sharp@0.33.5 && npm install pixelmatch@6.0.0 && image-hash@5.3.2"
     }
 }

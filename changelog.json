@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1738027185",
+            "changes": [
+                "Fixed paste comparsion (now works well)"
+            ]
+        },
+        {
             "timestamp": "1738009456",
             "changes": [
                 "Minor upload fixes (pasting still dont work well)",
