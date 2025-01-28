@@ -3,7 +3,7 @@
         {
             "timestamp": "1738027185",
             "changes": [
-                "Fixed paste comparsion (now works well)"
+                "Fixed paste comparsion (now works better, but still can return wrong ball)"
             ]
         },
         {
