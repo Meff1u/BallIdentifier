@@ -8,7 +8,21 @@ document.getElementById("fileInput").addEventListener("change", function () {
     console.log(file);
     if (file) {
         showLoadingPopup();
-        resizeFile(file);
+        uploadFile(file);
+    }
+});
+
+document.addEventListener("paste", function (event) {
+    const items = event.clipboardData.items;
+    for (let i = 0; i < items.length; i++) {
+        if (items[i].type.indexOf("image") !== -1) {
+            const file = items[i].getAsFile();
+            console.log(file);
+            if (file) {
+                showLoadingPopup();
+                uploadFile(file);
+            }
+        }
     }
 });
 
@@ -34,6 +48,54 @@ function resizeFile(file) {
         };
     };
     reader.readAsDataURL(file);
+}
+
+function uploadFile(file) {
+    const CHUNK_SIZE = 5 * 1024 * 1024;
+    const totalChunks = Math.ceil(file.size / CHUNK_SIZE);
+    const selectedDex = document.getElementById("dexSelector").value;
+
+    let currentChunk = 0;
+
+    function uploadNextChunk() {
+        const start = currentChunk * CHUNK_SIZE;
+        const end = Math.min(start + CHUNK_SIZE, file.size);
+        const chunk = file.slice(start, end);
+
+        const formData = new FormData();
+        formData.append("file", chunk);
+        formData.append("dex", selectedDex);
+        formData.append("chunkIndex", currentChunk);
+        formData.append("totalChunks", totalChunks);
+
+        fetch("/.netlify/functions/compareImage", {
+            method: "POST",
+            body: formData,
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.text();
+            })
+            .then((text) => {
+                const data = JSON.parse(text);
+                console.log("Response data:", data);
+                if (currentChunk < totalChunks - 1) {
+                    currentChunk++;
+                    uploadNextChunk();
+                } else {
+                    hideLoadingPopup();
+                    showResultPopup(data.country, data.diff);
+                }
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                hideLoadingPopup();
+            });
+    }
+
+    uploadNextChunk();
 }
 
 function showLoadingPopup() {
@@ -87,51 +149,6 @@ function hideResultPopup() {
         overlay.style.display = "none";
     }, 500);
 }
-
-function uploadFile(file) {
-    const reader = new FileReader();
-    reader.onloadend = () => {
-        const base64data = reader.result.split(",")[1];
-        const selectedDex = document.getElementById("dexSelector").value;
-        fetch("/.netlify/functions/compareImage", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ file: base64data, dex: selectedDex }),
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("Network response was not ok");
-                }
-                return response.json();
-            })
-            .then((data) => {
-                console.log("Response data:", data);
-                hideLoadingPopup();
-                showResultPopup(data.country, data.diff);
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-                hideLoadingPopup();
-            });
-    };
-    reader.readAsDataURL(file);
-}
-
-document.addEventListener("paste", function (event) {
-    const items = event.clipboardData.items;
-    for (let i = 0; i < items.length; i++) {
-        if (items[i].type.indexOf("image") !== -1) {
-            const file = items[i].getAsFile();
-            console.log(file);
-            if (file) {
-                showLoadingPopup();
-                resizeFile(file);
-            }
-        }
-    }
-});
 
 document.getElementById("dexSelector").addEventListener("change", function () {
     const selectedDex = this.value;

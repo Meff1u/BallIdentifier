@@ -4,4 +4,4 @@
 # Node Modules
 node_modules
 
-functions/compareImageHashes.js
+functions/hashCompare.js
