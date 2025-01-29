@@ -21,15 +21,18 @@ exports.handler = async (event) => {
 
     return new Promise((resolve, reject) => {
         bb.on('file', (fieldname, file, filename, encoding, mimetype) => {
+            console.log(`Receiving file: ${filename}`);
             const chunks = [];
             file.on('data', (data) => {
                 chunks.push(data);
             }).on('end', () => {
                 fileBuffer = Buffer.concat(chunks);
+                console.log(`File received: ${filename}`);
             });
         });
 
         bb.on('field', (fieldname, val) => {
+            console.log(`Field received: ${fieldname} = ${val}`);
             if (fieldname === 'dex') {
                 dex = val;
             } else if (fieldname === 'chunkIndex') {
@@ -40,6 +43,7 @@ exports.handler = async (event) => {
         });
 
         bb.on('finish', async () => {
+            console.log(`Finish event: chunkIndex = ${chunkIndex}, totalChunks = ${totalChunks}`);
             if (!fileBuffer || dex === null || chunkIndex === null || totalChunks === null) {
                 return resolve({
                     statusCode: 400,
@@ -48,6 +52,7 @@ exports.handler = async (event) => {
             }
 
             fs.appendFileSync(tempFilePath, fileBuffer);
+            console.log(`Chunk appended: ${chunkIndex + 1}/${totalChunks}`);
 
             if (chunkIndex === totalChunks - 1) {
                 try {
