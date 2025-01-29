@@ -51,7 +51,7 @@ function resizeFile(file) {
 }
 
 function uploadFile(file) {
-    const CHUNK_SIZE = 5 * 1024 * 1024;
+    const CHUNK_SIZE = 6 * 1024 * 1024;
     const totalChunks = Math.ceil(file.size / CHUNK_SIZE);
     const selectedDex = document.getElementById("dexSelector").value;
 
