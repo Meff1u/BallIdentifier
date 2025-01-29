@@ -4,6 +4,7 @@
 
 [functions]
   included_files = ["./assets/compareBalls/**", "./assets/compareBallsDD/**"]
+  timeout = 60
 
 [build.environment]
   NODE_VERSION = "20"
