@@ -68,6 +68,9 @@ function uploadFile(file) {
     formData.append("file", file);
     formData.append("dex", selectedDex);
 
+    console.log("Uploading file:", file);
+    console.log("Selected dex:", selectedDex);
+
     fetch("/.netlify/functions/compareImage", {
         method: "POST",
         body: formData,
