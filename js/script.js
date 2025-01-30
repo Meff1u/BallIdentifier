@@ -43,7 +43,7 @@ function checkFileSize(file) {
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
 
-            const scaleFactor = Math.sqrt(maxSize / (file.size * 1.6));
+            const scaleFactor = Math.sqrt(maxSize / (file.size * 1.8));
             canvas.width = img.width * scaleFactor;
             canvas.height = img.height * scaleFactor;
 
