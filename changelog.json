@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1738268772",
+            "changes": [
+                "Added display of rarity and artist in the result window"
+            ]
+        },
+        {
             "timestamp": "1738237061",
             "changes": [
                 "Fixed a bug where a photo weighing more than 6MB couldn't be uploaded to the server (AWS Lamba limit)"

@@ -184,6 +184,14 @@ body {
     margin-top: 10px;
 }
 
+.credits {
+    font-size: 12px;
+    color: #b0b0b0;
+    margin-top: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
 .loading-popup, .result-popup {
     z-index: 20;
 }

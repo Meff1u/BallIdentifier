@@ -43,24 +43,28 @@ function checkFileSize(file) {
         const img = new Image();
         const reader = new FileReader();
 
-        reader.onload = function(event) {
+        reader.onload = function (event) {
             img.src = event.target.result;
         };
 
-        img.onload = function() {
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
+        img.onload = function () {
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
 
             canvas.width = 1000;
             canvas.height = 1000 * (img.height / img.width);
 
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-            canvas.toBlob(function(blob) {
-                uploadFile(blob);
-                console.log(`New Size: ${blob.size / 1024 / 1024}MB`);
-                console.log("File compressed successfully.");
-            }, file.type, 1);
+            canvas.toBlob(
+                function (blob) {
+                    uploadFile(blob);
+                    console.log(`New Size: ${blob.size / 1024 / 1024}MB`);
+                    console.log("File compressed successfully.");
+                },
+                file.type,
+                1
+            );
         };
 
         reader.readAsDataURL(file);
@@ -121,6 +125,7 @@ function showResultPopup(country, diff) {
     const resultTitle = document.getElementById("resultTitle");
     const resultSubtitle = document.getElementById("resultSubtitle");
     const resultImage = document.getElementById("resultImage");
+    const resultCredits = document.getElementById("resultCredits");
     const overlay = document.getElementById("overlay");
     const selectedDex = document.getElementById("dexSelector").value;
 
@@ -130,6 +135,17 @@ function showResultPopup(country, diff) {
 
     const folder = selectedDex === "Dynastydex" ? "ballsDD" : "balls";
     resultImage.src = `assets/${folder}/${country}.png`;
+
+    fetch(`assets/${folder}.json`)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            const ball = data[country];
+            if (ball) {
+                resultCredits.textContent = `Rarity: #${ball.rarity} | Artist: ${ball.artist}`;
+            } else resultCredits.textContent = "";
+        })
+        .catch((error) => console.error("Error fetching ball data:", error));
 
     resultPopup.style.display = "block";
     overlay.style.display = "block";
