@@ -44,13 +44,14 @@ function checkFileSize(file) {
             const ctx = canvas.getContext('2d');
 
             const aspectRatio = img.height / img.width;
-            canvas.width = 2000;
-            canvas.height = 2000 * aspectRatio;
+            canvas.width = 1000;
+            canvas.height = 1000 * aspectRatio;
 
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
             canvas.toBlob(function(blob) {
                 uploadFile(blob);
+                console.log(`New Size: ${blob.size}`);
                 console.log("File compressed successfully.");
             }, file.type, 1);
         };
