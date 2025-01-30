@@ -9,8 +9,6 @@ exports.handler = async (event) => {
     const file = formData.file;
     const dex = formData.dex;
 
-    console.log(`File: ${file}, Dex: ${dex}`);
-
     if (!file) {
         return {
             statusCode: 400,
