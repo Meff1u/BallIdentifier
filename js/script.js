@@ -8,7 +8,7 @@ document.getElementById("fileInput").addEventListener("change", function () {
     console.log(file);
     if (file) {
         showLoadingPopup();
-        uploadFile(file);
+        checkFileSize(file);
     }
 });
 
@@ -20,82 +20,77 @@ document.addEventListener("paste", function (event) {
             console.log(file);
             if (file) {
                 showLoadingPopup();
-                uploadFile(file);
+                checkFileSize(file);
             }
         }
     }
 });
 
-function resizeFile(file) {
-    const reader = new FileReader();
-    reader.onloadend = () => {
+function checkFileSize(file) {
+    const maxSize = 6 * 1024 * 1024;
+
+    if (file.size >= maxSize) {
+        console.log("File is larger than or equal to 6MB. Compressing...");
+
         const img = new Image();
-        img.src = reader.result;
-        img.onload = () => {
-            const canvas = document.createElement("canvas");
-            const ctx = canvas.getContext("2d");
-            canvas.width = 100;
-            canvas.height = 100;
-            ctx.drawImage(img, 0, 0, 100, 100);
-            canvas.toBlob((blob) => {
-                const resizedFile = new File([blob], file.name, {
-                    type: "image/png",
-                    lastModified: Date.now(),
-                });
-                showLoadingPopup();
-                uploadFile(resizedFile);
-            });
+        const reader = new FileReader();
+
+        reader.onload = function(event) {
+            img.src = event.target.result;
         };
-    };
-    reader.readAsDataURL(file);
+
+        img.onload = function() {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+
+            const scaleFactor = Math.sqrt(maxSize / (file.size * 1.6));
+            console.log(scaleFactor);
+            canvas.width = img.width * scaleFactor;
+            canvas.height = img.height * scaleFactor;
+            console.log(canvas.width, canvas.height);
+
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+            canvas.toBlob(function(blob) {
+                uploadFile(blob);
+                console.log(blob.size);
+                console.log("File compressed successfully.");
+            }, file.type, 0.7);
+        };
+
+        reader.readAsDataURL(file);
+    } else {
+        uploadFile(file);
+    }
 }
 
 function uploadFile(file) {
-    const CHUNK_SIZE = 6 * 1024 * 1024;
-    const totalChunks = Math.ceil(file.size / CHUNK_SIZE);
     const selectedDex = document.getElementById("dexSelector").value;
 
-    let currentChunk = 0;
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("dex", selectedDex);
 
-    function uploadNextChunk() {
-        const start = currentChunk * CHUNK_SIZE;
-        const end = Math.min(start + CHUNK_SIZE, file.size);
-        const chunk = file.slice(start, end);
-
-        const formData = new FormData();
-        formData.append("file", chunk);
-        formData.append("dex", selectedDex);
-        formData.append("chunkIndex", currentChunk);
-        formData.append("totalChunks", totalChunks);
-
-        fetch("/.netlify/functions/compareImage", {
-            method: "POST",
-            body: formData,
+    fetch("/.netlify/functions/compareImage", {
+        method: "POST",
+        body: formData,
+    })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.text();
         })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("Network response was not ok");
-                }
-                return response.text();
-            })
-            .then((text) => {
-                const data = JSON.parse(text);
-                console.log("Response data:", data);
-                if (currentChunk < totalChunks - 1) {
-                    currentChunk++;
-                    uploadNextChunk();
-                } else {
-                    hideLoadingPopup();
-                    showResultPopup(data.country, data.diff);
-                }
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-                hideLoadingPopup();
-            });
-    }
-
-    uploadNextChunk();
+        .then((text) => {
+            const data = JSON.parse(text);
+            console.log("Response data:", data);
+            hideLoadingPopup();
+            showResultPopup(data.country, data.diff);
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+            hideLoadingPopup();
+        });
 }
 
 function showLoadingPopup() {

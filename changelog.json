@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1738237061",
+            "changes": [
+                "Fixed a bug where a photo weighing more than 6MB couldn't be uploaded to the server (AWS Lamba limit)"
+            ]
+        },
+        {
             "timestamp": "1738181600",
             "changes": [
                 "Added some upload and comparsion fixes (there shouldn't be any more problems with pasting)"
