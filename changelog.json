@@ -28,40 +28,16 @@
         {
             "timestamp": "1737999322",
             "changes": [
-                "Added footer"
-            ]
-        },
-        {
-            "timestamp": "1737996608",
-            "changes": [
-                "Added 39 Dynastydex balls (fully implemented)"
-            ]
-        },
-        {
-            "timestamp": "1737992668",
-            "changes": [
-                "Added 20 Dynastydex balls (about 79% implemention for now)",
-                "Added display of the number of balls for every dex"
-            ]
-        },
-        {
-            "timestamp": "1737990594",
-            "changes": [
-                "Added 22 Dynastydex balls (about 68% implemention for now)",
-                "Added Copy to clipboard button on result window"
-            ]
-        },
-        {
-            "timestamp": "1737989141",
-            "changes": [
-                "Added 41 Dynastydex balls (about 55% implemention for now)"
+                "Added Copy to clipboard button on result window",
+                "Added display of the number of balls for every dex",
+                "Added footer",
+                "Added Dynastydex balls to comparsion"
             ]
         },
         {
             "timestamp": "1737986120",
             "changes": [
-                "Added changelog function",
-                "Added some Dynastydex balls (still not fully implemented)"
+                "Added changelog function"
             ]
         }
     ]
