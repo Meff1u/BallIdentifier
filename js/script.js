@@ -51,7 +51,7 @@ function checkFileSize(file) {
             canvas.toBlob(function(blob) {
                 uploadFile(blob);
                 console.log("File compressed successfully.");
-            }, file.type, 0.7);
+            }, file.type, 1);
         };
 
         reader.readAsDataURL(file);
