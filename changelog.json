@@ -22,7 +22,7 @@
             "timestamp": "1738009456",
             "changes": [
                 "Minor upload fixes (pasting still dont work well)",
-                "Showing similarity in result window"
+                "Added showing similarity in result window"
             ]
         },
         {

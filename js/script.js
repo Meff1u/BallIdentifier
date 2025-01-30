@@ -13,6 +13,14 @@ document.getElementById("fileInput").addEventListener("change", function () {
 });
 
 document.addEventListener("paste", function (event) {
+    const loadingPopup = document.getElementById("loadingPopup");
+    const resultPopup = document.getElementById("resultPopup");
+
+    if (loadingPopup.style.display === "flex" || resultPopup.style.display === "block") {
+        console.log("Paste action blocked: Loading or result popup is active.");
+        return;
+    }
+
     const items = event.clipboardData.items;
     for (let i = 0; i < items.length; i++) {
         if (items[i].type.indexOf("image") !== -1) {
