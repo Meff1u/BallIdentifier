@@ -27,7 +27,7 @@ document.addEventListener("paste", function (event) {
 });
 
 function checkFileSize(file) {
-    const maxSize = 6 * 1024 * 1024;
+    const maxSize = 5.5 * 1024 * 1024;
 
     if (file.size >= maxSize) {
         console.log("File is larger than or equal to 6MB. Compressing...");
