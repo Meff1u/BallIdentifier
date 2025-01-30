@@ -42,7 +42,7 @@ exports.handler = async (event) => {
             .toBuffer({ resolveWithObject: true });
 
         const numDiff = pixelmatch(img1.data, img2.data, null, img1.info.width, img1.info.height, { threshold: 0.2 });
-        console.log(`File: ${file}, $: ${(((10000 - numDiff) / 10000) * 100).toFixed(2)}%`);
+        console.log(`${file.split('.')[0]} | ${(((10000 - numDiff) / 10000) * 100).toFixed(2)}%`);
         
         if (numDiff < lowestDiff) {
             lowestDiff = numDiff;

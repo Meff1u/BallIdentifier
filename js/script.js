@@ -51,7 +51,7 @@ function checkFileSize(file) {
 
             canvas.toBlob(function(blob) {
                 uploadFile(blob);
-                console.log(`New Size: ${blob.size}`);
+                console.log(`New Size: ${blob.size / 1024 / 1024}MB`);
                 console.log("File compressed successfully.");
             }, file.type, 1);
         };
