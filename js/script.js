@@ -43,9 +43,8 @@ function checkFileSize(file) {
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
 
-            const scaleFactor = Math.sqrt(maxSize / (file.size * 1.8));
-            canvas.width = img.width * scaleFactor;
-            canvas.height = img.height * scaleFactor;
+            canvas.width = 100;
+            canvas.height = 100;
 
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
@@ -67,9 +66,6 @@ function uploadFile(file) {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("dex", selectedDex);
-
-    console.log("Uploading file:", file);
-    console.log("Selected dex:", selectedDex);
 
     fetch("/.netlify/functions/compareImage", {
         method: "POST",
