@@ -44,16 +44,13 @@ function checkFileSize(file) {
             const ctx = canvas.getContext('2d');
 
             const scaleFactor = Math.sqrt(maxSize / (file.size * 1.6));
-            console.log(scaleFactor);
             canvas.width = img.width * scaleFactor;
             canvas.height = img.height * scaleFactor;
-            console.log(canvas.width, canvas.height);
 
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
             canvas.toBlob(function(blob) {
                 uploadFile(blob);
-                console.log(blob.size);
                 console.log("File compressed successfully.");
             }, file.type, 0.7);
         };
@@ -76,7 +73,6 @@ function uploadFile(file) {
         body: formData,
     })
         .then((response) => {
-            console.log(response);
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }

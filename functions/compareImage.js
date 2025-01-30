@@ -4,9 +4,12 @@ const path = require('path');
 const busboy = require('busboy');
 
 exports.handler = async (event) => {
+    console.log('Received event.');
     const formData = await parseMultipartFormData(event);
     const file = formData.file;
     const dex = formData.dex;
+
+    console.log(`File: ${file}, Dex: ${dex}`);
 
     if (!file) {
         return {
@@ -19,6 +22,8 @@ exports.handler = async (event) => {
     const ballsDir = dex === 'Ballsdex' ? path.join('./assets/compareBalls') : path.join('./assets/compareBallsDD');
     const ballFiles = fs.readdirSync(ballsDir);
     const pixelmatch = (await import("pixelmatch")).default;
+
+    console.log('Starting comparison...');
 
     let lowestDiff = 9999999999;
     let country;
