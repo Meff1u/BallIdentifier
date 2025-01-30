@@ -44,8 +44,8 @@ function checkFileSize(file) {
             const ctx = canvas.getContext('2d');
 
             const aspectRatio = img.height / img.width;
-            canvas.width = 100;
-            canvas.height = 100 * aspectRatio;
+            canvas.width = 2000;
+            canvas.height = 2000 * aspectRatio;
 
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
