@@ -164,7 +164,7 @@ function showResultPopup(country, diff) {
     resultSubtitle.textContent = `Similarity: ${100 - diff}%`;
     resultImage.src = `assets/${dex}/${country}.png`;
 
-    fetch(`assets/jsons/${folder}.json`)
+    fetch(`assets/jsons/${dex}.json`)
         .then((response) => response.json())
         .then((data) => {
             const ball = data[country];
