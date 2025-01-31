@@ -7,7 +7,7 @@ document.getElementById("fileInput").addEventListener("change", function () {
     const file = this.files[0];
     console.log(file);
     if (file) {
-        showLoadingPopup();
+        showLoadingPopup("Comparing...");
         checkFileSize(file);
     }
 });
@@ -27,12 +27,40 @@ document.addEventListener("paste", function (event) {
             const file = items[i].getAsFile();
             console.log(file);
             if (file) {
-                showLoadingPopup();
+                showLoadingPopup("Comparing...");
                 checkFileSize(file);
             }
+        } else if (items[i].type === "text/plain") {
+            items[i].getAsString(function (text) {
+                const discordImageUrlPattern =
+                    /^https:\/\/(cdn\.discordapp\.com|media\.discordapp\.net)\/attachments\/\d+\/\d+\/[^?]+\.(png|jpg|jpeg|gif|webp)(\?.*)?$/;
+                if (discordImageUrlPattern.test(text)) {
+                    showLoadingPopup("Fetching...");
+                    downloadImage(text);
+                }
+            });
         }
     }
 });
+
+function downloadImage(url) {
+    fetch(".netlify/functions/downloadImage", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: url }),
+    })
+        .then((response) => response.blob())
+        .then((blob) => {
+            const file = new File([blob], "downloaded_image.png", { type: blob.type });
+            showLoadingPopup("Comparing...");
+            checkFileSize(file);
+        })
+        .catch((error) => {
+            console.error("Error downloading the image:", error);
+        });
+}
 
 function checkFileSize(file) {
     const maxSize = 5.5 * 1024 * 1024;
@@ -74,7 +102,8 @@ function checkFileSize(file) {
 }
 
 function uploadFile(file) {
-    const selectedDex = document.getElementById("dexSelector").value === "Ballsdex" ? "balls" : "ballsDD";
+    const selectedDex =
+        document.getElementById("dexSelector").value === "Ballsdex" ? "balls" : "ballsDD";
 
     const formData = new FormData();
     formData.append("file", file);
@@ -102,8 +131,10 @@ function uploadFile(file) {
         });
 }
 
-function showLoadingPopup() {
+function showLoadingPopup(text) {
     const loadingPopup = document.getElementById("loadingPopup");
+    const loadingText = document.getElementById("loading-text");
+    loadingText.textContent = text;
     const overlay = document.getElementById("overlay");
     loadingPopup.style.display = "flex";
     overlay.style.display = "block";
@@ -138,7 +169,6 @@ function showResultPopup(country, diff) {
     fetch(`assets/jsons/${folder}.json`)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
             const ball = data[country];
             if (ball) {
                 resultCredits.textContent = `Rarity: #${ball.rarity} | Artist: ${ball.artist}`;
@@ -176,7 +206,9 @@ function updateTitleWithBallCount() {
     fetch(`assets/jsons/${dex}Hashes.json`)
         .then((response) => response.json())
         .then((data) => {
-            document.getElementById("title").textContent = `Identifier (${Object.keys(data).length} balls)`;
+            document.getElementById("title").textContent = `Identifier (${
+                Object.keys(data).length
+            } balls)`;
         })
         .catch((error) => console.error("Error fetching ball data:", error));
 }
@@ -206,7 +238,7 @@ document.getElementById("changelogButton").addEventListener("click", function ()
                     year: "numeric",
                     hour: "2-digit",
                     minute: "2-digit",
-                    hour12: false
+                    hour12: false,
                 });
                 changeItem.innerHTML = `<strong>${formattedDate}</strong><ul>${change.changes
                     .map((c) => `<li>${c}</li>`)

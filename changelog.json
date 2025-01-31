@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1738358044",
+            "changes": [
+                "Added ability to paste URL of discord photo"
+            ]
+        }
+        {
             "timestamp": "1738326422",
             "changes": [
                 "Using hash comparsion instead of pixel comparsion (10x faster and more accurate)"
