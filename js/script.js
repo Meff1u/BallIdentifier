@@ -159,10 +159,10 @@ function hideResultPopup() {
     const resultImage = document.getElementById("resultImage");
     const overlay = document.getElementById("overlay");
     resultPopup.style.animation = "fadeOut 0.5s";
-    resultImage.src = "";
     setTimeout(() => {
         resultPopup.style.display = "none";
         overlay.style.display = "none";
+        resultImage.src = "";
     }, 500);
 }
 
