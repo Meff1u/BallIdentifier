@@ -207,9 +207,16 @@ document.getElementById("changelogButton").addEventListener("click", function ()
             data.changes.forEach((change) => {
                 const changeItem = document.createElement("div");
                 changeItem.classList.add("changelog-item");
-                changeItem.innerHTML = `<strong>${new Date(
-                    change.timestamp * 1000
-                ).toLocaleString()}</strong><ul>${change.changes
+                const date = new Date(change.timestamp * 1000);
+                const formattedDate = date.toLocaleString("en-GB", {
+                    day: "2-digit",
+                    month: "long",
+                    year: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: false
+                });
+                changeItem.innerHTML = `<strong>${formattedDate}</strong><ul>${change.changes
                     .map((c) => `<li>${c}</li>`)
                     .join("")}</ul>`;
                 changelogList.appendChild(changeItem);
