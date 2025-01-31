@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1738326422",
+            "changes": [
+                "Using hash comparsion instead of pixel comparsion (10x faster and more accurate)"
+            ]
+        },
+        {
             "timestamp": "1738268772",
             "changes": [
                 "Added display of rarity and artist in the result window"

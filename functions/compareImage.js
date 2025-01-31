@@ -2,6 +2,8 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 const busboy = require('busboy');
+const { imageHash } = require('image-hash');
+const os = require('os');
 
 exports.handler = async (event) => {
     console.log('Received event.');
@@ -17,61 +19,64 @@ exports.handler = async (event) => {
     }
 
     const buffer = Buffer.from(file, 'binary');
-    const ballsDir = dex === 'Ballsdex' ? path.join('./assets/compareBalls') : path.join('./assets/compareBallsDD');
-    const ballFiles = fs.readdirSync(ballsDir);
-    const pixelmatch = (await import("pixelmatch")).default;
+    const ballHashes = fs.readFileSync(path.join(`./assets/jsons/${dex}Hashes.json`));
 
     console.log('Starting comparison...');
 
-    let lowestDiff = 9999999999;
+    let lowestDiff = Infinity;
     let country;
-    let foundSimilarity = false;
 
     const img1 = await sharp(buffer)
         .resize(100, 100)
-        .removeAlpha()
-        .ensureAlpha()
-        .raw()
+        .flatten({ background: { r: 0, g: 0, b: 0 } })
+        .png()
         .toBuffer({ resolveWithObject: true });
 
-    for (let file of ballFiles) {
-        const img2 = await sharp(path.join(ballsDir, file))
-            .removeAlpha()
-            .ensureAlpha()
-            .raw()
-            .toBuffer({ resolveWithObject: true });
+    const hash = await hashImage(img1.data);
+    console.log('Hash:', hash);
 
-        const numDiff = pixelmatch(img1.data, img2.data, null, img1.info.width, img1.info.height, { threshold: 0.2 });
-        console.log(`${file.split('.')[0]} | ${(((10000 - numDiff) / 10000) * 100).toFixed(2)}%`);
-        
-        if (numDiff < lowestDiff) {
-            lowestDiff = numDiff;
-            country = extractCountryName(file);
-        }
-        
-        if (numDiff <= 333) {
-            foundSimilarity = true;
-            return {
-                statusCode: 200,
-                body: JSON.stringify({ country: country, diff: numDiff }),
-            };
+    for (const [hashKey, countryName] of Object.entries(JSON.parse(ballHashes))) {
+        const diff = hashDiff(hash, hashKey);
+        console.log(`${countryName} | ${diff}`);
+        if (diff < lowestDiff) {
+            lowestDiff = diff;
+            country = countryName;
         }
     }
 
-    if (!foundSimilarity) {
-        return {
-            statusCode: 200,
-            body: JSON.stringify({ country: country, diff: lowestDiff }),
-        };
+    return {
+        statusCode: 200,
+        body: JSON.stringify({ country: country, diff: lowestDiff }),
     }
 }
 
-function extractCountryName(filename) {
-    const match = filename.match(/^(.+?)(?:\.\d+)?\.png$/);
-    if (match) {
-        return match[1];
+async function hashImage(imgData) {
+    const tempFilePath = path.join(os.tmpdir(), `tempFile.png`);
+    await fs.promises.writeFile(tempFilePath, imgData);
+
+    const hash = await new Promise((resolve, reject) => {
+        imageHash(tempFilePath, 20, true, (error, data) => {
+            if (error) reject(error);
+            resolve(data);
+        });
+    });
+
+    fs.unlinkSync(tempFilePath);
+    return hash;
+}
+
+function hashDiff(hash1, hash2) {
+    const hash1Array = hash1.split('');
+    const hash2Array = hash2.split('');
+    let diff = 0;
+
+    for (let i = 0; i < hash1Array.length; i++) {
+        if (hash1Array[i] !== hash2Array[i]) {
+            diff++;
+        }
     }
-    return null;
+
+    return diff;
 }
 
 function parseMultipartFormData(event) {

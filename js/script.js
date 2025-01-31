@@ -74,7 +74,7 @@ function checkFileSize(file) {
 }
 
 function uploadFile(file) {
-    const selectedDex = document.getElementById("dexSelector").value;
+    const selectedDex = document.getElementById("dexSelector").value === "Ballsdex" ? "balls" : "ballsDD";
 
     const formData = new FormData();
     formData.append("file", file);
@@ -130,13 +130,12 @@ function showResultPopup(country, diff) {
     const selectedDex = document.getElementById("dexSelector").value;
 
     resultTitle.textContent = `${country}`;
-    const similarity = ((10000 - diff) / 10000) * 100;
-    resultSubtitle.textContent = `Similarity: ${similarity.toFixed(2)}%`;
+    resultSubtitle.textContent = `Similarity: ${100 - diff}%`;
 
     const folder = selectedDex === "Dynastydex" ? "ballsDD" : "balls";
     resultImage.src = `assets/${folder}/${country}.png`;
 
-    fetch(`assets/${folder}.json`)
+    fetch(`assets/jsons/${folder}.json`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -173,20 +172,13 @@ document.getElementById("dexSelector").addEventListener("change", function () {
 });
 
 function updateTitleWithBallCount() {
-    const selectedDex = document.getElementById("dexSelector").value;
-    fetch("/.netlify/functions/countFiles", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ dex: selectedDex }),
-    })
+    const dex = document.getElementById("dexSelector").value === "Ballsdex" ? "balls" : "ballsDD";
+    fetch(`assets/jsons/${dex}Hashes.json`)
         .then((response) => response.json())
         .then((data) => {
-            const titleElement = document.querySelector(".title");
-            titleElement.textContent = `Identifier (${data.count} balls)`;
+            document.getElementById("title").textContent = `Identifier (${Object.keys(data).length} balls)`;
         })
-        .catch((error) => console.error("Error fetching ball count:", error));
+        .catch((error) => console.error("Error fetching ball data:", error));
 }
 
 function updateLogo(dex) {
