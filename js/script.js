@@ -103,7 +103,7 @@ function checkFileSize(file) {
 
 function uploadFile(file) {
     const selectedDex =
-        document.getElementById("dexSelector").value === "Ballsdex" ? "balls" : "ballsDD";
+        document.getElementById("dexSelector").value;
 
     const formData = new FormData();
     formData.append("file", file);
@@ -158,13 +158,11 @@ function showResultPopup(country, diff) {
     const resultImage = document.getElementById("resultImage");
     const resultCredits = document.getElementById("resultCredits");
     const overlay = document.getElementById("overlay");
-    const selectedDex = document.getElementById("dexSelector").value;
+    const dex = document.getElementById("dexSelector").value;
 
     resultTitle.textContent = `${country}`;
     resultSubtitle.textContent = `Similarity: ${100 - diff}%`;
-
-    const folder = selectedDex === "Dynastydex" ? "ballsDD" : "balls";
-    resultImage.src = `assets/${folder}/${country}.png`;
+    resultImage.src = `assets/${dex}/${country}.png`;
 
     fetch(`assets/jsons/${folder}.json`)
         .then((response) => response.json())
@@ -202,7 +200,7 @@ document.getElementById("dexSelector").addEventListener("change", function () {
 });
 
 function updateTitleWithBallCount() {
-    const dex = document.getElementById("dexSelector").value === "Ballsdex" ? "balls" : "ballsDD";
+    const dex = document.getElementById("dexSelector").value;
     fetch(`assets/jsons/${dex}Hashes.json`)
         .then((response) => response.json())
         .then((data) => {
@@ -215,11 +213,7 @@ function updateTitleWithBallCount() {
 
 function updateLogo(dex) {
     const logo = document.querySelector(".logo");
-    if (dex === "Ballsdex") {
-        logo.src = "assets/logo.png";
-    } else if (dex === "Dynastydex") {
-        logo.src = "assets/logoDD.png";
-    }
+    logo.src = `assets/${dex}.png`;
 }
 
 document.getElementById("changelogButton").addEventListener("click", function () {
