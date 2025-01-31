@@ -163,7 +163,7 @@ function hideResultPopup() {
         resultPopup.style.display = "none";
         overlay.style.display = "none";
         resultImage.src = "";
-    }, 500);
+    }, 460);
 }
 
 document.getElementById("dexSelector").addEventListener("change", function () {
