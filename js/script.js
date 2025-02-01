@@ -239,13 +239,23 @@ document.getElementById("changelogButton").addEventListener("click", function ()
                     .join("")}</ul>`;
                 changelogList.appendChild(changeItem);
             });
-            document.getElementById("changelogModal").classList.add("show");
+            const changelogModal = document.getElementById("changelogModal");
+            changelogModal.style.display = "block";
+            setTimeout(() => {
+                changelogModal.classList.add("show");
+                changelogModal.classList.remove("hide");
+            }, 10);
         })
         .catch((error) => console.error("Error fetching changelog:", error));
 });
 
 document.getElementById("closeChangelog").addEventListener("click", function () {
-    document.getElementById("changelogModal").classList.remove("show");
+    const changelogModal = document.getElementById("changelogModal");
+    changelogModal.classList.add("hide");
+    setTimeout(() => {
+        changelogModal.classList.remove("show");
+        changelogModal.style.display = "none";
+    }, 300);
 });
 
 document.getElementById("copyButton").addEventListener("click", function () {
