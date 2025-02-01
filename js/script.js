@@ -169,7 +169,7 @@ function showResultPopup(country, diff) {
         .then((data) => {
             const ball = data[country];
             if (ball) {
-                resultCredits.textContent = `Rarity: #${ball.rarity} | Artist: ${ball.artist}`;
+                resultCredits.textContent = `Rarity: #${ball.rarity} | Artist: ${ball.artist || "Unknown"}`;
             } else resultCredits.textContent = "";
         })
         .catch((error) => console.error("Error fetching ball data:", error));

@@ -1,0 +1,346 @@
+{
+  "Goryeo": {
+    "rarity": 1,
+    "artist": ""
+  },
+  "Joseon": {
+    "rarity": 1,
+    "artist": ""
+  },
+  "Abbasid Caliphate": {
+    "rarity": 2,
+    "artist": ""
+  },
+  "Umayyad Caliphate": {
+    "rarity": 3,
+    "artist": ""
+  },
+  "Rebel Alliance": {
+    "rarity": 4,
+    "artist": ""
+  },
+  "Galactic Empire": {
+    "rarity": 4,
+    "artist": ""
+  },
+  "Soviet Union": {
+    "rarity": 5,
+    "artist": ""
+  },
+  "Han Dynasty": {
+    "rarity": 6,
+    "artist": ""
+  },
+  "Nazi Germany": {
+    "rarity": 7,
+    "artist": ""
+  },
+  "Aztec Empire": {
+    "rarity": 8,
+    "artist": ""
+  },
+  "Tang Dynasty": {
+    "rarity": 9,
+    "artist": ""
+  },
+  "Golden Horde": {
+    "rarity": 10,
+    "artist": ""
+  },
+  "Frankish Empire": {
+    "rarity": 11,
+    "artist": ""
+  },
+  "Ethiopian Empire": {
+    "rarity": 12,
+    "artist": ""
+  },
+  "Achaemenid Empire": {
+    "rarity": 12,
+    "artist": ""
+  },
+  "Mughal Empire": {
+    "rarity": 13,
+    "artist": ""
+  },
+  "Gokturk Khaganate": {
+    "rarity": 14,
+    "artist": ""
+  },
+  "Parthian Empire": {
+    "rarity": 14,
+    "artist": ""
+  },
+  "Safavid Persia": {
+    "rarity": 14,
+    "artist": ""
+  },
+  "Armenian Empire": {
+    "rarity": 14,
+    "artist": ""
+  },
+  "Tokugawa Shogunate": {
+    "rarity": 14,
+    "artist": ""
+  },
+  "Reichtangle": {
+    "rarity": 14,
+    "artist": ""
+  },
+  "Austrian Empire": {
+    "rarity": 15,
+    "artist": ""
+  },
+  "Mali Empire": {
+    "rarity": 16,
+    "artist": ""
+  },
+  "Qing Dynasty": {
+    "rarity": 17,
+    "artist": ""
+  },
+  "Italian Social Republic": {
+    "rarity": 18,
+    "artist": ""
+  },
+  "Kingdom of Finland": {
+    "rarity": 19,
+    "artist": ""
+  },
+  "Kingdom of Prussia": {
+    "rarity": 19,
+    "artist": ""
+  },
+  "Empire of Brazil": {
+    "rarity": 19,
+    "artist": ""
+  },
+  "Byzantium": {
+    "rarity": 19,
+    "artist": ""
+  },
+  "Western Roman Empire": {
+    "rarity": 20,
+    "artist": ""
+  },
+  "Grand Duchy of Moscow": {
+    "rarity": 21,
+    "artist": ""
+  },
+  "Akkadian Empire": {
+    "rarity": 22,
+    "artist": ""
+  },
+  "Grand Duchy of Lithuania": {
+    "rarity": 23,
+    "artist": ""
+  },
+  "Polish-Lithuanian Commonwealth": {
+    "rarity": 23,
+    "artist": ""
+  },
+  "Timurid Empire": {
+    "rarity": 23,
+    "artist": ""
+  },
+  "Ancient Egypt": {
+    "rarity": 24,
+    "artist": ""
+  },
+  "Incan Empire": {
+    "rarity": 25,
+    "artist": ""
+  },
+  "Serbian Empire": {
+    "rarity": 26,
+    "artist": ""
+  },
+  "Sassanid Empire": {
+    "rarity": 27,
+    "artist": ""
+  },
+  "Latin Empire": {
+    "rarity": 27,
+    "artist": ""
+  },
+  "Korean Empire": {
+    "rarity": 27,
+    "artist": ""
+  },
+  "Caral-Supe City": {
+    "rarity": 28,
+    "artist": ""
+  },
+  "Kingdom of Italy": {
+    "rarity": 29,
+    "artist": ""
+  },
+  "Carthage": {
+    "rarity": 30,
+    "artist": ""
+  },
+  "Mamluk Sultanate": {
+    "rarity": 31,
+    "artist": ""
+  },
+  "Holy Roman Empire": {
+    "rarity": 32,
+    "artist": ""
+  },
+  "Napoleonic France": {
+    "rarity": 33,
+    "artist": ""
+  },
+  "North Sea Empire": {
+    "rarity": 34,
+    "artist": ""
+  },
+  "Mauryan Empire": {
+    "rarity": 35,
+    "artist": ""
+  },
+  "Russian Empire": {
+    "rarity": 36,
+    "artist": ""
+  },
+  "Babylon": {
+    "rarity": 37,
+    "artist": ""
+  },
+  "Gran Colombia": {
+    "rarity": 38,
+    "artist": ""
+  },
+  "Kingdom of Hungary": {
+    "rarity": 39,
+    "artist": ""
+  },
+  "Spanish Empire": {
+    "rarity": 40,
+    "artist": ""
+  },
+  "Ancient Greece": {
+    "rarity": 41,
+    "artist": ""
+  },
+  "Dutch Republic": {
+    "rarity": 42,
+    "artist": ""
+  },
+  "Seljuk Turks": {
+    "rarity": 43,
+    "artist": ""
+  },
+  "Kalmar Union": {
+    "rarity": 44,
+    "artist": ""
+  },
+  "Kingdom of Bavaria": {
+    "rarity": 45,
+    "artist": ""
+  },
+  "Japanese Empire": {
+    "rarity": 46,
+    "artist": "topwanted_"
+  },
+  "Tsardom of Russia": {
+    "rarity": 46,
+    "artist": ""
+  },
+  "Austria-Hungary": {
+    "rarity": 48,
+    "artist": ""
+  },
+  "Kingdom of Georgia": {
+    "rarity": 48,
+    "artist": ""
+  },
+  "Ilkhanate": {
+    "rarity": 49,
+    "artist": ""
+  },
+  "Kievan Rus": {
+    "rarity": 50,
+    "artist": ""
+  },
+  "Kazakh Khanate": {
+    "rarity": 51,
+    "artist": ""
+  },
+  "Roman Empire": {
+    "rarity": 52,
+    "artist": ""
+  },
+  "Kingdom of Bohemia": {
+    "rarity": 53,
+    "artist": ""
+  },
+  "Majapahit Empire": {
+    "rarity": 53,
+    "artist": "Hissen"
+  },
+  "First Mexican Empire": {
+    "rarity": 54,
+    "artist": ""
+  },
+  "British Empire": {
+    "rarity": 55,
+    "artist": ""
+  },
+  "Second Mexican Empire": {
+    "rarity": 56,
+    "artist": ""
+  },
+  "Ghana Empire": {
+    "rarity": 57,
+    "artist": ""
+  },
+  "Mongol Empire": {
+    "rarity": 58,
+    "artist": ""
+  },
+  "Yuan Dynasty": {
+    "rarity": 59,
+    "artist": ""
+  },
+  "Kingdom of Bosnia": {
+    "rarity": 60,
+    "artist": ""
+  },
+  "German Empire": {
+    "rarity": 61,
+    "artist": ""
+  },
+  "Ottoman Empire": {
+    "rarity": 62,
+    "artist": ""
+  },
+  "Sokoto Caliphate": {
+    "rarity": 63,
+    "artist": ""
+  },
+  "Swedish Empire": {
+    "rarity": 64,
+    "artist": ""
+  },
+  "Portuguese Empire": {
+    "rarity": 65,
+    "artist": ""
+  },
+  "Almohad Caliphate": {
+    "rarity": 66,
+    "artist": ""
+  },
+  "Tu'i Tonga": {
+    "rarity": 67,
+    "artist": ""
+  },
+  "Kingdom of Egypt": {
+    "rarity": 68,
+    "artist": ""
+  },
+  "Assyria": {
+    "rarity": 69,
+    "artist": ""
+  }
+}
