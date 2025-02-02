@@ -39,13 +39,7 @@
         {
             "timestamp": "1738181600",
             "changes": [
-                "Added some upload and comparsion fixes (there shouldn't be any more problems with pasting)"
-            ]
-        },
-        {
-            "timestamp": "1738027185",
-            "changes": [
-                "Fixed paste comparsion (now works better, but still can return wrong ball)"
+                "Fixed some upload and comparsion issues (there shouldn't be any more problems with pasting)"
             ]
         },
         {
