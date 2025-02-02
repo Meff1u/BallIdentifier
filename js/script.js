@@ -162,7 +162,11 @@ function showResultPopup(country, diff) {
 
     resultTitle.textContent = `${country}`;
     resultSubtitle.textContent = `Similarity: ${100 - diff}%`;
-    resultImage.src = `assets/${dex}/${country}.png`;
+    const imageUrl = `assets/${dex}/${country}.png`;
+
+    resizeImage(imageUrl, 300, (resizedDataUrl) => {
+        resultImage.src = resizedDataUrl;
+    });
 
     fetch(`assets/jsons/${dex}.json`)
         .then((response) => response.json())
@@ -177,6 +181,20 @@ function showResultPopup(country, diff) {
     resultPopup.style.display = "block";
     overlay.style.display = "block";
     resultPopup.style.animation = "fadeIn 0.5s";
+}
+
+function resizeImage(url, width, callback) {
+    const img = new Image();
+    img.src = url;
+    img.onload = () => {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        const aspectRatio = img.height / img.width;
+        canvas.width = width;
+        canvas.height = width * aspectRatio;
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        callback(canvas.toDataURL());
+    };
 }
 
 document.getElementById("closeResultPopup").addEventListener("click", hideResultPopup);
