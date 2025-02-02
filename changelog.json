@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1738525419",
+            "changes": [
+                "Updated new spawn arts in Dynastydex (Lotharingia, Gran Colombia, Maori, Kingdom of Norway)"
+            ]
+        },
+        {
             "timestamp": "1738413820",
             "changes": [
                 "Added Empireballs to comparsion"
