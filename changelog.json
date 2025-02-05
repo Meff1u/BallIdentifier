@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1738774156",
+            "changes": [
+                "Added paste button for mobile users"
+            ]
+        },
+        {
             "timestamp": "1738771577",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Namibia)"

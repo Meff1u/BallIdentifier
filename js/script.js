@@ -43,6 +43,36 @@ document.addEventListener("paste", function (event) {
     }
 });
 
+document.getElementById("pasteButton").addEventListener("click", function () {
+    navigator.clipboard
+        .read()
+        .then((items) => {
+            for (let item of items) {
+                if (item.types.includes("image/png") || item.types.includes("image/jpeg")) {
+                    item.getType("image/png").then((blob) => {
+                        const file = new File([blob], "pasted_image.png", { type: blob.type });
+                        showLoadingPopup("Comparing...");
+                        checkFileSize(file);
+                    });
+                } else if (item.types.includes("text/plain")) {
+                    item.getType("text/plain").then((blob) => {
+                        blob.text().then((text) => {
+                            const discordImageUrlPattern =
+                                /^https:\/\/(cdn\.discordapp\.com|media\.discordapp\.net)\/attachments\/\d+\/\d+\/[^?]+\.(png|jpg|jpeg|gif|webp)(\?.*)?$/;
+                            if (discordImageUrlPattern.test(text)) {
+                                showLoadingPopup("Fetching...");
+                                downloadImage(text);
+                            }
+                        });
+                    });
+                }
+            }
+        })
+        .catch((error) => {
+            console.error("Error reading clipboard contents:", error);
+        });
+});
+
 function downloadImage(url) {
     fetch(".netlify/functions/downloadImage", {
         method: "POST",
@@ -102,8 +132,7 @@ function checkFileSize(file) {
 }
 
 function uploadFile(file) {
-    const selectedDex =
-        document.getElementById("dexSelector").value;
+    const selectedDex = document.getElementById("dexSelector").value;
 
     const formData = new FormData();
     formData.append("file", file);
@@ -169,7 +198,9 @@ function showResultPopup(country, diff) {
         .then((data) => {
             const ball = data[country];
             if (ball) {
-                resultCredits.textContent = `Rarity: #${ball.rarity} | Artist: ${ball.artist || "Unknown"}`;
+                resultCredits.textContent = `Rarity: #${ball.rarity} | Artist: ${
+                    ball.artist || "Unknown"
+                }`;
             } else resultCredits.textContent = "";
         })
         .catch((error) => console.error("Error fetching ball data:", error));

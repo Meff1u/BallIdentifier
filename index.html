@@ -29,10 +29,13 @@
         <p class="subtitle"><strong>Upload a file</strong> or <strong>paste a photo/discord URL</strong> from your clipboard!</p><br>
         <p class="note">Remember to send exactly the same file from the bot, not a screenshot</p>
         <p class="note">otherwise the result may be inconsistent.</p>
-        <label class="custom-upload-button">
-            <input type="file" class="upload-input" id="fileInput" accept="image/*">
-            Upload Image
-        </label>
+        <div class="button-container">
+            <label class="custom-upload-button">
+                <input type="file" class="upload-input" id="fileInput" accept="image/*">
+                Upload Image
+            </label>
+            <button id="pasteButton" class="custom-upload-button">Paste from clipboard</button>
+        </div>
     </div>
     <div id="loadingPopup" class="loading-popup">
         <div class="spinner"></div>
