@@ -68,6 +68,24 @@ body {
     margin-bottom: 2px !important;
 }
 
+.note-toggle {
+    font-size: 14px;
+    color: #e0e0e0;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+.notes-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.notes-container.visible {
+    max-height: 500px;
+}
+
 .button-container {
     display: flex;
     gap: 10px;

@@ -1,67 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Balldex, Ballsdex, Dynastydex, Empireballs, Discord, Identifier, Utilities, Rarity, Ball Identification, Ball Art, Ball Symbols">
-    <meta name="description" content="Identify balls by uploading/pasting an image and get the result! Actually supports Ballsdex and Dynastydex.">
-    <meta content="Ball Identifier - Recognize the ball in a second!" property="og:title">
-    <meta content="Identify balls by uploading/pasting an image and get the result! Actually supports Ballsdex, Dynastydex and Empireballs." property="og:description">
-    <meta content="https://ballidentifier.xyz/" property="og:url">
-    <meta content="https://ballidentifier.xyz/assets/Ballsdex.png" property="og:image">
-    <meta content="#A94DC1" name="theme-color">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="assets/icon.webp" type="image/png">
-    <title>Ball Identifier - Recognize the ball in a second!</title>
-</head>
-<body>
-    <div id="overlay" class="overlay"></div>
-    <div class="container">
-        <img src="assets/Ballsdex.png" alt="Logo" class="logo">
-        <div class="title-container">
-            <select id="dexSelector" class="dex-selector">
-                <option value="Ballsdex">Ballsdex</option>
-                <option value="Dynastydex">Dynastydex</option>
-                <option value="Empireballs">Empireballs</option>
-            </select>
-            <h1 id="title" class="title">Identifier</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="keywords"
+            content="Balldex, Ballsdex, Dynastydex, Empireballs, Discord, Identifier, Utilities, Rarity, Ball Identification, Ball Art, Ball Symbols"
+        />
+        <meta
+            name="description"
+            content="Identify balls by uploading/pasting an image and get the result! Actually supports Ballsdex and Dynastydex."
+        />
+        <meta content="Ball Identifier - Recognize the ball in a second!" property="og:title" />
+        <meta
+            content="Identify balls by uploading/pasting an image and get the result! Actually supports Ballsdex, Dynastydex and Empireballs."
+            property="og:description"
+        />
+        <meta content="https://ballidentifier.xyz/" property="og:url" />
+        <meta content="https://ballidentifier.xyz/assets/Ballsdex.png" property="og:image" />
+        <meta content="#A94DC1" name="theme-color" />
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="icon" href="assets/icon.webp" type="image/png" />
+        <title>Ball Identifier - Recognize the ball in a second!</title>
+    </head>
+    <body>
+        <div id="overlay" class="overlay"></div>
+        <div class="container">
+            <img src="assets/Ballsdex.png" alt="Logo" class="logo" />
+            <div class="title-container">
+                <select id="dexSelector" class="dex-selector">
+                    <option value="Ballsdex">Ballsdex</option>
+                    <option value="Dynastydex">Dynastydex</option>
+                    <option value="Empireballs">Empireballs</option>
+                </select>
+                <h1 id="title" class="title">Identifier</h1>
+            </div>
+            <p class="subtitle">
+                <strong>Upload a file</strong> or <strong>paste a photo/discord URL</strong> from
+                your clipboard!
+            </p>
+            <br />
+            <p id="toggleNotes" class="note-toggle">Important notes <span id="arrow">▼</span></p>
+            <div id="notesContainer" class="notes-container">
+                <p class="note">
+                    Remember to send exactly the same file from the bot, not a screenshot
+                </p>
+                <p class="note">otherwise the result may be inconsistent.</p>
+                <p class="note">
+                    Pasting a URL of a photo weighing more than 6MB will return nothing,
+                </p>
+                <p class="note">these are AWS limitations that can't be bypassed.</p>
+            </div>
+            <div class="button-container">
+                <label class="custom-upload-button">
+                    <input type="file" class="upload-input" id="fileInput" accept="image/*" />
+                    Upload Image
+                </label>
+                <button id="pasteButton" class="custom-upload-button">Paste from clipboard</button>
+            </div>
         </div>
-        <p class="subtitle"><strong>Upload a file</strong> or <strong>paste a photo/discord URL</strong> from your clipboard!</p><br>
-        <p class="note">Remember to send exactly the same file from the bot, not a screenshot</p>
-        <p class="note">otherwise the result may be inconsistent.</p>
-        <div class="button-container">
-            <label class="custom-upload-button">
-                <input type="file" class="upload-input" id="fileInput" accept="image/*">
-                Upload Image
-            </label>
-            <button id="pasteButton" class="custom-upload-button">Paste from clipboard</button>
+        <div id="loadingPopup" class="loading-popup">
+            <div class="spinner"></div>
+            <div id="loading-text" class="loading-text"></div>
         </div>
-    </div>
-    <div id="loadingPopup" class="loading-popup">
-        <div class="spinner"></div>
-        <div id="loading-text" class="loading-text"></div>
-    </div>
-    <div id="resultPopup" class="result-popup">
-        <button id="closeResultPopup" class="close-btn">x</button>
-        <div id="resultTitle" class="country-name"></div>
-        <div id="resultSubtitle" class="similarity"></div>
-        <img id="resultImage" src="" alt="Country Image">
-        <div id="resultCredits" class="credits"></div>
-        <button id="copyButton" class="copy-btn">Copy to clipboard</button>
-    </div>
+        <div id="resultPopup" class="result-popup">
+            <button id="closeResultPopup" class="close-btn">x</button>
+            <div id="resultTitle" class="country-name"></div>
+            <div id="resultSubtitle" class="similarity"></div>
+            <img id="resultImage" src="" alt="Country Image" />
+            <div id="resultCredits" class="credits"></div>
+            <button id="copyButton" class="copy-btn">Copy to clipboard</button>
+        </div>
 
-    <button id="changelogButton" class="changelog-button">Changelog</button>
-    <div id="changelogModal" class="changelog-modal">
-        <div class="changelog-content">
-            <span id="closeChangelog" class="close">&times;</span>
-            <h2>Changelog</h2>
-            <div id="changelogList"></div>
+        <button id="changelogButton" class="changelog-button">Changelog</button>
+        <div id="changelogModal" class="changelog-modal">
+            <div class="changelog-content">
+                <span id="closeChangelog" class="close">&times;</span>
+                <h2>Changelog</h2>
+                <div id="changelogList"></div>
+            </div>
         </div>
-    </div>
-    <footer class="footer">
-        <p>Made with ❤️ by Meffiu</p>
-        <p class="small-text">Not affiliated with <a href="https://github.com/Ballsdex-Team/BallsDex-DiscordBot" target="_blank">The Ballsdex Team</a></p>
-    </footer>
-    <script src="js/script.js"></script>
-</body>
+        <footer class="footer">
+            <p>Made with ❤️ by Meffiu</p>
+            <p class="small-text">
+                Not affiliated with
+                <a href="https://github.com/Ballsdex-Team/BallsDex-DiscordBot" target="_blank"
+                    >The Ballsdex Team</a
+                >
+            </p>
+        </footer>
+        <script src="js/script.js"></script>
+    </body>
 </html>

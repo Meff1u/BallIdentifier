@@ -3,6 +3,18 @@ document.addEventListener("DOMContentLoaded", function () {
     updateTitleWithBallCount();
 });
 
+document.getElementById("toggleNotes").addEventListener("click", function() {
+    const notesContainer = document.getElementById("notesContainer");
+    const arrow = document.getElementById("arrow");
+    if (notesContainer.classList.contains("visible")) {
+        notesContainer.classList.remove("visible");
+        arrow.textContent = "▼";
+    } else {
+        notesContainer.classList.add("visible");
+        arrow.textContent = "▲";
+    }
+});
+
 document.getElementById("fileInput").addEventListener("change", function () {
     const file = this.files[0];
     console.log(file);
