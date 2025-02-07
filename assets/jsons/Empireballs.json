@@ -185,11 +185,11 @@
   },
   "Holy Roman Empire": {
     "rarity": 32,
-    "artist": ""
+    "artist": "deutsches.kaiserreich"
   },
   "Napoleonic France": {
     "rarity": 33,
-    "artist": ""
+    "artist": "kf_ball"
   },
   "North Sea Empire": {
     "rarity": 34,
@@ -301,7 +301,7 @@
   },
   "Yuan Dynasty": {
     "rarity": 59,
-    "artist": ""
+    "artist": "deutsches.kaiserreich"
   },
   "Kingdom of Bosnia": {
     "rarity": 60,
@@ -329,7 +329,7 @@
   },
   "Almohad Caliphate": {
     "rarity": 66,
-    "artist": ""
+    "artist": "Unknown"
   },
   "Tu'i Tonga": {
     "rarity": 67,
