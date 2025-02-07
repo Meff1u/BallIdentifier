@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1738889383",
+            "changes": [
+                "Updated to new spawn art in Ballsdex (East Germany)",
+                "Deleted Game Token from Ballsdex (it won't spawn anymore)"
+            ]
+        },
+        {
             "timestamp": "1738774156",
             "changes": [
                 "Added paste button for mobile users"
