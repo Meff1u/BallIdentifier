@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1739968106",
+            "changes": [
+                "Updated to new spawn arts in Ballsdex (Canada, Weimar Republic, Saint Kitts and Nevis)"
+            ]
+        },
+        {
             "timestamp": "1738889383",
             "changes": [
                 "Updated to new spawn art in Ballsdex (East Germany)",
