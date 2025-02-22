@@ -37,6 +37,12 @@ exports.handler = async (event) => {
 
     for (const [hashKey, countryName] of Object.entries(JSON.parse(ballHashes))) {
         const diff = hashDiff(hash, hashKey);
+        if (diff === 0) {
+            return {
+                statusCode: 200,
+                body: JSON.stringify({ country: countryName, diff: diff }),
+            }
+        }
         console.log(`${countryName} | ${diff}`);
         if (diff < lowestDiff) {
             lowestDiff = diff;
