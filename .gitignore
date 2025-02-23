@@ -4,4 +4,9 @@
 # Node Modules
 node_modules
 
-functions/hashCompare.js
+# WIP
+assets/HistoryDex
+assets/HistoryDex.png
+assets/jsons/HistoryDex.json
+assets/jsons/HistoryDexHashes.json
+indexnew.html
