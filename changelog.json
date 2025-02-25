@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1740515260",
+            "changes": [
+                "Added HistoryDex to comparsion"
+            ]
+        },
+        {
             "timestamp": "1740346906",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Syria)"

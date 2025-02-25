@@ -256,7 +256,7 @@ function updateTitleWithBallCount() {
 
 function updateLogo(dex) {
     const logo = document.querySelector(".logo");
-    logo.src = `assets/${dex}.png`;
+    logo.src = `assets/icons/${dex}.png`;
 }
 
 document.getElementById("changelogButton").addEventListener("click", function () {

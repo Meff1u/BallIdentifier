@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/icon.webp" type="image/png">
+    <link rel="icon" href="assets/icons/icon.webp" type="image/png">
     <title>Error 404!</title>
     <style>
         body {
@@ -41,7 +41,7 @@
         <p class="message">What are you looking for here? There is no such page...</p>
     </div>
     <script>
-        const jsonFiles = ['Ballsdex.json', 'Dynastydex.json', 'Empireballs.json'];
+        const jsonFiles = ['Ballsdex.json', 'Dynastydex.json', 'Empireballs.json', 'HistoryDex.json'];
         const randomFile = jsonFiles[Math.floor(Math.random() * jsonFiles.length)];
     
         fetch(`/assets/jsons/${randomFile}`)

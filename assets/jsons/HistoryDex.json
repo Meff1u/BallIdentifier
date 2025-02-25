@@ -1,0 +1,2294 @@
+{
+    "Franco-British Union": {
+        "rarity": 0.3,
+        "artist": ""
+    },
+    "British Empire": {
+        "rarity": 0.5,
+        "artist": ""
+    },
+    "Axis Powers": {
+        "rarity": 0.6,
+        "artist": ""
+    },
+    "Allied Powers": {
+        "rarity": 0.6,
+        "artist": ""
+    },
+    "Entente Powers": {
+        "rarity": 0.7,
+        "artist": ""
+    },
+    "Central Powers": {
+        "rarity": 0.7,
+        "artist": ""
+    },
+    "Western Bloc": {
+        "rarity": 0.8,
+        "artist": ""
+    },
+    "Eastern Bloc": {
+        "rarity": 0.8,
+        "artist": ""
+    },
+    "Reichtangle": {
+        "rarity": 1,
+        "artist": ""
+    },
+    "Golden Circle": {
+        "rarity": 1,
+        "artist": ""
+    },
+    "Mongol Empire": {
+        "rarity": 1,
+        "artist": ""
+    },
+    "Intermarium": {
+        "rarity": 1,
+        "artist": ""
+    },
+    "Iberian Union": {
+        "rarity": 1,
+        "artist": ""
+    },
+    "Russtangle": {
+        "rarity": 1,
+        "artist": ""
+    },
+    "0ball": {
+        "rarity": 1,
+        "artist": ""
+    },
+    "French Third Republic": {
+        "rarity": 2,
+        "artist": ""
+    },
+    "Soviet Union": {
+        "rarity": 2,
+        "artist": ""
+    },
+    "Nazi Germany": {
+        "rarity": 2,
+        "artist": ""
+    },
+    "Russian Empire": {
+        "rarity": 2,
+        "artist": ""
+    },
+    "Spanish Empire": {
+        "rarity": 3,
+        "artist": "acrestronk"
+    },
+    "Portuguese Empire": {
+        "rarity": 3,
+        "artist": ""
+    },
+    "Roman Empire": {
+        "rarity": 3,
+        "artist": ""
+    },
+    "First French Colonial Empire": {
+        "rarity": 4,
+        "artist": ""
+    },
+    "Dutch Empire": {
+        "rarity": 4,
+        "artist": ""
+    },
+    "Qing": {
+        "rarity": 4,
+        "artist": ""
+    },
+    "German Empire": {
+        "rarity": 5,
+        "artist": ""
+    },
+    "Empire of Japan": {
+        "rarity": 5,
+        "artist": ""
+    },
+    "Achaemenid Empire": {
+        "rarity": 5,
+        "artist": ""
+    },
+    "Macedonian Empire": {
+        "rarity": 6,
+        "artist": ""
+    },
+    "Umayyad Caliphate": {
+        "rarity": 6,
+        "artist": ""
+    },
+    "Greater Ottoman Empire": {
+        "rarity": 6,
+        "artist": ""
+    },
+    "Byzantine Empire": {
+        "rarity": 6,
+        "artist": ""
+    },
+    "Qin": {
+        "rarity": 6,
+        "artist": ""
+    },
+    "Xia Dynasty": {
+        "rarity": 6,
+        "artist": ""
+    },
+    "Roman Republic": {
+        "rarity": 6,
+        "artist": ""
+    },
+    "Maoist China": {
+        "rarity": 6,
+        "artist": ""
+    },
+    "Carthage": {
+        "rarity": 6,
+        "artist": ""
+    },
+    "Confederal United States": {
+        "rarity": 6,
+        "artist": ""
+    },
+    "Republic of China": {
+        "rarity": 7,
+        "artist": ""
+    },
+    "Abbasid Caliphate": {
+        "rarity": 7,
+        "artist": ""
+    },
+    "Sassanid Empire": {
+        "rarity": 7,
+        "artist": ""
+    },
+    "Sumer": {
+        "rarity": 7,
+        "artist": ""
+    },
+    "Inca Empire": {
+        "rarity": 7,
+        "artist": ""
+    },
+    "Ancient Egypt": {
+        "rarity": 7,
+        "artist": ""
+    },
+    "Rashidun Caliphate": {
+        "rarity": 8,
+        "artist": ""
+    },
+    "Sui": {
+        "rarity": 8,
+        "artist": ""
+    },
+    "Timurid Empire": {
+        "rarity": 8,
+        "artist": ""
+    },
+    "Kingdom of Great Britain": {
+        "rarity": 8,
+        "artist": ""
+    },
+    "Tang Dynasty": {
+        "rarity": 8,
+        "artist": ""
+    },
+    "Great Yuan": {
+        "rarity": 8,
+        "artist": ""
+    },
+    "Han": {
+        "rarity": 8,
+        "artist": ""
+    },
+    "Polish-Lithuanian Commonwealth": {
+        "rarity": 8,
+        "artist": ""
+    },
+    "Napoleonic France": {
+        "rarity": 8,
+        "artist": ""
+    },
+    "Indus Valley Civilization": {
+        "rarity": 8,
+        "artist": ""
+    },
+    "Imperial Berlintangle": {
+        "rarity": 8,
+        "artist": ""
+    },
+    "Song": {
+        "rarity": 9,
+        "artist": ""
+    },
+    "Great Ming": {
+        "rarity": 9,
+        "artist": ""
+    },
+    "Safavid Empire": {
+        "rarity": 9,
+        "artist": ""
+    },
+    "Confederate States": {
+        "rarity": 9,
+        "artist": ""
+    },
+    "Zhou": {
+        "rarity": 9,
+        "artist": ""
+    },
+    "Union Army": {
+        "rarity": 9,
+        "artist": ""
+    },
+    "Kingdom of Prussia": {
+        "rarity": 9,
+        "artist": ""
+    },
+    "Second French Empire": {
+        "rarity": 9,
+        "artist": ""
+    },
+    "Empire of Brazil": {
+        "rarity": 10,
+        "artist": ""
+    },
+    "Parthian Empire": {
+        "rarity": 10,
+        "artist": ""
+    },
+    "Holy Roman Empire": {
+        "rarity": 10,
+        "artist": ""
+    },
+    "Seleucid Empire": {
+        "rarity": 10,
+        "artist": "ethan_heathcliff"
+    },
+    "Kingdom of Aksum": {
+        "rarity": 10,
+        "artist": ""
+    },
+    "Imperial London": {
+        "rarity": 10,
+        "artist": "dark3nd"
+    },
+    "Maphilindo Confederation": {
+        "rarity": 10,
+        "artist": ""
+    },
+    "Ancient Japan": {
+        "rarity": 10,
+        "artist": ""
+    },
+    "Austria-Hungary": {
+        "rarity": 10,
+        "artist": ""
+    },
+    "Xiongnu": {
+        "rarity": 10,
+        "artist": ""
+    },
+    "Tsardom of Russia": {
+        "rarity": 11,
+        "artist": ""
+    },
+    "Gojoseon": {
+        "rarity": 11,
+        "artist": ""
+    },
+    "Seljuk Empire": {
+        "rarity": 11,
+        "artist": ""
+    },
+    "Austrian Empire": {
+        "rarity": 11,
+        "artist": ""
+    },
+    "Kingdom of England": {
+        "rarity": 12,
+        "artist": "dark3nd"
+    },
+    "Imperial Rio de Janeiro": {
+        "rarity": 12,
+        "artist": ""
+    },
+    "Warsaw Pact": {
+        "rarity": 12,
+        "artist": ""
+    },
+    "Danish Empire": {
+        "rarity": 12,
+        "artist": ""
+    },
+    "Joseon": {
+        "rarity": 12,
+        "artist": ""
+    },
+    "Tokugawa Shogunate": {
+        "rarity": 12,
+        "artist": ""
+    },
+    "Kingdom of France": {
+        "rarity": 12,
+        "artist": ""
+    },
+    "Bolsheviks": {
+        "rarity": 12,
+        "artist": "id3ttwd"
+    },
+    "Central Treaty Organization": {
+        "rarity": 12,
+        "artist": ""
+    },
+    "Imperial Tokyo": {
+        "rarity": 13,
+        "artist": ""
+    },
+    "Goryeo": {
+        "rarity": 13,
+        "artist": ""
+    },
+    "Imperial Berlin": {
+        "rarity": 13,
+        "artist": ""
+    },
+    "Mamluk Sultanate": {
+        "rarity": 13,
+        "artist": ""
+    },
+    "Thirteen Colonies": {
+        "rarity": 13,
+        "artist": ""
+    },
+    "European Coal and Steel Community": {
+        "rarity": 13,
+        "artist": ""
+    },
+    "Fascist Rome": {
+        "rarity": 14,
+        "artist": ""
+    },
+    "Belgian Empire": {
+        "rarity": 14,
+        "artist": ""
+    },
+    "North Vietnam": {
+        "rarity": 14,
+        "artist": ""
+    },
+    "Organization of African Unity": {
+        "rarity": 14,
+        "artist": ""
+    },
+    "Mughal Empire": {
+        "rarity": 15,
+        "artist": ""
+    },
+    "Kalmar Union": {
+        "rarity": 15,
+        "artist": ""
+    },
+    "Fascist Italy": {
+        "rarity": 15,
+        "artist": ""
+    },
+    "Delhi Sultanate": {
+        "rarity": 15,
+        "artist": ""
+    },
+    "Swedish Empire": {
+        "rarity": 15,
+        "artist": ""
+    },
+    "Hunnic Empire": {
+        "rarity": 15,
+        "artist": ""
+    },
+    "Golden Horde": {
+        "rarity": 15,
+        "artist": ""
+    },
+    "Imperial Madrid": {
+        "rarity": 15,
+        "artist": ""
+    },
+    "Majapahit Empire": {
+        "rarity": 15,
+        "artist": ""
+    },
+    "Median Empire": {
+        "rarity": 15,
+        "artist": ""
+    },
+    "Ilkhanate": {
+        "rarity": 15,
+        "artist": "dark3nd"
+    },
+    "Azad Hind": {
+        "rarity": 16,
+        "artist": ""
+    },
+    "Empire of China": {
+        "rarity": 16,
+        "artist": ""
+    },
+    "Jin": {
+        "rarity": 16,
+        "artist": ""
+    },
+    "Shang": {
+        "rarity": 16,
+        "artist": ""
+    },
+    "Kingdom of Jerusalem": {
+        "rarity": 16,
+        "artist": ""
+    },
+    "Reichskolonialbund": {
+        "rarity": 16,
+        "artist": ""
+    },
+    "Frankish Empire": {
+        "rarity": 17,
+        "artist": ""
+    },
+    "Fatimid Caliphate": {
+        "rarity": 17,
+        "artist": ""
+    },
+    "Gallic Empire": {
+        "rarity": 17,
+        "artist": ""
+    },
+    "Palmyrene Empire": {
+        "rarity": 17,
+        "artist": ""
+    },
+    "Crusaders": {
+        "rarity": 17,
+        "artist": ""
+    },
+    "French Community": {
+        "rarity": 17,
+        "artist": ""
+    },
+    "Mayan Empire": {
+        "rarity": 17,
+        "artist": "mynames212"
+    },
+    "Assyrian Empire": {
+        "rarity": 17,
+        "artist": ""
+    },
+    "Kingdom of Greece": {
+        "rarity": 18,
+        "artist": ""
+    },
+    "First Mexican Empire": {
+        "rarity": 18,
+        "artist": ""
+    },
+    "Aztec Empire": {
+        "rarity": 18,
+        "artist": ""
+    },
+    "Goguryeo": {
+        "rarity": 18,
+        "artist": ""
+    },
+    "German Confederation": {
+        "rarity": 18,
+        "artist": ""
+    },
+    "Visigothic Kingdom": {
+        "rarity": 18,
+        "artist": ""
+    },
+    "Solanoist Paraguay": {
+        "rarity": 18,
+        "artist": ""
+    },
+    "Ottoman Empire": {
+        "rarity": 18,
+        "artist": ""
+    },
+    "Dutch Republic": {
+        "rarity": 19,
+        "artist": ""
+    },
+    "British Raj": {
+        "rarity": 19,
+        "artist": ""
+    },
+    "Wang Jingwei Regime": {
+        "rarity": 19,
+        "artist": ""
+    },
+    "Kingdom of Spain": {
+        "rarity": 19,
+        "artist": ""
+    },
+    "Pahlavi Dynasty": {
+        "rarity": 19,
+        "artist": ""
+    },
+    "Manchukuo": {
+        "rarity": 19,
+        "artist": ""
+    },
+    "Tibetan Empire": {
+        "rarity": 19,
+        "artist": ""
+    },
+    "Northern Yuan": {
+        "rarity": 19,
+        "artist": ""
+    },
+    "Qajar Dynasty": {
+        "rarity": 19,
+        "artist": ""
+    },
+    "North Sea Empire": {
+        "rarity": 19,
+        "artist": ""
+    },
+    "Kingdom of Italy": {
+        "rarity": 19,
+        "artist": ""
+    },
+    "Three Kingdoms": {
+        "rarity": 19,
+        "artist": ""
+    },
+    "Crimean Khanate": {
+        "rarity": 20,
+        "artist": ""
+    },
+    "Finnish State": {
+        "rarity": 20,
+        "artist": ""
+    },
+    "West Germany": {
+        "rarity": 20,
+        "artist": ""
+    },
+    "Kingdom of Poland": {
+        "rarity": 20,
+        "artist": ""
+    },
+    "Crown of Castille": {
+        "rarity": 20,
+        "artist": ""
+    },
+    "Little Entente": {
+        "rarity": 20,
+        "artist": ""
+    },
+    "East Germany": {
+        "rarity": 21,
+        "artist": ""
+    },
+    "South Vietnam": {
+        "rarity": 21,
+        "artist": ""
+    },
+    "Kingdom of Norway": {
+        "rarity": 21,
+        "artist": ""
+    },
+    "Kingdom of Georgia": {
+        "rarity": 21,
+        "artist": ""
+    },
+    "Balkan League": {
+        "rarity": 21,
+        "artist": ""
+    },
+    "Ancient Greece": {
+        "rarity": 21,
+        "artist": ""
+    },
+    "Dutch East Indies": {
+        "rarity": 21,
+        "artist": ""
+    },
+    "Socialist Federal Republic of Yugoslavia": {
+        "rarity": 22,
+        "artist": ""
+    },
+    "Armenian Empire": {
+        "rarity": 22,
+        "artist": ""
+    },
+    "Prathet Thai": {
+        "rarity": 22,
+        "artist": ""
+    },
+    "Crown of Aragon": {
+        "rarity": 22,
+        "artist": ""
+    },
+    "Wessex": {
+        "rarity": 22,
+        "artist": ""
+    },
+    "Kara-Khanid Khanate": {
+        "rarity": 22,
+        "artist": ""
+    },
+    "First French Republic": {
+        "rarity": 23,
+        "artist": ""
+    },
+    "Kingdom of Yugoslavia": {
+        "rarity": 23,
+        "artist": ""
+    },
+    "Aceh Sultanate": {
+        "rarity": 23,
+        "artist": ""
+    },
+    "Napoleonic Spain": {
+        "rarity": 23,
+        "artist": ""
+    },
+    "Aghlabid Dynasty": {
+        "rarity": 23,
+        "artist": ""
+    },
+    "Siberian Republic": {
+        "rarity": 24,
+        "artist": ""
+    },
+    "Kievan Rus'": {
+        "rarity": 24,
+        "artist": ""
+    },
+    "Kingdom of Sikkim": {
+        "rarity": 24,
+        "artist": ""
+    },
+    "French Equatorial Africa": {
+        "rarity": 24,
+        "artist": ""
+    },
+    "United Kingdom of Portugal, Brazil, and Algarves": {
+        "rarity": 25,
+        "artist": ""
+    },
+    "Kamakura Shogunate": {
+        "rarity": 25,
+        "artist": ""
+    },
+    "Almohad Caliphate": {
+        "rarity": 25,
+        "artist": ""
+    },
+    "Ethiopian Empire": {
+        "rarity": 25,
+        "artist": ""
+    },
+    "State of Slovenes, Croats, and Serbs": {
+        "rarity": 25,
+        "artist": ""
+    },
+    "Angevin Empire": {
+        "rarity": 25,
+        "artist": ""
+    },
+    "Elamite Empire": {
+        "rarity": 25,
+        "artist": ""
+    },
+    "Ayyubid Sultanate": {
+        "rarity": 25,
+        "artist": ""
+    },
+    "Crown of Bohemia": {
+        "rarity": 25,
+        "artist": ""
+    },
+    "Vichy France": {
+        "rarity": 26,
+        "artist": ""
+    },
+    "Free France": {
+        "rarity": 26,
+        "artist": ""
+    },
+    "First Republic of Korea": {
+        "rarity": 26,
+        "artist": ""
+    },
+    "Dacia": {
+        "rarity": 26,
+        "artist": ""
+    },
+    "Roanoke Colony": {
+        "rarity": 27,
+        "artist": ""
+    },
+    "Central African Empire": {
+        "rarity": 27,
+        "artist": ""
+    },
+    "Holy League": {
+        "rarity": 27,
+        "artist": ""
+    },
+    "First Brazilian Republic": {
+        "rarity": 28,
+        "artist": ""
+    },
+    "West Francia": {
+        "rarity": 28,
+        "artist": ""
+    },
+    "Akkadian Empire": {
+        "rarity": 28,
+        "artist": ""
+    },
+    "Samanid Empire": {
+        "rarity": 28,
+        "artist": "itscubicmapper"
+    },
+    "Khanate of Sibir": {
+        "rarity": 28,
+        "artist": "._pudd_."
+    },
+    "Weimar Republic": {
+        "rarity": 28,
+        "artist": ""
+    },
+    "Zagwe Dynasty": {
+        "rarity": 29,
+        "artist": ""
+    },
+    "Middle Francia": {
+        "rarity": 29,
+        "artist": ""
+    },
+    "Grand Duchy of Moscow": {
+        "rarity": 30,
+        "artist": ""
+    },
+    "Principality of Brazil": {
+        "rarity": 30,
+        "artist": ""
+    },
+    "Kingdom of Romania": {
+        "rarity": 30,
+        "artist": ""
+    },
+    "Mali Empire": {
+        "rarity": 30,
+        "artist": ""
+    },
+    "Kingdom of Nepal": {
+        "rarity": 30,
+        "artist": ""
+    },
+    "East Berlin": {
+        "rarity": 30,
+        "artist": ""
+    },
+    "East Francia": {
+        "rarity": 30,
+        "artist": ""
+    },
+    "Duchy of Burgundy": {
+        "rarity": 30,
+        "artist": ""
+    },
+    "Imperial Saint Petersburg": {
+        "rarity": 30,
+        "artist": ""
+    },
+    "Viceroyalty of New Spain": {
+        "rarity": 30,
+        "artist": ""
+    },
+    "Kingdom of Hejaz and Nejd": {
+        "rarity": 30,
+        "artist": ""
+    },
+    "New France": {
+        "rarity": 30,
+        "artist": ""
+    },
+    "Beiyang Government": {
+        "rarity": 30,
+        "artist": ""
+    },
+    "Nguyễn Dynasty": {
+        "rarity": 31,
+        "artist": ""
+    },
+    "Bornu Empire": {
+        "rarity": 31,
+        "artist": ""
+    },
+    "Mercia": {
+        "rarity": 31,
+        "artist": ""
+    },
+    "Francoist Spain": {
+        "rarity": 31,
+        "artist": ""
+    },
+    "Republican Spain": {
+        "rarity": 31,
+        "artist": ""
+    },
+    "Mataram Sultanate": {
+        "rarity": 31,
+        "artist": ""
+    },
+    "Kingdom of Croatia": {
+        "rarity": 31,
+        "artist": ""
+    },
+    "National Liberation Committee": {
+        "rarity": 31,
+        "artist": ""
+    },
+    "Duchy of Pomerania-Stolp": {
+        "rarity": 31,
+        "artist": ""
+    },
+    "Italian Social Republic": {
+        "rarity": 31,
+        "artist": ""
+    },
+    "Ghaznavid Empire": {
+        "rarity": 31,
+        "artist": ""
+    },
+    "Buyid Dynasty": {
+        "rarity": 32,
+        "artist": ""
+    },
+    "Congo Free State": {
+        "rarity": 32,
+        "artist": ""
+    },
+    "Viceroyalty of Rio de la Plata": {
+        "rarity": 32,
+        "artist": ""
+    },
+    "Northern Wei": {
+        "rarity": 33,
+        "artist": ""
+    },
+    "People's Republic of Korea": {
+        "rarity": 33,
+        "artist": ""
+    },
+    "Gaddafist Libya": {
+        "rarity": 33,
+        "artist": ""
+    },
+    "Grand Principality of Transylvania": {
+        "rarity": 34,
+        "artist": ""
+    },
+    "Viceroyalty of Peru": {
+        "rarity": 34,
+        "artist": ""
+    },
+    "Swedish Overseas Colonies": {
+        "rarity": 35,
+        "artist": ""
+    },
+    "United Provinces of Rio de la Plata": {
+        "rarity": 35,
+        "artist": ""
+    },
+    "Panama Canal Zone": {
+        "rarity": 35,
+        "artist": ""
+    },
+    "Saffarid Empire": {
+        "rarity": 35,
+        "artist": ""
+    },
+    "Patria Nueva": {
+        "rarity": 35,
+        "artist": ""
+    },
+    "Sweden-Norway": {
+        "rarity": 35,
+        "artist": ""
+    },
+    "Kingdom of Scotland": {
+        "rarity": 36,
+        "artist": ""
+    },
+    "Marinid Dynasty": {
+        "rarity": 36,
+        "artist": ""
+    },
+    "Serbian Empire": {
+        "rarity": 36,
+        "artist": ""
+    },
+    "Viceroyalty of New Granada": {
+        "rarity": 36,
+        "artist": ""
+    },
+    "Brazilian Military Dictatorship": {
+        "rarity": 36,
+        "artist": ""
+    },
+    "League of Nations": {
+        "rarity": 37,
+        "artist": ""
+    },
+    "Makhnovia": {
+        "rarity": 37,
+        "artist": ""
+    },
+    "Congress Poland": {
+        "rarity": 37,
+        "artist": ""
+    },
+    "First Haitian Empire": {
+        "rarity": 37,
+        "artist": ""
+    },
+    "Patria Vieja": {
+        "rarity": 37,
+        "artist": ""
+    },
+    "Second Polish Republic": {
+        "rarity": 37,
+        "artist": ""
+    },
+    "Khwarazmian Empire": {
+        "rarity": 37,
+        "artist": ""
+    },
+    "Grand Duchy of Saxe-Meiningen": {
+        "rarity": 38,
+        "artist": ""
+    },
+    "Kingdom of Sweden": {
+        "rarity": 38,
+        "artist": ""
+    },
+    "Argentinian Military Dictatorship": {
+        "rarity": 38,
+        "artist": ""
+    },
+    "Sussex": {
+        "rarity": 39,
+        "artist": ""
+    },
+    "Grand Duchy of Lithuania": {
+        "rarity": 39,
+        "artist": ""
+    },
+    "Nueva Granada": {
+        "rarity": 39,
+        "artist": ""
+    },
+    "Kingdom of Egypt": {
+        "rarity": 39,
+        "artist": ""
+    },
+    "Medieval Kingdom of Hungary": {
+        "rarity": 39,
+        "artist": ""
+    },
+    "Kingdom of Hanover": {
+        "rarity": 39,
+        "artist": ""
+    },
+    "Kingdom of Finland": {
+        "rarity": 40,
+        "artist": "Arga#1008"
+    },
+    "Chilean Military Dictatorship": {
+        "rarity": 40,
+        "artist": ""
+    },
+    "Belarusian Democratic Republic": {
+        "rarity": 40,
+        "artist": ""
+    },
+    "Bogd Khanate": {
+        "rarity": 40,
+        "artist": ""
+    },
+    "State of Buenos Aires": {
+        "rarity": 40,
+        "artist": ""
+    },
+    "Qara Qoyunlu": {
+        "rarity": 40,
+        "artist": ""
+    },
+    "State of the Teutonic Order": {
+        "rarity": 40,
+        "artist": ""
+    },
+    "Medieval Kingdom of Serbia": {
+        "rarity": 40,
+        "artist": ""
+    },
+    "United Colonies of New England": {
+        "rarity": 40,
+        "artist": ""
+    },
+    "Democratic Republic of Georgia": {
+        "rarity": 41,
+        "artist": ""
+    },
+    "Papal States": {
+        "rarity": 41,
+        "artist": ""
+    },
+    "Iranian Soviet Socialist Republic": {
+        "rarity": 41,
+        "artist": ""
+    },
+    "Argentine Confederation": {
+        "rarity": 41,
+        "artist": ""
+    },
+    "Kingdom of Bosnia": {
+        "rarity": 41,
+        "artist": ""
+    },
+    "First Armenian Republic": {
+        "rarity": 42,
+        "artist": ""
+    },
+    "Tsardom of Bulgaria": {
+        "rarity": 42,
+        "artist": ""
+    },
+    "French Indochina": {
+        "rarity": 42,
+        "artist": ""
+    },
+    "First Bulgarian Empire": {
+        "rarity": 42,
+        "artist": ""
+    },
+    "Kingdom of Saxony": {
+        "rarity": 42,
+        "artist": ""
+    },
+    "Kingdom of Sicily": {
+        "rarity": 42,
+        "artist": ""
+    },
+    "Czechoslovak Socialist Republic": {
+        "rarity": 43,
+        "artist": "floridianirishguy"
+    },
+    "Ajuran Sultanate": {
+        "rarity": 43,
+        "artist": ""
+    },
+    "Republic of Texas": {
+        "rarity": 43,
+        "artist": ""
+    },
+    "Second Czechoslovak Republic": {
+        "rarity": 43,
+        "artist": ""
+    },
+    "Ryukyu Kingdom": {
+        "rarity": 43,
+        "artist": ""
+    },
+    "Independent State of Croatia": {
+        "rarity": 43,
+        "artist": ""
+    },
+    "Hejaz": {
+        "rarity": 44,
+        "artist": ""
+    },
+    "Kazakh Khanate": {
+        "rarity": 45,
+        "artist": ""
+    },
+    "Hellenic State": {
+        "rarity": 45,
+        "artist": ""
+    },
+    "State of Turkey": {
+        "rarity": 45,
+        "artist": ""
+    },
+    "Union of South Africa": {
+        "rarity": 45,
+        "artist": ""
+    },
+    "Kingdom of Navarre": {
+        "rarity": 45,
+        "artist": ""
+    },
+    "Grand Duchy of Hesse": {
+        "rarity": 45,
+        "artist": ""
+    },
+    "Ancient Sparta": {
+        "rarity": 45,
+        "artist": ""
+    },
+    "Grand Duchy of Baden": {
+        "rarity": 45,
+        "artist": ""
+    },
+    "Ba'athist Iraq": {
+        "rarity": 45,
+        "artist": ""
+    },
+    "Peru-Bolivian Confederation": {
+        "rarity": 46,
+        "artist": ""
+    },
+    "Irish Free State": {
+        "rarity": 46,
+        "artist": ""
+    },
+    "Somali Democratic Republic": {
+        "rarity": 46,
+        "artist": "vuin141"
+    },
+    "Gran Colombia": {
+        "rarity": 46,
+        "artist": ""
+    },
+    "Zand Dynasty": {
+        "rarity": 46,
+        "artist": ""
+    },
+    "Polish People's Republic": {
+        "rarity": 47,
+        "artist": ""
+    },
+    "Ghurid Dynasty": {
+        "rarity": 47,
+        "artist": ""
+    },
+    "Zaporozhian Sich": {
+        "rarity": 48,
+        "artist": ""
+    },
+    "Russian Soviet Federative Socialist Republic": {
+        "rarity": 48,
+        "artist": ""
+    },
+    "First Lithuanian Republic": {
+        "rarity": 48,
+        "artist": ""
+    },
+    "United States of Venezuela": {
+        "rarity": 48,
+        "artist": ""
+    },
+    "United States of Colombia": {
+        "rarity": 48,
+        "artist": ""
+    },
+    "Allied-Occupied Japan": {
+        "rarity": 48,
+        "artist": ""
+    },
+    "Allied-Occupied Germany": {
+        "rarity": 49,
+        "artist": ""
+    },
+    "Ukrainian People's Republic": {
+        "rarity": 49,
+        "artist": ""
+    },
+    "Tripolitanian Republic": {
+        "rarity": 49,
+        "artist": ""
+    },
+    "First Latvian Republic": {
+        "rarity": 49,
+        "artist": ""
+    },
+    "Romanian People's Republic": {
+        "rarity": 50,
+        "artist": ""
+    },
+    "Porfiriato": {
+        "rarity": 50,
+        "artist": ""
+    },
+    "First Estonian Republic": {
+        "rarity": 50,
+        "artist": ""
+    },
+    "Ukrainian Soviet Socialist Republic": {
+        "rarity": 50,
+        "artist": "._franci_."
+    },
+    "Grand Duchy of Tuscany": {
+        "rarity": 50,
+        "artist": ""
+    },
+    "Hungarian People's Republic": {
+        "rarity": 50,
+        "artist": ""
+    },
+    "Second Mexican Empire": {
+        "rarity": 50,
+        "artist": ""
+    },
+    "Taiping Heavenly Kingdom": {
+        "rarity": 50,
+        "artist": ""
+    },
+    "Yakut Autonomous Soviet Socialist Republic": {
+        "rarity": 50,
+        "artist": "floridianirishguy"
+    },
+    "United Principalities": {
+        "rarity": 50,
+        "artist": ""
+    },
+    "United Arab Republic": {
+        "rarity": 50,
+        "artist": ""
+    },
+    "Kingdom of Bavaria": {
+        "rarity": 51,
+        "artist": ""
+    },
+    "Sokoto Caliphate": {
+        "rarity": 51,
+        "artist": ""
+    },
+    "Khanate of Kazan": {
+        "rarity": 51,
+        "artist": ""
+    },
+    "People's Republic of Bulgaria": {
+        "rarity": 51,
+        "artist": ""
+    },
+    "Dominion of Canada": {
+        "rarity": 51,
+        "artist": ""
+    },
+    "Hawaiian Kingdom": {
+        "rarity": 52,
+        "artist": ""
+    },
+    "Republic of Cuba": {
+        "rarity": 52,
+        "artist": ""
+    },
+    "Republic of German-Austria": {
+        "rarity": 52,
+        "artist": ""
+    },
+    "Second Bulgarian Empire": {
+        "rarity": 52,
+        "artist": ""
+    },
+    "Georgian Soviet Socialist Republic": {
+        "rarity": 52,
+        "artist": ""
+    },
+    "Shun": {
+        "rarity": 53,
+        "artist": ""
+    },
+    "Tajik Soviet Socialist Republic": {
+        "rarity": 53,
+        "artist": ""
+    },
+    "Omani Empire": {
+        "rarity": 53,
+        "artist": ""
+    },
+    "French Sudan": {
+        "rarity": 53,
+        "artist": ""
+    },
+    "Kuban People's Republic": {
+        "rarity": 53,
+        "artist": ""
+    },
+    "First Spanish Republic": {
+        "rarity": 53,
+        "artist": ""
+    },
+    "Kingdom of Fiji": {
+        "rarity": 54,
+        "artist": ""
+    },
+    "Kazakh Soviet Socialist Republic": {
+        "rarity": 54,
+        "artist": ""
+    },
+    "Uzbek Soviet Socialist Republic": {
+        "rarity": 54,
+        "artist": ""
+    },
+    "Afsharid Empire": {
+        "rarity": 54,
+        "artist": ""
+    },
+    "Spanish Cuba": {
+        "rarity": 54,
+        "artist": ""
+    },
+    "Lithuanian Soviet Socialist Republic": {
+        "rarity": 55,
+        "artist": ""
+    },
+    "French Louisiana": {
+        "rarity": 55,
+        "artist": ""
+    },
+    "Western Roman Empire": {
+        "rarity": 55,
+        "artist": ""
+    },
+    "Kanem Empire": {
+        "rarity": 55,
+        "artist": ""
+    },
+    "Federal State of Austria": {
+        "rarity": 56,
+        "artist": ""
+    },
+    "Estonian Soviet Socialist Republic": {
+        "rarity": 56,
+        "artist": ""
+    },
+    "Kiautschou": {
+        "rarity": 56,
+        "artist": ""
+    },
+    "Yucatán Republic": {
+        "rarity": 56,
+        "artist": ""
+    },
+    "Hashemite Kingdom of Iraq": {
+        "rarity": 56,
+        "artist": ""
+    },
+    "Protectorate of Peru": {
+        "rarity": 56,
+        "artist": ""
+    },
+    "Republic of the Rio Grande": {
+        "rarity": 56,
+        "artist": ""
+    },
+    "American Confederation of Venezuela": {
+        "rarity": 56,
+        "artist": ""
+    },
+    "Second Philippine Republic": {
+        "rarity": 57,
+        "artist": ""
+    },
+    "Karelo-Finnish Soviet Socialist Republic": {
+        "rarity": 57,
+        "artist": "bhapydageek"
+    },
+    "Crimean Regional Government": {
+        "rarity": 57,
+        "artist": ""
+    },
+    "Armenian Soviet Socialist Republic": {
+        "rarity": 58,
+        "artist": ""
+    },
+    "Far Eastern Republic": {
+        "rarity": 58,
+        "artist": ""
+    },
+    "Ancient Aratta": {
+        "rarity": 58,
+        "artist": ""
+    },
+    "League of Lezhë": {
+        "rarity": 58,
+        "artist": ""
+    },
+    "Azerbaijan Soviet Socialist Republic": {
+        "rarity": 59,
+        "artist": ""
+    },
+    "People's Democratic Republic of Ethiopia": {
+        "rarity": 59,
+        "artist": ""
+    },
+    "Allied-Occupied Austria": {
+        "rarity": 59,
+        "artist": ""
+    },
+    "Byelorussian Soviet Socialist Republic": {
+        "rarity": 60,
+        "artist": ""
+    },
+    "Democratic Republic of Afghanistan": {
+        "rarity": 60,
+        "artist": ""
+    },
+    "Turkmen Soviet Socialist Republic": {
+        "rarity": 60,
+        "artist": ""
+    },
+    "Bahrain and its Dependencies": {
+        "rarity": 60,
+        "artist": ""
+    },
+    "Duchy of Courland and Semigallia": {
+        "rarity": 60,
+        "artist": ""
+    },
+    "Despotate of the Morea": {
+        "rarity": 61,
+        "artist": ""
+    },
+    "People's Republic of Angola": {
+        "rarity": 61,
+        "artist": ""
+    },
+    "Portuguese Angola": {
+        "rarity": 61,
+        "artist": ""
+    },
+    "Mi'kma'ki": {
+        "rarity": 63,
+        "artist": ""
+    },
+    "Latvian Soviet Socialist Republic": {
+        "rarity": 63,
+        "artist": ""
+    },
+    "Romanian Revolutionaries": {
+        "rarity": 63,
+        "artist": ""
+    },
+    "People's Republic of Mozambique": {
+        "rarity": 63,
+        "artist": ""
+    },
+    "Kirghiz Soviet Socialist Republic": {
+        "rarity": 64,
+        "artist": ""
+    },
+    "Moldavian Soviet Socialist Republic": {
+        "rarity": 64,
+        "artist": ""
+    },
+    "Kingdom of Württemberg": {
+        "rarity": 64,
+        "artist": ""
+    },
+    "German Kamerun": {
+        "rarity": 65,
+        "artist": ""
+    },
+    "Knight's Templar": {
+        "rarity": 65,
+        "artist": ""
+    },
+    "Kingdom of Hungary": {
+        "rarity": 65,
+        "artist": ""
+    },
+    "Knight's Hospitaller": {
+        "rarity": 65,
+        "artist": ""
+    },
+    "Hungarian Revolutionaries": {
+        "rarity": 65,
+        "artist": ""
+    },
+    "Sultanate of Nejd": {
+        "rarity": 65,
+        "artist": ""
+    },
+    "Federation of Arab Republics": {
+        "rarity": 65,
+        "artist": ""
+    },
+    "Czechoslovak Legion": {
+        "rarity": 65,
+        "artist": ""
+    },
+    "Kingdom of Sardinia": {
+        "rarity": 66,
+        "artist": ""
+    },
+    "New York Colony": {
+        "rarity": 66,
+        "artist": ""
+    },
+    "Federative Republic of Central America": {
+        "rarity": 66,
+        "artist": ""
+    },
+    "Zaire": {
+        "rarity": 67,
+        "artist": ""
+    },
+    "Republic of Genoa": {
+        "rarity": 67,
+        "artist": ""
+    },
+    "Paris Commune": {
+        "rarity": 68,
+        "artist": ""
+    },
+    "Mountainous Republic of the Northern Caucasus": {
+        "rarity": 68,
+        "artist": ""
+    },
+    "Russian Republic": {
+        "rarity": 69,
+        "artist": ""
+    },
+    "Danish West Indies": {
+        "rarity": 70,
+        "artist": ""
+    },
+    "General Government": {
+        "rarity": 70,
+        "artist": ""
+    },
+    "Babylon": {
+        "rarity": 70,
+        "artist": ""
+    },
+    "Japanese Taiwan": {
+        "rarity": 70,
+        "artist": ""
+    },
+    "French Algeria": {
+        "rarity": 70,
+        "artist": ""
+    },
+    "Alash Autonomy": {
+        "rarity": 71,
+        "artist": ""
+    },
+    "Duchy of Normandy": {
+        "rarity": 72,
+        "artist": ""
+    },
+    "Riograndense Republic": {
+        "rarity": 73,
+        "artist": ""
+    },
+    "People's Republic of the Congo": {
+        "rarity": 74,
+        "artist": ""
+    },
+    "German South West Africa": {
+        "rarity": 75,
+        "artist": ""
+    },
+    "German East Africa": {
+        "rarity": 75,
+        "artist": ""
+    },
+    "Germania": {
+        "rarity": 76,
+        "artist": ""
+    },
+    "Democratic Republic of Madagascar": {
+        "rarity": 78,
+        "artist": ""
+    },
+    "Dutch Brazil": {
+        "rarity": 78,
+        "artist": ""
+    },
+    "Principality of Wallachia": {
+        "rarity": 79,
+        "artist": ""
+    },
+    "Phoenicia": {
+        "rarity": 80,
+        "artist": ""
+    },
+    "Duchy of Luxembourg": {
+        "rarity": 80,
+        "artist": ""
+    },
+    "North Dorsetia-Somersetia": {
+        "rarity": 80,
+        "artist": ""
+    },
+    "Xin": {
+        "rarity": 81,
+        "artist": ""
+    },
+    "California Republic": {
+        "rarity": 81,
+        "artist": ""
+    },
+    "Protectorate of Bohemia and Moravia": {
+        "rarity": 81,
+        "artist": "___.artycal.___"
+    },
+    "Avar Khaganate": {
+        "rarity": 82,
+        "artist": ""
+    },
+    "Duchy of Bavaria": {
+        "rarity": 82,
+        "artist": ""
+    },
+    "Spanish Florida": {
+        "rarity": 83,
+        "artist": ""
+    },
+    "Kingdom of Montenegro": {
+        "rarity": 84,
+        "artist": ""
+    },
+    "Lesser Ottoman Empire": {
+        "rarity": 84,
+        "artist": "dark3nd"
+    },
+    "Yemen Arab Republic": {
+        "rarity": 85,
+        "artist": ""
+    },
+    "Republic of Rif": {
+        "rarity": 86,
+        "artist": ""
+    },
+    "Mutawakkilite Kingdom of Yemen": {
+        "rarity": 87,
+        "artist": ""
+    },
+    "Annam": {
+        "rarity": 88,
+        "artist": ""
+    },
+    "Helvetic Republic": {
+        "rarity": 89,
+        "artist": ""
+    },
+    "Danish Gold Coast": {
+        "rarity": 90,
+        "artist": ""
+    },
+    "Republic of Pirates": {
+        "rarity": 90,
+        "artist": ""
+    },
+    "United Fruit Company": {
+        "rarity": 90,
+        "artist": ""
+    },
+    "New Hebrides Condominium": {
+        "rarity": 91,
+        "artist": ""
+    },
+    "People's Republic of Benin": {
+        "rarity": 92,
+        "artist": ""
+    },
+    "Anglo-Egyptian Sudan": {
+        "rarity": 92,
+        "artist": ""
+    },
+    "Cossack Hetmanate": {
+        "rarity": 94,
+        "artist": ""
+    },
+    "Tannu Tuva": {
+        "rarity": 95,
+        "artist": ""
+    },
+    "Slovak Republic": {
+        "rarity": 95,
+        "artist": ""
+    },
+    "Republic of Pisa": {
+        "rarity": 96,
+        "artist": ""
+    },
+    "Caithness and Sutherland": {
+        "rarity": 97,
+        "artist": ""
+    },
+    "Russian America": {
+        "rarity": 97,
+        "artist": ""
+    },
+    "Kilwa Sultanate": {
+        "rarity": 98,
+        "artist": ""
+    },
+    "Republic of Crimea": {
+        "rarity": 99,
+        "artist": ""
+    },
+    "Ancient Athens": {
+        "rarity": 99,
+        "artist": ""
+    },
+    "Bukharan People's Soviet Republic": {
+        "rarity": 100,
+        "artist": ""
+    },
+    "Principality of Elba": {
+        "rarity": 100,
+        "artist": ""
+    },
+    "Kingdom of Cusco": {
+        "rarity": 100,
+        "artist": ""
+    },
+    "French Mauritania": {
+        "rarity": 100,
+        "artist": ""
+    },
+    "Rhodesia": {
+        "rarity": 101,
+        "artist": ""
+    },
+    "Vermont Republic": {
+        "rarity": 102,
+        "artist": ""
+    },
+    "French Gabon": {
+        "rarity": 103,
+        "artist": ""
+    },
+    "Litbel": {
+        "rarity": 104,
+        "artist": ""
+    },
+    "French Congo": {
+        "rarity": 104,
+        "artist": ""
+    },
+    "Karakorum Government": {
+        "rarity": 105,
+        "artist": ""
+    },
+    "French Tunisia": {
+        "rarity": 105,
+        "artist": ""
+    },
+    "State of Syria": {
+        "rarity": 106,
+        "artist": ""
+    },
+    "Free and Independent State of Cundinamarca": {
+        "rarity": 107,
+        "artist": ""
+    },
+    "Spanish Chile": {
+        "rarity": 108,
+        "artist": ""
+    },
+    "Greater Lebanon": {
+        "rarity": 109,
+        "artist": ""
+    },
+    "Free City of Danzig": {
+        "rarity": 114,
+        "artist": ""
+    },
+    "Khorezm People's Soviet Republic": {
+        "rarity": 115,
+        "artist": ""
+    },
+    "Republic of Anguilla": {
+        "rarity": 116,
+        "artist": ""
+    },
+    "Grand Duchy of Finland": {
+        "rarity": 119,
+        "artist": ""
+    },
+    "Antillean Confederation": {
+        "rarity": 120,
+        "artist": ""
+    },
+    "Prussian Gold Coast": {
+        "rarity": 120,
+        "artist": "unfunnichez_"
+    },
+    "Eldiguzid Dynasty": {
+        "rarity": 120,
+        "artist": "keldoidotec"
+    },
+    "Chechen Republic of Ichkeria": {
+        "rarity": 121,
+        "artist": ""
+    },
+    "Duchy of Nassau": {
+        "rarity": 122,
+        "artist": ""
+    },
+    "Hungarian Soviet Republic": {
+        "rarity": 123,
+        "artist": ""
+    },
+    "French Somaliland": {
+        "rarity": 124,
+        "artist": ""
+    },
+    "Venetian Republic": {
+        "rarity": 125,
+        "artist": ""
+    },
+    "British Malaya": {
+        "rarity": 125,
+        "artist": ""
+    },
+    "Idrisid Emirate of Asir": {
+        "rarity": 126,
+        "artist": ""
+    },
+    "Targowica Confederation": {
+        "rarity": 127,
+        "artist": ""
+    },
+    "Arab Kingdom of Syria": {
+        "rarity": 129,
+        "artist": ""
+    },
+    "Zulu Kingdom": {
+        "rarity": 130,
+        "artist": ""
+    },
+    "Muisca Confederation": {
+        "rarity": 131,
+        "artist": ""
+    },
+    "Portuguese Nagasaki": {
+        "rarity": 132,
+        "artist": ""
+    },
+    "Kingdom of Ireland": {
+        "rarity": 132,
+        "artist": ""
+    },
+    "Federal League": {
+        "rarity": 132,
+        "artist": ""
+    },
+    "Dutch Formosa": {
+        "rarity": 135,
+        "artist": ""
+    },
+    "Basutoland": {
+        "rarity": 141,
+        "artist": ""
+    },
+    "Mosquito Coast": {
+        "rarity": 144,
+        "artist": ""
+    },
+    "Italian-Occupied Monaco": {
+        "rarity": 145,
+        "artist": ""
+    },
+    "Upper Peru": {
+        "rarity": 148,
+        "artist": ""
+    },
+    "🗿 Kingdom of Rapa Nui 🗿": {
+        "rarity": 150,
+        "artist": ""
+    },
+    "Portuguese Cape Verde": {
+        "rarity": 152,
+        "artist": ""
+    },
+    "People's Republic of Mongolia": {
+        "rarity": 155,
+        "artist": "neburra_28409"
+    },
+    "German New Guinea": {
+        "rarity": 156,
+        "artist": ""
+    },
+    "Jewish Combat Organization": {
+        "rarity": 156,
+        "artist": ""
+    },
+    "Neutral Moresnet": {
+        "rarity": 157,
+        "artist": ""
+    },
+    "Khiva": {
+        "rarity": 158,
+        "artist": ""
+    },
+    "Polish Underground State": {
+        "rarity": 158,
+        "artist": ""
+    },
+    "Corsican Republic": {
+        "rarity": 159,
+        "artist": ""
+    },
+    "Russian Sagallo": {
+        "rarity": 159,
+        "artist": ""
+    },
+    "Biafra": {
+        "rarity": 160,
+        "artist": ""
+    },
+    "Kingdom of Albania": {
+        "rarity": 160,
+        "artist": ""
+    },
+    "Sultanate of Gowa": {
+        "rarity": 160,
+        "artist": ""
+    },
+    "Union of African States": {
+        "rarity": 161,
+        "artist": ""
+    },
+    "Boxer Rebels": {
+        "rarity": 162,
+        "artist": ""
+    },
+    "German Alsace-Lorraine": {
+        "rarity": 164,
+        "artist": ""
+    },
+    "Swedish Gold Coast": {
+        "rarity": 165,
+        "artist": ""
+    },
+    "Japanese Cambodia": {
+        "rarity": 165,
+        "artist": ""
+    },
+    "Swedish Saint Barthélemy": {
+        "rarity": 166,
+        "artist": ""
+    },
+    "Curonian Tobago": {
+        "rarity": 166,
+        "artist": ""
+    },
+    "Upper Volta": {
+        "rarity": 167,
+        "artist": ""
+    },
+    "Johor Sultanate": {
+        "rarity": 167,
+        "artist": "m.oxxy"
+    },
+    "Emirate of Nejd and Hasa": {
+        "rarity": 167,
+        "artist": ""
+    },
+    "Ubangi-Shari-Chad": {
+        "rarity": 168,
+        "artist": ""
+    },
+    "Republic of Maryland": {
+        "rarity": 169,
+        "artist": ""
+    },
+    "Duchy of Estonia": {
+        "rarity": 170,
+        "artist": ""
+    },
+    "Colonial Azores": {
+        "rarity": 172,
+        "artist": ""
+    },
+    "Nueva Galicia": {
+        "rarity": 173,
+        "artist": ""
+    },
+    "French Togoland": {
+        "rarity": 174,
+        "artist": ""
+    },
+    "Grand Duchy of Warsaw": {
+        "rarity": 175,
+        "artist": ""
+    },
+    "Ottoman Beylik": {
+        "rarity": 175,
+        "artist": ""
+    },
+    "State of Guayaquil": {
+        "rarity": 175,
+        "artist": ""
+    },
+    "Viet Cong": {
+        "rarity": 176,
+        "artist": ""
+    },
+    "Second Republic of Seychelles": {
+        "rarity": 178,
+        "artist": ""
+    },
+    "Dutch Surinam": {
+        "rarity": 178,
+        "artist": ""
+    },
+    "British Jamaica": {
+        "rarity": 178,
+        "artist": ""
+    },
+    "Kingdom of Serbia": {
+        "rarity": 180,
+        "artist": ""
+    },
+    "Republic of Entre Ríos": {
+        "rarity": 180,
+        "artist": ""
+    },
+    "Federal Republic of Tucumán": {
+        "rarity": 180,
+        "artist": ""
+    },
+    "Rhine Confederation": {
+        "rarity": 181,
+        "artist": ""
+    },
+    "French Territory of the Afars and the Issas": {
+        "rarity": 181,
+        "artist": ""
+    },
+    "Principality of Moldavia": {
+        "rarity": 183,
+        "artist": ""
+    },
+    "South African Republic": {
+        "rarity": 184,
+        "artist": ""
+    },
+    "Republic of Acre": {
+        "rarity": 185,
+        "artist": ""
+    },
+    "Kingdom of Haiti": {
+        "rarity": 187,
+        "artist": ""
+    },
+    "British Hong Kong": {
+        "rarity": 188,
+        "artist": ""
+    },
+    "Dominion of Newfoundland": {
+        "rarity": 189,
+        "artist": "unfunnyguy_."
+    },
+    "British Malta": {
+        "rarity": 190,
+        "artist": "godenfedey"
+    },
+    "Tibet": {
+        "rarity": 190,
+        "artist": ""
+    },
+    "British Singapore": {
+        "rarity": 191,
+        "artist": ""
+    },
+    "Tu'i Tonga": {
+        "rarity": 192,
+        "artist": "unfunnichez_"
+    },
+    "Kingdom of Middlesex": {
+        "rarity": 193,
+        "artist": ""
+    },
+    "Orange Free State": {
+        "rarity": 194,
+        "artist": ""
+    },
+    "British Guiana": {
+        "rarity": 194,
+        "artist": ""
+    },
+    "Cisplatina": {
+        "rarity": 195,
+        "artist": ""
+    },
+    "Poyais": {
+        "rarity": 195,
+        "artist": ""
+    },
+    "South Yemen": {
+        "rarity": 196,
+        "artist": ""
+    },
+    "Democratic Kampuchea": {
+        "rarity": 197,
+        "artist": ""
+    },
+    "People's Socialist Republic of Albania": {
+        "rarity": 198,
+        "artist": ""
+    },
+    "State of Los Altos": {
+        "rarity": 199,
+        "artist": ""
+    },
+    "British Tientsin": {
+        "rarity": 199,
+        "artist": ""
+    },
+    "4ball": {
+        "rarity": 200,
+        "artist": ""
+    },
+    "New Sweden": {
+        "rarity": 200,
+        "artist": ""
+    },
+    "Trucial States": {
+        "rarity": 200,
+        "artist": ""
+    },
+    "German Tientsin": {
+        "rarity": 201,
+        "artist": ""
+    },
+    "Portuguese India": {
+        "rarity": 201,
+        "artist": ""
+    },
+    "Danish India": {
+        "rarity": 201,
+        "artist": ""
+    },
+    "French India": {
+        "rarity": 201,
+        "artist": ""
+    },
+    "Colony of New South Wales": {
+        "rarity": 202,
+        "artist": ""
+    },
+    "British Leeward Islands": {
+        "rarity": 202,
+        "artist": ""
+    },
+    "Japanese Korea": {
+        "rarity": 203,
+        "artist": ""
+    },
+    "German Togoland": {
+        "rarity": 203,
+        "artist": ""
+    },
+    "Belgian Tientsin": {
+        "rarity": 203,
+        "artist": ""
+    },
+    "Saint Christopher-Nevis-Anguilla": {
+        "rarity": 204,
+        "artist": ""
+    },
+    "Saar Protectorate": {
+        "rarity": 205,
+        "artist": ""
+    },
+    "British Bahamas": {
+        "rarity": 207,
+        "artist": ""
+    },
+    "Portuguese Timor": {
+        "rarity": 208,
+        "artist": ""
+    },
+    "Swedish Pomerania": {
+        "rarity": 210,
+        "artist": ""
+    },
+    "Northern Cameroons": {
+        "rarity": 210,
+        "artist": ""
+    },
+    "British Honduras": {
+        "rarity": 210,
+        "artist": ""
+    },
+    "Portuguese Macau": {
+        "rarity": 212,
+        "artist": ""
+    },
+    "German Samoa": {
+        "rarity": 213,
+        "artist": ""
+    },
+    "Bani Khalid Emirate": {
+        "rarity": 214,
+        "artist": ""
+    },
+    "Southern Cameroons": {
+        "rarity": 215,
+        "artist": ""
+    },
+    "Occupied Olkusz": {
+        "rarity": 215,
+        "artist": ""
+    },
+    "The Great Republic of Rough and Ready": {
+        "rarity": 215,
+        "artist": ""
+    },
+    "Territory of Papua": {
+        "rarity": 216,
+        "artist": ""
+    },
+    "Bessarabian Germans": {
+        "rarity": 217,
+        "artist": "claythekat"
+    },
+    "Hudson Bay Company": {
+        "rarity": 218,
+        "artist": ""
+    },
+    "Spanish Haiti": {
+        "rarity": 220,
+        "artist": ""
+    },
+    "German Marshall Islands": {
+        "rarity": 226,
+        "artist": ""
+    },
+    "Free State of Bottleneck": {
+        "rarity": 228,
+        "artist": ""
+    },
+    "New Atlantis": {
+        "rarity": 229,
+        "artist": ""
+    },
+    "Silla": {
+        "rarity": 229,
+        "artist": ""
+    },
+    "Lan Xang": {
+        "rarity": 230,
+        "artist": ""
+    },
+    "Chiefdom of Cocollán": {
+        "rarity": 230,
+        "artist": ""
+    }
+}
