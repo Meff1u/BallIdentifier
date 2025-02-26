@@ -53,7 +53,7 @@
     },
     "Russtangle": {
         "rarity": 1,
-        "artist": ""
+        "artist": "ethan_heathcliff"
     },
     "0ball": {
         "rarity": 1,
@@ -157,7 +157,7 @@
     },
     "Abbasid Caliphate": {
         "rarity": 7,
-        "artist": ""
+        "artist": "claythekat"
     },
     "Sassanid Empire": {
         "rarity": 7,
@@ -173,6 +173,10 @@
     },
     "Ancient Egypt": {
         "rarity": 7,
+        "artist": ""
+    },
+    "Maurya Empire": {
+        "rarity": 8,
         "artist": ""
     },
     "Rashidun Caliphate": {
@@ -217,6 +221,10 @@
     },
     "Imperial Berlintangle": {
         "rarity": 8,
+        "artist": ""
+    },
+    "Kushan Empire": {
+        "rarity": 9,
         "artist": ""
     },
     "Song": {
@@ -307,13 +315,17 @@
         "rarity": 11,
         "artist": ""
     },
-    "Kingdom of England": {
-        "rarity": 12,
-        "artist": "dark3nd"
-    },
     "Imperial Rio de Janeiro": {
         "rarity": 12,
         "artist": ""
+    },
+    "Bolsheviks": {
+        "rarity": 12,
+        "artist": "id3ttwd"
+    },
+    "Kingdom of England": {
+        "rarity": 12,
+        "artist": "dark3nd"
     },
     "Warsaw Pact": {
         "rarity": 12,
@@ -333,11 +345,7 @@
     },
     "Kingdom of France": {
         "rarity": 12,
-        "artist": ""
-    },
-    "Bolsheviks": {
-        "rarity": 12,
-        "artist": "id3ttwd"
+        "artist": "thelegendarytacomuncher"
     },
     "Central Treaty Organization": {
         "rarity": 12,
@@ -481,6 +489,14 @@
     },
     "Assyrian Empire": {
         "rarity": 17,
+        "artist": ""
+    },
+    "Shaybanid Uzbek State": {
+        "rarity": 18,
+        "artist": ""
+    },
+    "Ostrogothic Kingdom": {
+        "rarity": 18,
         "artist": ""
     },
     "Kingdom of Greece": {
@@ -793,7 +809,7 @@
     },
     "East Berlin": {
         "rarity": 30,
-        "artist": ""
+        "artist": "finski._."
     },
     "East Francia": {
         "rarity": 30,
@@ -943,6 +959,10 @@
         "rarity": 36,
         "artist": ""
     },
+    "Kingdom of the Two Sicilies": {
+        "rarity": 37,
+        "artist": ""
+    },
     "League of Nations": {
         "rarity": 37,
         "artist": ""
@@ -965,7 +985,7 @@
     },
     "Second Polish Republic": {
         "rarity": 37,
-        "artist": ""
+        "artist": "finski._."
     },
     "Khwarazmian Empire": {
         "rarity": 37,
@@ -1115,6 +1135,10 @@
         "rarity": 44,
         "artist": ""
     },
+    "Ba'athist Iraq": {
+        "rarity": 45,
+        "artist": ""
+    },
     "Kazakh Khanate": {
         "rarity": 45,
         "artist": ""
@@ -1144,10 +1168,6 @@
         "artist": ""
     },
     "Grand Duchy of Baden": {
-        "rarity": 45,
-        "artist": ""
-    },
-    "Ba'athist Iraq": {
         "rarity": 45,
         "artist": ""
     },
@@ -1303,15 +1323,15 @@
         "rarity": 52,
         "artist": ""
     },
+    "Omani Empire": {
+        "rarity": 53,
+        "artist": ""
+    },
     "Shun": {
         "rarity": 53,
         "artist": ""
     },
     "Tajik Soviet Socialist Republic": {
-        "rarity": 53,
-        "artist": ""
-    },
-    "Omani Empire": {
         "rarity": 53,
         "artist": ""
     },
@@ -1467,11 +1487,11 @@
         "rarity": 61,
         "artist": ""
     },
-    "Mi'kma'ki": {
+    "Latvian Soviet Socialist Republic": {
         "rarity": 63,
         "artist": ""
     },
-    "Latvian Soviet Socialist Republic": {
+    "Mi'kma'ki": {
         "rarity": 63,
         "artist": ""
     },
@@ -1579,12 +1599,20 @@
         "rarity": 70,
         "artist": ""
     },
+    "French Morocco": {
+        "rarity": 71,
+        "artist": ""
+    },
     "Alash Autonomy": {
         "rarity": 71,
         "artist": ""
     },
     "Duchy of Normandy": {
         "rarity": 72,
+        "artist": ""
+    },
+    "Portuguese Mozambique": {
+        "rarity": 73,
         "artist": ""
     },
     "Riograndense Republic": {
@@ -1605,7 +1633,7 @@
     },
     "Germania": {
         "rarity": 76,
-        "artist": ""
+        "artist": "carloz4567_46650"
     },
     "Democratic Republic of Madagascar": {
         "rarity": 78,
@@ -1743,6 +1771,10 @@
         "rarity": 99,
         "artist": ""
     },
+    "French Mauritania": {
+        "rarity": 100,
+        "artist": ""
+    },
     "Bukharan People's Soviet Republic": {
         "rarity": 100,
         "artist": ""
@@ -1752,10 +1784,6 @@
         "artist": ""
     },
     "Kingdom of Cusco": {
-        "rarity": 100,
-        "artist": ""
-    },
-    "French Mauritania": {
         "rarity": 100,
         "artist": ""
     },
@@ -1913,7 +1941,7 @@
     },
     "Portuguese Cape Verde": {
         "rarity": 152,
-        "artist": ""
+        "artist": "dynsic"
     },
     "People's Republic of Mongolia": {
         "rarity": 155,
@@ -1971,11 +1999,11 @@
         "rarity": 164,
         "artist": ""
     },
-    "Swedish Gold Coast": {
+    "Japanese Cambodia": {
         "rarity": 165,
         "artist": ""
     },
-    "Japanese Cambodia": {
+    "Swedish Gold Coast": {
         "rarity": 165,
         "artist": ""
     },
@@ -2021,7 +2049,7 @@
     },
     "French Togoland": {
         "rarity": 174,
-        "artist": ""
+        "artist": ".astrokat."
     },
     "Grand Duchy of Warsaw": {
         "rarity": 175,
@@ -2083,12 +2111,20 @@
         "rarity": 185,
         "artist": ""
     },
+    "Spanish Sahara": {
+        "rarity": 186,
+        "artist": ""
+    },
     "Kingdom of Haiti": {
         "rarity": 187,
         "artist": ""
     },
     "British Hong Kong": {
         "rarity": 188,
+        "artist": ""
+    },
+    "Oregon Territory": {
+        "rarity": 189,
         "artist": ""
     },
     "Dominion of Newfoundland": {
@@ -2193,7 +2229,7 @@
     },
     "German Togoland": {
         "rarity": 203,
-        "artist": ""
+        "artist": "rabat.mapper"
     },
     "Belgian Tientsin": {
         "rarity": 203,
@@ -2237,7 +2273,7 @@
     },
     "Bani Khalid Emirate": {
         "rarity": 214,
-        "artist": ""
+        "artist": "._pudd_."
     },
     "Southern Cameroons": {
         "rarity": 215,
