@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1740668285",
+            "changes": [
+                "Updated to new spawn art in HistoryDex (Free City of Danzig)"
+            ]
+        },
+        {
             "timestamp": "1740515260",
             "changes": [
                 "Added HistoryDex to comparsion"
