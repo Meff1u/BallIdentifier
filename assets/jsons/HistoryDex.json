@@ -25,7 +25,7 @@
     },
     "Western Bloc": {
         "rarity": 0.8,
-        "artist": ""
+        "artist": "kobersv2"
     },
     "Eastern Bloc": {
         "rarity": 0.8,
@@ -37,7 +37,7 @@
     },
     "Golden Circle": {
         "rarity": 1,
-        "artist": ""
+        "artist": "unfunnichez_"
     },
     "Mongol Empire": {
         "rarity": 1,
@@ -45,7 +45,7 @@
     },
     "Intermarium": {
         "rarity": 1,
-        "artist": ""
+        "artist": "dynsic"
     },
     "Iberian Union": {
         "rarity": 1,
@@ -57,19 +57,19 @@
     },
     "0ball": {
         "rarity": 1,
-        "artist": ""
+        "artist": "ethan_heathcliff"
     },
     "French Third Republic": {
         "rarity": 2,
-        "artist": ""
+        "artist": "dark3nd"
     },
     "Soviet Union": {
         "rarity": 2,
-        "artist": ""
+        "artist": "dynsic"
     },
     "Nazi Germany": {
         "rarity": 2,
-        "artist": ""
+        "artist": "dark3nd"
     },
     "Russian Empire": {
         "rarity": 2,
@@ -85,7 +85,7 @@
     },
     "Roman Empire": {
         "rarity": 3,
-        "artist": ""
+        "artist": "unfunnichez_"
     },
     "First French Colonial Empire": {
         "rarity": 4,
@@ -93,7 +93,7 @@
     },
     "Dutch Empire": {
         "rarity": 4,
-        "artist": ""
+        "artist": "ethan_heathcliff"
     },
     "Qing": {
         "rarity": 4,
@@ -101,11 +101,11 @@
     },
     "German Empire": {
         "rarity": 5,
-        "artist": ""
+        "artist": "carolea"
     },
     "Empire of Japan": {
         "rarity": 5,
-        "artist": ""
+        "artist": "Ruy & Clay"
     },
     "Achaemenid Empire": {
         "rarity": 5,
@@ -113,7 +113,7 @@
     },
     "Macedonian Empire": {
         "rarity": 6,
-        "artist": ""
+        "artist": "dark3nd"
     },
     "Umayyad Caliphate": {
         "rarity": 6,
@@ -125,11 +125,11 @@
     },
     "Byzantine Empire": {
         "rarity": 6,
-        "artist": ""
+        "artist": "expinox"
     },
     "Qin": {
         "rarity": 6,
-        "artist": ""
+        "artist": "ethan_heathcliff"
     },
     "Xia Dynasty": {
         "rarity": 6,
@@ -141,7 +141,7 @@
     },
     "Maoist China": {
         "rarity": 6,
-        "artist": ""
+        "artist": "aydin_kai22"
     },
     "Carthage": {
         "rarity": 6,
@@ -149,11 +149,11 @@
     },
     "Confederal United States": {
         "rarity": 6,
-        "artist": ""
+        "artist": ".astrokat."
     },
     "Republic of China": {
         "rarity": 7,
-        "artist": ""
+        "artist": "susradist"
     },
     "Abbasid Caliphate": {
         "rarity": 7,
@@ -165,7 +165,7 @@
     },
     "Sumer": {
         "rarity": 7,
-        "artist": ""
+        "artist": "turnipofnazareth"
     },
     "Inca Empire": {
         "rarity": 7,
@@ -185,11 +185,11 @@
     },
     "Sui": {
         "rarity": 8,
-        "artist": ""
+        "artist": "navid_habibi"
     },
     "Timurid Empire": {
         "rarity": 8,
-        "artist": ""
+        "artist": "ethan_heathcliff"
     },
     "Kingdom of Great Britain": {
         "rarity": 8,
@@ -197,15 +197,15 @@
     },
     "Tang Dynasty": {
         "rarity": 8,
-        "artist": ""
+        "artist": "claythekat"
     },
     "Great Yuan": {
         "rarity": 8,
-        "artist": ""
+        "artist": "claythekat"
     },
     "Han": {
         "rarity": 8,
-        "artist": ""
+        "artist": "___.artycami.___"
     },
     "Polish-Lithuanian Commonwealth": {
         "rarity": 8,
@@ -213,11 +213,11 @@
     },
     "Napoleonic France": {
         "rarity": 8,
-        "artist": ""
+        "artist": "claythekat"
     },
     "Indus Valley Civilization": {
         "rarity": 8,
-        "artist": ""
+        "artist": "claythekat"
     },
     "Imperial Berlintangle": {
         "rarity": 8,
@@ -229,7 +229,7 @@
     },
     "Song": {
         "rarity": 9,
-        "artist": ""
+        "artist": "astra_.hungary"
     },
     "Great Ming": {
         "rarity": 9,
@@ -237,7 +237,7 @@
     },
     "Safavid Empire": {
         "rarity": 9,
-        "artist": ""
+        "artist": "kobersv2"
     },
     "Confederate States": {
         "rarity": 9,
@@ -245,7 +245,7 @@
     },
     "Zhou": {
         "rarity": 9,
-        "artist": ""
+        "artist": "akirasoku_"
     },
     "Union Army": {
         "rarity": 9,
@@ -253,7 +253,7 @@
     },
     "Kingdom of Prussia": {
         "rarity": 9,
-        "artist": ""
+        "artist": "cheeseandsoup"
     },
     "Second French Empire": {
         "rarity": 9,
@@ -277,7 +277,7 @@
     },
     "Kingdom of Aksum": {
         "rarity": 10,
-        "artist": ""
+        "artist": "dynsic"
     },
     "Imperial London": {
         "rarity": 10,
@@ -285,11 +285,11 @@
     },
     "Maphilindo Confederation": {
         "rarity": 10,
-        "artist": ""
+        "artist": "xutxie"
     },
     "Ancient Japan": {
         "rarity": 10,
-        "artist": ""
+        "artist": "censorbar_"
     },
     "Austria-Hungary": {
         "rarity": 10,
@@ -297,7 +297,7 @@
     },
     "Xiongnu": {
         "rarity": 10,
-        "artist": ""
+        "artist": "ancientdex"
     },
     "Tsardom of Russia": {
         "rarity": 11,
@@ -1517,7 +1517,7 @@
     },
     "German Kamerun": {
         "rarity": 65,
-        "artist": ""
+        "artist": "pho.supremacist"
     },
     "Knight's Templar": {
         "rarity": 65,
@@ -1665,7 +1665,7 @@
     },
     "California Republic": {
         "rarity": 81,
-        "artist": ""
+        "artist": "lilhector_"
     },
     "Protectorate of Bohemia and Moravia": {
         "rarity": 81,
@@ -1829,7 +1829,7 @@
     },
     "Greater Lebanon": {
         "rarity": 109,
-        "artist": ""
+        "artist": "barnabdulla"
     },
     "Free City of Danzig": {
         "rarity": 114,
