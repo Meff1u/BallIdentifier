@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1741435693",
+            "changes": [
+                "Updated to new HistoryDex ball (Kalmar Copenhagen)"
+            ]
+        },
+        {
             "timestamp": "1741371338",
             "changes": [
                 "Updated to new spawn art in Empireballs (Soviet Union)",
