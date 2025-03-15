@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1742044173",
+            "changes": [
+                "Updated to new Empireballs balls (Qin Dynasty, First Haitian Empire)",
+                "Updated Empireballs rarities"
+            ]
+        },
+        {
             "timestamp": "1742027661",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Xiongnu, British Raj)"
