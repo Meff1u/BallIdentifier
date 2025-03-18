@@ -35,6 +35,10 @@
         "rarity": 1,
         "artist": "m.axii"
     },
+    "Iberian Union": {
+        "rarity": 1,
+        "artist": "floridianirishguy"
+    },
     "Golden Circle": {
         "rarity": 1,
         "artist": "unfunnichez_"
@@ -46,10 +50,6 @@
     "Intermarium": {
         "rarity": 1,
         "artist": "dynsic"
-    },
-    "Iberian Union": {
-        "rarity": 1,
-        "artist": "ethan_heathcliff"
     },
     "Russtangle": {
         "rarity": 1,
@@ -87,13 +87,13 @@
         "rarity": 3,
         "artist": "unfunnichez_"
     },
+    "Dutch Empire": {
+        "rarity": 4,
+        "artist": "n0tch21_98933"
+    },
     "First French Colonial Empire": {
         "rarity": 4,
         "artist": "edougamer"
-    },
-    "Dutch Empire": {
-        "rarity": 4,
-        "artist": "ethan_heathcliff"
     },
     "Qing": {
         "rarity": 4,
@@ -110,6 +110,10 @@
     "Achaemenid Empire": {
         "rarity": 5,
         "artist": "claythekat"
+    },
+    "Carthage": {
+        "rarity": 6,
+        "artist": "n0tch21_98933"
     },
     "Macedonian Empire": {
         "rarity": 6,
@@ -143,10 +147,6 @@
         "rarity": 6,
         "artist": "aydin_kai22"
     },
-    "Carthage": {
-        "rarity": 6,
-        "artist": "justabdulla"
-    },
     "Confederal United States": {
         "rarity": 6,
         "artist": ".astrokat."
@@ -177,7 +177,7 @@
     },
     "Maurya Empire": {
         "rarity": 8,
-        "artist": "finski._."
+        "artist": "edougamer & adamtheteckel"
     },
     "Rashidun Caliphate": {
         "rarity": 8,
@@ -361,7 +361,7 @@
     },
     "Imperial Berlin": {
         "rarity": 13,
-        "artist": "reichmann"
+        "artist": "claythekat"
     },
     "Mamluk Sultanate": {
         "rarity": 13,
@@ -463,6 +463,10 @@
         "rarity": 16,
         "artist": "._pudd_."
     },
+    "French Community": {
+        "rarity": 17,
+        "artist": "argahalakbatak"
+    },
     "Frankish Empire": {
         "rarity": 17,
         "artist": "imposial"
@@ -483,10 +487,6 @@
         "rarity": 17,
         "artist": "justabdulla"
     },
-    "French Community": {
-        "rarity": 17,
-        "artist": "argahalakbatak"
-    },
     "Mayan Empire": {
         "rarity": 17,
         "artist": "mynames212"
@@ -502,6 +502,10 @@
     "Ostrogothic Kingdom": {
         "rarity": 18,
         "artist": "lilhector_"
+    },
+    "Kingdom of Portugal": {
+        "rarity": 18,
+        "artist": "vexab"
     },
     "Kingdom of Greece": {
         "rarity": 18,
@@ -635,6 +639,10 @@
         "rarity": 21,
         "artist": "argahalakbatak"
     },
+    "County of Portugal": {
+        "rarity": 22,
+        "artist": "vexab"
+    },
     "Socialist Federal Republic of Yugoslavia": {
         "rarity": 22,
         "artist": "not_woterbottle"
@@ -731,6 +739,10 @@
         "rarity": 25,
         "artist": "vexab"
     },
+    "Kingdom of Galicia": {
+        "rarity": 26,
+        "artist": "therealxiomara"
+    },
     "Vichy France": {
         "rarity": 26,
         "artist": "bfbrobloxplayz"
@@ -759,6 +771,10 @@
         "rarity": 27,
         "artist": "._pudd_."
     },
+    "Samanid Empire": {
+        "rarity": 28,
+        "artist": "itscubicmapper"
+    },
     "First Brazilian Republic": {
         "rarity": 28,
         "artist": "acrestronk"
@@ -770,10 +786,6 @@
     "Akkadian Empire": {
         "rarity": 28,
         "artist": ".crean"
-    },
-    "Samanid Empire": {
-        "rarity": 28,
-        "artist": "itscubicmapper"
     },
     "Khanate of Sibir": {
         "rarity": 28,
@@ -790,6 +802,18 @@
     "Middle Francia": {
         "rarity": 29,
         "artist": "cawthedwal"
+    },
+    "East Berlin": {
+        "rarity": 30,
+        "artist": "floridianirishguy"
+    },
+    "Kingdom of Westphalia": {
+        "rarity": 30,
+        "artist": "._pudd_."
+    },
+    "Italian Regency of Carnaro": {
+        "rarity": 30,
+        "artist": "vexab"
     },
     "Grand Duchy of Moscow": {
         "rarity": 30,
@@ -810,10 +834,6 @@
     "Kingdom of Nepal": {
         "rarity": 30,
         "artist": "navid_habibi"
-    },
-    "East Berlin": {
-        "rarity": 30,
-        "artist": "finski._."
     },
     "East Francia": {
         "rarity": 30,
@@ -899,6 +919,10 @@
         "rarity": 32,
         "artist": "lilhector_"
     },
+    "Gaddafist Libya": {
+        "rarity": 33,
+        "artist": "not_woterbottle"
+    },
     "Northern Wei": {
         "rarity": 33,
         "artist": "unfunnichez_"
@@ -907,10 +931,6 @@
         "rarity": 33,
         "artist": "claythekat"
     },
-    "Gaddafist Libya": {
-        "rarity": 33,
-        "artist": "justabdulla"
-    },
     "Grand Principality of Transylvania": {
         "rarity": 34,
         "artist": "my.name.is.angelia"
@@ -918,6 +938,10 @@
     "Viceroyalty of Peru": {
         "rarity": 34,
         "artist": "unfunnichez_"
+    },
+    "Napoleonic Kingdom of Italy": {
+        "rarity": 35,
+        "artist": "acrestronk"
     },
     "Swedish Overseas Colonies": {
         "rarity": 35,
@@ -1243,6 +1267,10 @@
         "rarity": 49,
         "artist": "king_of_pingas"
     },
+    "Old Swiss Confederacy": {
+        "rarity": 50,
+        "artist": "bhapydageek"
+    },
     "Romanian People's Republic": {
         "rarity": 50,
         "artist": "finski._."
@@ -1331,6 +1359,10 @@
         "rarity": 53,
         "artist": "mynames212"
     },
+    "French Sudan": {
+        "rarity": 53,
+        "artist": "bfbrobloxplayz"
+    },
     "Shun": {
         "rarity": 53,
         "artist": "._pudd_."
@@ -1338,10 +1370,6 @@
     "Tajik Soviet Socialist Republic": {
         "rarity": 53,
         "artist": "pixology"
-    },
-    "French Sudan": {
-        "rarity": 53,
-        "artist": "bfbrobloxplayz"
     },
     "Kuban People's Republic": {
         "rarity": 53,
@@ -1606,6 +1634,10 @@
     "French Morocco": {
         "rarity": 71,
         "artist": "not_woterbottle"
+    },
+    "Kingdom of the Algarves": {
+        "rarity": 71,
+        "artist": "dudewholikescountryballs"
     },
     "Alash Autonomy": {
         "rarity": 71,
@@ -2083,6 +2115,10 @@
         "rarity": 178,
         "artist": "angelia01881"
     },
+    "County of Vaduz": {
+        "rarity": 180,
+        "artist": "censorbar_ && ._pudd_."
+    },
     "Kingdom of Serbia": {
         "rarity": 180,
         "artist": "finski._."
@@ -2094,6 +2130,10 @@
     "Federal Republic of Tucumán": {
         "rarity": 180,
         "artist": "lilhector_"
+    },
+    "Couto Misto": {
+        "rarity": 181,
+        "artist": "vexab"
     },
     "Rhine Confederation": {
         "rarity": 181,
@@ -2155,13 +2195,13 @@
         "rarity": 193,
         "artist": "_chaotical"
     },
+    "British Guiana": {
+        "rarity": 194,
+        "artist": "shellfish72"
+    },
     "Orange Free State": {
         "rarity": 194,
         "artist": "theyluvashlynn."
-    },
-    "British Guiana": {
-        "rarity": 194,
-        "artist": "keldoidotec"
     },
     "Cisplatina": {
         "rarity": 195,
