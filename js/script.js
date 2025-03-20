@@ -321,3 +321,54 @@ document.getElementById("copyButton").addEventListener("click", function () {
         copyButton.disabled = false;
     }, 800);
 });
+
+const body = document.body;
+const dragOverlay = document.createElement("div");
+dragOverlay.className = "drag-overlay";
+dragOverlay.textContent = "Drop your image/discord URL here";
+document.body.appendChild(dragOverlay);
+
+document.addEventListener("dragover", (event) => {
+    event.preventDefault();
+    body.classList.add("dragging");
+    dragOverlay.classList.add("visible");
+});
+
+document.addEventListener("dragleave", (event) => {
+    if (event.target === document || event.target === body) {
+        body.classList.remove("dragging");
+        dragOverlay.classList.remove("visible");
+    }
+});
+
+document.addEventListener("drop", (event) => {
+    event.preventDefault();
+    body.classList.remove("dragging");
+    dragOverlay.classList.remove("visible");
+
+    const files = event.dataTransfer.files;
+    const text = event.dataTransfer.getData("text/plain");
+
+    if (files.length > 0) {
+        const file = files[0];
+        if (file.type.startsWith("image/")) {
+            handleFileUpload(file);
+        } else {
+            alert("Please drop a valid image file.");
+        }
+    } else if (text) {
+        const discordImageUrlPattern =
+            /^https:\/\/(cdn\.discordapp\.com|media\.discordapp\.net)\/attachments\/\d+\/\d+\/[^?]+\.(png|jpg|jpeg|gif|webp)(\?.*)?$/;
+        if (discordImageUrlPattern.test(text)) {
+            showLoadingPopup("Fetching...");
+            downloadImage(text);
+        } else {
+            alert("Please drop a valid Discord image URL.");
+        }
+    }
+});
+
+function handleFileUpload(file) {
+    showLoadingPopup("Uploading...");
+    checkFileSize(file);
+}

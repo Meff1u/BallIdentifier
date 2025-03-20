@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1742467466",
+            "changes": [
+                "Added drag and drop function"
+            ]
+        },
+        {
             "timestamp": "1742336675",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Territory of Papua)"
