@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1742739127",
+            "changes": [
+                "Updated to new Ballsdex ball (ASEAN)"
+            ]
+        },
+        {
             "timestamp": "1742569667",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Mayan Empire)"
