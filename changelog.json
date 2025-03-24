@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1742834494",
+            "changes": [
+                "Updated Ballsdex rarities"
+            ]
+        },
+        {
             "timestamp": "1742806398",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Lebanon)"
