@@ -68,12 +68,12 @@ function checkArtsExist(ballName) {
 
 function showPopup(ballName, arts) {
     const popup = document.getElementById("popup");
-    const popupHeader = document.getElementById("popup-header"); // Nowy element nagłówka
+    const popupHeader = document.getElementById("popup-header");
     const popupContent = document.getElementById("popup-content");
     const overlay = document.getElementById("overlay");
 
     popupContent.innerHTML = "";
-    popupHeader.textContent = `Previous Arts for ${ballName}`; // Ustawienie tekstu nagłówka
+    popupHeader.textContent = `Previous Arts for ${ballName}`;
 
     arts.forEach((art) => {
         const artContainer = document.createElement("div");
@@ -82,6 +82,7 @@ function showPopup(ballName, arts) {
         const artImage = document.createElement("img");
         artImage.src = `../assets/bd-previous-arts/${ballName}/${art.file}`;
         artImage.alt = `${ballName} art`;
+        artImage.loading = "lazy";
 
         const artistInfo = document.createElement("p");
         artistInfo.textContent = `Artist: ${art.artist}`;
@@ -92,7 +93,6 @@ function showPopup(ballName, arts) {
         artContainer.appendChild(artImage);
         artContainer.appendChild(artistInfo);
         artContainer.appendChild(untilInfo);
-
         popupContent.appendChild(artContainer);
     });
 
