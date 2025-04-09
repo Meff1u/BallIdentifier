@@ -63,6 +63,11 @@
         { "file": "1.webp", "artist": "Polandball Wiki", "until": "April 2023" },
         { "file": "2.webp", "artist": "✠ ᴀᴜsᴛʀɪᴀ-ʜᴜɴɢᴀʀʏ ✠#7539", "until": "February 2025" }
     ],
+    "Poland": [
+        { "file": "1.webp", "artist": "Polandball Wiki", "until": "March 2023" },
+        { "file": "2.webp", "artist": "Spom Magetti#2267", "until": "January 2024" },
+        { "file": "3.webp", "artist": "borzologist", "until": "September 2024" }
+    ],
     "Roman Empire": [
         { "file": "1.webp", "artist": "_RAAH", "until": "November 2023" },
         { "file": "2.webp", "artist": "lucas", "until": "April 2025" }
