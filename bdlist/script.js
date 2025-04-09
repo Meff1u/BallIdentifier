@@ -4,50 +4,67 @@ fetch("../assets/jsons/Ballsdex.json")
         const ballsList = document.getElementById("balls-list");
         const loading = document.getElementById("loading");
         const loadingProgress = document.getElementById("loading-progress");
+        const sortOptions = document.getElementById("sort-options");
         const imagePromises = [];
         const totalImages = Object.keys(data).length;
         let loadedImages = 0;
 
-        for (const [name, details] of Object.entries(data)) {
-            const ballDiv = document.createElement("div");
-            ballDiv.className = "ball-container";
+        let ballsData = Object.entries(data);
 
-            const nameElement = document.createElement("h2");
-            nameElement.textContent = name;
-            ballDiv.appendChild(nameElement);
+        function renderBalls() {
+            ballsList.innerHTML = "";
+            ballsData.forEach(([name, details]) => {
+                const ballDiv = document.createElement("div");
+                ballDiv.className = "ball-container";
 
-            const imgElement = document.createElement("img");
-            imgElement.src = `../assets/BallsdexCompressed/${name}.webp`;
-            imgElement.alt = name;
+                const nameElement = document.createElement("h2");
+                nameElement.textContent = name;
+                ballDiv.appendChild(nameElement);
 
-            const imgPromise = new Promise((resolve, reject) => {
-                imgElement.onload = () => {
-                    loadedImages++;
-                    const progress = Math.round((loadedImages / totalImages) * 100);
-                    loadingProgress.textContent = `${progress}%`;
-                    resolve();
-                };
-                imgElement.onerror = reject;
+                const imgElement = document.createElement("img");
+                imgElement.src = `../assets/BallsdexCompressed/${name}.webp`;
+                imgElement.alt = name;
+
+                const imgPromise = new Promise((resolve, reject) => {
+                    imgElement.onload = () => {
+                        loadedImages++;
+                        const progress = Math.round((loadedImages / totalImages) * 100);
+                        loadingProgress.textContent = `${progress}%`;
+                        resolve();
+                    };
+                    imgElement.onerror = reject;
+                });
+                imagePromises.push(imgPromise);
+
+                ballDiv.appendChild(imgElement);
+
+                const detailsElement = document.createElement("p");
+                detailsElement.textContent = `Rarity: #${details.rarity} | Artist: ${details.artist}`;
+                ballDiv.appendChild(detailsElement);
+
+                ballDiv.addEventListener("click", () => {
+                    checkArtsExist(name);
+                });
+
+                ballsList.appendChild(ballDiv);
             });
-            imagePromises.push(imgPromise);
-
-            ballDiv.appendChild(imgElement);
-
-            const detailsElement = document.createElement("p");
-            detailsElement.textContent = `Rarity: #${details.rarity} | Artist: ${details.artist}`;
-            ballDiv.appendChild(detailsElement);
-
-            ballDiv.addEventListener("click", () => {
-                checkArtsExist(name);
-            });
-
-            ballsList.appendChild(ballDiv);
         }
+
+        sortOptions.addEventListener("change", () => {
+            const sortBy = sortOptions.value;
+            if (sortBy === "rarity") {
+                ballsData.sort((a, b) => a[1].rarity - b[1].rarity);
+            } else if (sortBy === "alphabetically") {
+                ballsData.sort((a, b) => a[0].localeCompare(b[0]));
+            }
+            renderBalls();
+        });
 
         Promise.all(imagePromises)
             .then(() => {
                 loading.style.display = "none";
                 ballsList.style.display = "flex";
+                renderBalls();
             })
             .catch((error) => console.error("Error loading images:", error));
     })

@@ -232,3 +232,26 @@ h2 {
 #popup-close:hover {
     background-color: #ff6666;
 }
+
+#sort-options {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+#sort-options:hover {
+    background-color: #333;
+    border-color: #555;
+}
+
+#sort-options:focus {
+    border-color: #a94dc1;
+    box-shadow: 0 0 5px rgba(169, 77, 193, 0.5);
+}
