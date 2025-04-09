@@ -13,17 +13,24 @@
         { "file": "1.png", "artist": "Icariaball", "until": "January 2023" },
         { "file": "2.png", "artist": "GlitchGamer", "until": "March 2024" }
     ],
+    "Algeria": [
+        { "file": "1.png", "artist": "Polandball Wiki", "until": "December 2022" },
+        { "file": "2.png", "artist": "tyromix09", "until": "December 2023" }
+    ],
     "Canada": [
-        { "file": "1.png", "artist": "✦ Canadaball ✦", "until": "February 2025" }
+        { "file": "1.png", "artist": "Polandball Wiki", "until": "December 2022" },
+        { "file": "2.png", "artist": "✦ Canadaball ✦", "until": "February 2025" }
     ],
     "Cape Verde": [
         { "file": "1.png", "artist": "cattitan", "until": "April 2025" }
     ],
     "Colombia": [
-        { "file": "1.png", "artist": "pawsicles", "until": "April 2025" }
+        { "file": "1.png", "artist": "Catty Girl", "until": "October 2023" },
+        { "file": "2.png", "artist": "pawsicles", "until": "April 2025" }
     ],
     "Confederate States": [
-        { "file": "1.png", "artist": "Sunlight", "until": "April 2025" }
+        { "file": "1.png", "artist": "Polandball Wiki", "until": "July 2023" },
+        { "file": "2.png", "artist": "Sunlight", "until": "April 2025" }
     ],
     "East Germany": [
         { "file": "1.png", "artist": "franci", "until": "February 2025" }
@@ -32,23 +39,29 @@
         { "file": "1.png", "artist": "gmo", "until": "April 2025" }
     ],
     "Lebanon": [
-        { "file": "1.png", "artist": "guadeterre", "until": "March 2025" },
-        { "file": "2.png", "artist": "snowythesillykitty", "until": "April 2025" }
+        { "file": "1.png", "artist": "LEBANONball", "until": "October 2023" },
+        { "file": "2.png", "artist": "guadeterre", "until": "March 2025" },
+        { "file": "3.png", "artist": "snowythesillykitty", "until": "April 2025" }
     ],
     "Namibia": [
-        { "file": "1.png", "artist": "AUSTRIA-HUNGARY#7539", "until": "February 2025" }
+        { "file": "1.png", "artist": "Polandball Wiki", "until": "April 2023" },
+        { "file": "2.png", "artist": "AUSTRIA-HUNGARY#7539", "until": "February 2025" }
     ],
     "Roman Empire": [
-        { "file": "1.png", "artist": "lucas", "until": "April 2025" }
+        { "file": "1.png", "artist": "_RAAH", "until": "November 2023" },
+        { "file": "2.png", "artist": "lucas", "until": "April 2025" }
     ],
     "Russian Empire": [
+        { "file": "1.png", "artist": "Polandball Wiki", "until": "March 2023" },
+        { "file": "2.png", "artist": "Phaser#4701", "until": "January 2024" },
         { "file": "1.png", "artist": "cattitan", "until": "March 2025" }
     ],
     "Saint Kitts and Nevis": [
         { "file": "1.png", "artist": "cattitan", "until": "February 2025" }
     ],
     "Syria": [
-        { "file": "1.png", "artist": "BFBRblx", "until": "February 2025" }
+        { "file": "1.png", "artist": "RealSyriaball", "until": "December 2023" },
+        { "file": "2.png", "artist": "BFBRblx", "until": "February 2025" }
     ],
     "Third French Republic": [
         { "file": "1.png", "artist": "pool", "until": "April 2025" }
