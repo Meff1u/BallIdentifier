@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1744193578",
+            "changes": [
+                "Updated to new Empireballs balls (Belgian Colonial Empire, Empire of China, Gupta Empire)",
+                "Updated to new spawn art in Empireballs (Portuguese Empire)"
+            ]
+        },
+        {
             "timestamp": "1744127111",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Colombia)"

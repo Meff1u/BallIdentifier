@@ -171,6 +171,10 @@
     "rarity": 28,
     "artist": "alexlesigma"
   },
+  "Gupta Empire": {
+    "rarity": 29,
+    "artist": "xhousepets"
+  },
   "Caral-Supe City": {
     "rarity": 29,
     "artist": "deutsches.kaiserreich"
@@ -227,128 +231,136 @@
     "rarity": 42,
     "artist": "Unknown"
   },
-  "Dutch Republic": {
+  "Belgian Colonial Empire": {
     "rarity": 43,
+    "artist": "account_gmd"
+  },
+  "Dutch Republic": {
+    "rarity": 44,
     "artist": "clapois1"
   },
   "Seljuk Turks": {
-    "rarity": 44,
+    "rarity": 45,
     "artist": "Unknown"
   },
   "Kalmar Union": {
-    "rarity": 45,
+    "rarity": 46,
     "artist": "KnowHowYT"
   },
   "Kingdom of Bavaria": {
-    "rarity": 46,
+    "rarity": 47,
     "artist": "AratharMX"
   },
   "Japanese Empire": {
-    "rarity": 47,
+    "rarity": 48,
     "artist": "topwanted_"
   },
   "Tsardom of Russia": {
-    "rarity": 48,
+    "rarity": 49,
     "artist": "Unknown"
   },
   "Austria-Hungary": {
-    "rarity": 49,
+    "rarity": 50,
     "artist": "deutsches.kaiserreich"
   },
   "Kingdom of Georgia": {
-    "rarity": 49,
+    "rarity": 50,
     "artist": "Unknown"
   },
   "Ilkhanate": {
-    "rarity": 50,
+    "rarity": 51,
     "artist": "Diictodom"
   },
+  "Empire of China": {
+    "rarity": 52,
+    "artist": "account_gmd"
+  },
   "Kievan Rus": {
-    "rarity": 51,
+    "rarity": 53,
     "artist": "KaliningradGeneral"
   },
   "Kazakh Khanate": {
-    "rarity": 52,
+    "rarity": 54,
     "artist": "Unknown"
   },
   "Roman Empire": {
-    "rarity": 53,
+    "rarity": 55,
     "artist": "Unknown"
   },
   "Kingdom of Bohemia": {
-    "rarity": 54,
+    "rarity": 56,
     "artist": "Hissen"
   },
   "Majapahit Empire": {
-    "rarity": 54,
+    "rarity": 56,
     "artist": "Hissen"
   },
   "First Mexican Empire": {
-    "rarity": 55,
+    "rarity": 57,
     "artist": "Polska Ball#9770"
   },
   "British Empire": {
-    "rarity": 56,
+    "rarity": 58,
     "artist": "Unknown"
   },
   "First Haitian Empire": {
-    "rarity": 57,
+    "rarity": 59,
     "artist": "._themagicalflame_."
   },
   "Second Mexican Empire": {
-    "rarity": 58,
+    "rarity": 60,
     "artist": "Polska Ball#9770"
   },
   "Ghana Empire": {
-    "rarity": 59,
-    "artist": "deutsches.kaiserreich"
-  },
-  "Mongol Empire": {
-    "rarity": 60,
-    "artist": "imperial_russian"
-  },
-  "Yuan Dynasty": {
     "rarity": 61,
     "artist": "deutsches.kaiserreich"
   },
-  "Kingdom of Bosnia": {
+  "Mongol Empire": {
     "rarity": 62,
-    "artist": "Austro"
+    "artist": "imperial_russian"
   },
-  "German Empire": {
+  "Yuan Dynasty": {
     "rarity": 63,
     "artist": "deutsches.kaiserreich"
   },
-  "Ottoman Empire": {
+  "Kingdom of Bosnia": {
     "rarity": 64,
+    "artist": "Austro"
+  },
+  "German Empire": {
+    "rarity": 65,
+    "artist": "deutsches.kaiserreich"
+  },
+  "Ottoman Empire": {
+    "rarity": 66,
     "artist": "Erob08"
   },
   "Sokoto Caliphate": {
-    "rarity": 65,
-    "artist": "Unknown"
-  },
-  "Swedish Empire": {
-    "rarity": 66,
-    "artist": "Unknown"
-  },
-  "Portuguese Empire": {
     "rarity": 67,
     "artist": "Unknown"
   },
-  "Almohad Caliphate": {
+  "Swedish Empire": {
     "rarity": 68,
     "artist": "Unknown"
   },
-  "Tu'i Tonga": {
+  "Portuguese Empire": {
     "rarity": 69,
+    "artist": "dark3nd"
+  },
+  "Almohad Caliphate": {
+    "rarity": 70,
+    "artist": "Unknown"
+  },
+  "Tu'i Tonga": {
+    "rarity": 71,
     "artist": "deutsches.kaiserreich"
   },
   "Kingdom of Egypt": {
-    "rarity": 70,
+    "rarity": 72,
     "artist": "AquoteunquotePerson"
   },
   "Assyria": {
-    "rarity": 71,
+    "rarity": 73,
     "artist": "Unknown"
   }
 }
