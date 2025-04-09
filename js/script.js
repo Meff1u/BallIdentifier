@@ -372,3 +372,7 @@ function handleFileUpload(file) {
     showLoadingPopup("Uploading...");
     checkFileSize(file);
 }
+
+document.getElementById("spawnArtsButton").addEventListener("click", function () {
+    window.open(`${document.URL}bdlist`, "_blank");
+});

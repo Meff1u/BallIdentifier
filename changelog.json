@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1744215721",
+            "changes": [
+                "Added new subpage with list of all Ballsdex spawn arts (with previous one aswell, but still updating)"
+            ]
+        },
+        {
             "timestamp": "1744193578",
             "changes": [
                 "Updated to new Empireballs balls (Belgian Colonial Empire, Empire of China, Gupta Empire)",

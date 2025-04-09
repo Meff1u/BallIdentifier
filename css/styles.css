@@ -412,3 +412,22 @@ body.dragging .container {
 .drag-overlay.visible {
     opacity: 1;
 }
+
+.spawn-arts-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    background-color: #1e88e5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 50;
+    transition: background-color 0.3s;
+}
+
+.spawn-arts-button:hover {
+    background-color: #1565c0;
+}
