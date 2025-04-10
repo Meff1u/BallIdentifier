@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "x",
+            "changes": [
+                "Updated to new spawn arts in Empireballs (Almohad Caliphate, Spanish Empire, Galactic Empire, Kievan Rus)"
+            ]
+        },
+        {
             "timestamp": "1744215721",
             "changes": [
                 "Added new subpage with list of all Ballsdex spawn arts (with previous one aswell, but still updating)"
