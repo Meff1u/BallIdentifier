@@ -90,6 +90,21 @@
         { "file": "1.webp", "artist": "Maxidation", "until": "March 2024" },
         { "file": "2.webp", "artist": "lavin", "until": "September 2024" }
     ],
+    "Benin": [
+        { "file": "1.webp", "artist": "cattitan", "until": "September 2024" },
+        { "file": "2.webp", "artist": "fakedwebb", "until": "November 2024" }
+    ],
+    "Bhutan": [
+        { "file": "1.webp", "artist": "Polandball Wiki", "until": "January 2023" },
+        { "file": "2.webp", "artist": "Polandball Wiki", "until": "March 2024" }
+    ],
+    "Bolivia": [
+        { "file": "1.webp", "artist": "T4RTUFO", "until": "March 2024" }
+    ],
+    "Bosnia and Herzegovina": [
+        { "file": "1.webp", "artist": "kenan", "until": "October 2023" },
+        { "file": "2.webp", "artist": "zentherando", "until": "November 2024" }
+    ],
     "Canada": [
         { "file": "1.webp", "artist": "Polandball Wiki", "until": "December 2022" },
         { "file": "2.webp", "artist": "✦ Canadaball ✦", "until": "February 2025" }
