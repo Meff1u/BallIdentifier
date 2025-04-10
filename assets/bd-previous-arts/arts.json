@@ -39,6 +39,21 @@
     "Antarctica": [
         { "file": "1.webp", "artist": "tyromix09", "until": "December 2023" }
     ],
+    "Argentina": [
+        { "file": "1.webp", "artist": "Mely Val", "until": "February 2024" }
+    ],
+    "Armenia": [
+        { "file": "1.webp", "artist": "armeniaball", "until": "March 2024" },
+        { "file": "2.webp", "artist": "dark", "until": "May 2024" },
+        { "file": "3.webp", "artist": "britains_mapper", "until": "September 2024" }
+    ],
+    "Australia": [
+        { "file": "1.webp", "artist": "ArticChip", "until": "January 2024" },
+        { "file": "2.webp", "artist": "hecker", "until": "July 2024" }
+    ],
+    "Austria": [
+        { "file": "1.webp", "artist": "Brotherlandball", "until": "January 2024" }
+    ],
     "Canada": [
         { "file": "1.webp", "artist": "Polandball Wiki", "until": "December 2022" },
         { "file": "2.webp", "artist": "✦ Canadaball ✦", "until": "February 2025" }
