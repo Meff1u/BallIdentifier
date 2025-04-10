@@ -82,6 +82,14 @@
     "Barbados": [
         { "file": "1.webp", "artist": "Reichy", "until": "October 2024" }
     ],
+    "Belarus": [
+        { "file": "1.webp", "artist": "Polandball Wiki", "until": "January 2023" },
+        { "file": "2.webp", "artist": "franc3s lov3ly sh!trag", "until": "October 2023" }
+    ],
+    "Belgium": [
+        { "file": "1.webp", "artist": "Maxidation", "until": "March 2024" },
+        { "file": "2.webp", "artist": "lavin", "until": "September 2024" }
+    ],
     "Canada": [
         { "file": "1.webp", "artist": "Polandball Wiki", "until": "December 2022" },
         { "file": "2.webp", "artist": "✦ Canadaball ✦", "until": "February 2025" }
