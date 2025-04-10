@@ -54,6 +54,24 @@
     "Austria": [
         { "file": "1.webp", "artist": "Brotherlandball", "until": "January 2024" }
     ],
+    "Austria-Hungary": [
+        { "file": "1.webp", "artist": "AaronC14", "until": "December 2022" },
+        { "file": "2.webp", "artist": "AaronC14", "until": "February 2023" },
+        { "file": "3.webp", "artist": "Ethanel-A", "until": "August 2024" }
+    ],
+    "Austrian Empire": [
+        { "file": "1.webp", "artist": "kaio.shin", "until": "August 2024" } 
+    ],
+    "Azerbaijan": [
+        { "file": "1.webp", "artist": "Polandball Wiki", "until": "July 2023" },
+        { "file": "2.webp", "artist": "rabbi.cartman", "until": "July 2023" },
+        { "file": "3.webp", "artist": "vincytheidiot", "until": "March 2024" },
+        { "file": "4.webp", "artist": "dark", "until": "May 2024" },
+        { "file": "5.webp", "artist": "geo.maxim", "until": "September 2024" }
+    ],
+    "Babylon": [
+        { "file": "1.webp", "artist": "Mtcat101#1861", "until": "November 2024" }
+    ],
     "Canada": [
         { "file": "1.webp", "artist": "Polandball Wiki", "until": "December 2022" },
         { "file": "2.webp", "artist": "✦ Canadaball ✦", "until": "February 2025" }
