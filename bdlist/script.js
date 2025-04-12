@@ -92,12 +92,12 @@ function showPopup(ballName, arts) {
     popupContent.innerHTML = "";
     popupHeader.textContent = `Previous Arts for ${ballName}`;
 
-    arts.forEach((art) => {
+    arts.forEach((art, index) => {
         const artContainer = document.createElement("div");
         artContainer.className = "popup-art-container";
 
         const artImage = document.createElement("img");
-        artImage.src = `../assets/bd-previous-arts/${ballName}/${art.file}`;
+        artImage.src = `../assets/bd-previous-arts/${ballName}/${index + 1}.webp`;
         artImage.alt = `${ballName} art`;
         artImage.loading = "lazy";
 

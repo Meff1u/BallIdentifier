@@ -1,287 +1,674 @@
 {
     "Achaemenid Empire": [
-        { "file": "1.webp", "artist": "Triangular Dragon#0341", "until": "February 2024" }
+        {
+            "artist": "Triangular Dragon#0341",
+            "until": "February 2024"
+        }
     ],
     "Afghanistan": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "March 2024" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "March 2024"
+        }
     ],
     "African Union": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "November 2023" },
-        { "file": "2.webp", "artist": "Vis57", "until": "March 2024" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "November 2023"
+        },
+        {
+            "artist": "Vis57",
+            "until": "March 2024"
+        }
     ],
     "Albania": [
-        { "file": "1.webp", "artist": "Icariaball", "until": "January 2023" },
-        { "file": "2.webp", "artist": "GlitchGamer", "until": "March 2024" }
+        {
+            "artist": "Icariaball",
+            "until": "January 2023"
+        },
+        {
+            "artist": "GlitchGamer",
+            "until": "March 2024"
+        }
     ],
     "Algeria": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "December 2022" },
-        { "file": "2.webp", "artist": "tyromix09", "until": "December 2023" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "December 2022"
+        },
+        {
+            "artist": "tyromix09",
+            "until": "December 2023"
+        }
     ],
     "Ancient Athens": [
-        { "file": "1.webp", "artist": "franci", "until": "September 2024" }
+        {
+            "artist": "franci",
+            "until": "September 2024"
+        }
     ],
     "Ancient Egypt": [
-        { "file": "1.webp", "artist": "LunaTuna#8369", "until": "September 2024" }
+        {
+            "artist": "LunaTuna#8369",
+            "until": "September 2024"
+        }
     ],
     "Ancient Greece": [
-        { "file": "1.webp", "artist": "LunaTuna#8369", "until": "September 2023" },
-        { "file": "2.webp", "artist": "vis57", "until": "March 2024" }
+        {
+            "artist": "LunaTuna#8369",
+            "until": "September 2023"
+        },
+        {
+            "artist": "vis57",
+            "until": "March 2024"
+        }
     ],
     "Ancient Sparta": [
-        { "file": "1.webp", "artist": "franci", "until": "September 2024" }
+        {
+            "artist": "franci",
+            "until": "September 2024"
+        }
     ],
     "Andorra": [
-        { "file": "1.webp", "artist": "Pajek2111#0629", "until": "September 2024" }
+        {
+            "artist": "Pajek2111#0629",
+            "until": "September 2024"
+        }
     ],
     "Angola": [
-        { "file": "1.webp", "artist": "UnfamousRadish", "until": "September 2023" }
+        {
+            "artist": "UnfamousRadish",
+            "until": "September 2023"
+        }
     ],
     "Antarctica": [
-        { "file": "1.webp", "artist": "tyromix09", "until": "December 2023" }
+        {
+            "artist": "tyromix09",
+            "until": "December 2023"
+        }
     ],
     "Argentina": [
-        { "file": "1.webp", "artist": "Mely Val", "until": "February 2024" }
+        {
+            "artist": "Mely Val",
+            "until": "February 2024"
+        }
     ],
     "Armenia": [
-        { "file": "1.webp", "artist": "armeniaball", "until": "March 2024" },
-        { "file": "2.webp", "artist": "dark", "until": "May 2024" },
-        { "file": "3.webp", "artist": "britains_mapper", "until": "September 2024" }
+        {
+            "artist": "armeniaball",
+            "until": "March 2024"
+        },
+        {
+            "artist": "dark",
+            "until": "May 2024"
+        },
+        {
+            "artist": "britains_mapper",
+            "until": "September 2024"
+        }
     ],
     "Australia": [
-        { "file": "1.webp", "artist": "ArcticChip", "until": "January 2024" },
-        { "file": "2.webp", "artist": "hecker", "until": "July 2024" }
+        {
+            "artist": "ArcticChip",
+            "until": "January 2024"
+        },
+        {
+            "artist": "hecker",
+            "until": "July 2024"
+        }
     ],
     "Austria": [
-        { "file": "1.webp", "artist": "Brotherlandball", "until": "January 2024" }
+        {
+            "artist": "Brotherlandball",
+            "until": "January 2024"
+        }
     ],
     "Austria-Hungary": [
-        { "file": "1.webp", "artist": "AaronC14", "until": "December 2022" },
-        { "file": "2.webp", "artist": "AaronC14", "until": "February 2023" },
-        { "file": "3.webp", "artist": "Ethanel-A", "until": "August 2024" }
+        {
+            "artist": "AaronC14",
+            "until": "December 2022"
+        },
+        {
+            "artist": "AaronC14",
+            "until": "February 2023"
+        },
+        {
+            "artist": "Ethanel-A",
+            "until": "August 2024"
+        }
     ],
     "Austrian Empire": [
-        { "file": "1.webp", "artist": "kaio.shin", "until": "August 2024" } 
+        {
+            "artist": "kaio.shin",
+            "until": "August 2024"
+        }
     ],
     "Azerbaijan": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "July 2023" },
-        { "file": "2.webp", "artist": "rabbi.cartman", "until": "July 2023" },
-        { "file": "3.webp", "artist": "vincytheidiot", "until": "March 2024" },
-        { "file": "4.webp", "artist": "dark", "until": "May 2024" },
-        { "file": "5.webp", "artist": "geo.maxim", "until": "September 2024" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "July 2023"
+        },
+        {
+            "artist": "rabbi.cartman",
+            "until": "July 2023"
+        },
+        {
+            "artist": "vincytheidiot",
+            "until": "March 2024"
+        },
+        {
+            "artist": "dark",
+            "until": "May 2024"
+        },
+        {
+            "artist": "geo.maxim",
+            "until": "September 2024"
+        }
     ],
     "Babylon": [
-        { "file": "1.webp", "artist": "Mtcat101#1861", "until": "November 2024" }
+        {
+            "artist": "Mtcat101#1861",
+            "until": "November 2024"
+        }
     ],
     "Bahrain": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "March 2024" },
-        { "file": "2.webp", "artist": "Dark", "until": "May 2024" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "March 2024"
+        },
+        {
+            "artist": "Dark",
+            "until": "May 2024"
+        }
     ],
     "Bangladesh": [
-        { "file": "1.webp", "artist": "iziyan", "until": "October 2023" }
+        {
+            "artist": "iziyan",
+            "until": "October 2023"
+        }
     ],
     "Barbados": [
-        { "file": "1.webp", "artist": "Reichy", "until": "October 2024" }
+        {
+            "artist": "Reichy",
+            "until": "October 2024"
+        }
     ],
     "Belarus": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "January 2023" },
-        { "file": "2.webp", "artist": "franc3s lov3ly sh!trag", "until": "October 2023" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "January 2023"
+        },
+        {
+            "artist": "franc3s lov3ly sh!trag",
+            "until": "October 2023"
+        }
     ],
     "Belgium": [
-        { "file": "1.webp", "artist": "Maxidation", "until": "March 2024" },
-        { "file": "2.webp", "artist": "lavin", "until": "September 2024" }
+        {
+            "artist": "Maxidation",
+            "until": "March 2024"
+        },
+        {
+            "artist": "lavin",
+            "until": "September 2024"
+        }
     ],
     "Benin": [
-        { "file": "1.webp", "artist": "cattitan", "until": "September 2024" },
-        { "file": "2.webp", "artist": "fakedwebb", "until": "November 2024" }
+        {
+            "artist": "cattitan",
+            "until": "September 2024"
+        },
+        {
+            "artist": "fakedwebb",
+            "until": "November 2024"
+        }
     ],
     "Bhutan": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "January 2023" },
-        { "file": "2.webp", "artist": "Polandball Wiki", "until": "March 2024" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "January 2023"
+        },
+        {
+            "artist": "Polandball Wiki",
+            "until": "March 2024"
+        }
     ],
     "Bolivia": [
-        { "file": "1.webp", "artist": "T4RTUFO", "until": "March 2024" }
+        {
+            "artist": "T4RTUFO",
+            "until": "March 2024"
+        }
     ],
     "Bosnia and Herzegovina": [
-        { "file": "1.webp", "artist": "kenan", "until": "October 2023" },
-        { "file": "2.webp", "artist": "zentherando", "until": "November 2024" }
+        {
+            "artist": "kenan",
+            "until": "October 2023"
+        },
+        {
+            "artist": "zentherando",
+            "until": "November 2024"
+        }
     ],
     "Botswana": [
-        { "file": "1.webp", "artist": "POLANDBALL", "until": "January 2023" },
-        { "file": "2.webp", "artist": "POLANDBALL", "until": "March 2024" }
+        {
+            "artist": "POLANDBALL",
+            "until": "January 2023"
+        },
+        {
+            "artist": "POLANDBALL",
+            "until": "March 2024"
+        }
     ],
     "Brazil": [
-        { "file": "1.webp", "artist": "ArcticChip", "until": "December 2022" },
-        { "file": "2.webp", "artist": "ArcticChip", "until": "October 2023" }
+        {
+            "artist": "ArcticChip",
+            "until": "December 2022"
+        },
+        {
+            "artist": "ArcticChip",
+            "until": "October 2023"
+        }
     ],
     "British Raj": [
-        { "file": "1.webp", "artist": "iziyan", "until": "January 2023" },
-        { "file": "2.webp", "artist": "iziyan", "until": "February 2024" },
-        { "file": "3.webp", "artist": "BFBRblx", "until": "August 2024" }
+        {
+            "artist": "iziyan",
+            "until": "January 2023"
+        },
+        {
+            "artist": "iziyan",
+            "until": "February 2024"
+        },
+        {
+            "artist": "BFBRblx",
+            "until": "August 2024"
+        }
     ],
     "Bulgaria": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "October 2023" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "October 2023"
+        }
     ],
     "Burkina Faso": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "February 2023" },
-        { "file": "2.webp", "artist": "Polandball Wiki", "until": "October 2023" },
-        { "file": "3.webp", "artist": "cubic & gmo", "until": "August 2024" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "February 2023"
+        },
+        {
+            "artist": "Polandball Wiki",
+            "until": "October 2023"
+        },
+        {
+            "artist": "cubic & gmo",
+            "until": "August 2024"
+        }
     ],
     "Byelorussian Soviet Socialist Republic": [
-        { "file": "1.webp", "artist": "Reichy", "until": "September 2024" }
+        {
+            "artist": "Reichy",
+            "until": "September 2024"
+        }
     ],
     "Byzantium": [
-        { "file": "1.webp", "artist": "Erob08", "until": "January 2024" }
+        {
+            "artist": "Erob08",
+            "until": "January 2024"
+        }
     ],
     "Cambodia": [
-        { "file": "1.webp", "artist": "7SeasOfRock", "until": "October 2023" },
-        { "file": "2.webp", "artist": "norwaybestvideos", "until": "April 2024" }
+        {
+            "artist": "7SeasOfRock",
+            "until": "October 2023"
+        },
+        {
+            "artist": "norwaybestvideos",
+            "until": "April 2024"
+        }
     ],
     "Cameroon": [
-        { "file": "1.webp", "artist": "Cameroonball", "until": "March 2024" }
+        {
+            "artist": "Cameroonball",
+            "until": "March 2024"
+        }
     ],
     "Canada": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "December 2022" },
-        { "file": "2.webp", "artist": "✦ Canadaball ✦", "until": "February 2025" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "December 2022"
+        },
+        {
+            "artist": "✦ Canadaball ✦",
+            "until": "February 2025"
+        }
     ],
     "Cape Verde": [
-        { "file": "1.webp", "artist": "cattitan", "until": "April 2025" }
+        {
+            "artist": "cattitan",
+            "until": "April 2025"
+        }
     ],
     "Carthage": [
-        { "file": "1.webp", "artist": "Aid3nXR#5751", "until": "September 2024" }
+        {
+            "artist": "Aid3nXR#5751",
+            "until": "September 2024"
+        }
     ],
     "Central African Republic": [
-        { "file": "1.webp", "artist": "polandball_kr", "until": "July 2023" },
-        { "file": "2.webp", "artist": "hecker4223", "until": "September 2024" },
-        { "file": "3.webp", "artist": "my.name.is.angelia", "until": "November 2024" }
+        {
+            "artist": "polandball_kr",
+            "until": "July 2023"
+        },
+        {
+            "artist": "hecker4223",
+            "until": "September 2024"
+        },
+        {
+            "artist": "my.name.is.angelia",
+            "until": "November 2024"
+        }
     ],
     "Ceylon": [
-        { "file": "1.webp", "artist": "reichi0", "until": "September 2024" }
+        {
+            "artist": "reichi0",
+            "until": "September 2024"
+        }
     ],
     "Chad": [
-        { "file": "1.webp", "artist": "Kaliningrad General", "until": "March 2024" }
+        {
+            "artist": "Kaliningrad General",
+            "until": "March 2024"
+        }
     ],
     "Chile": [
-        { "file": "1.webp", "artist": "Yalen-the-untaggable", "until": "January 2023" },
-        { "file": "2.webp", "artist": "Yalen-the-untaggable", "until": "August 2023" }
+        {
+            "artist": "Yalen-the-untaggable",
+            "until": "January 2023"
+        },
+        {
+            "artist": "Yalen-the-untaggable",
+            "until": "August 2023"
+        }
     ],
     "China": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "December 2022" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "December 2022"
+        }
     ],
     "Colombia": [
-        { "file": "1.webp", "artist": "Catty Girl", "until": "October 2023" },
-        { "file": "2.webp", "artist": "pawsicles", "until": "April 2025" }
+        {
+            "artist": "Catty Girl",
+            "until": "October 2023"
+        },
+        {
+            "artist": "pawsicles",
+            "until": "April 2025"
+        }
     ],
     "Confederate States": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "July 2023" },
-        { "file": "2.webp", "artist": "Sunlight", "until": "April 2025" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "July 2023"
+        },
+        {
+            "artist": "Sunlight",
+            "until": "April 2025"
+        }
     ],
     "Congo": [
-        { "file": "1.webp", "artist": "-31415pi-", "until": "March 2024" },
-        { "file": "2.webp", "artist": "tova_080", "until": "August 2024" }
+        {
+            "artist": "-31415pi-",
+            "until": "March 2024"
+        },
+        {
+            "artist": "tova_080",
+            "until": "August 2024"
+        }
     ],
     "Congo Free State": [
-        { "file": "1.webp", "artist": ".lunatuna", "until": "August 2024" }
+        {
+            "artist": ".lunatuna",
+            "until": "August 2024"
+        }
     ],
     "Cote d'Ivoire": [
-        { "file": "1.webp", "artist": "Xavier Animations 101", "until": "January 2023" },
-        { "file": "2.webp", "artist": "rejan but ethanol#2013", "until": "February 2024" }
+        {
+            "artist": "Xavier Animations 101",
+            "until": "January 2023"
+        },
+        {
+            "artist": "rejan but ethanol#2013",
+            "until": "February 2024"
+        }
     ],
     "Croatia": [
-        { "file": "1.webp", "artist": "nagika_komatsuu", "until": "March 2024" }
+        {
+            "artist": "nagika_komatsuu",
+            "until": "March 2024"
+        }
     ],
     "Cuba": [
-        { "file": "1.webp", "artist": "Kaliningrad General", "until": "October 2023" }
+        {
+            "artist": "Kaliningrad General",
+            "until": "October 2023"
+        }
     ],
     "Cyprus": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "January 2024" },
-        { "file": "2.webp", "artist": "nthefrog", "until": "September 2024" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "January 2024"
+        },
+        {
+            "artist": "nthefrog",
+            "until": "September 2024"
+        }
     ],
     "Czechia": [
-        { "file": "1.webp", "artist": "Czechoslovakiaball", "until": "October 2023" },
-        { "file": "2.webp", "artist": "Cubic", "until": "December 2024" }
+        {
+            "artist": "Czechoslovakiaball",
+            "until": "October 2023"
+        },
+        {
+            "artist": "Cubic",
+            "until": "December 2024"
+        }
     ],
     "Denmark": [
-        { "file": "1.webp", "artist": "arzee_cb", "until": "October 2023" }
+        {
+            "artist": "arzee_cb",
+            "until": "October 2023"
+        }
     ],
     "Djibouti": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "March 2023" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "March 2023"
+        }
     ],
     "Dominican Republic": [
-        { "file": "1.webp", "artist": "dark_domiino", "until": "March 2024" },
-        { "file": "2.webp", "artist": "finland", "until": "September 2024" }
+        {
+            "artist": "dark_domiino",
+            "until": "March 2024"
+        },
+        {
+            "artist": "finland",
+            "until": "September 2024"
+        }
     ],
     "DR Congo": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "March 2024" },
-        { "file": "2.webp", "artist": "Finland", "until": "September 2024" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "March 2024"
+        },
+        {
+            "artist": "Finland",
+            "until": "September 2024"
+        }
     ],
     "East Germany": [
-        { "file": "1.webp", "artist": "franci", "until": "February 2025" }
+        {
+            "artist": "franci",
+            "until": "February 2025"
+        }
     ],
     "Ecuador": [
-        { "file": "1.webp", "artist": "redpointarrow", "until": "March 2024" }
+        {
+            "artist": "redpointarrow",
+            "until": "March 2024"
+        }
     ],
     "Egypt": [
-        { "file": "1.webp", "artist": "Icantthinkofanamexd", "until": "January 2023" },
-        { "file": "2.webp", "artist": "Carolea#0172", "until": "March 2024" }
+        {
+            "artist": "Icantthinkofanamexd",
+            "until": "January 2023"
+        },
+        {
+            "artist": "Carolea#0172",
+            "until": "March 2024"
+        }
     ],
     "El Salvador": [
-        { "file": "1.webp", "artist": "Costaricaball", "until": "February 2024" }
+        {
+            "artist": "Costaricaball",
+            "until": "February 2024"
+        }
     ],
     "Empire of Brazil": [
-        { "file": "1.webp", "artist": "gmo", "until": "April 2025" }
+        {
+            "artist": "gmo",
+            "until": "April 2025"
+        }
     ],
     "Eritrea": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "October 2023" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "October 2023"
+        }
     ],
     "Estonia": [
-        { "file": "1.webp", "artist": "sunlightflora", "until": "January 2023" },
-        { "file": "2.webp", "artist": "austriahungary..ch", "until": "November 2023" },
-        { "file": "3.webp", "artist": "Gmo", "until": "October 2024" }
+        {
+            "artist": "sunlightflora",
+            "until": "January 2023"
+        },
+        {
+            "artist": "austriahungary..ch",
+            "until": "November 2023"
+        },
+        {
+            "artist": "Gmo",
+            "until": "October 2024"
+        }
     ],
     "Ethiopia": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "March 2024" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "March 2024"
+        }
     ],
     "European Union": [
-        { "file": "1.webp", "artist": "Mylenn", "until": "January 2023" },
-        { "file": "2.webp", "artist": "austriahungary..ch", "until": "March 2024" }
+        {
+            "artist": "Mylenn",
+            "until": "January 2023"
+        },
+        {
+            "artist": "austriahungary..ch",
+            "until": "March 2024"
+        }
     ],
     "Lebanon": [
-        { "file": "1.webp", "artist": "LEBANONball", "until": "October 2023" },
-        { "file": "2.webp", "artist": "guadeterre", "until": "March 2025" },
-        { "file": "3.webp", "artist": "snowythesillykitty", "until": "April 2025" }
+        {
+            "artist": "LEBANONball",
+            "until": "October 2023"
+        },
+        {
+            "artist": "guadeterre",
+            "until": "March 2025"
+        },
+        {
+            "artist": "snowythesillykitty",
+            "until": "April 2025"
+        }
     ],
     "Namibia": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "April 2023" },
-        { "file": "2.webp", "artist": "✠ ᴀᴜsᴛʀɪᴀ-ʜᴜɴɢᴀʀʏ ✠#7539", "until": "February 2025" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "April 2023"
+        },
+        {
+            "artist": "✠ ᴀᴜsᴛʀɪᴀ-ʜᴜɴɢᴀʀʏ ✠#7539",
+            "until": "February 2025"
+        }
     ],
     "Poland": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "March 2023" },
-        { "file": "2.webp", "artist": "Spom Magetti#2267", "until": "January 2024" },
-        { "file": "3.webp", "artist": "borzologist", "until": "September 2024" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "March 2023"
+        },
+        {
+            "artist": "Spom Magetti#2267",
+            "until": "January 2024"
+        },
+        {
+            "artist": "borzologist",
+            "until": "September 2024"
+        }
     ],
     "Roman Empire": [
-        { "file": "1.webp", "artist": "_RAAH", "until": "November 2023" },
-        { "file": "2.webp", "artist": "lucas", "until": "April 2025" }
+        {
+            "artist": "_RAAH",
+            "until": "November 2023"
+        },
+        {
+            "artist": "lucas",
+            "until": "April 2025"
+        }
     ],
     "Russian Empire": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "March 2023" },
-        { "file": "2.webp", "artist": "Phaser#4701", "until": "January 2024" },
-        { "file": "3.webp", "artist": "cattitan", "until": "March 2025" }
+        {
+            "artist": "Polandball Wiki",
+            "until": "March 2023"
+        },
+        {
+            "artist": "Phaser#4701",
+            "until": "January 2024"
+        },
+        {
+            "artist": "cattitan",
+            "until": "March 2025"
+        }
     ],
     "Saint Kitts and Nevis": [
-        { "file": "1.webp", "artist": "cattitan", "until": "February 2025" }
+        {
+            "artist": "cattitan",
+            "until": "February 2025"
+        }
     ],
     "Syria": [
-        { "file": "1.webp", "artist": "RealSyriaball", "until": "December 2023" },
-        { "file": "2.webp", "artist": "BFBRblx", "until": "February 2025" }
+        {
+            "artist": "RealSyriaball",
+            "until": "December 2023"
+        },
+        {
+            "artist": "BFBRblx",
+            "until": "February 2025"
+        }
     ],
     "Taiwan": [
-        { "file": "1.webp", "artist": "basedphoenician", "until": "April 2025" }
+        {
+            "artist": "basedphoenician",
+            "until": "April 2025"
+        }
     ],
     "Third French Republic": [
-        { "file": "1.webp", "artist": "pool", "until": "April 2025" }
+        {
+            "artist": "pool",
+            "until": "April 2025"
+        }
     ],
     "Weimar Republic": [
-        { "file": "1.webp", "artist": "dankm3m3r_l0rd", "until": "February 2025" }
+        {
+            "artist": "dankm3m3r_l0rd",
+            "until": "February 2025"
+        }
     ]
 }
