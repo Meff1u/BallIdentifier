@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1744492321",
+            "changes": [
+                "Updated to new spawn art in Ballsdex (Taiwan)",
+                "Updated to new spawn arts in Empireballs (Dutch Republic, Gokturk Khaganate)"
+            ]
+        },
+        {
             "timestamp": "1744473728",
             "changes": [
                 "Updated to new spawn arts in Empireballs (Babylon, Carthage, Ilkhanate, Mamluk Sultanate, Second Mexican Empire, Swedish Empire, Yuan Dynasty, German Empire, Kingdom of Bohemia, Mauryan Empire)"
