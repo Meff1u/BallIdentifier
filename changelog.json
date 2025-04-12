@@ -1,7 +1,13 @@
 {
     "changes": [
         {
-            "timestamp": "x",
+            "timestamp": "1744454651",
+            "changes": [
+                "Updated to new spawn arts in Empireballs (Babylon, Carthage, Ilkhanate, Mamluk Sultanate, Second Mexican Empire, Swedish Empire, Yuan Dynasty)"
+            ]
+        },
+        {
+            "timestamp": "1744303380",
             "changes": [
                 "Updated to new spawn arts in Empireballs (Almohad Caliphate, Spanish Empire, Galactic Empire, Kievan Rus)"
             ]
