@@ -139,6 +139,13 @@
     "Cameroon": [
         { "file": "1.webp", "artist": "Cameroonball", "until": "March 2024" }
     ],
+    "Canada": [
+        { "file": "1.webp", "artist": "Polandball Wiki", "until": "December 2022" },
+        { "file": "2.webp", "artist": "✦ Canadaball ✦", "until": "February 2025" }
+    ],
+    "Cape Verde": [
+        { "file": "1.webp", "artist": "cattitan", "until": "April 2025" }
+    ],
     "Carthage": [
         { "file": "1.webp", "artist": "Aid3nXR#5751", "until": "September 2024" }
     ],
@@ -159,6 +166,14 @@
     ],
     "China": [
         { "file": "1.webp", "artist": "Polandball Wiki", "until": "December 2022" }
+    ],
+    "Colombia": [
+        { "file": "1.webp", "artist": "Catty Girl", "until": "October 2023" },
+        { "file": "2.webp", "artist": "pawsicles", "until": "April 2025" }
+    ],
+    "Confederate States": [
+        { "file": "1.webp", "artist": "Polandball Wiki", "until": "July 2023" },
+        { "file": "2.webp", "artist": "Sunlight", "until": "April 2025" }
     ],
     "Congo": [
         { "file": "1.webp", "artist": "-31415pi-", "until": "March 2024" },
@@ -185,20 +200,19 @@
         { "file": "1.webp", "artist": "Czechoslovakiaball", "until": "October 2023" },
         { "file": "2.webp", "artist": "Cubic", "until": "December 2024" }
     ],
-    "Canada": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "December 2022" },
-        { "file": "2.webp", "artist": "✦ Canadaball ✦", "until": "February 2025" }
+    "Denmark": [
+        { "file": "1.webp", "artist": "arzee_cb", "until": "October 2023" }
     ],
-    "Cape Verde": [
-        { "file": "1.webp", "artist": "cattitan", "until": "April 2025" }
+    "Djibouti": [
+        { "file": "1.webp", "artist": "Polandball Wiki", "until": "March 2023" }
     ],
-    "Colombia": [
-        { "file": "1.webp", "artist": "Catty Girl", "until": "October 2023" },
-        { "file": "2.webp", "artist": "pawsicles", "until": "April 2025" }
+    "Dominican Republic": [
+        { "file": "1.webp", "artist": "dark_domiino", "until": "March 2024" },
+        { "file": "2.webp", "artist": "finland", "until": "September 2024" }
     ],
-    "Confederate States": [
-        { "file": "1.webp", "artist": "Polandball Wiki", "until": "July 2023" },
-        { "file": "2.webp", "artist": "Sunlight", "until": "April 2025" }
+    "DR Congo": [
+        { "file": "1.webp", "artist": "Polandball Wiki", "until": "March 2024" },
+        { "file": "2.webp", "artist": "Finland", "until": "September 2024" }
     ],
     "East Germany": [
         { "file": "1.webp", "artist": "franci", "until": "February 2025" }
