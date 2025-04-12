@@ -217,8 +217,33 @@
     "East Germany": [
         { "file": "1.webp", "artist": "franci", "until": "February 2025" }
     ],
+    "Ecuador": [
+        { "file": "1.webp", "artist": "redpointarrow", "until": "March 2024" }
+    ],
+    "Egypt": [
+        { "file": "1.webp", "artist": "Icantthinkofanamexd", "until": "January 2023" },
+        { "file": "2.webp", "artist": "Carolea#0172", "until": "March 2024" }
+    ],
+    "El Salvador": [
+        { "file": "1.webp", "artist": "Costaricaball", "until": "February 2024" }
+    ],
     "Empire of Brazil": [
         { "file": "1.webp", "artist": "gmo", "until": "April 2025" }
+    ],
+    "Eritrea": [
+        { "file": "1.webp", "artist": "Polandball Wiki", "until": "October 2023" }
+    ],
+    "Estonia": [
+        { "file": "1.webp", "artist": "sunlightflora", "until": "January 2023" },
+        { "file": "2.webp", "artist": "austriahungary..ch", "until": "November 2023" },
+        { "file": "3.webp", "artist": "Gmo", "until": "October 2024" }
+    ],
+    "Ethiopia": [
+        { "file": "1.webp", "artist": "Polandball Wiki", "until": "March 2024" }
+    ],
+    "European Union": [
+        { "file": "1.webp", "artist": "Mylenn", "until": "January 2023" },
+        { "file": "2.webp", "artist": "austriahungary..ch", "until": "March 2024" }
     ],
     "Lebanon": [
         { "file": "1.webp", "artist": "LEBANONball", "until": "October 2023" },
