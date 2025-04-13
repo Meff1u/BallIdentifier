@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1744571688",
+            "changes": [
+                "Updated to new spawn arts in Empireballs (Assyria, Babylon, Kalmar Union, Majapahit Empire, Mali Empire, Polish-Lithuanian Commonwealth, Roman Empire, Sokoto Caliphate)"
+            ]
+        },
+        {
             "timestamp": "1744492321",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Taiwan)",
