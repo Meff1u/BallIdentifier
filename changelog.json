@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1744747909",
+            "changes": [
+                "Ballsdex Spawn Arts List subpage - moved cache note and implemented search bar"
+            ]
+        },
+        {
             "timestamp": "1744670132",
             "changes": [
                 "Updated to new spawn arts in Empireballs (Korean Empire, Napoleonic France)"

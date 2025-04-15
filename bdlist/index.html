@@ -25,13 +25,17 @@
     <body>
         <h1>Ballsdex Spawn Arts List</h1>
         <h2>Click on a specific ball to view previous arts</h2>
-        <p style="font-size: 0.9rem; color: #b0b0b0; text-align: center;">
-            To make the page load faster the arts are kept in cache, so if you don't see a new art use Ctrl + F5
-        </p>
+        <div id="cache-info">
+            <span id="cache-icon">!</span>
+            <div id="cache-tooltip">
+                To make the page load faster the arts are kept in cache, so if you don't see a new art use Ctrl + F5
+            </div>
+        </div>
         <select id="sort-options">
             <option value="rarity">Rarity</option>
             <option value="alphabetically">Alphabetically</option>
         </select>
+        <input type="text" id="search-bar" placeholder="Search for balls..." />
         <div id="loading">
             <div class="lds-ring">
                 <div></div>

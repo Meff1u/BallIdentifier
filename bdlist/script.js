@@ -122,6 +122,10 @@ document.getElementById("popup-close").addEventListener("click", () => {
     document.getElementById("overlay").style.display = "none";
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("sort-options").value = "rarity";
+});
+
 function showNotification() {
     const notification = document.getElementById("notification");
     notification.classList.add("show");
@@ -129,3 +133,17 @@ function showNotification() {
         notification.classList.remove("show");
     }, 1800);
 }
+
+document.getElementById("search-bar").addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+    const ballContainers = document.querySelectorAll(".ball-container");
+
+    ballContainers.forEach((container) => {
+        const ballName = container.querySelector("h2").textContent.toLowerCase();
+        if (ballName.includes(query)) {
+            container.style.display = "block";
+        } else {
+            container.style.display = "none";
+        }
+    });
+});
