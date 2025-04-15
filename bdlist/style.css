@@ -327,3 +327,25 @@ h2 {
     border-color: #a94dc1;
     box-shadow: 0 0 5px rgba(169, 77, 193, 0.5);
 }
+
+.rarity-container, .artist-container {
+    font-size: 0.8rem;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.rarity-value {
+    font-size: 0.9rem !important;
+    color: orange;
+}
+
+.artist-value {
+    color: skyblue;
+}
+
+.rarity-value, .artist-value {
+    font-family: monospace;
+    font-size: 0.7rem;
+    padding: 3px;
+    display: inline-block;
+}

@@ -16,15 +16,15 @@ fetch("../assets/jsons/Ballsdex.json")
             ballsData.forEach(([name, details]) => {
                 const ballDiv = document.createElement("div");
                 ballDiv.className = "ball-container";
-
+        
                 const nameElement = document.createElement("h2");
                 nameElement.textContent = name;
                 ballDiv.appendChild(nameElement);
-
+        
                 const imgElement = document.createElement("img");
                 imgElement.src = `../assets/BallsdexCompressed/${name}.webp`;
                 imgElement.alt = name;
-
+        
                 const imgPromise = new Promise((resolve, reject) => {
                     imgElement.onload = () => {
                         loadedImages++;
@@ -35,17 +35,37 @@ fetch("../assets/jsons/Ballsdex.json")
                     imgElement.onerror = reject;
                 });
                 imagePromises.push(imgPromise);
-
+        
                 ballDiv.appendChild(imgElement);
-
-                const detailsElement = document.createElement("p");
-                detailsElement.textContent = `Rarity: #${details.rarity} | Artist: ${details.artist}`;
-                ballDiv.appendChild(detailsElement);
-
+        
+                const rarityContainer = document.createElement("div");
+                rarityContainer.className = "rarity-container";
+                const rarityLabel = document.createElement("span");
+                rarityLabel.className = "rarity-label";
+                rarityLabel.textContent = "Rarity: ";
+                const rarityValue = document.createElement("span");
+                rarityValue.className = "rarity-value";
+                rarityValue.textContent = `#${details.rarity}`;
+                rarityContainer.appendChild(rarityLabel);
+                rarityContainer.appendChild(rarityValue);
+                ballDiv.appendChild(rarityContainer);
+        
+                const artistContainer = document.createElement("div");
+                artistContainer.className = "artist-container";
+                const artistLabel = document.createElement("span");
+                artistLabel.className = "artist-label";
+                artistLabel.textContent = "Artist: ";
+                const artistValue = document.createElement("span");
+                artistValue.className = "artist-value";
+                artistValue.textContent = details.artist;
+                artistContainer.appendChild(artistLabel);
+                artistContainer.appendChild(artistValue);
+                ballDiv.appendChild(artistContainer);
+        
                 ballDiv.addEventListener("click", () => {
                     checkArtsExist(name);
                 });
-
+        
                 ballsList.appendChild(ballDiv);
             });
         }
