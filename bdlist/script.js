@@ -188,6 +188,7 @@ document.getElementById("overlay").addEventListener("click", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("sort-options").value = "rarity";
+    document.getElementById("search-bar").value = "";
 });
 
 function showNotification() {
