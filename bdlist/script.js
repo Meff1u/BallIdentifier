@@ -90,6 +90,7 @@ fetch("../assets/jsons/Ballsdex.json")
                 });
         
                 ballsList.appendChild(ballDiv);
+                showSpecificBalls(document.getElementById("search-bar").value.toLowerCase());
             });
         }
 
@@ -200,7 +201,10 @@ function showNotification() {
 }
 
 document.getElementById("search-bar").addEventListener("input", function () {
-    const query = this.value.toLowerCase();
+    showSpecificBalls(this.value.toLowerCase());
+});
+
+function showSpecificBalls(query) {
     const ballContainers = document.querySelectorAll(".ball-container");
 
     ballContainers.forEach((container) => {
@@ -211,4 +215,4 @@ document.getElementById("search-bar").addEventListener("input", function () {
             container.style.display = "none";
         }
     });
-});
+}
