@@ -97,7 +97,12 @@ fetch("../assets/jsons/Ballsdex.json")
         sortOptions.addEventListener("change", () => {
             const sortBy = sortOptions.value;
             if (sortBy === "rarity") {
-                ballsData.sort((a, b) => a[1].rarity - b[1].rarity);
+                ballsData.sort((a, b) => {
+                    if (a[1].rarity === b[1].rarity) {
+                        return a[0].localeCompare(b[0]);
+                    }
+                    return a[1].rarity - b[1].rarity
+                });
             } else if (sortBy === "a-z") {
                 ballsData.sort((a, b) => a[0].localeCompare(b[0]));
             } else if (sortBy === "wave") {
