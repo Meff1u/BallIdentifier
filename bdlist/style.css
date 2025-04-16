@@ -63,6 +63,9 @@ h2 {
     .ball-container {
         width: 40%;
     }
+    .popup-art-container {
+        width: 40% !important;
+    }
 }
 
 .ball-container h2 {
@@ -181,7 +184,7 @@ h2 {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     z-index: 2000;
-    max-width: 90%;
+    width: 85%;
     max-height: 80%;
     overflow-y: auto;
 }
@@ -368,4 +371,8 @@ h2 {
 
 .wave-indicator:hover {
     transform: scale(1.1);
+}
+
+.no-scroll {
+    overflow: hidden;
 }

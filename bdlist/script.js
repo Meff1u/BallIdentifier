@@ -165,11 +165,25 @@ function showPopup(ballName, arts) {
 
     overlay.style.display = "block";
     popup.style.display = "block";
+    document.body.classList.add("no-scroll");
 }
 
-document.getElementById("popup-close").addEventListener("click", () => {
-    document.getElementById("popup").style.display = "none";
-    document.getElementById("overlay").style.display = "none";
+document.getElementById("popup-close").addEventListener("click", function () {
+    const popup = document.getElementById("popup");
+    const overlay = document.getElementById("overlay");
+
+    popup.style.display = "none";
+    overlay.style.display = "none";
+    document.body.classList.remove("no-scroll");
+});
+
+document.getElementById("overlay").addEventListener("click", function () {
+    const popup = document.getElementById("popup");
+    const overlay = document.getElementById("overlay");
+
+    popup.style.display = "none";
+    overlay.style.display = "none";
+    document.body.classList.remove("no-scroll");
 });
 
 document.addEventListener("DOMContentLoaded", function () {
