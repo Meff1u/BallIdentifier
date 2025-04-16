@@ -98,7 +98,7 @@ fetch("../assets/jsons/Ballsdex.json")
             const sortBy = sortOptions.value;
             if (sortBy === "rarity") {
                 ballsData.sort((a, b) => a[1].rarity - b[1].rarity);
-            } else if (sortBy === "alphabetically") {
+            } else if (sortBy === "a-z") {
                 ballsData.sort((a, b) => a[0].localeCompare(b[0]));
             } else if (sortBy === "wave") {
                 ballsData.sort((a, b) => {
