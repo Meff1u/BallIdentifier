@@ -16,7 +16,13 @@ fetch("../assets/jsons/Ballsdex.json")
             ballsData.forEach(([name, details]) => {
                 const ballDiv = document.createElement("div");
                 ballDiv.className = "ball-container";
-        
+                
+                const waveElement = document.createElement("div");
+                waveElement.className = "wave-indicator";
+                waveElement.textContent = details.wave;
+                waveElement.title = `Wave: ${details.wave}`;
+                ballDiv.appendChild(waveElement);
+
                 const nameElement = document.createElement("h2");
                 nameElement.textContent = name;
                 ballDiv.appendChild(nameElement);
@@ -76,6 +82,13 @@ fetch("../assets/jsons/Ballsdex.json")
                 ballsData.sort((a, b) => a[1].rarity - b[1].rarity);
             } else if (sortBy === "alphabetically") {
                 ballsData.sort((a, b) => a[0].localeCompare(b[0]));
+            } else if (sortBy === "wave") {
+                ballsData.sort((a, b) => {
+                    if (a[1].wave === b[1].wave) {
+                        return a[0].localeCompare(b[0]);
+                    }
+                    return a[1].wave - b[1].wave;
+                });
             }
             renderBalls();
         });

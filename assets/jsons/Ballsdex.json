@@ -1,1358 +1,1697 @@
 {
     "British Empire": {
         "rarity": 1,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5
     },
     "Reichtangle": {
         "rarity": 1,
-        "artist": "✠ ᴀᴜsᴛʀɪᴀ-ʜᴜɴɢᴀʀʏ ✠#7539"
+        "artist": "✠ ᴀᴜsᴛʀɪᴀ-ʜᴜɴɢᴀʀʏ ✠#7539",
+        "wave": 2
     },
     "Russian Empire": {
         "rarity": 1,
-        "artist": "_finland_"
+        "artist": "_finland_",
+        "wave": 2
     },
     "Mongol Empire": {
         "rarity": 4,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "wave": 6
     },
     "Kalmar Union": {
         "rarity": 5,
-        "artist": "alsomarty"
+        "artist": "alsomarty",
+        "wave": 3
     },
     "Roman Empire": {
         "rarity": 5,
-        "artist": "froggo.8174"
+        "artist": "froggo.8174",
+        "wave": 4
     },
     "Papal States": {
         "rarity": 7,
-        "artist": "lucas"
+        "artist": "lucas",
+        "wave": 7
     },
     "Polish-Lithuanian Commonwealth": {
         "rarity": 7,
-        "artist": "kaio.shin"
+        "artist": "kaio.shin",
+        "wave": 6
     },
     "Qin Dynasty": {
         "rarity": 9,
-        "artist": "notshad0w"
+        "artist": "notshad0w",
+        "wave": 4
     },
     "German Empire": {
         "rarity": 10,
-        "artist": "lucas"
+        "artist": "lucas",
+        "wave": 2
     },
     "Holy Roman Empire": {
         "rarity": 11,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 6
     },
     "Austria-Hungary": {
         "rarity": 12,
-        "artist": "ausserhungrey"
+        "artist": "ausserhungrey",
+        "wave": 2
     },
     "Hunnic Empire": {
         "rarity": 12,
-        "artist": "my.name.is.angelia"
+        "artist": "my.name.is.angelia",
+        "wave": 4
     },
     "Japanese Empire": {
         "rarity": 12,
-        "artist": "Charon"
+        "artist": "Charon",
+        "wave": 5
     },
     "Republic of China": {
         "rarity": 12,
-        "artist": "itsthereallannyfr"
+        "artist": "itsthereallannyfr",
+        "wave": 5
     },
     "Soviet Union": {
         "rarity": 12,
-        "artist": "_bredd_"
+        "artist": "_bredd_",
+        "wave": 3
     },
     "Tokugawa Shogunate": {
         "rarity": 12,
-        "artist": "mx"
+        "artist": "mx",
+        "wave": 7
     },
     "United States": {
         "rarity": 12,
-        "artist": "Abiotic & Froggo"
+        "artist": "Abiotic & Froggo",
+        "wave": 1
     },
     "Vatican": {
         "rarity": 19,
-        "artist": "borzologist & kole"
+        "artist": "borzologist & kole",
+        "wave": 2
     },
     "Republic of Texas": {
         "rarity": 20,
-        "artist": "ausser hungrey"
+        "artist": "ausser hungrey",
+        "wave": 7
     },
     "Russia": {
         "rarity": 21,
-        "artist": "claythekat"
+        "artist": "claythekat",
+        "wave": 1
     },
     "China": {
         "rarity": 22,
-        "artist": "!Dvz"
+        "artist": "!Dvz",
+        "wave": 1
     },
     "Austrian Empire": {
         "rarity": 23,
-        "artist": "blasty_rkp10"
+        "artist": "blasty_rkp10",
+        "wave": 6
     },
     "Joseon": {
         "rarity": 23,
-        "artist": "KiwiwoS"
+        "artist": "KiwiwoS",
+        "wave": 7
     },
     "India": {
         "rarity": 25,
-        "artist": "spom"
+        "artist": "spom",
+        "wave": 1
     },
     "Ancient Greece": {
         "rarity": 26,
-        "artist": "gr3avy"
+        "artist": "gr3avy",
+        "wave": 4
     },
     "Japan": {
         "rarity": 26,
-        "artist": "bjeeow"
+        "artist": "bjeeow",
+        "wave": 1
     },
     "Korea": {
         "rarity": 26,
-        "artist": "._themagicalflame_."
+        "artist": "._themagicalflame_.",
+        "wave": 3
     },
     "Napoleonic France": {
         "rarity": 26,
-        "artist": "Miron"
+        "artist": "Miron",
+        "wave": 3
     },
     "Ottoman Empire": {
         "rarity": 26,
-        "artist": "fadewon"
+        "artist": "fadewon",
+        "wave": 2
     },
     "BRICS": {
         "rarity": 31,
-        "artist": "angelia4"
+        "artist": "angelia4",
+        "wave": 7.1
     },
     "Republic of Venice": {
         "rarity": 31,
-        "artist": "Froggo"
+        "artist": "Froggo",
+        "wave": 6
     },
     "South Korea": {
         "rarity": 31,
-        "artist": "Sunlight"
+        "artist": "Sunlight",
+        "wave": 1
     },
     "France": {
         "rarity": 34,
-        "artist": "atlanta1996"
+        "artist": "atlanta1996",
+        "wave": 1
     },
     "Spanish Empire": {
         "rarity": 34,
-        "artist": "Franci#5323"
+        "artist": "Franci#5323",
+        "wave": 3
     },
     "United Kingdoms of Sweden and Norway": {
         "rarity": 34,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 7
     },
     "Achaemenid Empire": {
         "rarity": 37,
-        "artist": "Yomers"
+        "artist": "Yomers",
+        "wave": 4
     },
     "Macedon": {
         "rarity": 37,
-        "artist": "lotzer"
+        "artist": "lotzer",
+        "wave": 4
     },
     "United Kingdom": {
         "rarity": 37,
-        "artist": "tatarigamik"
+        "artist": "tatarigamik",
+        "wave": 1
     },
     "Empire of Brazil": {
         "rarity": 40,
-        "artist": "no_name_guy_1313"
+        "artist": "no_name_guy_1313",
+        "wave": 7
     },
     "Pakistan": {
         "rarity": 41,
-        "artist": "monke83"
+        "artist": "monke83",
+        "wave": 1
     },
     "Ancient Egypt": {
         "rarity": 42,
-        "artist": "freezysupra"
+        "artist": "freezysupra",
+        "wave": 4
     },
     "Brazil": {
         "rarity": 42,
-        "artist": "lee.lil.kitten.thing"
+        "artist": "lee.lil.kitten.thing",
+        "wave": 1
     },
     "Byzantium": {
         "rarity": 42,
-        "artist": "hecker4223"
+        "artist": "hecker4223",
+        "wave": 3
     },
     "Greenland": {
         "rarity": 42,
-        "artist": "poooooooooof"
+        "artist": "poooooooooof",
+        "wave": 3
     },
     "Portuguese Empire": {
         "rarity": 42,
-        "artist": "fadewon"
+        "artist": "fadewon",
+        "wave": 5
     },
     "Qing": {
         "rarity": 42,
-        "artist": "Miron"
+        "artist": "Miron",
+        "wave": 2
     },
     "British Raj": {
         "rarity": 48,
-        "artist": "kapukvati"
+        "artist": "kapukvati",
+        "wave": 2
     },
     "Carthage": {
         "rarity": 48,
-        "artist": "kapukvati"
+        "artist": "kapukvati",
+        "wave": 4
     },
     "Italy": {
         "rarity": 48,
-        "artist": "Miron"
+        "artist": "Miron",
+        "wave": 1
     },
     "Kingdom of Italy": {
         "rarity": 48,
-        "artist": "Franci#5323"
+        "artist": "Franci#5323",
+        "wave": 5
     },
     "Third French Republic": {
         "rarity": 48,
-        "artist": "fakedwebb"
+        "artist": "fakedwebb",
+        "wave": 7
     },
     "Egypt": {
         "rarity": 53,
-        "artist": "miron"
+        "artist": "miron",
+        "wave": 1
     },
     "Russian Soviet Federative Socialist Republic": {
         "rarity": 53,
-        "artist": "itsthereallanny"
+        "artist": "itsthereallanny",
+        "wave": 5
     },
     "Turkey": {
         "rarity": 54,
-        "artist": "_finland_"
+        "artist": "_finland_",
+        "wave": 1
     },
     "French Empire": {
         "rarity": 56,
-        "artist": "claythekat"
+        "artist": "claythekat",
+        "wave": 6
     },
     "Iran": {
         "rarity": 57,
-        "artist": "guadeterre"
+        "artist": "guadeterre",
+        "wave": 1
     },
     "Kingdom of Greece": {
         "rarity": 58,
-        "artist": "Galaxyotype & Cubic"
+        "artist": "Galaxyotype & Cubic",
+        "wave": 2
     },
     "Konbaung Empire": {
         "rarity": 58,
-        "artist": "Clay"
+        "artist": "Clay",
+        "wave": 7
     },
     "North German Confederation": {
         "rarity": 58,
-        "artist": "flame"
+        "artist": "flame",
+        "wave": 7
     },
     "African Union": {
         "rarity": 61,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "wave": 3
     },
     "Arab League": {
         "rarity": 61,
-        "artist": "no_name_guy_1313"
+        "artist": "no_name_guy_1313",
+        "wave": 5
     },
     "Confederate States": {
         "rarity": 61,
-        "artist": "cattitan"
+        "artist": "cattitan",
+        "wave": 2
     },
     "Gaul": {
         "rarity": 61,
-        "artist": "adam.kw"
+        "artist": "adam.kw",
+        "wave": 4
     },
     "Germania": {
         "rarity": 61,
-        "artist": "angelia4"
+        "artist": "angelia4",
+        "wave": 4
     },
     "Indonesia": {
         "rarity": 61,
-        "artist": "fireandvoid"
+        "artist": "fireandvoid",
+        "wave": 1
     },
     "Kingdom of Hungary": {
         "rarity": 61,
-        "artist": "waffles.net"
+        "artist": "waffles.net",
+        "wave": 6
     },
     "Mayan Empire": {
         "rarity": 61,
-        "artist": "_papster_"
+        "artist": "_papster_",
+        "wave": 4
     },
     "Yugoslavia": {
         "rarity": 61,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 3
     },
     "Germany": {
         "rarity": 70,
-        "artist": "topwanted_"
+        "artist": "topwanted_",
+        "wave": 1
     },
     "Australia": {
         "rarity": 71,
-        "artist": "edible_penguins"
+        "artist": "edible_penguins",
+        "wave": 1
     },
     "Hong Kong": {
         "rarity": 71,
-        "artist": "cogito.ergo.sum_."
+        "artist": "cogito.ergo.sum_.",
+        "wave": 5.1
     },
     "Israel": {
         "rarity": 71,
-        "artist": "joelukx"
+        "artist": "joelukx",
+        "wave": 1
     },
     "Xiongnu": {
         "rarity": 71,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "wave": 4
     },
     "Swedish Empire": {
         "rarity": 75,
-        "artist": "thatoneseller_"
+        "artist": "thatoneseller_",
+        "wave": 6
     },
     "Spain": {
         "rarity": 76,
-        "artist": "Sunlight"
+        "artist": "Sunlight",
+        "wave": 1
     },
     "Antarctica": {
         "rarity": 77,
-        "artist": "lucas"
+        "artist": "lucas",
+        "wave": 3
     },
     "Ming Dynasty": {
         "rarity": 77,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "wave": 6
     },
     "Saudi Arabia": {
         "rarity": 77,
-        "artist": "froggo"
+        "artist": "froggo",
+        "wave": 1
     },
     "Franks": {
         "rarity": 80,
-        "artist": "_finland_"
+        "artist": "_finland_",
+        "wave": 4
     },
     "League of Nations": {
         "rarity": 80,
-        "artist": "cogito.ergo.sum_."
+        "artist": "cogito.ergo.sum_.",
+        "wave": 2
     },
     "Monaco": {
         "rarity": 80,
-        "artist": "Froggo"
+        "artist": "Froggo",
+        "wave": 4.1
     },
     "Union of South Africa": {
         "rarity": 80,
-        "artist": "dankm3m3_lord"
+        "artist": "dankm3m3_lord",
+        "wave": 2
     },
     "Ukraine": {
         "rarity": 84,
-        "artist": "kapukvati"
+        "artist": "kapukvati",
+        "wave": 1
     },
     "Canada": {
         "rarity": 85,
-        "artist": "pineapple.ca"
+        "artist": "pineapple.ca",
+        "wave": 1
     },
     "Kingdom of Two Sicilies": {
         "rarity": 85,
-        "artist": "tringle"
+        "artist": "tringle",
+        "wave": 7
     },
     "Kingdom of Brandenburg": {
         "rarity": 87,
-        "artist": "Bfb"
+        "artist": "Bfb",
+        "wave": 6
     },
     "Poland": {
         "rarity": 87,
-        "artist": "tw20nty4our"
+        "artist": "tw20nty4our",
+        "wave": 1
     },
     "Sweden": {
         "rarity": 89,
-        "artist": "waffles.epek"
+        "artist": "waffles.epek",
+        "wave": 1
     },
     "Macau": {
         "rarity": 90,
-        "artist": "Arty"
+        "artist": "Arty",
+        "wave": 5.1
     },
     "Scotland": {
         "rarity": 90,
-        "artist": "waffles.epek"
+        "artist": "waffles.epek",
+        "wave": 3
     },
     "South Africa": {
         "rarity": 90,
-        "artist": "kole"
+        "artist": "kole",
+        "wave": 1
     },
     "Greece": {
         "rarity": 93,
-        "artist": "altara"
+        "artist": "altara",
+        "wave": 1
     },
     "Safavid Empire": {
         "rarity": 94,
-        "artist": "cattitan"
+        "artist": "cattitan",
+        "wave": 6
     },
     "Vietnam": {
         "rarity": 94,
-        "artist": "altara"
+        "artist": "altara",
+        "wave": 1
     },
     "Parthian Empire": {
         "rarity": 96,
-        "artist": "bfbrobloxplayz"
+        "artist": "bfbrobloxplayz",
+        "wave": 6
     },
     "Thailand": {
         "rarity": 96,
-        "artist": "Miron"
+        "artist": "Miron",
+        "wave": 1
     },
     "North Korea": {
         "rarity": 98,
-        "artist": "froggo.8174"
+        "artist": "froggo.8174",
+        "wave": 1
     },
     "England": {
         "rarity": 99,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.1
     },
     "European Union": {
         "rarity": 99,
-        "artist": "miron"
+        "artist": "miron",
+        "wave": 1
     },
     "Francoist Spain": {
         "rarity": 99,
-        "artist": "kiwiwos"
+        "artist": "kiwiwos",
+        "wave": 5
     },
     "Manchukuo": {
         "rarity": 99,
-        "artist": "joelukx"
+        "artist": "joelukx",
+        "wave": 5
     },
     "NATO": {
         "rarity": 99,
-        "artist": "bfbrobloxplayz"
+        "artist": "bfbrobloxplayz",
+        "wave": 1
     },
     "Republican Spain": {
         "rarity": 99,
-        "artist": "gmo"
+        "artist": "gmo",
+        "wave": 5
     },
     "United Arab Republic": {
         "rarity": 99,
-        "artist": "tw20nty4our"
+        "artist": "tw20nty4our",
+        "wave": 5
     },
     "United Nations": {
         "rarity": 99,
-        "artist": "verdammt_."
+        "artist": "verdammt_.",
+        "wave": 1
     },
     "Warsaw Pact": {
         "rarity": 99,
-        "artist": "alsomarty"
+        "artist": "alsomarty",
+        "wave": 5
     },
     "Weimar Republic": {
         "rarity": 99,
-        "artist": "v3rdammt"
+        "artist": "v3rdammt",
+        "wave": 5
     },
     "Zhou": {
         "rarity": 99,
-        "artist": "angelia4"
+        "artist": "angelia4",
+        "wave": 4
     },
     "Argentine Confederation": {
         "rarity": 110,
-        "artist": "ani"
+        "artist": "ani",
+        "wave": 7
     },
     "ASEAN": {
         "rarity": 111,
-        "artist": "pineapple"
+        "artist": "pineapple",
+        "wave": 7.2
     },
     "Kingdom of Hawaii": {
         "rarity": 111,
-        "artist": "loading"
+        "artist": "loading",
+        "wave": 7
     },
     "Kingdom of Bali": {
         "rarity": 113,
-        "artist": "verd"
+        "artist": "verd",
+        "wave": 7
     },
     "Kingdom of Bora Bora": {
         "rarity": 113,
-        "artist": "mill"
+        "artist": "mill",
+        "wave": 7
     },
     "Yuan Dynasty": {
         "rarity": 113,
-        "artist": "yomers"
+        "artist": "yomers",
+        "wave": 6
     },
     "Bavaria": {
         "rarity": 116,
-        "artist": "yomers"
+        "artist": "yomers",
+        "wave": 7
     },
     "Algeria": {
         "rarity": 117,
-        "artist": "xia"
+        "artist": "xia",
+        "wave": 1
     },
     "Argentina": {
         "rarity": 117,
-        "artist": "r3leverelpro_07"
+        "artist": "r3leverelpro_07",
+        "wave": 1
     },
     "Bangladesh": {
         "rarity": 117,
-        "artist": "xzdv"
+        "artist": "xzdv",
+        "wave": 1
     },
     "Colombia": {
         "rarity": 117,
-        "artist": "tetratomidae"
+        "artist": "tetratomidae",
+        "wave": 1
     },
     "Czechia": {
         "rarity": 117,
-        "artist": "alsomarty"
+        "artist": "alsomarty",
+        "wave": 1
     },
     "Iraq": {
         "rarity": 117,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 1
     },
     "Malaysia": {
         "rarity": 117,
-        "artist": "nebula"
+        "artist": "nebula",
+        "wave": 1
     },
     "Mexico": {
         "rarity": 117,
-        "artist": "Sunlight"
+        "artist": "Sunlight",
+        "wave": 1
     },
     "Myanmar": {
         "rarity": 117,
-        "artist": "BFBRblx"
+        "artist": "BFBRblx",
+        "wave": 1
     },
     "Netherlands": {
         "rarity": 117,
-        "artist": "kapukvati"
+        "artist": "kapukvati",
+        "wave": 1
     },
     "Nigeria": {
         "rarity": 117,
-        "artist": "Rajan"
+        "artist": "Rajan",
+        "wave": 1
     },
     "Norway": {
         "rarity": 117,
-        "artist": "finitealtaraa"
+        "artist": "finitealtaraa",
+        "wave": 1
     },
     "Peru": {
         "rarity": 117,
-        "artist": "lee.lil.kitten.thing"
+        "artist": "lee.lil.kitten.thing",
+        "wave": 1
     },
     "Philippines": {
         "rarity": 117,
-        "artist": "v3rdammt"
+        "artist": "v3rdammt",
+        "wave": 1
     },
     "Portugal": {
         "rarity": 117,
-        "artist": ".soomlane"
+        "artist": ".soomlane",
+        "wave": 1
     },
     "Prussia": {
         "rarity": 117,
-        "artist": "verdammt_."
+        "artist": "verdammt_.",
+        "wave": 2
     },
     "Romania": {
         "rarity": 117,
-        "artist": "Spom & CanCat"
+        "artist": "Spom & CanCat",
+        "wave": 1
     },
     "Singapore": {
         "rarity": 117,
-        "artist": "maviieawoo"
+        "artist": "maviieawoo",
+        "wave": 1
     },
     "Switzerland": {
         "rarity": 117,
-        "artist": "limepostor_102"
+        "artist": "limepostor_102",
+        "wave": 1
     },
     "Syria": {
         "rarity": 117,
-        "artist": "angelia4"
+        "artist": "angelia4",
+        "wave": 1
     },
     "Tuvalu": {
         "rarity": 117,
-        "artist": "Reichy"
+        "artist": "Reichy",
+        "wave": 4.1
     },
     "UAE": {
         "rarity": 117,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "wave": 1
     },
     "Venezuela": {
         "rarity": 117,
-        "artist": "Waffles"
+        "artist": "Waffles",
+        "wave": 1
     },
     "Mali Empire": {
         "rarity": 140,
-        "artist": ".tommy.froggy"
+        "artist": ".tommy.froggy",
+        "wave": 6
     },
     "Ukrainian Soviet Socialist Republic": {
         "rarity": 141,
-        "artist": "kapukvati"
+        "artist": "kapukvati",
+        "wave": 5
     },
     "Federal Republic of Central America": {
         "rarity": 142,
-        "artist": "hara"
+        "artist": "hara",
+        "wave": 7
     },
     "Ancient Athens": {
         "rarity": 143,
-        "artist": "ized_coffee"
+        "artist": "ized_coffee",
+        "wave": 4
     },
     "Ancient Sparta": {
         "rarity": 143,
-        "artist": "angelia4"
+        "artist": "angelia4",
+        "wave": 4
     },
     "Babylon": {
         "rarity": 143,
-        "artist": "kapukvati"
+        "artist": "kapukvati",
+        "wave": 4
     },
     "Czechoslovakia": {
         "rarity": 143,
-        "artist": "Arty"
+        "artist": "Arty",
+        "wave": 5
     },
     "Ethiopian Empire": {
         "rarity": 143,
-        "artist": "derpxndytoosus"
+        "artist": "derpxndytoosus",
+        "wave": 5
     },
     "French Indochina": {
         "rarity": 143,
-        "artist": "Epik#0083"
+        "artist": "Epik#0083",
+        "wave": 5
     },
     "Nauru": {
         "rarity": 143,
-        "artist": "notshad0w"
+        "artist": "notshad0w",
+        "wave": 5.1
     },
     "Numidia": {
         "rarity": 143,
-        "artist": "DerpXndyTooSus#4344"
+        "artist": "DerpXndyTooSus#4344",
+        "wave": 4
     },
     "Quebec": {
         "rarity": 143,
-        "artist": "bfbrobloxplayz"
+        "artist": "bfbrobloxplayz",
+        "wave": 3
     },
     "Siam": {
         "rarity": 143,
-        "artist": ".soomlane"
+        "artist": ".soomlane",
+        "wave": 2
     },
     "South Vietnam": {
         "rarity": 143,
-        "artist": "tw20nty4our"
+        "artist": "tw20nty4our",
+        "wave": 5
     },
     "Taiwan": {
         "rarity": 143,
-        "artist": "averageuser28"
+        "artist": "averageuser28",
+        "wave": 1
     },
     "Wales": {
         "rarity": 143,
-        "artist": "_finland_"
+        "artist": "_finland_",
+        "wave": 5.1
     },
     "West Germany": {
         "rarity": 143,
-        "artist": "miron"
+        "artist": "miron",
+        "wave": 5
     },
     "Kingdom of Egypt": {
         "rarity": 157,
-        "artist": "reichi0"
+        "artist": "reichi0",
+        "wave": 5
     },
     "Mughal Empire": {
         "rarity": 159,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "wave": 6
     },
     "Angola": {
         "rarity": 159,
-        "artist": "kai"
+        "artist": "kai",
+        "wave": 1
     },
     "Austria": {
         "rarity": 159,
-        "artist": "altara"
+        "artist": "altara",
+        "wave": 1
     },
     "Azerbaijan": {
         "rarity": 159,
-        "artist": "poooooooooof"
+        "artist": "poooooooooof",
+        "wave": 1
     },
     "Bahamas": {
         "rarity": 159,
-        "artist": "Reichy"
+        "artist": "Reichy",
+        "wave": 4.1
     },
     "Belarus": {
         "rarity": 159,
-        "artist": "Arty"
+        "artist": "Arty",
+        "wave": 1
     },
     "Belgium": {
         "rarity": 159,
-        "artist": "haap_"
+        "artist": "haap_",
+        "wave": 1
     },
     "Bolivia": {
         "rarity": 159,
-        "artist": "devykii"
+        "artist": "devykii",
+        "wave": 1
     },
     "Bulgaria": {
         "rarity": 159,
-        "artist": "Arty"
+        "artist": "Arty",
+        "wave": 1
     },
     "Chile": {
         "rarity": 159,
-        "artist": "Bread"
+        "artist": "Bread",
+        "wave": 1
     },
     "Croatia": {
         "rarity": 159,
-        "artist": "Finland"
+        "artist": "Finland",
+        "wave": 1
     },
     "Cuba": {
         "rarity": 159,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "wave": 1
     },
     "Cyprus": {
         "rarity": 159,
-        "artist": "engelious"
+        "artist": "engelious",
+        "wave": 1
     },
     "Denmark": {
         "rarity": 159,
-        "artist": "pawsicles"
+        "artist": "pawsicles",
+        "wave": 1
     },
     "DR Congo": {
         "rarity": 159,
-        "artist": "_finland_"
+        "artist": "_finland_",
+        "wave": 1
     },
     "Ecuador": {
         "rarity": 159,
-        "artist": "not_what"
+        "artist": "not_what",
+        "wave": 1
     },
     "Ethiopia": {
         "rarity": 159,
-        "artist": "hecker"
+        "artist": "hecker",
+        "wave": 1
     },
     "Finland": {
         "rarity": 159,
-        "artist": "zxe_virage"
+        "artist": "zxe_virage",
+        "wave": 1
     },
     "Hungary": {
         "rarity": 159,
-        "artist": "pho.supremacist"
+        "artist": "pho.supremacist",
+        "wave": 1
     },
     "Iberian Union": {
         "rarity": 159,
-        "artist": "claythekat"
+        "artist": "claythekat",
+        "wave": 6
     },
     "Jordan": {
         "rarity": 159,
-        "artist": "Xia & Cubic"
+        "artist": "Xia & Cubic",
+        "wave": 1
     },
     "Kazakhstan": {
         "rarity": 159,
-        "artist": "verdammt_."
+        "artist": "verdammt_.",
+        "wave": 1
     },
     "Kenya": {
         "rarity": 159,
-        "artist": "Lanny"
+        "artist": "Lanny",
+        "wave": 1
     },
     "Kuwait": {
         "rarity": 159,
-        "artist": "fireforev"
+        "artist": "fireforev",
+        "wave": 1
     },
     "Libya": {
         "rarity": 159,
-        "artist": "alsomarty"
+        "artist": "alsomarty",
+        "wave": 1
     },
     "Morocco": {
         "rarity": 159,
-        "artist": "austriahungary.ch"
+        "artist": "austriahungary.ch",
+        "wave": 1
     },
     "North Vietnam": {
         "rarity": 159,
-        "artist": "tw20nty4our"
+        "artist": "tw20nty4our",
+        "wave": 5
     },
     "Oman": {
         "rarity": 159,
-        "artist": "Finland"
+        "artist": "Finland",
+        "wave": 1
     },
     "Qatar": {
         "rarity": 159,
-        "artist": "hecker"
+        "artist": "hecker",
+        "wave": 1
     },
     "San Marino": {
         "rarity": 159,
-        "artist": "_finland_"
+        "artist": "_finland_",
+        "wave": 4.1
     },
     "Serbia": {
         "rarity": 159,
-        "artist": "borzologist"
+        "artist": "borzologist",
+        "wave": 1
     },
     "Slovakia": {
         "rarity": 159,
-        "artist": "cattitan"
+        "artist": "cattitan",
+        "wave": 1
     },
     "Sri Lanka": {
         "rarity": 159,
-        "artist": "basedphoenician"
+        "artist": "basedphoenician",
+        "wave": 1
     },
     "Sudan": {
         "rarity": 159,
-        "artist": "gmo"
+        "artist": "gmo",
+        "wave": 1
     },
     "Tunisia": {
         "rarity": 159,
-        "artist": "fished0621"
+        "artist": "fished0621",
+        "wave": 1
     },
     "Turkmenistan": {
         "rarity": 159,
-        "artist": "Hecker"
+        "artist": "Hecker",
+        "wave": 1
     },
     "Uzbekistan": {
         "rarity": 159,
-        "artist": "claythekat"
+        "artist": "claythekat",
+        "wave": 1
     },
     "Yemen": {
         "rarity": 159,
-        "artist": "lmd730"
+        "artist": "lmd730",
+        "wave": 1
     },
     "Republic of New Granada": {
         "rarity": 197,
-        "artist": "Djugargo"
+        "artist": "Djugargo",
+        "wave": 7
     },
     "Faroe Islands": {
         "rarity": 197,
-        "artist": "Arty"
+        "artist": "Arty",
+        "wave": 5.2
     },
     "Trinidad and Tobago": {
         "rarity": 197,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.2
     },
     "Orange Free State": {
         "rarity": 200,
-        "artist": "clar"
+        "artist": "clar",
+        "wave": 7
     },
     "East Germany": {
         "rarity": 200,
-        "artist": "cogito.ergo.sum_."
+        "artist": "cogito.ergo.sum_.",
+        "wave": 5
     },
     "Emirate of Nejd": {
         "rarity": 200,
-        "artist": "angelia"
+        "artist": "angelia",
+        "wave": 7
     },
     "Free France": {
         "rarity": 200,
-        "artist": "notthesanestpriest"
+        "artist": "notthesanestpriest",
+        "wave": 5
     },
     "Golden Horde": {
         "rarity": 200,
-        "artist": "._themagicalflame_."
+        "artist": "._themagicalflame_.",
+        "wave": 6
     },
     "Jamaica": {
         "rarity": 200,
-        "artist": "Cubic & gmo123"
+        "artist": "Cubic & gmo123",
+        "wave": 3
     },
     "Maldives": {
         "rarity": 200,
-        "artist": "araeofsunlight"
+        "artist": "araeofsunlight",
+        "wave": 1
     },
     "Northern Ireland": {
         "rarity": 200,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.1
     },
     "Tibet": {
         "rarity": 200,
-        "artist": "Bfbrblx"
+        "artist": "Bfbrblx",
+        "wave": 5
     },
     "Vichy France": {
         "rarity": 200,
-        "artist": "BFBRblx"
+        "artist": "BFBRblx",
+        "wave": 5
     },
     "Andorra": {
         "rarity": 209,
-        "artist": "buckeeboi"
+        "artist": "buckeeboi",
+        "wave": 5.1
     },
     "Brunei": {
         "rarity": 209,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.2
     },
     "Byelorussian Soviet Socialist Republic": {
         "rarity": 209,
-        "artist": "fireforev"
+        "artist": "fireforev",
+        "wave": 5
     },
     "Grand Duchy of Tuscany": {
         "rarity": 209,
-        "artist": "angelia4"
+        "artist": "angelia4",
+        "wave": 6
     },
     "Khedivate of Egypt": {
         "rarity": 209,
-        "artist": "bfbrobloxplayz"
+        "artist": "bfbrobloxplayz",
+        "wave": 6
     },
     "Micronesia": {
         "rarity": 209,
-        "artist": "fakedwebb"
+        "artist": "fakedwebb",
+        "wave": 5.1
     },
     "Tonga": {
         "rarity": 209,
-        "artist": "AustriaHungary.ch"
+        "artist": "AustriaHungary.ch",
+        "wave": 5.1
     },
     "Khmer Empire": {
         "rarity": 216,
-        "artist": "Sun"
+        "artist": "Sun",
+        "wave": 6
     },
     "Barbados": {
         "rarity": 217,
-        "artist": ".soomlane"
+        "artist": ".soomlane",
+        "wave": 5.2
     },
     "Kingdom of Saxony": {
         "rarity": 217,
-        "artist": "cancat"
+        "artist": "cancat",
+        "wave": 7
     },
     "Marshall Islands": {
         "rarity": 217,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.2
     },
     "Armenia": {
         "rarity": 220,
-        "artist": "kapukvati"
+        "artist": "kapukvati",
+        "wave": 1
     },
     "Bahrain": {
         "rarity": 220,
-        "artist": "Gmo"
+        "artist": "Gmo",
+        "wave": 1
     },
     "Cambodia": {
         "rarity": 220,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "wave": 1
     },
     "Chad": {
         "rarity": 220,
-        "artist": "Froggo"
+        "artist": "Froggo",
+        "wave": 1
     },
     "Congo Free State": {
         "rarity": 220,
-        "artist": "lee.lil.kitten.thing"
+        "artist": "lee.lil.kitten.thing",
+        "wave": 5
     },
     "Equatorial Guinea": {
         "rarity": 220,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.1
     },
     "Fatimid Caliphate": {
         "rarity": 220,
-        "artist": "Dem1111"
+        "artist": "Dem1111",
+        "wave": 6
     },
     "Georgia": {
         "rarity": 220,
-        "artist": "kapukvati"
+        "artist": "kapukvati",
+        "wave": 1
     },
     "Ghana": {
         "rarity": 220,
-        "artist": "not_what"
+        "artist": "not_what",
+        "wave": 1
     },
     "Guatemala": {
         "rarity": 220,
-        "artist": "Tringle"
+        "artist": "Tringle",
+        "wave": 1
     },
     "Guyana": {
         "rarity": 220,
-        "artist": "Reichy"
+        "artist": "Reichy",
+        "wave": 4.1
     },
     "Ireland": {
         "rarity": 220,
-        "artist": "bfbrobloxplayz"
+        "artist": "bfbrobloxplayz",
+        "wave": 1
     },
     "Kyrgyzstan": {
         "rarity": 220,
-        "artist": "araeofsunlight"
+        "artist": "araeofsunlight",
+        "wave": 1
     },
     "Latvia": {
         "rarity": 220,
-        "artist": "fished"
+        "artist": "fished",
+        "wave": 1
     },
     "Lithuania": {
         "rarity": 220,
-        "artist": "kapukvati"
+        "artist": "kapukvati",
+        "wave": 1
     },
     "Mali": {
         "rarity": 220,
-        "artist": "whitelight69"
+        "artist": "whitelight69",
+        "wave": 1
     },
     "Malta": {
         "rarity": 220,
-        "artist": "fakedwebb"
+        "artist": "fakedwebb",
+        "wave": 4.1
     },
     "Mongolia": {
         "rarity": 220,
-        "artist": "tashi"
+        "artist": "tashi",
+        "wave": 1
     },
     "New Zealand": {
         "rarity": 220,
-        "artist": "tw20nty4our"
+        "artist": "tw20nty4our",
+        "wave": 1
     },
     "Samoa": {
         "rarity": 220,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.1
     },
     "Slovenia": {
         "rarity": 220,
-        "artist": "Estonia"
+        "artist": "Estonia",
+        "wave": 1
     },
     "Togo": {
         "rarity": 220,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.1
     },
     "Uganda": {
         "rarity": 220,
-        "artist": "hecker"
+        "artist": "hecker",
+        "wave": 1
     },
     "Uruguay": {
         "rarity": 220,
-        "artist": ".cxnnibal"
+        "artist": ".cxnnibal",
+        "wave": 1
     },
     "Zambia": {
         "rarity": 220,
-        "artist": "derpcandy"
+        "artist": "derpcandy",
+        "wave": 1
     },
     "Zimbabwe": {
         "rarity": 220,
-        "artist": "britains_mapper"
+        "artist": "britains_mapper",
+        "wave": 1
     },
     "Duchy of Limburg": {
         "rarity": 246,
-        "artist": "pozie"
+        "artist": "pozie",
+        "wave": 7
     },
     "Malawi": {
         "rarity": 246,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.2
     },
     "Kingdom of Sardinia": {
         "rarity": 248,
-        "artist": "fadewon"
+        "artist": "fadewon",
+        "wave": 6
     },
     "Rashidi Emirate": {
         "rarity": 248,
-        "artist": "Ized_Coffee"
+        "artist": "Ized_Coffee",
+        "wave": 7
     },
     "Costa Rica": {
         "rarity": 250,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.1
     },
     "Dominica": {
         "rarity": 250,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.2
     },
     "Guinea-Bissau": {
         "rarity": 250,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.2
     },
     "Sao Tome and Principe": {
         "rarity": 250,
-        "artist": "spommagetti"
+        "artist": "spommagetti",
+        "wave": 5.2
     },
     "Tannu Tuva": {
         "rarity": 250,
-        "artist": "mtcat"
+        "artist": "mtcat",
+        "wave": 5
     },
     "Free City of Frankfurt": {
         "rarity": 255,
-        "artist": "lm_finland"
+        "artist": "lm_finland",
+        "wave": 7
     },
     "Seychelles": {
         "rarity": 255,
-        "artist": "wreckeroflaplace"
+        "artist": "wreckeroflaplace",
+        "wave": 3
     },
     "Afghanistan": {
         "rarity": 257,
-        "artist": "spommagetti & trashcancat"
+        "artist": "spommagetti & trashcancat",
+        "wave": 1
     },
     "Albania": {
         "rarity": 257,
-        "artist": "yomers"
+        "artist": "yomers",
+        "wave": 1
     },
     "Belize": {
         "rarity": 257,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.2
     },
     "Bosnia and Herzegovina": {
         "rarity": 257,
-        "artist": "tw20nty4our"
+        "artist": "tw20nty4our",
+        "wave": 1
     },
     "Botswana": {
         "rarity": 257,
-        "artist": "joelukx"
+        "artist": "joelukx",
+        "wave": 1
     },
     "Cameroon": {
         "rarity": 257,
-        "artist": "koskesh431"
+        "artist": "koskesh431",
+        "wave": 1
     },
     "Ceylon": {
         "rarity": 257,
-        "artist": "n.itrogenitals"
+        "artist": "n.itrogenitals",
+        "wave": 5
     },
     "Congo": {
         "rarity": 257,
-        "artist": "claythekat"
+        "artist": "claythekat",
+        "wave": 1
     },
     "Cote d'Ivoire": {
         "rarity": 257,
-        "artist": "redthedge"
+        "artist": "redthedge",
+        "wave": 1
     },
     "Dominican Republic": {
         "rarity": 257,
-        "artist": "s.i.l.ly_at.su.i_a.ki_a.n.i"
+        "artist": "s.i.l.ly_at.su.i_a.ki_a.n.i",
+        "wave": 1
     },
     "Eritrea": {
         "rarity": 257,
-        "artist": "kiwiwos"
+        "artist": "kiwiwos",
+        "wave": 1
     },
     "Estonia": {
         "rarity": 257,
-        "artist": "_finland_"
+        "artist": "_finland_",
+        "wave": 1
     },
     "Eswatini": {
         "rarity": 257,
-        "artist": "Arty"
+        "artist": "Arty",
+        "wave": 5.1
     },
     "Fiji": {
         "rarity": 257,
-        "artist": "Arty"
+        "artist": "Arty",
+        "wave": 4.1
     },
     "Free City of Danzig": {
         "rarity": 257,
-        "artist": "santiguti08_2011"
+        "artist": "santiguti08_2011",
+        "wave": 5
     },
     "Gambia": {
         "rarity": 257,
-        "artist": "777Baikonur"
+        "artist": "777Baikonur",
+        "wave": 3
     },
     "Haiti": {
         "rarity": 257,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "wave": 1
     },
     "Honduras": {
         "rarity": 257,
-        "artist": ".soomlane"
+        "artist": ".soomlane",
+        "wave": 1
     },
     "Khiva": {
         "rarity": 257,
-        "artist": "fireforev"
+        "artist": "fireforev",
+        "wave": 5
     },
     "Laos": {
         "rarity": 257,
-        "artist": "karuarp"
+        "artist": "karuarp",
+        "wave": 1
     },
     "Lebanon": {
         "rarity": 257,
-        "artist": "tw20nty4our"
+        "artist": "tw20nty4our",
+        "wave": 1
     },
     "Liechtenstein": {
         "rarity": 257,
-        "artist": "AustriaHungary.ch"
+        "artist": "AustriaHungary.ch",
+        "wave": 4.1
     },
     "Moldova": {
         "rarity": 257,
-        "artist": "Sunlight"
+        "artist": "Sunlight",
+        "wave": 1
     },
     "Mossi Kingdoms": {
         "rarity": 257,
-        "artist": "monke"
+        "artist": "monke",
+        "wave": 7
     },
     "Mozambique": {
         "rarity": 257,
-        "artist": "spommagetti"
+        "artist": "spommagetti",
+        "wave": 1
     },
     "Nepal": {
         "rarity": 257,
-        "artist": "clar1nettist"
+        "artist": "clar1nettist",
+        "wave": 1
     },
     "Nicaragua": {
         "rarity": 257,
-        "artist": "Gmo"
+        "artist": "Gmo",
+        "wave": 1
     },
     "Niger": {
         "rarity": 257,
-        "artist": "sunlight"
+        "artist": "sunlight",
+        "wave": 1
     },
     "Palestine": {
         "rarity": 257,
-        "artist": "tw20nty4our"
+        "artist": "tw20nty4our",
+        "wave": 1
     },
     "Paraguay": {
         "rarity": 257,
-        "artist": "Gmo"
+        "artist": "Gmo",
+        "wave": 1
     },
     "Saint Kitts and Nevis": {
         "rarity": 257,
-        "artist": "alsomarty"
+        "artist": "alsomarty",
+        "wave": 5.2
     },
     "Saint Lucia": {
         "rarity": 257,
-        "artist": "Arty"
+        "artist": "Arty",
+        "wave": 5.1
     },
     "Somaliland": {
         "rarity": 257,
-        "artist": ".galactic_wolf"
+        "artist": ".galactic_wolf",
+        "wave": 5
     },
     "South Sudan": {
         "rarity": 257,
-        "artist": "Sunlight"
+        "artist": "Sunlight",
+        "wave": 1
     },
     "South Yemen": {
         "rarity": 257,
-        "artist": "adistinguishedgentleman"
+        "artist": "adistinguishedgentleman",
+        "wave": 5
     },
     "Tajikistan": {
         "rarity": 257,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "wave": 1
     },
     "Tanzania": {
         "rarity": 257,
-        "artist": "lanny"
+        "artist": "lanny",
+        "wave": 1
     },
     "Western Sahara": {
         "rarity": 257,
-        "artist": "Hecker"
+        "artist": "Hecker",
+        "wave": 3
     },
     "Peru-Bolivian Confederation": {
         "rarity": 296,
-        "artist": "a distinguished gentleman"
+        "artist": "a distinguished gentleman",
+        "wave": 7
     },
     "Cape Verde": {
         "rarity": 296,
-        "artist": "fakedwebb"
+        "artist": "fakedwebb",
+        "wave": 5.1
     },
     "Grenada": {
         "rarity": 296,
-        "artist": "alsomarty"
+        "artist": "alsomarty",
+        "wave": 5.2
     },
     "Guinea": {
         "rarity": 296,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.2
     },
     "Palau": {
         "rarity": 296,
-        "artist": "atlanta1996"
+        "artist": "atlanta1996",
+        "wave": 5.2
     },
     "Solomon Islands": {
         "rarity": 296,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.2
     },
     "St. Vincent and the Grenadines": {
         "rarity": 296,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.2
     },
     "Vanuatu": {
         "rarity": 296,
-        "artist": "Mtcat101"
+        "artist": "Mtcat101",
+        "wave": 5.1
     },
     "Principality of Moldavia": {
         "rarity": 303,
-        "artist": "reichy"
+        "artist": "reichy",
+        "wave": 6
     },
     "Qajar Dynasty": {
         "rarity": 305,
-        "artist": "pool and BFB"
+        "artist": "pool and BFB",
+        "wave": 6
     },
     "Antigua and Barbuda": {
         "rarity": 305,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.2
     },
     "Benin": {
         "rarity": 305,
-        "artist": "ilikehetalia"
+        "artist": "ilikehetalia",
+        "wave": 5.2
     },
     "Bhutan": {
         "rarity": 305,
-        "artist": "koskesh"
+        "artist": "koskesh",
+        "wave": 1
     },
     "Burkina Faso": {
         "rarity": 305,
-        "artist": "multiplyusers"
+        "artist": "multiplyusers",
+        "wave": 1
     },
     "Burundi": {
         "rarity": 305,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 4.1
     },
     "Central African Republic": {
         "rarity": 305,
-        "artist": "unknowngirl4"
+        "artist": "unknowngirl4",
+        "wave": 1
     },
     "Comoros": {
         "rarity": 305,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.1
     },
     "El Salvador": {
         "rarity": 305,
-        "artist": "kole"
+        "artist": "kole",
+        "wave": 1
     },
     "Gabon": {
         "rarity": 305,
-        "artist": "waffles.epek"
+        "artist": "waffles.epek",
+        "wave": 1
     },
     "Hejaz": {
         "rarity": 305,
-        "artist": "Sunlight"
+        "artist": "Sunlight",
+        "wave": 2
     },
     "Iceland": {
         "rarity": 305,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "wave": 1
     },
     "Kiribati": {
         "rarity": 305,
-        "artist": "averageuser28"
+        "artist": "averageuser28",
+        "wave": 4.1
     },
     "Kosovo": {
         "rarity": 305,
-        "artist": "koskesh431"
+        "artist": "koskesh431",
+        "wave": 1
     },
     "Lesotho": {
         "rarity": 305,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.1
     },
     "Liberia": {
         "rarity": 305,
-        "artist": "coconuts"
+        "artist": "coconuts",
+        "wave": 1
     },
     "Luxembourg": {
         "rarity": 305,
-        "artist": "mistythewhisty_"
+        "artist": "mistythewhisty_",
+        "wave": 1
     },
     "Madagascar": {
         "rarity": 305,
-        "artist": "redthedge"
+        "artist": "redthedge",
+        "wave": 1
     },
     "Majapahit": {
         "rarity": 305,
-        "artist": "the_artist_omarv2"
+        "artist": "the_artist_omarv2",
+        "wave": 6
     },
     "Mauritania": {
         "rarity": 305,
-        "artist": "Yomer"
+        "artist": "Yomer",
+        "wave": 1
     },
     "Mauritius": {
         "rarity": 305,
-        "artist": "Cattitan"
+        "artist": "Cattitan",
+        "wave": 5.2
     },
     "Montenegro": {
         "rarity": 305,
-        "artist": "borzologist"
+        "artist": "borzologist",
+        "wave": 1
     },
     "Namibia": {
         "rarity": 305,
-        "artist": "_finland_"
+        "artist": "_finland_",
+        "wave": 1
     },
     "Nanda Empire": {
         "rarity": 305,
-        "artist": "claythekat"
+        "artist": "claythekat",
+        "wave": 6
     },
     "North Macedonia": {
         "rarity": 305,
-        "artist": "Estonia & Cubic"
+        "artist": "Estonia & Cubic",
+        "wave": 1
     },
     "Panama": {
         "rarity": 305,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "wave": 1
     },
     "Papua New Guinea": {
         "rarity": 305,
-        "artist": "hecker"
+        "artist": "hecker",
+        "wave": 1
     },
     "Paris Commune": {
         "rarity": 305,
-        "artist": "argahalakbatak"
+        "artist": "argahalakbatak",
+        "wave": 2
     },
     "Rwanda": {
         "rarity": 305,
-        "artist": "celi_mimi"
+        "artist": "celi_mimi",
+        "wave": 5.2
     },
     "Senegal": {
         "rarity": 305,
-        "artist": "ASITOC"
+        "artist": "ASITOC",
+        "wave": 1
     },
     "Sierra Leone": {
         "rarity": 305,
-        "artist": "spommagetti"
+        "artist": "spommagetti",
+        "wave": 1
     },
     "Somalia": {
         "rarity": 305,
-        "artist": "claythekat"
+        "artist": "claythekat",
+        "wave": 1
     },
     "Suriname": {
         "rarity": 305,
-        "artist": "abiotic"
+        "artist": "abiotic",
+        "wave": 1
     },
     "Timor-Leste": {
         "rarity": 305,
-        "artist": "Reichy"
+        "artist": "Reichy",
+        "wave": 5.1
     },
     "Dahomey": {
         "rarity": 338,
-        "artist": "waffles"
+        "artist": "waffles",
+        "wave": 7
     },
     "Djibouti": {
         "rarity": 339,
-        "artist": "kelpo.#1809"
+        "artist": "kelpo.#1809",
+        "wave": 1
     }
 }
