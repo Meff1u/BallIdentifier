@@ -17,10 +17,27 @@ fetch("../assets/jsons/Ballsdex.json")
                 const ballDiv = document.createElement("div");
                 ballDiv.className = "ball-container";
                 
+                const waveColors = {
+                    1: "#FF7769",
+                    2: "#F56300",
+                    3: "#824300",
+                    4: "#219540",
+                    "4.1": "#333333",
+                    5: "#006D83",
+                    "5.1": "#666666",
+                    "5.2": "#999999",
+                    6: "#4386F5",
+                    7: "#B299F2",
+                    "7.1": "#484848",
+                    "7.2": "#484848",
+                };
+                const waveColor = waveColors[details.wave] || "#808080";
+
                 const waveElement = document.createElement("div");
                 waveElement.className = "wave-indicator";
                 waveElement.textContent = details.wave;
                 waveElement.title = `Wave: ${details.wave}`;
+                waveElement.style.backgroundColor = waveColor;
                 ballDiv.appendChild(waveElement);
 
                 const nameElement = document.createElement("h2");

@@ -356,8 +356,7 @@ h2 {
     position: absolute;
     top: 5px;
     left: 5px;
-    background-color: gray;
-    color: #ffffff;
+    color: #000;
     font-size: 0.7rem;
     font-weight: bold;
     padding: 2px 5px;
