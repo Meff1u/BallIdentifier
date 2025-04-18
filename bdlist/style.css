@@ -381,3 +381,26 @@ h2 {
 .no-scroll {
     overflow: hidden;
 }
+
+#sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: #121212;
+    padding: 10px;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#sticky-header select {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
