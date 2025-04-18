@@ -195,6 +195,17 @@ document.getElementById("overlay").addEventListener("click", function () {
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("sort-options").value = "rarity";
     document.getElementById("search-bar").value = "";
+
+    document.addEventListener("keydown", function (event) {
+        if (event.ctrlKey && event.key === "f") {
+            event.preventDefault();
+            const searchBar = document.getElementById("search-bar");
+            if (searchBar) {
+                searchBar.focus();
+                searchBar.select();
+            }
+        }
+    });
 });
 
 function showNotification() {
