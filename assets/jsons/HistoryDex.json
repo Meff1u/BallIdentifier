@@ -63,6 +63,10 @@
         "rarity": 2,
         "artist": "dark3nd"
     },
+    "Imperialist United States": {
+        "rarity": 2,
+        "artist": "n0tch21_98933"
+    },
     "Soviet Union": {
         "rarity": 2,
         "artist": "dynsic"
@@ -707,6 +711,10 @@
         "rarity": 25,
         "artist": "keldoidotec"
     },
+    "Chagatai Khanate": {
+        "rarity": 25,
+        "artist": "colin_iii"
+    },
     "Kamakura Shogunate": {
         "rarity": 25,
         "artist": "claythekat"
@@ -1019,6 +1027,10 @@
         "rarity": 37,
         "artist": "bhapydageek"
     },
+    "Ottoman Algiers": {
+        "rarity": 38,
+        "artist": "cool4u7"
+    },
     "Grand Duchy of Saxe-Meiningen": {
         "rarity": 38,
         "artist": "ongbro"
@@ -1111,6 +1123,10 @@
         "rarity": 41,
         "artist": "king_of_pingas"
     },
+    "Italian East AFrica": {
+        "rarity": 42,
+        "artist": "dynsic"
+    },
     "First Armenian Republic": {
         "rarity": 42,
         "artist": "dark3nd"
@@ -1134,6 +1150,10 @@
     "Kingdom of Sicily": {
         "rarity": 42,
         "artist": "navid_habibi"
+    },
+    "Ottoman Tripolitania": {
+        "rarity": 43,
+        "artist": "._pudd_."
     },
     "Czechoslovak Socialist Republic": {
         "rarity": 43,
@@ -1831,6 +1851,10 @@
         "rarity": 102,
         "artist": "not_woterbottle"
     },
+    "Ottoman Tunisia": {
+        "rarity": 103,
+        "artist": "gusta._.vo"
+    },
     "French Gabon": {
         "rarity": 103,
         "artist": "kobersv2"
@@ -2318,6 +2342,10 @@
     "Bani Khalid Emirate": {
         "rarity": 214,
         "artist": "._pudd_."
+    },
+    "Ottoman Qatar": {
+        "rarity": 215,
+        "artist": "censorbar_"
     },
     "Southern Cameroons": {
         "rarity": 215,
