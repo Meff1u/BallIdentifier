@@ -212,8 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("search-bar").value = "";
 
     document.addEventListener("keydown", function (event) {
-        if (event.ctrlKey && event.key === "f") {
-            event.preventDefault();
+        if (event.shiftKey && !event.ctrlKey && event.key === "f") {
             const searchBar = document.getElementById("search-bar");
             if (searchBar) {
                 searchBar.focus();
