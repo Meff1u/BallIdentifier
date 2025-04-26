@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "x",
+            "changes": [
+                "Updated to new HistoryDex balls (Banate of Bosnia, Khedivate of Egypt, Soviet Stalingrad, Union of Poland-Hungary)",
+                "Updated HistoryDex rarities"
+            ]
+        },
+        {
             "timestamp": "1745441649",
             "changes": [
                 "Updated to new spawn art in Empireballs (Nazi Germany)"

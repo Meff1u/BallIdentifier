@@ -39,17 +39,9 @@
         "rarity": 1,
         "artist": "floridianirishguy"
     },
-    "Golden Circle": {
-        "rarity": 1,
-        "artist": "unfunnichez_"
-    },
     "Mongol Empire": {
         "rarity": 1,
         "artist": "claythekat"
-    },
-    "Intermarium": {
-        "rarity": 1,
-        "artist": "dynsic"
     },
     "Russtangle": {
         "rarity": 1,
@@ -79,9 +71,17 @@
         "rarity": 2,
         "artist": "thelegendarytacomuncher & __.artycal.__"
     },
+    "Intermarium": {
+        "rarity": 3,
+        "artist": "dynsic"
+    },
     "Spanish Empire": {
         "rarity": 3,
         "artist": "acrestronk"
+    },
+    "Golden Circle": {
+        "rarity": 3,
+        "artist": "unfunnichez_"
     },
     "Portuguese Empire": {
         "rarity": 3,
@@ -263,6 +263,10 @@
         "rarity": 9,
         "artist": "acrestronk"
     },
+    "Union of Poland-Hungary": {
+        "rarity": 10,
+        "artist": "colin_iii"
+    },
     "Empire of Brazil": {
         "rarity": 10,
         "artist": "acrestronk"
@@ -443,6 +447,10 @@
         "rarity": 16,
         "artist": "aml40l_9716"
     },
+    "Soviet Stalingrad": {
+        "rarity": 16,
+        "artist": "ragnitxt"
+    },
     "Azad Hind": {
         "rarity": 16,
         "artist": "lilhector_"
@@ -614,6 +622,10 @@
     "Little Entente": {
         "rarity": 20,
         "artist": "oreo_eater5892"
+    },
+    "Khedivate of Egypt": {
+        "rarity": 21,
+        "artist": "ilia2008"
     },
     "East Germany": {
         "rarity": 21,
@@ -1123,7 +1135,7 @@
         "rarity": 41,
         "artist": "king_of_pingas"
     },
-    "Italian East AFrica": {
+    "Italian East Africa": {
         "rarity": 42,
         "artist": "dynsic"
     },
@@ -1271,6 +1283,10 @@
         "rarity": 48,
         "artist": "dark3nd"
     },
+    "Tripolitanian Republic": {
+        "rarity": 49,
+        "artist": "unfunnichez_"
+    },
     "Allied-Occupied Germany": {
         "rarity": 49,
         "artist": "navid_habibi"
@@ -1278,10 +1294,6 @@
     "Ukrainian People's Republic": {
         "rarity": 49,
         "artist": "pho.supremacist"
-    },
-    "Tripolitanian Republic": {
-        "rarity": 49,
-        "artist": "unfunnichez_"
     },
     "First Latvian Republic": {
         "rarity": 49,
@@ -2194,6 +2206,10 @@
     "Oregon Territory": {
         "rarity": 189,
         "artist": "baconmaxyy"
+    },
+    "Banate of Bosnia": {
+        "rarity": 189,
+        "artist": "not_woterbottle"
     },
     "Dominion of Newfoundland": {
         "rarity": 189,
