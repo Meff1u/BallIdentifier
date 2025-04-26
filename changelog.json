@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "x",
+            "changes": [
+                "Updated to new spawn art in Ballsdex (Ancient Greece)"
+            ]
+        },
+        {
             "timestamp": "1745667705",
             "changes": [
                 "Updated to new HistoryDex balls (Banate of Bosnia, Khedivate of Egypt, Soviet Stalingrad, Union of Poland-Hungary)",
