@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1745879580",
+            "changes": [
+                "Updated Empireballs rarities",
+                "Updated to new Empireballs ball (Kingdom of Romania)",
+                "Updated to new spawn arts in Empireballs (Belgian Colonial Empire, Golden Horde, Kingdom of Bavaria, Kingdom of Italy, Parthian Empire, Western Roman Empire)"
+            ]
+        },
+        {
             "timestamp": "1745673885",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Ancient Greece)"
