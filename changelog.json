@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1745951104",
+            "changes": [
+                "Updated to new HistoryDex balls (South Seas Mandate, Trust Territory of the Pacific Islands)"
+            ]
+        },
+        {
             "timestamp": "1745879580",
             "changes": [
                 "Updated Empireballs rarities",
