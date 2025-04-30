@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1746010955",
+            "changes": [
+                "Updated to new spawn art in Empireballs (Sokoto Caliphate)",
+                "Updated to new HistoryDex balls (Icelandic Commonwealth, Kingdom of Iceland)"
+            ]
+        },
+        {
             "timestamp": "1745951104",
             "changes": [
                 "Updated to new HistoryDex balls (South Seas Mandate, Trust Territory of the Pacific Islands)"
