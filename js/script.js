@@ -374,5 +374,5 @@ function handleFileUpload(file) {
 }
 
 document.getElementById("spawnArtsButton").addEventListener("click", function () {
-    window.open(`${document.URL}bdlist`, "_blank");
+    window.open(`${document.URL}list`, "_blank");
 });
