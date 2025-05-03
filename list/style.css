@@ -297,6 +297,7 @@ h2 {
 }
 
 #dexSelector, #sort-options {
+    appearance: none;
     background-color: #A94DC1;
     color: white;
     border: none;
@@ -362,12 +363,12 @@ h2 {
     border-radius: 5px;
 }
 
-@media (max-width: 513px) {
+@media (max-width: 530px) {
     .ball-container {
-        width: 40%;
+        width: 35%;
     }
     .popup-art-container {
-        width: 40% !important;
+        width: 35% !important;
     }
 }
 

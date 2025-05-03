@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1746297104",
+            "changes": [
+                "Updated to new spawn arts in Empireballs (Galactic Empire, Goryeo, Joseon, Kingdom of Finland, Mayan Empire, Rebel Alliance, Reichtangle, Seljuk Turks, Serbian Empire, Swedish Empire, Tokugawa Shogunate, Umayyad Caliphate)"
+            ]
+        },
+        {
             "timestamp": "1746289730",
             "changes": [
                 "Massive Spawn Arts List update - added DynastyDex, Empireballs and HistoryDex to choose from"
