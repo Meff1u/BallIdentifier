@@ -51,7 +51,7 @@ fetch("../assets/jsons/Ballsdex.json")
                 ballDiv.appendChild(nameElement);
 
                 const imgElement = document.createElement("img");
-                imgElement.src = `../assets/BallsdexCompressed/${name}.webp`;
+                imgElement.src = `../assets/compressed/Ballsdex/${name}.webp`;
                 imgElement.alt = name;
 
                 const imgPromise = new Promise((resolve, reject) => {
