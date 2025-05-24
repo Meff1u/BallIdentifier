@@ -23,360 +23,372 @@
     "rarity": 4,
     "artist": "topwanted_"
   },
-  "Soviet Union": {
+  "Imperialist United States": {
     "rarity": 5,
+    "artist": "ocean_wav3"
+  },
+  "Soviet Union": {
+    "rarity": 6,
     "artist": "topwanted_"
   },
   "Han Dynasty": {
-    "rarity": 6,
+    "rarity": 7,
     "artist": "deutsches.kaiserreich"
   },
   "Nazi Germany": {
-    "rarity": 7,
+    "rarity": 8,
     "artist": "Deleted discord account"
   },
   "Rashidun Caliphate": {
-    "rarity": 8,
+    "rarity": 9,
     "artist": "nicollovezgod"
   },
   "Aztec Empire": {
-    "rarity": 9,
+    "rarity": 10,
     "artist": "argahalabatak"
   },
   "Tang Dynasty": {
-    "rarity": 10,
+    "rarity": 11,
     "artist": "Skimpy Noodle"
   },
   "Golden Horde": {
-    "rarity": 11,
+    "rarity": 12,
     "artist": "nicollovezgod"
   },
   "Frankish Empire": {
-    "rarity": 12,
+    "rarity": 13,
     "artist": "Unknown"
   },
   "Mayan Empire": {
-    "rarity": 12,
+    "rarity": 13,
     "artist": "nicollovezgod"
   },
   "Ethiopian Empire": {
-    "rarity": 13,
+    "rarity": 14,
     "artist": "JimmyTheSK4TER#7633"
   },
   "Achaemenid Empire": {
-    "rarity": 13,
+    "rarity": 14,
     "artist": "Unknown"
   },
-  "Mughal Empire": {
+  "Hunnic Empire": {
     "rarity": 14,
+    "artist": "ocean_wav3 & _estonia"
+  },
+  "Mughal Empire": {
+    "rarity": 15,
     "artist": "djiyippy"
   },
   "Gokturk Khaganate": {
-    "rarity": 15,
+    "rarity": 16,
     "artist": "aweirdunit"
   },
   "Parthian Empire": {
-    "rarity": 15,
+    "rarity": 16,
     "artist": "nicollovezgod"
   },
   "Safavid Persia": {
-    "rarity": 15,
+    "rarity": 16,
     "artist": "emilzakaryan"
   },
-  "Armenian Empire": {
-    "rarity": 15,
+  "Kingdom of Armenia": {
+    "rarity": 16,
     "artist": "deutsches.kaiserreich"
   },
   "Tokugawa Shogunate": {
-    "rarity": 15,
-    "artist": "nicollovezgod"
+    "rarity": 16,
+    "artist": "ocean_wav3"
   },
   "Reichtangle": {
-    "rarity": 15,
+    "rarity": 16,
     "artist": "colin_iii"
   },
   "Austrian Empire": {
-    "rarity": 16,
+    "rarity": 17,
     "artist": "Unknown"
   },
   "Qin Dynasty": {
-    "rarity": 17,
+    "rarity": 18,
     "artist": "storme_r"
   },
   "Mali Empire": {
-    "rarity": 18,
+    "rarity": 19,
     "artist": "republic_of_kiev_mapedits"
   },
   "Qing Dynasty": {
-    "rarity": 19,
-    "artist": "Unknown"
-  },
-  "Italian Social Republic": {
     "rarity": 20,
     "artist": "Unknown"
   },
-  "Kingdom of Finland": {
+  "Italian Social Republic": {
     "rarity": 21,
+    "artist": "Unknown"
+  },
+  "Kingdom of Finland": {
+    "rarity": 22,
     "artist": "lluismqhhh"
   },
   "Kingdom of Prussia": {
-    "rarity": 21,
+    "rarity": 22,
     "artist": "deutsches.kaiserreich"
   },
   "Empire of Brazil": {
-    "rarity": 21,
+    "rarity": 22,
     "artist": "Unknown"
   },
   "Byzantium": {
-    "rarity": 21,
+    "rarity": 22,
     "artist": "topwanted_"
   },
   "Western Roman Empire": {
-    "rarity": 22,
+    "rarity": 23,
     "artist": "republic_of_kiev"
   },
   "Grand Duchy of Moscow": {
-    "rarity": 23,
+    "rarity": 24,
     "artist": "benito_mussoloini777"
   },
   "Akkadian Empire": {
-    "rarity": 24,
+    "rarity": 25,
     "artist": "Unknown"
   },
   "Grand Duchy of Lithuania": {
-    "rarity": 25,
-    "artist": "Unknown"
-  },
-  "Polish-Lithuanian Commonwealth": {
-    "rarity": 25,
-    "artist": "rhk1228"
-  },
-  "Timurid Empire": {
-    "rarity": 25,
-    "artist": "Spicy Meatball"
-  },
-  "Ancient Egypt": {
     "rarity": 26,
     "artist": "Unknown"
   },
-  "Incan Empire": {
+  "Polish-Lithuanian Commonwealth": {
+    "rarity": 26,
+    "artist": "rhk1228"
+  },
+  "Timurid Empire": {
+    "rarity": 26,
+    "artist": "Spicy Meatball"
+  },
+  "Ancient Egypt": {
     "rarity": 27,
+    "artist": "ocean_wav3"
+  },
+  "Incan Empire": {
+    "rarity": 28,
     "artist": "Unknown"
   },
   "Serbian Empire": {
-    "rarity": 28,
+    "rarity": 29,
     "artist": "nicollovezgod"
   },
   "Sassanid Empire": {
-    "rarity": 29,
+    "rarity": 30,
     "artist": "Unknown"
   },
   "Latin Empire": {
-    "rarity": 29,
+    "rarity": 30,
     "artist": "bryaint"
   },
   "Korean Empire": {
-    "rarity": 29,
+    "rarity": 30,
     "artist": "argahalabatak"
   },
   "Gupta Empire": {
-    "rarity": 30,
+    "rarity": 31,
     "artist": "xhousepets"
   },
   "Caral-Supe City": {
-    "rarity": 30,
+    "rarity": 31,
     "artist": "nicollovezgod"
   },
   "Kingdom of Italy": {
-    "rarity": 31,
+    "rarity": 32,
     "artist": "thecatdeveloper"
   },
   "Carthage": {
-    "rarity": 32,
+    "rarity": 33,
     "artist": "ancientdex"
   },
   "Mamluk Sultanate": {
-    "rarity": 33,
+    "rarity": 34,
     "artist": "ali_elsherif"
   },
   "Holy Roman Empire": {
-    "rarity": 34,
+    "rarity": 35,
     "artist": "deutsches.kaiserreich"
   },
   "Napoleonic France": {
-    "rarity": 35,
+    "rarity": 36,
     "artist": "lego_sansyt"
   },
   "North Sea Empire": {
-    "rarity": 36,
+    "rarity": 37,
     "artist": "nicollovezgod"
   },
   "Mauryan Empire": {
-    "rarity": 37,
+    "rarity": 38,
     "artist": "bethany.s_c0rpse"
   },
   "Russian Empire": {
-    "rarity": 38,
+    "rarity": 39,
     "artist": "topwanted_"
   },
   "Babylon": {
-    "rarity": 39,
+    "rarity": 40,
     "artist": "theguywhodraws"
   },
   "Gran Colombia": {
-    "rarity": 40,
+    "rarity": 41,
     "artist": "mono6868"
   },
   "Kingdom of Romania": {
-    "rarity": 41,
+    "rarity": 42,
     "artist": "account_gmd"
   },
   "Kingdom of Hungary": {
-    "rarity": 42,
+    "rarity": 43,
     "artist": "Unknown"
   },
   "Spanish Empire": {
-    "rarity": 43,
+    "rarity": 44,
     "artist": "yodudeisthegoat"
   },
   "Ancient Greece": {
-    "rarity": 44,
+    "rarity": 45,
     "artist": "Unknown"
   },
   "Belgian Colonial Empire": {
-    "rarity": 45,
+    "rarity": 46,
     "artist": "elizaveta_hedervary"
   },
   "Dutch Republic": {
-    "rarity": 46,
-    "artist": "nicollovezgod"
-  },
-  "Seljuk Turks": {
     "rarity": 47,
     "artist": "nicollovezgod"
   },
-  "Kalmar Union": {
+  "Seljuk Turks": {
     "rarity": 48,
+    "artist": "nicollovezgod"
+  },
+  "Kalmar Union": {
+    "rarity": 49,
     "artist": "nicollovezgod"
   },
   "Denmark-Norway": {
-    "rarity": 48,
+    "rarity": 49,
     "artist": "lego_sansyt"
   },
   "Kingdom of Bavaria": {
-    "rarity": 49,
+    "rarity": 50,
     "artist": "_estonia"
   },
   "Japanese Empire": {
-    "rarity": 50,
+    "rarity": 51,
     "artist": "topwanted_"
   },
   "Tsardom of Russia": {
-    "rarity": 51,
+    "rarity": 52,
     "artist": "edougamer"
   },
   "Austria-Hungary": {
-    "rarity": 52,
+    "rarity": 53,
     "artist": "deutsches.kaiserreich"
   },
   "Kingdom of Georgia": {
-    "rarity": 52,
+    "rarity": 53,
     "artist": "Unknown"
   },
   "Ilkhanate": {
-    "rarity": 53,
+    "rarity": 54,
     "artist": "dark3nd"
   },
   "Empire of China": {
-    "rarity": 54,
-    "artist": "account_gmd"
+    "rarity": 55,
+    "artist": "v_rsailles."
   },
   "Kievan Rus": {
-    "rarity": 55,
+    "rarity": 56,
     "artist": "republic_of_kiev_mapedits"
   },
   "Kazakh Khanate": {
-    "rarity": 56,
-    "artist": "Unknown"
+    "rarity": 57,
+    "artist": "smasherbutcool"
   },
   "Roman Empire": {
-    "rarity": 57,
+    "rarity": 58,
     "artist": "thedreak"
   },
   "Kingdom of Bohemia": {
-    "rarity": 58,
+    "rarity": 59,
     "artist": "the_madness_guy"
   },
   "Majapahit Empire": {
-    "rarity": 58,
+    "rarity": 59,
     "artist": "bethany.s_c0rpse"
   },
   "First Mexican Empire": {
-    "rarity": 59,
+    "rarity": 60,
     "artist": "Polska Ball#9770"
   },
   "British Empire": {
-    "rarity": 60,
-    "artist": "._themagicalflame_."
-  },
-  "First Haitian Empire": {
     "rarity": 61,
     "artist": "._themagicalflame_."
   },
-  "Second Mexican Empire": {
+  "First Haitian Empire": {
     "rarity": 62,
+    "artist": "._themagicalflame_."
+  },
+  "Second Mexican Empire": {
+    "rarity": 63,
     "artist": "argahalabatak"
   },
   "Ghana Empire": {
-    "rarity": 63,
+    "rarity": 64,
     "artist": "deutsches.kaiserreich"
   },
   "Mongol Empire": {
-    "rarity": 64,
+    "rarity": 65,
     "artist": "imperial_russian"
   },
   "Yuan Dynasty": {
-    "rarity": 65,
+    "rarity": 66,
     "artist": "ashiecubby"
   },
   "Kingdom of Bosnia": {
-    "rarity": 66,
-    "artist": "Austro"
+    "rarity": 67,
+    "artist": "myodisanimaciones123"
   },
   "German Empire": {
-    "rarity": 67,
-    "artist": "deutsches.kaiserreich"
+    "rarity": 68,
+    "artist": "countryballscostarica1848"
   },
   "Ottoman Empire": {
-    "rarity": 68,
+    "rarity": 69,
     "artist": "topwanted_"
   },
+  "Kingdom of Hawaii": {
+    "rarirty": 70,
+    "artist": "ocean_wav3"
+  },
   "Sokoto Caliphate": {
-    "rarity": 69,
+    "rarity": 71,
     "artist": "edougamer"
   },
   "Swedish Empire": {
-    "rarity": 70,
-    "artist": "nicollovezgod"
-  },
-  "Portuguese Empire": {
-    "rarity": 71,
-    "artist": "dark3nd"
-  },
-  "Almohad Caliphate": {
     "rarity": 72,
     "artist": "nicollovezgod"
   },
-  "Tu'i Tonga": {
+  "Portuguese Empire": {
     "rarity": 73,
+    "artist": "dark3nd"
+  },
+  "Almohad Caliphate": {
+    "rarity": 74,
+    "artist": "nicollovezgod"
+  },
+  "Tu'i Tonga": {
+    "rarity": 75,
     "artist": "deutsches.kaiserreich"
   },
   "Kingdom of Egypt": {
-    "rarity": 74,
+    "rarity": 76,
     "artist": "topwanted_"
   },
   "Assyria": {
-    "rarity": 75,
+    "rarity": 77,
     "artist": "milesball"
   }
 }

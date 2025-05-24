@@ -1,6 +1,18 @@
 {
     "changes": [
         {
+            "timestamp": "x",
+            "changes": [
+                "Updated HistoryDex rarities",
+                "Updated to new HistoryDex balls (Imperial Lisbon, Soviet Leningrad, Soviet Moscow, State of Deseret)",
+                "Updated to new spawn art in HistoryDex (Bolsheviks)",
+                "Updated Empireballs rarities",
+                "Updated to new Empireballs balls (Hunnic Empire, Imperialist United States, Kingdom of Hawaii)",
+                "Updated to new spawn art in Empireballs (German Empire, Empire of China, Kingdom of Bosnia, Kazakh Khanate, Tokugawa Shogunate, Reichtangle, Ancient Egypt)",
+                "Updated to new Empireballs ball display name (Armenian Empire -> Kingdom of Armenia)"
+            ]
+        },
+        {
             "timestamp": "1748018497",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Qajar Dynasty)"

@@ -133,7 +133,7 @@
     },
     "Byzantine Empire": {
         "rarity": 6,
-        "artist": "expinox"
+        "artist": "dark3nd"
     },
     "Qin": {
         "rarity": 6,
@@ -263,6 +263,10 @@
         "rarity": 9,
         "artist": "acrestronk"
     },
+    "Soviet Moscow": {
+        "rarity": 10,
+        "artist": "dark3nd"
+    },
     "Union of Poland-Hungary": {
         "rarity": 10,
         "artist": "colin_iii"
@@ -323,13 +327,17 @@
         "rarity": 11,
         "artist": "dark3nd"
     },
+    "Fascist Italy": {
+        "rarity": 12,
+        "artist": "acrestronk"
+    },
     "Imperial Rio de Janeiro": {
         "rarity": 12,
         "artist": "dark3nd"
     },
     "Bolsheviks": {
         "rarity": 12,
-        "artist": "id3ttwd"
+        "artist": "ragnitxt"
     },
     "Kingdom of England": {
         "rarity": 12,
@@ -383,10 +391,6 @@
         "rarity": 13,
         "artist": "dark3nd"
     },
-    "Fascist Rome": {
-        "rarity": 14,
-        "artist": "business_mann"
-    },
     "Belgian Empire": {
         "rarity": 14,
         "artist": "kobersv2 & semana0359"
@@ -399,6 +403,14 @@
         "rarity": 14,
         "artist": "bfbrobloxplayz & floridianirishguy"
     },
+    "Fascist Rome": {
+        "rarity": 15,
+        "artist": "business_mann"
+    },
+    "Kingdom of Italy": {
+        "rarity": 15,
+        "artist": "acrestronk"
+    },
     "Mughal Empire": {
         "rarity": 15,
         "artist": "yodudeusthegoat"
@@ -406,10 +418,6 @@
     "Kalmar Union": {
         "rarity": 15,
         "artist": "ethan_heathcliff"
-    },
-    "Fascist Italy": {
-        "rarity": 15,
-        "artist": "acrestronk"
     },
     "Delhi Sultanate": {
         "rarity": 15,
@@ -442,6 +450,14 @@
     "Ilkhanate": {
         "rarity": 15,
         "artist": "dark3nd"
+    },
+    "Imperial Lisbon": {
+        "rarity": 16,
+        "artist": "acrestronk"
+    },
+    "Soviet Leningrad": {
+        "rarity": 16,
+        "artist": "ragnitxt"
     },
     "Kalmar Copenhagen": {
         "rarity": 16,
@@ -590,10 +606,6 @@
     "North Sea Empire": {
         "rarity": 19,
         "artist": "king_of_pingas"
-    },
-    "Kingdom of Italy": {
-        "rarity": 19,
-        "artist": "acrestronk"
     },
     "Three Kingdoms": {
         "rarity": 19,
@@ -1162,6 +1174,10 @@
     "Kingdom of Sicily": {
         "rarity": 42,
         "artist": "navid_habibi"
+    },
+    "State of Deseret": {
+        "rarity": 43,
+        "artist": "not_woterbottle"
     },
     "Ottoman Tripolitania": {
         "rarity": 43,
@@ -2257,7 +2273,7 @@
     },
     "Orange Free State": {
         "rarity": 194,
-        "artist": "theyluvashlynn."
+        "artist": "dark3nd"
     },
     "Cisplatina": {
         "rarity": 195,
