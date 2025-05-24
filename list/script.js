@@ -157,15 +157,21 @@ document.addEventListener("DOMContentLoaded", function () {
         const waveOption = sortOptions.querySelector('option[value="wave"]');
         const idOption = sortOptions.querySelector('option[value="id"]');
         const h2 = document.querySelector("h2");
+        const toggleWave = document.getElementById("toggle-wave");
+        const toggleID = document.getElementById("toggle-id");
 
         if (selectedDex === "Ballsdex") {
             waveOption.style.display = "block";
             idOption.style.display = "block";
             h2.style.display = "block";
+            toggleWave.style.display = "block";
+            toggleID.style.display = "block";
         } else {
             waveOption.style.display = "none";
             idOption.style.display = "none";
             h2.style.display = "none";
+            toggleWave.style.display = "none";
+            toggleID.style.display = "none";
 
             if (sortOptions.value === "wave" || sortOptions.value === "id") {
                 sortOptions.value = "rarity";
