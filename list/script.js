@@ -164,14 +164,15 @@ document.addEventListener("DOMContentLoaded", function () {
             waveOption.style.display = "block";
             idOption.style.display = "block";
             h2.style.display = "block";
-            toggleWave.style.display = "block";
-            toggleID.style.display = "block";
+            // add disabled
+            toggleWave.disabled = false;
+            toggleID.disabled = false;
         } else {
             waveOption.style.display = "none";
             idOption.style.display = "none";
             h2.style.display = "none";
-            toggleWave.style.display = "none";
-            toggleID.style.display = "none";
+            toggleWave.disabled = true;
+            toggleID.disabled = true;
 
             if (sortOptions.value === "wave" || sortOptions.value === "id") {
                 sortOptions.value = "rarity";
