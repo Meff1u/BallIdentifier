@@ -164,7 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
             waveOption.style.display = "block";
             idOption.style.display = "block";
             h2.style.display = "block";
-            // add disabled
             toggleWave.disabled = false;
             toggleID.disabled = false;
         } else {
