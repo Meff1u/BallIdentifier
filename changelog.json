@@ -1,7 +1,13 @@
 {
     "changes": [
         {
-            "timestamp": "X",
+            "timestamp": "1748354860",
+            "changes": [
+                "List - Added IDs to DynastyDex"
+            ]
+        },
+        {
+            "timestamp": "1748280120",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Eswatini)",
                 "Updated to new Empireballs ball display name (Dutch Republic -> Dutch Empire)"

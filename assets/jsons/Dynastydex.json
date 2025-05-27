@@ -1,722 +1,902 @@
 {
     "Atlantis": {
         "rarity": 1,
-        "artist": "britishchap"
+        "artist": "britishchap",
+        "id": 146
     },
     "Rashidun Caliphate": {
         "rarity": 1,
-        "artist": "Nono"
+        "artist": "Nono",
+        "id": 219
     },
     "Mongol Empire": {
         "rarity": 1,
-        "artist": "Joel"
+        "artist": "Joel",
+        "id": 145
     },
     "British Empire": {
         "rarity": 1,
-        "artist": "Chap & Business Woman"
+        "artist": "Chap & Business Woman",
+        "id": 156
     },
     "Portuguese Empire": {
         "rarity": 1,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 151
     },
     "Roman Empire": {
         "rarity": 6,
-        "artist": "Business Woman"
+        "artist": "Business Woman",
+        "id": 149
     },
     "Teutonic Order": {
         "rarity": 6,
-        "artist": "Lotzer & Verdammt"
+        "artist": "Lotzer & Verdammt",
+        "id": 229
     },
     "Holy Roman Empire": {
         "rarity": 8,
-        "artist": "Verdammt"
+        "artist": "Verdammt",
+        "id": 144
     },
     "Nazi Germany": {
         "rarity": 8,
-        "artist": "thedarkcat & Lotzer"
+        "artist": "thedarkcat & Lotzer",
+        "id": 23
     },
     "Umayyad Caliphate": {
         "rarity": 10,
-        "artist": "Verdammt"
+        "artist": "Verdammt",
+        "id": 192
     },
     "Byzantium": {
         "rarity": 10,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 135
     },
     "Soviet Union": {
         "rarity": 12,
-        "artist": "Business Woman"
+        "artist": "Business Woman",
+        "id": 85
     },
     "Republic of Pirates": {
         "rarity": 12,
-        "artist": "thedarkcat"
+        "artist": "thedarkcat",
+        "id": 56
     },
     "Carthage": {
         "rarity": 14,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "id": 113
     },
     "Han Dynasty": {
         "rarity": 14,
-        "artist": "Clay"
+        "artist": "Clay",
+        "id": 143
     },
     "Western Roman Empire": {
         "rarity": 14,
-        "artist": "BFBRoblox"
+        "artist": "BFBRoblox",
+        "id": 211
     },
     "Qing Dynasty": {
         "rarity": 14,
-        "artist": "caro"
+        "artist": "caro",
+        "id": 206
     },
     "Mali Empire": {
         "rarity": 18,
-        "artist": "BFBRoblox"
+        "artist": "BFBRoblox",
+        "id": 142
     },
     "Ashikaga Shogunate": {
         "rarity": 18,
-        "artist": "Joel"
+        "artist": "Joel",
+        "id": 179
     },
     "Spanish Empire": {
         "rarity": 18,
-        "artist": "Adam"
+        "artist": "Adam",
+        "id": 76
     },
     "First French Empire": {
         "rarity": 18,
-        "artist": "Kai"
+        "artist": "Kai",
+        "id": 150
     },
     "Russian Empire": {
         "rarity": 18,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 7
     },
     "Thirteen Colonies": {
         "rarity": 18,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 31
     },
     "Kingdom of Western Macedonia": {
         "rarity": 24,
-        "artist": "Lotzer & Verdammt"
+        "artist": "Lotzer & Verdammt",
+        "id": 83
     },
     "Republic of Venice": {
         "rarity": 24,
-        "artist": "Wafflez"
+        "artist": "Wafflez",
+        "id": 205
     },
     "Ancient Greece": {
         "rarity": 24,
-        "artist": "Nono"
+        "artist": "Nono",
+        "id": 132
     },
     "Empire of Ghana": {
         "rarity": 27,
-        "artist": "Clay"
+        "artist": "Clay",
+        "id": 228
     },
     "German Empire": {
         "rarity": 27,
-        "artist": "Wafflez"
+        "artist": "Wafflez",
+        "id": 94
     },
     "Tokugawa Shogunate": {
         "rarity": 27,
-        "artist": "Verdammt"
+        "artist": "Verdammt",
+        "id": 216
     },
     "Seleucid Empire": {
         "rarity": 30,
-        "artist": "thedarkcat & Lotzer"
+        "artist": "thedarkcat & Lotzer",
+        "id": 208
     },
     "Joseon": {
         "rarity": 30,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "id": 182
     },
     "Athens": {
         "rarity": 32,
-        "artist": "Shockwave"
+        "artist": "Shockwave",
+        "id": 226
     },
     "First Toungoo Empire": {
         "rarity": 32,
-        "artist": "Stranger"
+        "artist": "Stranger",
+        "id": 126
     },
     "Ottoman Empire": {
         "rarity": 32,
-        "artist": "Verdammt"
+        "artist": "Verdammt",
+        "id": 34
     },
     "Austria-Hungary": {
         "rarity": 32,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "id": 124
     },
     "The Huns": {
         "rarity": 36,
-        "artist": "Clay"
+        "artist": "Clay",
+        "id": 63
     },
     "Kamakura Shogunate": {
         "rarity": 36,
-        "artist": "Plush & thedarkcat"
+        "artist": "Plush & thedarkcat",
+        "id": 95
     },
     "Srivijaya": {
         "rarity": 38,
-        "artist": "Hecker"
+        "artist": "Hecker",
+        "id": 203
     },
     "Majapahit": {
         "rarity": 38,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 20
     },
     "Imperial Japan": {
         "rarity": 40,
-        "artist": "Business Woman"
+        "artist": "Business Woman",
+        "id": 32
     },
     "North Sea Empire": {
         "rarity": 40,
-        "artist": "Lee"
+        "artist": "Lee",
+        "id": 209
     },
     "Song Dynasty": {
         "rarity": 42,
-        "artist": "Caro"
+        "artist": "Caro",
+        "id": 183
     },
     "Sparta": {
         "rarity": 42,
-        "artist": "Chap"
+        "artist": "Chap",
+        "id": 169
     },
     "Qin Dynasty": {
         "rarity": 42,
-        "artist": "Nile"
+        "artist": "Nile",
+        "id": 189
     },
     "Polish-Lithuanian Commonwealth": {
         "rarity": 42,
-        "artist": "Spom"
+        "artist": "Spom",
+        "id": 102
     },
     "Carolingian Empire": {
         "rarity": 42,
-        "artist": "Lotzer & Lifty"
+        "artist": "Lotzer & Lifty",
+        "id": 99
     },
     "Scythia": {
         "rarity": 42,
-        "artist": "thedarkcat"
+        "artist": "thedarkcat",
+        "id": 69
     },
     "Cumania": {
         "rarity": 42,
-        "artist": "Stranger"
+        "artist": "Stranger",
+        "id": 140
     },
     "Al Andalus": {
         "rarity": 49,
-        "artist": "BFBRoblox"
+        "artist": "BFBRoblox",
+        "id": 204
     },
     "Lotharingia": {
         "rarity": 49,
-        "artist": "Adam"
+        "artist": "Adam",
+        "id": 166
     },
     "Xiongnu": {
         "rarity": 49,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "id": 188
     },
     "Yugoslavia": {
         "rarity": 52,
-        "artist": "Nono"
+        "artist": "Nono",
+        "id": 136
     },
     "Chagatai Khanate": {
         "rarity": 52,
-        "artist": "BFBRoblox"
+        "artist": "BFBRoblox",
+        "id": 213
     },
     "Golden Horde": {
         "rarity": 54,
-        "artist": "Kai"
+        "artist": "Kai",
+        "id": 80
     },
     "Mughal Empire": {
         "rarity": 54,
-        "artist": "Noise"
+        "artist": "Noise",
+        "id": 47
     },
     "Inca Empire": {
         "rarity": 54,
-        "artist": "BFBRoblox"
+        "artist": "BFBRoblox",
+        "id": 2
     },
     "White Rus": {
         "rarity": 54,
-        "artist": "Joel"
+        "artist": "Joel",
+        "id": 130
     },
     "Aztec Empire": {
         "rarity": 54,
-        "artist": "BFBRoblox"
+        "artist": "BFBRoblox",
+        "id": 28
     },
     "Mayan Empire": {
         "rarity": 54,
-        "artist": "Stranger"
+        "artist": "Stranger",
+        "id": 175
     },
     "Mataram Kingdom": {
         "rarity": 60,
-        "artist": "Kai"
+        "artist": "Kai",
+        "id": 93
     },
     "Mamluk Sultanate": {
         "rarity": 60,
-        "artist": "flask"
+        "artist": "flask",
+        "id": 180
     },
     "Novgorod Republic": {
         "rarity": 60,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 217
     },
     "Austrian Empire": {
         "rarity": 60,
-        "artist": "Ghost White"
+        "artist": "Ghost White",
+        "id": 115
     },
     "Songhai Empire": {
         "rarity": 60,
-        "artist": "Misty"
+        "artist": "Misty",
+        "id": 55
     },
     "Union": {
         "rarity": 65,
-        "artist": "Estonia"
+        "artist": "Estonia",
+        "id": 57
     },
     "City-State of Troy": {
         "rarity": 66,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 167
     },
     "Safavid Empire": {
         "rarity": 67,
-        "artist": "Caro"
+        "artist": "Caro",
+        "id": 91
     },
     "Dutch Republic": {
         "rarity": 67,
-        "artist": "Verdammt"
+        "artist": "Verdammt",
+        "id": 50
     },
     "Olmec": {
         "rarity": 67,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 174
     },
     "Achaemenid Empire": {
         "rarity": 67,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 96
     },
     "Emirate of Granada": {
         "rarity": 67,
-        "artist": "flask"
+        "artist": "flask",
+        "id": 225
     },
     "Tripolitanian Pirates": {
         "rarity": 72,
-        "artist": "Verdammt"
+        "artist": "Verdammt",
+        "id": 202
     },
     "Prussia": {
         "rarity": 72,
-        "artist": "Nono"
+        "artist": "Nono",
+        "id": 74
     },
     "Ajuran Sultanate": {
         "rarity": 72,
-        "artist": "thedarkcat"
+        "artist": "thedarkcat",
+        "id": 185
     },
     "Chola Dynasty": {
         "rarity": 75,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "id": 125
     },
     "Kingdom of Norway": {
         "rarity": 75,
-        "artist": "Hallowz"
+        "artist": "Hallowz",
+        "id": 11
     },
     "Celts": {
         "rarity": 75,
-        "artist": "Durell & BFBRoblox"
+        "artist": "Durell & BFBRoblox",
+        "id": 207
     },
     "Anglo Saxons": {
         "rarity": 78,
-        "artist": "Verdammt"
+        "artist": "Verdammt",
+        "id": 153
     },
     "Maurya Empire": {
         "rarity": 78,
-        "artist": "thedarkcat"
+        "artist": "thedarkcat",
+        "id": 118
     },
     "Tibetan Empire": {
         "rarity": 78,
-        "artist": "lavlux_"
+        "artist": "lavlux_",
+        "id": 101
     },
     "Lordship of Frisia": {
         "rarity": 78,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "id": 108
     },
     "Ayyubid Dynasty": {
         "rarity": 78,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 181
     },
     "Kingdom of Italy": {
         "rarity": 78,
-        "artist": "Nightmareyrq"
+        "artist": "Nightmareyrq",
+        "id": 45
     },
     "Kingdom of Sicily": {
         "rarity": 78,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 12
     },
     "Rhodes": {
         "rarity": 85,
-        "artist": "Protoria"
+        "artist": "Protoria",
+        "id": 163
     },
     "Phoenicia": {
         "rarity": 85,
-        "artist": "thedarkcat & Lotzer"
+        "artist": "thedarkcat & Lotzer",
+        "id": 178
     },
     "Kingdom of Sardinia": {
         "rarity": 87,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 164
     },
     "Kingdom of Brazil": {
         "rarity": 87,
-        "artist": "shock"
+        "artist": "shock",
+        "id": 15
     },
     "Papal States": {
         "rarity": 87,
-        "artist": "Cona"
+        "artist": "Cona",
+        "id": 30
     },
     "Baekje": {
         "rarity": 87,
-        "artist": "Misty"
+        "artist": "Misty",
+        "id": 103
     },
     "Damascus": {
         "rarity": 87,
-        "artist": "Business Woman"
+        "artist": "Business Woman",
+        "id": 134
     },
     "Grand Duchy of Lithuania": {
         "rarity": 92,
-        "artist": "Wafflez"
+        "artist": "Wafflez",
+        "id": 215
     },
     "Olympia": {
         "rarity": 92,
-        "artist": "Misty"
+        "artist": "Misty",
+        "id": 58
     },
     "Belgian Colonial Empire": {
         "rarity": 94,
-        "artist": "Business Woman"
+        "artist": "Business Woman",
+        "id": 81
     },
     "Neo-Assyrian Empire": {
         "rarity": 94,
-        "artist": "Estonia"
+        "artist": "Estonia",
+        "id": 129
     },
     "Corinth": {
         "rarity": 96,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 52
     },
     "Kyrgyz Khaganate": {
         "rarity": 96,
-        "artist": "Hecker"
+        "artist": "Hecker",
+        "id": 201
     },
     "New Kingdom of Egypt": {
         "rarity": 98,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "id": 65
     },
     "Confederate States": {
         "rarity": 98,
-        "artist": "Kai"
+        "artist": "Kai",
+        "id": 78
     },
     "Kingdom of Poland": {
         "rarity": 100,
-        "artist": "Hallowz"
+        "artist": "Hallowz",
+        "id": 116
     },
     "The Wari": {
         "rarity": 100,
-        "artist": "Hallowz"
+        "artist": "Hallowz",
+        "id": 176
     },
     "Kingdom of Yemen": {
         "rarity": 102,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 187
     },
     "Duchy of Lorraine": {
         "rarity": 102,
-        "artist": "Lotzer & Egor"
+        "artist": "Lotzer & Egor",
+        "id": 227
     },
     "Qocho Kingdom": {
         "rarity": 102,
-        "artist": "Business Woman"
+        "artist": "Business Woman",
+        "id": 121
     },
     "First Mexican Empire": {
         "rarity": 102,
-        "artist": "Stranger"
+        "artist": "Stranger",
+        "id": 105
     },
     "Kingdom of Aksum": {
         "rarity": 102,
-        "artist": "Aksum Lover"
+        "artist": "Aksum Lover",
+        "id": 173
     },
     "Dai Viet": {
         "rarity": 102,
-        "artist": "Nono"
+        "artist": "Nono",
+        "id": 6
     },
     "Duchy of Pomerania": {
         "rarity": 108,
-        "artist": "Lifty"
+        "artist": "Lifty",
+        "id": 128
     },
     "Convict Australia": {
         "rarity": 108,
-        "artist": "Chap"
+        "artist": "Chap",
+        "id": 89
     },
     "Kingdom of Scotland": {
         "rarity": 108,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 67
     },
     "Duchy of Burgundy": {
         "rarity": 108,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 161
     },
     "Durrani Empire": {
         "rarity": 112,
-        "artist": "flask"
+        "artist": "flask",
+        "id": 60
     },
     "Bengal Sultanate": {
         "rarity": 112,
-        "artist": "flask"
+        "artist": "flask",
+        "id": 127
     },
     "Kingdom of Naples": {
         "rarity": 112,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 155
     },
     "Kingdom of Hawaii": {
         "rarity": 112,
-        "artist": "AkiraSoku"
+        "artist": "AkiraSoku",
+        "id": 73
     },
     "Tang Dynasty": {
         "rarity": 112,
-        "artist": "Durell"
+        "artist": "Durell",
+        "id": 48
     },
     "Serbian Empire": {
         "rarity": 117,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 190
     },
     "Duchy of Brittany": {
         "rarity": 117,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 154
     },
     "Heian Dynasty": {
         "rarity": 119,
-        "artist": "AkiraSoku"
+        "artist": "AkiraSoku",
+        "id": 86
     },
     "Mapuche": {
         "rarity": 119,
-        "artist": "Misty"
+        "artist": "Misty",
+        "id": 61
     },
     "Swedish Empire": {
         "rarity": 119,
-        "artist": "thedarkcat"
+        "artist": "thedarkcat",
+        "id": 71
     },
     "Land of Punt": {
         "rarity": 119,
-        "artist": "thedarkcat"
+        "artist": "thedarkcat",
+        "id": 171
     },
     "Kingdom of Bohemia": {
         "rarity": 123,
-        "artist": "thedarkcat"
+        "artist": "thedarkcat",
+        "id": 90
     },
     "Rapa Nui": {
         "rarity": 123,
-        "artist": "Stranger"
+        "artist": "Stranger",
+        "id": 79
     },
     "Duchy of Albany": {
         "rarity": 123,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 138
     },
     "Iroquois Confederacy": {
         "rarity": 126,
-        "artist": "Durell & Akira"
+        "artist": "Durell & Akira",
+        "id": 210
     },
     "Sioux": {
         "rarity": 126,
-        "artist": "AkiraSoku"
+        "artist": "AkiraSoku",
+        "id": 19
     },
     "Purépecha Empire": {
         "rarity": 126,
-        "artist": "BFBRoblox"
+        "artist": "BFBRoblox",
+        "id": 214
     },
     "Kingdom of Hungary": {
         "rarity": 126,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 72
     },
     "Kong Empire": {
         "rarity": 126,
-        "artist": "milchshake"
+        "artist": "milchshake",
+        "id": 172
     },
     "Kingdom of Romania": {
         "rarity": 126,
-        "artist": "Nono"
+        "artist": "Nono",
+        "id": 24
     },
     "Kingdom of Bulgaria": {
         "rarity": 126,
-        "artist": "BFBRoblox"
+        "artist": "BFBRoblox",
+        "id": 16
     },
     "Kingdom of Kongo": {
         "rarity": 133,
-        "artist": "Hallowz"
+        "artist": "Hallowz",
+        "id": 18
     },
     "Second Republic of Uganda": {
         "rarity": 133,
-        "artist": "flask"
+        "artist": "flask",
+        "id": 119
     },
     "Tamilakam": {
         "rarity": 133,
-        "artist": "Estonia"
+        "artist": "Estonia",
+        "id": 186
     },
     "Seminole Tribe": {
         "rarity": 133,
-        "artist": "Misty"
+        "artist": "Misty",
+        "id": 98
     },
     "Republic of Texas": {
         "rarity": 133,
-        "artist": "Chap"
+        "artist": "Chap",
+        "id": 117
     },
     "Kingdom of Bavaria": {
         "rarity": 138,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 165
     },
     "Kingdom of Judah": {
         "rarity": 138,
-        "artist": "Lifty"
+        "artist": "Lifty",
+        "id": 4
     },
     "Fidel's Cuba": {
         "rarity": 140,
-        "artist": "Durell"
+        "artist": "Durell",
+        "id": 200
     },
     "Guge": {
         "rarity": 140,
-        "artist": "Lifty"
+        "artist": "Lifty",
+        "id": 123
     },
     "Goths": {
         "rarity": 140,
-        "artist": "Nightmare"
+        "artist": "Nightmare",
+        "id": 97
     },
     "Kingdom of Serbia": {
         "rarity": 143,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 9
     },
     "Jolof Empire": {
         "rarity": 143,
-        "artist": "Nono"
+        "artist": "Nono",
+        "id": 170
     },
     "Pagan Kingdom": {
         "rarity": 145,
-        "artist": "thedarkcat"
+        "artist": "thedarkcat",
+        "id": 70
     },
     "Navajo": {
         "rarity": 145,
-        "artist": "Hecker"
+        "artist": "Hecker",
+        "id": 218
     },
     "Principality of Turov": {
         "rarity": 147,
-        "artist": "Miron"
+        "artist": "Miron",
+        "id": 133
     },
     "Cree": {
         "rarity": 148,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 29
     },
     "Gran Colombia": {
         "rarity": 148,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "id": 26
     },
     "Maori": {
         "rarity": 148,
-        "artist": "Stranger"
+        "artist": "Stranger",
+        "id": 82
     },
     "Oyo Empire": {
         "rarity": 148,
-        "artist": "Durell"
+        "artist": "Durell",
+        "id": 87
     },
     "Xia Dynasty": {
         "rarity": 148,
-        "artist": "thedarkcat"
+        "artist": "thedarkcat",
+        "id": 68
     },
     "Twa": {
         "rarity": 148,
-        "artist": "Stranger"
+        "artist": "Stranger",
+        "id": 84
     },
     "Kushan Empire": {
         "rarity": 154,
-        "artist": "thedarkcat"
+        "artist": "thedarkcat",
+        "id": 120
     },
     "Sodom and Gomorrah": {
         "rarity": 155,
-        "artist": "PGOstick"
+        "artist": "PGOstick",
+        "id": 220
     },
     "Ulster": {
         "rarity": 155,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 122
     },
     "Kingdom of Kurdistan": {
         "rarity": 155,
-        "artist": "Lanny"
+        "artist": "Lanny",
+        "id": 59
     },
     "Yugra": {
         "rarity": 158,
-        "artist": "BFBRoblox"
+        "artist": "BFBRoblox",
+        "id": 100
     },
     "Confederation of Rhine": {
         "rarity": 159,
-        "artist": "Sunlight"
+        "artist": "Sunlight",
+        "id": 33
     },
     "Dominion of Canada": {
         "rarity": 160,
-        "artist": "lavlux_"
+        "artist": "lavlux_",
+        "id": 114
     },
     "Liao Dynasty": {
         "rarity": 160,
-        "artist": "Estonia"
+        "artist": "Estonia",
+        "id": 104
     },
     "Malwa Sultanate": {
         "rarity": 160,
-        "artist": "nono & lavlux_"
+        "artist": "nono & lavlux_",
+        "id": 184
     },
     "Miskito Kingdom": {
         "rarity": 160,
-        "artist": "Adam"
+        "artist": "Adam",
+        "id": 212
     },
     "Kingdom of Armenia": {
         "rarity": 160,
-        "artist": "Egor"
+        "artist": "Egor",
+        "id": 35
     },
     "Tannu Tuva": {
         "rarity": 165,
-        "artist": "BFBRoblox"
+        "artist": "BFBRoblox",
+        "id": 221
     },
     "Ho-Chunk": {
         "rarity": 165,
-        "artist": "milchshake"
+        "artist": "milchshake",
+        "id": 177
     },
     "Kaabu Empire": {
         "rarity": 165,
-        "artist": "Misty"
+        "artist": "Misty",
+        "id": 75
     },
     "Kingdom of Tondo": {
         "rarity": 165,
-        "artist": "Durell"
+        "artist": "Durell",
+        "id": 222
     },
     "Kingdom of Croatia": {
         "rarity": 169,
-        "artist": "Stranger & lavlux_"
+        "artist": "Stranger & lavlux_",
+        "id": 10
     },
     "Thebes": {
         "rarity": 169,
-        "artist": "Adam"
+        "artist": "Adam",
+        "id": 92
     },
     "Bjarmaland": {
         "rarity": 169,
-        "artist": "Alexi"
+        "artist": "Alexi",
+        "id": 137
     },
     "Kingdom of Nagash": {
         "rarity": 172,
-        "artist": "thedarkcat"
+        "artist": "thedarkcat",
+        "id": 197
     },
     "Inuits": {
         "rarity": 172,
-        "artist": "Hallowz"
+        "artist": "Hallowz",
+        "id": 131
     },
     "Zulu": {
         "rarity": 172,
-        "artist": "Lotzer & BFBRoblox"
+        "artist": "Lotzer & BFBRoblox",
+        "id": 5
     },
     "Kingdom of Montenegro": {
         "rarity": 175,
-        "artist": "Cubic"
+        "artist": "Cubic",
+        "id": 106
     },
     "British Palestine": {
         "rarity": 175,
-        "artist": "thedarkcat"
+        "artist": "thedarkcat",
+        "id": 54
     },
     "Saint Domingue": {
         "rarity": 175,
-        "artist": "thedarkcat"
+        "artist": "thedarkcat",
+        "id": 13
     },
     "Dahomey": {
         "rarity": 175,
-        "artist": "Frog"
+        "artist": "Frog",
+        "id": 64
     },
     "Khmer Rouge": {
         "rarity": 175,
-        "artist": "Stranger"
+        "artist": "Stranger",
+        "id": 46
     },
     "Dagestan": {
         "rarity": 180,
-        "artist": "Lifty"
+        "artist": "Lifty",
+        "id": 27
     }
 }

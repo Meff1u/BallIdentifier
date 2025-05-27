@@ -39,6 +39,15 @@ document.addEventListener("DOMContentLoaded", function () {
                         };
                         const waveColor = waveColors[details.wave] || "#808080";
 
+                        if (["Ballsdex", "DynastyDex"].includes(dexName)) {
+
+                            const idElement = document.createElement("div");
+                            idElement.className = "id-indicator";
+                            idElement.textContent = details.id;
+                            idElement.title = `ID: ${details.id}`;
+                            ballDiv.appendChild(idElement);
+                        }
+
                         if (dexName === "Ballsdex") {
                             const waveElement = document.createElement("div");
                             waveElement.className = "wave-indicator";
@@ -46,12 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             waveElement.title = `Wave: ${details.wave}`;
                             waveElement.style.backgroundColor = waveColor;
                             ballDiv.appendChild(waveElement);
-
-                            const idElement = document.createElement("div");
-                            idElement.className = "id-indicator";
-                            idElement.textContent = details.id;
-                            idElement.title = `ID: ${details.id}`;
-                            ballDiv.appendChild(idElement);
                         }
 
                         const nameElement = document.createElement("h2");
@@ -157,26 +160,31 @@ document.addEventListener("DOMContentLoaded", function () {
         const waveOption = sortOptions.querySelector('option[value="wave"]');
         const idOption = sortOptions.querySelector('option[value="id"]');
         const h2 = document.querySelector("h2");
-        const toggleWave = document.getElementById("toggle-wave");
-        const toggleID = document.getElementById("toggle-id");
 
-        if (selectedDex === "Ballsdex") {
-            waveOption.style.display = "block";
-            idOption.style.display = "block";
-            h2.style.display = "block";
-            toggleWave.disabled = false;
-            toggleID.disabled = false;
-        } else {
-            waveOption.style.display = "none";
-            idOption.style.display = "none";
-            h2.style.display = "none";
-            toggleWave.disabled = true;
-            toggleID.disabled = true;
-
-            if (sortOptions.value === "wave" || sortOptions.value === "id") {
-                sortOptions.value = "rarity";
-            }
+        switch (selectedDex) {
+            case "Ballsdex":
+                waveOption.style.display = "block";
+                idOption.style.display = "block";
+                h2.style.display = "block";
+                break;
+            case "DynastyDex":
+                idOption.style.display = "block";
+                waveOption.style.display = "none";
+                h2.style.display = "none";
+                if (sortOptions.value === "wave") {
+                    sortOptions.value = "rarity";
+                }
+                break;
+            default:
+                waveOption.style.display = "none";
+                idOption.style.display = "none";
+                h2.style.display = "none";
+                if (sortOptions.value === "wave" || sortOptions.value === "id") {
+                    sortOptions.value = "rarity";
+                }
+                break;
         }
+
         loadDexData(selectedDex);
     });
 
@@ -253,6 +261,8 @@ document.addEventListener("DOMContentLoaded", function () {
     loadSettings();
     document.getElementById("sort-options").value = "rarity";
     document.getElementById("search-bar").value = "";
+    document.getElementById("dexSelector").value = "Ballsdex";
+    loadDexData("Ballsdex");
 
     document.addEventListener("keydown", function (event) {
         if (event.shiftKey && !event.ctrlKey && event.key.toLowerCase() === "f") {
