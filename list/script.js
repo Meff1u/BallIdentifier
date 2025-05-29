@@ -1,4 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
+    loadSettings();
+    document.getElementById("sort-options").value = "rarity";
+    document.getElementById("search-bar").value = "";
+    document.getElementById("dexSelector").value = "Ballsdex";
+    loadDexData("Ballsdex");
+
+    document.addEventListener("keydown", function (event) {
+        console.log('Key pressed:', event.key, 'Shift:', event.shiftKey, 'Ctrl:', event.ctrlKey);
+        if (event.shiftKey && !event.ctrlKey && event.key.toLowerCase() === "f") {
+            event.preventDefault();
+            const searchBar = document.getElementById("search-bar");
+            if (searchBar) {
+                searchBar.focus();
+                searchBar.select();
+            }
+        }
+    });
+
     const dexSelector = document.getElementById("dexSelector");
 
     function loadDexData(dexName) {
@@ -255,25 +273,6 @@ document.getElementById("overlay").addEventListener("click", function () {
     popup.style.display = "none";
     overlay.style.display = "none";
     document.body.classList.remove("no-scroll");
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    loadSettings();
-    document.getElementById("sort-options").value = "rarity";
-    document.getElementById("search-bar").value = "";
-    document.getElementById("dexSelector").value = "Ballsdex";
-    loadDexData("Ballsdex");
-
-    document.addEventListener("keydown", function (event) {
-        if (event.shiftKey && !event.ctrlKey && event.key.toLowerCase() === "f") {
-            event.preventDefault();
-            const searchBar = document.getElementById("search-bar");
-            if (searchBar) {
-                searchBar.focus();
-                searchBar.select();
-            }
-        }
-    });
 });
 
 function showNotification() {
