@@ -1,394 +1,492 @@
 {
   "Goryeo": {
     "rarity": 1,
-    "artist": "topwanted_"
+    "artist": "topwanted_",
+    "id": 31
   },
   "Joseon": {
     "rarity": 1,
-    "artist": "nicollovezgod"
+    "artist": "nicollovezgod",
+    "id": 77
   },
   "Abbasid Caliphate": {
     "rarity": 2,
-    "artist": "deutsches.kaiserreich"
+    "artist": "deutsches.kaiserreich",
+    "id": 72
   },
   "Umayyad Caliphate": {
     "rarity": 3,
-    "artist": "topwanted_"
+    "artist": "topwanted_",
+    "id": 42
   },
   "Rebel Alliance": {
     "rarity": 4,
-    "artist": "_estonia"
+    "artist": "_estonia",
+    "id": 57
   },
   "Galactic Empire": {
     "rarity": 4,
-    "artist": "topwanted_"
+    "artist": "topwanted_",
+    "id": 43
   },
   "Imperialist United States": {
     "rarity": 5,
-    "artist": "ocean_wav3"
+    "artist": "ocean_wav3",
+    "id": 106
   },
   "Soviet Union": {
     "rarity": 6,
-    "artist": "topwanted_"
+    "artist": "topwanted_",
+    "id": 41
   },
   "Han Dynasty": {
     "rarity": 7,
-    "artist": "deutsches.kaiserreich"
+    "artist": "deutsches.kaiserreich",
+    "id": 51
   },
   "Nazi Germany": {
     "rarity": 8,
-    "artist": "Deleted discord account"
+    "artist": "Deleted discord account",
+    "id": 23
   },
   "Rashidun Caliphate": {
     "rarity": 9,
-    "artist": "nicollovezgod"
+    "artist": "nicollovezgod",
+    "id": 104
   },
   "Aztec Empire": {
     "rarity": 10,
-    "artist": "argahalabatak"
+    "artist": "argahalabatak",
+    "id": 38
   },
   "Tang Dynasty": {
     "rarity": 11,
-    "artist": "deutsches.kaiserreich"
+    "artist": "deutsches.kaiserreich",
+    "id": 69
   },
   "Golden Horde": {
     "rarity": 12,
-    "artist": "nicollovezgod"
+    "artist": "nicollovezgod",
+    "id": 92
   },
   "Frankish Empire": {
     "rarity": 13,
-    "artist": "Unknown"
+    "artist": "Unknown",
+    "id": 34
   },
   "Mayan Empire": {
     "rarity": 13,
-    "artist": "nicollovezgod"
+    "artist": "nicollovezgod",
+    "id": 102
   },
   "Ethiopian Empire": {
     "rarity": 14,
-    "artist": "JimmyTheSK4TER#7633"
+    "artist": "JimmyTheSK4TER#7633",
+    "id": 68
   },
   "Achaemenid Empire": {
     "rarity": 14,
-    "artist": "Unknown"
+    "artist": "Unknown",
+    "id": 29
   },
   "Hunnic Empire": {
     "rarity": 14,
-    "artist": "ocean_wav3 & _estonia"
+    "artist": "ocean_wav3 & _estonia",
+    "id": 108
   },
   "Mughal Empire": {
     "rarity": 15,
-    "artist": "djiyippy"
+    "artist": "djiyippy",
+    "id": 93
   },
   "Gokturk Khaganate": {
     "rarity": 16,
-    "artist": "aweirdunit"
+    "artist": "aweirdunit",
+    "id": 86
   },
   "Parthian Empire": {
     "rarity": 16,
-    "artist": "nicollovezgod"
+    "artist": "nicollovezgod",
+    "id": 66
   },
   "Safavid Persia": {
     "rarity": 16,
-    "artist": "emilzakaryan"
+    "artist": "emilzakaryan",
+    "id": 82
   },
   "Kingdom of Armenia": {
     "rarity": 16,
-    "artist": "deutsches.kaiserreich"
+    "artist": "deutsches.kaiserreich",
+    "id": 75
   },
   "Tokugawa Shogunate": {
     "rarity": 16,
-    "artist": "ocean_wav3"
+    "artist": "ocean_wav3",
+    "id": 78
   },
   "Reichtangle": {
     "rarity": 16,
-    "artist": "colin_iii"
+    "artist": "colin_iii",
+    "id": 22
   },
   "Austrian Empire": {
     "rarity": 17,
-    "artist": "Unknown"
+    "artist": "Unknown",
+    "id": 61
   },
   "Qin Dynasty": {
     "rarity": 18,
-    "artist": "storme_r"
+    "artist": "storme_r",
+    "id": 95
   },
   "Mali Empire": {
     "rarity": 19,
-    "artist": "republic_of_kiev_mapedits"
+    "artist": "republic_of_kiev_mapedits",
+    "id": 20
   },
   "Qing Dynasty": {
     "rarity": 20,
-    "artist": "Unknown"
+    "artist": "Unknown",
+    "id": 12
   },
   "Italian Social Republic": {
     "rarity": 21,
-    "artist": "Unknown"
+    "artist": "Unknown",
+    "id": 56
   },
   "Kingdom of Finland": {
     "rarity": 22,
-    "artist": "lluismqhhh"
+    "artist": "lluismqhhh",
+    "id": 88
   },
   "Kingdom of Prussia": {
     "rarity": 22,
-    "artist": "deutsches.kaiserreich"
+    "artist": "deutsches.kaiserreich",
+    "id": 59
   },
   "Empire of Brazil": {
     "rarity": 22,
-    "artist": "Unknown"
+    "artist": "Unknown",
+    "id": 64
   },
   "Byzantium": {
     "rarity": 22,
-    "artist": "topwanted_"
+    "artist": "topwanted_",
+    "id": 25
   },
   "Western Roman Empire": {
     "rarity": 23,
-    "artist": "republic_of_kiev"
+    "artist": "republic_of_kiev",
+    "id": 40
   },
   "Grand Duchy of Moscow": {
     "rarity": 24,
-    "artist": "benito_mussoloini777"
+    "artist": "benito_mussoloini777",
+    "id": 91
   },
   "Akkadian Empire": {
     "rarity": 25,
-    "artist": "Unknown"
+    "artist": "Unknown",
+    "id": 18
   },
   "Grand Duchy of Lithuania": {
     "rarity": 26,
-    "artist": "Unknown"
+    "artist": "Unknown",
+    "id": 79
   },
   "Polish-Lithuanian Commonwealth": {
     "rarity": 26,
-    "artist": "rhk1228"
+    "artist": "rhk1228",
+    "id": 53
   },
   "Timurid Empire": {
     "rarity": 26,
-    "artist": "Spicy Meatball"
+    "artist": "Spicy Meatball",
+    "id": 87
   },
   "Ancient Egypt": {
     "rarity": 27,
-    "artist": "ocean_wav3"
+    "artist": "ocean_wav3",
+    "id": 16
   },
   "Incan Empire": {
     "rarity": 28,
-    "artist": "Unknown"
+    "artist": "Unknown",
+    "id": 37
   },
   "Serbian Empire": {
     "rarity": 29,
-    "artist": "nicollovezgod"
+    "artist": "nicollovezgod",
+    "id": 36
   },
   "Sassanid Empire": {
     "rarity": 30,
-    "artist": "Unknown"
+    "artist": "Unknown",
+    "id": 26
   },
   "Latin Empire": {
     "rarity": 30,
-    "artist": "bryaint"
+    "artist": "bryaint",
+    "id": 85
   },
   "Korean Empire": {
     "rarity": 30,
-    "artist": "argahalabatak"
+    "artist": "argahalabatak",
+    "id": 80
   },
   "Gupta Empire": {
     "rarity": 31,
-    "artist": "xhousepets"
+    "artist": "xhousepets",
+    "id": 96
   },
-  "Caral-Supe City": {
+  "Caral-Supe": {
     "rarity": 31,
-    "artist": "nicollovezgod"
+    "artist": "nicollovezgod",
+    "id": 49
   },
   "Kingdom of Italy": {
     "rarity": 32,
-    "artist": "thecatdeveloper"
+    "artist": "thecatdeveloper",
+    "id": 33
   },
   "Carthage": {
     "rarity": 33,
-    "artist": "ancientdex"
+    "artist": "ancientdex",
+    "id": 21
   },
   "Mamluk Sultanate": {
     "rarity": 34,
-    "artist": "ali_elsherif"
+    "artist": "ali_elsherif",
+    "id": 74
   },
   "Holy Roman Empire": {
     "rarity": 35,
-    "artist": "deutsches.kaiserreich"
+    "artist": "deutsches.kaiserreich",
+    "id": 19
   },
   "Napoleonic France": {
     "rarity": 36,
-    "artist": "lego_sansyt"
+    "artist": "lego_sansyt",
+    "id": 14
   },
   "North Sea Empire": {
     "rarity": 37,
-    "artist": "nicollovezgod"
+    "artist": "nicollovezgod",
+    "id": 83
   },
   "Mauryan Empire": {
     "rarity": 38,
-    "artist": "bethany.s_c0rpse"
+    "artist": "bethany.s_c0rpse",
+    "id": 52
   },
   "Russian Empire": {
     "rarity": 39,
-    "artist": "topwanted_"
+    "artist": "topwanted_",
+    "id": 4
   },
   "Babylon": {
     "rarity": 40,
-    "artist": "theguywhodraws"
+    "artist": "theguywhodraws",
+    "id": 60
   },
   "Gran Colombia": {
     "rarity": 41,
-    "artist": "mono6868"
+    "artist": "mono6868",
+    "id": 73
   },
   "Kingdom of Romania": {
     "rarity": 42,
-    "artist": "account_gmd"
+    "artist": "account_gmd",
+    "id": 101
   },
   "Kingdom of Hungary": {
     "rarity": 43,
-    "artist": "Unknown"
+    "artist": "Unknown",
+    "id": 76
   },
   "Spanish Empire": {
     "rarity": 44,
-    "artist": "yodudeisthegoat"
+    "artist": "yodudeisthegoat",
+    "id": 10
   },
   "Ancient Greece": {
     "rarity": 45,
-    "artist": "Unknown"
+    "artist": "Unknown",
+    "id": 13
   },
   "Belgian Colonial Empire": {
     "rarity": 46,
-    "artist": "elizaveta_hedervary"
+    "artist": "elizaveta_hedervary",
+    "id": 98
   },
   "Dutch Empire": {
     "rarity": 47,
-    "artist": "nicollovezgod"
+    "artist": "nicollovezgod",
+    "id": 35
   },
   "Seljuk Turks": {
     "rarity": 48,
-    "artist": "nicollovezgod"
+    "artist": "nicollovezgod",
+    "id": 24
   },
   "Kalmar Union": {
     "rarity": 49,
-    "artist": "nicollovezgod"
+    "artist": "nicollovezgod",
+    "id": 48
   },
   "Denmark-Norway": {
     "rarity": 49,
-    "artist": "lego_sansyt"
+    "artist": "lego_sansyt",
+    "id": 103
   },
   "Kingdom of Bavaria": {
     "rarity": 50,
-    "artist": "_estonia"
+    "artist": "_estonia",
+    "id": 84
   },
   "Japanese Empire": {
     "rarity": 51,
-    "artist": "topwanted_"
+    "artist": "topwanted_",
+    "id": 7
   },
   "Tsardom of Russia": {
     "rarity": 52,
-    "artist": "edougamer"
+    "artist": "edougamer",
+    "id": 45
   },
   "Austria-Hungary": {
     "rarity": 53,
-    "artist": "deutsches.kaiserreich"
+    "artist": "deutsches.kaiserreich",
+    "id": 9
   },
   "Kingdom of Georgia": {
     "rarity": 53,
-    "artist": "Unknown"
+    "artist": "Unknown",
+    "id": 62
   },
   "Ilkhanate": {
     "rarity": 54,
-    "artist": "dark3nd"
+    "artist": "dark3nd",
+    "id": 90
   },
   "Empire of China": {
     "rarity": 55,
-    "artist": "v_rsailles."
+    "artist": "v_rsailles.",
+    "id": 97
   },
   "Kievan Rus": {
     "rarity": 56,
-    "artist": "republic_of_kiev_mapedits"
+    "artist": "republic_of_kiev_mapedits",
+    "id": 5
   },
   "Kazakh Khanate": {
     "rarity": 57,
-    "artist": "smasherbutcool"
+    "artist": "smasherbutcool",
+    "id": 50
   },
   "Roman Empire": {
     "rarity": 58,
-    "artist": "thedreak"
+    "artist": "thedreak",
+    "id": 6
   },
   "Kingdom of Bohemia": {
     "rarity": 59,
-    "artist": "the_madness_guy"
+    "artist": "the_madness_guy",
+    "id": 63
   },
   "Majapahit Empire": {
     "rarity": 59,
-    "artist": "bethany.s_c0rpse"
+    "artist": "bethany.s_c0rpse",
+    "id": 55
   },
   "First Mexican Empire": {
     "rarity": 60,
-    "artist": "Polska Ball#9770"
+    "artist": "Polska Ball#9770",
+    "id": 54
   },
   "British Empire": {
     "rarity": 61,
-    "artist": "._themagicalflame_."
+    "artist": "._themagicalflame_.",
+    "id": 2
   },
   "First Haitian Empire": {
     "rarity": 62,
-    "artist": "._themagicalflame_."
+    "artist": "._themagicalflame_.",
+    "id": 94
   },
   "Second Mexican Empire": {
     "rarity": 63,
-    "artist": "argahalabatak"
+    "artist": "argahalabatak",
+    "id": 58
   },
   "Ghana Empire": {
     "rarity": 64,
-    "artist": "deutsches.kaiserreich"
+    "artist": "deutsches.kaiserreich",
+    "id": 47
   },
   "Mongol Empire": {
     "rarity": 65,
-    "artist": "imperial_russian"
+    "artist": "imperial_russian",
+    "id": 8
   },
   "Yuan Dynasty": {
     "rarity": 66,
-    "artist": "ashiecubby"
+    "artist": "ashiecubby",
+    "id": 71
   },
   "Kingdom of Bosnia": {
     "rarity": 67,
-    "artist": "myodisanimaciones123"
+    "artist": "myodisanimaciones123",
+    "id": 46
   },
   "German Empire": {
     "rarity": 68,
-    "artist": "countryballscostarica1848"
+    "artist": "countryballscostarica1848",
+    "id": 1
   },
   "Ottoman Empire": {
     "rarity": 69,
-    "artist": "topwanted_"
+    "artist": "topwanted_",
+    "id": 3
   },
   "Kingdom of Hawaii": {
     "rarirty": 70,
-    "artist": "ocean_wav3"
+    "artist": "ocean_wav3",
+    "id": 110
   },
   "Sokoto Caliphate": {
     "rarity": 71,
-    "artist": "edougamer"
+    "artist": "edougamer",
+    "id": 39
   },
   "Swedish Empire": {
     "rarity": 72,
-    "artist": "nicollovezgod"
+    "artist": "nicollovezgod",
+    "id": 15
   },
   "Portuguese Empire": {
     "rarity": 73,
-    "artist": "dark3nd"
+    "artist": "dark3nd",
+    "id": 17
   },
   "Almohad Caliphate": {
     "rarity": 74,
-    "artist": "nicollovezgod"
+    "artist": "nicollovezgod",
+    "id": 32
   },
   "Tu'i Tonga": {
     "rarity": 75,
-    "artist": "deutsches.kaiserreich"
+    "artist": "deutsches.kaiserreich",
+    "id": 28
   },
   "Kingdom of Egypt": {
     "rarity": 76,
-    "artist": "topwanted_"
+    "artist": "topwanted_",
+    "id": 67
   },
   "Assyria": {
     "rarity": 77,
-    "artist": "milesball"
+    "artist": "milesball",
+    "id": 27
   }
 }

@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         };
                         const waveColor = waveColors[details.wave] || "#808080";
 
-                        if (["Ballsdex", "DynastyDex"].includes(dexName)) {
+                        if (["Ballsdex", "DynastyDex", "Empireballs"].includes(dexName)) {
 
                             const idElement = document.createElement("div");
                             idElement.className = "id-indicator";
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 idOption.style.display = "block";
                 h2.style.display = "block";
                 break;
-            case "DynastyDex":
+            case ["DynastyDex", "Empireballs"].includes(selectedDex) ? selectedDex : null:
                 idOption.style.display = "block";
                 waveOption.style.display = "none";
                 h2.style.display = "none";

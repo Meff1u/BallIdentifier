@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1748622204",
+            "changes": [
+                "List - Added IDs to Empireballs",
+                "Updated to new Empireballs ball display name (Caral-Supe City -> Caral-Supe)"
+            ]
+        },
+        {
             "timestamp": "1748354860",
             "changes": [
                 "List - Added IDs to DynastyDex"
