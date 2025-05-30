@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1748647228",
+            "changes": [
+                "Updated to new spawn art in Empireballs (Timurid Empire)"
+            ]
+        },
+        {
             "timestamp": "1748627523",
             "changes": [
                 "List - added new option to settings menu - On click: enlarge spawn art or show previous arts"
