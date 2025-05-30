@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1748627523",
+            "changes": [
+                "List - added new option to settings menu - On click: enlarge spawn art or show previous arts"
+            ]
+        },
+        {
             "timestamp": "1748622204",
             "changes": [
                 "List - Added IDs to Empireballs",

@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     loadDexData("Ballsdex");
 
     document.addEventListener("keydown", function (event) {
-        console.log('Key pressed:', event.key, 'Shift:', event.shiftKey, 'Ctrl:', event.ctrlKey);
         if (event.shiftKey && !event.ctrlKey && event.key.toLowerCase() === "f") {
             event.preventDefault();
             const searchBar = document.getElementById("search-bar");
@@ -121,7 +120,15 @@ document.addEventListener("DOMContentLoaded", function () {
                         ballDiv.appendChild(artistContainer);
 
                         ballDiv.addEventListener("click", () => {
-                            if (dexName == "Ballsdex") checkArtsExist(name);
+                            const onClickAction = document.getElementById("on-click-action").value;
+                            switch (onClickAction) {
+                                case "previous-arts":
+                                    checkArtsExist(name);
+                                    break;
+                                case "enlarge-art":
+                                    showEnlargedArt(name, dexName);
+                                    break;
+                            } 
                         });
 
                         ballsList.appendChild(ballDiv);
@@ -133,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.getElementById("toggle-rarity").dispatchEvent(new Event("change"));
                     document.getElementById("toggle-artist").dispatchEvent(new Event("change"));
                     document.getElementById("toggle-id").dispatchEvent(new Event("change"));
+                    document.getElementById("on-click-action").dispatchEvent(new Event("change"));
                 }
 
                 sortOptions.addEventListener("change", () => {
@@ -177,26 +185,28 @@ document.addEventListener("DOMContentLoaded", function () {
         const sortOptions = document.getElementById("sort-options");
         const waveOption = sortOptions.querySelector('option[value="wave"]');
         const idOption = sortOptions.querySelector('option[value="id"]');
-        const h2 = document.querySelector("h2");
+        const onClickAction = document.getElementById("on-click-action");
 
         switch (selectedDex) {
             case "Ballsdex":
+                onClickAction.querySelector('option[value="previous-arts"]').disabled = false;
                 waveOption.style.display = "block";
                 idOption.style.display = "block";
-                h2.style.display = "block";
                 break;
             case ["DynastyDex", "Empireballs"].includes(selectedDex) ? selectedDex : null:
+                onClickAction.querySelector('option[value="previous-arts"]').disabled = true;
+                onClickAction.value = "enlarge-art";
                 idOption.style.display = "block";
                 waveOption.style.display = "none";
-                h2.style.display = "none";
                 if (sortOptions.value === "wave") {
                     sortOptions.value = "rarity";
                 }
                 break;
             default:
+                onClickAction.querySelector('option[value="previous-arts"]').disabled = true;
+                onClickAction.value = "enlarge-art";
                 waveOption.style.display = "none";
                 idOption.style.display = "none";
-                h2.style.display = "none";
                 if (sortOptions.value === "wave" || sortOptions.value === "id") {
                     sortOptions.value = "rarity";
                 }
@@ -204,6 +214,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         loadDexData(selectedDex);
+    });
+
+    const settingsMenu = document.getElementById("settings-menu");
+    const settingsButton = document.getElementById("settings-button");
+    document.addEventListener("click", function (e) {
+        if (settingsButton.contains(e.target)) {
+            settingsMenu.classList.toggle("open");
+        } else if (!settingsMenu.contains(e.target)) {
+            settingsMenu.classList.remove("open");
+        }
     });
 
     loadDexData(dexSelector.value);
@@ -257,6 +277,35 @@ function showPopup(ballName, arts) {
     document.body.classList.add("no-scroll");
 }
 
+function showEnlargedArt(ballName, dexName) {
+    const popup = document.getElementById("popup");
+    const popupHeader = document.getElementById("popup-header");
+    const popupContent = document.getElementById("popup-content");
+    const overlay = document.getElementById("overlay");
+
+    popupContent.innerHTML = "";
+    popupHeader.textContent = ballName;
+
+    const artContainer = document.createElement("div");
+    artContainer.className = "popup-enlarged-art-container";
+
+    const artImage = document.createElement("img");
+    artImage.src = `../assets/${dexName}/${ballName}.png`;
+    artImage.alt = `${ballName} art`;
+    artImage.loading = "lazy";
+
+    artContainer.appendChild(artImage);
+    popupContent.appendChild(artContainer);
+
+    overlay.style.display = "block";
+    popup.style.display = "block";
+    document.body.classList.add("no-scroll");
+
+    setTimeout(() => {
+        popup.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 50);
+}
+
 document.getElementById("popup-close").addEventListener("click", function () {
     const popup = document.getElementById("popup");
     const overlay = document.getElementById("overlay");
@@ -306,6 +355,7 @@ function saveSettings() {
         showRarity: document.getElementById("toggle-rarity").checked,
         showArtist: document.getElementById("toggle-artist").checked,
         showID: document.getElementById("toggle-id").checked,
+        onClick: document.getElementById("on-click-action").value
     };
     localStorage.setItem("displaySettings", JSON.stringify(settings));
 }
@@ -317,10 +367,12 @@ function loadSettings() {
         document.getElementById("toggle-rarity").checked = settings.showRarity;
         document.getElementById("toggle-artist").checked = settings.showArtist;
         document.getElementById("toggle-id").checked = settings.showID;
+        document.getElementById("on-click-action").value = settings.onClick;
         document.getElementById("toggle-wave").dispatchEvent(new Event("change"));
         document.getElementById("toggle-rarity").dispatchEvent(new Event("change"));
         document.getElementById("toggle-artist").dispatchEvent(new Event("change"));
         document.getElementById("toggle-id").dispatchEvent(new Event("change"));
+        document.getElementById("on-click-action").dispatchEvent(new Event("change"));
     }
 }
 
@@ -353,6 +405,10 @@ document.getElementById("toggle-id").addEventListener("change", function () {
     idIndicators.forEach((id) => {
         id.style.display = this.checked ? "block" : "none";
     });
+    saveSettings();
+});
+
+document.getElementById("on-click-action").addEventListener("change", function () {
     saveSettings();
 });
 
