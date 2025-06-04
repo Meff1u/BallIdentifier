@@ -1,207 +1,258 @@
 {
     "Franco-British Union": {
         "rarity": 0.3,
-        "artist": "censorbar_"
+        "artist": "censorbar_",
+        "id": 517
     },
     "British Empire": {
         "rarity": 0.5,
-        "artist": "dark3nd"
+        "artist": "dark3nd",
+        "id": 119
     },
     "Axis Powers": {
         "rarity": 0.6,
-        "artist": "navid_habibi"
+        "artist": "navid_habibi",
+        "id": 138
     },
     "Allied Powers": {
         "rarity": 0.6,
-        "artist": "king_of_pingas"
+        "artist": "king_of_pingas",
+        "id": 499
     },
     "Entente Powers": {
         "rarity": 0.7,
-        "artist": "floridianirishguy"
+        "artist": "floridianirishguy",
+        "id": 498
     },
     "Central Powers": {
         "rarity": 0.7,
-        "artist": "navid_habibi"
+        "artist": "navid_habibi",
+        "id": 139
     },
     "Western Bloc": {
         "rarity": 0.8,
-        "artist": "kobersv2"
+        "artist": "kobersv2",
+        "id": 636
     },
     "Eastern Bloc": {
         "rarity": 0.8,
-        "artist": "bfbrobloxplayz"
+        "artist": "bfbrobloxplayz",
+        "id": 637
     },
     "Reichtangle": {
         "rarity": 1,
-        "artist": "m.axii"
+        "artist": "m.axii",
+        "id": 41
     },
     "Iberian Union": {
         "rarity": 1,
-        "artist": "floridianirishguy"
+        "artist": "floridianirishguy",
+        "id": 442
     },
     "Mongol Empire": {
         "rarity": 1,
-        "artist": "claythekat"
+        "artist": "claythekat",
+        "id": 108
     },
     "Russtangle": {
         "rarity": 1,
-        "artist": "ethan_heathcliff"
+        "artist": "ethan_heathcliff",
+        "id": 98
     },
     "0ball": {
         "rarity": 1,
-        "artist": "ethan_heathcliff"
+        "artist": "ethan_heathcliff",
+        "id": 308
     },
     "French Third Republic": {
         "rarity": 2,
-        "artist": "dark3nd"
+        "artist": "dark3nd",
+        "id": 275
     },
     "Imperialist United States": {
         "rarity": 2,
-        "artist": "n0tch21_98933"
+        "artist": "n0tch21_98933",
+        "id": 845
     },
     "Soviet Union": {
         "rarity": 2,
-        "artist": "dynsic"
+        "artist": "dynsic",
+        "id": 65
     },
     "Nazi Germany": {
         "rarity": 2,
-        "artist": "dark3nd"
+        "artist": "dark3nd",
+        "id": 49
     },
     "Russian Empire": {
         "rarity": 2,
-        "artist": "thelegendarytacomuncher & __.artycal.__"
+        "artist": "thelegendarytacomuncher & __.artycal.__",
+        "id": 16
     },
     "Intermarium": {
         "rarity": 3,
-        "artist": "dynsic"
+        "artist": "dynsic",
+        "id": 321
     },
     "Spanish Empire": {
         "rarity": 3,
-        "artist": "acrestronk"
+        "artist": "acrestronk",
+        "id": 84
     },
     "Golden Circle": {
         "rarity": 3,
-        "artist": "unfunnichez_"
+        "artist": "unfunnichez_",
+        "id": 512
     },
     "Portuguese Empire": {
         "rarity": 3,
-        "artist": "claythekat"
+        "artist": "claythekat",
+        "id": 99
     },
     "Roman Empire": {
         "rarity": 3,
-        "artist": "unfunnichez_"
+        "artist": "unfunnichez_",
+        "id": 4
     },
     "Dutch Empire": {
         "rarity": 4,
-        "artist": "n0tch21_98933"
+        "artist": "n0tch21_98933",
+        "id": 435
     },
     "First French Colonial Empire": {
         "rarity": 4,
-        "artist": "edougamer"
+        "artist": "edougamer",
+        "id": 155
     },
     "Qing": {
         "rarity": 4,
-        "artist": "._pudd_."
+        "artist": "._pudd_.",
+        "id": 36
     },
     "German Empire": {
         "rarity": 5,
-        "artist": "carolea"
+        "artist": "carolea",
+        "id": 305
     },
     "Empire of Japan": {
         "rarity": 5,
-        "artist": "Ruy & Clay"
+        "artist": "Ruy & Clay",
+        "id": 43
     },
     "Achaemenid Empire": {
         "rarity": 5,
-        "artist": "claythekat"
+        "artist": "claythekat",
+        "id": 47
     },
     "Carthage": {
         "rarity": 6,
-        "artist": "n0tch21_98933"
+        "artist": "n0tch21_98933",
+        "id": 7
     },
     "Macedonian Empire": {
         "rarity": 6,
-        "artist": "dark3nd"
+        "artist": "dark3nd",
+        "id": 277
     },
     "Umayyad Caliphate": {
         "rarity": 6,
-        "artist": "dark3nd"
+        "artist": "dark3nd",
+        "id": 27
     },
     "Greater Ottoman Empire": {
         "rarity": 6,
-        "artist": "ethan_heathcliff"
+        "artist": "ethan_heathcliff",
+        "id": 33
     },
     "Byzantine Empire": {
         "rarity": 6,
-        "artist": "dark3nd"
+        "artist": "dark3nd",
+        "id": 32
     },
     "Qin": {
         "rarity": 6,
-        "artist": "ethan_heathcliff"
+        "artist": "ethan_heathcliff",
+        "id": 113
     },
     "Xia Dynasty": {
         "rarity": 6,
-        "artist": "lilhector_"
+        "artist": "lilhector_",
+        "id": 101
     },
     "Roman Republic": {
         "rarity": 6,
-        "artist": "._pudd_."
+        "artist": "._pudd_.",
+        "id": 791
     },
     "Maoist China": {
         "rarity": 6,
-        "artist": "aydin_kai22"
+        "artist": "aydin_kai22",
+        "id": 34
     },
     "Confederal United States": {
         "rarity": 6,
-        "artist": ".astrokat."
+        "artist": ".astrokat.",
+        "id": 767
     },
     "Republic of China": {
         "rarity": 7,
-        "artist": "susradist"
+        "artist": "susradist",
+        "id": 11
     },
     "Abbasid Caliphate": {
         "rarity": 7,
-        "artist": "claythekat"
+        "artist": "claythekat",
+        "id": 28
     },
     "Sassanid Empire": {
         "rarity": 7,
-        "artist": "._pudd_."
+        "artist": "._pudd_.",
+        "id": 536
     },
     "Sumer": {
         "rarity": 7,
-        "artist": "turnipofnazareth"
+        "artist": "turnipofnazareth",
+        "id": 663
     },
     "Inca Empire": {
         "rarity": 7,
-        "artist": "._pudd_."
+        "artist": "._pudd_.",
+        "id": 444
     },
     "Ancient Egypt": {
         "rarity": 7,
-        "artist": "kobersv2"
+        "artist": "kobersv2",
+        "id": 167
     },
     "Maurya Empire": {
         "rarity": 8,
-        "artist": "edougamer & adamtheteckel"
+        "artist": "edougamer & adamtheteckel",
+        "id": 820
     },
     "Rashidun Caliphate": {
         "rarity": 8,
-        "artist": "navid_habibi"
+        "artist": "navid_habibi",
+        "id": 632
     },
     "Sui": {
         "rarity": 8,
-        "artist": "navid_habibi"
+        "artist": "navid_habibi",
+        "id": 125
     },
     "Timurid Empire": {
         "rarity": 8,
-        "artist": "ethan_heathcliff"
+        "artist": "ethan_heathcliff",
+        "id": 31
     },
     "Kingdom of Great Britain": {
         "rarity": 8,
-        "artist": "scotto6353"
+        "artist": "scotto6353",
+        "id": 26
     },
     "Tang Dynasty": {
         "rarity": 8,
-        "artist": "claythekat"
+        "artist": "claythekat",
+        "id": 76
     },
     "Great Yuan": {
         "rarity": 8,
