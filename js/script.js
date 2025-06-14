@@ -376,3 +376,7 @@ function handleFileUpload(file) {
 document.getElementById("spawnArtsButton").addEventListener("click", function () {
     window.open(`https://ballidentifier.xyz/list`, "_blank");
 });
+
+document.getElementById("discordBotButton").addEventListener("click", function () {
+    window.open(`https://ballidentifier.xyz/bot`, "_blank");
+});
