@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1750057095",
+            "changes": [
+                "Updated to new spawn arts in Ballsdex (German Empire, Tokugawa Shogunate)"
+            ]
+        },
+        {
             "timestamp": "1749898973",
             "changes": [
                 "Added Discord Bot subpage - you can now add BallIdentifier discord bot to your apps and identify balls faster!"
