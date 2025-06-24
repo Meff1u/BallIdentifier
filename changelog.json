@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "x",
+            "changes": [
+                "Updated to new spawn art in HistoryDex (Roman Republic)",
+                "Updated to new HistoryDex balls (Constantinople, Imperial Rome, Roman Kingdom)"
+            ]
+        },
+        {
             "timestamp": "1750262239",
             "changes": [
                 "Updated to new spawn arts in Empireballs (Kingdom of Armenia, Polish-Lithuanian Commonwealth, Achaemenid Empire)"
