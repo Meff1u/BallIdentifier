@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1750862845",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Portuguese Macau, Ryukyu Kingdom)"
+            ]
+        },
+        {
             "timestamp": "1750846788",
             "changes": [
                 "Updated to new spawn art in HistoryDex (People's Socialist Republic of Albania)"
