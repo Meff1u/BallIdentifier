@@ -1141,7 +1141,7 @@
     },
     "Duchy of Pomerania-Stolp": {
         "rarity": 31,
-        "artist": "._pudd_.",
+        "artist": "shellfish72",
         "id": 462
     },
     "Francoist Spain": {
@@ -1225,6 +1225,10 @@
     "Viceroyalty of Peru": {
         "rarity": 34,
         "artist": "unfunnichez_"
+    },
+    "British Colony of Bermuda": {
+        "rarity": 35,
+        "artist": "n0tch21_98933"
     },
     "Napoleonic Kingdom of Italy": {
         "rarity": 35,
@@ -2364,7 +2368,7 @@
     },
     "Swedish Saint Barthélemy": {
         "rarity": 166,
-        "artist": "._pudd_."
+        "artist": "dudewholikescountryballs"
     },
     "Emirate of Nejd and Hasa": {
         "rarity": 167,
@@ -2393,6 +2397,10 @@
     "Colonial Azores": {
         "rarity": 172,
         "artist": "dudewholikescountryballs"
+    },
+    "Empire of the Sahara": {
+        "rarity": 173,
+        "artist": "king_banananananana"
     },
     "Nueva Galicia": {
         "rarity": 173,
@@ -2500,7 +2508,7 @@
     },
     "British Malta": {
         "rarity": 190,
-        "artist": "godenfedey"
+        "artist": "ocean_wav3"
     },
     "Kingdom of Iceland": {
         "rarity": 190,

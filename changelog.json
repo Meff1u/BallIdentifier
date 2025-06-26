@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1750957045",
+            "changes": [
+                "Updated to new HistoryDex balls (British Colony of Bermuda, Empire of the Sahara)",
+                "Updated to new spawn arts in HistoryDex (British Malta, Duchy of Pomerania-Stolp, Swedish Saint Barthélemy)"
+            ]
+        },
+        {
             "timestamp": "1750862845",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Portuguese Macau, Ryukyu Kingdom)"
