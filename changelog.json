@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1751112987",
+            "changes": [
+                "Updated to new spawn art in HistoryDex (Napoleonic France)"
+            ]
+        },
+        {
             "timestamp": "1750957045",
             "changes": [
                 "Updated to new HistoryDex balls (British Colony of Bermuda, Empire of the Sahara)",
