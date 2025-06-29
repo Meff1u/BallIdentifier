@@ -898,5 +898,9 @@
         "rarity": 180,
         "artist": "Lifty",
         "id": 27
+    },
+    "DD Token": {
+        "rarity": 0,
+        "artist": "Verd"
     }
 }

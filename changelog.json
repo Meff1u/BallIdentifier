@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1751211910",
+            "changes": [
+                "Updated to new Dynastydex ball (DD Token)"
+            ]
+        },
+        {
             "timestamp": "1751211287",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Chechen Republic of Ichkeria, Corsican Republic)"
