@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1751285554",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Qajar Dynasty, Swedish Overseas Colonies)"
+            ]
+        },
+        {
             "timestamp": "1751211910",
             "changes": [
                 "Updated to new Dynastydex ball (DD Token)"
