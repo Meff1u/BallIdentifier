@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1751576507",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Japanese Taiwan, Ottoman Algiers, United Fruit Company)"
+            ]
+        },
+        {
             "timestamp": "1751285554",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Qajar Dynasty, Swedish Overseas Colonies)"
