@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1752929291",
+            "changes": [
+                "Updated to new spawn art in Ballsdex (NATO)",
+                "Fixed wrong spawn art in Empireballs (Qin Dynasty)"
+            ]
+        },
+        {
             "timestamp": "1752300650",
             "changes": [
                 "Updated to new spawn art in Empireballs (Abbasid Caliphate)"
