@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1753034026",
+            "changes": [
+                "Fixed wrong spawn art in HistoryDex (Roman Republic)"
+            ]
+        },
+        {
             "timestamp": "1752929291",
             "changes": [
                 "Updated to new spawn art in Ballsdex (NATO)",
