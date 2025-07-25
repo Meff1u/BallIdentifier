@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1753475455",
+            "changes": [
+                "Updated to new spawn arts in Ballsdex (Comoros, Senegal)"
+            ]
+        },
+        {
             "timestamp": "1753452136",
             "changes": [
                 "Updated to new Dynastydex ball display name (British Palestine > Mandatory Palestine)"
