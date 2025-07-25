@@ -938,11 +938,6 @@
         "artist": "Lotzer & BFBRoblox",
         "id": 5
     },
-    "British Palestine": {
-        "rarity": 188,
-        "artist": "thedarkcat",
-        "id": 54
-    },
     "Dahomey": {
         "rarity": 188,
         "artist": "Frog",
@@ -957,6 +952,11 @@
         "rarity": 188,
         "artist": "Cubic",
         "id": 106
+    },
+    "Mandatory Palestine": {
+        "rarity": 188,
+        "artist": "thedarkcat",
+        "id": 54
     },
     "Saint Domingue": {
         "rarity": 188,

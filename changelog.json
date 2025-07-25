@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1753452136",
+            "changes": [
+                "Updated to new Dynastydex ball display name (British Palestine > Mandatory Palestine)"
+            ]
+        },
+        {
             "timestamp": "1753388849",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Papua New Guinea)",
