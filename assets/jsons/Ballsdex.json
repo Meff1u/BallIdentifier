@@ -1231,7 +1231,7 @@
     },
     "Northern Ireland": {
         "rarity": 200,
-        "artist": "Cattitan",
+        "artist": "ordinary_tophatman",
         "wave": 5.1,
         "id": 342
     },
@@ -1711,7 +1711,7 @@
     },
     "Paraguay": {
         "rarity": 257,
-        "artist": "Gmo",
+        "artist": "chewytapioca",
         "wave": 1,
         "id": 115
     },
