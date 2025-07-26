@@ -1,21 +1,9 @@
 {
     "changes": [
         {
-            "timestamp": "1753561722",
+            "timestamp": "1753566365",
             "changes": [
-                "Updated to new spawn art in Ballsdex (Kingdom of Brandenburg)"
-            ]
-        },
-        {
-            "timestamp": "1753535011",
-            "changes": [
-                "Updated to new spawn art in Ballsdex (St. Vincent and the Grenadines)"
-            ]
-        },
-        {
-            "timestamp": "1753523875",
-            "changes": [
-                "Updated to new spawn art in Ballsdex (Republic of China)"
+                "Updated to new spawn arts in Ballsdex (Kingdom of Brandenburg, Kingdom of Egypt, St. Vincent and the Grenadines, Republic of China)"
             ]
         },
         {
