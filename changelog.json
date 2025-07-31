@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1753976899",
+            "changes": [
+                "Updated to new spawn art in Ballsdex (Luxembourg)"
+            ]
+        },
+        {
             "timestamp": "1753965651",
             "changes": [
                 "Updated to new Dynastydex ball display names (Mayan Empire -> The Maya, Novgorod Republic -> Great Novgorod, Ayyubid Dynasty -> Ayyubid Sultanate, Kingdom of Aksum -> Aksumite Empire, Land of Punt -> Punt)"
