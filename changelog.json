@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1753965651",
+            "changes": [
+                "Updated to new Dynastydex ball display names (Mayan Empire -> The Maya, Novgorod Republic -> Great Novgorod, Ayyubid Dynasty -> Ayyubid Sultanate, Kingdom of Aksum -> Aksumite Empire, Land of Punt -> Punt)"
+            ]
+        },
+        {
             "timestamp": "1753621262",
             "changes": [
                 "Updated to new spawn art in Empireballs (Han Dynasty)"
@@ -21,7 +27,7 @@
         {
             "timestamp": "1753452136",
             "changes": [
-                "Updated to new Dynastydex ball display name (British Palestine > Mandatory Palestine)"
+                "Updated to new Dynastydex ball display name (British Palestine -> Mandatory Palestine)"
             ]
         },
         {

@@ -323,15 +323,15 @@
         "artist": "BFBRoblox",
         "id": 2
     },
-    "Mayan Empire": {
-        "rarity": 62,
-        "artist": "Stranger",
-        "id": 175
-    },
     "Mughal Empire": {
         "rarity": 62,
         "artist": "Noise",
         "id": 47
+    },
+    "The Maya": {
+        "rarity": 62,
+        "artist": "Stranger",
+        "id": 175
     },
     "White Rus": {
         "rarity": 62,
@@ -343,6 +343,11 @@
         "artist": "Ghost White",
         "id": 115
     },
+    "Great Novgorod": {
+        "rarity": 68,
+        "artist": "Egor",
+        "id": 217
+    },
     "Mamluk Sultanate": {
         "rarity": 68,
         "artist": "flask",
@@ -352,11 +357,6 @@
         "rarity": 68,
         "artist": "Kai",
         "id": 93
-    },
-    "Novgorod Republic": {
-        "rarity": 68,
-        "artist": "Egor",
-        "id": 217
     },
     "Songhai Empire": {
         "rarity": 68,
@@ -433,7 +433,7 @@
         "artist": "Verdammt",
         "id": 153
     },
-    "Ayyubid Dynasty": {
+    "Ayyubid Sultanate": {
         "rarity": 86,
         "artist": "Egor",
         "id": 181
@@ -563,6 +563,11 @@
         "artist": "Darkcat",
         "id": 236
     },
+    "Aksumite Empire": {
+        "rarity": 113,
+        "artist": "Aksum Lover",
+        "id": 173
+    },
     "Dai Viet": {
         "rarity": 113,
         "artist": "Nono",
@@ -577,11 +582,6 @@
         "rarity": 113,
         "artist": "Stranger",
         "id": 105
-    },
-    "Kingdom of Aksum": {
-        "rarity": 113,
-        "artist": "Aksum Lover",
-        "id": 173
     },
     "Kingdom of Yemen": {
         "rarity": 113,
@@ -658,15 +658,15 @@
         "artist": "AkiraSoku",
         "id": 86
     },
-    "Land of Punt": {
-        "rarity": 131,
-        "artist": "thedarkcat",
-        "id": 171
-    },
     "Mapuche": {
         "rarity": 131,
         "artist": "Misty",
         "id": 61
+    },
+    "Punt": {
+        "rarity": 131,
+        "artist": "thedarkcat",
+        "id": 171
     },
     "Swedish Empire": {
         "rarity": 131,
