@@ -53,17 +53,15 @@ document.addEventListener("DOMContentLoaded", function () {
                             7: "#B299F2",
                             7.1: "#484848",
                             7.2: "#484848",
+                            8: "#FFBEBE"
                         };
                         const waveColor = waveColors[details.wave] || "#808080";
 
-                        if (["Ballsdex", "DynastyDex", "Empireballs"].includes(dexName)) {
-
-                            const idElement = document.createElement("div");
-                            idElement.className = "id-indicator";
-                            idElement.textContent = details.id;
-                            idElement.title = `ID: ${details.id}`;
-                            ballDiv.appendChild(idElement);
-                        }
+                        const idElement = document.createElement("div");
+                        idElement.className = "id-indicator";
+                        idElement.textContent = details.id;
+                        idElement.title = `ID: ${details.id}`;
+                        ballDiv.appendChild(idElement);
 
                         if (dexName === "Ballsdex") {
                             const waveElement = document.createElement("div");
@@ -193,21 +191,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 waveOption.style.display = "block";
                 idOption.style.display = "block";
                 break;
-            case ["DynastyDex", "Empireballs"].includes(selectedDex) ? selectedDex : null:
+            default:
                 onClickAction.querySelector('option[value="previous-arts"]').disabled = true;
                 onClickAction.value = "enlarge-art";
                 idOption.style.display = "block";
                 waveOption.style.display = "none";
                 if (sortOptions.value === "wave") {
-                    sortOptions.value = "rarity";
-                }
-                break;
-            default:
-                onClickAction.querySelector('option[value="previous-arts"]').disabled = true;
-                onClickAction.value = "enlarge-art";
-                waveOption.style.display = "none";
-                idOption.style.display = "none";
-                if (sortOptions.value === "wave" || sortOptions.value === "id") {
                     sortOptions.value = "rarity";
                 }
                 break;
