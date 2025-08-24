@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1756027761",
+            "changes": [
+                "Updated to DynastyDex 2.0 Update (Fresh Start, 62 dynastyballs to catch)"
+            ]
+        },
+        {
             "timestamp": "1755435713",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Omani Empire)"
