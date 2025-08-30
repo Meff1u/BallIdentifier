@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1756566185",
+            "changes": [
+                "Updated to new spawn art in HistoryDex (New York Colony)"
+            ]
+        },
+        {
             "timestamp": "1756027761",
             "changes": [
                 "Updated to DynastyDex 2.0 Update (Fresh Start, 62 dynastyballs to catch)"
