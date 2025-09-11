@@ -1,9 +1,15 @@
 {
     "changes": [
         {
+            "timestamp": "1757598749",
+            "changes": [
+                "Updated to DynastyDex Update 2.0.1 (3 new balls: Kingdom of Armenia, Kingdom of Georgia, Kingdom of Kurdistan)"
+            ]
+        },
+        {
             "timestamp": "1757337067",
             "changes": [
-                "Updated to new spawn art in Ballsdex (Belize, Japanese Empire)"
+                "Updated to new spawn arts in Ballsdex (Belize, Japanese Empire)"
             ]
         },
         {

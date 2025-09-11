@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         const waveColors = {
                             1: "#FF7769",
+                            1.1: "#424242",
                             2: "#F56300",
                             3: "#824300",
                             4: "#219540",
@@ -63,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         idElement.title = `ID: ${details.id}`;
                         ballDiv.appendChild(idElement);
 
-                        if (dexName === "Ballsdex") {
+                        if (["Ballsdex", "DynastyDex"].includes(dexName)) {
                             const waveElement = document.createElement("div");
                             waveElement.className = "wave-indicator";
                             waveElement.textContent = details.wave;
@@ -188,6 +189,12 @@ document.addEventListener("DOMContentLoaded", function () {
         switch (selectedDex) {
             case "Ballsdex":
                 onClickAction.querySelector('option[value="previous-arts"]').disabled = false;
+                waveOption.style.display = "block";
+                idOption.style.display = "block";
+                break;
+            case "DynastyDex":
+                onClickAction.querySelector('option[value="previous-arts"]').disabled = true;
+                onClickAction.value = "enlarge-art";
                 waveOption.style.display = "block";
                 idOption.style.display = "block";
                 break;
