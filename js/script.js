@@ -109,12 +109,6 @@ document.getElementById("pasteButton").addEventListener("click", function () {
 });
 
 function downloadImage(url) {
-    const body = document.body;
-    const dragOverlay = document.querySelector(".drag-overlay");
-    body.classList.remove("dragging");
-    dragOverlay.classList.remove("visible");
-    dragOverlay.style.display = "none";
-    
     fetch(".netlify/functions/downloadImage", {
         method: "POST",
         headers: {
@@ -204,14 +198,6 @@ function uploadFile(file) {
 }
 
 function showLoadingModal(text) {
-    const body = document.body;
-    const dragOverlay = document.querySelector(".drag-overlay");
-    if (dragOverlay) {
-        body.classList.remove("dragging");
-        dragOverlay.classList.remove("visible");
-        dragOverlay.style.display = "none";
-    }
-    
     const loadingText = document.getElementById("loading-text");
     loadingText.textContent = text;
     
@@ -416,7 +402,32 @@ document.getElementById("copyButton").addEventListener("click", function () {
     });
 });
 
-function forcehideDragOverlay() {
+function resetDragOverlay() {
+    const body = document.body;
+    const dragOverlay = document.querySelector(".drag-overlay");
+    if (dragOverlay) {
+        body.classList.remove("dragging");
+        dragOverlay.classList.remove("visible");
+        dragOverlay.style.display = "none";
+        dragOverlay.style.visibility = "";
+        dragOverlay.style.opacity = "";
+    }
+}
+
+function showDragOverlay() {
+    const body = document.body;
+    const dragOverlay = document.querySelector(".drag-overlay");
+    if (dragOverlay) {
+        dragOverlay.style.visibility = "visible";
+        dragOverlay.style.opacity = "1";
+        dragOverlay.style.display = "flex";
+        body.classList.add("dragging");
+        dragOverlay.classList.add("visible");
+    }
+}
+
+function forcehideDragOverlay(cause) {
+    console.log("Force hiding drag overlay: " + cause);
     const body = document.body;
     const dragOverlay = document.querySelector(".drag-overlay");
     if (dragOverlay) {
@@ -433,30 +444,42 @@ const dragOverlay = document.querySelector(".drag-overlay");
 
 document.addEventListener("dragover", (event) => {
     event.preventDefault();
-    body.classList.add("dragging");
-    dragOverlay.classList.add("visible");
-    dragOverlay.style.display = "flex";
+    showDragOverlay();
 });
 
 document.addEventListener("dragleave", (event) => {
-    if (event.target === document || event.target === body) {
+    if (!event.relatedTarget || 
+        event.relatedTarget.nodeName === "HTML" || 
+        event.clientX <= 0 || 
+        event.clientY <= 0 || 
+        event.clientX >= window.innerWidth || 
+        event.clientY >= window.innerHeight) {
+        
+        forcehideDragOverlay("dragged outside window");
+        return;
+    }
+    
+    if (!event.relatedTarget || event.relatedTarget.nodeName === "HTML") {
+        setTimeout(() => {
+            const dragOverlay = document.querySelector(".drag-overlay");
+            if (dragOverlay && !dragOverlay.classList.contains("visible")) {
+                resetDragOverlay();
+            }
+        }, 100);
+        const body = document.body;
+        const dragOverlay = document.querySelector(".drag-overlay");
         body.classList.remove("dragging");
         dragOverlay.classList.remove("visible");
-        setTimeout(() => {
-            if (!dragOverlay.classList.contains("visible")) {
-                dragOverlay.style.display = "none";
-            }
-        }, 300);
     }
 });
 
 document.addEventListener("drop", (event) => {
     event.preventDefault();
     
-    forcehideDragOverlay();
+    forcehideDragOverlay("drop event");
     
     setTimeout(() => {
-        forcehideDragOverlay();
+        forcehideDragOverlay("timeout");
     }, 100);
 
     const files = event.dataTransfer.files;
@@ -482,7 +505,7 @@ document.addEventListener("drop", (event) => {
 });
 
 function handleFileUpload(file) {
-    forcehideDragOverlay();
+    forcehideDragOverlay("file upload");
     showLoadingModal("Uploading...");
     checkFileSize(file);
 }
