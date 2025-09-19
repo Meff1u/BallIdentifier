@@ -1,8 +1,17 @@
+let ballsData = [];
+let currentDex = "Ballsdex";
+let activeLoadingModal = null;
+
 document.addEventListener("DOMContentLoaded", function () {
+    initializeBootstrapComponents();
+    
     loadSettings();
     document.getElementById("sort-options").value = "rarity";
     document.getElementById("search-bar").value = "";
     document.getElementById("dexSelector").value = "Ballsdex";
+    
+    syncMobileSelectors();
+    
     loadDexData("Ballsdex");
 
     document.addEventListener("keydown", function (event) {
@@ -19,13 +28,31 @@ document.addEventListener("DOMContentLoaded", function () {
     const dexSelector = document.getElementById("dexSelector");
 
     function loadDexData(dexName) {
-        const jsonFile = `../assets/jsons/${dexName}.json`;
+        const jsonFile = `assets/jsons/${dexName}.json`;
+        
+        forceCleanupAllModals();
+        
+        setTimeout(() => {
+            const loadingModalElement = document.getElementById('loadingModal');
+            activeLoadingModal = new bootstrap.Modal(loadingModalElement, {
+                backdrop: 'static',
+                keyboard: false
+            });
+            
+            const loadingProgress = document.getElementById("loading-progress");
+            loadingProgress.textContent = "0%";
+            
+            activeLoadingModal.show();
 
-        fetch(jsonFile)
-            .then((response) => response.json())
-            .then((data) => {
+            const safetyTimeout = setTimeout(() => {
+                console.warn('Loading timeout reached, forcing modal cleanup');
+                safeHideLoadingModal();
+            }, 30000);
+
+            fetch(jsonFile)
+                .then((response) => response.json())
+                .then((data) => {
                 const ballsList = document.getElementById("balls-list");
-                const loading = document.getElementById("loading");
                 const loadingProgress = document.getElementById("loading-progress");
                 const sortOptions = document.getElementById("sort-options");
                 const imagePromises = [];
@@ -36,9 +63,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 function renderBalls() {
                     ballsList.innerHTML = "";
-                    ballsData.forEach(([name, details]) => {
-                        const ballDiv = document.createElement("div");
-                        ballDiv.className = "ball-container";
+                    ballsData.forEach(([name, details], index) => {
+                        const colDiv = document.createElement("div");
+                        colDiv.className = "col-6 col-md-4 col-lg-3 col-xl-2 mb-4";
+
+                        const cardDiv = document.createElement("div");
+                        cardDiv.className = "card ball-card h-100";
 
                         const waveColors = {
                             1: "#FF7769",
@@ -62,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         idElement.className = "id-indicator";
                         idElement.textContent = details.id;
                         idElement.title = `ID: ${details.id}`;
-                        ballDiv.appendChild(idElement);
+                        cardDiv.appendChild(idElement);
 
                         if (["Ballsdex", "DynastyDex"].includes(dexName)) {
                             const waveElement = document.createElement("div");
@@ -70,55 +100,65 @@ document.addEventListener("DOMContentLoaded", function () {
                             waveElement.textContent = details.wave;
                             waveElement.title = `Wave: ${details.wave}`;
                             waveElement.style.backgroundColor = waveColor;
-                            ballDiv.appendChild(waveElement);
+                            cardDiv.appendChild(waveElement);
                         }
-
-                        const nameElement = document.createElement("h2");
-                        nameElement.textContent = name;
-                        ballDiv.appendChild(nameElement);
 
                         const imgElement = document.createElement("img");
                         imgElement.src = `../assets/compressed/${dexName}/${name}.webp`;
                         imgElement.alt = name;
+                        imgElement.className = "card-img-top";
 
                         const imgPromise = new Promise((resolve, reject) => {
+                            const timeout = setTimeout(() => {
+                                console.warn(`Image timeout for: ${name}`);
+                                loadedImages++;
+                                const progress = Math.round((loadedImages / totalImages) * 100);
+                                loadingProgress.textContent = `${progress}%`;
+                                resolve();
+                            }, 10000);
+                            
                             imgElement.onload = () => {
+                                clearTimeout(timeout);
                                 loadedImages++;
                                 const progress = Math.round((loadedImages / totalImages) * 100);
                                 loadingProgress.textContent = `${progress}%`;
                                 resolve();
                             };
-                            imgElement.onerror = reject;
+                            
+                            imgElement.onerror = () => {
+                                clearTimeout(timeout);
+                                console.warn(`Failed to load image: ${name}`);
+                                loadedImages++;
+                                const progress = Math.round((loadedImages / totalImages) * 100);
+                                loadingProgress.textContent = `${progress}%`;
+                                resolve();
+                            };
                         });
                         imagePromises.push(imgPromise);
 
-                        ballDiv.appendChild(imgElement);
+                        cardDiv.appendChild(imgElement);
 
-                        const rarityContainer = document.createElement("div");
-                        rarityContainer.className = "rarity-container";
-                        const rarityLabel = document.createElement("span");
-                        rarityLabel.className = "rarity-label";
-                        rarityLabel.textContent = "Rarity: ";
-                        const rarityValue = document.createElement("span");
-                        rarityValue.className = "rarity-value";
-                        rarityValue.textContent = `#${details.rarity}`;
-                        rarityContainer.appendChild(rarityLabel);
-                        rarityContainer.appendChild(rarityValue);
-                        ballDiv.appendChild(rarityContainer);
+                        const cardBody = document.createElement("div");
+                        cardBody.className = "card-body p-2 text-center";
 
-                        const artistContainer = document.createElement("div");
-                        artistContainer.className = "artist-container";
-                        const artistLabel = document.createElement("span");
-                        artistLabel.className = "artist-label";
-                        artistLabel.textContent = "Artist: ";
-                        const artistValue = document.createElement("span");
-                        artistValue.className = "artist-value";
-                        artistValue.textContent = details.artist;
-                        artistContainer.appendChild(artistLabel);
-                        artistContainer.appendChild(artistValue);
-                        ballDiv.appendChild(artistContainer);
+                        const nameElement = document.createElement("h6");
+                        nameElement.className = "card-title";
+                        nameElement.textContent = name;
+                        cardBody.appendChild(nameElement);
 
-                        ballDiv.addEventListener("click", () => {
+                        const rarityElement = document.createElement("div");
+                        rarityElement.className = "rarity-container card-text small mb-1";
+                        rarityElement.innerHTML = `<span class="text-muted">Rarity:</span> <span class="rarity-value">#${details.rarity}</span>`;
+                        cardBody.appendChild(rarityElement);
+
+                        const artistElement = document.createElement("div");
+                        artistElement.className = "artist-container card-text small";
+                        artistElement.innerHTML = `<span class="text-muted">Artist:</span> <span class="artist-value">${details.artist}</span>`;
+                        cardBody.appendChild(artistElement);
+
+                        cardDiv.appendChild(cardBody);
+
+                        cardDiv.addEventListener("click", () => {
                             const onClickAction = document.getElementById("on-click-action").value;
                             switch (onClickAction) {
                                 case "previous-arts":
@@ -130,16 +170,13 @@ document.addEventListener("DOMContentLoaded", function () {
                             } 
                         });
 
-                        ballsList.appendChild(ballDiv);
-                        showSpecificBalls(
-                            document.getElementById("search-bar").value.toLowerCase()
-                        );
+                        colDiv.appendChild(cardDiv);
+                        ballsList.appendChild(colDiv);
                     });
-                    document.getElementById("toggle-wave").dispatchEvent(new Event("change"));
-                    document.getElementById("toggle-rarity").dispatchEvent(new Event("change"));
-                    document.getElementById("toggle-artist").dispatchEvent(new Event("change"));
-                    document.getElementById("toggle-id").dispatchEvent(new Event("change"));
-                    document.getElementById("on-click-action").dispatchEvent(new Event("change"));
+                    
+                    applyVisibilitySettings();
+                    
+                    showSpecificBalls(document.getElementById("search-bar").value.toLowerCase());
                 }
 
                 sortOptions.addEventListener("change", () => {
@@ -170,13 +207,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 Promise.all(imagePromises)
                     .then(() => {
-                        loading.style.display = "none";
-                        ballsList.style.display = "flex";
+                        clearTimeout(safetyTimeout);
+                        safeHideLoadingModal();
                         renderBalls();
                     })
-                    .catch((error) => console.error("Error loading images:", error));
+                    .catch((error) => {
+                        clearTimeout(safetyTimeout);
+                        console.error("Error loading images:", error);
+                        safeHideLoadingModal();
+                    });
             })
-            .catch((error) => console.error(`Error loading ${dexName}.json:`, error));
+            .catch((error) => {
+                clearTimeout(safetyTimeout);
+                console.error(`Error loading ${dexName}.json:`, error);
+                safeHideLoadingModal();
+            });
+        }, 50);
     }
 
     dexSelector.addEventListener("change", function () {
@@ -185,6 +231,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const waveOption = sortOptions.querySelector('option[value="wave"]');
         const idOption = sortOptions.querySelector('option[value="id"]');
         const onClickAction = document.getElementById("on-click-action");
+
+        document.getElementById("dexSelector-mobile").value = selectedDex;
 
         switch (selectedDex) {
             case "Ballsdex":
@@ -209,21 +257,98 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
         }
 
+        forceCleanupAllModals();
+        
         loadDexData(selectedDex);
     });
 
-    const settingsMenu = document.getElementById("settings-menu");
-    const settingsButton = document.getElementById("settings-button");
-    document.addEventListener("click", function (e) {
-        if (settingsButton.contains(e.target)) {
-            settingsMenu.classList.toggle("open");
-        } else if (!settingsMenu.contains(e.target)) {
-            settingsMenu.classList.remove("open");
-        }
+    document.getElementById("dexSelector-mobile").addEventListener("change", function() {
+        document.getElementById("dexSelector").value = this.value;
+        document.getElementById("dexSelector").dispatchEvent(new Event("change"));
     });
 
-    loadDexData(dexSelector.value);
+    document.getElementById("sort-options-mobile").addEventListener("change", function() {
+        document.getElementById("sort-options").value = this.value;
+        document.getElementById("sort-options").dispatchEvent(new Event("change"));
+    });
+
+    document.getElementById("search-bar").addEventListener("input", function () {
+        showSpecificBalls(this.value.toLowerCase());
+    });
+
+    document.getElementById("back-button").addEventListener("click", function () {
+        window.location.href = "../index.html";
+    });
 });
+
+function forceHideLoadingModal(loadingModal) {
+    if (loadingModal) {
+        loadingModal.hide();
+        setTimeout(() => {
+            const backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) {
+                backdrop.remove();
+            }
+            const modalElement = document.getElementById('loadingModal');
+            if (modalElement) {
+                modalElement.style.display = 'none';
+                modalElement.classList.remove('show');
+            }
+            document.body.classList.remove('modal-open');
+            document.body.style.removeProperty('padding-right');
+            document.body.style.removeProperty('overflow');
+        }, 100);
+    }
+}
+
+function forceCleanupAllModals() {
+    const backdrops = document.querySelectorAll('.modal-backdrop');
+    backdrops.forEach(backdrop => backdrop.remove());
+    
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        const modalInstance = bootstrap.Modal.getInstance(modal);
+        if (modalInstance) {
+            modalInstance.dispose();
+        }
+        modal.style.display = 'none';
+        modal.classList.remove('show');
+    });
+    
+    document.body.classList.remove('modal-open');
+    document.body.style.removeProperty('padding-right');
+    document.body.style.removeProperty('overflow');
+    
+    activeLoadingModal = null;
+}
+
+function safeHideLoadingModal() {
+    try {
+        if (activeLoadingModal) {
+            activeLoadingModal.hide();
+            activeLoadingModal = null;
+        }
+        
+        setTimeout(() => {
+            forceCleanupAllModals();
+        }, 150);
+    } catch (error) {
+        console.warn('Error hiding modal, forcing cleanup:', error);
+        forceCleanupAllModals();
+    }
+}
+
+function initializeBootstrapComponents() {
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+}
+
+function syncMobileSelectors() {
+    document.getElementById("dexSelector-mobile").value = document.getElementById("dexSelector").value;
+    document.getElementById("sort-options-mobile").value = document.getElementById("sort-options").value;
+}
 
 function checkArtsExist(ballName) {
     fetch("../assets/bd-previous-arts/arts.json")
@@ -239,110 +364,105 @@ function checkArtsExist(ballName) {
 }
 
 function showPopup(ballName, arts) {
-    const popup = document.getElementById("popup");
-    const popupHeader = document.getElementById("popup-header");
-    const popupContent = document.getElementById("popup-content");
-    const overlay = document.getElementById("overlay");
+    const modal = document.getElementById('resultModal');
+    const modalTitle = document.getElementById('popup-header');
+    const modalBody = document.getElementById('popup-content');
 
-    popupContent.innerHTML = "";
-    popupHeader.textContent = `Previous Arts for ${ballName}`;
+    modalBody.innerHTML = "";
+    modalTitle.textContent = `Previous Arts for ${ballName}`;
+
+    const row = document.createElement("div");
+    row.className = "row g-3 justify-content-center";
 
     arts.forEach((art, index) => {
+        const col = document.createElement("div");
+        col.className = "col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2";
+
         const artContainer = document.createElement("div");
-        artContainer.className = "popup-art-container";
+        artContainer.className = "popup-art-container card bg-dark border-secondary h-100";
 
         const artImage = document.createElement("img");
         artImage.src = `../assets/bd-previous-arts/${ballName}/${index + 1}.webp`;
         artImage.alt = `${ballName} art`;
+        artImage.className = "card-img-top";
         artImage.loading = "lazy";
+        artImage.style.height = "220px";
+        artImage.style.objectFit = "contain";
+        artImage.style.padding = "8px";
+
+        const cardBody = document.createElement("div");
+        cardBody.className = "card-body p-3";
 
         const artistInfo = document.createElement("p");
-        artistInfo.textContent = `Artist: ${art.artist}`;
+        artistInfo.className = "card-text small text-light mb-2";
+        artistInfo.innerHTML = `<strong class="text-warning">Artist:</strong> <span class="text-info">${art.artist}</span>`;
 
         const untilInfo = document.createElement("p");
-        untilInfo.textContent = `Until: ${art.until}`;
+        untilInfo.className = "card-text small text-light mb-0";
+        untilInfo.innerHTML = `<strong class="text-warning">Until:</strong> <span class="text-success">${art.until}</span>`;
 
+        cardBody.appendChild(artistInfo);
+        cardBody.appendChild(untilInfo);
         artContainer.appendChild(artImage);
-        artContainer.appendChild(artistInfo);
-        artContainer.appendChild(untilInfo);
-        popupContent.appendChild(artContainer);
+        artContainer.appendChild(cardBody);
+        col.appendChild(artContainer);
+        row.appendChild(col);
     });
 
-    overlay.style.display = "block";
-    popup.style.display = "block";
-    document.body.classList.add("no-scroll");
+    modalBody.appendChild(row);
+
+    const bootstrapModal = new bootstrap.Modal(modal);
+    bootstrapModal.show();
 }
 
 function showEnlargedArt(ballName, dexName) {
-    const popup = document.getElementById("popup");
-    const popupHeader = document.getElementById("popup-header");
-    const popupContent = document.getElementById("popup-content");
-    const overlay = document.getElementById("overlay");
+    const modal = document.getElementById('resultModal');
+    const modalTitle = document.getElementById('popup-header');
+    const modalBody = document.getElementById('popup-content');
 
-    popupContent.innerHTML = "";
-    popupHeader.textContent = ballName;
+    modalBody.innerHTML = "";
+    modalTitle.textContent = ballName;
 
     const artContainer = document.createElement("div");
-    artContainer.className = "popup-enlarged-art-container";
+    artContainer.className = "popup-enlarged-art-container text-center";
 
     const artImage = document.createElement("img");
     artImage.src = `../assets/${dexName}/${ballName}.png`;
     artImage.alt = `${ballName} art`;
+    artImage.className = "img-fluid";
     artImage.loading = "lazy";
 
     artContainer.appendChild(artImage);
-    popupContent.appendChild(artContainer);
+    modalBody.appendChild(artContainer);
 
-    overlay.style.display = "block";
-    popup.style.display = "block";
-    document.body.classList.add("no-scroll");
-
-    setTimeout(() => {
-        popup.scrollIntoView({ behavior: "smooth", block: "center" });
-    }, 50);
+    const bootstrapModal = new bootstrap.Modal(modal);
+    bootstrapModal.show();
 }
-
-document.getElementById("popup-close").addEventListener("click", function () {
-    const popup = document.getElementById("popup");
-    const overlay = document.getElementById("overlay");
-
-    popup.style.display = "none";
-    overlay.style.display = "none";
-    document.body.classList.remove("no-scroll");
-});
-
-document.getElementById("overlay").addEventListener("click", function () {
-    const popup = document.getElementById("popup");
-    const overlay = document.getElementById("overlay");
-
-    popup.style.display = "none";
-    overlay.style.display = "none";
-    document.body.classList.remove("no-scroll");
-});
 
 function showNotification() {
-    const notification = document.getElementById("notification");
-    notification.classList.add("show");
-    setTimeout(() => {
-        notification.classList.remove("show");
-    }, 1800);
+    const toastElement = document.getElementById('notification');
+    const toast = new bootstrap.Toast(toastElement);
+    toast.show();
 }
 
-document.getElementById("search-bar").addEventListener("input", function () {
-    showSpecificBalls(this.value.toLowerCase());
-});
-
 function showSpecificBalls(query) {
-    const ballContainers = document.querySelectorAll(".ball-container");
+    const ballCards = document.querySelectorAll("#balls-list .col-6");
 
-    ballContainers.forEach((container) => {
-        const ballName = container.querySelector("h2").textContent.toLowerCase();
+    ballCards.forEach((col) => {
+        const ballName = col.querySelector(".card-title").textContent.toLowerCase();
         if (ballName.includes(query)) {
-            container.style.display = "block";
+            col.style.display = "block";
         } else {
-            container.style.display = "none";
+            col.style.display = "none";
         }
     });
+}
+
+function applyVisibilitySettings() {
+    document.getElementById("toggle-wave").dispatchEvent(new Event("change"));
+    document.getElementById("toggle-rarity").dispatchEvent(new Event("change"));
+    document.getElementById("toggle-artist").dispatchEvent(new Event("change"));
+    document.getElementById("toggle-id").dispatchEvent(new Event("change"));
 }
 
 function saveSettings() {
@@ -359,55 +479,48 @@ function saveSettings() {
 function loadSettings() {
     const settings = JSON.parse(localStorage.getItem("displaySettings"));
     if (settings) {
-        document.getElementById("toggle-wave").checked = settings.showWave;
-        document.getElementById("toggle-rarity").checked = settings.showRarity;
-        document.getElementById("toggle-artist").checked = settings.showArtist;
-        document.getElementById("toggle-id").checked = settings.showID;
-        document.getElementById("on-click-action").value = settings.onClick;
-        document.getElementById("toggle-wave").dispatchEvent(new Event("change"));
-        document.getElementById("toggle-rarity").dispatchEvent(new Event("change"));
-        document.getElementById("toggle-artist").dispatchEvent(new Event("change"));
-        document.getElementById("toggle-id").dispatchEvent(new Event("change"));
-        document.getElementById("on-click-action").dispatchEvent(new Event("change"));
+        document.getElementById("toggle-wave").checked = settings.showWave ?? true;
+        document.getElementById("toggle-rarity").checked = settings.showRarity ?? true;
+        document.getElementById("toggle-artist").checked = settings.showArtist ?? true;
+        document.getElementById("toggle-id").checked = settings.showID ?? false;
+        document.getElementById("on-click-action").value = settings.onClick ?? "previous-arts";
     }
 }
 
-document.getElementById("toggle-wave").addEventListener("change", function () {
-    const waveIndicators = document.querySelectorAll(".wave-indicator");
-    waveIndicators.forEach((wave) => {
-        wave.style.display = this.checked ? "block" : "none";
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("toggle-wave").addEventListener("change", function () {
+        const waveIndicators = document.querySelectorAll(".wave-indicator");
+        waveIndicators.forEach((wave) => {
+            wave.style.display = this.checked ? "block" : "none";
+        });
+        saveSettings();
     });
-    saveSettings();
-});
 
-document.getElementById("toggle-rarity").addEventListener("change", function () {
-    const rarityContainers = document.querySelectorAll(".rarity-container");
-    rarityContainers.forEach((rarity) => {
-        rarity.style.display = this.checked ? "block" : "none";
+    document.getElementById("toggle-rarity").addEventListener("change", function () {
+        const rarityContainers = document.querySelectorAll(".rarity-container");
+        rarityContainers.forEach((rarity) => {
+            rarity.style.display = this.checked ? "block" : "none";
+        });
+        saveSettings();
     });
-    saveSettings();
-});
 
-document.getElementById("toggle-artist").addEventListener("change", function () {
-    const artistContainers = document.querySelectorAll(".artist-container");
-    artistContainers.forEach((artist) => {
-        artist.style.display = this.checked ? "block" : "none";
+    document.getElementById("toggle-artist").addEventListener("change", function () {
+        const artistContainers = document.querySelectorAll(".artist-container");
+        artistContainers.forEach((artist) => {
+            artist.style.display = this.checked ? "block" : "none";
+        });
+        saveSettings();
     });
-    saveSettings();
-});
 
-document.getElementById("toggle-id").addEventListener("change", function () {
-    const idIndicators = document.querySelectorAll(".id-indicator");
-    idIndicators.forEach((id) => {
-        id.style.display = this.checked ? "block" : "none";
+    document.getElementById("toggle-id").addEventListener("change", function () {
+        const idIndicators = document.querySelectorAll(".id-indicator");
+        idIndicators.forEach((id) => {
+            id.style.display = this.checked ? "block" : "none";
+        });
+        saveSettings();
     });
-    saveSettings();
-});
 
-document.getElementById("on-click-action").addEventListener("change", function () {
-    saveSettings();
-});
-
-document.getElementById("back-button").addEventListener("click", function () {
-    window.location.href = "../index.html";
+    document.getElementById("on-click-action").addEventListener("change", function () {
+        saveSettings();
+    });
 });

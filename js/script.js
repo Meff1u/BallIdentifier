@@ -1,35 +1,58 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("dexSelector").value = "Ballsdex";
     updateTitleWithBallCount();
+    
+    const loadingModal = new bootstrap.Modal(document.getElementById('loadingModal'));
+    const resultModal = new bootstrap.Modal(document.getElementById('resultModal'));
+    const changelogOffcanvas = new bootstrap.Offcanvas(document.getElementById('changelogOffcanvas'));
+    
+    window.loadingModal = loadingModal;
+    window.resultModal = resultModal;
+    window.changelogOffcanvas = changelogOffcanvas;
+    
+    document.getElementById('loadingModal').addEventListener('hidden.bs.modal', function () {
+        console.log('Loading modal fully hidden');
+        this.style.display = 'none';
+    });
+    
+    document.getElementById('resultModal').addEventListener('hidden.bs.modal', function () {
+        console.log('Result modal fully hidden');
+        document.getElementById("resultImage").src = "";
+    });
+    
+    document.getElementById('loadingModal').addEventListener('shown.bs.modal', function () {
+        console.log('Loading modal fully shown');
+    });
 });
 
 document.getElementById("toggleNotes").addEventListener("click", function() {
     const notesContainer = document.getElementById("notesContainer");
-    const arrow = document.getElementById("arrow");
-    if (notesContainer.classList.contains("visible")) {
-        notesContainer.classList.remove("visible");
-        arrow.textContent = "▼";
-    } else {
-        notesContainer.classList.add("visible");
-        arrow.textContent = "▲";
-    }
+    const collapse = new bootstrap.Collapse(notesContainer);
+});
+
+document.getElementById("notesContainer").addEventListener("shown.bs.collapse", function() {
+    document.getElementById("arrow").textContent = "▲";
+});
+
+document.getElementById("notesContainer").addEventListener("hidden.bs.collapse", function() {
+    document.getElementById("arrow").textContent = "▼";
 });
 
 document.getElementById("fileInput").addEventListener("change", function () {
     const file = this.files[0];
     console.log(file);
     if (file) {
-        showLoadingPopup("Comparing...");
+        showLoadingModal("Comparing...");
         checkFileSize(file);
     }
 });
 
 document.addEventListener("paste", function (event) {
-    const loadingPopup = document.getElementById("loadingPopup");
-    const resultPopup = document.getElementById("resultPopup");
+    const loadingModalElement = document.getElementById("loadingModal");
+    const resultModalElement = document.getElementById("resultModal");
 
-    if (loadingPopup.style.display === "flex" || resultPopup.style.display === "block") {
-        console.log("Paste action blocked: Loading or result popup is active.");
+    if (loadingModalElement.classList.contains("show") || resultModalElement.classList.contains("show")) {
+        console.log("Paste action blocked: Loading or result modal is active.");
         return;
     }
 
@@ -39,7 +62,7 @@ document.addEventListener("paste", function (event) {
             const file = items[i].getAsFile();
             console.log(file);
             if (file) {
-                showLoadingPopup("Comparing...");
+                showLoadingModal("Comparing...");
                 checkFileSize(file);
             }
         } else if (items[i].type === "text/plain") {
@@ -47,7 +70,7 @@ document.addEventListener("paste", function (event) {
                 const discordImageUrlPattern =
                     /^https:\/\/(cdn\.discordapp\.com|media\.discordapp\.net)\/attachments\/\d+\/\d+\/[^?]+\.(png|jpg|jpeg|gif|webp)(\?.*)?$/;
                 if (discordImageUrlPattern.test(text)) {
-                    showLoadingPopup("Fetching...");
+                    showLoadingModal("Fetching...");
                     downloadImage(text);
                 }
             });
@@ -63,7 +86,7 @@ document.getElementById("pasteButton").addEventListener("click", function () {
                 if (item.types.includes("image/png") || item.types.includes("image/jpeg")) {
                     item.getType("image/png").then((blob) => {
                         const file = new File([blob], "pasted_image.png", { type: blob.type });
-                        showLoadingPopup("Comparing...");
+                        showLoadingModal("Comparing...");
                         checkFileSize(file);
                     });
                 } else if (item.types.includes("text/plain")) {
@@ -72,7 +95,7 @@ document.getElementById("pasteButton").addEventListener("click", function () {
                             const discordImageUrlPattern =
                                 /^https:\/\/(cdn\.discordapp\.com|media\.discordapp\.net)\/attachments\/\d+\/\d+\/[^?]+\.(png|jpg|jpeg|gif|webp)(\?.*)?$/;
                             if (discordImageUrlPattern.test(text)) {
-                                showLoadingPopup("Fetching...");
+                                showLoadingModal("Fetching...");
                                 downloadImage(text);
                             }
                         });
@@ -86,6 +109,12 @@ document.getElementById("pasteButton").addEventListener("click", function () {
 });
 
 function downloadImage(url) {
+    const body = document.body;
+    const dragOverlay = document.querySelector(".drag-overlay");
+    body.classList.remove("dragging");
+    dragOverlay.classList.remove("visible");
+    dragOverlay.style.display = "none";
+    
     fetch(".netlify/functions/downloadImage", {
         method: "POST",
         headers: {
@@ -96,11 +125,13 @@ function downloadImage(url) {
         .then((response) => response.blob())
         .then((blob) => {
             const file = new File([blob], "downloaded_image.png", { type: blob.type });
-            showLoadingPopup("Comparing...");
+            showLoadingModal("Comparing...");
             checkFileSize(file);
         })
         .catch((error) => {
             console.error("Error downloading the image:", error);
+            hideLoadingModal();
+            showAlert("Error downloading image. Please try again.", "danger");
         });
 }
 
@@ -163,46 +194,107 @@ function uploadFile(file) {
         .then((text) => {
             const data = JSON.parse(text);
             console.log("Response data:", data);
-            hideLoadingPopup();
-            showResultPopup(data.country, data.diff);
+            transitionToResult(data.country, data.diff);
         })
         .catch((error) => {
             console.error("Error:", error);
-            hideLoadingPopup();
+            hideLoadingModal();
+            showAlert("Error processing image. Please try again.", "danger");
         });
 }
 
-function showLoadingPopup(text) {
-    const loadingPopup = document.getElementById("loadingPopup");
+function showLoadingModal(text) {
+    const body = document.body;
+    const dragOverlay = document.querySelector(".drag-overlay");
+    if (dragOverlay) {
+        body.classList.remove("dragging");
+        dragOverlay.classList.remove("visible");
+        dragOverlay.style.display = "none";
+    }
+    
     const loadingText = document.getElementById("loading-text");
     loadingText.textContent = text;
-    const overlay = document.getElementById("overlay");
-    loadingPopup.style.display = "flex";
-    overlay.style.display = "block";
-    loadingPopup.style.animation = "fadeIn 0.5s";
+    
+    if (window.resultModal) {
+        window.resultModal.hide();
+    }
+    
+    const loadingModalElement = document.getElementById('loadingModal');
+    loadingModalElement.style.display = '';
+    
+    if (window.loadingModal) {
+        window.loadingModal.show();
+    }
 }
 
-function hideLoadingPopup() {
-    const loadingPopup = document.getElementById("loadingPopup");
-    const overlay = document.getElementById("overlay");
-    loadingPopup.style.animation = "fadeOut 0.5s";
+function hideLoadingModal() {
+    if (window.loadingModal) {
+        const loadingModalElement = document.getElementById('loadingModal');
+        loadingModalElement.classList.remove('show');
+        
+        const backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) {
+            backdrop.remove();
+        }
+        
+        window.loadingModal.hide();
+        
+        setTimeout(() => {
+            loadingModalElement.style.display = 'none';
+        }, 50);
+    }
+}
+
+function transitionToResult(country, diff) {
+    hideLoadingModal();
+    
     setTimeout(() => {
-        loadingPopup.style.display = "none";
-        overlay.style.display = "none";
-    }, 500);
+        showResultModal(country, diff);
+    }, 200);
 }
 
-function showResultPopup(country, diff) {
-    const resultPopup = document.getElementById("resultPopup");
+function showResultModal(country, diff) {
     const resultTitle = document.getElementById("resultTitle");
     const resultSubtitle = document.getElementById("resultSubtitle");
     const resultImage = document.getElementById("resultImage");
     const resultCredits = document.getElementById("resultCredits");
-    const overlay = document.getElementById("overlay");
+    const resultModalContent = document.querySelector("#resultModal .modal-content");
+    const resultModalHeader = document.querySelector("#resultModal .modal-header");
     const dex = document.getElementById("dexSelector").value;
 
+    const similarity = 100 - diff;
+    
+    let borderColor, headerClass, titleClass;
+    
+    if (similarity >= 90) {
+        borderColor = "var(--bs-success)";
+        headerClass = "border-success";
+        titleClass = "text-success";
+    } else if (similarity >= 80) {
+        borderColor = "#ffc107";
+        headerClass = "border-warning";
+        titleClass = "text-warning";
+    } else if (similarity >= 75) {
+        borderColor = "#fd7e14";
+        headerClass = "border-warning";
+        titleClass = "text-warning";
+        borderColor = "#fd7e14";
+    } else {
+        borderColor = "#dc3545";
+        headerClass = "border-danger";
+        titleClass = "text-danger";
+    }
+    
+    resultModalContent.style.borderColor = borderColor;
+    resultModalContent.className = `modal-content bg-dark border-2`;
+    resultModalContent.style.borderWidth = "2px";
+    resultModalContent.style.borderStyle = "solid";
+    
+    resultModalHeader.className = `modal-header ${headerClass}`;
+    resultTitle.className = `modal-title ${titleClass}`;
+
     resultTitle.textContent = `${country}`;
-    resultSubtitle.textContent = `Similarity: ${100 - diff}%`;
+    resultSubtitle.textContent = `Similarity: ${similarity}%`;
     resultImage.src = `assets/${dex}/${country}.png`;
 
     fetch(`assets/jsons/${dex}.json`)
@@ -213,27 +305,22 @@ function showResultPopup(country, diff) {
                 resultCredits.textContent = `Rarity: #${ball.rarity} | Artist: ${
                     ball.artist || "Unknown"
                 }`;
-            } else resultCredits.textContent = "";
+            } else {
+                resultCredits.textContent = "";
+            }
         })
         .catch((error) => console.error("Error fetching ball data:", error));
 
-    resultPopup.style.display = "block";
-    overlay.style.display = "block";
-    resultPopup.style.animation = "fadeIn 0.5s";
-}
-
-document.getElementById("closeResultPopup").addEventListener("click", hideResultPopup);
-
-function hideResultPopup() {
-    const resultPopup = document.getElementById("resultPopup");
-    const resultImage = document.getElementById("resultImage");
-    const overlay = document.getElementById("overlay");
-    resultPopup.style.animation = "fadeOut 0.5s";
+    const modalDialog = document.querySelector('#resultModal .modal-dialog');
+    modalDialog.classList.add('modal-transition-grow');
+    
+    if (window.resultModal) {
+        window.resultModal.show();
+    }
+    
     setTimeout(() => {
-        resultPopup.style.display = "none";
-        overlay.style.display = "none";
-        resultImage.src = "";
-    }, 460);
+        modalDialog.classList.remove('modal-transition-grow');
+    }, 350);
 }
 
 document.getElementById("dexSelector").addEventListener("change", function () {
@@ -247,7 +334,7 @@ function updateTitleWithBallCount() {
     fetch(`assets/jsons/${dex}Hashes.json`)
         .then((response) => response.json())
         .then((data) => {
-            document.getElementById("title").textContent = `Identifier (${
+            document.getElementById("title").textContent = `(${
                 Object.keys(data).length
             } balls)`;
         })
@@ -282,69 +369,95 @@ document.getElementById("changelogButton").addEventListener("click", function ()
                     .join("")}</ul>`;
                 changelogList.appendChild(changeItem);
             });
-            const changelogModal = document.getElementById("changelogModal");
-            changelogModal.style.display = "block";
-            setTimeout(() => {
-                changelogModal.classList.add("show");
-                changelogModal.classList.remove("hide");
-            }, 10);
+            
+            if (window.changelogOffcanvas) {
+                window.changelogOffcanvas.show();
+            }
         })
         .catch((error) => console.error("Error fetching changelog:", error));
 });
 
-document.getElementById("closeChangelog").addEventListener("click", function () {
-    const changelogModal = document.getElementById("changelogModal");
-    changelogModal.classList.add("hide");
-    setTimeout(() => {
-        changelogModal.classList.remove("show");
-        changelogModal.style.display = "none";
-    }, 300);
-});
-
 document.getElementById("copyButton").addEventListener("click", function () {
     const resultTitle = document.getElementById("resultTitle").textContent;
-    const textarea = document.createElement("textarea");
-    textarea.value = resultTitle;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
+    
+    navigator.clipboard.writeText(resultTitle).then(() => {
+        const copyButton = document.getElementById("copyButton");
+        const originalText = copyButton.innerHTML;
+        
+        copyButton.classList.add("btn-success-copied");
+        copyButton.innerHTML = '<i class="bi bi-check-circle me-2"></i>Copied!';
+        copyButton.disabled = true;
 
-    const copyButton = document.getElementById("copyButton");
-    copyButton.style.backgroundColor = "#00ff00";
-    copyButton.textContent = "Copied!";
-    copyButton.disabled = true;
+        setTimeout(function () {
+            copyButton.classList.remove("btn-success-copied");
+            copyButton.innerHTML = originalText;
+            copyButton.disabled = false;
+        }, 1500);
+    }).catch(() => {
+        const textarea = document.createElement("textarea");
+        textarea.value = resultTitle;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
 
-    setTimeout(function () {
-        copyButton.style.backgroundColor = "";
-        copyButton.textContent = "Copy to clipboard";
-        copyButton.disabled = false;
-    }, 800);
+        const copyButton = document.getElementById("copyButton");
+        const originalText = copyButton.innerHTML;
+        
+        copyButton.classList.add("btn-success-copied");
+        copyButton.innerHTML = '<i class="bi bi-check-circle me-2"></i>Copied!';
+        copyButton.disabled = true;
+
+        setTimeout(function () {
+            copyButton.classList.remove("btn-success-copied");
+            copyButton.innerHTML = originalText;
+            copyButton.disabled = false;
+        }, 1500);
+    });
 });
 
+function forcehideDragOverlay() {
+    const body = document.body;
+    const dragOverlay = document.querySelector(".drag-overlay");
+    if (dragOverlay) {
+        body.classList.remove("dragging");
+        dragOverlay.classList.remove("visible");
+        dragOverlay.style.display = "none";
+        dragOverlay.style.visibility = "hidden";
+        dragOverlay.style.opacity = "0";
+    }
+}
+
 const body = document.body;
-const dragOverlay = document.createElement("div");
-dragOverlay.className = "drag-overlay";
-dragOverlay.textContent = "Drop your image/discord URL here";
-document.body.appendChild(dragOverlay);
+const dragOverlay = document.querySelector(".drag-overlay");
 
 document.addEventListener("dragover", (event) => {
     event.preventDefault();
     body.classList.add("dragging");
     dragOverlay.classList.add("visible");
+    dragOverlay.style.display = "flex";
 });
 
 document.addEventListener("dragleave", (event) => {
     if (event.target === document || event.target === body) {
         body.classList.remove("dragging");
         dragOverlay.classList.remove("visible");
+        setTimeout(() => {
+            if (!dragOverlay.classList.contains("visible")) {
+                dragOverlay.style.display = "none";
+            }
+        }, 300);
     }
 });
 
 document.addEventListener("drop", (event) => {
     event.preventDefault();
-    body.classList.remove("dragging");
-    dragOverlay.classList.remove("visible");
+    
+    forcehideDragOverlay();
+    
+    setTimeout(() => {
+        forcehideDragOverlay();
+    }, 100);
 
     const files = event.dataTransfer.files;
     const text = event.dataTransfer.getData("text/plain");
@@ -354,23 +467,42 @@ document.addEventListener("drop", (event) => {
         if (file.type.startsWith("image/")) {
             handleFileUpload(file);
         } else {
-            alert("Please drop a valid image file.");
+            showAlert("Please drop a valid image file.", "warning");
         }
     } else if (text) {
         const discordImageUrlPattern =
             /^https:\/\/(cdn\.discordapp\.com|media\.discordapp\.net)\/attachments\/\d+\/\d+\/[^?]+\.(png|jpg|jpeg|gif|webp)(\?.*)?$/;
         if (discordImageUrlPattern.test(text)) {
-            showLoadingPopup("Fetching...");
+            showLoadingModal("Fetching...");
             downloadImage(text);
         } else {
-            alert("Please drop a valid Discord image URL.");
+            showAlert("Please drop a valid Discord image URL.", "warning");
         }
     }
 });
 
 function handleFileUpload(file) {
-    showLoadingPopup("Uploading...");
+    forcehideDragOverlay();
+    showLoadingModal("Uploading...");
     checkFileSize(file);
+}
+
+function showAlert(message, type = "primary") {
+    const alertDiv = document.createElement("div");
+    alertDiv.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+    alertDiv.style.cssText = "top: 80px; left: 50%; transform: translateX(-50%); z-index: 1060; min-width: 300px;";
+    alertDiv.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    `;
+    
+    document.body.appendChild(alertDiv);
+    
+    setTimeout(() => {
+        if (alertDiv.parentNode) {
+            alertDiv.remove();
+        }
+    }, 3000);
 }
 
 document.getElementById("spawnArtsButton").addEventListener("click", function () {
@@ -379,4 +511,14 @@ document.getElementById("spawnArtsButton").addEventListener("click", function ()
 
 document.getElementById("discordBotButton").addEventListener("click", function () {
     window.open(`https://ballidentifier.xyz/bot`, "_blank");
+});
+
+document.querySelectorAll('.btn, .form-select').forEach(element => {
+    element.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+    });
+    
+    element.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
 });

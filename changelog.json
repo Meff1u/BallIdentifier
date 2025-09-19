@@ -1,6 +1,21 @@
 {
     "changes": [
         {
+            "timestamp": "1758284043",
+            "changes": [
+                "Complete website redesign with Bootstrap 5.3.0 framework",
+                "Added responsive navigation with mobile-friendly hamburger menu",
+                "Implemented animated modal popups with fade and scale transitions",
+                "Added color-coded result outlines based on similarity percentage (90-100%: green, 80-90%: yellow, 75-80%: orange, <75%: red)",
+                "Enhanced list page with sticky desktop controls and improved mobile experience",
+                "Added loading modals with progress indicators and better error handling",
+                "Implemented drag-and-drop functionality improvements with visual feedback",
+                "Updated all pages with modern Bootstrap components and utility classes",
+                "Added hover effects and interactive animations throughout the interface",
+                "Improved accessibility and mobile responsiveness across all features"
+            ]
+        },
+        {
             "timestamp": "1758275625",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Kara-Khanid Khanate, Union of South Africa)"
