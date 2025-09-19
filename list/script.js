@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const dexSelector = document.getElementById("dexSelector");
 
     function loadDexData(dexName) {
-        const jsonFile = `assets/jsons/${dexName}.json`;
+        const jsonFile = `../assets/jsons/${dexName}.json`;
         
         forceCleanupAllModals();
         
