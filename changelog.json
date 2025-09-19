@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1758275625",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Kara-Khanid Khanate, Union of South Africa)"
+            ]
+        },
+        {
             "timestamp": "1757598749",
             "changes": [
                 "Updated to DynastyDex Update 2.0.1 (3 new balls: Kingdom of Armenia, Kingdom of Georgia, Kingdom of Kurdistan)"
