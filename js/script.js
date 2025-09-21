@@ -575,7 +575,7 @@ function showAlert(message, type = "primary") {
         if (alertDiv.parentNode) {
             alertDiv.remove();
         }
-    }, 3000);
+    }, 5000);
 }
 
 document.getElementById("spawnArtsButton").addEventListener("click", function () {
