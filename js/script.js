@@ -130,10 +130,10 @@ function downloadImage(url) {
 }
 
 function checkFileSize(file) {
-    const maxSize = 5.5 * 1024 * 1024;
+    const maxSize = 5 * 1024 * 1024;
 
     if (file.size >= maxSize) {
-        console.log("File is larger than or equal to 6MB. Compressing...");
+        console.log("File is larger than or equal to 5MB. Compressing...");
 
         const img = new Image();
         const reader = new FileReader();
@@ -146,19 +146,33 @@ function checkFileSize(file) {
             const canvas = document.createElement("canvas");
             const ctx = canvas.getContext("2d");
 
-            canvas.width = 1000;
-            canvas.height = 1000 * (img.height / img.width);
+            const maxDimension = 800;
+            let { width, height } = img;
 
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            if (width > height) {
+                if (width > maxDimension) {
+                    height = (height * maxDimension) / width;
+                    width = maxDimension;
+                }
+            } else {
+                if (height > maxDimension) {
+                    width = (width * maxDimension) / height;
+                    height = maxDimension;
+                }
+            }
+
+            canvas.width = width;
+            canvas.height = height;
+
+            ctx.drawImage(img, 0, 0, width, height);
 
             canvas.toBlob(
                 function (blob) {
+                    console.log(`Compressed size: ${blob.size / 1024 / 1024}MB`);
                     uploadFile(blob);
-                    console.log(`New Size: ${blob.size / 1024 / 1024}MB`);
-                    console.log("File compressed successfully.");
                 },
-                file.type,
-                1
+                "image/jpeg",
+                0.8
             );
         };
 
@@ -180,8 +194,14 @@ function uploadFile(file) {
         body: formData,
     })
         .then((response) => {
+            console.log(`compareImage response status: ${response.status}`);
+            console.log(`compareImage response headers: ${[...response.headers]}`);
+
             if (!response.ok) {
-                throw new Error("Network response was not ok");
+                return response.text().then(text => {
+                    console.error('Server error response:', text);
+                    throw new Error(`Server error (${response.status}): ${text}`);
+                });
             }
             return response.text();
         })
@@ -193,7 +213,15 @@ function uploadFile(file) {
         .catch((error) => {
             console.error("Error:", error);
             hideLoadingModal();
-            showAlert("Error processing image. Please try again.", "danger");
+            if (error.message.includes('413')) {
+                showAlert("Image file is too large. Please try a smaller image.", "danger");
+            } else if (error.message.includes('504') || error.message.includes('timeout')) {
+                showAlert("Request timed out. Please try again with a smaller image.", "danger");
+            } else if (error.message.includes('500')) {
+                showAlert("Server error. Please try again or contact support.", "danger");
+            } else {
+                showAlert("Error processing image. Please try again.", "danger");
+            }
         });
 }
 
