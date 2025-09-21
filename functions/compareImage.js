@@ -20,6 +20,38 @@ exports.handler = async (event) => {
         }
 
         const buffer = Buffer.from(file, "binary");
+        
+        if (!buffer || buffer.length === 0) {
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ error: "Empty or invalid file buffer" }),
+            };
+        }
+        
+        if (buffer.length < 100) {
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ error: "File too small to be a valid image" }),
+            };
+        }
+        
+        const magicBytes = buffer.slice(0, 8);
+        const isPNG = magicBytes[0] === 0x89 && magicBytes[1] === 0x50 && magicBytes[2] === 0x4E && magicBytes[3] === 0x47;
+        const isJPEG = magicBytes[0] === 0xFF && magicBytes[1] === 0xD8;
+        const isWebP = magicBytes[8] === 0x57 && magicBytes[9] === 0x45 && magicBytes[10] === 0x42 && magicBytes[11] === 0x50;
+        const isGIF = magicBytes[0] === 0x47 && magicBytes[1] === 0x49 && magicBytes[2] === 0x46;
+        
+        if (!isPNG && !isJPEG && !isWebP && !isGIF) {
+            console.log("Invalid magic bytes:", Array.from(magicBytes.slice(0, 12)).map(b => '0x' + b.toString(16).padStart(2, '0')).join(' '));
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ 
+                    error: "File does not appear to be a valid image. Magic bytes check failed.",
+                    details: `First 12 bytes: ${Array.from(magicBytes.slice(0, 12)).map(b => '0x' + b.toString(16).padStart(2, '0')).join(' ')}`
+                }),
+            };
+        }
+        
         const ballHashes = fs.readFileSync(path.join(`./assets/jsons/${dex}Hashes.json`));
 
         console.log("Starting comparison...");

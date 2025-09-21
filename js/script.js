@@ -125,7 +125,22 @@ function downloadImage(url) {
         .catch((error) => {
             console.error("Error downloading the image:", error);
             hideLoadingModal();
-            showAlert("Error downloading image. Please try again.", "danger");
+            
+            let errorMessage = "Error downloading image. Please try again.";
+            
+            if (error.message.includes('Invalid content type')) {
+                errorMessage = "The link doesn't point to a valid image file.";
+            } else if (error.message.includes('403') || error.message.includes('Forbidden')) {
+                errorMessage = "Access denied. The image link may have expired or be private.";
+            } else if (error.message.includes('404') || error.message.includes('Not Found')) {
+                errorMessage = "Image not found. The link may be broken or expired.";
+            } else if (error.message.includes('too large')) {
+                errorMessage = "Image is too large to process.";
+            } else if (error.message.includes('timeout')) {
+                errorMessage = "Request timed out. Please try again.";
+            }
+            
+            showAlert(errorMessage, "danger");
         });
 }
 
@@ -220,6 +235,12 @@ function uploadFile(file) {
                 showAlert("Server error. Please try again.", "danger");
             } else if (error.message.includes('Unsupported image format') || error.message.includes('Invalid image file')) {
                 showAlert("Invalid image format. Please upload a JPEG, PNG, WebP, or GIF image.", "danger");
+            } else if (error.message.includes('Magic bytes check failed')) {
+                showAlert("The file is not a valid image or may be corrupted.", "danger");
+            } else if (error.message.includes('Empty or invalid file buffer')) {
+                showAlert("The uploaded file appears to be empty or corrupted.", "danger");
+            } else if (error.message.includes('File too small')) {
+                showAlert("The file is too small to be a valid image.", "danger");
             } else {
                 showAlert("Error processing image. Please ensure you're uploading a valid image file.", "danger");
             }
