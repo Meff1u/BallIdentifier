@@ -199,7 +199,6 @@ function uploadFile(file) {
 
             if (!response.ok) {
                 return response.text().then(text => {
-                    console.error('Server error response:', text);
                     throw new Error(`Server error (${response.status}): ${text}`);
                 });
             }
@@ -218,9 +217,11 @@ function uploadFile(file) {
             } else if (error.message.includes('504') || error.message.includes('timeout')) {
                 showAlert("Request timed out. Please try again with a smaller image.", "danger");
             } else if (error.message.includes('500')) {
-                showAlert("Server error. Please try again or contact support.", "danger");
+                showAlert("Server error. Please try again.", "danger");
+            } else if (error.message.includes('Unsupported image format') || error.message.includes('Invalid image file')) {
+                showAlert("Invalid image format. Please upload a JPEG, PNG, WebP, or GIF image.", "danger");
             } else {
-                showAlert("Error processing image. Please try again.", "danger");
+                showAlert("Error processing image. Please ensure you're uploading a valid image file.", "danger");
             }
         });
 }
