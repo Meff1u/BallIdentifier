@@ -116,7 +116,20 @@ function downloadImage(url) {
         },
         body: JSON.stringify({ url: url }),
     })
-        .then((response) => response.blob())
+        .then((response) => {
+            if (!response.ok) {
+                return response.text().then(text => {
+                    let errorData;
+                    try {
+                        errorData = JSON.parse(text);
+                    } catch (e) {
+                        errorData = { error: text };
+                    }
+                    throw new Error(JSON.stringify(errorData));
+                });
+            }
+            return response.blob();
+        })
         .then((blob) => {
             const file = new File([blob], "downloaded_image.png", { type: blob.type });
             showLoadingModal("Comparing...");
@@ -128,16 +141,25 @@ function downloadImage(url) {
             
             let errorMessage = "Error downloading image. Please try again.";
             
-            if (error.message.includes('Invalid content type')) {
-                errorMessage = "The link doesn't point to a valid image file.";
-            } else if (error.message.includes('403') || error.message.includes('Forbidden')) {
-                errorMessage = "Access denied. The image link may have expired or be private.";
-            } else if (error.message.includes('404') || error.message.includes('Not Found')) {
-                errorMessage = "Image not found. The link may be broken or expired.";
-            } else if (error.message.includes('too large')) {
-                errorMessage = "Image is too large to process.";
-            } else if (error.message.includes('timeout')) {
-                errorMessage = "Request timed out. Please try again.";
+            try {
+                const errorData = JSON.parse(error.message);
+                if (errorData.errorType === 'Function.ResponseSizeTooLarge') {
+                    errorMessage = "Image is too large to download. Maximum size is 6MB.";
+                } else if (errorData.errorMessage) {
+                    errorMessage = errorData.errorMessage;
+                }
+            } catch (e) {
+                if (error.message.includes('Invalid content type')) {
+                    errorMessage = "The link doesn't point to a valid image file.";
+                } else if (error.message.includes('403') || error.message.includes('Forbidden')) {
+                    errorMessage = "Access denied. The image link may have expired or be private.";
+                } else if (error.message.includes('404') || error.message.includes('Not Found')) {
+                    errorMessage = "Image not found. The link may be broken or expired.";
+                } else if (error.message.includes('too large') || error.message.includes('ResponseSizeTooLarge')) {
+                    errorMessage = "Image is too large to download. Maximum size is 6MB.";
+                } else if (error.message.includes('timeout')) {
+                    errorMessage = "Request timed out. Please try again.";
+                }
             }
             
             showAlert(errorMessage, "danger");
