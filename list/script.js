@@ -272,6 +272,31 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("sort-options").dispatchEvent(new Event("change"));
     });
 
+    document.getElementById("toggle-wave-mobile").addEventListener("change", function() {
+        document.getElementById("toggle-wave").checked = this.checked;
+        document.getElementById("toggle-wave").dispatchEvent(new Event("change"));
+    });
+
+    document.getElementById("toggle-rarity-mobile").addEventListener("change", function() {
+        document.getElementById("toggle-rarity").checked = this.checked;
+        document.getElementById("toggle-rarity").dispatchEvent(new Event("change"));
+    });
+
+    document.getElementById("toggle-artist-mobile").addEventListener("change", function() {
+        document.getElementById("toggle-artist").checked = this.checked;
+        document.getElementById("toggle-artist").dispatchEvent(new Event("change"));
+    });
+
+    document.getElementById("toggle-id-mobile").addEventListener("change", function() {
+        document.getElementById("toggle-id").checked = this.checked;
+        document.getElementById("toggle-id").dispatchEvent(new Event("change"));
+    });
+
+    document.getElementById("on-click-action-mobile").addEventListener("change", function() {
+        document.getElementById("on-click-action").value = this.value;
+        document.getElementById("on-click-action").dispatchEvent(new Event("change"));
+    });
+
     document.getElementById("search-bar").addEventListener("input", function () {
         showSpecificBalls(this.value.toLowerCase());
     });
@@ -348,6 +373,12 @@ function initializeBootstrapComponents() {
 function syncMobileSelectors() {
     document.getElementById("dexSelector-mobile").value = document.getElementById("dexSelector").value;
     document.getElementById("sort-options-mobile").value = document.getElementById("sort-options").value;
+    
+    document.getElementById("toggle-wave-mobile").checked = document.getElementById("toggle-wave").checked;
+    document.getElementById("toggle-rarity-mobile").checked = document.getElementById("toggle-rarity").checked;
+    document.getElementById("toggle-artist-mobile").checked = document.getElementById("toggle-artist").checked;
+    document.getElementById("toggle-id-mobile").checked = document.getElementById("toggle-id").checked;
+    document.getElementById("on-click-action-mobile").value = document.getElementById("on-click-action").value;
 }
 
 function checkArtsExist(ballName) {

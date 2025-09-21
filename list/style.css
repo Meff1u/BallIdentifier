@@ -64,10 +64,24 @@ body {
     }
 }
 
+@media (max-width: 767px) {
+    #main-content {
+        padding-top: 1rem !important;
+        margin-top: 0 !important;
+    }
+}
+
 .navbar {
     backdrop-filter: blur(10px);
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
     z-index: 1100 !important; /* Higher than sticky controls */
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        position: sticky !important;
+        top: 0 !important;
+    }
 }
 
 .form-select option {
