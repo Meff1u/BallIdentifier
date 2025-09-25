@@ -412,14 +412,27 @@ function showPopup(ballName, arts) {
         const artContainer = document.createElement("div");
         artContainer.className = "popup-art-container card bg-dark border-secondary h-100";
 
+        if (art.alt) {
+            artContainer.setAttribute("data-bs-toggle", "tooltip");
+            artContainer.setAttribute("data-bs-placement", "top");
+            artContainer.setAttribute("title", art.alt);
+        }
+
         const artImage = document.createElement("img");
-        artImage.src = `../assets/bd-previous-arts/${ballName}/${index + 1}.webp`;
         artImage.alt = `${ballName} art`;
         artImage.className = "card-img-top";
         artImage.loading = "lazy";
         artImage.style.height = "220px";
         artImage.style.objectFit = "contain";
         artImage.style.padding = "8px";
+        
+        const webpSrc = `../assets/bd-previous-arts/${ballName}/${index + 1}.webp`;
+        const gifSrc = `../assets/bd-previous-arts/${ballName}/${index + 1}.gif`;
+        
+        artImage.src = webpSrc;
+        artImage.onerror = function() {
+            this.src = gifSrc;
+        };
 
         const cardBody = document.createElement("div");
         cardBody.className = "card-body p-3";
@@ -444,6 +457,11 @@ function showPopup(ballName, arts) {
 
     const bootstrapModal = new bootstrap.Modal(modal);
     bootstrapModal.show();
+
+    const tooltipTriggerList = [].slice.call(modalBody.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
 }
 
 function showEnlargedArt(ballName, dexName) {
