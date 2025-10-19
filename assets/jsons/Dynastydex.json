@@ -5,386 +5,482 @@
         "wave": 1,
         "id": 26
     },
+    "Roman Empire": {
+        "rarity": 1,
+        "artist": "Lavlux",
+        "wave": 1.2,
+        "id": 80
+    },
     "Holy Roman Empire": {
-        "rarity": 2,
+        "rarity": 3,
         "artist": "Unknown",
         "wave": 1,
         "id": 2
     },
     "Papal States": {
-        "rarity": 2,
+        "rarity": 3,
         "artist": "Unknown",
         "wave": 1,
         "id": 5
     },
     "Carolingian Empire": {
-        "rarity": 4,
+        "rarity": 5,
         "artist": "Verd",
         "wave": 1,
         "id": 24
     },
     "Macedon": {
-        "rarity": 4,
+        "rarity": 5,
         "artist": "Lotzer & Verdammt",
         "wave": 1,
         "id": 15
     },
+    "Ottoman Empire": {
+        "rarity": 5,
+        "artist": "Verd",
+        "wave": 1.2,
+        "id": 81
+    },
     "Zhou Dynasty": {
-        "rarity": 6,
+        "rarity": 8,
         "artist": "Business",
         "wave": 1,
         "id": 54
     },
     "Aztec": {
-        "rarity": 7,
+        "rarity": 9,
         "artist": "Lifty",
         "wave": 1,
         "id": 18
     },
     "Wagadu Empire": {
-        "rarity": 7,
+        "rarity": 9,
         "artist": "Stranger",
         "wave": 1,
         "id": 20
     },
     "Athens": {
-        "rarity": 9,
+        "rarity": 11,
         "artist": "Lifty/Egor",
         "wave": 1,
         "id": 19
     },
     "Colonies": {
-        "rarity": 9,
+        "rarity": 11,
         "artist": "Egor",
         "wave": 1,
         "id": 10
     },
     "Golden Horde": {
-        "rarity": 9,
+        "rarity": 11,
         "artist": "Kai",
         "wave": 1,
         "id": 29
     },
     "Tokugawa Shogunate": {
-        "rarity": 9,
+        "rarity": 11,
         "artist": "Verd",
         "wave": 1,
         "id": 3
     },
     "Austrian Empire": {
-        "rarity": 13,
+        "rarity": 15,
         "artist": "Ghost White",
         "wave": 1,
         "id": 17
     },
     "Bengal Sultanate": {
-        "rarity": 13,
+        "rarity": 15,
         "artist": "Business",
         "wave": 1,
         "id": 25
     },
     "Han Dynasty": {
-        "rarity": 13,
+        "rarity": 15,
         "artist": "Clay",
         "wave": 1,
         "id": 1
     },
     "Portuguese Empire": {
-        "rarity": 13,
+        "rarity": 15,
         "artist": "Egor",
         "wave": 1,
         "id": 38
     },
+    "Sparta": {
+        "rarity": 15,
+        "artist": "Unknown",
+        "wave": 1.2,
+        "id": 74
+    },
     "First Toungoo Empire": {
-        "rarity": 17,
+        "rarity": 20,
         "artist": "Lifty",
         "wave": 1,
         "id": 34
     },
     "Polish-Lithuanian Commonwealth": {
-        "rarity": 17,
+        "rarity": 20,
         "artist": "Business",
         "wave": 1,
         "id": 8
     },
     "Safavid Empire": {
-        "rarity": 17,
+        "rarity": 20,
         "artist": "Caro",
         "wave": 1,
         "id": 53
     },
     "Cumania": {
-        "rarity": 20,
+        "rarity": 23,
         "artist": "Unknown",
         "wave": 1,
         "id": 7
     },
     "Damascus": {
-        "rarity": 20,
+        "rarity": 23,
         "artist": "Business Woman",
         "wave": 1,
         "id": 41
     },
     "Kingdom of Bohemia": {
-        "rarity": 20,
+        "rarity": 23,
         "artist": "Lifty",
         "wave": 1,
         "id": 27
     },
     "Mali Empire": {
-        "rarity": 20,
+        "rarity": 23,
         "artist": "Business",
         "wave": 1,
         "id": 60
     },
     "Mayan Empire": {
-        "rarity": 20,
+        "rarity": 23,
         "artist": "Unknown",
         "wave": 1,
         "id": 9
     },
+    "Troy": {
+        "rarity": 23,
+        "artist": "Egor",
+        "wave": 1.2,
+        "id": 72
+    },
     "Anglo-Saxons": {
-        "rarity": 25,
+        "rarity": 29,
         "artist": "Verd",
         "wave": 1,
         "id": 23
     },
     "Ming Dynasty": {
-        "rarity": 25,
+        "rarity": 29,
         "artist": "Evan",
         "wave": 1,
         "id": 62
     },
     "Avar Khaganate": {
-        "rarity": 27,
+        "rarity": 31,
         "artist": "Egor",
         "wave": 1,
         "id": 48
     },
+    "Dacia": {
+        "rarity": 31,
+        "artist": "Repan",
+        "wave": 1.2,
+        "id": 78
+    },
     "Dahomey": {
-        "rarity": 27,
+        "rarity": 31,
         "artist": "Frog",
         "wave": 1,
         "id": 22
     },
     "German Empire": {
-        "rarity": 27,
+        "rarity": 31,
         "artist": "Verd",
         "wave": 1,
         "id": 33
     },
     "Jolof": {
-        "rarity": 27,
+        "rarity": 31,
         "artist": "Nono",
         "wave": 1,
         "id": 35
     },
     "Lotharingia": {
-        "rarity": 27,
+        "rarity": 31,
         "artist": "Verd",
         "wave": 1,
         "id": 36
     },
+    "Yugoslavia": {
+        "rarity": 31,
+        "artist": "Nono",
+        "wave": 1.2,
+        "id": 69
+    },
     "Al-Andalus": {
-        "rarity": 32,
+        "rarity": 38,
         "artist": "Rq",
         "wave": 1,
         "id": 57
     },
     "Ashikaga Shogunate": {
-        "rarity": 32,
+        "rarity": 38,
         "artist": "Lifty",
         "wave": 1,
         "id": 44
     },
     "Saint Domingue": {
-        "rarity": 32,
+        "rarity": 38,
         "artist": "Arty",
         "wave": 1,
         "id": 40
     },
     "Joseon": {
-        "rarity": 35,
+        "rarity": 41,
         "artist": "Lifty",
         "wave": 1,
         "id": 31
     },
     "Kingdom of Armenia": {
-        "rarity": 35,
+        "rarity": 41,
         "artist": "Lifty",
         "wave": 1.1,
         "id": 65
     },
+    "Rhodes": {
+        "rarity": 41,
+        "artist": "Protoria",
+        "wave": 1.2,
+        "id": 66
+    },
     "Seleucid Empire": {
-        "rarity": 35,
+        "rarity": 41,
         "artist": "thedarkcar & Lotzer",
         "wave": 1,
         "id": 47
     },
     "Silla Dynasty": {
-        "rarity": 35,
+        "rarity": 41,
         "artist": "Pokey",
         "wave": 1,
         "id": 56
     },
     "Kingdom of Judah": {
-        "rarity": 39,
+        "rarity": 46,
         "artist": "Lifty",
         "wave": 1,
         "id": 32
     },
+    "Olympia": {
+        "rarity": 46,
+        "artist": "Lifty",
+        "wave": 1.2,
+        "id": 76
+    },
     "Walashama": {
-        "rarity": 40,
+        "rarity": 48,
         "artist": "Haapsalu",
         "wave": 1,
         "id": 55
     },
     "Fidel's Cuba": {
-        "rarity": 41,
+        "rarity": 49,
         "artist": "Durell",
         "wave": 1,
         "id": 50
     },
     "Novgorod Republic": {
-        "rarity": 41,
+        "rarity": 49,
         "artist": "Egor",
         "wave": 1,
         "id": 43
     },
     "Kingdom of Cyprus": {
-        "rarity": 43,
+        "rarity": 51,
         "artist": "BFB",
         "wave": 1,
         "id": 51
     },
+    "Kingdom of Hungary": {
+        "rarity": 51,
+        "artist": "Egor",
+        "wave": 1.2,
+        "id": 75
+    },
     "Kingdom of Moravia": {
-        "rarity": 43,
+        "rarity": 51,
         "artist": "Tova",
         "wave": 1,
         "id": 58
     },
     "Kingdom of Sardinia": {
-        "rarity": 43,
+        "rarity": 51,
         "artist": "Egor",
         "wave": 1,
         "id": 45
     },
     "Miskito Kingdom": {
-        "rarity": 43,
+        "rarity": 51,
         "artist": "Adam",
         "wave": 1,
         "id": 28
     },
     "Atlantis": {
-        "rarity": 47,
+        "rarity": 56,
         "artist": "Chap",
         "wave": 1,
         "id": 42
     },
     "Kingdom of Georgia": {
-        "rarity": 47,
+        "rarity": 56,
         "artist": "Rep",
         "wave": 1.1,
         "id": 63
     },
+    "Serbian Empire": {
+        "rarity": 56,
+        "artist": "Egor",
+        "wave": 1.2,
+        "id": 77
+    },
     "Heian Dynasty": {
-        "rarity": 49,
+        "rarity": 59,
         "artist": "AkiraSoku",
         "wave": 1,
         "id": 6
     },
     "Gran Colombia": {
-        "rarity": 50,
+        "rarity": 60,
         "artist": "Cubic",
         "wave": 1,
         "id": 30
     },
+    "Kingdom of Croatia": {
+        "rarity": 60,
+        "artist": "Stranger",
+        "wave": 1.2,
+        "id": 71
+    },
+    "Kingdom of Serbia": {
+        "rarity": 60,
+        "artist": "Egor",
+        "wave": 1.2,
+        "id": 70
+    },
     "Malwa Sultanate": {
-        "rarity": 51,
+        "rarity": 63,
         "artist": "nono & lavlux_",
         "wave": 1,
         "id": 39
     },
     "Garamantian Empire": {
-        "rarity": 52,
+        "rarity": 64,
         "artist": "Draq",
         "wave": 1,
         "id": 52
     },
     "Kingdom of Brazil": {
-        "rarity": 52,
+        "rarity": 64,
         "artist": "Unknown",
         "wave": 1,
         "id": 11
     },
     "Inuits": {
-        "rarity": 54,
+        "rarity": 66,
         "artist": "Unknown",
         "wave": 1,
         "id": 14
     },
+    "Kingdom of Bulgaria": {
+        "rarity": 66,
+        "artist": "Egor",
+        "wave": 1.2,
+        "id": 68
+    },
     "Kingdom of Romania": {
-        "rarity": 54,
+        "rarity": 66,
         "artist": "Lifty",
         "wave": 1,
         "id": 16
     },
     "White Rus": {
-        "rarity": 56,
+        "rarity": 69,
         "artist": "Lifty",
         "wave": 1,
         "id": 4
     },
+    "Corinth": {
+        "rarity": 70,
+        "artist": "Egor",
+        "wave": 1.2,
+        "id": 67
+    },
     "Kingdom of Kurdistan": {
-        "rarity": 57,
+        "rarity": 71,
         "artist": "Lann",
         "wave": 1.1,
         "id": 64
     },
+    "Thebes": {
+        "rarity": 71,
+        "artist": "Lifty",
+        "wave": 1.2,
+        "id": 73
+    },
     "Yugra": {
-        "rarity": 57,
+        "rarity": 71,
         "artist": "Lifty",
         "wave": 1,
         "id": 21
     },
     "Republic of Texas": {
-        "rarity": 59,
+        "rarity": 74,
         "artist": "Unknown",
         "wave": 1,
         "id": 12
     },
     "Alemanni": {
-        "rarity": 60,
+        "rarity": 75,
         "artist": "Lifty",
         "wave": 1,
         "id": 49
     },
     "Kingdom of Montenegro": {
-        "rarity": 60,
+        "rarity": 75,
         "artist": "BFBR",
         "wave": 1,
         "id": 46
     },
     "Navajo": {
-        "rarity": 62,
+        "rarity": 77,
         "artist": "Hecker",
         "wave": 1,
         "id": 37
     },
     "Dagestan": {
-        "rarity": 63,
+        "rarity": 78,
         "artist": "Lifty",
         "wave": 1,
         "id": 13
     },
+    "Magyar Tribes": {
+        "rarity": 78,
+        "artist": "Verd",
+        "wave": 1.2,
+        "id": 79
+    },
     "Mangareva": {
-        "rarity": 63,
+        "rarity": 78,
         "artist": "Tamas",
         "wave": 1,
         "id": 59
     },
     "Pompeii": {
-        "rarity": 63,
+        "rarity": 78,
         "artist": "Lifty",
         "wave": 1,
         "id": 61

@@ -1,6 +1,15 @@
 {
     "changes": [
         {
+            "timestamp": "1760916827",
+            "changes": [
+                "Updated to DynastyDex Update 2.0.2:",
+                "2 new spawn arts (Fidel's Cuba, Kingdom of Montenegro)",
+                "16 new balls (Corinth, Dacia, Kingdom of Bulgaria, Kingdom of Croatia, Kingdom of Hungary, Kingdom of Serbia, Magyar Tribes, Olympia, Ottoman Empire, Rhodes, Roman Empire, Serbian Empire, Sparta, Thebes, Troy, Yugoslavia)",
+                "Updated DynastyDex rarities"
+            ]
+        },
+        {
             "timestamp": "1760440692",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Costa Rica)"
