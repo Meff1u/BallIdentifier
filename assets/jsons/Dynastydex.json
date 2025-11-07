@@ -384,40 +384,40 @@
         "id": 52
     },
     "Kingdom of Brazil": {
-        "rarity": 64,
+        "rarity": 65,
         "artist": "Unknown",
         "wave": 1,
         "id": 11
     },
-    "Inuits": {
-        "rarity": 66,
-        "artist": "Unknown",
+    "Kingdom of Romania": {
+        "rarity": 65,
+        "artist": "Lifty",
         "wave": 1,
-        "id": 14
+        "id": 16
     },
     "Kingdom of Bulgaria": {
-        "rarity": 66,
+        "rarity": 67,
         "artist": "Egor",
         "wave": 1.2,
         "id": 68
     },
-    "Kingdom of Romania": {
-        "rarity": 66,
-        "artist": "Lifty",
+    "Inuits": {
+        "rarity": 68,
+        "artist": "Unknown",
         "wave": 1,
-        "id": 16
+        "id": 14
+    },
+    "Corinth": {
+        "rarity": 69,
+        "artist": "Egor",
+        "wave": 1.2,
+        "id": 67
     },
     "White Rus": {
         "rarity": 69,
         "artist": "Lifty",
         "wave": 1,
         "id": 4
-    },
-    "Corinth": {
-        "rarity": 70,
-        "artist": "Egor",
-        "wave": 1.2,
-        "id": 67
     },
     "Kingdom of Kurdistan": {
         "rarity": 71,
@@ -450,10 +450,22 @@
         "id": 49
     },
     "Kingdom of Montenegro": {
-        "rarity": 75,
+        "rarity": 76,
         "artist": "BFBR",
         "wave": 1,
         "id": 46
+    },
+    "Magyar Tribes": {
+        "rarity": 77,
+        "artist": "Verd",
+        "wave": 1.2,
+        "id": 79
+    },
+    "Mangareva": {
+        "rarity": 77,
+        "artist": "Tamas",
+        "wave": 1,
+        "id": 59
     },
     "Navajo": {
         "rarity": 77,
@@ -461,28 +473,16 @@
         "wave": 1,
         "id": 37
     },
-    "Dagestan": {
-        "rarity": 78,
-        "artist": "Lifty",
-        "wave": 1,
-        "id": 13
-    },
-    "Magyar Tribes": {
-        "rarity": 78,
-        "artist": "Verd",
-        "wave": 1.2,
-        "id": 79
-    },
-    "Mangareva": {
-        "rarity": 78,
-        "artist": "Tamas",
-        "wave": 1,
-        "id": 59
-    },
     "Pompeii": {
-        "rarity": 78,
+        "rarity": 77,
         "artist": "Lifty",
         "wave": 1,
         "id": 61
+    },
+    "Dagestan": {
+        "rarity": 81,
+        "artist": "Lifty",
+        "wave": 1,
+        "id": 13
     }
 }

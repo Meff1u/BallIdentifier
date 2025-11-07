@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1762509122",
+            "changes": [
+                "Updated DynastyDex rarities"
+            ]
+        },
+        {
             "timestamp": "1760916827",
             "changes": [
                 "Updated to DynastyDex Update 2.0.2:",
