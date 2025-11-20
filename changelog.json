@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1763635737",
+            "changes": [
+                "Updated to Wave 8.1 of Ballsdex (Kingdom of Connacht, Kingdom of Ulaid)",
+                "Updated Ballsdex rarities"
+            ]
+        },
+        {
             "timestamp": "1762509122",
             "changes": [
                 "Updated DynastyDex rarities"

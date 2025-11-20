@@ -84,7 +84,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             7: "#B299F2",
                             7.1: "#484848",
                             7.2: "#484848",
-                            8: "#FFBEBE"
+                            8: "#FFBEBE",
+                            8.1: "#666666",
                         };
                         const waveColor = waveColors[details.wave] || "#808080";
 
