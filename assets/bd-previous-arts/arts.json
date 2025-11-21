@@ -625,6 +625,12 @@
             "until": "April 2025"
         }
     ],
+    "England": [
+        {
+            "artist": "Cattitan",
+            "until": "November 2025"
+        }
+    ],
     "Equatorial Guinea": [
         {
             "artist": "Cattitan",
@@ -812,6 +818,10 @@
         {
             "artist": "mini",
             "until": "September 2024"
+        },
+        {
+            "artist": "topwanted_",
+            "until": "November 2025"
         }
     ],
     "Ghana": [
