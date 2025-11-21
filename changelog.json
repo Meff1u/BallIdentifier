@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1763750417",
+            "changes": [
+                "Updated to new spawn arts in Ballsdex (England, Germany)"
+            ]
+        },
+        {
             "timestamp": "1763635737",
             "changes": [
                 "Updated to Wave 8.1 of Ballsdex (Kingdom of Connacht, Kingdom of Ulaid)",
