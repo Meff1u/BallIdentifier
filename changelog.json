@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1764881965",
+            "changes": [
+                "Updated to new spawn arts in Ballsdex (Congo, French Empire, Iberian Union, Japanese Empire, Kenya, Konbaung Empire, Nanda Empire, Russia, Somalia, Uzbekistan)"
+            ]
+        },
+        {
             "timestamp": "1763750417",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (England, Germany)"
