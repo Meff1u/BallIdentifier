@@ -5,6 +5,7 @@
     "license": "MIT",
     "dependencies": {
         "busboy": "^1.6.0",
+        "canvas": "^3.2.0",
         "image-hash": "^5.3.2",
         "node-fetch": "^3.3.2",
         "pixelmatch": "^6.0.0",
