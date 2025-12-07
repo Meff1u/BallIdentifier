@@ -3,7 +3,7 @@ const path = require('path');
 
 exports.handler = async (event) => {
   try {
-    const jsonsPath = path.join(__dirname, '../../assets/jsons');
+    const jsonsPath = path.join(process.cwd(), 'assets/jsons');
 
     const jsonFiles = [
       'Ballsdex.json',
@@ -13,7 +13,6 @@ exports.handler = async (event) => {
     ];
 
     const allBalls = {};
-    const sources = {};
 
     for (const file of jsonFiles) {
       const filePath = path.join(jsonsPath, file);
@@ -28,7 +27,7 @@ exports.handler = async (event) => {
           };
         }
       } catch (err) {
-        console.error(`Błąd czytania ${file}:`, err.message);
+        console.error(`Error reading ${file} (${filePath}):`, err.message);
       }
     }
 
@@ -66,7 +65,11 @@ exports.handler = async (event) => {
       },
       body: JSON.stringify({
         total: result.length,
-        balls: result
+        balls: result,
+        debug: {
+          loadedBalls: Object.keys(allBalls).length,
+          jsonsPath: jsonsPath
+        }
       })
     };
   } catch (error) {
@@ -74,7 +77,7 @@ exports.handler = async (event) => {
       statusCode: 500,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        error: 'Błąd podczas pobierania danych',
+        error: 'Error fetching data',
         message: error.message
       })
     };
