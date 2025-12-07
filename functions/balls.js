@@ -12,31 +12,32 @@ exports.handler = async (event) => {
       'HistoryDex.json'
     ];
 
-    const allBalls = {};
+    const allBalls = [];
+    const loadedSources = {};
 
     for (const file of jsonFiles) {
       const filePath = path.join(jsonsPath, file);
       
       try {
         const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+        const source = file.replace('.json', '');
+        loadedSources[source] = Object.keys(data).length;
         
         for (const [name, info] of Object.entries(data)) {
-          allBalls[name] = {
+          allBalls.push({
+            name,
             ...info,
-            source: file.replace('.json', '')
-          };
+            source: source
+          });
         }
       } catch (err) {
         console.error(`Error reading ${file} (${filePath}):`, err.message);
       }
     }
 
-    const { source, rarity, sort } = event.queryStringParameters || {};
+    const { source, rarity, sort, id } = event.queryStringParameters || {};
 
-    let result = Object.entries(allBalls).map(([name, data]) => ({
-      name,
-      ...data
-    }));
+    let result = [...allBalls];
 
     if (source) {
       result = result.filter(ball => 
@@ -49,12 +50,30 @@ exports.handler = async (event) => {
       result = result.filter(ball => ball.rarity === rarityNum);
     }
 
+    if (id) {
+      const idNum = parseInt(id);
+      result = result.filter(ball => ball.id === idNum);
+    }
+
     if (sort === 'rarity-asc') {
       result.sort((a, b) => a.rarity - b.rarity);
     } else if (sort === 'rarity-desc') {
       result.sort((a, b) => b.rarity - a.rarity);
     } else if (sort === 'name') {
       result.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sort === 'id') {
+      result.sort((a, b) => a.id - b.id);
+    }
+
+    const duplicates = {};
+    const uniqueNames = new Set();
+    
+    for (const ball of allBalls) {
+      if (!duplicates[ball.name]) {
+        duplicates[ball.name] = [];
+      }
+      duplicates[ball.name].push(ball.source);
+      uniqueNames.add(ball.name);
     }
 
     return {
@@ -66,9 +85,13 @@ exports.handler = async (event) => {
       body: JSON.stringify({
         total: result.length,
         balls: result,
-        debug: {
-          loadedBalls: Object.keys(allBalls).length,
-          jsonsPath: jsonsPath
+        stats: {
+          totalBallsLoaded: allBalls.length,
+          uniqueNames: uniqueNames.size,
+          sourceBreakdown: loadedSources,
+          duplicates: Object.fromEntries(
+            Object.entries(duplicates).filter(([_, sources]) => sources.length > 1)
+          )
         }
       })
     };
