@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         idElement.title = `ID: ${details.id}`;
                         cardDiv.appendChild(idElement);
 
-                        if (["Ballsdex", "DynastyDex"].includes(dexName)) {
+                        if (["Ballsdex", "DynastyDex", "FoodDex"].includes(dexName)) {
                             const waveElement = document.createElement("div");
                             waveElement.className = "wave-indicator";
                             waveElement.textContent = details.wave;
@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 waveOption.style.display = "block";
                 idOption.style.display = "block";
                 break;
-            case "DynastyDex":
+            case ["DynastyDex", "FoodDex"].includes(selectedDex) ? selectedDex : null:
                 onClickAction.querySelector('option[value="previous-arts"]').disabled = true;
                 onClickAction.value = "enlarge-art";
                 waveOption.style.display = "block";

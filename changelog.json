@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1767559394",
+            "changes": [
+                "Added FoodDex to BallIdentifier"
+            ]
+        },
+        {
             "timestamp": "1767196109",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Free France, India)"
