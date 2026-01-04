@@ -394,7 +394,7 @@ function updateTitleWithBallCount() {
         .then((data) => {
             document.getElementById("title").textContent = `(${
                 Object.keys(data).length
-            } balls)`;
+            } entries)`;
         })
         .catch((error) => console.error("Error fetching ball data:", error));
 }
