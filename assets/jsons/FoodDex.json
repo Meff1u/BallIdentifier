@@ -3,90 +3,90 @@
         "rarity": 1,
         "artist": "Chicken",
         "wave": 1.1,
-        "id": 0
+        "id": 4
     },
     "Spaghetti": {
         "rarity": 1,
         "artist": "Melgu",
         "wave": 1.1,
-        "id": 0
+        "id": 16
     },
     "Potato": {
         "rarity": 3,
         "artist": "Frog",
         "wave": 1.1,
-        "id": 0
+        "id": 2
     },
     "Red Apple": {
         "rarity": 3,
         "artist": "Stranger",
         "wave": 1.1,
-        "id": 0
+        "id": 8
     },
     "Fried Chicken": {
         "rarity": 5,
         "artist": "Chicken",
         "wave": 1.1,
-        "id": 0
+        "id": 5
     },
     "Hamburger": {
         "rarity": 5,
         "artist": "Maya",
         "wave": 1.1,
-        "id": 0
+        "id": 6
     },
     "Hotdog": {
         "rarity": 7,
         "artist": "Maya",
         "wave": 1.1,
-        "id": 0
+        "id": 7
     },
     "French Fries": {
         "rarity": 8,
         "artist": "frogi",
         "wave": 1.1,
-        "id": 0
+        "id": 3
     },
     "Sushi": {
         "rarity": 8,
         "artist": "Maya",
         "wave": 1.1,
-        "id": 0
+        "id": 11
     },
     "Vanilla Cake": {
         "rarity": 10,
         "artist": "Maya",
         "wave": 1.1,
-        "id": 0
+        "id": 14
     },
     "Chocolate Chip Cookie": {
         "rarity": 11,
         "artist": "Chicken",
         "wave": 1.1,
-        "id": 0
+        "id": 12
     },
     "Avocado": {
         "rarity": 12,
         "artist": "Stranger",
         "wave": 1.1,
-        "id": 0
+        "id": 9
     },
     "Pepper": {
         "rarity": 12,
         "artist": "Stranger",
         "wave": 1.1,
-        "id": 0
+        "id": 13
     },
     "Raspberry": {
         "rarity": 12,
         "artist": "Stranger",
         "wave": 1.1,
-        "id": 0
+        "id": 10
     },
     "White Rice": {
         "rarity": 15,
         "artist": "Stranger",
         "wave": 1.1,
-        "id": 0
+        "id": 15
     }
 }
