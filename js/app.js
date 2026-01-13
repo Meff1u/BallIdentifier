@@ -77,6 +77,8 @@ function initializeTabs() {
         tab.addEventListener('shown.bs.tab', (event) => {
             const targetId = event.target.getAttribute('data-bs-target');
             
+            localStorage.setItem('activeTab', event.target.id);
+            
             if (targetId === '#spawn-arts-content') {
                 searchBarContainer && (searchBarContainer.style.display = 'block');
                 mobileSettingsButton?.classList.remove('d-none');
@@ -92,8 +94,22 @@ function initializeTabs() {
         });
     });
     
-    searchBarContainer && (searchBarContainer.style.display = 'none');
-    mobileSettingsButton?.classList.add('d-none');
+    const savedTab = localStorage.getItem('activeTab');
+    if (savedTab) {
+        const tabButton = document.getElementById(savedTab);
+        if (tabButton) {
+            const tab = new bootstrap.Tab(tabButton);
+            tab.show();
+        }
+    }
+    
+    const activeTab = document.querySelector('#mainTabs .nav-link.active');
+    const isSpawnArtsActive = activeTab?.getAttribute('data-bs-target') === '#spawn-arts-content';
+    
+    if (!isSpawnArtsActive) {
+        searchBarContainer && (searchBarContainer.style.display = 'none');
+        mobileSettingsButton?.classList.add('d-none');
+    }
 }
 
 function isIdentifierTabActive() {
