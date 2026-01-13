@@ -91,6 +91,7 @@
 .rarity-value { color: #ffc107 !important; font-weight: 500; }
 .artist-value { color: #0dcaf0 !important; font-weight: 500; }
 .rarity-container, .artist-container { color: #e0e0e0 !important; }
+.rarity-container .text-muted, .artist-container .text-muted { color: #b0b0b0 !important; }
 
 .popup-art-container {
     background-color: #2a2a2a !important;
