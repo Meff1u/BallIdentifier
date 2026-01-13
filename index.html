@@ -20,100 +20,266 @@
         <meta content="https://ballidentifier.xyz/assets/icons/Ballsdex.png" property="og:image" />
         <meta content="#A94DC1" name="theme-color" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <style>
-            :root {
-                --bs-primary: #8e44ad !important;
-                --bs-primary-rgb: 142, 68, 173 !important;
-            }
-            .btn-primary {
-                background-color: #8e44ad !important;
-                border-color: #8e44ad !important;
-            }
-            .btn-primary:hover {
-                background-color: #7d3c98 !important;
-                border-color: #7d3c98 !important;
-            }
-            .btn-outline-primary {
-                color: #8e44ad !important;
-                border-color: #8e44ad !important;
-            }
-            .btn-outline-primary:hover {
-                background-color: #8e44ad !important;
-                border-color: #8e44ad !important;
-                color: #fff !important;
-            }
-            .bg-primary {
-                background-color: #8e44ad !important;
-            }
-            .border-primary {
-                border-color: #8e44ad !important;
-            }
-            .text-primary {
-                color: #8e44ad !important;
-            }
-        </style>
-        <link rel="stylesheet" href="css/styles.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- Modular CSS -->
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/tabs.css" />
+        <link rel="stylesheet" href="css/spawn-arts.css" />
+        <link rel="stylesheet" href="css/identifier.css" />
+        <link rel="stylesheet" href="css/bot.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
         <link rel="icon" href="assets/icons/icon.webp" type="image/png" />
         <title>Ball Identifier - Recognize the ball in a second!</title>
     </head>
     <body class="bg-dark text-light min-vh-100 d-flex flex-column">
         <div id="overlay" class="overlay"></div>
         
-        <nav class="navbar navbar-dark bg-transparent fixed-top">
+        <!-- Main Navigation -->
+        <nav class="navbar navbar-dark bg-dark border-bottom border-secondary sticky-top main-navbar">
             <div class="container-fluid">
-                <div class="navbar-nav flex-row gap-2">
-                    <button id="spawnArtsButton" class="btn btn-primary btn-sm">Spawn Arts List</button>
-                    <button id="discordBotButton" class="btn btn-primary btn-sm">Discord Bot</button>
+                <div class="d-flex align-items-center gap-3 flex-grow-1">
+                    <!-- Tab Navigation -->
+                    <ul class="nav nav-pills main-tabs" id="mainTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="identifier-tab" data-bs-toggle="tab" data-bs-target="#identifier-content" type="button" role="tab" aria-controls="identifier-content" aria-selected="true">
+                                <i class="bi bi-search me-1 d-none d-sm-inline"></i>Identifier
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="spawn-arts-tab" data-bs-toggle="tab" data-bs-target="#spawn-arts-content" type="button" role="tab" aria-controls="spawn-arts-content" aria-selected="false">
+                                <i class="bi bi-images me-1 d-none d-sm-inline"></i>Spawn Arts
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="bot-tab" data-bs-toggle="tab" data-bs-target="#bot-content" type="button" role="tab" aria-controls="bot-content" aria-selected="false">
+                                <i class="bi bi-discord me-1 d-none d-sm-inline"></i>Bot
+                            </button>
+                        </li>
+                    </ul>
                 </div>
-                <button id="changelogButton" class="btn btn-outline-primary btn-sm">Changelog</button>
+                <div class="d-flex gap-2">
+                    <button id="mobileSettingsButton" class="btn btn-outline-secondary btn-sm d-md-none d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileControls" aria-controls="mobileControls">
+                        <i class="bi bi-sliders"></i>
+                    </button>
+                    <button id="changelogButton" class="btn btn-outline-primary btn-sm">
+                        <i class="bi bi-clock-history me-1 d-none d-sm-inline"></i>Changelog
+                    </button>
+                </div>
             </div>
         </nav>
 
-        <div class="container-fluid flex-grow-1 d-flex align-items-center justify-content-center" style="padding-top: 80px; padding-bottom: 20px;">
-            <div class="row justify-content-center w-100">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card bg-dark border-primary shadow-lg">
-                        <div class="card-body text-center p-4">
-                            <img src="assets/icons/Ballsdex.png" alt="Logo" class="logo mb-3 rounded-circle" style="width: 120px; height: 120px;" />
-                            
-                            <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
-                                <select id="dexSelector" class="form-select bg-primary text-white border-primary" style="width: auto; font-size: 1.1rem; padding: 8px 12px;">
-                                    <option value="Ballsdex">Ballsdex</option>
-                                    <option value="Dynastydex">DynastyDex</option>
-                                    <option value="Empireballs">Empireballs</option>
-                                    <option value="HistoryDex">HistoryDex</option>
-                                    <option value="FoodDex">FoodDex</option>
-                                </select>
-                                <h1 id="title" class="h4 mb-0 text-light">(0 entries)</h1>
-                            </div>
-                            
-                            <p class="text-light mb-3">
-                                <strong>Upload</strong>, <strong>drag and drop</strong> or <strong>paste</strong> the image file/discord URL.
-                            </p>
-                            
-                            <p id="toggleNotes" class="text-decoration-underline text-light mb-2" style="cursor: pointer;">
-                                Important notes <span id="arrow">▼</span>
-                            </p>
-                            
-                            <div class="collapse" id="notesContainer">
-                                <div class="alert alert-info text-start small">
-                                    <p class="mb-1">1. Remember to send exactly the same file from the bot, not a screenshot</p>
-                                    <p class="mb-1">otherwise the result may be inconsistent.</p>
-                                    <p class="mb-1">2. Pasting a <u>URL</u> of a photo weighing more than 6MB will return nothing,</p>
-                                    <p class="mb-1">these are AWS limitations that can't be bypassed.</p>
-                                    <p class="mb-1">3. If the wrong answer is returned - the ball probably received a new art.</p>
-                                    <p class="mb-0">Please let me know so i can update it! (discord link in footer)</p>
+        <!-- Tab Content -->
+        <div class="tab-content flex-grow-1" id="mainTabContent">
+            
+            <!-- IDENTIFIER TAB -->
+            <div class="tab-pane fade show active h-100" id="identifier-content" role="tabpanel" aria-labelledby="identifier-tab">
+                <div class="container-fluid h-100 d-flex align-items-center justify-content-center py-4">
+                    <div class="row justify-content-center w-100">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card bg-dark border-primary shadow-lg">
+                                <div class="card-body text-center p-4">
+                                    <img src="assets/icons/Ballsdex.png" alt="Logo" class="logo mb-3 rounded-circle" style="width: 120px; height: 120px;" />
+                                    
+                                    <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
+                                        <select id="dexSelector" class="form-select bg-primary text-white border-primary" style="width: auto; font-size: 1.1rem; padding: 8px 12px;">
+                                            <option value="Ballsdex">Ballsdex</option>
+                                            <option value="Dynastydex">DynastyDex</option>
+                                            <option value="Empireballs">Empireballs</option>
+                                            <option value="HistoryDex">HistoryDex</option>
+                                            <option value="FoodDex">FoodDex</option>
+                                        </select>
+                                        <h1 id="title" class="h4 mb-0 text-light">(0 entries)</h1>
+                                    </div>
+                                    
+                                    <p class="text-light mb-3">
+                                        <strong>Upload</strong>, <strong>drag and drop</strong> or <strong>paste</strong> the image file/discord URL.
+                                    </p>
+                                    
+                                    <p id="toggleNotes" class="text-decoration-underline text-light mb-2" style="cursor: pointer;">
+                                        Important notes <span id="arrow">▼</span>
+                                    </p>
+                                    
+                                    <div class="collapse" id="notesContainer">
+                                        <div class="alert alert-info text-start small">
+                                            <p class="mb-1">1. Remember to send exactly the same file from the bot, not a screenshot</p>
+                                            <p class="mb-1">otherwise the result may be inconsistent.</p>
+                                            <p class="mb-1">2. Pasting a <u>URL</u> of a photo weighing more than 6MB will return nothing,</p>
+                                            <p class="mb-1">these are AWS limitations that can't be bypassed.</p>
+                                            <p class="mb-1">3. If the wrong answer is returned - the ball probably received a new art.</p>
+                                            <p class="mb-0">Please let me know so i can update it! (discord link in footer)</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+                                        <label class="btn btn-primary position-relative">
+                                            <input type="file" class="position-absolute opacity-0" id="fileInput" accept="image/*" style="width: 100%; height: 100%; cursor: pointer;" />
+                                            Upload
+                                        </label>
+                                        <button id="pasteButton" class="btn btn-outline-primary">
+                                            Paste
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                            
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
-                                <label class="btn btn-primary position-relative">
-                                    <input type="file" class="position-absolute opacity-0" id="fileInput" accept="image/*" style="width: 100%; height: 100%; cursor: pointer;" />
-                                    Upload
-                                </label>
-                                <button id="pasteButton" class="btn btn-outline-primary">
-                                    Paste
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SPAWN ARTS TAB -->
+            <div class="tab-pane fade" id="spawn-arts-content" role="tabpanel" aria-labelledby="spawn-arts-tab">
+                <!-- Spawn Arts Controls -->
+                <div class="controls-sticky bg-dark border-bottom py-3 d-none d-md-block shadow-sm" id="desktop-controls">
+                    <div class="container-fluid">
+                        <div class="row justify-content-between align-items-center g-3">
+                            <div class="col-auto">
+                                <div class="row g-3">
+                                    <div class="col-auto">
+                                        <div class="control-group">
+                                            <label class="form-label text-light me-2 mb-0 fw-semibold">Dex:</label>
+                                            <select class="form-select form-select-sm bg-dark text-light border-secondary control-select" id="listDexSelector">
+                                                <option value="Ballsdex" selected>Ballsdex</option>
+                                                <option value="DynastyDex">DynastyDex</option>
+                                                <option value="Empireballs">Empireballs</option>
+                                                <option value="HistoryDex">HistoryDex</option>
+                                                <option value="FoodDex">FoodDex</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="control-group">
+                                            <label class="form-label text-light me-2 mb-0 fw-semibold">Sort:</label>
+                                            <select class="form-select form-select-sm bg-dark text-light border-secondary control-select" id="sort-options">
+                                                <option value="rarity">Rarity</option>
+                                                <option value="a-z">A-Z</option>
+                                                <option value="wave">Wave</option>
+                                                <option value="id">ID</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto d-flex gap-2">
+                                <button class="btn btn-outline-info" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" 
+                                        title="To make the page load faster the arts are kept in cache, so if you don't see a new art use Ctrl + F5 or press and hold refresh button on your mobile device.">
+                                    <i class="bi bi-info-circle"></i>
                                 </button>
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="settingsDropdown" 
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-gear me-1"></i>Settings
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end bg-dark border-secondary p-3" style="min-width: 280px;">
+                                        <div class="form-check form-switch mb-3">
+                                            <input class="form-check-input" type="checkbox" id="toggle-wave" checked>
+                                            <label class="form-check-label text-light" for="toggle-wave">Show Wave</label>
+                                        </div>
+                                        <div class="form-check form-switch mb-3">
+                                            <input class="form-check-input" type="checkbox" id="toggle-rarity" checked>
+                                            <label class="form-check-label text-light" for="toggle-rarity">Show Rarity</label>
+                                        </div>
+                                        <div class="form-check form-switch mb-3">
+                                            <input class="form-check-input" type="checkbox" id="toggle-artist" checked>
+                                            <label class="form-check-label text-light" for="toggle-artist">Show Artist</label>
+                                        </div>
+                                        <div class="form-check form-switch mb-3">
+                                            <input class="form-check-input" type="checkbox" id="toggle-id">
+                                            <label class="form-check-label text-light" for="toggle-id">Show ID</label>
+                                        </div>
+                                        <div class="mb-0">
+                                            <label class="form-label text-light small">On Click Action:</label>
+                                            <select class="form-select form-select-sm bg-dark text-light border-secondary" id="on-click-action">
+                                                <option value="previous-arts" selected>Show previous arts</option>
+                                                <option value="enlarge-art">Enlarge spawn art</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spawn Arts Grid -->
+                <div class="container-fluid py-4" id="main-content" style="padding-bottom: 80px;">
+                    <div class="row" id="balls-list"></div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="position-fixed bottom-0 start-0 w-100 bg-dark border-top border-secondary spawn-arts-search" style="z-index: 1040;">
+                    <div class="container-fluid p-2">
+                        <input type="text" class="form-control bg-dark text-light border-secondary" id="search-bar" 
+                               placeholder="🔍 Search for balls... (Shift+F for quick access)" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOT TAB -->
+            <div class="tab-pane fade" id="bot-content" role="tabpanel" aria-labelledby="bot-tab">
+                <div class="container-fluid h-100 d-flex align-items-center justify-content-center py-4">
+                    <div class="row justify-content-center w-100">
+                        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                            <div class="card bg-dark border-primary shadow-lg">
+                                <div class="card-body p-4">
+                                    <div class="text-center mb-4">
+                                        <h2 class="h3 text-primary mb-3">
+                                            <i class="bi bi-discord me-2"></i>
+                                            BallIdentifier Discord Bot
+                                        </h2>
+                                        <p class="text-light">Follow these simple steps to use the bot:</p>
+                                    </div>
+
+                                    <div class="row g-4">
+                                        <div class="col-12">
+                                            <div class="card bg-secondary border-0 h-100">
+                                                <div class="card-body text-center p-3">
+                                                    <div class="d-flex align-items-center justify-content-center mb-3">
+                                                        <span class="badge bg-primary rounded-circle p-2 me-2" style="width: 30px; height: 30px;">1</span>
+                                                        <h5 class="card-title mb-0 text-light">Authorise bot</h5>
+                                                    </div>
+                                                    <div class="step-image-container">
+                                                        <img src="assets/bot/1.png" alt="Step 1: Authorise bot" class="img-fluid rounded shadow-sm step-image">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="card bg-secondary border-0 h-100">
+                                                <div class="card-body text-center p-3">
+                                                    <div class="d-flex align-items-center justify-content-center mb-3">
+                                                        <span class="badge bg-primary rounded-circle p-2 me-2" style="width: 30px; height: 30px;">2</span>
+                                                        <h5 class="card-title mb-0 text-light">Right-click on message and select "Identify"</h5>
+                                                    </div>
+                                                    <div class="step-image-container">
+                                                        <img src="assets/bot/2.png" alt="Step 2: Right-click and Identify" class="img-fluid rounded shadow-sm step-image">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="card bg-secondary border-0 h-100">
+                                                <div class="card-body text-center p-3">
+                                                    <div class="d-flex align-items-center justify-content-center mb-3">
+                                                        <span class="badge bg-primary rounded-circle p-2 me-2" style="width: 30px; height: 30px;">3</span>
+                                                        <h5 class="card-title mb-0 text-light">Get a result</h5>
+                                                    </div>
+                                                    <div class="step-image-container">
+                                                        <img src="assets/bot/3.png" alt="Step 3: Get a result" class="img-fluid rounded shadow-sm step-image">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center mt-4">
+                                        <a class="btn btn-primary btn-lg px-4 py-3" href="https://discord.com/oauth2/authorize?client_id=510775326310268930" target="_blank">
+                                            <i class="bi bi-plus-circle me-2"></i>
+                                            Add bot to my apps
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -153,6 +319,63 @@
             </div>
         </div>
 
+        <!-- Mobile Offcanvas Controls for Spawn Arts -->
+        <div class="offcanvas offcanvas-start bg-dark text-light" tabindex="-1" id="mobileControls">
+            <div class="offcanvas-header border-bottom border-secondary">
+                <h5 class="offcanvas-title">Controls</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="mb-4">
+                    <label class="form-label">Dex:</label>
+                    <select class="form-select bg-dark text-light border-secondary" id="listDexSelector-mobile">
+                        <option value="Ballsdex" selected>Ballsdex</option>
+                        <option value="DynastyDex">DynastyDex</option>
+                        <option value="Empireballs">Empireballs</option>
+                        <option value="HistoryDex">HistoryDex</option>
+                        <option value="FoodDex">FoodDex</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Sort:</label>
+                    <select class="form-select bg-dark text-light border-secondary" id="sort-options-mobile">
+                        <option value="rarity">Rarity</option>
+                        <option value="a-z">A-Z</option>
+                        <option value="wave">Wave</option>
+                        <option value="id">ID</option>
+                    </select>
+                </div>
+                
+                <div class="mb-4">
+                    <h6 class="text-light mb-3"><i class="bi bi-gear me-1"></i>Settings</h6>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" id="toggle-wave-mobile" checked>
+                        <label class="form-check-label text-light" for="toggle-wave-mobile">Show Wave</label>
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" id="toggle-rarity-mobile" checked>
+                        <label class="form-check-label text-light" for="toggle-rarity-mobile">Show Rarity</label>
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" id="toggle-artist-mobile" checked>
+                        <label class="form-check-label text-light" for="toggle-artist-mobile">Show Artist</label>
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" id="toggle-id-mobile">
+                        <label class="form-check-label text-light" for="toggle-id-mobile">Show ID</label>
+                    </div>
+                    <div class="mb-0">
+                        <label class="form-label text-light small">On Click Action:</label>
+                        <select class="form-select form-select-sm bg-dark text-light border-secondary" id="on-click-action-mobile">
+                            <option value="previous-arts" selected>Show previous arts</option>
+                            <option value="enlarge-art">Enlarge spawn art</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Changelog Offcanvas -->
         <div class="offcanvas offcanvas-end bg-dark text-light" tabindex="-1" id="changelogOffcanvas">
             <div class="offcanvas-header border-bottom border-secondary">
                 <h5 class="offcanvas-title">Changelog</h5>
@@ -163,6 +386,59 @@
             </div>
         </div>
 
+        <!-- Loading Modal -->
+        <div class="modal fade" id="loadingModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content bg-dark border-primary">
+                    <div class="modal-body text-center p-4">
+                        <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div id="loading-text" class="text-light">Comparing...</div>
+                        <p class="text-light mb-0 mt-2" id="loading-progress" style="display: none;">0%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Modal (for Identifier) -->
+        <div class="modal fade" id="resultModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-dark border-success">
+                    <div class="modal-header border-success">
+                        <h5 class="modal-title text-success" id="resultTitle">Country Name</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <p id="resultSubtitle" class="text-light mb-3">Similarity: 95%</p>
+                        <img id="resultImage" src="" alt="Country Image" class="img-fluid rounded mb-3" style="max-height: 200px;" />
+                        <p id="resultCredits" class="text-light small fst-italic mb-3">Rarity: #1 | Artist: Unknown</p>
+                        <button id="copyButton" class="btn btn-success">
+                            <i class="bi bi-clipboard me-2"></i>Copy to clipboard
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spawn Arts Result Modal -->
+        <div class="modal fade" id="spawnArtsResultModal" tabindex="-1">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content bg-dark border-secondary">
+                    <div class="modal-header border-secondary">
+                        <h5 class="modal-title text-light" id="popup-header"></h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body" id="popup-content">
+                    </div>
+                    <div class="modal-footer border-secondary">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="popup-close">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Drag Overlay -->
         <div class="drag-overlay position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center bg-dark bg-opacity-75 text-white" style="z-index: 9999; display: none !important;">
             <div class="text-center">
                 <i class="bi bi-cloud-upload display-1 mb-3"></i>
@@ -170,7 +446,16 @@
             </div>
         </div>
 
-        <footer class="bg-dark text-center py-2 border-secondary mt-auto">
+        <!-- Toast Notification -->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="notification" class="toast bg-danger text-white" role="alert">
+                <div class="toast-body">
+                    No previous arts for this ball!
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-dark text-center py-2 border-secondary main-footer">
             <div class="container">
                 <p class="mb-1 small">Made with ❤️ by <a href="https://discord.com/users/334411435633541121" target="_blank" class="text-decoration-none text-primary">@meffiu</a></p>
                 <p class="small text-light mb-0">
@@ -181,6 +466,10 @@
         </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="js/script.js"></script>
+        <!-- Modular JS -->
+        <script src="js/app.js"></script>
+        <script src="js/drag-drop.js"></script>
+        <script src="js/identifier.js"></script>
+        <script src="js/spawn-arts.js"></script>
     </body>
 </html>

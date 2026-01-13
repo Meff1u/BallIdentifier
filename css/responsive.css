@@ -1,0 +1,31 @@
+/**
+ * Responsive | Media queries for different screen sizes
+ */
+
+@media (max-width: 768px) {
+    .card-body { padding: 2rem !important; }
+    .modal-dialog { margin: 0.5rem; }
+    .navbar .btn { font-size: 0.75rem; padding: 0.25rem 0.5rem; }
+    .main-tabs { gap: 0.25rem; }
+    .main-tabs .nav-link { padding: 0.4rem 0.6rem; font-size: 0.85rem; }
+    .controls-sticky { top: 50px; }
+    .ball-card img { height: 150px; padding: 6px; }
+    .ball-card .card-title { font-size: 1rem; }
+    .ball-card .card-text { font-size: 0.8rem; }
+    .popup-art-container img { height: 180px !important; padding: 6px; }
+    .popup-enlarged-art-container { min-height: 400px; padding: 15px !important; }
+    .popup-enlarged-art-container img { max-width: 100% !important; max-height: 70vh !important; }
+    .step-image-container { max-height: 200px; }
+}
+
+@media (max-width: 576px) {
+    .main-tabs .nav-link { padding: 0.35rem 0.5rem; font-size: 0.8rem; }
+    .ball-card img { height: 130px; padding: 4px; }
+    .popup-art-container img { height: 140px !important; padding: 6px; }
+    .popup-art-container .card-body { padding: 0.75rem !important; }
+    .popup-enlarged-art-container { min-height: 300px; padding: 10px !important; }
+    .popup-enlarged-art-container img { max-height: 60vh !important; }
+    #bot-content .card-body { padding: 1rem !important; }
+    #bot-content h2 { font-size: 1.25rem !important; }
+    .step-image-container { max-height: 180px; }
+}

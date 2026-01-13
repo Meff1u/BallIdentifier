@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1768263954",
+            "changes": [
+                "Integrated Spawn Arts and Bot subpages into main page as tabs - no more separate pages",
+                "Improved Spawn Arts loading speed",
+                "UI improvements and layout fixes"
+            ]
+        },
+        {
             "timestamp": "1768260375",
             "changes": [
                 "Added Game Token back to Ballsdex. Ballsdex Games 3 announced",
