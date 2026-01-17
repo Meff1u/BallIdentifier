@@ -9,7 +9,7 @@ const WAVE_COLORS = {
     7.2: "#484848", 8: "#FFBEBE", 8.1: "#666666"
 };
 
-const DEX_WITH_WAVES = ["Ballsdex", "DynastyDex", "FoodDex"];
+const DEX_WITH_WAVES = ["Ballsdex", "FoodDex"];
 const DEX_WITH_PREVIOUS_ARTS = ["Ballsdex"];
 
 function loadSpawnArtsData(dexName) {
