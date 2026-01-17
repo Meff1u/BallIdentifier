@@ -57,7 +57,21 @@ exports.handler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           error: 'Missing hash parameter',
-          message: 'Hash parameter is required. Hash should be a string of hexadecimal characters.'
+          message: 'Hash parameter is required. Hash should be a string of hexadecimal characters.',
+          usage: {
+            endpoint: '/.netlify/functions/findBall',
+            method: 'GET',
+            parameters: {
+              hash: '(required) Image perceptual hash to search for',
+              limit: '(optional) Max results to return (default: 5, max: 50)',
+              threshold: '(optional) Min similarity % to include (default: 0)'
+            },
+            examples: [
+              '/.netlify/functions/findBall?hash=abc123... - Find ball by hash',
+              '/.netlify/functions/findBall?hash=abc123...&limit=10 - Get top 10 matches',
+              '/.netlify/functions/findBall?hash=abc123...&threshold=80 - Only 80%+ matches'
+            ]
+          }
         })
       };
     }

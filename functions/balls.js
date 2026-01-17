@@ -80,7 +80,7 @@ exports.handler = async (event) => {
       },
       body: JSON.stringify({
         total: result.length,
-        balls: result,
+        results: result,
         stats: {
           totalBallsLoaded: allBalls.length,
           uniqueNames: uniqueNames.size,
