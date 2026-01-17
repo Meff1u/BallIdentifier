@@ -6,6 +6,7 @@ const AppState = {
     spawnArtsLoaded: false,
     activeLoadingModal: null,
     currentListDex: "Ballsdex",
+    availableDexes: [],
     modals: { loading: null, result: null },
     offcanvas: { changelog: null }
 };
@@ -14,8 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeApp();
 });
 
-function initializeApp() {
-    document.getElementById("dexSelector").value = "Ballsdex";
+async function initializeApp() {
+    await loadAvailableDexes();
+    populateDexSelectors();
     initializeBootstrapComponents();
     initializeTabs();
     initializeTooltips();
@@ -25,6 +27,41 @@ function initializeApp() {
     syncMobileSelectors();
     updateTitleWithBallCount();
     setupKeyboardShortcuts();
+}
+
+async function loadAvailableDexes() {
+    try {
+        const response = await fetch('assets/jsons/dexes.json');
+        const data = await response.json();
+        AppState.availableDexes = data.dexes || [];
+    } catch (error) {
+        console.error('Error loading dexes list:', error);
+        AppState.availableDexes = ['Ballsdex', 'FoodDex'];
+    }
+}
+
+function populateDexSelectors() {
+    const dexSelector = document.getElementById('dexSelector');
+    const listDexSelector = document.getElementById('listDexSelector');
+    const listDexSelectorMobile = document.getElementById('listDexSelector-mobile');
+    
+    const dexes = AppState.availableDexes;
+    
+    [dexSelector, listDexSelector, listDexSelectorMobile].forEach(select => {
+        if (!select) return;
+        select.innerHTML = '';
+        dexes.forEach((dex, index) => {
+            const option = document.createElement('option');
+            option.value = dex;
+            option.textContent = dex;
+            if (index === 0) option.selected = true;
+            select.appendChild(option);
+        });
+    });
+    
+    if (dexes.length > 0) {
+        AppState.currentListDex = dexes[0];
+    }
 }
 
 function initializeBootstrapComponents() {

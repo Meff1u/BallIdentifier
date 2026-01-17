@@ -1,9 +1,10 @@
 {
     "changes": [
         {
-            "timestamp": "1768663714",
+            "timestamp": "1768661161",
             "changes": [
-                "Removed HistoryDex, DynastyDex and Empireballs dexes cus all of them are inactive or deleted permanently"
+                "Removed HistoryDex, DynastyDex and Empireballs dexes cus all of them are inactive or deleted permanently",
+                "Reorganized dex assets structure and added dynamic dex loading"
             ]
         },
         {

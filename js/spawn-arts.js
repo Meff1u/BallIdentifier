@@ -105,7 +105,7 @@ function createBallCard(name, details, dexName) {
     }
     
     const imgElement = document.createElement("img");
-    imgElement.src = `assets/compressed/${dexName}/${name}.webp`;
+    imgElement.src = `assets/dexes/${dexName}/compressed/${name}.webp`;
     imgElement.alt = name;
     imgElement.className = "card-img-top";
     imgElement.loading = "lazy";
@@ -238,7 +238,7 @@ function showEnlargedArt(ballName, dexName) {
     
     modalBody.innerHTML = `
         <div class="popup-enlarged-art-container text-center">
-            <img src="assets/${dexName}/${ballName}.png" alt="${ballName} art" class="img-fluid" loading="lazy">
+            <img src="assets/dexes/${dexName}/${ballName}.png" alt="${ballName} art" class="img-fluid" loading="lazy">
         </div>
     `;
     

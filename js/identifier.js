@@ -259,7 +259,7 @@ function showResultModal(country, diff) {
     
     resultTitle.textContent = country;
     resultSubtitle.textContent = `Similarity: ${similarity}%`;
-    resultImage.src = `assets/${dex}/${country}.png`;
+    resultImage.src = `assets/dexes/${dex}/${country}.png`;
     
     fetchBallData(dex, country, resultCredits);
     
