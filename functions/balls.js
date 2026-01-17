@@ -5,12 +5,8 @@ exports.handler = async (event) => {
   try {
     const jsonsPath = path.join(process.cwd(), 'assets/jsons');
 
-    const jsonFiles = [
-      'Ballsdex.json',
-      'Dynastydex.json',
-      'Empireballs.json',
-      'HistoryDex.json'
-    ];
+    const dexesConfig = JSON.parse(fs.readFileSync(path.join(jsonsPath, 'dexes.json'), 'utf8'));
+    const jsonFiles = dexesConfig.dexes.map(dex => `${dex}.json`);
 
     const allBalls = [];
     const loadedSources = {};
@@ -92,6 +88,23 @@ exports.handler = async (event) => {
           duplicates: Object.fromEntries(
             Object.entries(duplicates).filter(([_, sources]) => sources.length > 1)
           )
+        },
+        usage: {
+          endpoint: '/.netlify/functions/balls',
+          method: 'GET',
+          parameters: {
+            source: 'Filter by dex name (e.g., Ballsdex, FoodDex)',
+            rarity: 'Filter by exact rarity number',
+            id: 'Filter by exact ball ID',
+            sort: 'Sort results: rarity-asc, rarity-desc, name, id'
+          },
+          examples: [
+            '/.netlify/functions/balls - Get all balls',
+            '/.netlify/functions/balls?source=Ballsdex - Get only Ballsdex balls',
+            '/.netlify/functions/balls?rarity=1 - Get balls with rarity #1',
+            '/.netlify/functions/balls?sort=name - Sort alphabetically',
+            '/.netlify/functions/balls?source=FoodDex&sort=rarity-asc - Combined filters'
+          ]
         }
       })
     };
