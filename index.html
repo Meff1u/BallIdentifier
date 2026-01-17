@@ -673,7 +673,7 @@
         <!-- Bot Image Modal Script -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                const botImageModal = new bootstrap.Modal(document.getElementById('botImageModal'));
+                const botImageModalEl = document.getElementById('botImageModal');
                 const botImageModalImg = document.getElementById('botImageModalImg');
                 const botImageModalTitle = document.getElementById('botImageModalTitle');
                 
@@ -682,10 +682,11 @@
                     card.addEventListener('click', function() {
                         const img = this.querySelector('img');
                         const label = this.querySelector('.image-label');
-                        if (img) {
+                        if (img && botImageModalEl) {
                             botImageModalImg.src = img.src;
                             botImageModalTitle.textContent = label ? label.textContent : 'Image Preview';
-                            botImageModal.show();
+                            const modal = bootstrap.Modal.getOrCreateInstance(botImageModalEl);
+                            modal.show();
                         }
                     });
                 });
