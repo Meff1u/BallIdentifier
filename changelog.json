@@ -1,6 +1,15 @@
 {
     "changes": [
         {
+            "timestamp": "1768677737",
+            "changes": [
+                "Complete Bot page redesign with new modern layout",
+                "Added feature tabs: Identifier, Notifications, Notifier, and Trainer",
+                "Each feature now has detailed description and preview images",
+                "Added image zoom functionality - click on any image to enlarge it"
+            ]
+        },
+        {
             "timestamp": "1768661161",
             "changes": [
                 "Removed HistoryDex, DynastyDex and Empireballs dexes cus all of them are inactive or deleted permanently",

@@ -207,71 +207,267 @@
 
             <!-- BOT TAB -->
             <div class="tab-pane fade" id="bot-content" role="tabpanel" aria-labelledby="bot-tab">
-                <div class="container-fluid h-100 d-flex align-items-center justify-content-center py-4">
-                    <div class="row justify-content-center w-100">
-                        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                            <div class="card bg-dark border-primary shadow-lg">
-                                <div class="card-body p-4">
-                                    <div class="text-center mb-4">
-                                        <h2 class="h3 text-primary mb-3">
-                                            <i class="bi bi-discord me-2"></i>
-                                            BallIdentifier Discord Bot
-                                        </h2>
-                                        <p class="text-light">Follow these simple steps to use the bot:</p>
-                                    </div>
+                <div class="container py-5">
+                    <!-- Bot Header Section -->
+                    <div class="bot-header text-center mb-5">
+                        <div class="bot-icon-wrapper mb-4">
+                            <img src="assets/bot/icons/pfp.png" alt="BallIdentifier Bot" class="bot-icon">
+                        </div>
+                        <h1 class="bot-title mb-3">
+                            <i class="bi bi-discord me-2"></i>BallIdentifier
+                        </h1>
+                        <p class="bot-subtitle lead text-muted mb-4">Identify balls inside Discord application!</p>
+                        <a class="btn btn-primary btn-lg px-5 py-3 bot-add-btn" href="https://discord.com/oauth2/authorize?client_id=510775326310268930" target="_blank">
+                            <i class="bi bi-plus-circle me-2"></i>Add to Discord
+                        </a>
+                    </div>
 
-                                    <div class="row g-4">
-                                        <div class="col-12">
-                                            <div class="card bg-secondary border-0 h-100">
-                                                <div class="card-body text-center p-3">
-                                                    <div class="d-flex align-items-center justify-content-center mb-3">
-                                                        <span class="badge bg-primary rounded-circle p-2 me-2" style="width: 30px; height: 30px;">1</span>
-                                                        <h5 class="card-title mb-0 text-light">Authorise bot</h5>
+                    <!-- Features Section -->
+                    <div class="bot-features-section">
+                        <h2 class="text-center text-light mb-4">
+                            <i class="bi bi-stars me-2"></i>Features
+                        </h2>
+                        
+                        <!-- Feature Tabs Navigation -->
+                        <ul class="nav nav-pills bot-feature-tabs justify-content-center mb-4" id="botFeatureTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="feature-identifier-tab" data-bs-toggle="pill" data-bs-target="#feature-identifier" type="button" role="tab" aria-controls="feature-identifier" aria-selected="true">
+                                    <i class="bi bi-search me-2"></i>Identifier
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="feature-notifications-tab" data-bs-toggle="pill" data-bs-target="#feature-notifications" type="button" role="tab" aria-controls="feature-notifications" aria-selected="false">
+                                    <i class="bi bi-bell me-2"></i>Notifications
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="feature-notifier-tab" data-bs-toggle="pill" data-bs-target="#feature-notifier" type="button" role="tab" aria-controls="feature-notifier" aria-selected="false">
+                                    <i class="bi bi-megaphone me-2"></i>Notifier
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="feature-trainer-tab" data-bs-toggle="pill" data-bs-target="#feature-trainer" type="button" role="tab" aria-controls="feature-trainer" aria-selected="false">
+                                    <i class="bi bi-stopwatch me-2"></i>Trainer
+                                </button>
+                            </li>
+                        </ul>
+
+                        <!-- Feature Tab Content -->
+                        <div class="tab-content bot-feature-content" id="botFeatureTabsContent">
+                            
+                            <!-- Identifier Feature -->
+                            <div class="tab-pane fade show active" id="feature-identifier" role="tabpanel" aria-labelledby="feature-identifier-tab">
+                                <div class="feature-card">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-5 mb-4 mb-lg-0">
+                                            <div class="feature-description">
+                                                <h3 class="feature-title">
+                                                    <i class="bi bi-search text-primary me-2"></i>Quick Identification
+                                                </h3>
+                                                <p class="feature-text">
+                                                    Identify any ball directly within Discord! Simply <strong>right-click</strong> on any spawn message, 
+                                                    navigate to <strong>Apps</strong>, and select <strong>Identify</strong>. The bot will instantly 
+                                                    recognize the ball and provide you with all the details including name, rarity, and artist.
+                                                </p>
+                                                <div class="feature-steps">
+                                                    <div class="step-item">
+                                                        <span class="step-number">1</span>
+                                                        <span>Right-click on the spawn message</span>
                                                     </div>
-                                                    <div class="step-image-container">
-                                                        <img src="assets/bot/1.png" alt="Step 1: Authorise bot" class="img-fluid rounded shadow-sm step-image">
+                                                    <div class="step-item">
+                                                        <span class="step-number">2</span>
+                                                        <span>Select Apps → Identify</span>
+                                                    </div>
+                                                    <div class="step-item">
+                                                        <span class="step-number">3</span>
+                                                        <span>Get instant results!</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="col-12">
-                                            <div class="card bg-secondary border-0 h-100">
-                                                <div class="card-body text-center p-3">
-                                                    <div class="d-flex align-items-center justify-content-center mb-3">
-                                                        <span class="badge bg-primary rounded-circle p-2 me-2" style="width: 30px; height: 30px;">2</span>
-                                                        <h5 class="card-title mb-0 text-light">Right-click on message and select "Identify"</h5>
+                                        <div class="col-lg-7">
+                                            <div class="feature-images">
+                                                <div class="row g-3">
+                                                    <div class="col-6">
+                                                        <div class="feature-image-card">
+                                                            <span class="zoom-icon"><i class="bi bi-zoom-in"></i></span>
+                                                            <img src="assets/bot/identifier/1.png" alt="Identifier Step 1" class="img-fluid rounded">
+                                                            <span class="image-label">Ballsdex Identify Result</span>
+                                                        </div>
                                                     </div>
-                                                    <div class="step-image-container">
-                                                        <img src="assets/bot/2.png" alt="Step 2: Right-click and Identify" class="img-fluid rounded shadow-sm step-image">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <div class="card bg-secondary border-0 h-100">
-                                                <div class="card-body text-center p-3">
-                                                    <div class="d-flex align-items-center justify-content-center mb-3">
-                                                        <span class="badge bg-primary rounded-circle p-2 me-2" style="width: 30px; height: 30px;">3</span>
-                                                        <h5 class="card-title mb-0 text-light">Get a result</h5>
-                                                    </div>
-                                                    <div class="step-image-container">
-                                                        <img src="assets/bot/3.png" alt="Step 3: Get a result" class="img-fluid rounded shadow-sm step-image">
+                                                    <div class="col-6">
+                                                        <div class="feature-image-card">
+                                                            <span class="zoom-icon"><i class="bi bi-zoom-in"></i></span>
+                                                            <img src="assets/bot/identifier/2.png" alt="Identifier Step 2" class="img-fluid rounded">
+                                                            <span class="image-label">FoodDex Identify Result</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="text-center mt-4">
-                                        <a class="btn btn-primary btn-lg px-4 py-3" href="https://discord.com/oauth2/authorize?client_id=510775326310268930" target="_blank">
-                                            <i class="bi bi-plus-circle me-2"></i>
-                                            Add bot to my apps
-                                        </a>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Notifications Feature -->
+                            <div class="tab-pane fade" id="feature-notifications" role="tabpanel" aria-labelledby="feature-notifications-tab">
+                                <div class="feature-card">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-5 mb-4 mb-lg-0">
+                                            <div class="feature-description">
+                                                <h3 class="feature-title">
+                                                    <i class="bi bi-bell text-warning me-2"></i>Reminders & Rewards
+                                                </h3>
+                                                <p class="feature-text">
+                                                    Set up <strong>reminders</strong> to never miss your daily activities! The bot can also send you 
+                                                    <strong>thank you messages</strong> when you upvote it.
+                                                </p>
+                                                <div class="alert alert-success feature-highlight">
+                                                    <i class="bi bi-gift me-2"></i>
+                                                    <strong>Upvote Reward:</strong> By upvoting the bot, you can use it <strong>without any rate limits</strong>!
+                                                </div>
+                                                <p class="feature-text">
+                                                    Support the bot and enjoy unlimited identification capabilities. Every upvote helps the bot grow!
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <div class="feature-images">
+                                                <div class="row g-3">
+                                                    <div class="col-4">
+                                                        <div class="feature-image-card">
+                                                            <span class="zoom-icon"><i class="bi bi-zoom-in"></i></span>
+                                                            <img src="assets/bot/notifications/1.png" alt="Notifications 1" class="img-fluid rounded">
+                                                            <span class="image-label">Step 1</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="feature-image-card">
+                                                            <span class="zoom-icon"><i class="bi bi-zoom-in"></i></span>
+                                                            <img src="assets/bot/notifications/2.png" alt="Notifications 2" class="img-fluid rounded">
+                                                            <span class="image-label">Step 2</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="feature-image-card">
+                                                            <span class="zoom-icon"><i class="bi bi-zoom-in"></i></span>
+                                                            <img src="assets/bot/notifications/3.png" alt="Notifications 3" class="img-fluid rounded">
+                                                            <span class="image-label">Final message</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notifier Feature -->
+                            <div class="tab-pane fade" id="feature-notifier" role="tabpanel" aria-labelledby="feature-notifier-tab">
+                                <div class="feature-card">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-5 mb-4 mb-lg-0">
+                                            <div class="feature-description">
+                                                <h3 class="feature-title">
+                                                    <i class="bi bi-megaphone text-info me-2"></i>Spawn Notifier
+                                                </h3>
+                                                <p class="feature-text">
+                                                    Never miss a spawn again! Configure the <strong>Notifier</strong> to automatically ping a role 
+                                                    whenever a selected bot spawns a ball in your server.
+                                                </p>
+                                                <div class="feature-list">
+                                                    <div class="feature-list-item">
+                                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                                        Choose which bot to monitor (Ballsdex, FoodDex, etc.)
+                                                    </div>
+                                                    <div class="feature-list-item">
+                                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                                        Select a role to ping on spawns
+                                                    </div>
+                                                    <div class="feature-list-item">
+                                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                                        <strong>Fully customizable</strong>&nbsp;notification text
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <div class="feature-images">
+                                                <div class="row g-3">
+                                                    <div class="col-6">
+                                                        <div class="feature-image-card">
+                                                            <span class="zoom-icon"><i class="bi bi-zoom-in"></i></span>
+                                                            <img src="assets/bot/notifier/1.png" alt="Notifier Setup" class="img-fluid rounded">
+                                                            <span class="image-label">Configuration</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="feature-image-card">
+                                                            <span class="zoom-icon"><i class="bi bi-zoom-in"></i></span>
+                                                            <img src="assets/bot/notifier/2.png" alt="Notifier in Action" class="img-fluid rounded">
+                                                            <span class="image-label">Notification example</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Trainer Feature -->
+                            <div class="tab-pane fade" id="feature-trainer" role="tabpanel" aria-labelledby="feature-trainer-tab">
+                                <div class="feature-card">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-5 mb-4 mb-lg-0">
+                                            <div class="feature-description">
+                                                <h3 class="feature-title">
+                                                    <i class="bi bi-stopwatch text-danger me-2"></i>Catch Trainer
+                                                </h3>
+                                                <p class="feature-text">
+                                                    Practice makes perfect! Use the <strong>Trainer</strong> feature to practice catching balls 
+                                                    and measure your <strong>reaction time</strong>.
+                                                </p>
+                                                <div class="feature-list">
+                                                    <div class="feature-list-item">
+                                                        <i class="bi bi-lightning-charge text-warning me-2"></i>
+                                                        Test and improve your catching speed
+                                                    </div>
+                                                    <div class="feature-list-item">
+                                                        <i class="bi bi-graph-up text-success me-2"></i>
+                                                        Track your reaction time in milliseconds
+                                                    </div>
+                                                    <div class="feature-list-item">
+                                                        <i class="bi bi-trophy text-primary me-2"></i>
+                                                        Challenge yourself to beat your best time
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <div class="feature-images">
+                                                <div class="row g-3">
+                                                    <div class="col-6">
+                                                        <div class="feature-image-card">
+                                                            <span class="zoom-icon"><i class="bi bi-zoom-in"></i></span>
+                                                            <img src="assets/bot/trainer/1.png" alt="Trainer Start" class="img-fluid rounded">
+                                                            <span class="image-label">Start training</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="feature-image-card">
+                                                            <span class="zoom-icon"><i class="bi bi-zoom-in"></i></span>
+                                                            <img src="assets/bot/trainer/2.png" alt="Trainer Results" class="img-fluid rounded">
+                                                            <span class="image-label">Your results</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -433,6 +629,21 @@
             </div>
         </div>
 
+        <!-- Bot Image Modal -->
+        <div class="modal fade" id="botImageModal" tabindex="-1">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content bg-dark border-secondary">
+                    <div class="modal-header border-secondary">
+                        <h5 class="modal-title text-light" id="botImageModalTitle">Image Preview</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body text-center p-4">
+                        <img id="botImageModalImg" src="" alt="Enlarged Image" class="img-fluid rounded" style="max-height: 75vh;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Toast Notification -->
         <div class="toast-container position-fixed bottom-0 end-0 p-3">
             <div id="notification" class="toast bg-danger text-white" role="alert">
@@ -458,5 +669,27 @@
         <script src="js/drag-drop.js"></script>
         <script src="js/identifier.js"></script>
         <script src="js/spawn-arts.js"></script>
+        
+        <!-- Bot Image Modal Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const botImageModal = new bootstrap.Modal(document.getElementById('botImageModal'));
+                const botImageModalImg = document.getElementById('botImageModalImg');
+                const botImageModalTitle = document.getElementById('botImageModalTitle');
+                
+                document.querySelectorAll('#bot-content .feature-image-card').forEach(card => {
+                    card.style.cursor = 'pointer';
+                    card.addEventListener('click', function() {
+                        const img = this.querySelector('img');
+                        const label = this.querySelector('.image-label');
+                        if (img) {
+                            botImageModalImg.src = img.src;
+                            botImageModalTitle.textContent = label ? label.textContent : 'Image Preview';
+                            botImageModal.show();
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
