@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1773233801",
+            "changes": [
+                "Removed Game Token from Ballsdex (Ballsdex Games 3 are over)"
+            ]
+        },
+        {
             "timestamp": "1768677737",
             "changes": [
                 "Complete Bot page redesign with new modern layout",
