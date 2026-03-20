@@ -529,6 +529,42 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Preload compressed images
+    async function preloadCompressedImages() {
+        if (ballsList.length === 0) return;
+        
+        const botConfig = getBotConfig();
+        const botName = botConfig.name;
+        const imageCache = [];
+        
+        console.log(`⏳ Preloading ${ballsList.length} compressed images...`);
+        
+        for (const ball of ballsList) {
+            const img = new Image();
+            img.src = `assets/dexes/${botName}/compressed/${ball}.png`;
+            imageCache.push(img);
+        }
+        
+        // Wait for all images to be preloaded
+        const promises = imageCache.map(img => {
+            return new Promise((resolve) => {
+                if (img.complete) {
+                    resolve();
+                } else {
+                    img.onload = () => resolve();
+                    img.onerror = () => resolve(); // Still resolve on error to not block
+                }
+            });
+        });
+        
+        try {
+            await Promise.all(promises);
+            console.log('✅ All compressed images preloaded successfully!');
+        } catch (error) {
+            console.error('❌ Error preloading images:', error);
+        }
+    }
+
     // Get random username from chat data
     function getRandomUsername() {
         if (!chatData?.usernames || chatData.usernames.length === 0) {
@@ -784,8 +820,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const botConfig = getBotConfig();
         const botName = botConfig.name;
         
-        // Format ball name for file path (replace spaces with actual names in folder)
-        const imagePath = `assets/dexes/${botName}/${ballName}.png`;
+        // Format ball name for file path (use compressed version)
+        const imagePath = `assets/dexes/${botName}/compressed/${ballName}.webp`;
         
         messageDiv.innerHTML = `
             <div class="trainer-message-avatar">
@@ -1036,6 +1072,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Load balls list
         await loadBallsList();
+        
+        // Preload all compressed images before starting
+        await preloadCompressedImages();
         
         // Load chat data and schedule chat messages
         await loadChatData();
