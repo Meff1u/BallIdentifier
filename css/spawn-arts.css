@@ -3,8 +3,10 @@
  */
 
 .controls-sticky {
-    position: sticky !important;
+    position: fixed !important;
     top: 56px;
+    left: 0;
+    right: 0;
     z-index: 1020;
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
     border-bottom: 2px solid #8e44ad !important;
@@ -137,3 +139,7 @@
 
 #search-bar:focus { border-color: #8e44ad !important; box-shadow: 0 0 0 0.2rem rgba(142, 68, 173, 0.25) !important; }
 #search-bar::placeholder { color: #b0b0b0 !important; }
+
+#spawn-arts-content.show.active #main-content {
+    margin-top: 90px;
+}

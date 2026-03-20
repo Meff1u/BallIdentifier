@@ -27,6 +27,7 @@
         <link rel="stylesheet" href="css/spawn-arts.css" />
         <link rel="stylesheet" href="css/identifier.css" />
         <link rel="stylesheet" href="css/bot.css" />
+        <link rel="stylesheet" href="css/trainer.css" />
         <link rel="stylesheet" href="css/responsive.css" />
         <link rel="icon" href="assets/icons/icon.webp" type="image/png" />
         <title>Ball Identifier - Recognize the ball in a second!</title>
@@ -53,6 +54,11 @@
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="bot-tab" data-bs-toggle="tab" data-bs-target="#bot-content" type="button" role="tab" aria-controls="bot-content" aria-selected="false">
                                 <i class="bi bi-discord me-1 d-none d-sm-inline"></i>Bot
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="trainer-tab" data-bs-toggle="tab" data-bs-target="#trainer-content" type="button" role="tab" aria-controls="trainer-content" aria-selected="false">
+                                <i class="bi bi-controller me-1 d-none d-sm-inline"></i>Trainer
                             </button>
                         </li>
                     </ul>
@@ -423,6 +429,187 @@
                     </div>
                 </div>
             </div>
+
+            <!-- TRAINER TAB -->
+            <div class="tab-pane fade h-100" id="trainer-content" role="tabpanel" aria-labelledby="trainer-tab">
+                <div class="trainer-container d-flex h-100" style="background-color: #36393f;">
+                    <!-- Left Sidebar - Channels -->
+                    <div class="trainer-sidebar bg-dark border-end border-secondary" style="width: 240px; overflow-y: auto; flex-shrink: 0;">
+                        <div class="p-3">
+                            <!-- Server Name -->
+                            <div class="mb-4 pb-3 border-bottom border-secondary">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h6 class="mb-0 text-light fw-bold" style="font-size: 0.95rem;">Trainer</h6>
+                                    <button class="btn btn-sm btn-dark text-secondary" style="padding: 2px 6px; border: none;" title="Server menu">
+                                        <i class="bi bi-chevron-down"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Channels Section -->
+                            <div class="trainer-channels">
+                                <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: bold; color: #b5bac1; margin-bottom: 1rem;">Channels</div>
+                                
+                                <!-- spawn-channel -->
+                                <div class="trainer-channel active mb-2 p-2 rounded" role="button" id="spawn-channel">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <i class="bi bi-hash" style="font-size: 0.9rem;"></i>
+                                        <span style="font-size: 0.95rem; font-weight: 500;">spawn-channel</span>
+                                    </div>
+                                </div>
+
+                                <!-- configuration -->
+                                <div class="trainer-channel mb-2 p-2 rounded" role="button" id="configuration-channel">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <i class="bi bi-hash" style="font-size: 0.9rem;"></i>
+                                        <span style="font-size: 0.95rem; font-weight: 500;">configuration</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- User Section at Bottom -->
+                            <div class="position-absolute bottom-0 start-0 w-100 p-3 border-top border-secondary" style="background-color: #292b2f;">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="rounded-circle" style="width: 32px; height: 32px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.85rem;">U</div>
+                                    <div style="flex-grow: 1; min-width: 0;">
+                                        <div class="text-light" style="font-size: 0.9rem; font-weight: 500;">amazing sniper</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Chat Area -->
+                    <div class="trainer-chat flex-grow-1 d-flex flex-column" style="background-color: #36393f;">
+                        <!-- Mobile Sidebar Overlay -->
+                        <div class="trainer-sidebar-overlay"></div>
+                        <!-- Chat Header -->
+                        <div class="trainer-header bg-dark border-bottom border-secondary p-3 d-flex align-items-center justify-content-between" style="height: 52px; flex-shrink: 0;">
+                            <div class="d-flex align-items-center gap-3">
+                                <button class="btn btn-sm btn-dark text-secondary d-none" id="trainer-sidebar-toggle" style="border: none; padding: 6px 10px; display: none !important;" title="Toggle Channels">
+                                    <i class="bi bi-list"></i>
+                                </button>
+                                <i class="bi bi-hash text-secondary" style="font-size: 1.2rem;"></i>
+                                <div>
+                                    <h6 class="mb-0 text-light" style="font-weight: 600;">spawn-channel</h6>
+                                    <small class="text-secondary">Discord chat and spawns simulation</small>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-dark text-secondary" id="sidebar-toggle-header" style="border: none; padding: 6px 10px;" title="Toggle channels">
+                                    <i class="bi bi-hash" style="font-size: 1.3rem;"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Messages Container -->
+                        <div class="trainer-messages flex-grow-1 p-4 overflow-y-auto" id="trainer-messages" style="background-color: #36393f; display: flex; flex-direction: column; gap: 16px;">
+                            <!-- Messages will be dynamically added here -->
+                            <div class="text-center text-secondary mt-auto" style="font-size: 0.95rem;">
+                                <i class="bi bi-chat-dots" style="font-size: 2.5rem; display: block; margin-bottom: 1rem; opacity: 0.5;"></i>
+                                <p>Welcome to Ballsdex Trainer!</p>
+                                <small>Spawn notification messages will appear here</small>
+                            </div>
+                        </div>
+
+                        <!-- Configuration Panel -->
+                        <div id="configuration-panel" class="trainer-config flex-grow-1 p-4 overflow-y-auto" style="background-color: #36393f; flex-direction: column; gap: 20px;">
+                            <!-- Spawn Frequency -->
+                            <div class="config-section">
+                                <h6 class="text-light mb-3" style="font-weight: 600;">
+                                    <i class="bi bi-hourglass-split me-2"></i>Spawn Frequency
+                                </h6>
+                                <p class="text-secondary small mb-3">How often the bot spawns new balls (in seconds)</p>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                    <div>
+                                        <label class="form-label text-secondary small">Min (5-60s)</label>
+                                        <input type="number" class="form-control bg-dark text-light border-secondary" id="spawn-freq-min" min="5" max="60" value="5">
+                                    </div>
+                                    <div>
+                                        <label class="form-label text-secondary small">Max (5-60s)</label>
+                                        <input type="number" class="form-control bg-dark text-light border-secondary" id="spawn-freq-max" min="5" max="60" value="20">
+                                    </div>
+                                </div>
+                                <small class="text-warning d-block mt-2" id="spawn-freq-error" style="display: none;"></small>
+                            </div>
+
+                            <!-- Chat Frequency -->
+                            <div class="config-section">
+                                <h6 class="text-light mb-3" style="font-weight: 600;">
+                                    <i class="bi bi-chat-left-text me-2"></i>Chat Frequency
+                                </h6>
+                                <p class="text-secondary small mb-3">How often simulated users send messages in chat</p>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                                    <label class="btn btn-dark text-secondary config-radio" style="cursor: pointer; border: 1px solid #49494f;">
+                                        <input type="radio" name="chat-freq" value="low" style="display: none;">
+                                        <i class="bi bi-check-circle me-1"></i>Low (8-14s)
+                                    </label>
+                                    <label class="btn btn-dark text-secondary config-radio active" style="cursor: pointer; border: 1px solid #667eea; background-color: rgba(102, 126, 234, 0.1);">
+                                        <input type="radio" name="chat-freq" value="medium" checked style="display: none;">
+                                        <i class="bi bi-check-circle me-1"></i>Medium (5-10s)
+                                    </label>
+                                    <label class="btn btn-dark text-secondary config-radio" style="cursor: pointer; border: 1px solid #49494f;">
+                                        <input type="radio" name="chat-freq" value="high" style="display: none;">
+                                        <i class="bi bi-check-circle me-1"></i>High (3-5s)
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- User Catching -->
+                            <div class="config-section">
+                                <h6 class="text-light mb-3" style="font-weight: 600;">
+                                    <i class="bi bi-hand-index me-2"></i>User Catching
+                                </h6>
+                                <p class="text-secondary small mb-3">Whether simulated users attempt to catch spawned balls</p>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px;">
+                                    <label class="btn btn-dark text-secondary config-radio active" style="cursor: pointer; border: 1px solid #667eea; background-color: rgba(102, 126, 234, 0.1);">
+                                        <input type="radio" name="user-catching" value="off" checked style="display: none;">
+                                        <i class="bi bi-check-circle me-1"></i>OFF
+                                    </label>
+                                    <label class="btn btn-dark text-secondary config-radio" style="cursor: pointer; border: 1px solid #49494f;">
+                                        <input type="radio" name="user-catching" value="easy" style="display: none;">
+                                        <i class="bi bi-check-circle me-1"></i>Easy (10-15s)
+                                    </label>
+                                    <label class="btn btn-dark text-secondary config-radio" style="cursor: pointer; border: 1px solid #49494f;">
+                                        <input type="radio" name="user-catching" value="medium" style="display: none;">
+                                        <i class="bi bi-check-circle me-1"></i>Medium (5-10s)
+                                    </label>
+                                    <label class="btn btn-dark text-secondary config-radio" style="cursor: pointer; border: 1px solid #49494f;">
+                                        <input type="radio" name="user-catching" value="hard" style="display: none;">
+                                        <i class="bi bi-check-circle me-1"></i>Hard (3-5s)
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Bot Selection -->
+                            <div class="config-section">
+                                <h6 class="text-light mb-3" style="font-weight: 600;">
+                                    <i class="bi bi-robot me-2"></i>Bot
+                                </h6>
+                                <p class="text-secondary small mb-3">Which bot's assets to use for spawning</p>
+                                <select class="form-select bg-dark text-light border-secondary" id="bot-select" style="color: #dcddde;">
+                                    <!-- Options will be populated dynamically from dexes.json -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Message Input -->
+                        <div class="trainer-input-area bg-dark border-top border-secondary p-2" style="flex-shrink: 0;">
+                            <!-- Spawn Channel Input -->
+                            <div id="spawn-channel-input" class="input-group">
+                                <button class="btn btn-dark text-secondary" type="button" title="Start simulation" id="start-simulation-btn" style="border: 1px solid #49494f;">
+                                    <i class="bi bi-play-fill me-2" id="simBtnIcon"></i><span id="simBtnText">Start Simulation</span>
+                                </button>
+                            </div>
+                            
+                            <!-- Configuration Channel Input - Hidden -->
+                            <div id="configuration-channel-input" style="display: none; text-align: center; color: #949ba4;">
+                                <p style="margin: 0; font-size: 0.9rem;">Settings are automatically saved to your browser</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="modal fade" id="loadingModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
@@ -595,6 +782,26 @@
             </div>
         </div>
 
+        <!-- Catch Countryball Modal -->
+        <div class="modal" id="catchModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-dark border-primary">
+                    <div class="modal-header border-primary">
+                        <h5 class="modal-title text-primary" id="catchModalTitle">Catch this countryball!</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h6 class="text-light mb-3">Name of this countryball</h6>
+                        <input type="text" class="form-control bg-dark text-light border-secondary mb-3" id="catchGuessInput" placeholder="Your guess" autofocus>
+                    </div>
+                    <div class="modal-footer border-primary d-flex gap-2">
+                        <button type="button" class="btn btn-secondary flex-grow-1" data-bs-dismiss="modal" id="catchCancelBtn">Cancel</button>
+                        <button type="button" class="btn btn-primary flex-grow-1" id="catchSubmitBtn">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Toast Notification -->
         <div class="toast-container position-fixed bottom-0 end-0 p-3">
             <div id="notification" class="toast bg-danger text-white" role="alert">
@@ -624,6 +831,7 @@
         <script src="js/drag-drop.js"></script>
         <script src="js/identifier.js"></script>
         <script src="js/spawn-arts.js"></script>
+        <script src="js/trainer.js"></script>
         
         <!-- Bot Image Modal Script -->
         <script>

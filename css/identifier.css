@@ -2,6 +2,21 @@
  * Identifier | Modals, drag overlay, result display
  */
 
+#identifier-content.show.active {
+    height: auto !important;
+    overflow: hidden !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: auto;
+    padding: 2rem 0;
+    flex: none !important;
+}
+
+#identifier-content .container-fluid {
+    height: auto !important;
+}
+
 #resultImage { transition: all 0.3s ease; border: 2px solid transparent; }
 #resultImage:hover { transform: scale(1.05); border-color: var(--bs-primary); box-shadow: 0 8px 24px rgba(142, 68, 173, 0.3); }
 

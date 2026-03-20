@@ -43,15 +43,31 @@
     flex-direction: column;
 }
 
-.tab-pane { animation: fadeIn 0.3s ease; }
+.tab-pane { 
+    animation: fadeIn 0.3s ease;
+    display: none !important;
+}
 
 .tab-pane.show.active {
     flex: 1;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
+    overflow: auto;
 }
 
 #identifier-content { justify-content: center; }
+
+#identifier-content.show.active {
+    flex: none !important;
+    overflow: hidden !important;
+}
+
+#spawn-arts-content.show.active,
+#bot-content.show.active,
+#trainer-content.show.active {
+    flex: 1;
+    overflow: auto;
+}
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
@@ -59,7 +75,6 @@
 }
 
 #spawn-arts-content { padding-bottom: 60px; animation: none; }
-#spawn-arts-content .controls-sticky { position: sticky; top: 56px; z-index: 1020; }
 
 .spawn-arts-search { display: none; }
 #spawn-arts-content.active ~ .spawn-arts-search,

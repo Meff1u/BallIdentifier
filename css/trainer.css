@@ -1,0 +1,502 @@
+/* Trainer Tab Styles - Discord-like Interface */
+
+/* Force proper layout for Trainer tab */
+body {
+    min-height: 100vh;
+}
+
+#mainTabContent {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+#trainer-content.show.active {
+    height: calc(100vh - 59px) !important;
+    max-height: calc(100vh - 59px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 !important;
+    overflow: hidden !important;
+}
+
+.trainer-container {
+    background-color: #36393f;
+    color: #dcddde;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    flex: 1;
+    min-height: 0;
+}
+
+/* Sidebar Styling */
+.trainer-sidebar {
+    background-color: #16161D;
+    position: relative;
+    padding-bottom: 100px; /* Space for user section at bottom */
+}
+
+.trainer-sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.trainer-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.trainer-sidebar::-webkit-scrollbar-thumb {
+    background: #16161D;
+    border-radius: 4px;
+}
+
+.trainer-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #16161D;
+}
+
+/* Channels Toggle */
+#sidebar-toggle-header {
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    display: none; /* Hidden by default on desktop */
+}
+
+#sidebar-toggle-header:hover {
+    background-color: #16161D !important;
+    color: #b5bac1 !important;
+}
+
+#sidebar-toggle-header:focus,
+#sidebar-toggle-header:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Channel Styling */
+.trainer-channel {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+    user-select: none;
+    background-color: transparent;
+    color: #949ba4;
+}
+
+.trainer-channel:hover {
+    background-color: rgba(79, 84, 92, 0.2) !important;
+    color: #ffffff !important;
+}
+
+.trainer-channel.active {
+    background-color: rgba(79, 84, 92, 0.4) !important;
+    color: #ffffff !important;
+}
+
+.trainer-channel.disabled {
+    cursor: not-allowed !important;
+    opacity: 0.5 !important;
+    color: #72767d !important;
+}
+
+.trainer-channel.disabled:hover {
+    background-color: transparent !important;
+    color: #72767d !important;
+}
+
+/* Chat Area */
+.trainer-chat {
+    display: flex;
+    flex-direction: column;
+    background-color: #1A1B26;
+    min-height: 0;
+}
+
+.trainer-header {
+    background-color: #16161D;
+    border-bottom: 1px solid #202225;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.trainer-messages {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: #1A1B26;
+}
+
+.trainer-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.trainer-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.trainer-messages::-webkit-scrollbar-thumb {
+    background: #202225;
+    border-radius: 4px;
+}
+
+.trainer-messages::-webkit-scrollbar-thumb:hover {
+    background: #1a1c1f;
+}
+
+/* Message Styling */
+.trainer-message {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.trainer-message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.trainer-message-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.trainer-message-header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.trainer-message-author {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.trainer-message-timestamp {
+    font-size: 0.75rem;
+    color: #72767d;
+}
+
+.trainer-message-text {
+    color: #dcddde;
+    line-height: 1.375;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+/* Ball Embed Styling (for spawn messages) */
+.trainer-embed {
+    background-color: #2f3136;
+    border-left: 4px solid #667eea;
+    border-radius: 4px;
+    padding: 12px;
+    margin-top: 8px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+}
+
+.trainer-embed-thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.trainer-embed-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trainer-embed-title {
+    font-weight: 600;
+    color: #667eea;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.trainer-embed-description {
+    color: #b9bbbe;
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+.trainer-embed-field {
+    display: inline-block;
+    margin-right: 16px;
+    margin-top: 8px;
+    font-size: 0.85rem;
+}
+
+.trainer-embed-field-label {
+    color: #72767d;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.trainer-embed-field-value {
+    color: #dcddde;
+    margin-top: 2px;
+}
+
+/* Input Area */
+.trainer-input-area {
+    background-color: #36393f;
+    border-top: 1px solid #202225;
+    flex-shrink: 0;
+    flex-grow: 0;
+    min-height: 65px;
+}
+
+.trainer-input-area .form-control {
+    background-color: #40444b;
+    color: #dcddde;
+    border-color: #202225;
+    font-size: 0.95rem;
+}
+
+.trainer-input-area .form-control::placeholder {
+    color: #72767d;
+}
+
+.trainer-input-area .form-control:focus {
+    background-color: #40444b;
+    color: #dcddde;
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.trainer-input-area .btn-dark {
+    background-color: #40444b;
+    color: #72767d;
+    border-color: #202225;
+    padding: 8px 12px;
+}
+
+.trainer-input-area .btn-dark:hover {
+    background-color: #40444b;
+    color: #dcddde;
+}
+
+/* Start Simulation Button */
+#start-simulation-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+    padding: 5px 10px !important;
+    font-weight: 500;
+    width: 100%;
+    height: 45px;
+    transition: all 0.2s ease;
+}
+
+#start-simulation-btn:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+#start-simulation-btn:active {
+    transform: translateY(0);
+}
+
+/* Configuration Panel */
+.trainer-config {
+    display: none;
+}
+
+.trainer-config.active {
+    display: flex !important;
+}
+
+.config-section {
+    padding: 15px;
+    background-color: rgba(79, 84, 92, 0.2);
+    border-radius: 8px;
+    border-left: 3px solid #667eea;
+}
+
+.config-section h6 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.config-section .form-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.config-section .form-control,
+.config-section .form-select {
+    background-color: #2f3136 !important;
+    border-color: #49494f !important;
+    color: #dcddde !important;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+.config-section .form-control:focus,
+.config-section .form-select:focus {
+    background-color: #2f3136 !important;
+    border-color: #667eea !important;
+    color: #dcddde !important;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.config-section .form-control::placeholder {
+    color: #72767d;
+}
+
+.config-radio {
+    display: block;
+    padding: 10px 12px !important;
+    text-align: center;
+    background-color: #2f3136 !important;
+    border: 1px solid #49494f !important;
+    color: #949ba4 !important;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.config-radio:hover {
+    border-color: #667eea !important;
+    color: #b5bac1 !important;
+}
+
+.config-radio.active {
+    background-color: rgba(102, 126, 234, 0.1) !important;
+    border-color: #667eea !important;
+    color: #dcddde !important;
+}
+
+/* Empty State */
+.trainer-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #72767d;
+    text-align: center;
+}
+
+.trainer-empty-state i {
+    font-size: 3rem;
+    opacity: 0.3;
+    margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    /* Hide sidebar by default on mobile */
+    .trainer-sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 240px;
+        z-index: 1060;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        padding-bottom: 0;
+        border-right: 1px solid #202225;
+        border-bottom: none;
+    }
+
+    /* Show sidebar when mobile-open */
+    .trainer-sidebar.mobile-open {
+        transform: translateX(0);
+    }
+
+    /* Overlay styling */
+    .trainer-sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1055;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    /* Show overlay when sidebar is open */
+    .trainer-sidebar.mobile-open ~ .trainer-chat .trainer-sidebar-overlay,
+    .trainer-container.sidebar-open .trainer-sidebar-overlay {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Show toggle button on mobile */
+    #sidebar-toggle-header {
+        display: block !important;
+    }
+
+    .trainer-container {
+        flex-direction: row;
+    }
+
+    .trainer-chat {
+        flex-grow: 1;
+        position: relative;
+    }
+}
+
+/* User Section Styling */
+.trainer-user-section {
+    background-color: #292b2f;
+    border-top: 1px solid #202225;
+    padding: 12px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Hide footer when trainer tab is active */
+#trainer-content {
+    position: relative;
+}
+
+#trainer-content ~ footer,
+.tab-pane.active#trainer-content ~ footer {
+    display: none !important;
+}
