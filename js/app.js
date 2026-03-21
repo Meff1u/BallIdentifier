@@ -153,15 +153,21 @@ function initializeTabs() {
 
 async function loadBotStatistics() {
     try {
-        const response = await fetch('//f11.bot-hosting.net:21302/api/stats');
+        const response = await fetch('/.netlify/functions/get-bot-stats');
         
         if (!response.ok) {
             console.warn('Bot stats endpoint not available');
             return;
         }
         
-        const data = await response.json();
+        const result = await response.json();
         
+        if (!result.success || !result.data) {
+            console.warn('Bot stats response invalid');
+            return;
+        }
+        
+        const data = result.data;
         const guildsElement = document.getElementById('bot-guilds-count');
         const usersElement = document.getElementById('bot-users-count');
         const ballsElement = document.getElementById('bot-identified-balls');
