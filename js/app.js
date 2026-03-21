@@ -153,7 +153,7 @@ function initializeTabs() {
 
 async function loadBotStatistics() {
     try {
-        const response = await fetch('http://f11.bot-hosting.net:21302/api/stats');
+        const response = await fetch('//f11.bot-hosting.net:21302/api/stats');
         
         if (!response.ok) {
             console.warn('Bot stats endpoint not available');
