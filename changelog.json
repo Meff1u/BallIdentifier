@@ -1,6 +1,16 @@
 {
     "changes": [
         {
+            "timestamp": "1774128287",
+            "changes": [
+                "Added existing abbreviations for trainer catching",
+                "Updated user catching simulation to be more realistic",
+                "Updated mobile popup to be the most discord-like",
+                "Added Average Catch Time statistic to the trainer",
+                "Minor bug fixes and improvements"
+            ]
+        },
+        {
             "timestamp": "1773975095",
             "changes": [
                 "Added new Trainer section - interactive Discord-like simulation for practicing ball catching",
