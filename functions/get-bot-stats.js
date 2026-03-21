@@ -39,7 +39,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const botUrl = 'https://f11.bot-hosting.net:21302';
+    const botUrl = 'http://fi11.bot-hosting.net:21302';
     
     // Fetch stats from bot API
     const response = await fetch(`${botUrl}/api/stats`, {
