@@ -124,6 +124,8 @@ function initializeTabs() {
                     loadSpawnArtsData("Ballsdex");
                     AppState.spawnArtsLoaded = true;
                 }
+            } else if (targetId === '#bot-content') {
+                loadBotStatistics();
             } else {
                 searchBarContainer && (searchBarContainer.style.display = 'none');
                 mobileSettingsButton?.classList.add('d-none');
@@ -146,6 +148,30 @@ function initializeTabs() {
     if (!isSpawnArtsActive) {
         searchBarContainer && (searchBarContainer.style.display = 'none');
         mobileSettingsButton?.classList.add('d-none');
+    }
+}
+
+async function loadBotStatistics() {
+    try {
+        const response = await fetch('http://f11.bot-hosting.net:21302/api/stats');
+        
+        if (!response.ok) {
+            console.warn('Bot stats endpoint not available');
+            return;
+        }
+        
+        const data = await response.json();
+        
+        const guildsElement = document.getElementById('bot-guilds-count');
+        const usersElement = document.getElementById('bot-users-count');
+        const ballsElement = document.getElementById('bot-identified-balls');
+        
+        if (guildsElement) guildsElement.textContent = data.guilds?.toLocaleString() || '0';
+        if (usersElement) usersElement.textContent = data.users?.toLocaleString() || '0';
+        if (ballsElement) ballsElement.textContent = data.identifiedBalls?.toLocaleString() || '0';
+    } catch (error) {
+        console.error('Error loading bot statistics:', error);
+        // Silently fail - stats are optional
     }
 }
 
