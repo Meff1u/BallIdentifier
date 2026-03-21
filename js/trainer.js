@@ -459,7 +459,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const catchSubmitBtn = document.getElementById('catchSubmitBtn');
     
 // ============================================================================
-// 6. BALL DATA MANAGEMENT
+// 6. UTILITY FUNCTIONS
+// ============================================================================
+    
+    // Generate random number between min and max (inclusive)
+    function rn(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+// ============================================================================
+// 7. BALL DATA MANAGEMENT
 // ============================================================================
     
     // Load balls list from selected dex
@@ -488,14 +497,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get random ball
     function getRandomBall() {
         if (ballsList.length === 0) return null;
-        return ballsList[Math.floor(Math.random() * ballsList.length)];
+        return ballsList[rn(0, ballsList.length - 1)];
     }
     
     // Get random interval between min and max
     function getRandomInterval() {
         const min = currentConfig.spawnFreqMin || 5;
         const max = currentConfig.spawnFreqMax || 20;
-        return (Math.floor(Math.random() * (max - min + 1)) + min) * 1000;
+        return rn(min, max) * 1000;
     }
     
     // Get bot config with name and icon path
@@ -515,7 +524,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
 // ============================================================================
-// 7. CHAT SIMULATION - Random Messages & Scheduling
+// 8. CHAT SIMULATION - Random Messages & Scheduling
 // ============================================================================
     
     // Load chat messages data from data.json
@@ -527,6 +536,33 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('❌ Error loading chat data:', error);
             chatData = null;
         }
+    }
+
+    // Check if guess matches the ball name or any of its abbreviations
+    function isValidCatch(guess, ballName) {
+        const normalizedGuess = guess.toLowerCase().trim();
+        
+        // Check exact match with ball name
+        if (normalizedGuess === ballName.toLowerCase()) {
+            return true;
+        }
+        
+        // Check against abbreviations if they exist
+        if (chatData?.abbreviations) {
+            const botName = currentConfig.bot.toLowerCase();
+            const botAbbreviations = chatData.abbreviations[botName];
+            
+            if (botAbbreviations && botAbbreviations[ballName]) {
+                const abbreviations = botAbbreviations[ballName];
+                for (const abbrev of abbreviations) {
+                    if (normalizedGuess === abbrev) {
+                        return true;
+                    }
+                }
+            }
+        }
+        
+        return false;
     }
 
     // Preload compressed images
@@ -568,9 +604,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get random username from chat data
     function getRandomUsername() {
         if (!chatData?.usernames || chatData.usernames.length === 0) {
-            return 'User ' + Math.floor(Math.random() * 1000);
+            return 'User ' + rn(0, 999);
         }
-        return chatData.usernames[Math.floor(Math.random() * chatData.usernames.length)];
+        return chatData.usernames[rn(0, chatData.usernames.length - 1)];
     }
 
     // Get random message from chat data
@@ -578,7 +614,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!chatData?.messages || chatData.messages.length === 0) {
             return 'Hey there!';
         }
-        return chatData.messages[Math.floor(Math.random() * chatData.messages.length)];
+        return chatData.messages[rn(0, chatData.messages.length - 1)];
     }
 
     // Post a random chat message
@@ -599,7 +635,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const range = ranges[freq] || [5000, 10000];
         const [min, max] = range;
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+        return rn(min, max);
     }
 
     // Schedule chat messages during simulation
@@ -635,7 +671,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 // ============================================================================
-// 8. USER CATCH SIMULATION - Simulated user attempts & timing
+// 9. USER CATCH SIMULATION - Simulated user attempts & timing
 // ============================================================================
     
     // Get difficulty level for user catching
@@ -643,21 +679,32 @@ document.addEventListener('DOMContentLoaded', function() {
         return currentConfig.userCatching;
     }
 
-    // Get catch interval based on difficulty
+    // Get reaction time ranges based on difficulty (when users start attempting)
     function getUserCatchIntervals() {
         const difficulty = getUserCatchDifficulty();
         const ranges = {
-            'easy': [10000, 15000],     // 10-15 seconds
-            'medium': [5000, 10000],    // 5-10 seconds
-            'hard': [3000, 5000]        // 3-5 seconds
+            'easy': [5000, 10000],      // 5-10 seconds
+            'medium': [3000, 5000],     // 3-5 seconds
+            'hard': [2000, 3000]        // 2-3 seconds
         };
-        return ranges[difficulty] || [10000, 15000];
+        return ranges[difficulty] || [5000, 10000];
     }
 
-    // Get random catch time based on difficulty
+    // Get random reaction time based on difficulty
     function getRandomCatchTime() {
         const [min, max] = getUserCatchIntervals();
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+        return rn(min, max);
+    }
+
+    // Get random button click time (0.5-0.8 seconds)
+    function getRandomClickTime() {
+        return rn(500, 800); // 500-800ms
+    }
+
+    // Get typing time based on ball name length (length ms * random 90-130)
+    function getTypingTime(ballName) {
+        const randomMultiplier = rn(90, 130);
+        return ballName.length * randomMultiplier;
     }
 
     // Schedule simulated user catches
@@ -673,28 +720,37 @@ document.addEventListener('DOMContentLoaded', function() {
         // Store current spawn index for statistics
         currentSpawnIndex = spawnedBalls.length - 1;
 
-        // Pick 1-6 random users
-        const numUsers = Math.floor(Math.random() * 6) + 1;
-        const shuffledUsers = [...chatData.usernames].sort(() => Math.random() - 0.5);
+        // Pick 1-5 random users
+        const numUsers = rn(1, 5);
+        const shuffledUsers = [...chatData.usernames].sort(() => rn(-1, 1));
         const selectedUsers = shuffledUsers.slice(0, numUsers);
 
         // Schedule each user to attempt a catch
         selectedUsers.forEach(username => {
-            const delay = getRandomCatchTime();
+            // Calculate total delay from multiple components:
+            // 1. Reaction time (when user realizes ball appeared)
+            const reactionTime = getRandomCatchTime();
+            // 2. Click time (0.5-0.8 seconds)
+            const clickTime = getRandomClickTime();
+            // 3. Typing time (chars * 90-130 ms)
+            const typingTime = getTypingTime(ballName);
+            // Total delay
+            const totalDelay = reactionTime + clickTime + typingTime;
+
             const timeoutId = setTimeout(() => {
-                simulateUserCatch(username, ballName, delay);
-            }, delay);
-            userCatchTimeouts.push(timeoutId);
+                simulateUserCatch(username, ballName, totalDelay, reactionTime + clickTime + typingTime);
+            }, totalDelay);
+            userCatchTimeouts.push({ id: timeoutId, endTime: Date.now() + totalDelay });
         });
     }
 
     // Simulate a user catch attempt
-    function simulateUserCatch(username, ballName, catchDelay) {
+    function simulateUserCatch(username, ballName, totalDelay, displayTime) {
         if (!simulationRunning) return;
         
         const catchTime = Date.now();
         const spawnTime = spawnedBalls[currentSpawnIndex]?.spawnTime || catchTime;
-        const catchTimeDiff = (catchTime - spawnTime) / 1000;
+        const catchTimeDiff = displayTime / 1000;
 
         // Check if ball already caught
         if (currentBallCaught) {
@@ -899,8 +955,8 @@ document.addEventListener('DOMContentLoaded', function() {
         button.disabled = true;
         button.innerHTML = '<img src="assets/trainer/loading.webp" alt="Loading" style="height: 10px; width: 100%; object-fit: contain;">';
         
-        // Random delay between 0.5-0.8 seconds
-        const delay = Math.random() * 800 + 500;
+        // Random delay between 500-1300 milliseconds
+        const delay = rn(500, 1300);
         
         catchTimeoutId = setTimeout(() => {
             currentSpawnedBall = ballName;
@@ -916,10 +972,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // Show catch modal
     function showCatchModal(ballName) {
         catchGuessInput.value = '';
-        catchGuessInput.focus();
         
-        const modal = bootstrap.Modal.getOrCreateInstance(catchModal, { animation: false });
+        // Check if mobile device
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        
+        const modalOptions = {
+            animation: false,
+            backdrop: isMobile ? false : 'static',
+            keyboard: false
+        };
+        
+        const modal = bootstrap.Modal.getOrCreateInstance(catchModal, modalOptions);
+        
+        // For mobile, add backdrop styling to body
+        if (isMobile) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+        }
+        
         modal.show();
+        
+        // Focus input after modal is shown - only on mobile
+        if (isMobile) {
+            setTimeout(() => {
+                catchGuessInput.focus();
+                // Force scroll to show keyboard
+                catchGuessInput.scrollIntoView({ behavior: 'instant', block: 'end' });
+            }, 100);
+        }
     }
     
     // Handle catch submit
@@ -927,8 +1008,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const guess = catchGuessInput.value.trim();
         const submitTime = Date.now();
         
-        // Validate catch (case-insensitive)
-        const isCorrect = guess.toLowerCase() === currentSpawnedBall.toLowerCase();
+        // Validate catch using abbreviations if available
+        const isCorrect = isValidCatch(guess, currentSpawnedBall);
         
         // Track catch time
         const spawnMessages = Array.from(trainerMessagesContainer.querySelectorAll('[data-spawn-message="true"]'));
@@ -937,7 +1018,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Check if ball is already caught
         if (currentBallCaught && spawnIndex >= 0) {
-            addBotReplyToSpawn(false, guess, currentSpawnedBall, true);
+            addBotReplyToSpawn(false, currentSpawnedBall, true);
         } else if (spawnIndex >= 0 && isCorrect) {
             // Ball caught by real user for first time
             spawnedBalls[spawnIndex].caught = true;
@@ -946,20 +1027,35 @@ document.addEventListener('DOMContentLoaded', function() {
             const catchTimeDiff = submitTime - spawnedBalls[spawnIndex].spawnTime;
             currentBallCaught = true;
             
-            // Clear any pending user catch timeouts
-            userCatchTimeouts.forEach(timeout => clearTimeout(timeout));
+            // Clear any pending user catch timeouts that have more than 2 seconds remaining
+            const now = Date.now();
+            userCatchTimeouts.forEach(catchInfo => {
+                const remainingTime = catchInfo.endTime - now;
+                if (remainingTime > 2000) {
+                    clearTimeout(catchInfo.id);
+                }
+            });
             userCatchTimeouts = [];
             
             // Add bot reply to the spawn message
-            addBotReplyToSpawn(isCorrect, guess, currentSpawnedBall);
+            addBotReplyToSpawn(isCorrect, currentSpawnedBall);
         } else {
             // Wrong answer
-            addBotReplyToSpawn(isCorrect, guess, currentSpawnedBall);
+            addBotReplyToSpawn(isCorrect, currentSpawnedBall);
         }
         
         // Close modal
         const modal = bootstrap.Modal.getInstance(catchModal);
-        if (modal) modal.hide();
+        if (modal) {
+            // Restore body styles on mobile
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            if (isMobile) {
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
+            }
+            modal.hide();
+        }
         
         if (isCorrect && currentBallCaught) {
             scheduleNextSpawn();
@@ -967,7 +1063,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Add bot reply to the last spawn message
-    function addBotReplyToSpawn(isCorrect, guess, actualBall, isAlreadyCaught = false) {
+    function addBotReplyToSpawn(isCorrect, actualBall, isAlreadyCaught = false) {
         if (!trainerMessagesContainer) return;
         
         // Find the last spawn message - use querySelectorAll and get last one
@@ -1053,7 +1149,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
 // ============================================================================
-// 9. SIMULATION CONTROL - Start/Stop, State Management
+// 10. SIMULATION CONTROL - Start/Stop, State Management
 // ============================================================================
     
     // Start simulation
@@ -1061,6 +1157,12 @@ document.addEventListener('DOMContentLoaded', function() {
         simulationRunning = true;
         simulationStartTime = Date.now();
         spawnedBalls = [];
+        
+        // Disable start button during loading
+        if (startSimulationBtn) {
+            startSimulationBtn.disabled = true;
+            simBtnText.textContent = 'Loading...';
+        }
         
         // Disable configuration channel
         if (configurationChannelBtn) {
@@ -1075,6 +1177,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Preload all compressed images before starting
         await preloadCompressedImages();
+        
+        // Re-enable start button after images are preloaded
+        if (startSimulationBtn) {
+            startSimulationBtn.disabled = false;
+        }
         
         // Load chat data and schedule chat messages
         await loadChatData();
@@ -1098,6 +1205,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function stopSimulation() {
         simulationRunning = false;
         
+        // Enable start button
+        if (startSimulationBtn) {
+            startSimulationBtn.disabled = false;
+        }
+        
         // Enable configuration channel
         if (configurationChannelBtn) {
             configurationChannelBtn.classList.remove('disabled');
@@ -1114,7 +1226,7 @@ document.addEventListener('DOMContentLoaded', function() {
         stopChatMessages();
         
         // Stop user catching timeouts
-        userCatchTimeouts.forEach(timeout => clearTimeout(timeout));
+        userCatchTimeouts.forEach(catchInfo => clearTimeout(catchInfo.id));
         userCatchTimeouts = [];
         
         // Calculate statistics
@@ -1124,6 +1236,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         let fastestCatch = null;
         let fastestTime = Infinity;
+        let totalCatchTime = 0;
+        let catchCount = 0;
         for (const spawn of spawnedBalls) {
             if (spawn.caught && spawn.catchTime && spawn.caughtBy === 'real') {
                 const catchDiff = spawn.catchTime - spawn.spawnTime;
@@ -1131,8 +1245,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     fastestTime = catchDiff;
                     fastestCatch = { ballName: spawn.ballName, time: catchDiff };
                 }
+                totalCatchTime += catchDiff;
+                catchCount++;
             }
         }
+        
+        // Calculate average catch time
+        const averageCatchTime = catchCount > 0 ? totalCatchTime / catchCount : 0;
         
         // Clear chat
         if (trainerMessagesContainer) {
@@ -1150,6 +1269,7 @@ document.addEventListener('DOMContentLoaded', function() {
             totalSpawned,
             totalCaught,
             fastestCatch,
+            averageCatchTime,
             simulationDuration
         });
         
@@ -1161,12 +1281,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
 // ============================================================================
-// 10. STATISTICS - Tracking and Display
+// 11. STATISTICS - Tracking and Display
 // ============================================================================
     
     // Show statistics modal
     function showStatisticsModal(stats) {
-        const { totalSpawned, totalCaught, fastestCatch, simulationDuration } = stats;
+        const { totalSpawned, totalCaught, fastestCatch, averageCatchTime, simulationDuration } = stats;
         
         // Format duration as Xm Ys if >= 60s, otherwise just Xs
         let durationText;
@@ -1203,6 +1323,13 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="stat-label text-secondary">Fastest Catch</div>
                                 <div class="stat-value text-light" style="font-size: 1.2em;">
                                     ${fastestCatchText}
+                                </div>
+                            </div>
+                            
+                            <div class="stat-item mb-3">
+                                <div class="stat-label text-secondary">Average Catch Time</div>
+                                <div class="stat-value text-light" style="font-size: 1.2em;">
+                                    ${totalCaught > 0 ? (averageCatchTime / 1000).toFixed(2) + 's' : 'N/A'}
                                 </div>
                             </div>
                             
@@ -1256,6 +1383,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (catchCancelBtn) {
         catchCancelBtn.addEventListener('click', function() {
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            if (isMobile) {
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
+            }
             const modal = bootstrap.Modal.getInstance(catchModal);
             if (modal) modal.hide();
         });
@@ -1263,6 +1396,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (catchSubmitBtn) {
         catchSubmitBtn.addEventListener('click', handleCatchSubmit);
+    }
+
+    // Restore body styles when modal is hidden on mobile
+    if (catchModal) {
+        catchModal.addEventListener('hidden.bs.modal', function() {
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            if (isMobile) {
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
+            }
+        });
     }
     
     // Also handle Enter key in guess input

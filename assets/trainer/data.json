@@ -25,7 +25,12 @@
 		"johnny",
 		"Alpaca81",
 		"PaoloC",
-		"Herbata"
+		"Herbata",
+		"noel the aligator",
+		"e-face",
+		"5xia",
+		"megatron",
+		"🦆"
 	],
 	"messages": [
 		"i love poland 🇵🇱🦅",
@@ -69,9 +74,31 @@
         "hi chat",
         "hello",
         "buying raws",
-        "sell my all your shinies",
+        "sell me all your shinies",
         "AUCTIONING MY ENTIRE INVENTORY!!!",
         "A wild blacklist appeared!",
         "bye"
-	]
+	],
+	"abbreviations": {
+        "ballsdex": {
+            "Saint Kitts nad Nevis": ["st kitts and nevis"],
+            "St. Vincent and the Grenadines": ["st vincent and the grenadines"],
+            "Polish-Lithuanian Commonwealth": ["polish lithuanian commonwealth"],
+            "Austria-Hungary": ["austria hungary"],
+            "Guinea-Bissau": ["guinea bissau"],
+            "Peru-Bolivian Confederation": ["peru bolivian confederation"],
+            "Timor-Leste": ["timor leste", "east timor"],
+            "Cote d'Ivoire": ["ivory coast"]
+        },
+        "fooddex": {
+            "Pepperoni Pizza": ["pizza"],
+            "Red Apple": ["apple"],
+            "Fried Chicken": ["chicken"],
+            "Hamburger": ["burger"],
+            "French Fries": ["fries"],
+            "Vanilla Cake": ["cake"],
+            "Chocolate Chip Cookie": ["cookie"],
+            "White Rice": ["rice"]
+        }
+	}
 }
