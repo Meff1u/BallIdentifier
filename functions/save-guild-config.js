@@ -153,7 +153,7 @@ exports.handler = async (event) => {
                 selectedRole: selectedRole,
                 customMessage: customMessage,
                 setupBy: setupBy,
-                setupAt: new Date()
+                setupAt: new Date().getTime()
             };
         
         const response = await fetch(`${BOT_API_URL}/api/guilds/${guildId}/config`, {
