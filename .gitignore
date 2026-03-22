@@ -6,3 +6,7 @@ node_modules
 
 # Asiadex temporary
 assets/jsons/Asiadex.json
+
+# .env
+.env
+.env.local

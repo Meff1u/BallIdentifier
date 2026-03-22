@@ -31,7 +31,37 @@ exports.handler = async (event) => {
       }
     }
 
-    const { source, rarity, sort, id } = event.queryStringParameters || {};
+    // Input Validation to prevent injection attacks
+    const params = event.queryStringParameters || {};
+    
+    // Validate and sanitize parameters - limit length and type check
+    const source = params.source ? String(params.source).slice(0, 50) : undefined;
+    const rarity = params.rarity ? parseFloat(params.rarity) : undefined;
+    const sort = params.sort ? String(params.sort).slice(0, 20) : undefined;
+    const id = params.id ? parseInt(params.id, 10) : undefined;
+    
+    // Validate numeric parameters
+    if (rarity !== undefined && (isNaN(rarity) || rarity < 0 || rarity > 100)) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: 'Invalid rarity value' })
+      };
+    }
+    
+    if (id !== undefined && (isNaN(id) || id < 0)) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: 'Invalid id value' })
+      };
+    }
+    
+    // Validate source parameter (only allow alphanumeric and underscore)
+    if (source && !/^[a-z0-9_]+$/i.test(source)) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: 'Invalid source parameter' })
+      };
+    }
 
     let result = [...allBalls];
 
@@ -41,13 +71,12 @@ exports.handler = async (event) => {
       );
     }
 
-    if (rarity) {
-      const rarityNum = parseFloat(rarity);
-      result = result.filter(ball => ball.rarity === rarityNum);
+    if (rarity !== undefined) {
+      result = result.filter(ball => ball.rarity === rarity);
     }
 
-    if (id) {
-      const idNum = parseInt(id);
+    if (id !== undefined) {
+      const idNum = id;
       result = result.filter(ball => ball.id === idNum);
     }
 

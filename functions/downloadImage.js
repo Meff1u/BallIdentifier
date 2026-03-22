@@ -1,10 +1,57 @@
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const url_module = require('url');
+
+// Whitelist allowed domains for image downloads (SSRF prevention)
+const ALLOWED_DOMAINS = [
+    'cdn.discordapp.com',
+    'discord.com',
+    'canary.discord.com',
+    'ptb.discord.com',
+    'canary.discordapp.com',
+    'ptb.discordapp.com',
+];
+
+function isValidImageUrl(urlString) {
+    try {
+        const parsedUrl = new url_module.URL(urlString);
+        
+        // Only allow HTTPS
+        if (parsedUrl.protocol !== 'https:') {
+            return false;
+        }
+        
+        // Check if domain is in whitelist
+        const hostname = parsedUrl.hostname;
+        const isAllowed = ALLOWED_DOMAINS.some(domain => 
+            hostname === domain || hostname.endsWith('.' + domain)
+        );
+        
+        if (!isAllowed) {
+            console.warn('Domain not whitelisted: ' + hostname);
+            return false;
+        }
+        
+        return true;
+    } catch (error) {
+        console.error('Invalid URL format: ' + urlString);
+        return false;
+    }
+}
 
 exports.handler = async function(event, context) {
     try {
         const { url } = JSON.parse(event.body);
 
-        console.log(`Fetching image from: ${url}`);
+        // Validate URL before fetching (SSRF prevention)
+        if (!url || typeof url !== 'string') {
+            throw new Error('Invalid URL parameter');
+        }
+        
+        if (!isValidImageUrl(url)) {
+            throw new Error('URL not allowed or invalid protocol');
+        }
+
+        console.log('Fetching image from: ' + url);
         
         const response = await fetch(url, {
             headers: {

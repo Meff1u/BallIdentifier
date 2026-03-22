@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="BallIdentifier Dashboard - Manage notifier configuration for your server!" />
+        <meta content="#A94DC1" name="theme-color" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- Modular CSS -->
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+        <link rel="icon" href="assets/icons/icon.webp" type="image/png" />
+        <title>BallIdentifier Dashboard</title>
+        <style>
+            html {
+                overflow: hidden;
+            }
+            
+            body {
+                overflow: hidden;
+            }
+            
+            .login-container {
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+            
+            .guilds-container {
+                display: none;
+                height: calc(100vh - 70px);
+                overflow-y: auto;
+                overflow-x: hidden;
+                padding-bottom: 2rem;
+            }
+            
+            .login-card {
+                max-width: 400px;
+                width: 100%;
+                margin: 0 auto;
+                padding: 0 1rem;
+            }
+            
+            .discord-login-btn {
+                background: linear-gradient(135deg, #5865F2, #7289DA);
+                border: none;
+                font-weight: 600;
+                padding: 12px 24px;
+                font-size: 1.1rem;
+            }
+            
+            .discord-login-btn:hover {
+                background: linear-gradient(135deg, #6b75f5, #8094de);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(88, 101, 242, 0.4);
+            }
+            
+            .guild-card {
+                background: linear-gradient(135deg, rgba(88, 101, 242, 0.1) 0%, rgba(114, 137, 218, 0.05) 100%);
+                border: 2px solid #5865F2;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+            
+            .guild-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(88, 101, 242, 0.3);
+                border-color: #7289DA;
+            }
+            
+            .guild-card .card-title {
+                color: #ffffff;
+            }
+            
+            .guild-card .card-text {
+                color: #b9bbbe;
+            }
+            
+            .guild-icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 3px solid #5865F2;
+            }
+            
+            .user-profile {
+                background: rgba(88, 101, 242, 0.1);
+                border: 2px solid #5865F2;
+                border-radius: 15px;
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin-bottom: 30px;
+            }
+            
+            .user-avatar {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 3px solid #5865F2;
+            }
+            
+            #guildsGrid {
+                max-width: 1400px;
+                margin: 0 auto;
+                display: flex !important;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+            
+            #guildsGrid > div {
+                min-width: 280px;
+                width: calc(25% - 1.5rem);
+            }
+            
+            @media (max-width: 1200px) {
+                #guildsGrid > div {
+                    width: calc(33.333% - 1.5rem);
+                }
+            }
+            
+            @media (max-width: 768px) {
+                #guildsGrid > div {
+                    width: calc(50% - 1.5rem);
+                    min-width: 250px;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                #guildsGrid > div {
+                    width: 100%;
+                    min-width: auto;
+                }
+            }
+            
+            option {
+                background-color: #212529;
+                color: #ffffff;
+            }
+            
+            .bot-toggle {
+                border: none !important;
+                outline: none !important;
+            }
+            
+            .bot-toggle:focus,
+            .bot-toggle:active {
+                box-shadow: none !important;
+                outline: none !important;
+            }
+            
+            #navbarUserAvatar {
+                border: none !important;
+                outline: none !important;
+            }
+            
+            #navbarUserAvatar:focus {
+                box-shadow: none !important;
+                outline: none !important;
+            }
+        </style>
+    </head>
+    <body class="bg-dark text-light min-vh-100 d-flex flex-column">
+        <!-- Main Navigation -->
+        <nav class="navbar navbar-dark bg-dark border-bottom border-secondary sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <i class="bi bi-robot me-2"></i>BallIdentifier Dashboard
+                </a>
+                <div class="d-flex align-items-center gap-2">
+                    <!-- User Avatar with Dropdown -->
+                    <div id="navbarUserProfile" class="dropdown" style="display: none;">
+                        <button class="btn btn-link border-0 p-0" type="button" id="userAvatarBtn" data-bs-toggle="dropdown">
+                            <img id="navbarUserAvatar" src="" alt="User Avatar" class="rounded-circle" style="width: 40px; height: 40px; border: 2px solid #5865F2; object-fit: cover;">
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end bg-dark border-secondary" aria-labelledby="userAvatarBtn">
+                            <li><h6 class="dropdown-header text-light" id="dropdownUserName">User</h6></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><button class="dropdown-item text-danger" id="navbarLogoutBtn">
+                                <i class="bi bi-box-arrow-right me-2"></i>Logout
+                            </button></li>
+                        </ul>
+                    </div>
+                    <a href="index.html" class="btn btn-outline-secondary btn-sm">
+                        <i class="bi bi-arrow-left me-1"></i>Back to Identifier
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="container-fluid flex-grow-1 py-4">
+            <!-- Login Screen -->
+            <div id="loginScreen" class="login-container">
+                <div class="login-card text-center">
+                    <button id="discordLoginBtn" class="btn btn-primary discord-login-btn w-100">
+                        <i class="bi bi-discord me-2"></i>Login with Discord
+                    </button>
+                </div>
+            </div>
+
+            <!-- Guilds Screen -->
+            <div id="guildsScreen" class="guilds-container">
+                <div class="container py-4">
+                    <!-- Guilds List Header -->
+                    <h3 class="mb-5 text-center">Select server u want to configure notifier for</h3>
+                    
+                    <div id="guildsLoading" class="text-center py-5">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="text-light mt-3">Loading your servers...</p>
+                    </div>
+
+                    <div id="guildsGrid" style="display: none;"></div>
+
+                    <div id="guildsError" class="alert alert-danger" style="display: none;"></div>
+                    
+                    <div id="noAdminServers" class="alert alert-info text-center" style="display: none;">
+                        <i class="bi bi-info-circle me-2"></i>
+                        No servers found where you have administrator permissions.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Configuration Screen -->
+            <div id="configScreen" class="guilds-container">
+                <div class="container py-4">
+                    <button id="backToGuildsBtn" class="btn btn-outline-secondary btn-sm mb-4">
+                        <i class="bi bi-arrow-left me-1"></i>Back to Guilds
+                    </button>
+
+                    <div id="configLoading" class="text-center py-5">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="text-light mt-3">Loading server configuration...</p>
+                    </div>
+
+                    <div id="noBotNotification" class="alert alert-info text-center" style="display: none;">
+                        <i class="bi bi-info-circle me-2"></i>
+                        No supported bots were found on this server.
+                    </div>
+
+                    <div id="configContent" style="display: none;">
+                        <h2 id="configGuildName" class="mb-5"></h2>
+
+                        <!-- Configuration Form -->
+                        <form id="configForm" class="card bg-dark border-secondary">
+                            <div class="card-body p-4">
+                                <!-- Bots Section -->
+                                <div class="mb-5">
+                                    <h5 class="mb-2 text-light">Bots</h5>
+                                    <p class="text-light small mb-3">Select the bots you want to receive notifications from</p>
+                                    <div id="botsSelect" class="d-flex flex-wrap gap-2"></div>
+                                </div>
+
+                                <hr class="border-secondary">
+
+                                <!-- Role Section -->
+                                <div class="mb-5">
+                                    <h5 class="mb-2 text-light">Role</h5>
+                                    <p class="text-light small mb-3">Select the role you want me to mention</p>
+                                    <select id="roleSelect" class="form-select bg-dark text-light border-secondary">
+                                        <option value="">Choose a role...</option>
+                                    </select>
+                                    <small class="text-warning mt-2 d-block">
+                                        <i class="bi bi-exclamation-triangle me-1"></i>
+                                        Remember to check if bot has mention permissions and selected role is below the bot's role in the server
+                                    </small>
+                                </div>
+
+                                <hr class="border-secondary">
+
+                                <!-- Custom Message Section -->
+                                <div class="mb-4">
+                                    <h5 class="mb-2 text-light">Custom Message</h5>
+                                    <p class="text-light small mb-3">Custom message that bot sends when a ball appears</p>
+                                    <textarea 
+                                        id="customMessage" 
+                                        class="form-control bg-dark text-light border-secondary" 
+                                        rows="4"
+                                        maxlength="200"
+                                        placeholder="{role} Catch that ball! - **{ball}**"
+                                    ></textarea>
+                                    <small class="text-muted mt-1 d-block"><span id="charCount">0</span>/200</small>
+                                    <small class="text-info mt-2 d-block">
+                                        <i class="bi bi-info-circle me-1"></i>
+                                        Use <code class="text-warning">{role}</code> as placeholder for the mentioned role and <code class="text-success">{ball}</code> for the identified ball name. Simply don't use <code class="text-success">{ball}</code> placeholder if you want to receive notifications without ball name
+                                    </small>
+                                    <div id="messageValidation" class="mt-2"></div>
+                                </div>
+
+                                <hr class="border-secondary">
+
+                                <!-- Action Buttons -->
+                                <div class="d-flex gap-2 flex-wrap">
+                                    <button type="submit" class="btn btn-primary" id="saveConfigBtn">
+                                        <i class="bi bi-check-circle me-2"></i>Save Configuration
+                                    </button>
+                                    <button type="button" class="btn btn-danger" id="deleteConfigBtn">
+                                        <i class="bi bi-trash me-2"></i>Delete Configuration
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Footer with last update info -->
+                            <div class="card-footer bg-dark border-secondary text-light small text-center py-2">
+                                <span id="lastUpdateInfo">No configuration set up yet</span>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="configError" class="alert alert-danger" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Delete Confirmation Modal -->
+        <div class="modal fade" id="deleteConfirmModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark border-secondary">
+                    <div class="modal-header border-secondary">
+                        <h5 class="modal-title text-light">Delete Configuration</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body text-light">
+                        <p>Are you sure you want to delete the configuration for this server?</p>
+                        <p class="text-light small mb-0">This action cannot be undone.</p>
+                    </div>
+                    <div class="modal-footer border-secondary">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/dashboard.js"></script>
+    </body>
+</html>
