@@ -364,6 +364,11 @@
         "artist": "dark3nd",
         "id": 426
     },
+    "Imperialist Washington D.C.": {
+        "rarity": 10,
+        "artist": "n0tch21_98933",
+        "id": 870
+    },
     "Kingdom of Aksum": {
         "rarity": 10,
         "artist": "dynsic",
@@ -1233,6 +1238,11 @@
         "rarity": 35,
         "artist": "n0tch21_98933",
         "id": 869
+    },
+    "Herodian Kingdom of Judea": {
+        "rarity": 35,
+        "artist": "._pudd_.",
+        "id": 871
     },
     "Napoleonic Kingdom of Italy": {
         "rarity": 35,

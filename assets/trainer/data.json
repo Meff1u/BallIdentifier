@@ -101,7 +101,7 @@
             "White Rice": ["rice"]
         },
         "historydex": {
-            "Chiefdom of Cocollán": ["cocollan"],
+            "Chiefdom of Cocollán": ["cocollan", "chiefdom of cocollan"],
             "Free State of Bottleneck": ["bottleneck"],
             "German Marshall Islands": ["marshall islands"],
             "Spanish Haiti": ["haiti"],
@@ -120,7 +120,7 @@
             "Spanish Chile": ["chile"],
             "German Alsace-Lorraine": ["alsace"],
             "Federal Republic of Tucumán": ["tucuman"],
-            "Republic of Entre Ríos": ["entre rios"],
+            "Republic of Entre Ríos": ["entre rios", "republic of entre rios"],
             "Second Republic of Seychelles": ["seychelles"],
             "State of Guayaquil": ["guayaquil"],
             "Ottoman Beylik": ["beylik"],
@@ -192,13 +192,13 @@
             "Swedish Saint Barthélemy": ["barthelemy"],
             "Curonian Tobago": ["tobago"],
             "Nueva Galicia": ["galicia"],
-            "Caithness and Sutherland": ["c&s"],
+            "Caithness and Sutherland": ["c&s", "caithness"],
             "Kingdom of Aksum": ["aksum"],
             "British Jamaica": ["jamaica"],
             "County of Vaduz": ["vaduz"],
             "Kingdom of Serbia": ["serbia"],
             "Duchy of Burgundy": ["burgundy"],
-            "Kingdom of Württemberg": ["wurttemberg"],
+            "Kingdom of Württemberg": ["wurttemberg", "kingdom of wurttemberg"],
             "Kingdom of Spain": ["spain"],
             "Republic of Acre": ["acre"],
             "British Hong Kong": ["hong kong"],
@@ -252,8 +252,8 @@
             "Kilwa Sultanate": ["kilwa"],
             "Grand Duchy of Saxe-Meiningen": ["saxe"],
             "Grand Duchy of Baden": ["baden"],
-            "Yucatán Republic": ["yucatan"],
-            "North Dorsetia-Somersetia": ["nd-s"],
+            "Yucatán Republic": ["yucatan", "yucatan republic"],
+            "North Dorsetia-Somersetia": ["nd-s", "dorsetia"],
             "Protectorate of Bohemia and Moravia": ["bohemia"],
             "Ancient Japan": ["japan"],
             "First Lithuanian Republic": ["lithuania"],
@@ -273,7 +273,7 @@
             "Polish People's Republic": ["poland"],
             "Ukrainian People's Republic": ["ukraine"],
             "Romanian People's Republic": ["romania"],
-            "Hungarian People's Republic": ["hungary"],
+            "Hungarian People's Republic": ["hungary", "red"],
             "Napoleonic Kingdom of Italy": ["italy"],
             "Napoleonic France": ["france"],
             "Napoleonic Spain": ["spain"],
@@ -310,7 +310,7 @@
             "First Armenian Republic": ["armenia"],
             "Armenian Empire": ["armenia"],
             "Sassanid Empire": ["sassanid"],
-            "League of Lezhë": ["lezhe"],
+            "League of Lezhë": ["lezhe", "league of lezhe"],
             "Elamite Empire": ["elamite"],
             "Republic of Anguilla": ["anguilla"],
             "Bukharan People's Soviet Republic": ["bpsr"],
@@ -358,7 +358,9 @@
             "Imperial Saint Petersburg": ["saint petersburg"],
             "Cossack Hetmanate": ["cossack"],
             "Kamakura Shogunate": ["japan"],
-            "Phoenicia": ["abc"]
+            "Phoenicia": ["abc"],
+            "Swedish Gold Coast": ["ghana"],
+            "Kievan Rus'": ["kievan rus"]
         }
 	}
 }
