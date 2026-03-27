@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1774619060",
+            "changes": [
+                "Re-added HistoryDex because it's active again"
+            ]
+        },
+        {
             "timestamp": "1774128287",
             "changes": [
                 "Added existing abbreviations for trainer catching",

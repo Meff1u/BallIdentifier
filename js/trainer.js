@@ -349,7 +349,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        if (botSelect) botSelect.value = currentConfig.bot;
+        if (botSelect) {
+            botSelect.value = currentConfig.bot;
+            const historydexWarning = document.getElementById('historydex-warning');
+            if (historydexWarning && currentConfig.bot.toLowerCase() === 'historydex') {
+                historydexWarning.style.display = 'block';
+            }
+        }
     }
 
     // Validate spawn frequency
@@ -422,6 +428,15 @@ document.addEventListener('DOMContentLoaded', function() {
         botSelect.addEventListener('change', function() {
             currentConfig.bot = this.value;
             saveConfig(currentConfig);
+            
+            const historydexWarning = document.getElementById('historydex-warning');
+            if (historydexWarning) {
+                if (this.value.toLowerCase() === 'historydex') {
+                    historydexWarning.style.display = 'block';
+                } else {
+                    historydexWarning.style.display = 'none';
+                }
+            }
         });
     }
 
@@ -477,6 +492,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const jsonNames = {
             'ballsdex': 'Ballsdex',
             'fooddex': 'FoodDex',
+            'historydex': 'HistoryDex',
         };
         const jsonName = jsonNames[bot] || 'Ballsdex';
         
@@ -518,6 +534,10 @@ document.addEventListener('DOMContentLoaded', function() {
             'fooddex': { 
                 name: 'FoodDex', 
                 icon: 'assets/icons/FoodDex.png'
+            },
+            'historydex': {
+                name: 'HistoryDex',
+                icon: 'assets/icons/HistoryDex.png'
             }
         };
         return configs[bot] || configs['ballsdex'];
