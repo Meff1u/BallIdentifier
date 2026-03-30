@@ -2579,6 +2579,11 @@
         "artist": "dynsic",
         "id": 599
     },
+    "Territory of Ruanda-Urundi": {
+        "rarity": 154,
+        "artist": "not_woterbottle & lordaxolotl7",
+        "id": 873
+    },
     "People's Republic of Mongolia": {
         "rarity": 155,
         "artist": "neburra_28409",
@@ -2793,6 +2798,11 @@
         "rarity": 181,
         "artist": "unfunnyguy_.",
         "id": 19
+    },
+    "Imperial German General Government of Belgium":{
+        "rarity": 182,
+        "artist": "theendermans",
+        "id": 872
     },
     "Principality of Moldavia": {
         "rarity": 183,
