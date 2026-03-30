@@ -112,7 +112,7 @@
             "Bani Khalid Emirate": ["bani"],
             "German Samoa": ["samoa"],
             "Portuguese Macau": ["macau"],
-            "British Honduras": ["honduras"],
+            "British Honduras": ["honduras", "belize"],
             "Northern Cameroons": ["cameroon"],
             "New Atlantis": ["atlantis"],
             "Duchy of Normandy": ["normandy"],
@@ -365,7 +365,9 @@
             "Hungarian Revolutionaries": ["hungary"],
             "Slovak Republic": ["slovakia"],
             "Makhnovia": ["anarchist ukraine", "anarchy ukraine", "ukraine anarchy", "chetniks"],
-            "French Congo": ["congo"]
+            "French Congo": ["congo"],
+            "Italian Regency of Carnaro": ["carnaro"],
+            "Brazilian Military Dictatorship": ["brazil"]
         }
 	}
 }
