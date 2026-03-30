@@ -1394,6 +1394,11 @@
         "artist": "squritlenjoyer",
         "id": 244
     },
+    "Uzbek Khanate": {
+        "rarity": 39,
+        "artist": "aydin_kai22",
+        "id": 876
+    },
     "Belarusian Democratic Republic": {
         "rarity": 40,
         "artist": "pho.supremacist",
@@ -1448,6 +1453,11 @@
         "rarity": 41,
         "artist": "pixology",
         "id": 279
+    },
+    "Ghassanid Kingdom": {
+        "rarity": 41,
+        "artist": "navid_habibi",
+        "id": 875
     },
     "Iranian Soviet Socialist Republic": {
         "rarity": 41,
@@ -2148,6 +2158,11 @@
         "rarity": 72,
         "artist": "an_kremenchuk_pike",
         "id": 412
+    },
+    "Emirate of Bukhara": {
+        "rarity": 73,
+        "artist": "average_countryballs_fan",
+        "id": 874
     },
     "Portuguese Mozambique": {
         "rarity": 73,
