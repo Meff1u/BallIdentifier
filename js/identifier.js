@@ -2,7 +2,7 @@
  * Identifier | Image upload, comparison and results
  */
 
-const DISCORD_IMAGE_PATTERN = /^https:\/\/(cdn\.discordapp\.com|media\.discordapp\.net)\/attachments\/\d+\/\d+\/[^?]+\.(png|jpg|jpeg|gif|webp)(\?.*)?$/;
+const DISCORD_IMAGE_PATTERN = /^https:\/\/(cdn\.discordapp\.com|media\.discordapp\.net)\/(ephemeral-)?attachments\/\d+\/\d+\/[^?]+\.(png|jpg|jpeg|gif|webp)(\?.*)?$/;
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const MAX_DIMENSION = 800;
 
