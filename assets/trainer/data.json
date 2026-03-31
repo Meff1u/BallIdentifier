@@ -253,7 +253,7 @@
             "Grand Duchy of Baden": ["baden"],
             "Yucatán Republic": ["yucatan", "yucatan republic"],
             "North Dorsetia-Somersetia": ["nd-s", "dorsetia", "d-s", "somersetia"],
-            "Protectorate of Bohemia and Moravia": ["bohemia"],
+            "Protectorate of Bohemia and Moravia": ["bohemia", "moravia"],
             "Ancient Japan": ["japan"],
             "First Lithuanian Republic": ["lithuania"],
             "Belarusian Democratic Republic": ["belarus"],
@@ -367,7 +367,8 @@
             "Makhnovia": ["anarchist ukraine", "anarchy ukraine", "ukraine anarchy", "chetniks"],
             "French Congo": ["congo"],
             "Italian Regency of Carnaro": ["carnaro"],
-            "Brazilian Military Dictatorship": ["brazil"]
+            "Brazilian Military Dictatorship": ["brazil"],
+            "Porfiriato": ["mexico"]
         }
 	}
 }

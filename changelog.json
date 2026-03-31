@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1774971222",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (British Raj, Carthage, German Togoland, Porfiriato)"
+            ]
+        },
+        {
             "timestamp": "1774894666",
             "changes": [
                 "Updated to new HistoryDex balls (Emirate of Bukhara, Ghassanid Kingdom, Uzbek Khanate)",
