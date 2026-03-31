@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1774999809",
+            "changes": [
+                "Updated to new HistoryDex ball (War German Empire)",
+                "Updated to new spawn art in HistoryDex (European Coal and Steel Community)"
+            ]
+        },
+        {
             "timestamp": "1774978275",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (British Raj, Carthage, German Togoland, Porfiriato, British Colony of Bermuda, Buyid Dynasty, Kingdom of Galicia)"

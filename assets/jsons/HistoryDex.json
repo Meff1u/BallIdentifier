@@ -64,6 +64,11 @@
         "artist": "ethan_heathcliff",
         "id": 98
     },
+    "War German Empire": {
+        "rarity": 1,
+        "artist": "vexab",
+        "id": 877
+    },
     "French Third Republic": {
         "rarity": 2,
         "artist": "dark3nd",
@@ -476,7 +481,7 @@
     },
     "European Coal and Steel Community": {
         "rarity": 13,
-        "artist": "dark3nd",
+        "artist": "n0tch21_98933",
         "id": 163
     },
     "Goryeo": {
