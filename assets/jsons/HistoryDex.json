@@ -64,11 +64,6 @@
         "artist": "ethan_heathcliff",
         "id": 98
     },
-    "War German Empire": {
-        "rarity": 1,
-        "artist": "vexab",
-        "id": 877
-    },
     "French Third Republic": {
         "rarity": 2,
         "artist": "dark3nd",
@@ -1321,7 +1316,7 @@
     },
     "Khwarazmian Empire": {
         "rarity": 37,
-        "artist": "bhapydageek",
+        "artist": "hortaas",
         "id": 530
     },
     "Kingdom of the Two Sicilies": {
@@ -2183,6 +2178,11 @@
         "rarity": 74,
         "artist": "not_woterbottle",
         "id": 801
+    },
+    "War German Empire": {
+        "rarity": 74,
+        "artist": "vexab",
+        "id": 877
     },
     "German East Africa": {
         "rarity": 75,
