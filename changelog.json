@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1775144338",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Ba'athist Iraq, Emirate of Bukhara, Estonian Soviet Socialist Republic, Hashemite Kingdom of Iraq, Hungarian People's Republic)",
+                "Removed War German Empire from HistoryDex (april fools ended)"
+            ]
+        },
+        {
             "timestamp": "1775037485",
             "changes": [
                 "Fixed HistoryDex's War German Empire rarity from 1 to 74 (We got fooled)",
