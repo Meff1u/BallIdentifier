@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1775481583",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Ba'athist Syria, French Algeria, Safavid Empire)"
+            ]
+        },
+        {
             "timestamp": "1775469134",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Orange Free State, Reichskolonialbund)",
