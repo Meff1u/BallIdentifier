@@ -35,7 +35,7 @@ exports.handler = async (event) => {
             };
         }
         
-        const magicBytes = buffer.slice(0, 8);
+        const magicBytes = buffer.slice(0, 12);
         const isPNG = magicBytes[0] === 0x89 && magicBytes[1] === 0x50 && magicBytes[2] === 0x4E && magicBytes[3] === 0x47;
         const isJPEG = magicBytes[0] === 0xFF && magicBytes[1] === 0xD8;
         const isWebP = magicBytes[8] === 0x57 && magicBytes[9] === 0x45 && magicBytes[10] === 0x42 && magicBytes[11] === 0x50;
