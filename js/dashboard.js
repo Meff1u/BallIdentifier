@@ -181,8 +181,23 @@ async function loadUserAndGuilds(token) {
             return;
         }
         
+        // Handle authorization errors
+        if (userResponse.status === 401) {
+            localStorage.removeItem('discord_access_token');
+            loginScreen.style.display = 'block';
+            guildsScreen.style.display = 'none';
+            navbarUserProfile.style.display = 'none';
+            document.body.style.overflow = 'hidden';
+            guildsLoading.style.display = 'none';
+            guildsError.textContent = 'Your Discord session has expired. Please login again.';
+            guildsError.style.display = 'block';
+            return;
+        }
+        
         if (!userResponse.ok) {
-            throw new Error('Failed to fetch user info');
+            const errorText = await userResponse.text();
+            console.error('Discord API Error:', userResponse.status, errorText);
+            throw new Error(`Failed to fetch user info (${userResponse.status}: ${userResponse.statusText})`);
         }
         
         const user = await userResponse.json();
@@ -214,8 +229,23 @@ async function loadUserAndGuilds(token) {
             return;
         }
         
+        // Handle authorization errors
+        if (guildsResponse.status === 401) {
+            localStorage.removeItem('discord_access_token');
+            loginScreen.style.display = 'block';
+            guildsScreen.style.display = 'none';
+            navbarUserProfile.style.display = 'none';
+            document.body.style.overflow = 'hidden';
+            guildsLoading.style.display = 'none';
+            guildsError.textContent = 'Your Discord session has expired. Please login again.';
+            guildsError.style.display = 'block';
+            return;
+        }
+        
         if (!guildsResponse.ok) {
-            throw new Error('Failed to fetch guilds');
+            const errorText = await guildsResponse.text();
+            console.error('Discord API Error:', guildsResponse.status, errorText);
+            throw new Error(`Failed to fetch guilds (${guildsResponse.status}: ${guildsResponse.statusText})`);
         }
         
         const guilds = await guildsResponse.json();

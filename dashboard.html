@@ -294,7 +294,19 @@
                                     <small class="text-muted mt-1 d-block"><span id="charCount">0</span>/200</small>
                                     <small class="text-info mt-2 d-block">
                                         <i class="bi bi-info-circle me-1"></i>
-                                        Use <code class="text-warning">{role}</code> as placeholder for the mentioned role and <code class="text-success">{ball}</code> for the identified ball name. Simply don't use <code class="text-success">{ball}</code> placeholder if you want to receive notifications without ball name
+                                        Available placeholders:
+                                    </small>
+                                    <small class="text-info d-block mt-1">
+                                        • <code class="text-warning">{role}</code> - the mentioned role (required)
+                                    </small>
+                                    <small class="text-info d-block">
+                                        • <code class="text-success">{ball}</code> - the identified ball name
+                                    </small>
+                                    <small class="text-info d-block">
+                                        • <code class="text-success">{rarity}</code> - the ball's rarity (number)
+                                    </small>
+                                    <small class="text-info d-block">
+                                        • <code class="text-success">{artist}</code> - the ball's artist
                                     </small>
                                     <div id="messageValidation" class="mt-2"></div>
                                 </div>
