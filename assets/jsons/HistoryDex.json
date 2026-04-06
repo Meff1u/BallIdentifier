@@ -611,7 +611,7 @@
     },
     "Reichskolonialbund": {
         "rarity": 16,
-        "artist": "._pudd_.",
+        "artist": "ragnitxt",
         "id": 348
     },
     "Shang": {
@@ -1564,6 +1564,11 @@
         "artist": "edougamer",
         "id": 622
     },
+    "Ba'athist Syria": {
+        "rarity": 45,
+        "artist": "vexab",
+        "id": 881
+    },
     "Grand Duchy of Baden": {
         "rarity": 45,
         "artist": "._franci_.",
@@ -1973,6 +1978,11 @@
         "rarity": 60,
         "artist": "shellfish72",
         "id": 802
+    },
+    "Derg": {
+        "rarity": 60,
+        "artist": "dynsic",
+        "id": 883
     },
     "Duchy of Courland and Semigallia": {
         "rarity": 60,
@@ -2564,6 +2574,11 @@
         "artist": "censorbar_",
         "id": 504
     },
+    "Free City of Frankfurt": {
+        "rarity": 137,
+        "artist": "fordcraft",
+        "id": 882
+    },
     "Basutoland": {
         "rarity": 141,
         "artist": "aydin_kai22",
@@ -2901,7 +2916,7 @@
     },
     "Orange Free State": {
         "rarity": 194,
-        "artist": "dark3nd",
+        "artist": "kyp4rissos",
         "id": 94
     },
     "Cisplatina": {

@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1775469134",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Orange Free State, Reichskolonialbund)",
+                "Updated to new HistoryDex balls (Ba'athist Syria, Derg, Free City of Frankfurt)"
+            ]
+        },
+        {
             "timestamp": "1775405555",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Dutch Empire, Grand Duchy of Lithuania, Inca Empire, State of Buenos Aires, Ukrainian Soviet Socialist Republic)"
