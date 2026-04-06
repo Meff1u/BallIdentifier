@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1775507590",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Anglo-Egyptian Sudan, Chagatai Khanate, Kara-Khanid Khanate, Portuguese Timor)"
+            ]
+        },
+        {
             "timestamp": "1775481583",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Ba'athist Syria, French Algeria, Safavid Empire)"
