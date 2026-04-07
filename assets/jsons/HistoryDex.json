@@ -91,7 +91,7 @@
     },
     "Golden Circle": {
         "rarity": 3,
-        "artist": "unfunnichez_",
+        "artist": "n0tch21_98933",
         "id": 512
     },
     "Intermarium": {
@@ -574,6 +574,11 @@
         "artist": "yodudeusthegoat",
         "id": 642
     },
+    "Prussian Berlin": {
+        "rarity": 15,
+        "artist": "aydin_kai22",
+        "id": 886
+    },
     "Swedish Empire": {
         "rarity": 15,
         "artist": "._pudd_.",
@@ -801,7 +806,7 @@
     },
     "Kingdom of Poland": {
         "rarity": 20,
-        "artist": "navid_habibi",
+        "artist": "xynthust",
         "id": 126
     },
     "Little Entente": {
@@ -1376,7 +1381,7 @@
     },
     "Kingdom of Hanover": {
         "rarity": 39,
-        "artist": "floridianirishguy",
+        "artist": "perilouspokey",
         "id": 438
     },
     "Medieval Kingdom of Hungary": {
@@ -2099,6 +2104,11 @@
         "artist": "pixology.",
         "id": 370
     },
+    "Virginia Colony": {
+        "rarity": 66,
+        "artist": "scotto6353",
+        "id": 884
+    },
     "Republic of Genoa": {
         "rarity": 67,
         "artist": "oreo_eater5892",
@@ -2296,7 +2306,7 @@
     },
     "Trust Territory of the Pacific Islands": {
         "rarity": 87,
-        "artist": "bhapydageek",
+        "artist": "n0tch21_98933",
         "id": 859
     },
     "Annam": {
@@ -2876,7 +2886,7 @@
     },
     "Oregon Territory": {
         "rarity": 189,
-        "artist": "baconmaxyy",
+        "artist": "n0tch21_98933",
         "id": 830
     },
     "British Malta": {
@@ -3071,7 +3081,7 @@
     },
     "Ottoman Qatar": {
         "rarity": 215,
-        "artist": "censorbar_",
+        "artist": "hortaas",
         "id": 850
     },
     "Southern Cameroons": {
@@ -3116,7 +3126,7 @@
     },
     "New Atlantis": {
         "rarity": 229,
-        "artist": "pleb0o",
+        "artist": "orangejuicedrinker69",
         "id": 756
     },
     "Silla": {
@@ -3133,5 +3143,10 @@
         "rarity": 230,
         "artist": "unfunnichez_",
         "id": 293
+    },
+    "German Occupied Sealand": {
+        "rarity": 235,
+        "artist": "officialmonikaddlc",
+        "id": 885
     }
 }

@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1775578446",
+            "changes": [
+                "Updated to new HistoryDex balls (German Occupied Sealand, Prussian Berlin, Virginia Colony)",
+                "Updated to new spawn arts in HistoryDex (Golden Circle, Kingdom of Hanover, Kingdom of Poland, New Atlantis, Oregon Territory, Ottoman Qatar, Roman Republic, Trust Territory of the Pacific Islands)"
+            ]
+        },
+        {
             "timestamp": "1775507590",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Anglo-Egyptian Sudan, Chagatai Khanate, Kara-Khanid Khanate, Portuguese Timor)"
