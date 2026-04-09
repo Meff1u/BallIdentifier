@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1775735473",
+            "changes": [
+                "Updated to new HistoryDex balls (Cretan State, Crown of the Kingdom of Poland, East Prussia, Italian Protectorate of Albania, Nazi Occupied Denmark, Peasant Battalions, Shanghai International Settlement, Spanish Armada, Spanish Guinea, Spanish Louisiana, State of Thessaloniki)",
+                "Updated to new spawn arts in HistoryDex (Hawaiian Kingdom, Kushan Empire, Organization of African Unity, Roanoke Colony, Roman Empire, United Kingdom of Portugal, Brazil, and Algarves)"
+            ]
+        },
+        {
             "timestamp": "1775578446",
             "changes": [
                 "Updated to new HistoryDex balls (German Occupied Sealand, Prussian Berlin, Virginia Colony)",
