@@ -105,18 +105,11 @@ async function callCompareImageFunction(imageBuffer, dex) {
         
         formData.append('file', imageBuffer, 'image');
         formData.append('dex', dex);
-
-        console.log('Calling compareImage function...');
-        console.log('Environment check - NETLIFY:', process.env.NETLIFY);
-        console.log('Environment check - URL:', process.env.URL);
         
         const isNetlify = process.env.URL && !process.env.URL.includes('localhost');
         const compareImageUrl = isNetlify 
             ? `${process.env.URL}/.netlify/functions/compareImage` 
             : 'http://localhost:8888/.netlify/functions/compareImage';
-        
-        console.log('Is Netlify?', isNetlify);
-        console.log('compareImage URL:', compareImageUrl);
         
         // Call local compareImage function
         const response = await fetchFn(compareImageUrl, {
