@@ -108,8 +108,14 @@ async function callCompareImageFunction(imageBuffer, dex) {
 
         console.log('Calling compareImage function...');
         
+        const compareImageUrl = process.env.NETLIFY 
+            ? `${process.env.URL}/.netlify/functions/compareImage` 
+            : 'http://localhost:8888/.netlify/functions/compareImage';
+        
+        console.log('compareImage URL:', compareImageUrl);
+        
         // Call local compareImage function
-        const response = await fetchFn('http://localhost:8888/.netlify/functions/compareImage', {
+        const response = await fetchFn(compareImageUrl, {
             method: 'POST',
             headers: formData.getHeaders(),
             body: formData
