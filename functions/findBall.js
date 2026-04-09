@@ -1,222 +1,228 @@
 const fs = require('fs');
 const path = require('path');
-const sharp = require('sharp');
-const { imageHash } = require('image-hash');
-const os = require('os');
+const url_module = require('url');
 
-function hammingDistance(hash1, hash2) {
-  if (hash1.length !== hash2.length) {
-    return Infinity;
-  }
+// Whitelist allowed domains for image downloads (SSRF prevention)
+const ALLOWED_DOMAINS = [
+    'cdn.discordapp.com',
+    'discord.com',
+    'canary.discord.com',
+    'ptb.discord.com',
+    'canary.discordapp.com',
+    'ptb.discordapp.com',
+];
 
-  let distance = 0;
-  for (let i = 0; i < hash1.length; i++) {
-    if (hash1[i] !== hash2[i]) {
-      distance++;
-    }
-  }
-  return distance;
-}
-
-function calculateSimilarity(distance, hashLength) {
-  return Math.round((1 - distance / hashLength) * 10000) / 100;
-}
-
-async function hashImage(imgData) {
-  const tempFilePath = path.join(os.tmpdir(), `tempFile_${Date.now()}.png`);
-
-  try {
-    await fs.promises.writeFile(tempFilePath, imgData);
-
-    const hash = await new Promise((resolve, reject) => {
-      imageHash(tempFilePath, 20, true, (error, data) => {
-        if (error) reject(error);
-        resolve(data);
-      });
-    });
-
-    return hash;
-  } catch (error) {
-    console.error('Hash generation error:', error);
-    throw new Error('Failed to generate image hash');
-  } finally {
+function isValidImageUrl(urlString) {
     try {
-      if (fs.existsSync(tempFilePath)) {
-        fs.unlinkSync(tempFilePath);
-      }
-    } catch (cleanupError) {
-      console.error('Cleanup error:', cleanupError);
+        const parsedUrl = new url_module.URL(urlString);
+        
+        // Only allow HTTPS
+        if (parsedUrl.protocol !== 'https:') {
+            return false;
+        }
+        
+        // Check if domain is in whitelist
+        const hostname = parsedUrl.hostname;
+        const isAllowed = ALLOWED_DOMAINS.some(domain => 
+            hostname === domain || hostname.endsWith('.' + domain)
+        );
+        
+        if (!isAllowed) {
+            console.warn('Domain not whitelisted: ' + hostname);
+            return false;
+        }
+        
+        return true;
+    } catch (error) {
+        console.error('Invalid URL format: ' + urlString);
+        return false;
     }
-  }
 }
 
-async function generateHashFromBase64(base64String) {
-  try {
-    const buffer = Buffer.from(base64String, 'base64');
+async function downloadImage(imageUrl) {
+    try {
+        const fetchFn = (await import('node-fetch')).default;
+        
+        if (!imageUrl || typeof imageUrl !== 'string') {
+            throw new Error('Invalid URL parameter');
+        }
+        
+        if (!isValidImageUrl(imageUrl)) {
+            throw new Error('URL not allowed or invalid protocol');
+        }
 
-    if (!buffer || buffer.length === 0) {
-      throw new Error('Empty or invalid buffer');
+        console.log('Fetching image from: ' + imageUrl);
+        
+        const response = await fetchFn(imageUrl, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            },
+            timeout: 10000
+        });
+        
+        console.log(`Response status: ${response.status}`);
+        console.log(`Content-Type: ${response.headers.get('content-type')}`);
+        
+        if (!response.ok) {
+            throw new Error(`Failed to fetch image: ${response.status} ${response.statusText} (make sure the URL is encoded with encodeURIComponent() if it contains query parameters)`);
+        }
+
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.startsWith('image/')) {
+            throw new Error(`Invalid content type: ${contentType}. Expected an image.`);
+        }
+
+        const contentLength = response.headers.get('content-length');
+        if (contentLength && parseInt(contentLength) > 10 * 1024 * 1024) {
+            throw new Error('Image too large (>10MB)');
+        }
+
+        const blob = await response.blob();
+        
+        if (blob.size === 0) {
+            throw new Error('Received empty response');
+        }
+        
+        if (blob.size < 100) {
+            throw new Error('Response too small to be a valid image');
+        }
+        
+        console.log(`Successfully downloaded image. Size: ${blob.size} bytes, Type: ${blob.type}`);
+        
+        const buffer = await blob.arrayBuffer();
+        return Buffer.from(buffer);
+    } catch (error) {
+        console.error("Error downloading the image:", error);
+        throw error;
     }
-
-    const magicBytes = buffer.slice(0, 8);
-    const isPNG = magicBytes[0] === 0x89 && magicBytes[1] === 0x50 && magicBytes[2] === 0x4E && magicBytes[3] === 0x47;
-    const isJPEG = magicBytes[0] === 0xFF && magicBytes[1] === 0xD8;
-    const isWebP = magicBytes[8] === 0x57 && magicBytes[9] === 0x45 && magicBytes[10] === 0x42 && magicBytes[11] === 0x50;
-    const isGIF = magicBytes[0] === 0x47 && magicBytes[1] === 0x49 && magicBytes[2] === 0x46;
-
-    if (!isPNG && !isJPEG && !isWebP && !isGIF) {
-      throw new Error('Invalid image format');
-    }
-
-    const img = await sharp(buffer)
-      .resize(100, 100)
-      .flatten({ background: { r: 0, g: 0, b: 0 } })
-      .png()
-      .toBuffer({ resolveWithObject: true });
-
-    const hash = await hashImage(img.data);
-    return hash;
-  } catch (error) {
-    console.error('Base64 hash generation error:', error);
-    throw new Error(`Failed to generate hash from image: ${error.message}`);
-  }
 }
 
-function performSearch(hash, allHashes, limit, threshold) {
-  const topCount = Math.min(parseInt(limit) || 5, 50);
-  const similarityThreshold = parseFloat(threshold) || 0;
+async function callCompareImageFunction(imageBuffer, dex) {
+    try {
+        const FormData = (await import('form-data')).default;
+        const fetchFn = (await import('node-fetch')).default;
+        const formData = new FormData();
+        
+        formData.append('file', imageBuffer, 'image');
+        formData.append('dex', dex);
 
-  const results = [];
-  const hashLength = hash.length;
+        console.log('Calling compareImage function...');
+        
+        // Call local compareImage function
+        const response = await fetchFn('http://localhost:8888/.netlify/functions/compareImage', {
+            method: 'POST',
+            headers: formData.getHeaders(),
+            body: formData
+        });
 
-  for (const item of allHashes) {
-    const distance = hammingDistance(hash, item.hash);
+        const result = await response.json();
+        
+        if (!response.ok) {
+            throw new Error(result.error || 'compareImage function failed');
+        }
 
-    if (distance === Infinity) {
-      continue;
+        return result;
+    } catch (error) {
+        console.error('compareImage call error:', error);
+        throw error;
     }
-
-    const similarity = calculateSimilarity(distance, hashLength);
-
-    if (similarity >= similarityThreshold) {
-      results.push({
-        name: item.name,
-        source: item.source,
-        similarity,
-        distance,
-        hash: item.hash
-      });
-    }
-  }
-
-  results.sort((a, b) => b.similarity - a.similarity);
-
-  const topResults = results.slice(0, topCount);
-
-  return {
-    totalMatches: results.length,
-    topMatches: topResults.length,
-    results: topResults,
-    hashLength: hashLength
-  };
 }
 
 exports.handler = async (event) => {
-  try {
-    const jsonsPath = path.join(process.cwd(), 'assets/jsons');
-
-    const dexesConfig = JSON.parse(fs.readFileSync(path.join(jsonsPath, 'dexes.json'), 'utf8'));
-    const hashFiles = dexesConfig.dexes.map(dex => `${dex}Hashes.json`);
-
-    const allHashes = [];
-    const loadedSources = {};
-
-    for (const file of hashFiles) {
-      const filePath = path.join(jsonsPath, file);
-
-      try {
-        const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-        const source = file.replace('Hashes.json', '');
-        loadedSources[source] = Object.keys(data).length;
-
-        for (const [hash, name] of Object.entries(data)) {
-          allHashes.push({
-            hash,
-            name,
-            source
-          });
-        }
-      } catch (err) {
-        console.error(`Error reading ${file}:`, err.message);
-      }
-    }
-
-    // Handle POST request with base64 image
     try {
-      const body = typeof event.body === 'string' ? JSON.parse(event.body) : event.body;
-      const { image, limit, threshold } = body;
+        const jsonsPath = path.join(process.cwd(), 'assets/jsons');
+        
+        // Load available dexes
+        const dexesConfig = JSON.parse(fs.readFileSync(path.join(jsonsPath, 'dexes.json'), 'utf8'));
+        const availableDexes = dexesConfig.dexes;
 
-      if (!image) {
+        // Parse query parameters manually from rawQueryString to preserve full URLs with query params
+        let url, dex;
+        
+        if (event.rawQueryString) {
+            // Parse raw query string manually to preserve URL query params
+            const params = new url_module.URLSearchParams(event.rawQueryString);
+            url = params.get('url');
+            dex = params.get('dex');
+        } else {
+            // Fallback to queryStringParameters
+            const queryParams = event.queryStringParameters || {};
+            url = queryParams.url;
+            dex = queryParams.dex;
+        }
+
+        // Decode URL if encoded
+        if (url) {
+            try {
+                url = decodeURIComponent(url);
+            } catch (e) {
+                // URL might not be encoded, use as-is
+            }
+        }
+
+        // Validate parameters
+        if (!url || !dex) {
+            const exampleUrl = 'https://cdn.discordapp.com/attachments/123/456/image.png';
+            return {
+                statusCode: 400,
+                headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+                body: JSON.stringify({
+                    error: 'Missing required parameters',
+                    message: 'Both "url" and "dex" parameters are required. URL should be encoded with encodeURIComponent()',
+                    availableDexes: availableDexes,
+                    examples: availableDexes.slice(0, 5).map(d => ({
+                        dex: d,
+                        url: `/.netlify/functions/findBall?url=${encodeURIComponent(exampleUrl)}&dex=${d}`
+                    }))
+                })
+            };
+        }
+
+        // Validate dex exists
+        if (!availableDexes.includes(dex)) {
+            return {
+                statusCode: 400,
+                headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+                body: JSON.stringify({
+                    error: 'Invalid dex',
+                    message: `Dex "${dex}" not found`,
+                    availableDexes: availableDexes
+                })
+            };
+        }
+
+        console.log(`Processing request: url=${url}, dex=${dex}`);
+
+        // Step 1: Download image from URL
+        console.log('Step 1: Downloading image...');
+        const imageBuffer = await downloadImage(url);
+
+        // Step 2: Send to compareImage function
+        console.log('Step 2: Sending to compareImage...');
+        const comparisonResult = await callCompareImageFunction(imageBuffer, dex);
+
+        console.log('Final result:', comparisonResult);
+
         return {
-          statusCode: 400,
-          headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-          body: JSON.stringify({
-            error: 'Missing image parameter',
-            message: 'Image parameter is required. Image should be base64 encoded.'
-          })
+            statusCode: 200,
+            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+            body: JSON.stringify({
+                success: true,
+                name: comparisonResult.country,
+                diff: comparisonResult.diff,
+                dex: dex
+            })
         };
-      }
 
-      console.log('Generating hash from base64 image...');
-      const hash = await generateHashFromBase64(image);
-      console.log('Generated hash:', hash);
-
-      const searchResult = performSearch(hash, allHashes, limit, threshold);
-
-      return {
-        statusCode: 200,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
-        },
-        body: JSON.stringify({
-          searchHash: hash,
-          hashLength: searchResult.hashLength,
-          totalMatches: searchResult.totalMatches,
-          topMatches: searchResult.topMatches,
-          results: searchResult.results.map(r => ({
-            name: r.name,
-            source: r.source,
-            similarity: r.similarity + '%',
-            distance: r.distance,
-            hash: r.hash
-          })),
-          stats: {
-            totalBallsLoaded: allHashes.length,
-            sourceBreakdown: loadedSources
-          }
-        })
-      };
     } catch (error) {
-      console.error('POST request error:', error);
-      return {
-        statusCode: 400,
-        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-        body: JSON.stringify({
-          error: 'Invalid image',
-          message: error.message
-        })
-      };
+        console.error('Handler error:', error);
+        return {
+            statusCode: 500,
+            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+            body: JSON.stringify({
+                error: 'Error processing request',
+                message: error.message
+            })
+        };
     }
-  } catch (error) {
-    console.error('Handler error:', error);
-    return {
-      statusCode: 500,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        error: 'Error processing request',
-        message: error.message
-      })
-    };
-  }
 };
