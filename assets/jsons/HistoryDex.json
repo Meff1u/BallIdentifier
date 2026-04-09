@@ -106,7 +106,7 @@
     },
     "Roman Empire": {
         "rarity": 3,
-        "artist": "unfunnichez_",
+        "artist": "shellfish72",
         "id": 4
     },
     "Spanish Empire": {
@@ -311,7 +311,7 @@
     },
     "Kushan Empire": {
         "rarity": 9,
-        "artist": "ethan_heathcliff",
+        "artist": "shellfish72",
         "id": 817
     },
     "Safavid Empire": {
@@ -516,7 +516,7 @@
     },
     "Organization of African Unity": {
         "rarity": 14,
-        "artist": "bfbrobloxplayz & floridianirishguy",
+        "artist": "n0tch21_98933",
         "id": 514
     },
     "Delhi Sultanate": {
@@ -794,10 +794,20 @@
         "artist": "an_kremenchuk_pike",
         "id": 247
     },
+    "Crown of the Kingdom of Poland": {
+        "rarity": 20,
+        "artist": "vexab",
+        "id": 808
+    },
     "Crown of Castille": {
         "rarity": 20,
         "artist": "king_of_pingas",
         "id": 410
+    },
+    "East Prussia": {
+        "rarity": 20,
+        "artist": "sadra_legendary",
+        "id": 892
     },
     "Finnish State": {
         "rarity": 20,
@@ -986,7 +996,7 @@
     },
     "United Kingdom of Portugal, Brazil, and Algarves": {
         "rarity": 25,
-        "artist": "keldoidotec",
+        "artist": "shellfish72",
         "id": 679
     },
     "Dacia": {
@@ -1026,7 +1036,7 @@
     },
     "Roanoke Colony": {
         "rarity": 27,
-        "artist": "dark3nd",
+        "artist": "ethan_heathcliff",
         "id": 297
     },
     "Akkadian Empire": {
@@ -1786,7 +1796,7 @@
     },
     "Hawaiian Kingdom": {
         "rarity": 52,
-        "artist": "dotrer666_lhentsi",
+        "artist": "akirasoku_",
         "id": 698
     },
     "Republic of Cuba": {
@@ -1873,6 +1883,11 @@
         "rarity": 55,
         "artist": "dark3nd",
         "id": 59
+    },
+    "Spanish Louisiana": {
+        "rarity": 55,
+        "artist": "average_countryballs_fan",
+        "id": 891
     },
     "Western Roman Empire": {
         "rarity": 55,
@@ -2159,6 +2174,11 @@
         "artist": "average_countryballs_fan",
         "id": 635
     },
+    "Spanish Armada": {
+        "rarity": 70,
+        "artist": "lilhector_",
+        "id": 893
+    },
     "Alash Autonomy": {
         "rarity": 71,
         "artist": "dynsic",
@@ -2328,6 +2348,11 @@
         "rarity": 90,
         "artist": "carloz4567_46650",
         "id": 585
+    },
+    "State of Thessaloniki": {
+        "rarity": 90,
+        "artist": "lordaxolotl7",
+        "id": 894
     },
     "United Fruit Company": {
         "rarity": 90,
@@ -2589,6 +2614,11 @@
         "artist": "fordcraft",
         "id": 882
     },
+    "Italian Protectorate of Albania": {
+        "rarity": 140,
+        "artist": "average_countryballs_fan",
+        "id": 888
+    },
     "Basutoland": {
         "rarity": 141,
         "artist": "aydin_kai22",
@@ -2604,6 +2634,11 @@
         "artist": ".sof_240",
         "id": 662
     },
+    "Peasant Battalions": {
+        "rarity": 145,
+        "artist": "xynthust",
+        "id": 897
+    },
     "Upper Peru": {
         "rarity": 148,
         "artist": "keldoidotec",
@@ -2618,6 +2653,11 @@
         "rarity": 152,
         "artist": "dynsic",
         "id": 599
+    },
+    "Nazi Occupied Denmark": {
+        "rarity": 154,
+        "artist": "lordaxolotl7",
+        "id": 890
     },
     "Territory of Ruanda-Urundi": {
         "rarity": 154,
@@ -2688,6 +2728,11 @@
         "rarity": 162,
         "artist": "littlecat0214",
         "id": 482
+    },
+    "Spanish Guinea": {
+        "rarity": 163,
+        "artist": "bfbrobloxplayz",
+        "id": 889
     },
     "German Alsace-Lorraine": {
         "rarity": 164,
@@ -2894,10 +2939,20 @@
         "artist": "ocean_wav3",
         "id": 431
     },
+    "Cretan State": {
+        "rarity": 190,
+        "artist": "gusta._.vo",
+        "id": 895
+    },
     "Kingdom of Iceland": {
         "rarity": 190,
         "artist": "dudewholikescountryballs",
         "id": 860
+    },
+    "Shanghai International Settlement": {
+        "rarity": 190,
+        "artist": "vafmohs3",
+        "id": 896
     },
     "Tibet": {
         "rarity": 190,
@@ -3108,6 +3163,11 @@
         "rarity": 218,
         "artist": ".lunatuna",
         "id": 131
+    },
+    "British Hawaii": {
+        "rarity": 219,
+        "artist": "ocean_wav3",
+        "id": 898
     },
     "Spanish Haiti": {
         "rarity": 220,
