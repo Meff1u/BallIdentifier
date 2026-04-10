@@ -215,11 +215,7 @@ exports.handler = async (event) => {
                 success: true,
                 name: comparisonResult.country,
                 diff: comparisonResult.diff,
-                extras: {
-                    rarity: dexJson[comparisonResult.country].rarity,
-                    artist: dexJson[comparisonResult.country].artist,
-                    id: dexJson[comparisonResult.country].id
-                }
+                extras: dexJson[comparisonResult.country]
             })
         };
 

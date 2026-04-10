@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1775815081",
+            "changes": [
+                "Updated to new spawn arts in Ballsdex (Argentina, Byzantium, Estonia, Napoleonic France, Union of South Africa)"
+            ]
+        },
+        {
             "timestamp": "1775735473",
             "changes": [
                 "Updated to new HistoryDex balls (British Hawaii, Cretan State, Crown of the Kingdom of Poland, East Prussia, Italian Protectorate of Albania, Nazi Occupied Denmark, Peasant Battalions, Shanghai International Settlement, Spanish Armada, Spanish Guinea, Spanish Louisiana, State of Thessaloniki)",
