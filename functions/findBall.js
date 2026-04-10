@@ -194,6 +194,8 @@ exports.handler = async (event) => {
             };
         }
 
+        const dexJson = JSON.parse(fs.readFileSync(path.join(jsonsPath, `${dex}.json`), 'utf8'));
+
         console.log(`Processing request: url=${url}, dex=${dex}`);
 
         // Step 1: Download image from URL
@@ -213,7 +215,11 @@ exports.handler = async (event) => {
                 success: true,
                 name: comparisonResult.country,
                 diff: comparisonResult.diff,
-                dex: dex
+                extras: {
+                    rarity: dexJson[comparisonResult.country].rarity,
+                    artist: dexJson[comparisonResult.country].artist,
+                    id: dexJson[comparisonResult.country].id
+                }
             })
         };
 
