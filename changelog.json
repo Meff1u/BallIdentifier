@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1775917086",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (First French Republic, Kievan Rus', Saar Protectorate, Somali Democratic Republic, Ukrainian Soviet Socialist Republic)"
+            ]
+        },
+        {
             "timestamp": "1775815081",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Argentina, Byzantium, Estonia, Napoleonic France, Union of South Africa)"
