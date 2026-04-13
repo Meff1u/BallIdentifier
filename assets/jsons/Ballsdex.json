@@ -6,7 +6,8 @@
         "id": 255,
         "common_value": "150",
         "demand": "A",
-        "cc": "250"
+        "cc": "250",
+        "collectors": ["589659533224443904", "884477062830768128"]
     },
     "Reichtangle": {
         "rarity": 1,
@@ -24,7 +25,8 @@
         "id": 156,
         "common_value": "150",
         "cc": "250",
-        "demand": "A"
+        "demand": "A",
+        "collectors": ["589659533224443904", "764003995365670913"]
     },
     "Mongol Empire": {
         "rarity": 4,
@@ -42,7 +44,8 @@
         "id": 176,
         "common_value": "80",
         "cc": "300",
-        "demand": "A"
+        "demand": "A",
+        "collectors": ["1048811364912726088"]
     },
     "Roman Empire": {
         "rarity": 5,
@@ -51,7 +54,8 @@
         "id": 215,
         "common_value": "80",
         "cc": "300",
-        "demand": "A"
+        "demand": "A",
+        "collectors": ["1242479109276176554"]
     },
     "Papal States": {
         "rarity": 7,
@@ -89,7 +93,8 @@
         "id": 154,
         "common_value": "50",
         "cc": "400",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["1279093286606209048"]
     },
     "Han Dynasty": {
         "rarity": 11,
@@ -107,7 +112,8 @@
         "id": 430,
         "common_value": "40",
         "cc": "500",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["761662821704007722", "841190405868748830"]
     },
     "Akkadian Empire": {
         "rarity": 13,
@@ -147,7 +153,7 @@
         "common_value": "35",
         "cc": "550",
         "demand": "C",
-        "collectors": ["334411435633541121", "696616562391515168"]
+        "collectors": ["334411435633541121", "696616562391515168", "865639893791145994"]
     },
     "Republic of China": {
         "rarity": 14,
@@ -157,7 +163,7 @@
         "common_value": "35",
         "cc": "550",
         "demand": "C",
-        "collectors": ["334411435633541121", "696616562391515168"]
+        "collectors": ["334411435633541121", "696616562391515168", "1087972330162110485"]
     },
     "Soviet Union": {
         "rarity": 14,
@@ -177,7 +183,7 @@
         "common_value": "35",
         "cc": "550",
         "demand": "A",
-        "collectors": ["334411435633541121", "696616562391515168"]
+        "collectors": ["334411435633541121", "696616562391515168", "1396540448989904926"]
     },
     "United States": {
         "rarity": 14,
@@ -187,7 +193,7 @@
         "common_value": "35",
         "cc": "550",
         "demand": "S",
-        "collectors": ["334411435633541121", "696616562391515168", "839560939237277697"]
+        "collectors": ["334411435633541121", "696616562391515168", "839560939237277697", "804340620873302036"]
     },
     "Vatican": {
         "rarity": 21,
@@ -261,7 +267,8 @@
         "id": 533,
         "common_value": "25",
         "cc": "750",
-        "demand": "A"
+        "demand": "A",
+        "collectors": ["1008613639579775016", "1351066685817360485"]
     },
     "India": {
         "rarity": 29,
@@ -307,7 +314,8 @@
         "id": 189,
         "common_value": "20",
         "cc": "800",
-        "demand": "A"
+        "demand": "A",
+        "collectors": ["1396540448989904926", "640234556343058442", "1175344003265331221", "1275677960959168543"]
     },
     "Ottoman Empire": {
         "rarity": 30,
@@ -316,7 +324,8 @@
         "id": 157,
         "common_value": "20",
         "cc": "800",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["417286033487429633", "640234556343058442"]
     },
     "Phoenicia": {
         "rarity": 35,
@@ -325,7 +334,8 @@
         "id": 544,
         "common_value": "18",
         "cc": "850",
-        "demand": "A"
+        "demand": "A",
+        "collectors": ["1094973531223248969"]
     },
     "BRICS": {
         "rarity": 36,
@@ -379,7 +389,8 @@
         "id": 494,
         "common_value": "12",
         "cc": "950",
-        "demand": "A"
+        "demand": "A",
+        "collectors": ["543424976292675604"]
     },
     "Achaemenid Empire": {
         "rarity": 42,
@@ -424,7 +435,8 @@
         "id": 542,
         "common_value": "9",
         "cc": "1,050",
-        "demand": "A"
+        "demand": "A",
+        "collectors": ["804340620873302036"]
     },
     "Pakistan": {
         "rarity": 47,
@@ -451,7 +463,8 @@
         "id": 199,
         "common_value": "8",
         "cc": "1,100",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["1008613639579775016"]
     },
     "Brazil": {
         "rarity": 49,
@@ -514,7 +527,8 @@
         "id": 209,
         "common_value": "7",
         "cc": "1,150",
-        "demand": "C"
+        "demand": "C",
+        "collectors": ["1351066685817360485"]
     },
     "Italy": {
         "rarity": 55,
@@ -615,7 +629,8 @@
         "id": 488,
         "common_value": "6",
         "cc": "1,350",
-        "demand": "C"
+        "demand": "C",
+        "collectors": ["986398841144233988"]
     },
     "African Union": {
         "rarity": 68,
@@ -669,7 +684,8 @@
         "id": 16,
         "common_value": "6",
         "cc": "1,400",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["1132535280151298110"]
     },
     "Kingdom of Hungary": {
         "rarity": 68,
@@ -724,7 +740,8 @@
         "id": 241,
         "common_value": "4",
         "cc": "1,500",
-        "demand": "A"
+        "demand": "A",
+        "collectors": ["1279093286606209048"]
     },
     "Israel": {
         "rarity": 78,
@@ -780,7 +797,8 @@
         "id": 171,
         "common_value": "4",
         "cc": "1,600",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["1236663075382497292"]
     },
     "Ming Dynasty": {
         "rarity": 85,
@@ -789,7 +807,8 @@
         "id": 439,
         "common_value": "4",
         "cc": "1,600",
-        "demand": "C"
+        "demand": "C",
+        "collectors": ["543424976292675604"]
     },
     "Saudi Arabia": {
         "rarity": 85,
@@ -861,7 +880,8 @@
         "id": 24,
         "common_value": "4",
         "cc": "1,800",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["433270158912389130", "804340620873302036"]
     },
     "Kingdom of Two Sicilies": {
         "rarity": 94,
@@ -1044,7 +1064,8 @@
         "id": 268,
         "common_value": "3",
         "cc": "2,250",
-        "demand": "E"
+        "demand": "E",
+        "collectors": ["1008613639579775016"]
     },
     "NATO": {
         "rarity": 111,
@@ -1110,7 +1131,8 @@
         "id": 212,
         "common_value": "3",
         "cc": "2,250",
-        "demand": "D"
+        "demand": "D",
+        "collectors": ["1104510079769780317"]
     },
     "Argentine Confederation": {
         "rarity": 122,
@@ -1147,7 +1169,8 @@
         "id": 526,
         "common_value": "2",
         "cc": "2,350",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["944033779041853460"]
     },
     "Kingdom of Hawaii": {
         "rarity": 125,
@@ -1230,7 +1253,8 @@
         "id": 45,
         "common_value": "2",
         "cc": "2,500",
-        "demand": "E"
+        "demand": "E",
+        "collectors": ["1314335616581763117"]
     },
     "Czechia": {
         "rarity": 131,
@@ -1239,7 +1263,8 @@
         "id": 42,
         "common_value": "2",
         "cc": "2,500",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["841190405868748830"]
     },
     "Iraq": {
         "rarity": 131,
@@ -1257,7 +1282,8 @@
         "id": 49,
         "common_value": "2",
         "cc": "2,500",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["865639893791145994"]
     },
     "Mexico": {
         "rarity": 131,
@@ -1285,7 +1311,8 @@
         "id": 38,
         "common_value": "2",
         "cc": "2,500",
-        "demand": "A"
+        "demand": "A",
+        "collectors": ["1218307572818514092"]
     },
     "Nigeria": {
         "rarity": 131,
@@ -1303,7 +1330,8 @@
         "id": 34,
         "common_value": "2",
         "cc": "2,500",
-        "demand": "A"
+        "demand": "A",
+        "collectors": ["825507497334538301"]
     },
     "Peru": {
         "rarity": 131,
@@ -1331,7 +1359,8 @@
         "id": 50,
         "common_value": "2",
         "cc": "2,500",
-        "demand": "A"
+        "demand": "A",
+        "collectors": ["1248960261021368341"]
     },
     "Prussia": {
         "rarity": 131,
@@ -1512,7 +1541,8 @@
         "id": 266,
         "common_value": "1.5",
         "cc": "2,800",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["986398841144233988"]
     },
     "Nauru": {
         "rarity": 160,
@@ -1660,7 +1690,8 @@
         "id": 71,
         "common_value": "1",
         "cc": "3,100",
-        "demand": "A"
+        "demand": "A",
+        "collectors": ["914768686366199829"]
     },
     "Bolivia": {
         "rarity": 176,
@@ -1862,7 +1893,8 @@
         "id": 82,
         "common_value": "1",
         "cc": "3,100",
-        "demand": "C"
+        "demand": "C",
+        "collectors": ["1483916465592598590"]
     },
     "San Marino": {
         "rarity": 176,
@@ -2045,7 +2077,8 @@
         "id": 342,
         "common_value": "1",
         "cc": "3,350",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["804340620873302036"]
     },
     "Tibet": {
         "rarity": 217,
@@ -2201,7 +2234,8 @@
         "id": 92,
         "common_value": "1",
         "cc": "3,650",
-        "demand": "C"
+        "demand": "C",
+        "collectors": ["802153400732352550"]
     },
     "Congo Free State": {
         "rarity": 237,
@@ -2275,7 +2309,8 @@
         "id": 101,
         "common_value": "1",
         "cc": "3,650",
-        "demand": "S"
+        "demand": "S",
+        "collectors": ["804340620873302036"]
     },
     "Kyrgyzstan": {
         "rarity": 237,
@@ -2357,7 +2392,8 @@
         "id": 91,
         "common_value": "1",
         "cc": "3,650",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["1367577234046587003"]
     },
     "Togo": {
         "rarity": 237,
@@ -2394,7 +2430,8 @@
         "id": 94,
         "common_value": "1",
         "cc": "3,650",
-        "demand": "E"
+        "demand": "E",
+        "collectors": ["1008613639579775016"]
     },
     "Zimbabwe": {
         "rarity": 237,
@@ -2912,7 +2949,8 @@
         "id": 364,
         "common_value": "1",
         "cc": "4,050",
-        "demand": "F"
+        "demand": "F",
+        "collectors": ["1279093286606209048"]
     },
     "Palau": {
         "rarity": 315,
@@ -3022,7 +3060,8 @@
         "id": 141,
         "common_value": "1",
         "cc": "4,200",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["1008613639579775016"]
     },
     "Comoros": {
         "rarity": 324,
@@ -3255,7 +3294,8 @@
         "id": 149,
         "common_value": "1",
         "cc": "4,200",
-        "demand": "D"
+        "demand": "D",
+        "collectors": ["1459332843116302558"]
     },
     "Suriname": {
         "rarity": 324,
@@ -3273,7 +3313,8 @@
         "id": 337,
         "common_value": "1",
         "cc": "4,200",
-        "demand": "E"
+        "demand": "E",
+        "collectors": ["884477062830768128"]
     },
     "Dahomey": {
         "rarity": 357,
