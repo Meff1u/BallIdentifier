@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1776079381",
+            "changes": [
+                "Updated to new HistoryDex ball (Realm of Julius Nepos)",
+                "Updated to new spawn arts in HistoryDex (Ancient Egypt, Weimar Republic)"
+            ]
+        },
+        {
             "timestamp": "1775917086",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (First French Republic, Kievan Rus', Saar Protectorate, Somali Democratic Republic, Ukrainian Soviet Socialist Republic)"

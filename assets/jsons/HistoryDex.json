@@ -201,7 +201,7 @@
     },
     "Ancient Egypt": {
         "rarity": 7,
-        "artist": "kobersv2",
+        "artist": "akirasoku_",
         "id": 167
     },
     "Inca Empire": {
@@ -1061,7 +1061,7 @@
     },
     "Weimar Republic": {
         "rarity": 28,
-        "artist": "dem1111",
+        "artist": "hortaas",
         "id": 441
     },
     "West Francia": {
@@ -2533,6 +2533,11 @@
         "rarity": 120,
         "artist": "unfunnichez_",
         "id": 469
+    },
+    "Realm of Julius Nepos": {
+        "rarity": 120,
+        "artist": "cherriichez_",
+        "id": 900
     },
     "Chechen Republic of Ichkeria": {
         "rarity": 121,
