@@ -3,2148 +3,3223 @@
         "rarity": 1,
         "artist": "Cattitan",
         "wave": 5,
-        "id": 255
+        "id": 255,
+        "common_value": "150",
+        "demand": "A",
+        "cc": "250"
     },
     "Reichtangle": {
         "rarity": 1,
         "artist": "✠ ᴀᴜsᴛʀɪᴀ-ʜᴜɴɢᴀʀʏ ✠#7539",
         "wave": 2,
-        "id": 153
+        "id": 153,
+        "common_value": "150",
+        "cc": "250",
+        "demand": "B"
     },
     "Russian Empire": {
         "rarity": 1,
         "artist": "_finland_",
         "wave": 2,
-        "id": 156
+        "id": 156,
+        "common_value": "150",
+        "cc": "250",
+        "demand": "A"
     },
     "Mongol Empire": {
         "rarity": 4,
         "artist": "Cubic",
         "wave": 6,
-        "id": 449
+        "id": 449,
+        "common_value": "120",
+        "cc": "300",
+        "demand": "A"
     },
     "Kalmar Union": {
         "rarity": 5,
         "artist": "alsomarty",
         "wave": 3,
-        "id": 176
+        "id": 176,
+        "common_value": "80",
+        "cc": "300",
+        "demand": "A"
     },
     "Roman Empire": {
         "rarity": 5,
         "artist": "froggo.8174",
         "wave": 4,
-        "id": 215
+        "id": 215,
+        "common_value": "80",
+        "cc": "300",
+        "demand": "A"
     },
     "Papal States": {
         "rarity": 7,
         "artist": "lucas",
         "wave": 7,
-        "id": 490
+        "id": 490,
+        "common_value": "70",
+        "cc": "350",
+        "demand": "A"
     },
     "Polish-Lithuanian Commonwealth": {
         "rarity": 7,
         "artist": "kaio.shin",
         "wave": 6,
-        "id": 443
+        "id": 443,
+        "common_value": "70",
+        "cc": "350",
+        "demand": "A"
     },
     "Qin Dynasty": {
         "rarity": 9,
         "artist": "chewytapioca",
         "wave": 4,
-        "id": 211
+        "id": 211,
+        "common_value": "60",
+        "cc": "400",
+        "demand": "B"
     },
     "German Empire": {
         "rarity": 10,
         "artist": "tubula",
         "wave": 2,
-        "id": 154
+        "id": 154,
+        "common_value": "50",
+        "cc": "400",
+        "demand": "B"
     },
     "Han Dynasty": {
         "rarity": 11,
         "artist": "finland",
         "wave": 8,
-        "id": 546
+        "id": 546,
+        "common_value": "45",
+        "cc": "450",
+        "demand": "A"
     },
     "Holy Roman Empire": {
         "rarity": 12,
         "artist": "Cattitan",
         "wave": 6,
-        "id": 430
+        "id": 430,
+        "common_value": "40",
+        "cc": "500",
+        "demand": "B"
     },
     "Akkadian Empire": {
         "rarity": 13,
         "artist": "totally_a_simp",
         "wave": 8,
-        "id": 545
+        "id": 545,
+        "common_value": "40",
+        "cc": "500",
+        "demand": "B"
     },
     "Austria-Hungary": {
         "rarity": 14,
         "artist": "ausserhungrey",
         "wave": 2,
-        "id": 155
+        "id": 155,
+        "common_value": "35",
+        "cc": "550",
+        "demand": "B"
     },
     "Hunnic Empire": {
         "rarity": 14,
         "artist": "my.name.is.angelia",
         "wave": 4,
-        "id": 202
+        "id": 202,
+        "common_value": "35",
+        "cc": "550",
+        "demand": "C"
     },
     "Japanese Empire": {
         "rarity": 14,
         "artist": "notshad0w",
         "wave": 5,
-        "id": 257
+        "id": 257,
+        "common_value": "35",
+        "cc": "550",
+        "demand": "C"
     },
     "Republic of China": {
         "rarity": 14,
         "artist": "notshad0w",
         "wave": 5,
-        "id": 256
+        "id": 256,
+        "common_value": "35",
+        "cc": "550",
+        "demand": "C"
     },
     "Soviet Union": {
         "rarity": 14,
         "artist": "_bredd_",
         "wave": 3,
-        "id": 187
+        "id": 187,
+        "common_value": "35",
+        "cc": "550",
+        "demand": "A"
     },
     "Tokugawa Shogunate": {
         "rarity": 14,
         "artist": ".wken",
         "wave": 7,
-        "id": 496
+        "id": 496,
+        "common_value": "35",
+        "cc": "550",
+        "demand": "A"
     },
     "United States": {
         "rarity": 14,
         "artist": "Abiotic & Froggo",
         "wave": 1,
-        "id": 6
+        "id": 6,
+        "common_value": "35",
+        "cc": "550",
+        "demand": "S"
     },
     "Vatican": {
         "rarity": 21,
         "artist": ".wken",
         "wave": 2,
-        "id": 167
+        "id": 167,
+        "common_value": "25",
+        "cc": "600",
+        "demand": "B"
     },
     "Republic of Texas": {
         "rarity": 22,
         "artist": "ausser hungrey",
         "wave": 7,
-        "id": 493
+        "id": 493,
+        "common_value": "25",
+        "cc": "600",
+        "demand": "A"
     },
     "Russia": {
         "rarity": 23,
         "artist": "27bblack6",
         "wave": 1,
-        "id": 2
+        "id": 2,
+        "common_value": "25",
+        "cc": "650",
+        "demand": "A"
     },
     "Gupta Empire": {
         "rarity": 24,
         "artist": "topwanted_",
         "wave": 8,
-        "id": 536
+        "id": 536,
+        "common_value": "25",
+        "cc": "700",
+        "demand": "A"
     },
     "China": {
         "rarity": 25,
         "artist": "chewytapioca",
         "wave": 1,
-        "id": 3
+        "id": 3,
+        "common_value": "25",
+        "cc": "700",
+        "demand": "A"
     },
     "Austrian Empire": {
         "rarity": 26,
         "artist": "tubula",
         "wave": 6,
-        "id": 425
+        "id": 425,
+        "common_value": "25",
+        "cc": "750",
+        "demand": "B"
     },
     "Joseon": {
         "rarity": 26,
         "artist": "bfbrobloxplayz",
         "wave": 7,
-        "id": 499
+        "id": 499,
+        "common_value": "25",
+        "cc": "750",
+        "demand": "A"
     },
     "Ancient Troy": {
         "rarity": 28,
         "artist": "adam.kw",
         "wave": 8,
-        "id": 533
+        "id": 533,
+        "common_value": "25",
+        "cc": "750",
+        "demand": "A"
     },
     "India": {
         "rarity": 29,
         "artist": "screegif",
         "wave": 1,
-        "id": 4
+        "id": 4,
+        "common_value": "25",
+        "cc": "750",
+        "demand": "C"
     },
     "Ancient Greece": {
         "rarity": 30,
         "artist": "tubula",
         "wave": 4,
-        "id": 204
+        "id": 204,
+        "common_value": "20",
+        "cc": "800",
+        "demand": "A"
     },
     "Japan": {
         "rarity": 30,
         "artist": "falsesurrender.",
         "wave": 1,
-        "id": 5
+        "id": 5,
+        "common_value": "20",
+        "cc": "800",
+        "demand": "S"
     },
     "Korea": {
         "rarity": 30,
         "artist": "._themagicalflame_.",
         "wave": 3,
-        "id": 182
+        "id": 182,
+        "common_value": "20",
+        "cc": "800",
+        "demand": "A"
     },
     "Napoleonic France": {
         "rarity": 30,
         "artist": "27bblack6",
         "wave": 3,
-        "id": 189
+        "id": 189,
+        "common_value": "20",
+        "cc": "800",
+        "demand": "A"
     },
     "Ottoman Empire": {
         "rarity": 30,
         "artist": "fadewon",
         "wave": 2,
-        "id": 157
+        "id": 157,
+        "common_value": "20",
+        "cc": "800",
+        "demand": "B"
     },
     "Phoenicia": {
         "rarity": 35,
         "artist": "Arga",
         "wave": 8,
-        "id": 544
+        "id": 544,
+        "common_value": "18",
+        "cc": "850",
+        "demand": "A"
     },
     "BRICS": {
         "rarity": 36,
         "artist": "angelia4",
         "wave": 7.1,
-        "id": 521
+        "id": 521,
+        "common_value": "15",
+        "cc": "850",
+        "demand": "A"
     },
     "Republic of Venice": {
         "rarity": 36,
         "artist": "Froggo",
         "wave": 6,
-        "id": 445
+        "id": 445,
+        "common_value": "15",
+        "cc": "850",
+        "demand": "A"
     },
     "South Korea": {
         "rarity": 36,
         "artist": "chewytapioca",
         "wave": 1,
-        "id": 7
+        "id": 7,
+        "common_value": "15",
+        "cc": "850",
+        "demand": "B"
     },
     "France": {
         "rarity": 39,
         "artist": "atlanta1996",
         "wave": 1,
-        "id": 8
+        "id": 8,
+        "common_value": "12",
+        "cc": "950",
+        "demand": "A"
     },
     "Spanish Empire": {
         "rarity": 39,
         "artist": ".wken",
         "wave": 3,
-        "id": 194
+        "id": 194,
+        "common_value": "12",
+        "cc": "950",
+        "demand": "B"
     },
     "United Kingdoms of Sweden and Norway": {
         "rarity": 39,
         "artist": "Cattitan",
         "wave": 7,
-        "id": 494
+        "id": 494,
+        "common_value": "12",
+        "cc": "950",
+        "demand": "A"
     },
     "Achaemenid Empire": {
         "rarity": 42,
         "artist": "Yomers",
         "wave": 4,
-        "id": 203
+        "id": 203,
+        "common_value": "10",
+        "cc": "1,000",
+        "demand": "C"
     },
     "Macedon": {
         "rarity": 42,
         "artist": "lotzer",
         "wave": 4,
-        "id": 214
+        "id": 214,
+        "common_value": "10",
+        "cc": "1,000",
+        "demand": "C"
     },
     "United Kingdom": {
         "rarity": 42,
         "artist": "tatarigamik",
         "wave": 1,
-        "id": 9
+        "id": 9,
+        "common_value": "10",
+        "cc": "1,000",
+        "demand": "A"
     },
     "Empire of Brazil": {
         "rarity": 45,
         "artist": "no_name_guy_1313",
         "wave": 7,
-        "id": 479
+        "id": 479,
+        "common_value": "9",
+        "cc": "1,000",
+        "demand": "B"
     },
     "Kingdom of Leinster": {
         "rarity": 46,
         "artist": "lucas",
         "wave": 8,
-        "id": 542
+        "id": 542,
+        "common_value": "9",
+        "cc": "1,050",
+        "demand": "A"
     },
     "Pakistan": {
         "rarity": 47,
         "artist": "monke83",
         "wave": 1,
-        "id": 10
+        "id": 10,
+        "common_value": "9",
+        "cc": "1,050",
+        "demand": "C"
     },
     "Sumer": {
         "rarity": 48,
         "artist": "clar1nettist",
         "wave": 8,
-        "id": 535
+        "id": 535,
+        "common_value": "9",
+        "cc": "1,050",
+        "demand": "B"
     },
     "Ancient Egypt": {
         "rarity": 49,
         "artist": "freezysupra",
         "wave": 4,
-        "id": 199
+        "id": 199,
+        "common_value": "8",
+        "cc": "1,100",
+        "demand": "B"
     },
     "Brazil": {
         "rarity": 49,
         "artist": "lee.lil.kitten.thing",
         "wave": 1,
-        "id": 11
+        "id": 11,
+        "common_value": "8",
+        "cc": "1,100",
+        "demand": "A"
     },
     "Byzantium": {
         "rarity": 49,
         "artist": ".lunatuna",
         "wave": 3,
-        "id": 188
+        "id": 188,
+        "common_value": "8",
+        "cc": "1,100",
+        "demand": "B"
     },
     "Greenland": {
         "rarity": 49,
         "artist": "poooooooooof",
         "wave": 3,
-        "id": 174
+        "id": 174,
+        "common_value": "8",
+        "cc": "1,100",
+        "demand": "C"
     },
     "Portuguese Empire": {
         "rarity": 49,
         "artist": "fadewon",
         "wave": 5,
-        "id": 286
+        "id": 286,
+        "common_value": "8",
+        "cc": "1,100",
+        "demand": "B"
     },
     "Qing Dynasty": {
         "rarity": 49,
         "artist": "Miron",
         "wave": 2,
-        "id": 161
+        "id": 161,
+        "common_value": "8",
+        "cc": "1,100",
+        "demand": "D"
     },
     "British Raj": {
         "rarity": 55,
         "artist": "kapukvati",
         "wave": 2,
-        "id": 158
+        "id": 158,
+        "common_value": "7",
+        "cc": "1,150",
+        "demand": "C"
     },
     "Carthage": {
         "rarity": 55,
         "artist": "kapukvati",
         "wave": 4,
-        "id": 209
+        "id": 209,
+        "common_value": "7",
+        "cc": "1,150",
+        "demand": "C"
     },
     "Italy": {
         "rarity": 55,
         "artist": "obunga1384",
         "wave": 1,
-        "id": 12
+        "id": 12,
+        "common_value": "7",
+        "cc": "1,150",
+        "demand": "A"
     },
     "Kingdom of Italy": {
         "rarity": 55,
         "artist": "Franci#5323",
         "wave": 5,
-        "id": 254
+        "id": 254,
+        "common_value": "7",
+        "cc": "1,150",
+        "demand": "D"
     },
     "Third French Republic": {
         "rarity": 55,
         "artist": "fakedwebb",
         "wave": 7,
-        "id": 495
+        "id": 495,
+        "common_value": "7",
+        "cc": "1,150",
+        "demand": "C"
     },
     "Egypt": {
         "rarity": 60,
         "artist": "miron",
         "wave": 1,
-        "id": 13
+        "id": 13,
+        "common_value": "6",
+        "cc": "1,200",
+        "demand": "B"
     },
     "Russian Soviet Federative Socialist Republic": {
         "rarity": 60,
         "artist": "itsthereallanny",
         "wave": 5,
-        "id": 262
+        "id": 262,
+        "common_value": "6",
+        "cc": "1,200",
+        "demand": "C"
     },
     "Turkey": {
         "rarity": 62,
         "artist": "_finland_",
         "wave": 1,
-        "id": 14
+        "id": 14,
+        "common_value": "6",
+        "cc": "1,250",
+        "demand": "S"
     },
     "French Empire": {
         "rarity": 63,
         "artist": "tubula",
         "wave": 6,
-        "id": 427
+        "id": 427,
+        "common_value": "6",
+        "cc": "1,300",
+        "demand": "D"
     },
     "Iran": {
         "rarity": 64,
         "artist": "guadeterre",
         "wave": 1,
-        "id": 15
+        "id": 15,
+        "common_value": "6",
+        "cc": "1,350",
+        "demand": "B"
     },
     "Kingdom of Greece": {
         "rarity": 64,
         "artist": "Galaxyotype & Cubic",
         "wave": 2,
-        "id": 162
+        "id": 162,
+        "common_value": "6",
+        "cc": "1,350",
+        "demand": "C"
     },
     "Konbaung Empire": {
         "rarity": 64,
         "artist": "bfbrobloxplayz",
         "wave": 7,
-        "id": 486
+        "id": 486,
+        "common_value": "6",
+        "cc": "1,350",
+        "demand": "C"
     },
     "North German Confederation": {
         "rarity": 64,
         "artist": "flame",
         "wave": 7,
-        "id": 488
+        "id": 488,
+        "common_value": "6",
+        "cc": "1,350",
+        "demand": "C"
     },
     "African Union": {
         "rarity": 68,
         "artist": "Cubic",
         "wave": 3,
-        "id": 195
+        "id": 195,
+        "common_value": "6",
+        "cc": "1,400",
+        "demand": "C"
     },
     "Arab League": {
         "rarity": 68,
         "artist": "no_name_guy_1313",
         "wave": 5,
-        "id": 275
+        "id": 275,
+        "common_value": "6",
+        "cc": "1,400",
+        "demand": "E"
     },
     "Confederate States": {
         "rarity": 68,
         "artist": "cattitan",
         "wave": 2,
-        "id": 160
+        "id": 160,
+        "common_value": "6",
+        "cc": "1,400",
+        "demand": "C"
     },
     "Gaul": {
         "rarity": 68,
         "artist": "adam.kw",
         "wave": 4,
-        "id": 206
+        "id": 206,
+        "common_value": "6",
+        "cc": "1,400",
+        "demand": "D"
     },
     "Germania": {
         "rarity": 68,
         "artist": "angelia4",
         "wave": 4,
-        "id": 210
+        "id": 210,
+        "common_value": "6",
+        "cc": "1,400",
+        "demand": "D"
     },
     "Indonesia": {
         "rarity": 68,
         "artist": "fireandvoid",
         "wave": 1,
-        "id": 16
+        "id": 16,
+        "common_value": "6",
+        "cc": "1,400",
+        "demand": "B"
     },
     "Kingdom of Hungary": {
         "rarity": 68,
         "artist": "falsesurrender.",
         "wave": 6,
-        "id": 434
+        "id": 434,
+        "common_value": "6",
+        "cc": "1,400",
+        "demand": "C"
     },
     "Mayan Empire": {
         "rarity": 68,
         "artist": "_papster_",
         "wave": 4,
-        "id": 208
+        "id": 208,
+        "common_value": "6",
+        "cc": "1,400",
+        "demand": "C"
     },
     "Yugoslavia": {
         "rarity": 68,
         "artist": "Cattitan",
         "wave": 3,
-        "id": 177
+        "id": 177,
+        "common_value": "6",
+        "cc": "1,400",
+        "demand": "B"
     },
     "Germany": {
         "rarity": 77,
         "artist": "chewytapioca",
         "wave": 1,
-        "id": 17
+        "id": 17,
+        "common_value": "5",
+        "cc": "1,450",
+        "demand": "A"
     },
     "Australia": {
         "rarity": 78,
         "artist": "edible_penguins",
         "wave": 1,
-        "id": 18
+        "id": 18,
+        "common_value": "4",
+        "cc": "1,500",
+        "demand": "A"
     },
     "Hong Kong": {
         "rarity": 78,
         "artist": "cogito.ergo.sum_.",
         "wave": 5.1,
-        "id": 241
+        "id": 241,
+        "common_value": "4",
+        "cc": "1,500",
+        "demand": "A"
     },
     "Israel": {
         "rarity": 78,
         "artist": "joelukx",
         "wave": 1,
-        "id": 19
+        "id": 19,
+        "common_value": "4",
+        "cc": "1,500",
+        "demand": "E"
     },
     "Xiongnu": {
         "rarity": 78,
         "artist": "Cubic",
         "wave": 4,
-        "id": 201
+        "id": 201,
+        "common_value": "4",
+        "cc": "1,500",
+        "demand": "B"
     },
     "Swedish Empire": {
         "rarity": 82,
         "artist": "thatoneseller_",
         "wave": 6,
-        "id": 447
+        "id": 447,
+        "common_value": "4",
+        "cc": "1,550",
+        "demand": "B"
     },
     "Spain": {
         "rarity": 83,
         "artist": "Sunlight",
         "wave": 1,
-        "id": 20
+        "id": 20,
+        "common_value": "4",
+        "cc": "1,550",
+        "demand": "C"
     },
     "Olmecs": {
         "rarity": 84,
         "artist": "gmo",
         "wave": 8,
-        "id": 531
+        "id": 531,
+        "common_value": "4",
+        "cc": "1,600",
+        "demand": "A"
     },
     "Antarctica": {
         "rarity": 85,
         "artist": "lucas",
         "wave": 3,
-        "id": 171
+        "id": 171,
+        "common_value": "4",
+        "cc": "1,600",
+        "demand": "B"
     },
     "Ming Dynasty": {
         "rarity": 85,
         "artist": "Cubic",
         "wave": 6,
-        "id": 439
+        "id": 439,
+        "common_value": "4",
+        "cc": "1,600",
+        "demand": "C"
     },
     "Saudi Arabia": {
         "rarity": 85,
         "artist": "froggo",
         "wave": 1,
-        "id": 21
+        "id": 21,
+        "common_value": "4",
+        "cc": "1,600",
+        "demand": "B"
     },
     "Xia Dynasty": {
         "rarity": 88,
         "artist": "arneslotmachine",
         "wave": 8,
-        "id": 532
+        "id": 532,
+        "common_value": "4",
+        "cc": "1,650",
+        "demand": "B"
     },
     "Franks": {
         "rarity": 89,
         "artist": "_finland_",
         "wave": 4,
-        "id": 205
+        "id": 205,
+        "common_value": "4",
+        "cc": "1,650",
+        "demand": "D"
     },
     "League of Nations": {
         "rarity": 89,
         "artist": "cogito.ergo.sum_.",
         "wave": 2,
-        "id": 168
+        "id": 168,
+        "common_value": "4",
+        "cc": "1,650",
+        "demand": "C"
     },
     "Monaco": {
         "rarity": 89,
         "artist": "Froggo",
         "wave": 4.1,
-        "id": 229
+        "id": 229,
+        "common_value": "4",
+        "cc": "1,650",
+        "demand": "D"
     },
     "Union of South Africa": {
         "rarity": 89,
         "artist": "bfbrobloxplayz",
         "wave": 2,
-        "id": 159
+        "id": 159,
+        "common_value": "4",
+        "cc": "1,650",
+        "demand": "D"
     },
     "Ukraine": {
         "rarity": 93,
         "artist": "kapukvati",
         "wave": 1,
-        "id": 23
+        "id": 23,
+        "common_value": "4",
+        "cc": "1,700",
+        "demand": "B"
     },
     "Canada": {
         "rarity": 94,
         "artist": "pineapple.ca",
         "wave": 1,
-        "id": 24
+        "id": 24,
+        "common_value": "4",
+        "cc": "1,800",
+        "demand": "B"
     },
     "Kingdom of Two Sicilies": {
         "rarity": 94,
         "artist": "tringle",
         "wave": 7,
-        "id": 497
+        "id": 497,
+        "common_value": "4",
+        "cc": "1,800",
+        "demand": "D"
     },
     "Kingdom of Brandenburg": {
         "rarity": 96,
         "artist": "der_union",
         "wave": 6,
-        "id": 433
+        "id": 433,
+        "common_value": "4",
+        "cc": "1,850",
+        "demand": "D"
     },
     "Kingdom of Ulaid": {
         "rarity": 96,
         "artist": "kapukvati",
         "wave": 8.1,
-        "id": 550
+        "id": 550,
+        "common_value": "4",
+        "cc": "1,850",
+        "demand": "C"
     },
     "Poland": {
         "rarity": 96,
         "artist": "tw20nty4our",
         "wave": 1,
-        "id": 25
+        "id": 25,
+        "common_value": "4",
+        "cc": "1,850",
+        "demand": "S",
+        "collectors": ["334411435633541121", "1032722236483829811", "992367935324684298", "1203677021893296159"]
     },
     "Sweden": {
         "rarity": 99,
         "artist": "waffles.epek",
         "wave": 1,
-        "id": 26
+        "id": 26,
+        "common_value": "4",
+        "cc": "1,900",
+        "demand": "A"
     },
     "Kingdom of Munster": {
         "rarity": 100,
         "artist": "fireforev",
         "wave": 8,
-        "id": 537
+        "id": 537,
+        "common_value": "4",
+        "cc": "1,950",
+        "demand": "B"
     },
     "Macau": {
         "rarity": 101,
         "artist": "Arty",
         "wave": 5.1,
-        "id": 343
+        "id": 343,
+        "common_value": "4",
+        "cc": "1,950",
+        "demand": "C"
     },
     "Scotland": {
         "rarity": 101,
         "artist": "waffles.epek",
         "wave": 3,
-        "id": 175
+        "id": 175,
+        "common_value": "4",
+        "cc": "1,950",
+        "demand": "C"
     },
     "South Africa": {
         "rarity": 101,
         "artist": "kole",
         "wave": 1,
-        "id": 27
+        "id": 27,
+        "common_value": "4",
+        "cc": "1,950",
+        "demand": "D"
     },
     "Greece": {
         "rarity": 104,
         "artist": "altara",
         "wave": 1,
-        "id": 28
+        "id": 28,
+        "common_value": "3",
+        "cc": "2,000",
+        "demand": "B"
     },
     "Safavid Empire": {
         "rarity": 105,
         "artist": "cattitan",
         "wave": 6,
-        "id": 446
+        "id": 446,
+        "common_value": "3",
+        "cc": "2,050",
+        "demand": "A"
     },
     "Vietnam": {
         "rarity": 105,
         "artist": "altara",
         "wave": 1,
-        "id": 52
+        "id": 52,
+        "common_value": "3",
+        "cc": "2,050",
+        "demand": "C"
     },
     "Kingdom of Connacht": {
         "rarity": 107,
         "artist": "Anii",
         "wave": 8.1,
-        "id": 549
+        "id": 549,
+        "common_value": "3",
+        "cc": "2,100",
+        "demand": "C"
     },
     "Parthian Empire": {
         "rarity": 107,
         "artist": "bfbrobloxplayz",
         "wave": 6,
-        "id": 442
+        "id": 442,
+        "common_value": "3",
+        "cc": "2,100",
+        "demand": "E"
     },
     "Thailand": {
         "rarity": 107,
         "artist": "Miron",
         "wave": 1,
-        "id": 30
+        "id": 30,
+        "common_value": "3",
+        "cc": "2,100",
+        "demand": "D"
     },
     "North Korea": {
         "rarity": 110,
         "artist": "froggo.8174",
         "wave": 1,
-        "id": 31
+        "id": 31,
+        "common_value": "3",
+        "cc": "2,200",
+        "demand": "C"
     },
     "England": {
         "rarity": 111,
         "artist": "ayellowlizard",
         "wave": 5.1,
-        "id": 344
+        "id": 344,
+        "common_value": "3",
+        "cc": "2,250",
+        "demand": "C"
     },
     "European Union": {
         "rarity": 111,
         "artist": "miron",
         "wave": 1,
-        "id": 79
+        "id": 79,
+        "common_value": "3",
+        "cc": "2,250",
+        "demand": "B"
     },
     "Francoist Spain": {
         "rarity": 111,
         "artist": "kiwiwos",
         "wave": 5,
-        "id": 284
+        "id": 284,
+        "common_value": "3",
+        "cc": "2,250",
+        "demand": "F"
     },
     "Manchukuo": {
         "rarity": 111,
         "artist": "joelukx",
         "wave": 5,
-        "id": 268
+        "id": 268,
+        "common_value": "3",
+        "cc": "2,250",
+        "demand": "E"
     },
     "NATO": {
         "rarity": 111,
         "artist": "ayellowlizard",
         "wave": 1,
-        "id": 80
+        "id": 80,
+        "common_value": "3",
+        "cc": "2,250",
+        "demand": "C"
     },
     "Republican Spain": {
         "rarity": 111,
         "artist": "gmo",
         "wave": 5,
-        "id": 283
+        "id": 283,
+        "common_value": "3",
+        "cc": "2,250",
+        "demand": "E"
     },
     "United Arab Republic": {
         "rarity": 111,
         "artist": "tw20nty4our",
         "wave": 5,
-        "id": 274
+        "id": 274,
+        "common_value": "3",
+        "cc": "2,250",
+        "demand": "D"
     },
     "United Nations": {
         "rarity": 111,
         "artist": "verdammt_.",
         "wave": 1,
-        "id": 78
+        "id": 78,
+        "common_value": "3",
+        "cc": "2,250",
+        "demand": "C"
     },
     "Warsaw Pact": {
         "rarity": 111,
         "artist": "alsomarty",
         "wave": 5,
-        "id": 243
+        "id": 243,
+        "common_value": "3",
+        "cc": "2,250",
+        "demand": "C"
     },
     "Weimar Republic": {
         "rarity": 111,
         "artist": "v3rdammt",
         "wave": 5,
-        "id": 267
+        "id": 267,
+        "common_value": "3",
+        "cc": "2,250",
+        "demand": "B"
     },
     "Zhou Dynasty": {
         "rarity": 111,
         "artist": "angelia4",
         "wave": 4,
-        "id": 212
+        "id": 212,
+        "common_value": "3",
+        "cc": "2,250",
+        "demand": "D"
     },
     "Argentine Confederation": {
         "rarity": 122,
         "artist": "ani",
         "wave": 7,
-        "id": 474
+        "id": 474,
+        "common_value": "2",
+        "cc": "2,250",
+        "demand": "E"
     },
     "Armenian Empire": {
         "rarity": 123,
         "artist": "tubula",
         "wave": 8,
-        "id": 539
+        "id": 539,
+        "common_value": "2",
+        "cc": "2,250",
+        "demand": "D"
     },
     "Assyrian Empire": {
         "rarity": 123,
         "artist": "v.xcaniix",
         "wave": 8,
-        "id": 540
+        "id": 540,
+        "common_value": "2",
+        "cc": "2,300",
+        "demand": "C"
     },
     "ASEAN": {
         "rarity": 125,
         "artist": "pineapple",
         "wave": 7.2,
-        "id": 526
+        "id": 526,
+        "common_value": "2",
+        "cc": "2,350",
+        "demand": "B"
     },
     "Kingdom of Hawaii": {
         "rarity": 125,
         "artist": "loading",
         "wave": 7,
-        "id": 484
+        "id": 484,
+        "common_value": "2",
+        "cc": "2,350",
+        "demand": "C"
     },
     "Kingdom of Bali": {
         "rarity": 127,
         "artist": "verd",
         "wave": 7,
-        "id": 482
+        "id": 482,
+        "common_value": "2",
+        "cc": "2,400",
+        "demand": "D"
     },
     "Kingdom of Bora Bora": {
         "rarity": 127,
         "artist": "mill",
         "wave": 7,
-        "id": 483
+        "id": 483,
+        "common_value": "2",
+        "cc": "2,400",
+        "demand": "C"
     },
     "Yuan Dynasty": {
         "rarity": 127,
         "artist": "yomers",
         "wave": 6,
-        "id": 448
+        "id": 448,
+        "common_value": "2",
+        "cc": "2,400",
+        "demand": "E"
     },
     "Bavaria": {
         "rarity": 130,
         "artist": "yomers",
         "wave": 7,
-        "id": 475
+        "id": 475,
+        "common_value": "2",
+        "cc": "2,450",
+        "demand": "C"
     },
     "Algeria": {
         "rarity": 131,
         "artist": "xia",
         "wave": 1,
-        "id": 32
+        "id": 32,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "B"
     },
     "Argentina": {
         "rarity": 131,
         "artist": "al3ph_null",
         "wave": 1,
-        "id": 41
+        "id": 41,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "C"
     },
     "Bangladesh": {
         "rarity": 131,
         "artist": "xzdv",
         "wave": 1,
-        "id": 47
+        "id": 47,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "C"
     },
     "Colombia": {
         "rarity": 131,
         "artist": "tetratomidae",
         "wave": 1,
-        "id": 45
+        "id": 45,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "E"
     },
     "Czechia": {
         "rarity": 131,
         "artist": "alsomarty",
         "wave": 1,
-        "id": 42
+        "id": 42,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "B"
     },
     "Iraq": {
         "rarity": 131,
         "artist": "Cattitan",
         "wave": 1,
-        "id": 35
+        "id": 35,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "D"
     },
     "Malaysia": {
         "rarity": 131,
         "artist": "nebula",
         "wave": 1,
-        "id": 49
+        "id": 49,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "B"
     },
     "Mexico": {
         "rarity": 131,
         "artist": "Sunlight",
         "wave": 1,
-        "id": 44
+        "id": 44,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "B"
     },
     "Myanmar": {
         "rarity": 131,
         "artist": "BFBRblx",
         "wave": 1,
-        "id": 40
+        "id": 40,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "F"
     },
     "Netherlands": {
         "rarity": 131,
         "artist": "kapukvati",
         "wave": 1,
-        "id": 38
+        "id": 38,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "A"
     },
     "Nigeria": {
         "rarity": 131,
         "artist": "Rajan",
         "wave": 1,
-        "id": 36
+        "id": 36,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "D"
     },
     "Norway": {
         "rarity": 131,
         "artist": "finitealtaraa",
         "wave": 1,
-        "id": 34
+        "id": 34,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "A"
     },
     "Peru": {
         "rarity": 131,
         "artist": "lee.lil.kitten.thing",
         "wave": 1,
-        "id": 51
+        "id": 51,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "C"
     },
     "Philippines": {
         "rarity": 131,
         "artist": "v3rdammt",
         "wave": 1,
-        "id": 53
+        "id": 53,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "B"
     },
     "Portugal": {
         "rarity": 131,
         "artist": ".soomlane",
         "wave": 1,
-        "id": 50
+        "id": 50,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "A"
     },
     "Prussia": {
         "rarity": 131,
         "artist": "verdammt_.",
         "wave": 2,
-        "id": 166
+        "id": 166,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "A"
     },
     "Romania": {
         "rarity": 131,
         "artist": "Spom & CanCat",
         "wave": 1,
-        "id": 39
+        "id": 39,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "A"
     },
     "Singapore": {
         "rarity": 131,
         "artist": "maviieawoo",
         "wave": 1,
-        "id": 43
+        "id": 43,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "A"
     },
     "Switzerland": {
         "rarity": 131,
         "artist": "limepostor_102",
         "wave": 1,
-        "id": 33
+        "id": 33,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "A"
     },
     "Syria": {
         "rarity": 131,
         "artist": "angelia4",
         "wave": 1,
-        "id": 48
+        "id": 48,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "D"
     },
     "Tuvalu": {
         "rarity": 131,
         "artist": "Reichy",
         "wave": 4.1,
-        "id": 227
+        "id": 227,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "E"
     },
     "United Arab Emirates": {
         "rarity": 131,
         "artist": "Cubic",
         "wave": 1,
-        "id": 37
+        "id": 37,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "C"
     },
     "Venezuela": {
         "rarity": 131,
         "artist": "Waffles",
         "wave": 1,
-        "id": 46
+        "id": 46,
+        "common_value": "2",
+        "cc": "2,500",
+        "demand": "D"
     },
     "Kingdom of Cao Wei": {
         "rarity": 154,
         "artist": "hecker4223",
         "wave": 8,
-        "id": 541
+        "id": 541,
+        "common_value": "1.5",
+        "cc": "2,550",
+        "demand": "B"
     },
     "Kingdom of Shu Han": {
         "rarity": 154,
         "artist": "no_name_guy_1313",
         "wave": 8,
-        "id": 534
+        "id": 534,
+        "common_value": "1.5",
+        "cc": "2,550",
+        "demand": "C"
     },
     "Kingdom of Sun Wu": {
         "rarity": 154,
         "artist": "ayellowlizard",
         "wave": 8,
-        "id": 543
+        "id": 543,
+        "common_value": "1.5",
+        "cc": "2,550",
+        "demand": "C"
     },
     "Mali Empire": {
         "rarity": 157,
         "artist": ".tommy.froggy",
         "wave": 6,
-        "id": 438
+        "id": 438,
+        "common_value": "1.5",
+        "cc": "2,650",
+        "demand": "F"
     },
     "Ukrainian Soviet Socialist Republic": {
         "rarity": 158,
         "artist": "kapukvati",
         "wave": 5,
-        "id": 277
+        "id": 277,
+        "common_value": "1.5",
+        "cc": "2,700",
+        "demand": "E"
     },
     "Federal Republic of Central America": {
         "rarity": 159,
         "artist": "hara",
         "wave": 7,
-        "id": 480
+        "id": 480,
+        "common_value": "1.5",
+        "cc": "2,750",
+        "demand": "D"
     },
     "Ancient Athens": {
         "rarity": 160,
         "artist": "ized_coffee",
         "wave": 4,
-        "id": 200
+        "id": 200,
+        "common_value": "1.5",
+        "cc": "2,800",
+        "demand": "B"
     },
     "Ancient Sparta": {
         "rarity": 160,
         "artist": "angelia4",
         "wave": 4,
-        "id": 198
+        "id": 198,
+        "common_value": "1.5",
+        "cc": "2,800",
+        "demand": "B"
     },
     "Babylon": {
         "rarity": 160,
         "artist": "kapukvati",
         "wave": 4,
-        "id": 207
+        "id": 207,
+        "common_value": "1.5",
+        "cc": "2,800",
+        "demand": "C"
     },
     "Czechoslovakia": {
         "rarity": 160,
         "artist": "Arty",
         "wave": 5,
-        "id": 258
+        "id": 258,
+        "common_value": "1.5",
+        "cc": "2,800",
+        "demand": "B"
     },
     "Ethiopian Empire": {
         "rarity": 160,
         "artist": "derpxndytoosus",
         "wave": 5,
-        "id": 271
+        "id": 271,
+        "common_value": "1.5",
+        "cc": "2,800",
+        "demand": "F"
     },
     "French Indochina": {
         "rarity": 160,
         "artist": "Epik#0083",
         "wave": 5,
-        "id": 266
+        "id": 266,
+        "common_value": "1.5",
+        "cc": "2,800",
+        "demand": "B"
     },
     "Nauru": {
         "rarity": 160,
         "artist": "notshad0w",
         "wave": 5.1,
-        "id": 334
+        "id": 334,
+        "common_value": "1.5",
+        "cc": "2,800",
+        "demand": "C"
     },
     "Numidia": {
         "rarity": 160,
         "artist": "DerpXndyTooSus#4344",
         "wave": 4,
-        "id": 213
+        "id": 213,
+        "common_value": "1.5",
+        "cc": "2,800",
+        "demand": "C"
     },
     "Quebec": {
         "rarity": 160,
         "artist": "bfbrobloxplayz",
         "wave": 3,
-        "id": 180
+        "id": 180,
+        "common_value": "1.5",
+        "cc": "2,800",
+        "demand": "A"
     },
     "Siam": {
         "rarity": 160,
         "artist": ".soomlane",
         "wave": 2,
-        "id": 164
+        "id": 164,
+        "common_value": "1.5",
+        "cc": "2,800",
+        "demand": "D"
     },
     "South Vietnam": {
         "rarity": 160,
         "artist": "tw20nty4our",
         "wave": 5,
-        "id": 269
+        "id": 269,
+        "common_value": "1.5",
+        "cc": "2,800",
+        "demand": "D"
     },
     "Taiwan": {
         "rarity": 160,
         "artist": "averageuser28",
         "wave": 1,
-        "id": 22
+        "id": 22,
+        "common_value": "1.5",
+        "cc": "2,800",
+        "demand": "S"
     },
     "Wales": {
         "rarity": 160,
         "artist": "_finland_",
         "wave": 5.1,
-        "id": 341
+        "id": 341,
+        "common_value": "1.5",
+        "cc": "2,800",
+        "demand": "B"
     },
     "West Germany": {
         "rarity": 160,
         "artist": "miron",
         "wave": 5,
-        "id": 272
+        "id": 272,
+        "common_value": "1.5",
+        "cc": "2,800",
+        "demand": "D"
     },
     "Kingdom of Egypt": {
         "rarity": 174,
         "artist": "_finland_",
         "wave": 5,
-        "id": 279
+        "id": 279,
+        "common_value": "1",
+        "cc": "2,900",
+        "demand": "B"
     },
     "Mughal Empire": {
         "rarity": 175,
         "artist": "Cubic",
         "wave": 6,
-        "id": 440
+        "id": 440,
+        "common_value": "1",
+        "cc": "2,950",
+        "demand": "C"
     },
     "Angola": {
         "rarity": 176,
         "artist": "kai",
         "wave": 1,
-        "id": 68
+        "id": 68,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "D"
     },
     "Austria": {
         "rarity": 176,
         "artist": "altara",
         "wave": 1,
-        "id": 60
+        "id": 60,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "S"
     },
     "Azerbaijan": {
         "rarity": 176,
         "artist": "poooooooooof",
         "wave": 1,
-        "id": 65
+        "id": 65,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "B"
     },
     "Bahamas": {
         "rarity": 176,
         "artist": "Reichy",
         "wave": 4.1,
-        "id": 236
+        "id": 236,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "A"
     },
     "Belarus": {
         "rarity": 176,
         "artist": "Arty",
         "wave": 1,
-        "id": 54
+        "id": 54,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "C"
     },
     "Belgium": {
         "rarity": 176,
         "artist": "haap_",
         "wave": 1,
-        "id": 71
+        "id": 71,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "A"
     },
     "Bolivia": {
         "rarity": 176,
         "artist": "devykii",
         "wave": 1,
-        "id": 87
+        "id": 87,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "D"
     },
     "Bulgaria": {
         "rarity": 176,
         "artist": "Arty",
         "wave": 1,
-        "id": 69
+        "id": 69,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "A"
     },
     "Chile": {
         "rarity": 176,
         "artist": "Bread",
         "wave": 1,
-        "id": 55
+        "id": 55,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "C"
     },
     "Croatia": {
         "rarity": 176,
         "artist": "falsesurrender.",
         "wave": 1,
-        "id": 64
+        "id": 64,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "B"
     },
     "Cuba": {
         "rarity": 176,
         "artist": "Cubic",
         "wave": 1,
-        "id": 72
+        "id": 72,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "C"
     },
     "Cyprus": {
         "rarity": 176,
         "artist": "engelious",
         "wave": 1,
-        "id": 192
+        "id": 192,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "C"
     },
     "Denmark": {
         "rarity": 176,
         "artist": "pawsicles",
         "wave": 1,
-        "id": 59
+        "id": 59,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "A"
     },
     "DR Congo": {
         "rarity": 176,
         "artist": "_finland_",
         "wave": 1,
-        "id": 81
+        "id": 81,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "D"
     },
     "Ecuador": {
         "rarity": 176,
         "artist": "thisfoo.a",
         "wave": 1,
-        "id": 70
+        "id": 70,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "B"
     },
     "Ethiopia": {
         "rarity": 176,
         "artist": "hecker",
         "wave": 1,
-        "id": 67
+        "id": 67,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "D"
     },
     "Finland": {
         "rarity": 176,
         "artist": "zxe_virage",
         "wave": 1,
-        "id": 61
+        "id": 61,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "S"
     },
     "Hungary": {
         "rarity": 176,
         "artist": "pho.supremacist",
         "wave": 1,
-        "id": 58
+        "id": 58,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "A"
     },
     "Iberian Union": {
         "rarity": 176,
         "artist": "._themagicalflame_.",
         "wave": 6,
-        "id": 431
+        "id": 431,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "C"
     },
     "Jordan": {
         "rarity": 176,
         "artist": "Xia & Cubic",
         "wave": 1,
-        "id": 77
+        "id": 77,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "A"
     },
     "Kazakhstan": {
         "rarity": 176,
         "artist": "verdammt_.",
         "wave": 1,
-        "id": 66
+        "id": 66,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "B"
     },
     "Kenya": {
         "rarity": 176,
         "artist": "nguyengiahuy05112011",
         "wave": 1,
-        "id": 86
+        "id": 86,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "D"
     },
     "Kuwait": {
         "rarity": 176,
         "artist": "fireforev",
         "wave": 1,
-        "id": 73
+        "id": 73,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "B"
     },
     "Libya": {
         "rarity": 176,
         "artist": "alsomarty",
         "wave": 1,
-        "id": 74
+        "id": 74,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "E"
     },
     "Morocco": {
         "rarity": 176,
         "artist": "austriahungary.ch",
         "wave": 1,
-        "id": 57
+        "id": 57,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "C"
     },
     "North Vietnam": {
         "rarity": 176,
         "artist": "tw20nty4our",
         "wave": 5,
-        "id": 261
+        "id": 261,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "D"
     },
     "Oman": {
         "rarity": 176,
         "artist": "Finland",
         "wave": 1,
-        "id": 83
+        "id": 83,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "C"
     },
     "Qatar": {
         "rarity": 176,
         "artist": "hecker",
         "wave": 1,
-        "id": 82
+        "id": 82,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "C"
     },
     "San Marino": {
         "rarity": 176,
         "artist": "_finland_",
         "wave": 4.1,
-        "id": 228
+        "id": 228,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "C"
     },
     "Serbia": {
         "rarity": 176,
         "artist": "borzologist",
         "wave": 1,
-        "id": 63
+        "id": 63,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "A"
     },
     "Slovakia": {
         "rarity": 176,
         "artist": "cattitan",
         "wave": 1,
-        "id": 62
+        "id": 62,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "B"
     },
     "Sri Lanka": {
         "rarity": 176,
         "artist": "basedphoenician",
         "wave": 1,
-        "id": 84
+        "id": 84,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "C"
     },
     "Sudan": {
         "rarity": 176,
         "artist": "gmo",
         "wave": 1,
-        "id": 75
+        "id": 75,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "E"
     },
     "Tunisia": {
         "rarity": 176,
         "artist": "fished0621",
         "wave": 1,
-        "id": 76
+        "id": 76,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "C"
     },
     "Turkmenistan": {
         "rarity": 176,
         "artist": "Hecker",
         "wave": 1,
-        "id": 88
+        "id": 88,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "F"
     },
     "Uzbekistan": {
         "rarity": 176,
         "artist": "kapukvati",
         "wave": 1,
-        "id": 56
+        "id": 56,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "E"
     },
     "Yemen": {
         "rarity": 176,
         "artist": "lmd730",
         "wave": 1,
-        "id": 85
+        "id": 85,
+        "common_value": "1",
+        "cc": "3,100",
+        "demand": "F"
     },
     "Republic of New Granada": {
         "rarity": 213,
         "artist": "Djugargo",
         "wave": 7,
-        "id": 498
+        "id": 498,
+        "common_value": "1",
+        "cc": "3,150",
+        "demand": "D"
     },
     "Faroe Islands": {
         "rarity": 214,
         "artist": "Arty",
         "wave": 5.2,
-        "id": 366
+        "id": 366,
+        "common_value": "1",
+        "cc": "3,250",
+        "demand": "A"
     },
     "Trinidad and Tobago": {
         "rarity": 214,
         "artist": "Cattitan",
         "wave": 5.2,
-        "id": 376
+        "id": 376,
+        "common_value": "1",
+        "cc": "3,250",
+        "demand": "D"
     },
     "Orange Free State": {
         "rarity": 216,
         "artist": "clar",
         "wave": 7,
-        "id": 489
+        "id": 489,
+        "common_value": "1",
+        "cc": "3,300",
+        "demand": "C"
     },
     "East Germany": {
         "rarity": 217,
         "artist": "cogito.ergo.sum_.",
         "wave": 5,
-        "id": 273
+        "id": 273,
+        "common_value": "1",
+        "cc": "3,350",
+        "demand": "C"
     },
     "Emirate of Nejd": {
         "rarity": 217,
         "artist": "angelia",
         "wave": 7,
-        "id": 478
+        "id": 478,
+        "common_value": "1",
+        "cc": "3,350",
+        "demand": "C"
     },
     "Free France": {
         "rarity": 217,
         "artist": "screegif",
         "wave": 5,
-        "id": 259
+        "id": 259,
+        "common_value": "1",
+        "cc": "3,350",
+        "demand": "C"
     },
     "Golden Horde": {
         "rarity": 217,
         "artist": "._themagicalflame_.",
         "wave": 6,
-        "id": 428
+        "id": 428,
+        "common_value": "1",
+        "cc": "3,350",
+        "demand": "D"
     },
     "Jamaica": {
         "rarity": 217,
         "artist": "Cubic & gmo123",
         "wave": 3,
-        "id": 186
+        "id": 186,
+        "common_value": "1",
+        "cc": "3,350",
+        "demand": "D"
     },
     "Maldives": {
         "rarity": 217,
         "artist": "araeofsunlight",
         "wave": 1,
-        "id": 193
+        "id": 193,
+        "common_value": "1",
+        "cc": "3,350",
+        "demand": "D"
     },
     "Northern Ireland": {
         "rarity": 217,
         "artist": "ordinary_tophatman",
         "wave": 5.1,
-        "id": 342
+        "id": 342,
+        "common_value": "1",
+        "cc": "3,350",
+        "demand": "B"
     },
     "Tibet": {
         "rarity": 217,
         "artist": "Bfbrblx",
         "wave": 5,
-        "id": 260
+        "id": 260,
+        "common_value": "1",
+        "cc": "3,350",
+        "demand": "C"
     },
     "Vichy France": {
         "rarity": 217,
         "artist": "BFBRblx",
         "wave": 5,
-        "id": 276
+        "id": 276,
+        "common_value": "1",
+        "cc": "3,350",
+        "demand": "D"
     },
     "Andorra": {
         "rarity": 226,
         "artist": "buckeeboi",
         "wave": 5.1,
-        "id": 326
+        "id": 326,
+        "common_value": "1",
+        "cc": "3,500",
+        "demand": "D"
     },
     "Brunei": {
         "rarity": 226,
         "artist": "Cattitan",
         "wave": 5.2,
-        "id": 377
+        "id": 377,
+        "common_value": "1",
+        "cc": "3,500",
+        "demand": "E"
     },
     "Byelorussian Soviet Socialist Republic": {
         "rarity": 226,
         "artist": "fireforev",
         "wave": 5,
-        "id": 264
+        "id": 264,
+        "common_value": "1",
+        "cc": "3,500",
+        "demand": "D"
     },
     "Grand Duchy of Tuscany": {
         "rarity": 226,
         "artist": "angelia4",
         "wave": 6,
-        "id": 429
+        "id": 429,
+        "common_value": "1",
+        "cc": "3,500",
+        "demand": "D"
     },
     "Khedivate of Egypt": {
         "rarity": 226,
         "artist": "bfbrobloxplayz",
         "wave": 6,
-        "id": 435
+        "id": 435,
+        "common_value": "1",
+        "cc": "3,500",
+        "demand": "D"
     },
     "Micronesia": {
         "rarity": 226,
         "artist": "fakedwebb",
         "wave": 5.1,
-        "id": 333
+        "id": 333,
+        "common_value": "1",
+        "cc": "3,500",
+        "demand": "B"
     },
     "Tonga": {
         "rarity": 226,
         "artist": "AustriaHungary.ch",
         "wave": 5.1,
-        "id": 339
+        "id": 339,
+        "common_value": "1",
+        "cc": "3,500",
+        "demand": "D"
     },
     "Khmer Empire": {
         "rarity": 233,
         "artist": "Sun",
         "wave": 6,
-        "id": 432
+        "id": 432,
+        "common_value": "1",
+        "cc": "3,550",
+        "demand": "D"
     },
     "Barbados": {
         "rarity": 234,
         "artist": ".soomlane",
         "wave": 5.2,
-        "id": 359
+        "id": 359,
+        "common_value": "1",
+        "cc": "3,600",
+        "demand": "C"
     },
     "Kingdom of Saxony": {
         "rarity": 234,
         "artist": "cancat",
         "wave": 7,
-        "id": 485
+        "id": 485,
+        "common_value": "1",
+        "cc": "3,600",
+        "demand": "A"
     },
     "Marshall Islands": {
         "rarity": 234,
         "artist": "Cattitan",
         "wave": 5.2,
-        "id": 368
+        "id": 368,
+        "common_value": "1",
+        "cc": "3,600",
+        "demand": "D"
     },
     "Armenia": {
         "rarity": 237,
         "artist": "kapukvati",
         "wave": 1,
-        "id": 102
+        "id": 102,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "B"
     },
     "Bahrain": {
         "rarity": 237,
         "artist": "Gmo",
         "wave": 1,
-        "id": 103
+        "id": 103,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "C"
     },
     "Cambodia": {
         "rarity": 237,
         "artist": "Cubic",
         "wave": 1,
-        "id": 105
+        "id": 105,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "D"
     },
     "Chad": {
         "rarity": 237,
         "artist": "Froggo",
         "wave": 1,
-        "id": 92
+        "id": 92,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "C"
     },
     "Congo Free State": {
         "rarity": 237,
         "artist": "lee.lil.kitten.thing",
         "wave": 5,
-        "id": 281
+        "id": 281,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "D"
     },
     "Equatorial Guinea": {
         "rarity": 237,
         "artist": "notshad0w",
         "wave": 5.1,
-        "id": 330
+        "id": 330,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "E"
     },
     "Fatimid Caliphate": {
         "rarity": 237,
         "artist": "Dem1111",
         "wave": 6,
-        "id": 426
+        "id": 426,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "D"
     },
     "Georgia": {
         "rarity": 237,
         "artist": "kapukvati",
         "wave": 1,
-        "id": 93
+        "id": 93,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "D"
     },
     "Ghana": {
         "rarity": 237,
         "artist": "not_what",
         "wave": 1,
-        "id": 100
+        "id": 100,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "E"
     },
     "Guatemala": {
         "rarity": 237,
         "artist": "Tringle",
         "wave": 1,
-        "id": 96
+        "id": 96,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "D"
     },
     "Guyana": {
         "rarity": 237,
         "artist": "Reichy",
         "wave": 4.1,
-        "id": 233
+        "id": 233,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "F"
     },
     "Ireland": {
         "rarity": 237,
         "artist": "bfbrobloxplayz",
         "wave": 1,
-        "id": 101
+        "id": 101,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "S"
     },
     "Kyrgyzstan": {
         "rarity": 237,
         "artist": "araeofsunlight",
         "wave": 1,
-        "id": 95
+        "id": 95,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "E"
     },
     "Latvia": {
         "rarity": 237,
         "artist": "fished",
         "wave": 1,
-        "id": 99
+        "id": 99,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "A"
     },
     "Lithuania": {
         "rarity": 237,
         "artist": "kapukvati",
         "wave": 1,
-        "id": 90
+        "id": 90,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "B"
     },
     "Mali": {
         "rarity": 237,
         "artist": "whitelight69",
         "wave": 1,
-        "id": 104
+        "id": 104,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "F"
     },
     "Malta": {
         "rarity": 237,
         "artist": "fakedwebb",
         "wave": 4.1,
-        "id": 230
+        "id": 230,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "B"
     },
     "Mongolia": {
         "rarity": 237,
         "artist": "tashi",
         "wave": 1,
-        "id": 106
+        "id": 106,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "C"
     },
     "New Zealand": {
         "rarity": 237,
         "artist": "tw20nty4our",
         "wave": 1,
-        "id": 89
+        "id": 89,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "A"
     },
     "Samoa": {
         "rarity": 237,
         "artist": "Cattitan",
         "wave": 5.1,
-        "id": 336
+        "id": 336,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "D"
     },
     "Slovenia": {
         "rarity": 237,
         "artist": "Estonia",
         "wave": 1,
-        "id": 91
+        "id": 91,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "B"
     },
     "Togo": {
         "rarity": 237,
         "artist": "Cattitan",
         "wave": 5.1,
-        "id": 338
+        "id": 338,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "F"
     },
     "Uganda": {
         "rarity": 237,
         "artist": "hecker",
         "wave": 1,
-        "id": 97
+        "id": 97,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "E"
     },
     "Uruguay": {
         "rarity": 237,
         "artist": ".cxnnibal",
         "wave": 1,
-        "id": 107
+        "id": 107,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "B"
     },
     "Zambia": {
         "rarity": 237,
         "artist": "derpcandy",
         "wave": 1,
-        "id": 94
+        "id": 94,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "E"
     },
     "Zimbabwe": {
         "rarity": 237,
         "artist": "britains_mapper",
         "wave": 1,
-        "id": 98
+        "id": 98,
+        "common_value": "1",
+        "cc": "3,650",
+        "demand": "E"
     },
     "Duchy of Limburg": {
         "rarity": 263,
         "artist": "pozie",
         "wave": 7,
-        "id": 477
+        "id": 477,
+        "common_value": "1",
+        "cc": "3,700",
+        "demand": "C"
     },
     "Malawi": {
         "rarity": 263,
         "artist": "Cattitan",
         "wave": 5.2,
-        "id": 367
+        "id": 367,
+        "common_value": "1",
+        "cc": "3,700",
+        "demand": "E"
     },
     "Kingdom of Sardinia": {
         "rarity": 265,
         "artist": "fadewon",
         "wave": 6,
-        "id": 436
+        "id": 436,
+        "common_value": "1",
+        "cc": "3,750",
+        "demand": "D"
     },
     "Rashidi Emirate": {
         "rarity": 265,
         "artist": "Ized_Coffee",
         "wave": 7,
-        "id": 492
+        "id": 492,
+        "common_value": "1",
+        "cc": "3,750",
+        "demand": "D"
     },
     "Costa Rica": {
         "rarity": 267,
         "artist": "gmo123",
         "wave": 5.1,
-        "id": 329
+        "id": 329,
+        "common_value": "1",
+        "cc": "3,800",
+        "demand": "D"
     },
     "Dominica": {
         "rarity": 267,
         "artist": "Cattitan",
         "wave": 5.2,
-        "id": 362
+        "id": 362,
+        "common_value": "1",
+        "cc": "3,800",
+        "demand": "D"
     },
     "Guinea-Bissau": {
         "rarity": 267,
         "artist": "Cattitan",
         "wave": 5.2,
-        "id": 365
+        "id": 365,
+        "common_value": "1",
+        "cc": "3,800",
+        "demand": "F"
     },
     "Sao Tome and Principe": {
         "rarity": 267,
         "artist": "spommagetti",
         "wave": 5.2,
-        "id": 374
+        "id": 374,
+        "common_value": "1",
+        "cc": "3,800",
+        "demand": "D"
     },
     "Tannu Tuva": {
         "rarity": 267,
         "artist": "mtcat",
         "wave": 5,
-        "id": 263
+        "id": 263,
+        "common_value": "1",
+        "cc": "3,800",
+        "demand": "B"
     },
     "Free City of Frankfurt": {
         "rarity": 272,
         "artist": "lm_finland",
         "wave": 7,
-        "id": 481
+        "id": 481,
+        "common_value": "1",
+        "cc": "3,900",
+        "demand": "C"
     },
     "Kingdom of Iberia": {
         "rarity": 272,
         "artist": "cattian",
         "wave": 8,
-        "id": 530
+        "id": 530,
+        "common_value": "1",
+        "cc": "3,900",
+        "demand": "B"
     },
     "Seychelles": {
         "rarity": 272,
         "artist": "wreckeroflaplace",
         "wave": 3,
-        "id": 190
+        "id": 190,
+        "common_value": "1",
+        "cc": "3,900",
+        "demand": "S"
     },
     "Afghanistan": {
         "rarity": 275,
         "artist": "spommagetti & trashcancat",
         "wave": 1,
-        "id": 124
+        "id": 124,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "D"
     },
     "Albania": {
         "rarity": 275,
         "artist": "yomers",
         "wave": 1,
-        "id": 121
+        "id": 121,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "C"
     },
     "Belize": {
         "rarity": 275,
         "artist": "no_name_guy_1313",
         "wave": 5.2,
-        "id": 360
+        "id": 360,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "E"
     },
     "Bosnia and Herzegovina": {
         "rarity": 275,
         "artist": "tw20nty4our",
         "wave": 1,
-        "id": 130
+        "id": 130,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "B"
     },
     "Botswana": {
         "rarity": 275,
         "artist": "joelukx",
         "wave": 1,
-        "id": 112
+        "id": 112,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "D"
     },
     "Cameroon": {
         "rarity": 275,
         "artist": "koskesh431",
         "wave": 1,
-        "id": 109
+        "id": 109,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "E"
     },
     "Ceylon": {
         "rarity": 275,
         "artist": "n.itrogenitals",
         "wave": 5,
-        "id": 278
+        "id": 278,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "D"
     },
     "Congo": {
         "rarity": 275,
         "artist": "tubula",
         "wave": 1,
-        "id": 123
+        "id": 123,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "E"
     },
     "Cote d'Ivoire": {
         "rarity": 275,
         "artist": "redthedge",
         "wave": 1,
-        "id": 117
+        "id": 117,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "F"
     },
     "Dominican Republic": {
         "rarity": 275,
         "artist": "s.i.l.ly_at.su.i_a.ki_a.n.i",
         "wave": 1,
-        "id": 126
+        "id": 126,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "D"
     },
     "Eritrea": {
         "rarity": 275,
         "artist": "kiwiwos",
         "wave": 1,
-        "id": 131
+        "id": 131,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "F"
     },
     "Estonia": {
         "rarity": 275,
         "artist": "_finland_",
         "wave": 1,
-        "id": 113
+        "id": 113,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "S"
     },
     "Eswatini": {
         "rarity": 275,
         "artist": "kapukvati",
         "wave": 5.1,
-        "id": 331
+        "id": 331,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "F"
     },
     "Fiji": {
         "rarity": 275,
         "artist": "Arty",
         "wave": 4.1,
-        "id": 234
+        "id": 234,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "C"
     },
     "Free City of Danzig": {
         "rarity": 275,
         "artist": "santiguti08_2011",
         "wave": 5,
-        "id": 287
+        "id": 287,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "C"
     },
     "Gambia": {
         "rarity": 275,
         "artist": "777Baikonur",
         "wave": 3,
-        "id": 183
+        "id": 183,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "D"
     },
     "Haiti": {
         "rarity": 275,
         "artist": "Cubic",
         "wave": 1,
-        "id": 127
+        "id": 127,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "D"
     },
     "Honduras": {
         "rarity": 275,
         "artist": ".soomlane",
         "wave": 1,
-        "id": 114
+        "id": 114,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "C"
     },
     "Khiva": {
         "rarity": 275,
         "artist": "fireforev",
         "wave": 5,
-        "id": 280
+        "id": 280,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "C"
     },
     "Laos": {
         "rarity": 275,
         "artist": "karuarp",
         "wave": 1,
-        "id": 128
+        "id": 128,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "A"
     },
     "Lebanon": {
         "rarity": 275,
         "artist": "tw20nty4our",
         "wave": 1,
-        "id": 120
+        "id": 120,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "B"
     },
     "Liechtenstein": {
         "rarity": 275,
         "artist": "AustriaHungary.ch",
         "wave": 4.1,
-        "id": 231
+        "id": 231,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "A"
     },
     "Moldova": {
         "rarity": 275,
         "artist": "Sunlight",
         "wave": 1,
-        "id": 110
+        "id": 110,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "B"
     },
     "Mossi Kingdoms": {
         "rarity": 275,
         "artist": "monke",
         "wave": 7,
-        "id": 487
+        "id": 487,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "D"
     },
     "Mozambique": {
         "rarity": 275,
         "artist": "spommagetti",
         "wave": 1,
-        "id": 122
+        "id": 122,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "E"
     },
     "Nepal": {
         "rarity": 275,
         "artist": "clar1nettist",
         "wave": 1,
-        "id": 125
+        "id": 125,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "A"
     },
     "Nicaragua": {
         "rarity": 275,
         "artist": "Gmo",
         "wave": 1,
-        "id": 129
+        "id": 129,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "E"
     },
     "Niger": {
         "rarity": 275,
         "artist": "sunlight",
         "wave": 1,
-        "id": 111
+        "id": 111,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "D"
     },
     "Palestine": {
         "rarity": 275,
         "artist": "tw20nty4our",
         "wave": 1,
-        "id": 119
+        "id": 119,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "S"
     },
     "Paraguay": {
         "rarity": 275,
         "artist": "chewytapioca",
         "wave": 1,
-        "id": 115
+        "id": 115,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "C"
     },
     "Saint Kitts and Nevis": {
         "rarity": 275,
         "artist": "alsomarty",
         "wave": 5.2,
-        "id": 372
+        "id": 372,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "F"
     },
     "Saint Lucia": {
         "rarity": 275,
         "artist": "Arty",
         "wave": 5.1,
-        "id": 335
+        "id": 335,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "D"
     },
     "Somaliland": {
         "rarity": 275,
         "artist": ".galactic_wolf",
         "wave": 5,
-        "id": 270
+        "id": 270,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "D"
     },
     "South Sudan": {
         "rarity": 275,
         "artist": "Sunlight",
         "wave": 1,
-        "id": 108
+        "id": 108,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "D"
     },
     "South Yemen": {
         "rarity": 275,
         "artist": "adistinguishedgentleman",
         "wave": 5,
-        "id": 265
+        "id": 265,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "D"
     },
     "Tajikistan": {
         "rarity": 275,
         "artist": "Cubic",
         "wave": 1,
-        "id": 116
+        "id": 116,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "E"
     },
     "Tanzania": {
         "rarity": 275,
         "artist": "chewytapioca",
         "wave": 1,
-        "id": 118
+        "id": 118,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "C"
     },
     "Western Sahara": {
         "rarity": 275,
         "artist": "Hecker",
         "wave": 3,
-        "id": 181
+        "id": 181,
+        "common_value": "1",
+        "cc": "3,950",
+        "demand": "E"
     },
     "Peru-Bolivian Confederation": {
         "rarity": 313,
         "artist": "a distinguished gentleman",
         "wave": 7,
-        "id": 491
+        "id": 491,
+        "common_value": "1",
+        "cc": "4,000",
+        "demand": "F"
     },
     "Zapotecs": {
         "rarity": 314,
         "artist": "._themagicalflame_.",
         "wave": 8,
-        "id": 538
+        "id": 538,
+        "common_value": "1",
+        "cc": "4,000",
+        "demand": "C"
     },
     "Cape Verde": {
         "rarity": 315,
         "artist": "fakedwebb",
         "wave": 5.1,
-        "id": 327
+        "id": 327,
+        "common_value": "1",
+        "cc": "4,050",
+        "demand": "C"
     },
     "Grenada": {
         "rarity": 315,
         "artist": "alsomarty",
         "wave": 5.2,
-        "id": 363
+        "id": 363,
+        "common_value": "1",
+        "cc": "4,050",
+        "demand": "D"
     },
     "Guinea": {
         "rarity": 315,
         "artist": "Cattitan",
         "wave": 5.2,
-        "id": 364
+        "id": 364,
+        "common_value": "1",
+        "cc": "4,050",
+        "demand": "F"
     },
     "Palau": {
         "rarity": 315,
         "artist": "atlanta1996",
         "wave": 5.2,
-        "id": 370
+        "id": 370,
+        "common_value": "1",
+        "cc": "4,050",
+        "demand": "C"
     },
     "Solomon Islands": {
         "rarity": 315,
         "artist": "Cattitan",
         "wave": 5.2,
-        "id": 375
+        "id": 375,
+        "common_value": "1",
+        "cc": "4,050",
+        "demand": "C"
     },
     "St. Vincent and the Grenadines": {
         "rarity": 315,
         "artist": "ordinary_tophatman",
         "wave": 5.2,
-        "id": 373
+        "id": 373,
+        "common_value": "1",
+        "cc": "4,050",
+        "demand": "E"
     },
     "Vanuatu": {
         "rarity": 315,
         "artist": "Mtcat101",
         "wave": 5.1,
-        "id": 340
+        "id": 340,
+        "common_value": "1",
+        "cc": "4,050",
+        "demand": "D"
     },
     "Principality of Moldavia": {
         "rarity": 322,
         "artist": "reichy",
         "wave": 6,
-        "id": 450
+        "id": 450,
+        "common_value": "1",
+        "cc": "4,100",
+        "demand": "D"
     },
     "Qajar Dynasty": {
         "rarity": 323,
         "artist": "n0tshad0w",
         "wave": 6,
-        "id": 444
+        "id": 444,
+        "common_value": "1",
+        "cc": "4,150",
+        "demand": "E"
     },
     "Antigua and Barbuda": {
         "rarity": 324,
         "artist": "Cattitan",
         "wave": 5.2,
-        "id": 358
+        "id": 358,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "D"
     },
     "Benin": {
         "rarity": 324,
         "artist": "ilikehetalia",
         "wave": 5.2,
-        "id": 361
+        "id": 361,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "E"
     },
     "Bhutan": {
         "rarity": 324,
         "artist": "koskesh",
         "wave": 1,
-        "id": 151
+        "id": 151,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "B"
     },
     "Burkina Faso": {
         "rarity": 324,
         "artist": "multiplyusers",
         "wave": 1,
-        "id": 137
+        "id": 137,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "E"
     },
     "Burundi": {
         "rarity": 324,
         "artist": "Cattitan",
         "wave": 4.1,
-        "id": 235
+        "id": 235,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "E"
     },
     "Central African Republic": {
         "rarity": 324,
         "artist": "unknowngirl4",
         "wave": 1,
-        "id": 141
+        "id": 141,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "B"
     },
     "Comoros": {
         "rarity": 324,
         "artist": "tubula",
         "wave": 5.1,
-        "id": 328
+        "id": 328,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "C"
     },
     "El Salvador": {
         "rarity": 324,
         "artist": "falsesurrender.",
         "wave": 1,
-        "id": 134
+        "id": 134,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "D"
     },
     "Gabon": {
         "rarity": 324,
         "artist": "waffles.epek",
         "wave": 1,
-        "id": 138
+        "id": 138,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "E"
     },
     "Hejaz": {
         "rarity": 324,
         "artist": "Sunlight",
         "wave": 2,
-        "id": 163
+        "id": 163,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "D"
     },
     "Iceland": {
         "rarity": 324,
         "artist": "Cubic",
         "wave": 1,
-        "id": 145
+        "id": 145,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "A"
     },
     "Kiribati": {
         "rarity": 324,
         "artist": "averageuser28",
         "wave": 4.1,
-        "id": 232
+        "id": 232,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "C"
     },
     "Kosovo": {
         "rarity": 324,
         "artist": "koskesh431",
         "wave": 1,
-        "id": 150
+        "id": 150,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "C"
     },
     "Lesotho": {
         "rarity": 324,
         "artist": "Cattitan",
         "wave": 5.1,
-        "id": 332
+        "id": 332,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "F"
     },
     "Liberia": {
         "rarity": 324,
         "artist": "coconuts",
         "wave": 1,
-        "id": 147
+        "id": 147,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "F"
     },
     "Luxembourg": {
         "rarity": 324,
         "artist": "no_name_guy_1313",
         "wave": 1,
-        "id": 148
+        "id": 148,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "C"
     },
     "Madagascar": {
         "rarity": 324,
         "artist": "redthedge",
         "wave": 1,
-        "id": 136
+        "id": 136,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "B"
     },
     "Majapahit": {
         "rarity": 324,
         "artist": "the_artist_omarv2",
         "wave": 6,
-        "id": 437
+        "id": 437,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "C"
     },
     "Mauritania": {
         "rarity": 324,
         "artist": "Yomer",
         "wave": 1,
-        "id": 132
+        "id": 132,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "C"
     },
     "Mauritius": {
         "rarity": 324,
         "artist": "Cattitan",
         "wave": 5.2,
-        "id": 369
+        "id": 369,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "D"
     },
     "Montenegro": {
         "rarity": 324,
         "artist": "borzologist",
         "wave": 1,
-        "id": 139
+        "id": 139,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "C"
     },
     "Namibia": {
         "rarity": 324,
         "artist": "_finland_",
         "wave": 1,
-        "id": 133
+        "id": 133,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "B"
     },
     "Nanda Empire": {
         "rarity": 324,
         "artist": "dragonq_",
         "wave": 6,
-        "id": 441
+        "id": 441,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "D"
     },
     "North Macedonia": {
         "rarity": 324,
         "artist": "Estonia & Cubic",
         "wave": 1,
-        "id": 142
+        "id": 142,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "B"
     },
     "Panama": {
         "rarity": 324,
         "artist": "Cubic",
         "wave": 1,
-        "id": 140
+        "id": 140,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "D"
     },
     "Papua New Guinea": {
         "rarity": 324,
         "artist": "starry7827",
         "wave": 1,
-        "id": 135
+        "id": 135,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "E"
     },
     "Paris Commune": {
         "rarity": 324,
         "artist": "tw20nty4our",
         "wave": 2,
-        "id": 165
+        "id": 165,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "C"
     },
     "Rwanda": {
         "rarity": 324,
         "artist": "celi_mimi",
         "wave": 5.2,
-        "id": 371
+        "id": 371,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "D"
     },
     "Senegal": {
         "rarity": 324,
         "artist": "starry7827",
         "wave": 1,
-        "id": 144
+        "id": 144,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "D"
     },
     "Sierra Leone": {
         "rarity": 324,
         "artist": "spommagetti",
         "wave": 1,
-        "id": 146
+        "id": 146,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "D"
     },
     "Somalia": {
         "rarity": 324,
         "artist": "element_eightythree",
         "wave": 1,
-        "id": 149
+        "id": 149,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "D"
     },
     "Suriname": {
         "rarity": 324,
         "artist": "abiotic",
         "wave": 1,
-        "id": 143
+        "id": 143,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "E"
     },
     "Timor-Leste": {
         "rarity": 324,
         "artist": "Reichy",
         "wave": 5.1,
-        "id": 337
+        "id": 337,
+        "common_value": "1",
+        "cc": "4,200",
+        "demand": "E"
     },
     "Dahomey": {
         "rarity": 357,
         "artist": "waffles",
         "wave": 7,
-        "id": 476
+        "id": 476,
+        "common_value": "1",
+        "cc": "4,350",
+        "demand": "B"
     },
     "Djibouti": {
         "rarity": 358,
         "artist": "kelpo.#1809",
         "wave": 1,
-        "id": 152
+        "id": 152,
+        "common_value": "1",
+        "cc": "4,500",
+        "demand": "A"
     }
 }
