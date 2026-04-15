@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1776248556",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Azad Hind, Mercia, Second Mexican Empire, Seljuk Empire)"
+            ]
+        },
+        {
             "timestamp": "1776079381",
             "changes": [
                 "Updated to new HistoryDex ball (Realm of Julius Nepos)",

@@ -242,7 +242,7 @@
         "common_value": "25",
         "cc": "700",
         "demand": "A",
-        "colletors": ["700477293696385084"]
+        "collectors": ["700477293696385084"]
     },
     "Austrian Empire": {
         "rarity": 26,
@@ -1540,7 +1540,7 @@
         "common_value": "1.5",
         "cc": "2,800",
         "demand": "B",
-        "collectors": ["1314335616581763117"]
+        "collectors": ["1314335616581763117", "554824606033379338"]
     },
     "Ancient Sparta": {
         "rarity": 160,
@@ -1549,7 +1549,8 @@
         "id": 198,
         "common_value": "1.5",
         "cc": "2,800",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["554824606033379338"]
     },
     "Babylon": {
         "rarity": 160,
@@ -2043,7 +2044,8 @@
         "id": 498,
         "common_value": "1",
         "cc": "3,150",
-        "demand": "D"
+        "demand": "D",
+        "collectors": ["1265119513167528032"]
     },
     "Faroe Islands": {
         "rarity": 214,
@@ -2396,7 +2398,8 @@
         "id": 99,
         "common_value": "1",
         "cc": "3,650",
-        "demand": "A"
+        "demand": "A",
+        "collectors": ["1244161823045845135"]
     },
     "Lithuania": {
         "rarity": 237,
@@ -2473,7 +2476,8 @@
         "id": 338,
         "common_value": "1",
         "cc": "3,650",
-        "demand": "F"
+        "demand": "F",
+        "collectors": ["993884168922607648"]
     },
     "Uganda": {
         "rarity": 237,
@@ -3016,7 +3020,7 @@
         "common_value": "1",
         "cc": "4,000",
         "demand": "C",
-        "collectors": ["1094973531223248969"]
+        "collectors": ["1094973531223248969", "1146837555090833528"]
     },
     "Cape Verde": {
         "rarity": 315,
