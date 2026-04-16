@@ -368,7 +368,9 @@
             "French Congo": ["congo"],
             "Italian Regency of Carnaro": ["carnaro"],
             "Brazilian Military Dictatorship": ["brazil"],
-            "Porfiriato": ["mexico"]
+            "Porfiriato": ["mexico"],
+            "State of Thessaloniki": ["thessaloniki", "greece"],
+            "Afsharid Empire": ["iran"]
         }
 	}
 }

@@ -2099,6 +2099,11 @@
         "artist": "_.rxd._",
         "id": 457
     },
+    "Province of Quebec": {
+        "rarity": 65,
+        "artist": "_.lamia_",
+        "id": 905
+    },
     "Sultanate of Nejd": {
         "rarity": 65,
         "artist": ".sof_240",
@@ -2118,6 +2123,11 @@
         "rarity": 66,
         "artist": "pixology.",
         "id": 370
+    },
+    "Republic of Lower Canada": {
+        "rarity": 66,
+        "artist": "edougamer",
+        "id": 906
     },
     "Virginia Colony": {
         "rarity": 66,
@@ -2488,6 +2498,11 @@
         "rarity": 107,
         "artist": "lilhector_",
         "id": 733
+    },
+    "Quebec Liberation Front": {
+        "rarity": 108,
+        "artist": "edougamer",
+        "id": 904
     },
     "Spanish Chile": {
         "rarity": 108,

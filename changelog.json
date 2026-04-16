@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1776367232",
+            "changes": [
+                "Updated to new HistoryDex balls (Province of Quebec, Quebec Liberation Front, Republic of Lower Canada)"
+            ]
+        },
+        {
             "timestamp": "1776351431",
             "changes": [
                 "Added JoJoDex to BallIdentifier",
