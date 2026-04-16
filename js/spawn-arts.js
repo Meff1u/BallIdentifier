@@ -116,7 +116,7 @@ function createBallCard(name, details, dexName) {
     cardBody.innerHTML = `
         <h6 class="card-title">${name}</h6>
         <div class="rarity-container card-text small mb-1">
-            <span class="text-muted">Rarity:</span> <span class="rarity-value">#${details.rarity}</span>
+            <span class="text-muted">Rarity:</span> <span class="rarity-value">t${details.rarity}</span>
         </div>
         <div class="artist-container card-text small">
             <span class="text-muted">Artist:</span> <span class="artist-value">${details.artist}</span>
@@ -157,7 +157,7 @@ function handleBallCardClick(name, dexName) {
 
 async function checkArtsExist(ballName) {
     try {
-        const response = await fetch("assets/bd-previous-arts/arts.json");
+        const response = await fetch("assets/jsons/previous-arts.json");
         const artsData = await response.json();
         
         if (artsData[ballName]) {
@@ -166,7 +166,7 @@ async function checkArtsExist(ballName) {
             showNotification();
         }
     } catch (error) {
-        console.error("Error loading arts.json:", error);
+        console.error("Error loading previous-arts.json:", error);
     }
 }
 
@@ -207,8 +207,8 @@ function createArtCard(ballName, art, index) {
         artContainer.setAttribute("title", art.alt);
     }
     
-    const webpSrc = `assets/bd-previous-arts/${ballName}/${index + 1}.webp`;
-    const gifSrc = `assets/bd-previous-arts/${ballName}/${index + 1}.gif`;
+    const webpSrc = `assets/dexes/${ballName}/previous/${index + 1}.webp`;
+    const gifSrc = `assets/dexes/${ballName}/previous/${index + 1}.gif`;
     
     artContainer.innerHTML = `
         <img src="${webpSrc}" alt="${ballName} art" class="card-img-top" loading="lazy" 

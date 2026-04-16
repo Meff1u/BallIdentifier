@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1776351431",
+            "changes": [
+                "Added JoJoDex to Ballidentifier",
+                "Updated to new spawn art in Ballsdex (Spain)",
+                "Updated to new spawn arts in HistoryDex (Romanian People's Republic, Warsaw Pact)"
+            ]
+        },
+        {
             "timestamp": "1776248556",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Azad Hind, Mercia, Second Mexican Empire, Seljuk Empire)"

@@ -493,6 +493,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'ballsdex': 'Ballsdex',
             'fooddex': 'FoodDex',
             'historydex': 'HistoryDex',
+            'jojodex': 'JoJoDex'
         };
         const jsonName = jsonNames[bot] || 'Ballsdex';
         
@@ -538,6 +539,10 @@ document.addEventListener('DOMContentLoaded', function() {
             'historydex': {
                 name: 'HistoryDex',
                 icon: 'assets/icons/HistoryDex.png'
+            },
+            'jojodex': {
+                name: 'JoJoDex',
+                icon: 'assets/icons/JoJoDex.png'
             }
         };
         return configs[bot] || configs['ballsdex'];
