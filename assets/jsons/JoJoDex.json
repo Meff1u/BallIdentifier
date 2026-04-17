@@ -7,7 +7,8 @@
 	"DIO": {
 		"rarity": 1,
 		"artist": "Hirohiko Araki",
-		"id": 103
+		"id": 103,
+        "collectors": ["1052285408555319297"]
 	},
 	"Giorno Giovanna": {
 		"rarity": 1,
@@ -17,12 +18,14 @@
 	"Johnny Joestar": {
 		"rarity": 1,
 		"artist": "Hirohiko Araki",
-		"id": 106
+		"id": 106,
+        "collectors": ["807647519126847529"]
 	},
 	"Jotaro Kujo": {
 		"rarity": 1,
 		"artist": "Hirohiko Araki",
-		"id": 101
+		"id": 101,
+        "collectors": ["514512372518354945"]
 	},
 	"Gyro Zeppeli": {
 		"rarity": 5,
@@ -82,7 +85,8 @@
 	"Diavolo": {
 		"rarity": 15,
 		"artist": "Hirohiko Araki",
-		"id": 122
+		"id": 122,
+        "collectors": ["1052285408555319297"]
 	},
 	"Enrico Pucci": {
 		"rarity": 15,
@@ -147,7 +151,8 @@
 	"Weather Report": {
 		"rarity": 22,
 		"artist": "Hirohiko Araki",
-		"id": 42
+		"id": 42,
+        "collectors": ["1456050520878874826"]
 	},
 	"Yoshikage Kira": {
 		"rarity": 22,
@@ -162,7 +167,8 @@
 	"Diego Brando": {
 		"rarity": 31,
 		"artist": "Hirohiko Araki",
-		"id": 128
+		"id": 128,
+        "collectors": ["1283894007050666121"]
 	},
 	"Dirty Deeds Done Dirt Cheap": {
 		"rarity": 31,
@@ -187,7 +193,8 @@
 	"King Crimson": {
 		"rarity": 31,
 		"artist": "Hirohiko Araki",
-		"id": 29
+		"id": 29,
+        "collectors": ["1188980487860015198"]
 	},
 	"Mandom": {
 		"rarity": 31,
@@ -212,7 +219,8 @@
 	"Rohan Kishibe": {
 		"rarity": 31,
 		"artist": "Hirohiko Araki",
-		"id": 149
+		"id": 149,
+        "collectors": ["514512372518354945"]
 	},
 	"The World": {
 		"rarity": 31,
@@ -222,7 +230,8 @@
 	"Yasuho Hirose": {
 		"rarity": 31,
 		"artist": "Hirohiko Araki",
-		"id": 173
+		"id": 173,
+        "collectors": ["1283894007050666121"]
 	},
 	"Caesar Zeppeli": {
 		"rarity": 45,
@@ -242,7 +251,8 @@
 	"Jobin Higashikata": {
 		"rarity": 45,
 		"artist": "Hirohiko Araki",
-		"id": 176
+		"id": 176,
+        "collectors": ["1188980487860015198"]
 	},
 	"Joseph Joestar (Part 3)": {
 		"rarity": 45,
@@ -267,7 +277,8 @@
 	"Risotto Nero": {
 		"rarity": 45,
 		"artist": "Hirohiko Araki",
-		"id": 134
+		"id": 134,
+        "collectors": ["242019678120050688"]
 	},
 	"Soft & Wet": {
 		"rarity": 45,
@@ -297,7 +308,8 @@
 	"Vinegar Doppio": {
 		"rarity": 45,
 		"artist": "Hirohiko Araki",
-		"id": 159
+		"id": 159,
+        "collectors": ["1052285408555319297"]
 	},
 	"Akira Otoishi": {
 		"rarity": 60,
@@ -317,7 +329,8 @@
 	"Cioccolata": {
 		"rarity": 60,
 		"artist": "Hirohiko Araki",
-		"id": 419
+		"id": 419,
+        "collectors": ["1300902013416243231"]
 	},
 	"Crazy Diamond": {
 		"rarity": 60,
@@ -362,12 +375,14 @@
 	"Jotaro Kujo (Part 4)": {
 		"rarity": 60,
 		"artist": "Hirohiko Araki",
-		"id": 148
+		"id": 148,
+        "collectors": ["514512372518354945"]
 	},
 	"Jotaro Kujo (Part 6)": {
 		"rarity": 60,
 		"artist": "Hirohiko Araki",
-		"id": 163
+		"id": 163,
+        "collectors": ["514512372518354945"]
 	},
 	"Killer Queen": {
 		"rarity": 60,
@@ -397,7 +412,8 @@
 	"Paco Laburantes": {
 		"rarity": 60,
 		"artist": "Hirohiko Araki",
-		"id": 505
+		"id": 505,
+        "collectors": ["1456050520878874826"]
 	},
 	"Parallel World Diego": {
 		"rarity": 60,
@@ -412,7 +428,8 @@
 	"Rai Mamezuku": {
 		"rarity": 60,
 		"artist": "Hirohiko Araki",
-		"id": 175
+		"id": 175,
+        "collectors": ["804105593140150333"]
 	},
 	"Ringo Roadagain": {
 		"rarity": 60,
@@ -477,7 +494,8 @@
 	"Boku No Rhythm Wo Kiitekure": {
 		"rarity": 91,
 		"artist": "Hirohiko Araki",
-		"id": 236
+		"id": 236,
+        "collectors": ["804105593140150333"]
 	},
 	"Catch The Rainbow": {
 		"rarity": 91,
@@ -517,7 +535,8 @@
 	"Kyoka Izumi": {
 		"rarity": 91,
 		"artist": "Hirohiko Araki",
-		"id": 517
+		"id": 517,
+        "collectors": ["514512372518354945"]
 	},
 	"Leone Abbacchio": {
 		"rarity": 91,
@@ -558,7 +577,8 @@
 	"Rohan Kishibe (Part 9)": {
 		"rarity": 91,
 		"artist": "Hirohiko Araki",
-		"id": 508
+		"id": 508,
+        "collectors": ["514512372518354945"]
 	},
 	"Rudol Von Stroheim": {
 		"rarity": 91,
@@ -608,7 +628,8 @@
 	"Weather Report (User)": {
 		"rarity": 91,
 		"artist": "Hirohiko Araki",
-		"id": 165
+		"id": 165,
+        "collectors": ["1456050520878874826"]
 	},
 	"Will A. Zeppeli": {
 		"rarity": 91,
@@ -648,7 +669,8 @@
 	"Dio's Mansion": {
 		"rarity": 124,
 		"artist": "Slavic_serb",
-		"id": 273
+		"id": 273,
+        "collectors": ["1052285408555319297"]
 	},
 	"Donatello Versus": {
 		"rarity": 124,
@@ -693,7 +715,8 @@
 	"I Am A Rock": {
 		"rarity": 124,
 		"artist": "Hirohiko Araki",
-		"id": 304
+		"id": 304,
+        "collectors": ["1188980487860015198"]
 	},
 	"Justice": {
 		"rarity": 124,
@@ -753,7 +776,8 @@
 	"Stone Free": {
 		"rarity": 124,
 		"artist": "Hirohiko Araki",
-		"id": 37
+		"id": 37,
+        "collectors": ["1283894007050666121"]
 	},
 	"Suzi Q": {
 		"rarity": 124,
@@ -793,7 +817,8 @@
 	"Ghiaccio": {
 		"rarity": 155,
 		"artist": "Hirohiko Araki",
-		"id": 415
+		"id": 415,
+        "collectors": ["841350270595891280", "1456050520878874826"]
 	},
 	"Green Dolphin Street Prison": {
 		"rarity": 155,
@@ -918,7 +943,8 @@
 	"Ungalo": {
 		"rarity": 155,
 		"artist": "Hirohiko Araki",
-		"id": 437
+		"id": 437,
+        "collectors": ["1106648451904704612"]
 	},
 	"Wekapipo": {
 		"rarity": 155,
@@ -928,7 +954,8 @@
 	"White Album": {
 		"rarity": 155,
 		"artist": "Hirohiko Araki",
-		"id": 217
+		"id": 217,
+        "collectors": ["1456050520878874826"]
 	},
 	"Wu Tomoki": {
 		"rarity": 155,
@@ -1163,7 +1190,8 @@
 	"Valkyrie": {
 		"rarity": 188,
 		"artist": "Hirohiko Araki",
-		"id": 111
+		"id": 111,
+        "collectors": ["1304766697143795712"]
 	},
 	"Yellow Temperance": {
 		"rarity": 188,
@@ -1308,7 +1336,8 @@
 	"Jail House Lock": {
 		"rarity": 236,
 		"artist": "Hirohiko Araki",
-		"id": 234
+		"id": 234,
+        "collectors": ["1425109627636285511"]
 	},
 	"Joseph Joestar (Part 8)": {
 		"rarity": 236,
@@ -1409,12 +1438,14 @@
 	"Santana": {
 		"rarity": 236,
 		"artist": "Hirohiko Araki",
-		"id": 335
+		"id": 335,
+        "collectors": ["1188980487860015198"]
 	},
 	"Sex Pistols": {
 		"rarity": 236,
 		"artist": "Hirohiko Araki",
-		"id": 30
+		"id": 30,
+        "collectors": ["804105593140150333"]
 	},
 	"Silver Chariot": {
 		"rarity": 236,
@@ -1444,7 +1475,8 @@
 	"Talking Head": {
 		"rarity": 236,
 		"artist": "Hirohiko Araki",
-		"id": 219
+		"id": 219,
+        "collectors": ["804105593140150333"]
 	},
 	"The Fool": {
 		"rarity": 236,
@@ -1989,7 +2021,8 @@
 	"Jolyne's Mother": {
 		"rarity": 337,
 		"artist": "Hirohiko Araki",
-		"id": 442
+		"id": 442,
+        "collectors": ["1283894007050666121"]
 	},
 	"Joseph's Stand": {
 		"rarity": 337,
@@ -2269,7 +2302,8 @@
 	"The Hustle": {
 		"rarity": 337,
 		"artist": "Hirohiko Araki",
-		"id": 262
+		"id": 262,
+        "collectors": ["1456050520878874826"]
 	},
 	"The Lock": {
 		"rarity": 337,
