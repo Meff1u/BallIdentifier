@@ -63,7 +63,8 @@
         "rarity": 11,
         "artist": "Chicken",
         "wave": 1.1,
-        "id": 12
+        "id": 12,
+        "collectors": ["825507497334538301"]
     },
     "Avocado": {
         "rarity": 12,
