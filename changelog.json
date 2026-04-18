@@ -1,11 +1,17 @@
 {
     "changes": [
         {
+            "timestamp": "1776554505",
+            "changes": [
+                "Updated missings from HistoryDex Africa Wave Update (Alodia, First Republic of Rwanda, Issaq Sultanate)"
+            ]
+        },
+        {
             "timestamp": "1776521988",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Republic of Pisa, State of Turkey)",
                 "Updated to HistoryDex Africa Wave Update - 45 new balls (Adal Sultanate, Almoravid Dynasty, Colony of Ivory Coast, Colony of Niger, Couronian Gambia, Dominion of Ghana, Emirate of Abdelkader, Emirate of Cyrenaica, Federation of Ethiopia and Eritrea, French Upper Volta, Jolof Empire, Kingfom of Altava, Kingdom of Benin, Kingdom of Burundi, Kingdom of Dahomey, Kingdom of Kongo, Kingdom of Loango, Kingdom of Makuria, Kingdom of Numidia, Kingdom of Rwanda, Kingdom of the Aurès, Kingdom of Tlemcen, Kingdom of Zimbabwe, Kooki Kingdom, Mahdist State, Mali Federation, People's Republic of Zanzibar, Republic of Egypt, Republic of Tanganyika, Republic of the Sudan, Sanusiyyah, Second Republic of Uganda, South Kasai, State of Katanga, State of Somaliland, State of the Comoros, Sultanate of Zanzibar, Territory of Cameroon, Toucouleur Empire, Vandal Kingdom, Zirid Dynasty)",
-                "Missings (artist + spawn art): Alodia, First Republic of Rwanda, Isaaq Sultanate"
+                "Missings (artist + spawn art): Alodia, First Republic of Rwanda, Issaq Sultanate"
             ]
         },
         {

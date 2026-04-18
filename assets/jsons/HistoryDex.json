@@ -162,7 +162,8 @@
     "Greater Ottoman Empire": {
         "rarity": 6,
         "artist": "ethan_heathcliff",
-        "id": 33
+        "id": 33,
+        "collectors": ["1163451939997093968"]
     },
     "Macedonian Empire": {
         "rarity": 6,
@@ -712,7 +713,8 @@
     "Ottoman Empire": {
         "rarity": 18,
         "artist": "dark3nd",
-        "id": 2
+        "id": 2,
+        "collectors": ["1163451939997093968"]
     },
     "Shaybanid Uzbek State": {
         "rarity": 18,
@@ -782,7 +784,8 @@
     "Tibetan Empire": {
         "rarity": 19,
         "artist": "Arga#1008",
-        "id": 137
+        "id": 137,
+        "collectors": ["935901262715699290"]
     },
     "Wang Jingwei Regime": {
         "rarity": 19,
@@ -1277,7 +1280,8 @@
     "Napoleonic Kingdom of Italy": {
         "rarity": 35,
         "artist": "acrestronk",
-        "id": 837
+        "id": 837,
+        "collectors": ["1343265063615856773"]
     },
     "Panama Canal Zone": {
         "rarity": 35,
@@ -1362,7 +1366,8 @@
     "Makhnovia": {
         "rarity": 37,
         "artist": "lordaxolotl7",
-        "id": 278
+        "id": 278,
+        "collectors": ["671171328879099904"]
     },
     "Patria Vieja": {
         "rarity": 37,
@@ -1392,7 +1397,8 @@
     "Ottoman Algiers": {
         "rarity": 38,
         "artist": "theweimarrepublican_hortas",
-        "id": 853
+        "id": 853,
+        "collectors": ["1163451939997093968"]
     },
     "Grand Duchy of Lithuania": {
         "rarity": 39,
@@ -1567,7 +1573,8 @@
     "Ottoman Tripolitania": {
         "rarity": 43,
         "artist": "._pudd_.",
-        "id": 849
+        "id": 849,
+        "collectors": ["1163451939997093968"]
     },
     "Republic of Texas": {
         "rarity": 43,
@@ -1881,7 +1888,7 @@
     },
     "Issaq Sultanate": {
         "rarity": 53,
-        "artist": "",
+        "artist": "not_woterbottle",
         "id": 930
     },
     "Kuban People's Republic": {
@@ -2132,7 +2139,8 @@
     "Czechoslovak Legion": {
         "rarity": 65,
         "artist": "Fished",
-        "id": 494
+        "id": 494,
+        "collectors": ["671171328879099904"]
     },
     "Federation of Arab Republics": {
         "rarity": 65,
@@ -2279,7 +2287,7 @@
         "artist": "dudewholikescountryballs",
         "id": 844
     },
-    "Colony of Ivory Cost": {
+    "Colony of Ivory Coast": {
         "rarity": 72,
         "artist": "average_countryballs_fan",
         "id": 949
@@ -2402,11 +2410,12 @@
     "Lesser Ottoman Empire": {
         "rarity": 84,
         "artist": "dark3nd",
-        "id": 81
+        "id": 81,
+        "collectors": ["1163451939997093968"]
     },
     "Kingdom of Tlemcen": {
         "rarity": 85,
-        "artist": "cool4u7",
+        "artist": "n0tch21_98933",
         "id": 935
     },
     "Yemen Arab Republic": {
@@ -2446,7 +2455,7 @@
     },
     "Alodia": {
         "rarity": 90,
-        "artist": "",
+        "artist": "king_banananananana",
         "id": 938
     },
     "Danish Gold Coast": {
@@ -2477,7 +2486,8 @@
     "New Hebrides Condominium": {
         "rarity": 91,
         "artist": "dudewholikescountryballs",
-        "id": 366
+        "id": 366,
+        "collectors": ["926528778061094962"]
     },
     "Anglo-Egyptian Sudan": {
         "rarity": 92,
@@ -2587,7 +2597,8 @@
     "Ottoman Tunisia": {
         "rarity": 103,
         "artist": "gusta._.vo",
-        "id": 851
+        "id": 851,
+        "collectors": ["1163451939997093968"]
     },
     "French Congo": {
         "rarity": 104,
@@ -2921,7 +2932,7 @@
     },
     "First Republic of Rwanda": {
         "rarity": 163,
-        "artist": "",
+        "artist": ".sof_240",
         "id": 910
     },
     "Spanish Guinea": {
@@ -2992,7 +3003,8 @@
     "Republic of Maryland": {
         "rarity": 169,
         "artist": "sksjssm",
-        "id": 364
+        "id": 364,
+        "collectors": ["1008211678187499570"]
     },
     "Duchy of Estonia": {
         "rarity": 170,
@@ -3027,7 +3039,8 @@
     "Ottoman Beylik": {
         "rarity": 175,
         "artist": "aydin_kai22",
-        "id": 476
+        "id": 476,
+        "collectors": ["1163451939997093968"]
     },
     "Republic of Tanganyika": {
         "rarity": 175,
@@ -3182,7 +3195,8 @@
     "Shanghai International Settlement": {
         "rarity": 190,
         "artist": "vafmohs3",
-        "id": 896
+        "id": 896,
+        "collectors": ["1343265063615856773"]
     },
     "State of Somaliland": {
         "rarity": 190,
@@ -3192,7 +3206,8 @@
     "Tibet": {
         "rarity": 190,
         "artist": "mistythewhisty_",
-        "id": 124
+        "id": 124,
+        "collectors": ["935901262715699290"]
     },
     "British Singapore": {
         "rarity": 191,
@@ -3382,7 +3397,8 @@
     "Ottoman Qatar": {
         "rarity": 215,
         "artist": "hortaas",
-        "id": 850
+        "id": 850,
+        "collectors": ["1163451939997093968"]
     },
     "Southern Cameroons": {
         "rarity": 215,
