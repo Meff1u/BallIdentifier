@@ -403,7 +403,7 @@
             "Second Republic of Uganda": ["uganda"],
             "South Kasai": ["kasai"],
             "State of Katanga": ["katanga"],
-            "State of Somaliland": ["somaliland"],
+            "State of Somaliland": ["somaliland", "somalia"],
             "State of the Comoros": ["comoros"],
             "Sultanate of Zanzibar": ["zanzibar"],
             "Territory of Cameroon": ["cameroon"],
@@ -412,7 +412,15 @@
             "Zirid Dynasty": ["zirid"],
             "First Republic of Rwanda": ["rwanda"],
             "Issaq Sultanate": ["issaq"],
-            "Fatimid Caliphate": ["fat"]
+            "Fatimid Caliphate": ["fat"],
+            "Realm of Julius Nepos": ["julius nepos"],
+            "Second United Chinese Front": ["chinese front"],
+            "Liang Dynasty": ["liang"],
+            "Salvadorian Military Dictatorship": ["salvador"],
+            "Lordship of Ireland": ["ireland"],
+            "Confederacy of Independent Kingdoms of Fiji": ["fiji"],
+            "Islamic Republic of Afghanistan": ["afghanistan"],
+            "Dominion of The Gambia": ["gambia"]
         }
 	}
 }

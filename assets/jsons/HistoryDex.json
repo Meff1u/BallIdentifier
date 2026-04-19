@@ -144,6 +144,16 @@
         "artist": "carolea",
         "id": 305
     },
+    "Liang Dynasty": {
+        "rarity": 5,
+        "artist": "lilhector_",
+        "id": 955
+    },
+    "Second United Chinese Front": {
+        "rarity": 5,
+        "artist": "pleb0o",
+        "id": 963
+    },
     "Byzantine Empire": {
         "rarity": 6,
         "artist": "dark3nd",
@@ -1122,6 +1132,11 @@
         "artist": "dynsic",
         "id": 614
     },
+    "Hitler Youth": {
+        "rarity": 30,
+        "artist": "dynsic",
+        "id": 956
+    },
     "Imperial Saint Petersburg": {
         "rarity": 30,
         "artist": "Arga#1008",
@@ -1690,6 +1705,11 @@
         "rarity": 47,
         "artist": "tu_hispano_de_confianza",
         "id": 510
+    },
+    "Lordship of Ireland": {
+        "rarity": 47,
+        "artist": "gusta._.vo",
+        "id": 959
     },
     "Polish People's Republic": {
         "rarity": 47,
@@ -2463,6 +2483,11 @@
         "artist": "floridianirishguy",
         "id": 361
     },
+    "Islamic Republic of Afghanistan": {
+        "rarity": 90,
+        "artist": "scotto6353",
+        "id": 961
+    },
     "Mahdist State": {
         "rarity": 90,
         "artist": "navid_habibi",
@@ -2915,6 +2940,11 @@
         "artist": "finski._.",
         "id": 495
     },
+    "Salvadorian Military Dictatorship": {
+        "rarity": 160,
+        "artist": "scotto6353",
+        "id": 960
+    },
     "Sultanate of Gowa": {
         "rarity": 160,
         "artist": "namasayaadhit",
@@ -2939,6 +2969,11 @@
         "rarity": 163,
         "artist": "bfbrobloxplayz",
         "id": 889
+    },
+    "Confederacy of Independent Kingdoms of Fiji": {
+        "rarity": 163,
+        "artist": "asiansyko",
+        "id": 957
     },
     "German Alsace-Lorraine": {
         "rarity": 164,
@@ -3213,6 +3248,11 @@
         "rarity": 191,
         "artist": "capithecap",
         "id": 105
+    },
+    "Dominion of The Gambia": {
+        "rarity": 192,
+        "artist": "_.lamia_",
+        "id": 962
     },
     "Tu'i Tonga": {
         "rarity": 192,
