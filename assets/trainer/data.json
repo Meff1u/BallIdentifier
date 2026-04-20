@@ -440,7 +440,8 @@
             "Toyotomi Clan": ["toyotomi"],
             "United States of Indonesia": ["indonesia"],
             "United Tribes Of New Zealanad": ["new zealand"],
-            "Vijayanagara Empire": ["vijayanagara", "india"]
+            "Vijayanagara Empire": ["vijayanagara", "india"],
+            "Crimean Khanate": ["crimea"]
         }
 	}
 }
