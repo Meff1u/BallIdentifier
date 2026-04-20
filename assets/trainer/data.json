@@ -420,7 +420,27 @@
             "Lordship of Ireland": ["ireland"],
             "Confederacy of Independent Kingdoms of Fiji": ["fiji"],
             "Islamic Republic of Afghanistan": ["afghanistan"],
-            "Dominion of The Gambia": ["gambia"]
+            "Dominion of The Gambia": ["gambia"],
+            "Bruneian Sultanate": ["brunei"],
+            "Champasak Kingdom": ["champasak"],
+            "Dominion of Pakistan": ["pakistan"],
+            "Gay and Lesbian Kingdom of the Coral Sea Islands": ["gay", "lesbian", "coral sea islands"],
+            "Kingdom of Abemama": ["abemama"],
+            "Kingdom of Bora Bora": ["bora bora"],
+            "Kingdom of Siam": ["siam"],
+            "Kingdom of Tonga": ["tonga"],
+            "Konbaung Dynasty": ["konbaung"],
+            "Malayan Peoples' Anti-Japanese Army": ["anti japanese malaya", "malaya", "mpaja", "malayan peoples anti japanese army"],
+            "Netherlands-Indonesia Union": ["netherlands", "indonesia", "netherlands indonesia union"],
+            "New Swabia": ["swabia"],
+            "Srivijaya Empire": ["srivijaya", "majapahit", "majapahit empire"],
+            "Sultanate of Maguindanao": ["maguindanao"],
+            "Territory of Western Samoa": ["western samoa", "samoa", "british samoa", "british western samoa"],
+            "Timor Timur": ["timor", "timur"],
+            "Toyotomi Clan": ["toyotomi"],
+            "United States of Indonesia": ["indonesia"],
+            "United Tribes Of New Zealanad": ["new zealand"],
+            "Vijayanagara Empire": ["vijayanagara", "india"]
         }
 	}
 }

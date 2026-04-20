@@ -86,7 +86,7 @@
     },
     "Soviet Union": {
         "rarity": 2,
-        "artist": "dynsic",
+        "artist": "ethan_heathcliff",
         "id": 65
     },
     "Golden Circle": {
@@ -590,6 +590,11 @@
         "artist": "aydin_kai22",
         "id": 886
     },
+    "Srivijaya Empire": {
+        "rarity": 15,
+        "artist": "gerance_gern",
+        "id": 974
+    },
     "Swedish Empire": {
         "rarity": 15,
         "artist": "._pudd_.",
@@ -644,6 +649,11 @@
         "rarity": 16,
         "artist": "ragnitxt",
         "id": 857
+    },
+    "Toyotomi Clan": {
+        "rarity": 16,
+        "artist": "aydin_kai22",
+        "id": 977
     },
     "Assyrian Empire": {
         "rarity": 17,
@@ -836,6 +846,11 @@
         "rarity": 20,
         "artist": "oreo_eater5892",
         "id": 669
+    },
+    "Netherlands-Indonesia Union": {
+        "rarity": 20,
+        "artist": "argahalakbatak",
+        "id": 968
     },
     "West Germany": {
         "rarity": 20,
@@ -1480,6 +1495,11 @@
         "artist": "colin_iii",
         "id": 952
     },
+    "Konbaung Dynasty": {
+        "rarity": 40,
+        "artist": "crabbbious",
+        "id": 967
+    },
     "Medieval Kingdom of Serbia": {
         "rarity": 40,
         "artist": ".itscubicthecube.",
@@ -1656,9 +1676,14 @@
         "artist": "king_of_pingas",
         "id": 417
     },
+    "Kingdom of Siam": {
+        "rarity": 45,
+        "artist": "pixology.",
+        "id": 982
+    },
     "Mali Federation": {
         "rarity": 45,
-        "artist": "itsthereallanny",
+        "artist": "king_banananananana",
         "id": 933
     },
     "State of Turkey": {
@@ -1701,6 +1726,11 @@
         "artist": "._pudd_.",
         "id": 532
     },
+    "Dominion of Pakistan": {
+        "rarity": 47,
+        "artist": "vuin141",
+        "id": 978
+    },
     "Ghurid Dynasty": {
         "rarity": 47,
         "artist": "tu_hispano_de_confianza",
@@ -1713,7 +1743,7 @@
     },
     "Polish People's Republic": {
         "rarity": 47,
-        "artist": "finski._.",
+        "artist": "enzotype",
         "id": 303
     },
     "Allied-Occupied Japan": {
@@ -1890,6 +1920,11 @@
         "rarity": 52,
         "artist": "claythekat",
         "id": 40
+    },
+    "United States of Indonesia": {
+        "rarity": 52,
+        "artist": "franc_spain",
+        "id": 980
     },
     "Colony of Niger": {
         "rarity": 53,
@@ -2106,6 +2141,11 @@
         "artist": "pixology",
         "id": 63
     },
+    "United Tribes Of New Zealand": {
+        "rarity": 60,
+        "artist": "king_of_pingas",
+        "id": 969
+    },
     "Despotate of the Morea": {
         "rarity": 61,
         "artist": "alpuffsabrigades",
@@ -2264,7 +2304,7 @@
     },
     "Babylon": {
         "rarity": 70,
-        "artist": "_chaotical",
+        "artist": "hortaas",
         "id": 582
     },
     "Danish West Indies": {
@@ -2493,6 +2533,11 @@
         "artist": "navid_habibi",
         "id": 951
     },
+    "Malayan Peoples' Anti-Japanese Army": {
+        "rarity": 90,
+        "artist": "claythekat",
+        "id": 965
+    },
     "Republic of Pirates": {
         "rarity": 90,
         "artist": "carloz4567_46650",
@@ -2715,6 +2760,11 @@
         "artist": "keldoidotec",
         "id": 624
     },
+    "New Swabia": {
+        "rarity": 120,
+        "artist": "lilhector_",
+        "id": 966
+    },
     "Prussian Gold Coast": {
         "rarity": 120,
         "artist": "unfunnichez_",
@@ -2749,6 +2799,11 @@
         "rarity": 125,
         "artist": "claythekat",
         "id": 136
+    },
+    "Sultanate of Maguindanao": {
+        "rarity": 125,
+        "artist": "auru_.o",
+        "id": 973
     },
     "Venetian Republic": {
         "rarity": 125,
@@ -2845,6 +2900,11 @@
         "artist": "xynthust",
         "id": 897
     },
+    "Vijayanagara Empire": {
+        "rarity": 146.3,
+        "artist": "naicrak",
+        "id": 981
+    },
     "Upper Peru": {
         "rarity": 148,
         "artist": "keldoidotec",
@@ -2934,6 +2994,11 @@
         "rarity": 160,
         "artist": "carloz4567_46650",
         "id": 486
+    },
+    "Kingdom of Abemama": {
+        "rarity": 160,
+        "artist": "gusta._.vo",
+        "id": 975
     },
     "Kingdom of Albania": {
         "rarity": 160,
@@ -3197,6 +3262,11 @@
         "artist": "unfunnyguy_.",
         "id": 129
     },
+    "Gay and Lesbian Kingdom of the Coral Sea Islands": {
+        "rarity": 189,
+        "artist": "._pudd_.",
+        "id": 983
+    },
     "Oregon Territory": {
         "rarity": 189,
         "artist": "n0tch21_98933",
@@ -3268,6 +3338,11 @@
         "rarity": 194,
         "artist": "shellfish72",
         "id": 716
+    },
+    "Kingdom of Tonga": {
+        "rarity": 194,
+        "artist": "argahalakbatak",
+        "id": 976
     },
     "Orange Free State": {
         "rarity": 194,
@@ -3369,6 +3444,11 @@
         "artist": "._pudd_.",
         "id": 525
     },
+    "Bruneian Sultanate": {
+        "rarity": 203,
+        "artist": "pixology.",
+        "id": 970
+    },
     "German Togoland": {
         "rarity": 203,
         "artist": "n0tch21_98933",
@@ -3379,15 +3459,30 @@
         "artist": "capythesleepy",
         "id": 249
     },
+    "Kingdom of Bora Bora": {
+        "rarity": 204,
+        "artist": "keldoidotec",
+        "id": 972
+    },
     "Saint Christopher-Nevis-Anguilla": {
         "rarity": 204,
         "artist": "floridianirishguy",
         "id": 732
     },
+    "Timor Timur": {
+        "rarity": 204,
+        "artist": "argahalakbatak",
+        "id": 971
+    },
     "Saar Protectorate": {
         "rarity": 205,
         "artist": "edougamer",
         "id": 428
+    },
+    "Territory of Western Samoa": {
+        "rarity": 206,
+        "artist": "king_banananananana",
+        "id": 964
     },
     "British Bahamas": {
         "rarity": 207,
@@ -3494,6 +3589,11 @@
         "rarity": 229,
         "artist": "lilhector_",
         "id": 638
+    },
+    "Champasak Kingdom": {
+        "rarity": 230,
+        "artist": "lilhector_",
+        "id": 979
     },
     "Chiefdom of Cocollán": {
         "rarity": 230,

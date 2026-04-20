@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1776678951",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Babylon, Imperialist United States, Mali Federation, Polish People's Republic, Soviet Union)",
+                "Updated to HistoryDex South East Asian/Pacific Wave Update - 20 new balls (Bruneian Sultanate, Champasak Kingdom, Dominion of Pakistan, Gay and Lesbian Kingdom of the Coral Sea Islands, Kingdom of Abemama, Kingdom of Bora Bora, Kingdom of Siam, Kingdom of Tonga, Konbaung Dynasty, Malayan Peoples' Anti-Japanese Army, Netherlands-Indonesia Union, New Swabia, Srivijaya Empire, Sultanate of Maguindanao, Territory of Western Samoa, Timor Timur, Toyotomi Clan, United States of Indonesia, United Tribes Of New Zealand, Vijayanagara Empire)"
+            ]
+        },
+        {
             "timestamp": "1776607481",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Empire of the Sahara)"
