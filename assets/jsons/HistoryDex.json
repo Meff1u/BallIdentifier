@@ -283,7 +283,8 @@
     "Polish-Lithuanian Commonwealth": {
         "rarity": 8,
         "artist": "barnabdulla",
-        "id": 42
+        "id": 42,
+        "collectors": ["558678655945932801"]
     },
     "Rashidun Caliphate": {
         "rarity": 8,
@@ -408,7 +409,8 @@
     "Union of Poland-Hungary": {
         "rarity": 10,
         "artist": "colin_iii",
-        "id": 854
+        "id": 854,
+        "collectors": ["558678655945932801"]
     },
     "Xiongnu": {
         "rarity": 10,
@@ -820,7 +822,8 @@
     "Crown of the Kingdom of Poland": {
         "rarity": 20,
         "artist": "vexab",
-        "id": 808
+        "id": 808,
+        "collectors": ["558678655945932801"]
     },
     "Crown of Castille": {
         "rarity": 20,
@@ -840,7 +843,8 @@
     "Kingdom of Poland": {
         "rarity": 20,
         "artist": "xynthust",
-        "id": 126
+        "id": 126,
+        "collectors": ["558678655945932801"]
     },
     "Little Entente": {
         "rarity": 20,
@@ -1371,7 +1375,8 @@
     "Congress Poland": {
         "rarity": 37,
         "artist": "reichmann",
-        "id": 294
+        "id": 294,
+        "collectors": ["558678655945932801"]
     },
     "First Haitian Empire": {
         "rarity": 37,
@@ -1407,7 +1412,8 @@
     "Second Polish Republic": {
         "rarity": 37,
         "artist": "finski._.",
-        "id": 393
+        "id": 393,
+        "collectors": ["558678655945932801"]
     },
     "Argentinian Military Dictatorship": {
         "rarity": 38,
@@ -1518,7 +1524,8 @@
     "State of the Teutonic Order": {
         "rarity": 40,
         "artist": "claythekat",
-        "id": 454
+        "id": 454,
+        "collectors": ["558678655945932801"]
     },
     "United Colonies of New England": {
         "rarity": 40,
@@ -1744,7 +1751,8 @@
     "Polish People's Republic": {
         "rarity": 47,
         "artist": "enzotype",
-        "id": 303
+        "id": 303,
+        "collectors": ["558678655945932801"]
     },
     "Allied-Occupied Japan": {
         "rarity": 48,
@@ -2134,7 +2142,8 @@
     "Duchy of Courland and Semigallia": {
         "rarity": 60,
         "artist": "santiguti08_2011",
-        "id": 701
+        "id": 701,
+        "collectors": ["558678655945932801"]
     },
     "Turkmen Soviet Socialist Republic": {
         "rarity": 60,
@@ -2464,7 +2473,7 @@
     },
     "Kingdom of Montenegro": {
         "rarity": 84,
-        "artist": "lilhector_",
+        "artist": "shellfish72",
         "id": 326
     },
     "Lesser Ottoman Empire": {
@@ -2733,7 +2742,8 @@
     "Free City of Danzig": {
         "rarity": 114,
         "artist": "unfunnichez_",
-        "id": 661
+        "id": 661,
+        "collectors": ["558678655945932801"]
     },
     "Khorezm People's Soviet Republic": {
         "rarity": 115,
@@ -2818,7 +2828,8 @@
     "Targowica Confederation": {
         "rarity": 127,
         "artist": "Fished",
-        "id": 634
+        "id": 634,
+        "collectors": ["558678655945932801"]
     },
     "Kingdom of Burundi": {
         "rarity": 128,
@@ -2898,7 +2909,8 @@
     "Peasant Battalions": {
         "rarity": 145,
         "artist": "xynthust",
-        "id": 897
+        "id": 897,
+        "collectors": ["558678655945932801"]
     },
     "Vijayanagara Empire": {
         "rarity": 146.3,
@@ -2973,7 +2985,8 @@
     "Polish Underground State": {
         "rarity": 158,
         "artist": "finski._.",
-        "id": 501
+        "id": 501,
+        "collectors": ["558678655945932801"]
     },
     "Corsican Republic": {
         "rarity": 159,
@@ -3134,7 +3147,8 @@
     "Grand Duchy of Warsaw": {
         "rarity": 175,
         "artist": "keldoidotec",
-        "id": 211
+        "id": 211,
+        "collectors": ["558678655945932801"]
     },
     "Ottoman Beylik": {
         "rarity": 175,
@@ -3536,7 +3550,7 @@
     },
     "Ottoman Qatar": {
         "rarity": 215,
-        "artist": "hortaas",
+        "artist": "scotto6353",
         "id": 850,
         "collectors": ["1163451939997093968"]
     },

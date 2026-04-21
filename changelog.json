@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1776769260",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Kingdom of Montenegro, Ottoman Qatar)"
+            ]
+        },
+        {
             "timestamp": "1776720047",
             "changes": [
                 "Updated to new HistoryDex ball (Soviet Republic of Naissaar)",
