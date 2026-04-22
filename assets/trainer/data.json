@@ -444,7 +444,8 @@
             "Crimean Khanate": ["crimea"],
             "United States of Venezuela": ["venezuela"],
             "Soviet Republic of Naissaar": ["naissaar", "soviet naissaar", "estonia"],
-            "Ottoman Qatar": ["qatar"]
+            "Ottoman Qatar": ["qatar"],
+            "French Algeria": ["algeria"]
         }
 	}
 }
