@@ -384,7 +384,7 @@
             "Federation of Ethiopia and Eritrea": ["ethiopia and eritrea", "ethiopia", "eritrea"],
             "French Upper Volta": ["upper volta"],
             "Jolof Empire": ["jolof"],
-            "Kingfom of Altava": ["altava"],
+            "Kingdom of Altava": ["altava"],
             "Kingdom of Benin": ["benin"],
             "Kingdom of Burundi": ["burundi"],
             "Kingdom of Dahomey": ["dahomey"],
@@ -443,7 +443,8 @@
             "Vijayanagara Empire": ["vijayanagara", "india"],
             "Crimean Khanate": ["crimea"],
             "United States of Venezuela": ["venezuela"],
-            "Soviet Republic of Naissaar": ["naissaar", "soviet naissaar", "estonia"]
+            "Soviet Republic of Naissaar": ["naissaar", "soviet naissaar", "estonia"],
+            "Ottoman Qatar": ["qatar"]
         }
 	}
 }

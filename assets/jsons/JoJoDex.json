@@ -30,7 +30,8 @@
 	"Gyro Zeppeli": {
 		"rarity": 5,
 		"artist": "Hirohiko Araki",
-		"id": 107
+		"id": 107,
+        "collectors": ["709854993733386321"]
 	},
 	"Joseph Joestar": {
 		"rarity": 5,
