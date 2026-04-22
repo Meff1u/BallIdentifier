@@ -445,7 +445,9 @@
             "United States of Venezuela": ["venezuela"],
             "Soviet Republic of Naissaar": ["naissaar", "soviet naissaar", "estonia"],
             "Ottoman Qatar": ["qatar"],
-            "French Algeria": ["algeria"]
+            "French Algeria": ["algeria"],
+            "Central African Empire": ["car"],
+            "Hellenic State": ["greece"]
         }
 	}
 }
