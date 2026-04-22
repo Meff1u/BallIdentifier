@@ -1,9 +1,16 @@
 {
     "changes": [
         {
+            "timestamp": "1776890206",
+            "changes": [
+                "Mobile UI fixes and improvements",
+                "Better view of enlarged spawn arts"
+            ]
+        },
+        {
             "timestamp": "1776880844",
             "changes": [
-                "Updated to new spawn art in HistoryDex (Kingdom of Siam, Khedivate of Egypt)"
+                "Updated to new spawn arts in HistoryDex (Kingdom of Siam, Khedivate of Egypt)"
             ]
         },
         {

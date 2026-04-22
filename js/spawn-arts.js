@@ -11,6 +11,72 @@ const WAVE_COLORS = {
 
 const DEX_WITH_WAVES = ["Ballsdex", "FoodDex"];
 const DEX_WITH_PREVIOUS_ARTS = ["Ballsdex"];
+let enlargedArtResizeHandler = null;
+let spawnArtsModalCleanupBound = false;
+
+function ensureSpawnArtsModalCleanup() {
+    const modal = document.getElementById("spawnArtsResultModal");
+    if (!modal || spawnArtsModalCleanupBound) return;
+
+    modal.addEventListener("hidden.bs.modal", () => {
+        setSpawnArtsModalMode("previous-arts");
+    });
+
+    spawnArtsModalCleanupBound = true;
+}
+
+function setSpawnArtsModalMode(mode) {
+    const modal = document.getElementById("spawnArtsResultModal");
+    const dialog = modal?.querySelector(".modal-dialog");
+    const body = document.getElementById("popup-content");
+    const footer = modal?.querySelector(".modal-footer");
+
+    if (!modal || !dialog || !body || !footer) return;
+
+    if (mode === "enlarged") {
+        dialog.classList.remove("modal-xl", "modal-dialog-scrollable");
+        dialog.classList.remove("modal-dialog-centered");
+        dialog.classList.add("modal-fullscreen");
+
+        modal.classList.add("spawn-arts-enlarged-mode");
+        footer.classList.add("d-none");
+        body.classList.add("d-flex", "justify-content-center", "align-items-center");
+        body.style.overflow = "hidden";
+
+        if (!enlargedArtResizeHandler) {
+            enlargedArtResizeHandler = () => updateEnlargedArtSize();
+            window.addEventListener("resize", enlargedArtResizeHandler);
+        }
+
+        updateEnlargedArtSize();
+        return;
+    }
+
+    dialog.classList.remove("modal-fullscreen");
+    dialog.classList.add("modal-xl", "modal-dialog-scrollable", "modal-dialog-centered");
+
+    modal.classList.remove("spawn-arts-enlarged-mode");
+    footer.classList.remove("d-none");
+    body.classList.remove("d-flex", "justify-content-center", "align-items-center");
+    body.style.overflow = "";
+
+    if (enlargedArtResizeHandler) {
+        window.removeEventListener("resize", enlargedArtResizeHandler);
+        enlargedArtResizeHandler = null;
+    }
+}
+
+function updateEnlargedArtSize() {
+    const modal = document.getElementById("spawnArtsResultModal");
+    if (!modal?.classList.contains("spawn-arts-enlarged-mode")) return;
+
+    const img = modal.querySelector(".popup-enlarged-art-image");
+    const header = modal.querySelector(".modal-header");
+    if (!img || !header) return;
+
+    const availableHeight = Math.max(220, window.innerHeight - header.offsetHeight - 28);
+    img.style.maxHeight = `${availableHeight}px`;
+}
 
 function loadSpawnArtsData(dexName) {
     const jsonFile = `assets/jsons/${dexName}.json`;
@@ -174,12 +240,16 @@ function showSpawnArtsPopup(ballName, arts) {
     const modal = document.getElementById('spawnArtsResultModal');
     const modalTitle = document.getElementById('popup-header');
     const modalBody = document.getElementById('popup-content');
+
+    ensureSpawnArtsModalCleanup();
     
     modalBody.innerHTML = "";
     modalTitle.textContent = `Previous Arts for ${ballName}`;
     
     const row = document.createElement("div");
     row.className = "row g-3 justify-content-center";
+
+    setSpawnArtsModalMode("previous-arts");
     
     arts.forEach((art, index) => {
         const col = createArtCard(ballName, art, index);
@@ -207,8 +277,8 @@ function createArtCard(ballName, art, index) {
         artContainer.setAttribute("title", art.alt);
     }
     
-    const webpSrc = `assets/dexes/${ballName}/previous/${index + 1}.webp`;
-    const gifSrc = `assets/dexes/${ballName}/previous/${index + 1}.gif`;
+    const webpSrc = `assets/dexes/Ballsdex/previous/${ballName}/${index + 1}.webp`;
+    const gifSrc = `assets/dexes/Ballsdex/previous/${ballName}/${index + 1}.gif`;
     
     artContainer.innerHTML = `
         <img src="${webpSrc}" alt="${ballName} art" class="card-img-top" loading="lazy" 
@@ -232,18 +302,24 @@ function showEnlargedArt(ballName, dexName) {
     const modal = document.getElementById('spawnArtsResultModal');
     const modalTitle = document.getElementById('popup-header');
     const modalBody = document.getElementById('popup-content');
+
+    ensureSpawnArtsModalCleanup();
     
     modalBody.innerHTML = "";
     modalTitle.textContent = ballName;
+
+    setSpawnArtsModalMode("enlarged");
     
     modalBody.innerHTML = `
-        <div class="popup-enlarged-art-container text-center">
-            <img src="assets/dexes/${dexName}/${ballName}.png" alt="${ballName} art" class="img-fluid" loading="lazy">
+        <div class="popup-enlarged-art-container text-center" style="min-height: 0; height: 100%; width: 100%; padding: 0;">
+            <img src="assets/dexes/${dexName}/${ballName}.png" alt="${ballName} art" class="img-fluid popup-enlarged-art-image" loading="lazy">
         </div>
     `;
     
     const bootstrapModal = new bootstrap.Modal(modal);
     bootstrapModal.show();
+
+    updateEnlargedArtSize();
 }
 
 function showNotification() {

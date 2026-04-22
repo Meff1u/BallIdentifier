@@ -125,6 +125,8 @@ function initializeTabs() {
                     AppState.spawnArtsLoaded = true;
                 }
             } else if (targetId === '#bot-content') {
+                searchBarContainer && (searchBarContainer.style.display = 'none');
+                mobileSettingsButton?.classList.add('d-none');
                 loadBotStatistics();
             } else {
                 searchBarContainer && (searchBarContainer.style.display = 'none');

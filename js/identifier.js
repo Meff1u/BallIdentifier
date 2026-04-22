@@ -316,7 +316,17 @@ async function updateTitleWithBallCount() {
 }
 
 function setupChangelog() {
-    document.getElementById("changelogButton")?.addEventListener("click", loadChangelog);
+    document.getElementById("changelogButton")?.addEventListener("click", async (event) => {
+        event.preventDefault();
+
+        const changelogOffcanvas = document.getElementById("changelogOffcanvas");
+        if (changelogOffcanvas?.classList.contains("show")) {
+            window.changelogOffcanvas?.hide();
+            return;
+        }
+
+        await loadChangelog();
+    });
 }
 
 async function loadChangelog() {
