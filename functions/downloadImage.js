@@ -1,6 +1,27 @@
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const url_module = require('url');
 
+// API Key validation middleware
+function validateApiKey(event) {
+  const providedKey = event.headers?.['x-api-key'] || (event.body && JSON.parse(event.body).api_key);
+  const validKey = process.env.API_KEY;
+  
+  if (!validKey) {
+    console.error('API_KEY environment variable not set');
+    return { valid: false, error: 'Server configuration error' };
+  }
+  
+  if (!providedKey) {
+    return { valid: false, error: 'API key required' };
+  }
+  
+  if (providedKey !== validKey) {
+    return { valid: false, error: 'Invalid API key' };
+  }
+  
+  return { valid: true };
+}
+
 // Whitelist allowed domains for image downloads (SSRF prevention)
 const ALLOWED_DOMAINS = [
     'cdn.discordapp.com',
@@ -40,6 +61,16 @@ function isValidImageUrl(urlString) {
 
 exports.handler = async function(event, context) {
     try {
+        // Validate API key
+        const apiKeyValidation = validateApiKey(event);
+        if (!apiKeyValidation.valid) {
+            return {
+                statusCode: 401,
+                headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+                body: JSON.stringify({ error: apiKeyValidation.error })
+            };
+        }
+
         const { url } = JSON.parse(event.body);
 
         // Validate URL before fetching (SSRF prevention)

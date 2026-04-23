@@ -2,102 +2,77 @@ const fs = require('fs');
 const path = require('path');
 const url_module = require('url');
 
-// Whitelist allowed domains for image downloads (SSRF prevention)
-const ALLOWED_DOMAINS = [
-    'cdn.discordapp.com',
-    'discord.com',
-    'canary.discord.com',
-    'ptb.discord.com',
-    'canary.discordapp.com',
-    'ptb.discordapp.com',
-];
-
-function isValidImageUrl(urlString) {
-    try {
-        const parsedUrl = new url_module.URL(urlString);
-        
-        // Only allow HTTPS
-        if (parsedUrl.protocol !== 'https:') {
-            return false;
-        }
-        
-        // Check if domain is in whitelist
-        const hostname = parsedUrl.hostname;
-        const isAllowed = ALLOWED_DOMAINS.some(domain => 
-            hostname === domain || hostname.endsWith('.' + domain)
-        );
-        
-        if (!isAllowed) {
-            console.warn('Domain not whitelisted: ' + hostname);
-            return false;
-        }
-        
-        return true;
-    } catch (error) {
-        console.error('Invalid URL format: ' + urlString);
-        return false;
-    }
+// API Key validation middleware
+function validateApiKey(event) {
+  const providedKey = event.headers?.['x-api-key'] || event.queryStringParameters?.api_key;
+  const validKey = process.env.API_KEY;
+  
+  if (!validKey) {
+    console.error('API_KEY environment variable not set');
+    return { valid: false, error: 'Server configuration error' };
+  }
+  
+  if (!providedKey) {
+    return { valid: false, error: 'API key required' };
+  }
+  
+  if (providedKey !== validKey) {
+    return { valid: false, error: 'Invalid API key' };
+  }
+  
+  return { valid: true };
 }
 
-async function downloadImage(imageUrl) {
+async function downloadImageFromEndpoint(imageUrl, apiKey) {
     try {
         const fetchFn = (await import('node-fetch')).default;
         
         if (!imageUrl || typeof imageUrl !== 'string') {
             throw new Error('Invalid URL parameter');
         }
-        
-        if (!isValidImageUrl(imageUrl)) {
-            throw new Error('URL not allowed or invalid protocol');
-        }
 
-        console.log('Fetching image from: ' + imageUrl);
+        console.log('Calling downloadImage endpoint for: ' + imageUrl);
         
-        const response = await fetchFn(imageUrl, {
+        const isNetlify = process.env.URL && !process.env.URL.includes('localhost');
+        const downloadEndpointUrl = isNetlify 
+            ? `${process.env.URL}/.netlify/functions/downloadImage` 
+            : 'http://localhost:8888/.netlify/functions/downloadImage';
+        
+        const response = await fetchFn(downloadEndpointUrl, {
+            method: 'POST',
             headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+                'Content-Type': 'application/json',
+                'x-api-key': apiKey
             },
+            body: JSON.stringify({ url: imageUrl }),
             timeout: 10000
         });
         
-        console.log(`Response status: ${response.status}`);
-        console.log(`Content-Type: ${response.headers.get('content-type')}`);
+        console.log(`Download endpoint response status: ${response.status}`);
         
         if (!response.ok) {
-            throw new Error(`Failed to fetch image: ${response.status} ${response.statusText} (make sure the URL is encoded with encodeURIComponent() if it contains query parameters)`);
+            const errorBody = await response.text();
+            throw new Error(`Failed to download image: ${response.status} ${response.statusText} - ${errorBody}`);
         }
 
-        const contentType = response.headers.get('content-type');
-        if (!contentType || !contentType.startsWith('image/')) {
-            throw new Error(`Invalid content type: ${contentType}. Expected an image.`);
-        }
-
-        const contentLength = response.headers.get('content-length');
-        if (contentLength && parseInt(contentLength) > 10 * 1024 * 1024) {
-            throw new Error('Image too large (>10MB)');
-        }
-
-        const blob = await response.blob();
+        const imageData = await response.json();
         
-        if (blob.size === 0) {
-            throw new Error('Received empty response');
+        if (!imageData.body) {
+            throw new Error('No image data in response');
         }
         
-        if (blob.size < 100) {
-            throw new Error('Response too small to be a valid image');
-        }
+        // Decode base64 image
+        const buffer = Buffer.from(imageData.body, 'base64');
+        console.log(`Successfully downloaded image. Size: ${buffer.length} bytes`);
         
-        console.log(`Successfully downloaded image. Size: ${blob.size} bytes, Type: ${blob.type}`);
-        
-        const buffer = await blob.arrayBuffer();
-        return Buffer.from(buffer);
+        return buffer;
     } catch (error) {
         console.error("Error downloading the image:", error);
         throw error;
     }
 }
 
-async function callCompareImageFunction(imageBuffer, dex) {
+async function callCompareImageFunction(imageBuffer, dex, apiKey) {
     try {
         const FormData = (await import('form-data')).default;
         const fetchFn = (await import('node-fetch')).default;
@@ -111,10 +86,15 @@ async function callCompareImageFunction(imageBuffer, dex) {
             ? `${process.env.URL}/.netlify/functions/compareImage` 
             : 'http://localhost:8888/.netlify/functions/compareImage';
         
-        // Call local compareImage function
+        console.log('Calling compareImage endpoint...');
+        
+        // Call compareImage function with API key
         const response = await fetchFn(compareImageUrl, {
             method: 'POST',
-            headers: formData.getHeaders(),
+            headers: {
+                ...formData.getHeaders(),
+                'x-api-key': apiKey
+            },
             body: formData
         });
 
@@ -133,6 +113,17 @@ async function callCompareImageFunction(imageBuffer, dex) {
 
 exports.handler = async (event) => {
     try {
+        // Validate API key
+        const apiKeyValidation = validateApiKey(event);
+        if (!apiKeyValidation.valid) {
+            return {
+                statusCode: 401,
+                headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+                body: JSON.stringify({ error: apiKeyValidation.error })
+            };
+        }
+
+        const apiKey = event.headers?.['x-api-key'] || event.queryStringParameters?.api_key;
         const jsonsPath = path.join(process.cwd(), 'assets/jsons');
         
         // Load available dexes
@@ -198,13 +189,13 @@ exports.handler = async (event) => {
 
         console.log(`Processing request: url=${url}, dex=${dex}`);
 
-        // Step 1: Download image from URL
-        console.log('Step 1: Downloading image...');
-        const imageBuffer = await downloadImage(url);
+        // Step 1: Download image from URL via downloadImage endpoint
+        console.log('Step 1: Downloading image from endpoint...');
+        const imageBuffer = await downloadImageFromEndpoint(url, apiKey);
 
-        // Step 2: Send to compareImage function
-        console.log('Step 2: Sending to compareImage...');
-        const comparisonResult = await callCompareImageFunction(imageBuffer, dex);
+        // Step 2: Send to compareImage endpoint
+        console.log('Step 2: Sending to compareImage endpoint...');
+        const comparisonResult = await callCompareImageFunction(imageBuffer, dex, apiKey);
 
         console.log('Final result:', comparisonResult);
 

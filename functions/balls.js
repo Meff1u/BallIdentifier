@@ -1,8 +1,39 @@
 const fs = require('fs');
 const path = require('path');
 
+// API Key validation middleware
+function validateApiKey(event) {
+  const providedKey = event.headers?.['x-api-key'] || event.queryStringParameters?.api_key;
+  const validKey = process.env.API_KEY;
+  
+  if (!validKey) {
+    console.error('API_KEY environment variable not set');
+    return { valid: false, error: 'Server configuration error' };
+  }
+  
+  if (!providedKey) {
+    return { valid: false, error: 'API key required' };
+  }
+  
+  if (providedKey !== validKey) {
+    return { valid: false, error: 'Invalid API key' };
+  }
+  
+  return { valid: true };
+}
+
 exports.handler = async (event) => {
   try {
+    // Validate API key
+    const apiKeyValidation = validateApiKey(event);
+    if (!apiKeyValidation.valid) {
+      return {
+        statusCode: 401,
+        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+        body: JSON.stringify({ error: apiKeyValidation.error })
+      };
+    }
+
     const jsonsPath = path.join(process.cwd(), 'assets/jsons');
 
     const dexesConfig = JSON.parse(fs.readFileSync(path.join(jsonsPath, 'dexes.json'), 'utf8'));
