@@ -55,14 +55,13 @@ async function downloadImageFromEndpoint(imageUrl, apiKey) {
             throw new Error(`Failed to download image: ${response.status} ${response.statusText} - ${errorBody}`);
         }
 
-        const imageData = await response.json();
-        
-        if (!imageData.body) {
+        const arrayBuffer = await response.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+
+        if (!buffer.length) {
             throw new Error('No image data in response');
         }
-        
-        // Decode base64 image
-        const buffer = Buffer.from(imageData.body, 'base64');
+
         console.log(`Successfully downloaded image. Size: ${buffer.length} bytes`);
         
         return buffer;
