@@ -32,6 +32,8 @@ exports.handler = async (event) => {
         // Validate API key
         const apiKeyValidation = validateApiKey(event);
         if (!apiKeyValidation.valid) {
+            console.warn("API key validation failed:", apiKeyValidation.error);
+            console.warn(event);
             return {
                 statusCode: 401,
                 headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
