@@ -63,7 +63,7 @@ function handleDrop(event) {
     } else if (text) {
         if (isValidDiscordImageUrl(text)) {
             showLoadingModal("Fetching...");
-            downloadImage(text);
+            identifyFromUrl(text);
         } else {
             showAlert("Please drop a valid Discord image URL.", "warning");
         }
