@@ -38,24 +38,18 @@ function shouldSample(rate) {
   return Math.random() < rate;
 }
 
-function getClientIp(req) {
+function getClientIpInfo(req) {
   const nfIp = req.headers.get('x-nf-client-connection-ip');
-  if (nfIp) return nfIp;
+  if (nfIp) return { ip: nfIp, source: 'x-nf-client-connection-ip' };
 
   const forwardedFor = req.headers.get('x-forwarded-for');
-  if (!forwardedFor) return 'unknown';
+  if (!forwardedFor) return { ip: 'unknown', source: 'missing' };
 
-  return forwardedFor.split(',')[0].trim() || 'unknown';
-}
-
-async function shortHash(input) {
-  const bytes = new TextEncoder().encode(input);
-  const digest = await crypto.subtle.digest('SHA-256', bytes);
-  const hash = Array.from(new Uint8Array(digest))
-    .slice(0, 8)
-    .map((b) => b.toString(16).padStart(2, '0'))
-    .join('');
-  return hash;
+  const firstIp = forwardedFor.split(',')[0].trim();
+  return {
+    ip: firstIp || 'unknown',
+    source: firstIp ? 'x-forwarded-for' : 'missing'
+  };
 }
 
 function isBlockedPath(pathname) {
@@ -82,10 +76,10 @@ export default async (request, context) => {
   const method = request.method;
   const userAgent = request.headers.get('user-agent') || '';
   const sampleRate = getSampleRate();
+  const ipInfo = getClientIpInfo(request);
 
   if (isBlockedPath(pathname)) {
     if (shouldSample(sampleRate)) {
-      const ipHash = await shortHash(getClientIp(request));
       console.warn(
         JSON.stringify({
           type: 'blocked_probe',
@@ -93,7 +87,9 @@ export default async (request, context) => {
           path: pathname,
           method,
           ua: userAgent.slice(0, 180),
-          ipHash,
+          clientIp: ipInfo.ip,
+          ipSource: ipInfo.source,
+          ipMissing: ipInfo.ip === 'unknown',
         })
       );
     }
@@ -114,7 +110,6 @@ export default async (request, context) => {
     const shouldLog = suspicious || shouldSample(sampleRate);
 
     if (shouldLog) {
-      const ipHash = await shortHash(getClientIp(request));
       console.info(
         JSON.stringify({
           type: 'not_found_request',
@@ -126,7 +121,9 @@ export default async (request, context) => {
           ua: userAgent.slice(0, 180),
           suspiciousUa: suspicious,
           referrer: safeReferrer(request.headers.get('referer') || ''),
-          ipHash,
+          clientIp: ipInfo.ip,
+          ipSource: ipInfo.source,
+          ipMissing: ipInfo.ip === 'unknown',
         })
       );
     }
