@@ -447,7 +447,14 @@
             "Ottoman Qatar": ["qatar"],
             "French Algeria": ["algeria"],
             "Central African Empire": ["car"],
-            "Hellenic State": ["greece"]
+            "Hellenic State": ["greece"],
+            "Delian League": ["delian", "athens"],
+            "International Criminal Tribunal for Yugoslavia": ["yugoslavia"],
+            "Czech and Slovak Federative Republic": ["czech", "slovakia", "czechoslovakia"],
+            "Eastern Hungarian Kingdom": ["kingdom of hungary", "eastern hungary", "hungary"],
+            "U.S. Occupied Greenland": ["greenland", "us occupied greenland", "us greenland"],
+            "Kholodny Yar Republic": ["kholodny yar", "yar", "yar republic", "cold ravine republic"],
+            "Autonomous Province of Western Bosnia": ["bosnia", "western bosnia", "west bosnia"]
         }
 	}
 }

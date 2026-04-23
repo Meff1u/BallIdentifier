@@ -537,6 +537,11 @@
         "artist": "bfbrobloxplayz",
         "id": 152
     },
+    "Delian League": {
+        "rarity": 15,
+        "artist": "theendermans",
+        "id": 993
+    },
     "Fascist Rome": {
         "rarity": 15,
         "artist": "business_mann",
@@ -704,7 +709,7 @@
     },
     "First Mexican Empire": {
         "rarity": 18,
-        "artist": "bfbrobloxplayz",
+        "artist": "drael.heart",
         "id": 37
     },
     "German Confederation": {
@@ -1527,6 +1532,11 @@
         "id": 454,
         "collectors": ["558678655945932801"]
     },
+    "U.S. Occupied Greenland": {
+        "rarity": 40,
+        "artist": "n0tch21_98933",
+        "id": 989
+    },
     "United Colonies of New England": {
         "rarity": 40,
         "artist": "unfunnichez_",
@@ -1601,6 +1611,11 @@
         "rarity": 43,
         "artist": "sksjssm",
         "id": 150
+    },
+    "Czech and Slovak Federative Republic": {
+        "rarity": 43,
+        "artist": ".astrokat.",
+        "id": 991
     },
     "Czechoslovak Socialist Republic": {
         "rarity": 43,
@@ -2760,6 +2775,11 @@
         "artist": "georgeisstillnotaduck",
         "id": 451
     },
+    "Kholodny Yar Republic": {
+        "rarity": 119,
+        "artist": "lordaxolotl7",
+        "id": 988
+    },
     "Antillean Confederation": {
         "rarity": 120,
         "artist": "bfbrobloxplayz",
@@ -2846,6 +2866,11 @@
         "artist": "._pudd_.",
         "id": 616
     },
+    "Autonomous Province of Western Bosnia": {
+        "rarity": 130,
+        "artist": "average_countryballs_fan",
+        "id": 987
+    },
     "Zulu Kingdom": {
         "rarity": 130,
         "artist": "your.polish.parent",
@@ -2901,6 +2926,11 @@
         "artist": "thelegendarytacomuncher",
         "id": 745
     },
+    "International Criminal Tribunal for Yugoslavia": {
+        "rarity": 145,
+        "artist": "parallelwindmill",
+        "id": 992
+    },
     "Italian-Occupied Monaco": {
         "rarity": 145,
         "artist": ".sof_240",
@@ -2911,6 +2941,11 @@
         "artist": "xynthust",
         "id": 897,
         "collectors": ["558678655945932801"]
+    },
+    "Eastern Hungarian Kingdom": {
+        "rarity": 146,
+        "artist": "gusta._.vo",
+        "id": 990
     },
     "Vijayanagara Empire": {
         "rarity": 146.3,

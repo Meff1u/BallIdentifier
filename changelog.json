@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1776939627",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (First Mexican Empire, Virginia Colony)",
+                "Updated to new HistoryDex balls (Autonomous Province of Western Bosnia, Czech and Slovak Federative Republic, Delian League, Eastern Hungarian Kingdom, International Criminal Tribunal for Yugoslavia, U.S. Occupied Greenland)"
+            ]
+        },
+        {
             "timestamp": "1776890206",
             "changes": [
                 "Mobile UI fixes and improvements",
