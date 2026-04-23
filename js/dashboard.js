@@ -63,6 +63,15 @@ function validateCustomMessage(message) {
             error: '❌ Message contains invalid or potentially dangerous content'
         };
     }
+
+    // Block links in plain text and markdown form
+    const linkPatterns = /(https?:\/\/|www\.|\[.*?\]\(.*?\))/gi;
+    if (linkPatterns.test(message)) {
+        return {
+            valid: false,
+            error: '❌ Links are not allowed in the custom message'
+        };
+    }
     
     return { valid: true, error: null };
 }
