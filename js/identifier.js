@@ -72,7 +72,7 @@ function handlePasteEvent(event) {
             item.getAsString(text => {
                 if (isValidDiscordImageUrl(text)) {
                     showLoadingModal("Fetching...");
-                    downloadImage(text);
+                    identifyFromUrl(text);
                 }
             });
         }
@@ -98,7 +98,7 @@ async function handlePasteButtonClick() {
                 
                 if (isValidDiscordImageUrl(text)) {
                     showLoadingModal("Fetching...");
-                    downloadImage(text);
+                    identifyFromUrl(text);
                 }
             }
         }
@@ -111,12 +111,13 @@ function isValidDiscordImageUrl(url) {
     return DISCORD_IMAGE_PATTERN.test(url);
 }
 
-async function downloadImage(url) {
+async function identifyFromUrl(url) {
     try {
-        const response = await fetch(".netlify/functions/downloadImage", {
+        const selectedDex = document.getElementById("dexSelector").value;
+        const response = await fetch("/.netlify/functions/identify", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ url })
+            body: JSON.stringify({ url, dex: selectedDex })
         });
         
         if (!response.ok) {
@@ -125,14 +126,12 @@ async function downloadImage(url) {
             try { errorData = JSON.parse(text); } catch { errorData = { error: text }; }
             throw new Error(JSON.stringify(errorData));
         }
-        
-        const blob = await response.blob();
-        const file = new File([blob], "downloaded_image.png", { type: blob.type });
-        showLoadingModal("Comparing...");
-        checkFileSize(file);
+
+        const data = await response.json();
+        transitionToResult(data.country || data.name, data.diff);
         
     } catch (error) {
-        console.error("Error downloading image:", error);
+        console.error("Error identifying image from URL:", error);
         hideLoadingModal();
         showAlert(getDownloadErrorMessage(error), "danger");
     }
@@ -142,6 +141,8 @@ function getDownloadErrorMessage(error) {
     try {
         const errorData = JSON.parse(error.message);
         if (errorData.errorType === 'Function.ResponseSizeTooLarge') return "Image is too large to download. Maximum size is 6MB.";
+        if (errorData.error) return errorData.error;
+        if (errorData.message) return errorData.message;
         if (errorData.errorMessage) return errorData.errorMessage;
     } catch {
         const msg = error.message;
@@ -200,7 +201,7 @@ async function uploadFile(file) {
     formData.append("dex", selectedDex);
     
     try {
-        const response = await fetch("/.netlify/functions/compareImage", {
+        const response = await fetch("/.netlify/functions/identify", {
             method: "POST",
             body: formData
         });
