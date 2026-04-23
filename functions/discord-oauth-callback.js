@@ -69,9 +69,40 @@ exports.handler = async (event) => {
     const tokenData = await tokenResponse.json();
     const accessToken = tokenData.access_token;
 
-    // Redirect back to dashboard
-    // Store token securely using postMessage from callback handler
-    const html = '<!DOCTYPE html><html><head><title>Processing Discord Login...</title></head><body><script>if (window.opener) { window.opener.postMessage({ type: "DISCORD_TOKEN", token: "' + accessToken + '" }, window.location.origin); window.close(); } else { window.location.hash = "access_token=' + accessToken + '"; }</script></body></html>';
+    const safeToken = JSON.stringify(accessToken);
+    const html = `<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Processing Discord Login...</title>
+  </head>
+  <body>
+    <script>
+      (function () {
+        const token = ${safeToken};
+        const targetUrl = '/dashboard.html#access_token=' + encodeURIComponent(token);
+
+        if (window.opener && !window.opener.closed) {
+          try {
+            window.opener.postMessage({ type: 'DISCORD_TOKEN', token }, window.location.origin);
+            window.opener.location.replace(targetUrl);
+            window.close();
+
+            // Some browsers block close() if the window wasn't script-opened.
+            setTimeout(function () {
+              window.location.replace(targetUrl);
+            }, 150);
+            return;
+          } catch (e) {
+            // Fall through to redirect when opener communication fails.
+          }
+        }
+
+        window.location.replace(targetUrl);
+      })();
+    </script>
+  </body>
+</html>`;
     
     return {
       statusCode: 200,
