@@ -23,21 +23,6 @@ const BOT_UA_PATTERNS = [
   /zgrab/i,
 ];
 
-const DEFAULT_SAMPLE_RATE = 0.05;
-
-function getSampleRate() {
-  const raw = Netlify.env.get('BOT_LOG_SAMPLE_RATE');
-  const parsed = Number(raw);
-  if (!Number.isFinite(parsed) || parsed <= 0 || parsed > 1) {
-    return DEFAULT_SAMPLE_RATE;
-  }
-  return parsed;
-}
-
-function shouldSample(rate) {
-  return Math.random() < rate;
-}
-
 function getClientIpInfo(req) {
   const nfIp = req.headers.get('x-nf-client-connection-ip');
   if (nfIp) return { ip: nfIp, source: 'x-nf-client-connection-ip' };
@@ -70,29 +55,38 @@ function safeReferrer(referrer) {
   }
 }
 
+function logTraffic(request, pathname, method, userAgent, ipInfo, status, extra = {}) {
+  console.info(
+    JSON.stringify({
+      type: 'traffic_request',
+      at: new Date().toISOString(),
+      path: pathname,
+      query: new URL(request.url).search || '',
+      method,
+      status,
+      ua: userAgent.slice(0, 180),
+      suspiciousUa: isSuspiciousUserAgent(userAgent),
+      referrer: safeReferrer(request.headers.get('referer') || ''),
+      clientIp: ipInfo.ip,
+      ipSource: ipInfo.source,
+      ipMissing: ipInfo.ip === 'unknown',
+      ...extra,
+    })
+  );
+}
+
 export default async (request, context) => {
   const url = new URL(request.url);
   const pathname = url.pathname;
   const method = request.method;
   const userAgent = request.headers.get('user-agent') || '';
-  const sampleRate = getSampleRate();
   const ipInfo = getClientIpInfo(request);
 
   if (isBlockedPath(pathname)) {
-    if (shouldSample(sampleRate)) {
-      console.warn(
-        JSON.stringify({
-          type: 'blocked_probe',
-          at: new Date().toISOString(),
-          path: pathname,
-          method,
-          ua: userAgent.slice(0, 180),
-          clientIp: ipInfo.ip,
-          ipSource: ipInfo.source,
-          ipMissing: ipInfo.ip === 'unknown',
-        })
-      );
-    }
+    logTraffic(request, pathname, method, userAgent, ipInfo, 404, {
+      blockedPath: true,
+      trafficGuard: 'blocked-path',
+    });
 
     return new Response('Not found', {
       status: 404,
@@ -105,29 +99,9 @@ export default async (request, context) => {
 
   const response = await context.next();
 
-  if (response.status === 404) {
-    const suspicious = isSuspiciousUserAgent(userAgent);
-    const shouldLog = suspicious || shouldSample(sampleRate);
-
-    if (shouldLog) {
-      console.info(
-        JSON.stringify({
-          type: 'not_found_request',
-          at: new Date().toISOString(),
-          path: pathname,
-          query: url.search || '',
-          method,
-          status: 404,
-          ua: userAgent.slice(0, 180),
-          suspiciousUa: suspicious,
-          referrer: safeReferrer(request.headers.get('referer') || ''),
-          clientIp: ipInfo.ip,
-          ipSource: ipInfo.source,
-          ipMissing: ipInfo.ip === 'unknown',
-        })
-      );
-    }
-  }
+  logTraffic(request, pathname, method, userAgent, ipInfo, response.status, {
+    notFound: response.status === 404,
+  });
 
   return response;
 };
