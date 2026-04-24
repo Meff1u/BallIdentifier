@@ -63,6 +63,26 @@ function jsonResponse(statusCode, body) {
     };
 }
 
+function isAllowedPublicHost(event) {
+    const rawHost = event.headers?.host || event.headers?.Host || '';
+    const host = String(rawHost).toLowerCase().split(':')[0];
+
+    if (!host) {
+        return false;
+    }
+
+    if (host === 'localhost' || host === '127.0.0.1') {
+        return true;
+    }
+
+    const allowedHosts = (process.env.ALLOWED_PUBLIC_HOSTS || 'ballidentifier.xyz,www.ballidentifier.xyz')
+        .split(',')
+        .map((value) => value.trim().toLowerCase())
+        .filter(Boolean);
+
+    return allowedHosts.includes(host);
+}
+
 function getClientIp(event) {
     const forwardedFor = event.headers?.['x-forwarded-for'] || event.headers?.['X-Forwarded-For'] || '';
     return forwardedFor.split(',')[0].trim() || 'unknown';
@@ -182,6 +202,12 @@ exports.handler = async (event) => {
     console.log('Received identify request');
 
     try {
+        if (!isAllowedPublicHost(event)) {
+            return jsonResponse(403, {
+                error: 'Forbidden host'
+            });
+        }
+
         if (event.httpMethod === 'OPTIONS') {
             return {
                 statusCode: 200,
