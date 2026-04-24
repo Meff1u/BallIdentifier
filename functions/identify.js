@@ -43,15 +43,12 @@ async function parseJsonResponse(response, endpointName) {
     const contentType = response.headers.get('content-type') || '';
     const bodyText = await response.text();
 
-    if (!contentType.includes('application/json')) {
-        const preview = bodyText.slice(0, 120);
-        throw new Error(`${endpointName} returned non-JSON response (${response.status}): ${preview}`);
-    }
-
     try {
         return JSON.parse(bodyText);
     } catch (error) {
-        throw new Error(`${endpointName} returned invalid JSON (${response.status}): ${error.message}`);
+        const preview = bodyText.slice(0, 120);
+        const contentTypeNote = contentType ? `, content-type: ${contentType}` : '';
+        throw new Error(`${endpointName} returned invalid JSON (${response.status}${contentTypeNote}): ${preview}`);
     }
 }
 
