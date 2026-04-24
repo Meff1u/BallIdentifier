@@ -2,6 +2,45 @@ const fs = require('fs');
 const path = require('path');
 const url_module = require('url');
 
+function normalizeBaseUrl(rawUrl) {
+    if (!rawUrl || typeof rawUrl !== 'string') {
+        return null;
+    }
+
+    return rawUrl.endsWith('/') ? rawUrl.slice(0, -1) : rawUrl;
+}
+
+function getInternalBaseUrl() {
+    const deployUrl = normalizeBaseUrl(process.env.DEPLOY_URL);
+    const siteUrl = normalizeBaseUrl(process.env.URL);
+
+    if (deployUrl && !deployUrl.includes('localhost')) {
+        return deployUrl;
+    }
+
+    if (siteUrl && !siteUrl.includes('localhost')) {
+        return siteUrl;
+    }
+
+    return 'http://localhost:8888';
+}
+
+async function parseJsonResponse(response, endpointName) {
+    const contentType = response.headers.get('content-type') || '';
+    const bodyText = await response.text();
+
+    if (!contentType.includes('application/json')) {
+        const preview = bodyText.slice(0, 120);
+        throw new Error(`${endpointName} returned non-JSON response (${response.status}): ${preview}`);
+    }
+
+    try {
+        return JSON.parse(bodyText);
+    } catch (error) {
+        throw new Error(`${endpointName} returned invalid JSON (${response.status}): ${error.message}`);
+    }
+}
+
 // API Key validation middleware
 function validateApiKey(event) {
   const providedKey = event.headers?.['x-api-key'] || event.queryStringParameters?.api_key;
@@ -33,10 +72,7 @@ async function downloadImageFromEndpoint(imageUrl, apiKey) {
 
         console.log('Calling downloadImage endpoint for: ' + imageUrl);
         
-        const isNetlify = process.env.URL && !process.env.URL.includes('localhost');
-        const downloadEndpointUrl = isNetlify 
-            ? `${process.env.URL}/.netlify/functions/downloadImage` 
-            : 'http://localhost:8888/.netlify/functions/downloadImage';
+        const downloadEndpointUrl = `${getInternalBaseUrl()}/.netlify/functions/downloadImage`;
         
         const response = await fetchFn(downloadEndpointUrl, {
             method: 'POST',
@@ -80,10 +116,7 @@ async function callCompareImageFunction(imageBuffer, dex, apiKey) {
         formData.append('file', imageBuffer, 'image');
         formData.append('dex', dex);
         
-        const isNetlify = process.env.URL && !process.env.URL.includes('localhost');
-        const compareImageUrl = isNetlify 
-            ? `${process.env.URL}/.netlify/functions/compareImage` 
-            : 'http://localhost:8888/.netlify/functions/compareImage';
+        const compareImageUrl = `${getInternalBaseUrl()}/.netlify/functions/compareImage`;
         
         console.log('Calling compareImage endpoint...');
         
@@ -97,7 +130,7 @@ async function callCompareImageFunction(imageBuffer, dex, apiKey) {
             body: formData
         });
 
-        const result = await response.json();
+        const result = await parseJsonResponse(response, 'compareImage');
         
         if (!response.ok) {
             throw new Error(result.error || 'compareImage function failed');

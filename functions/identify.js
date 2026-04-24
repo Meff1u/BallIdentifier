@@ -6,9 +6,43 @@ const RATE_LIMIT_WINDOW_MS = 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 30;
 const rateLimitStore = new Map();
 
-function getBaseUrl() {
-    const isNetlify = process.env.URL && !process.env.URL.includes('localhost');
-    return isNetlify ? process.env.URL : 'http://localhost:8888';
+function normalizeBaseUrl(rawUrl) {
+    if (!rawUrl || typeof rawUrl !== 'string') {
+        return null;
+    }
+
+    return rawUrl.endsWith('/') ? rawUrl.slice(0, -1) : rawUrl;
+}
+
+function getInternalBaseUrl() {
+    const deployUrl = normalizeBaseUrl(process.env.DEPLOY_URL);
+    const siteUrl = normalizeBaseUrl(process.env.URL);
+
+    if (deployUrl && !deployUrl.includes('localhost')) {
+        return deployUrl;
+    }
+
+    if (siteUrl && !siteUrl.includes('localhost')) {
+        return siteUrl;
+    }
+
+    return 'http://localhost:8888';
+}
+
+async function parseJsonResponse(response, endpointName) {
+    const contentType = response.headers.get('content-type') || '';
+    const bodyText = await response.text();
+
+    if (!contentType.includes('application/json')) {
+        const preview = bodyText.slice(0, 120);
+        throw new Error(`${endpointName} returned non-JSON response (${response.status}): ${preview}`);
+    }
+
+    try {
+        return JSON.parse(bodyText);
+    } catch (error) {
+        throw new Error(`${endpointName} returned invalid JSON (${response.status}): ${error.message}`);
+    }
 }
 
 function jsonResponse(statusCode, body) {
@@ -94,7 +128,7 @@ async function compareImagePrivate(imageBuffer, dex, apiKey) {
     formData.append('file', imageBuffer, 'image');
     formData.append('dex', dex);
 
-    const response = await fetchFn(`${getBaseUrl()}/.netlify/functions/compareImage`, {
+    const response = await fetchFn(`${getInternalBaseUrl()}/.netlify/functions/compareImage`, {
         method: 'POST',
         headers: {
             ...formData.getHeaders(),
@@ -103,7 +137,7 @@ async function compareImagePrivate(imageBuffer, dex, apiKey) {
         body: formData
     });
 
-    const result = await response.json();
+    const result = await parseJsonResponse(response, 'compareImage');
     if (!response.ok) {
         throw new Error(result.error || 'compareImage function failed');
     }
@@ -116,14 +150,14 @@ async function findBallPrivate(url, dex, apiKey) {
     const encodedUrl = encodeURIComponent(url);
     const encodedDex = encodeURIComponent(dex);
 
-    const response = await fetchFn(`${getBaseUrl()}/.netlify/functions/findBall?url=${encodedUrl}&dex=${encodedDex}`, {
+    const response = await fetchFn(`${getInternalBaseUrl()}/.netlify/functions/findBall?url=${encodedUrl}&dex=${encodedDex}`, {
         method: 'GET',
         headers: {
             'x-api-key': apiKey
         }
     });
 
-    const result = await response.json();
+    const result = await parseJsonResponse(response, 'findBall');
     if (!response.ok) {
         throw new Error(result.message || result.error || 'findBall function failed');
     }
