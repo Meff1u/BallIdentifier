@@ -16,10 +16,20 @@ function normalizeBaseUrl(rawUrl) {
 
 function getInternalBaseUrl() {
     const deployUrl = normalizeBaseUrl(process.env.DEPLOY_URL);
+    const deployPrimeUrl = normalizeBaseUrl(process.env.DEPLOY_PRIME_URL);
+    const siteName = (process.env.SITE_NAME || '').trim();
     const siteUrl = normalizeBaseUrl(process.env.URL);
 
     if (deployUrl && !deployUrl.includes('localhost')) {
         return deployUrl;
+    }
+
+    if (deployPrimeUrl && !deployPrimeUrl.includes('localhost')) {
+        return deployPrimeUrl;
+    }
+
+    if (siteName) {
+        return `https://${siteName}.netlify.app`;
     }
 
     if (siteUrl && !siteUrl.includes('localhost')) {
