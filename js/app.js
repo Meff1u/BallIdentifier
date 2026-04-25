@@ -20,6 +20,7 @@ async function initializeApp() {
     populateDexSelectors();
     initializeBootstrapComponents();
     initializeTabs();
+    initializeBotFeatureTabs();
     initializeTooltips();
     initializeSpawnArtsSettings();
     initializeIdentifier();
@@ -244,4 +245,40 @@ function forceCleanupAllModals() {
     if (resultModalEl && !bootstrap.Modal.getInstance(resultModalEl)) {
         window.resultModal = new bootstrap.Modal(resultModalEl);
     }
+}
+
+function initializeBotFeatureTabs() {
+    const botFeatureContent = document.getElementById('botFeatureTabsContent');
+    const botFeaturePanes = document.querySelectorAll('#botFeatureTabsContent .tab-pane');
+    const botFeatureTabs = document.querySelectorAll('#botFeatureTabs button[data-bs-toggle="pill"]');
+    if (!botFeatureContent || !botFeaturePanes.length || !botFeatureTabs.length) return;
+
+    // Remove fade only in Bot feature panes to avoid temporary height collapse during transitions.
+    botFeaturePanes.forEach((pane) => pane.classList.remove('fade'));
+
+    let maxSeenHeight = 0;
+    const syncFeatureContainerHeight = () => {
+        const activePane = botFeatureContent.querySelector('.tab-pane.active');
+        if (!activePane) return;
+
+        const activeHeight = activePane.offsetHeight;
+        if (activeHeight > maxSeenHeight) {
+            maxSeenHeight = activeHeight;
+            botFeatureContent.style.minHeight = `${maxSeenHeight}px`;
+        }
+    };
+
+    let savedScrollY = 0;
+    botFeatureTabs.forEach((tab) => {
+        tab.addEventListener('show.bs.tab', () => {
+            savedScrollY = window.scrollY;
+        });
+
+        tab.addEventListener('shown.bs.tab', () => {
+            syncFeatureContainerHeight();
+            window.scrollTo({ top: savedScrollY, behavior: 'instant' });
+        });
+    });
+
+    requestAnimationFrame(syncFeatureContainerHeight);
 }
