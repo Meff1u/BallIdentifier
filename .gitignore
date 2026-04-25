@@ -6,6 +6,7 @@ node_modules
 
 # Image processing file
 assets/p.js
+assets/t.js
 
 # .env
 .env
