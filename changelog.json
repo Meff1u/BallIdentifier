@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1777111210",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Polish-Lithuanian Commonwealth, Republic of the Sudan, Weimar Republic)"
+            ]
+        },
+        {
             "timestamp": "1776951058",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Ancient Egypt, Dominion of Ghana, Franco-British Union)"
