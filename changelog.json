@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1777221570",
+            "changes": [
+                "Updated to new HistoryDex balls (2ball, Revolutionary Paris, Schutzstaffel)",
+                "Updated to new spawn art in HistoryDex (Ghurid Dynasty)"
+            ]
+        },
+        {
             "timestamp": "1777113453",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Nguyễn Dynasty, Polish-Lithuanian Commonwealth, Republic of the Sudan, Weimar Republic)"

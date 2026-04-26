@@ -597,6 +597,11 @@
         "artist": "aydin_kai22",
         "id": 886
     },
+    "Revolutionary Paris": {
+        "rarity": 15,
+        "artist": "edougamer",
+        "id": 995
+    },
     "Srivijaya Empire": {
         "rarity": 15,
         "artist": "gerance_gern",
@@ -1035,6 +1040,11 @@
         "rarity": 25,
         "artist": "claythekat",
         "id": 141
+    },
+    "Schutzstaffel": {
+        "rarity": 25,
+        "artist": "not_woterbottle",
+        "id": 996
     },
     "State of Slovenes, Croats, and Serbs": {
         "rarity": 25,
@@ -1755,7 +1765,7 @@
     },
     "Ghurid Dynasty": {
         "rarity": 47,
-        "artist": "tu_hispano_de_confianza",
+        "artist": "shellfish72",
         "id": 510
     },
     "Lordship of Ireland": {
@@ -3442,6 +3452,11 @@
         "rarity": 199,
         "artist": "capithecap",
         "id": 301
+    },
+    "2ball": {
+        "rarity": 200,
+        "artist": "4rgenti",
+        "id": 266
     },
     "4ball": {
         "rarity": 200,
