@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1777243270",
+            "changes": [
+                "Updated HistoryDex rarities and IDs"
+            ]
+        },
+        {
             "timestamp": "1777221570",
             "changes": [
                 "Updated to new HistoryDex balls (2ball, Revolutionary Paris, Schutzstaffel)",

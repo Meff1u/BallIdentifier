@@ -144,11 +144,6 @@
         "artist": "carolea",
         "id": 305
     },
-    "Liang Dynasty": {
-        "rarity": 5,
-        "artist": "lilhector_",
-        "id": 955
-    },
     "Second United Chinese Front": {
         "rarity": 5,
         "artist": "pleb0o",
@@ -209,11 +204,6 @@
         "rarity": 7,
         "artist": "claythekat",
         "id": 28
-    },
-    "Ancient Egypt": {
-        "rarity": 7,
-        "artist": "ocean_wav3",
-        "id": 167
     },
     "Inca Empire": {
         "rarity": 7,
@@ -351,6 +341,11 @@
         "artist": "akirasoku_",
         "id": 103
     },
+    "Ancient Egypt": {
+        "rarity": 10,
+        "artist": "ocean_wav3",
+        "id": 999
+    },
     "Ancient Japan": {
         "rarity": 10,
         "artist": "censorbar_",
@@ -390,6 +385,11 @@
         "rarity": 10,
         "artist": "xutxie",
         "id": 562
+    },
+    "Papal States": {
+        "rarity": 10,
+        "artist": "mmm_chloroform",
+        "id": 998
     },
     "Parthian Empire": {
         "rarity": 10,
@@ -855,6 +855,11 @@
         "artist": "xynthust",
         "id": 126,
         "collectors": ["558678655945932801"]
+    },
+    "Liang Dynasty": {
+        "rarity": 20,
+        "artist": "lilhector_",
+        "id": 955
     },
     "Little Entente": {
         "rarity": 20,
@@ -1576,11 +1581,6 @@
         "rarity": 41,
         "artist": "king_of_pingas",
         "id": 680
-    },
-    "Papal States": {
-        "rarity": 41,
-        "artist": "mmm_chloroform",
-        "id": 79
     },
     "First Armenian Republic": {
         "rarity": 42,
