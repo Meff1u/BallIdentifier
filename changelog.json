@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1777298533",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Knight's Templar, Qin)",
+                "Updated to new HistoryDex ball display name (Union Army -> The North)"
+            ]
+        },
+        {
             "timestamp": "1777243270",
             "changes": [
                 "Updated HistoryDex rarities and IDs"
