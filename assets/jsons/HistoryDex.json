@@ -449,7 +449,7 @@
     },
     "Danish Empire": {
         "rarity": 12,
-        "artist": "pleb0o",
+        "artist": "n0tch21_98933",
         "id": 110
     },
     "Fascist Italy": {
@@ -850,6 +850,11 @@
         "artist": "dark3nd",
         "id": 269
     },
+    "French West Africa": {
+        "rarity": 20,
+        "artist": "n0tch21_98933",
+        "id": 360
+    },
     "Kingdom of Poland": {
         "rarity": 20,
         "artist": "xynthust",
@@ -880,6 +885,11 @@
         "rarity": 21,
         "artist": "xualtacc",
         "id": 596
+    },
+    "Archduchy of Austria": {
+        "rarity": 21,
+        "artist": "not_woterbottle",
+        "id": 807
     },
     "Balkan League": {
         "rarity": 21,
@@ -1026,6 +1036,11 @@
         "artist": "hortaas",
         "id": 847
     },
+    "Colony of Australia": {
+        "rarity": 25,
+        "artist": "ocean_wav3",
+        "id": 1044
+    },
     "Crown of Bohemia": {
         "rarity": 25,
         "artist": "vexab",
@@ -1140,6 +1155,11 @@
         "rarity": 29,
         "artist": "cawthedwal",
         "id": 369
+    },
+    "Portuguese Insulindia": {
+        "rarity": 29,
+        "artist": "._pudd_.",
+        "id": 1001
     },
     "Zagwe Dynasty": {
         "rarity": 29,
@@ -1326,6 +1346,11 @@
         "artist": "n0tch21_98933",
         "id": 869
     },
+    "Dominion of New Zealand": {
+        "rarity": 35,
+        "artist": "censorbar_",
+        "id": 1037
+    },
     "Herodian Kingdom of Judea": {
         "rarity": 35,
         "artist": "._pudd_.",
@@ -1418,7 +1443,7 @@
         "artist": "._pudd_.",
         "id": 480
     },
-    "Makhnovia": {
+    "Makhnovshchina": {
         "rarity": 37,
         "artist": "lordaxolotl7",
         "id": 278,
@@ -1728,6 +1753,11 @@
         "artist": "ocean_wav3",
         "id": 29
     },
+    "Dominion of Australia": {
+        "rarity": 46,
+        "artist": "ltzbrw",
+        "id": 1059
+    },
     "Emirate of Abdelkader": {
         "rarity": 46,
         "artist": "mmm_chloroform",
@@ -1909,6 +1939,11 @@
         "artist": "m.oxxy",
         "id": 130
     },
+    "Emirate of Diriyah": {
+        "rarity": 51,
+        "artist": "___ultrawatermelon___",
+        "id": 846
+    },
     "Khanate of Kazan": {
         "rarity": 51,
         "artist": "finski._.",
@@ -2016,8 +2051,13 @@
     },
     "Spanish Cuba": {
         "rarity": 54,
-        "artist": "gringo_man.",
+        "artist": "dudewholikescountryballs",
         "id": 735
+    },
+    "Territory of Hawaii": {
+        "rarity": 54,
+        "artist": "ocean_wav3",
+        "id": 958
     },
     "Uzbek Soviet Socialist Republic": {
         "rarity": 54,
@@ -2266,6 +2306,11 @@
         "artist": "marylandman",
         "id": 457
     },
+    "Netherlands Antilles": {
+        "rarity": 65,
+        "artist": "ragnitxt",
+        "id": 1012
+    },
     "Province of Quebec": {
         "rarity": 65,
         "artist": "_.lamia_",
@@ -2331,6 +2376,16 @@
         "artist": "Arga#1008",
         "id": 285
     },
+    "Protectorate of Qatar": {
+        "rarity": 68,
+        "artist": "censorbar_",
+        "id": 1054
+    },
+    "West Indies Federation": {
+        "rarity": 68,
+        "artist": "not_woterbottle",
+        "id": 1056
+    },
     "Russian Republic": {
         "rarity": 69,
         "artist": "___.artycal.___",
@@ -2360,6 +2415,11 @@
         "rarity": 70,
         "artist": "average_countryballs_fan",
         "id": 635
+    },
+    "Mandatory Palestine": {
+        "rarity": 70,
+        "artist": "mr.soviet.oficial581",
+        "id": 1038
     },
     "Spanish Armada": {
         "rarity": 70,
@@ -2507,6 +2567,11 @@
         "id": 81,
         "collectors": ["1163451939997093968"]
     },
+    "British Nigeria": {
+        "rarity": 85,
+        "artist": "average_countryballs_fan",
+        "id": 1023
+    },
     "Kingdom of Tlemcen": {
         "rarity": 85,
         "artist": "n0tch21_98933",
@@ -2552,6 +2617,11 @@
         "artist": "king_banananananana",
         "id": 938
     },
+    "British Transjordania": {
+        "rarity": 90,
+        "artist": "protoria",
+        "id": 1041
+    },
     "Danish Gold Coast": {
         "rarity": 90,
         "artist": "floridianirishguy",
@@ -2577,10 +2647,20 @@
         "artist": "carloz4567_46650",
         "id": 585
     },
+    "Saint-Domingue": {
+        "rarity": 90,
+        "artist": "average_countryballs_fan",
+        "id": 1032
+    },
     "State of Thessaloniki": {
         "rarity": 90,
         "artist": "lordaxolotl7",
         "id": 894
+    },
+    "Territory of Alaska": {
+        "rarity": 90,
+        "artist": ".astrokat.",
+        "id": 1064
     },
     "United Fruit Company": {
         "rarity": 90,
@@ -2607,6 +2687,11 @@
         "rarity": 94,
         "artist": "finski._.",
         "id": 413
+    },
+    "Bechuanaland Protectorate": {
+        "rarity": 95,
+        "artist": "king_banananananana",
+        "id": 1057
     },
     "Kingdom of Altava": {
         "rarity": 95,
@@ -2648,10 +2733,20 @@
         "artist": "tu_hispano_de_confianza",
         "id": 597
     },
+    "Northern Rhodesia": {
+        "rarity": 99,
+        "artist": "ragnitxt",
+        "id": 1060
+    },
     "Republic of Crimea": {
         "rarity": 99,
         "artist": "vuin141",
         "id": 388
+    },
+    "Southern Rhodesia": {
+        "rarity": 99,
+        "artist": "adamtheteckel",
+        "id": 1063
     },
     "Bukharan People's Soviet Republic": {
         "rarity": 100,
@@ -2714,6 +2809,11 @@
         "artist": "._pudd_.",
         "id": 626
     },
+    "British Tanganyika": {
+        "rarity": 105,
+        "artist": "not_woterbottle",
+        "id": 1021
+    },
     "French Tunisia": {
         "rarity": 105,
         "artist": "not_woterbottle",
@@ -2753,6 +2853,11 @@
         "rarity": 109,
         "artist": "barnabdulla",
         "id": 771
+    },
+    "British Kenya": {
+        "rarity": 110,
+        "artist": "not_woterbottle",
+        "id": 1019
     },
     "Republic of the Sudan": {
         "rarity": 110,
@@ -2881,6 +2986,11 @@
         "artist": "average_countryballs_fan",
         "id": 987
     },
+    "Sheikhdom of Kuwait": {
+        "rarity": 130,
+        "artist": "navid_habibi",
+        "id": 1053
+    },
     "Zulu Kingdom": {
         "rarity": 130,
         "artist": "your.polish.parent",
@@ -2896,6 +3006,11 @@
         "artist": "._pudd_.",
         "id": 719
     },
+    "French Madagascar and Dependencies": {
+        "rarity": 132,
+        "artist": "average_countryballs_fan",
+        "id": 1026
+    },
     "Kingdom of Ireland": {
         "rarity": 132,
         "artist": "imposial",
@@ -2906,15 +3021,40 @@
         "artist": "hortaas",
         "id": 539
     },
+    "Kingdom of Rarotonga": {
+        "rarity": 133,
+        "artist": "gusta._.vo",
+        "id": 1047
+    },
     "Dutch Formosa": {
         "rarity": 135,
         "artist": "censorbar_",
         "id": 504
     },
+    "Italian Eritrea": {
+        "rarity": 135,
+        "artist": "ltzbrw",
+        "id": 1014
+    },
     "Free City of Frankfurt": {
         "rarity": 137,
         "artist": "fordcraft",
         "id": 882
+    },
+    "French Guinea": {
+        "rarity": 138,
+        "artist": "not_woterbottle",
+        "id": 1020
+    },
+    "Nyasaland Protectorate": {
+        "rarity": 138,
+        "artist": "adamtheteckel",
+        "id": 1046
+    },
+    "British Gold Coast": {
+        "rarity": 140,
+        "artist": "not_woterbottle",
+        "id": 1030
     },
     "Italian Protectorate of Albania": {
         "rarity": 140,
@@ -2930,6 +3070,11 @@
         "rarity": 141,
         "artist": "aydin_kai22",
         "id": 644
+    },
+    "Aden Colony": {
+        "rarity": 142,
+        "artist": "franc_spain",
+        "id": 1061
     },
     "Mosquito Coast": {
         "rarity": 144,
@@ -2957,10 +3102,20 @@
         "artist": "gusta._.vo",
         "id": 990
     },
+    "French Chad": {
+        "rarity": 146,
+        "artist": "not_woterbottle",
+        "id": 1024
+    },
     "Vijayanagara Empire": {
         "rarity": 146.3,
         "artist": "naicrak",
         "id": 981
+    },
+    "French Senegal": {
+        "rarity": 148,
+        "artist": "average_countryballs_fan",
+        "id": 1018
     },
     "Upper Peru": {
         "rarity": 148,
@@ -2982,6 +3137,11 @@
         "artist": "average_countryballs_fan",
         "id": 917
     },
+    "Italian Somaliland": {
+        "rarity": 152,
+        "artist": "scotto6353",
+        "id": 1009
+    },
     "Portuguese Cape Verde": {
         "rarity": 152,
         "artist": "dynsic",
@@ -2996,6 +3156,11 @@
         "rarity": 154,
         "artist": "not_woterbottle & lordaxolotl7",
         "id": 873
+    },
+    "British Burma": {
+        "rarity": 155,
+        "artist": "thebaldball_lol",
+        "id": 1051
     },
     "People's Republic of Mongolia": {
         "rarity": 155,
@@ -3053,6 +3218,11 @@
         "artist": "carloz4567_46650",
         "id": 486
     },
+    "Dutch New Guinea": {
+        "rarity": 160,
+        "artist": "naqoir",
+        "id": 1000
+    },
     "Kingdom of Abemama": {
         "rarity": 160,
         "artist": "gusta._.vo",
@@ -3083,10 +3253,25 @@
         "artist": "littlecat0214",
         "id": 482
     },
+    "French Dahomey": {
+        "rarity": 162,
+        "artist": "dudewholikescountryballs",
+        "id": 1029
+    },
+    "British Somaliland": {
+        "rarity": 163,
+        "artist": "undergroundrap124",
+        "id": 1015
+    },
     "First Republic of Rwanda": {
         "rarity": 163,
         "artist": ".sof_240",
         "id": 910
+    },
+    "Portuguese Guinea": {
+        "rarity": 163,
+        "artist": "censorbar_",
+        "id": 1005
     },
     "Spanish Guinea": {
         "rarity": 163,
@@ -3098,10 +3283,25 @@
         "artist": "asiansyko",
         "id": 957
     },
+    "Dutch Cape Colony": {
+        "rarity": 164,
+        "artist": "pleb0o",
+        "id": 1007
+    },
     "German Alsace-Lorraine": {
         "rarity": 164,
         "artist": "floridianirishguy",
         "id": 468
+    },
+    "Dutch Gold Coast": {
+        "rarity": 165,
+        "artist": "thefloridianirishguy",
+        "id": 1011
+    },
+    "Italian Libya": {
+        "rarity": 165,
+        "artist": "average_countryballs_fan",
+        "id": 1013
     },
     "Japanese Cambodia": {
         "rarity": 165,
@@ -3128,6 +3328,11 @@
         "artist": "aydin_kai22",
         "id": 946
     },
+    "Trust Territory of Somaliland": {
+        "rarity": 166,
+        "artist": "adamtheteckel",
+        "id": 1016
+    },
     "Emirate of Nejd and Hasa": {
         "rarity": 167,
         "artist": "._pudd_.",
@@ -3147,6 +3352,16 @@
         "rarity": 167,
         "artist": "itscubicmapper",
         "id": 446
+    },
+    "British Cyprus": {
+        "rarity": 168,
+        "artist": "shellfish72",
+        "id": 1042
+    },
+    "British Uganda": {
+        "rarity": 168,
+        "artist": "not_woterbottle",
+        "id": 1017
     },
     "French Upper Volta": {
         "rarity": 168,
@@ -3174,6 +3389,11 @@
         "artist": "dudewholikescountryballs",
         "id": 598
     },
+    "British Bengal": {
+        "rarity": 173,
+        "artist": "akirasoku_",
+        "id": 1039
+    },
     "Empire of the Sahara": {
         "rarity": 173,
         "artist": "_chaotical",
@@ -3188,6 +3408,11 @@
         "rarity": 174,
         "artist": ".astrokat.",
         "id": 774
+    },
+    "British Sierra Leone": {
+        "rarity": 175,
+        "artist": "n0tch21_98933",
+        "id": 1058
     },
     "Grand Duchy of Warsaw": {
         "rarity": 175,
@@ -3215,6 +3440,11 @@
         "rarity": 176,
         "artist": "kobersv2",
         "id": 210
+    },
+    "British Ceylon": {
+        "rarity": 178,
+        "artist": "adamtheteckel",
+        "id": 1043
     },
     "British Jamaica": {
         "rarity": 178,
@@ -3291,6 +3521,16 @@
         "artist": "ron_gon",
         "id": 95
     },
+    "British Gambia": {
+        "rarity": 185,
+        "artist": "adamtheteckel",
+        "id": 1022
+    },
+    "British Swaziland": {
+        "rarity": 185,
+        "artist": "not_woterbottle",
+        "id": 1025
+    },
     "Republic of Acre": {
         "rarity": 185,
         "artist": "barnabdulla",
@@ -3310,6 +3550,11 @@
         "rarity": 188,
         "artist": "mmm_chloroform",
         "id": 104
+    },
+    "Protectorate of Brunei": {
+        "rarity": 188,
+        "artist": "not_woterbottle",
+        "id": 1055
     },
     "Banate of Bosnia": {
         "rarity": 189,
@@ -3341,6 +3586,11 @@
         "artist": "ocean_wav3",
         "id": 431
     },
+    "British Togoland": {
+        "rarity": 190,
+        "artist": "._pudd_.",
+        "id": 1027
+    },
     "Cretan State": {
         "rarity": 190,
         "artist": "gusta._.vo",
@@ -3355,6 +3605,11 @@
         "rarity": 190,
         "artist": "dudewholikescountryballs",
         "id": 945
+    },
+    "Portuguese São Tomé and Príncipe": {
+        "rarity": 190,
+        "artist": "adamtheteckel",
+        "id": 1002
     },
     "Shanghai International Settlement": {
         "rarity": 190,
@@ -3393,6 +3648,11 @@
         "artist": "unfunnichez_",
         "id": 151
     },
+    "British Solomon Islands": {
+        "rarity": 193,
+        "artist": "gusta._.vo",
+        "id": 1045
+    },
     "Kingdom of Middlesex": {
         "rarity": 193,
         "artist": "_chaotical",
@@ -3402,6 +3662,11 @@
         "rarity": 194,
         "artist": "shellfish72",
         "id": 716
+    },
+    "British Maldives": {
+        "rarity": 194,
+        "artist": "average_countryballs_fan",
+        "id": 1040
     },
     "Kingdom of Tonga": {
         "rarity": 194,
@@ -3423,6 +3688,11 @@
         "artist": "m.oxxy",
         "id": 739
     },
+    "British Occupied Faroe Islands": {
+        "rarity": 196,
+        "artist": "lordaxolotl7",
+        "id": 1052
+    },
     "South Yemen": {
         "rarity": 196,
         "artist": "unfunnyguy_.",
@@ -3432,6 +3702,11 @@
         "rarity": 197,
         "artist": "kobersv2",
         "id": 284
+    },
+    "British Seychelles": {
+        "rarity": 198,
+        "artist": "aydin_kai22",
+        "id": 1050
     },
     "Dominion of Ghana": {
         "rarity": 198,
@@ -3448,6 +3723,11 @@
         "artist": "._pudd_.",
         "id": 522
     },
+    "Dutch Mauritius": {
+        "rarity": 199,
+        "artist": "average_countryballs_fan",
+        "id": 1008
+    },
     "State of Los Altos": {
         "rarity": 199,
         "artist": "capithecap",
@@ -3463,6 +3743,11 @@
         "artist": "dynsic",
         "id": 323
     },
+    "British Fiji": {
+        "rarity": 200,
+        "artist": "thefloridianirishguy",
+        "id": 1036
+    },
     "New Sweden": {
         "rarity": 200,
         "artist": "xxsnowlaswhitexx",
@@ -3477,6 +3762,11 @@
         "rarity": 201,
         "artist": "pixology",
         "id": 478
+    },
+    "Dutch India and Ceylon": {
+        "rarity": 201,
+        "artist": "censorbar_",
+        "id": 1004
     },
     "French India": {
         "rarity": 201,
@@ -3503,6 +3793,16 @@
         "artist": "floridianirishguy",
         "id": 292
     },
+    "Dutch Bengal": {
+        "rarity": 202,
+        "artist": "average_countryballs_fan",
+        "id": 1006
+    },
+    "Oltre Giuba": {
+        "rarity": 202,
+        "artist": "aydin_kai22",
+        "id": 1010
+    },
     "Republic of Martyazo": {
         "rarity": 202,
         "artist": "galic10012",
@@ -3513,6 +3813,11 @@
         "artist": "._pudd_.",
         "id": 525
     },
+    "British Nauru": {
+        "rarity": 203,
+        "artist": "dudewholikescountryballs",
+        "id": 1062
+    },
     "Bruneian Sultanate": {
         "rarity": 203,
         "artist": "pixology.",
@@ -3522,6 +3827,11 @@
         "rarity": 203,
         "artist": "n0tch21_98933",
         "id": 307
+    },
+    "Gilbert and Ellice Islands": {
+        "rarity": 203,
+        "artist": "keldoidotec",
+        "id": 1034
     },
     "Japanese Korea": {
         "rarity": 203,
@@ -3548,6 +3858,11 @@
         "artist": "edougamer",
         "id": 428
     },
+    "British Windward Islands": {
+        "rarity": 206,
+        "artist": "sharknadknamliam96",
+        "id": 1048
+    },
     "Territory of Western Samoa": {
         "rarity": 206,
         "artist": "king_banananananana",
@@ -3562,6 +3877,11 @@
         "rarity": 208,
         "artist": "orangejuicedrinker69",
         "id": 245
+    },
+    "British Barbados": {
+        "rarity": 209,
+        "artist": "average_countryballs_fan",
+        "id": 1033
     },
     "British Honduras": {
         "rarity": 210,
@@ -3614,6 +3934,11 @@
         "artist": "lilhector_",
         "id": 738
     },
+    "Territory of New Guinea": {
+        "rarity": 216,
+        "artist": "keldoidotec",
+        "id": 1035
+    },
     "Territory of Papua": {
         "rarity": 216,
         "artist": "capithecap",
@@ -3634,15 +3959,30 @@
         "artist": "ocean_wav3",
         "id": 898
     },
+    "Protectorate of Wallis and Futuna": {
+        "rarity": 220,
+        "artist": "gusta._.vo",
+        "id": 1028
+    },
     "Spanish Haiti": {
         "rarity": 220,
         "artist": "gringo_man.",
         "id": 727
     },
+    "French Colony of Martinique and Saint Lucia": {
+        "rarity": 221,
+        "artist": "average_countryballs_fan",
+        "id": 1031
+    },
     "German Marshall Islands": {
         "rarity": 226,
         "artist": "dark3nd",
         "id": 257
+    },
+    "British Heligoland": {
+        "rarity": 228,
+        "artist": "not_woterbottle",
+        "id": 1049
     },
     "Free State of Bottleneck": {
         "rarity": 228,
