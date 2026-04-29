@@ -310,7 +310,7 @@
             "Armenian Empire": ["armenia"],
             "Sassanid Empire": ["sassanid"],
             "League of Lezhë": ["lezhe", "league of lezhe"],
-            "Elamite Empire": ["elamite"],
+            "Elamite Empire": ["elamite", "elam"],
             "Republic of Anguilla": ["anguilla"],
             "Bukharan People's Soviet Republic": ["bpsr"],
             "Khorezm People's Soviet Republic": ["kpsr"],
@@ -591,7 +591,8 @@
             "Territory of Hawaii": ["hawaii"],
             "Emirate of Diriyah": ["diriyah"],
             "Archduchy of Austria": ["austria"],
-            "Tripolitanian Republic": ["libya"]
+            "Tripolitanian Republic": ["libya"],
+            "Virginia Colony": ["virginia"]
         }
     }
 }
