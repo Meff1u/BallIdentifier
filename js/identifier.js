@@ -260,7 +260,7 @@ function showResultModal(country, diff) {
     
     resultTitle.textContent = country;
     resultSubtitle.textContent = `Similarity: ${similarity}%`;
-    resultImage.src = `assets/dexes/${dex}/${country}.png`;
+    resultImage.src = `https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/dexes/${dex}/${country}.png`;
     
     fetchBallData(dex, country, resultCredits);
     
@@ -301,7 +301,7 @@ function setupDexSelector() {
 
 function updateLogo(dex) {
     const logo = document.querySelector(".logo");
-    if (logo) logo.src = `assets/icons/${dex}.png`;
+    if (logo) logo.src = `https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/${dex}.png`;
 }
 
 async function updateTitleWithBallCount() {

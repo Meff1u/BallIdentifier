@@ -171,7 +171,7 @@ function createBallCard(name, details, dexName) {
     }
     
     const imgElement = document.createElement("img");
-    imgElement.src = `assets/dexes/${dexName}/compressed/${name}.webp`;
+    imgElement.src = `https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/dexes/${dexName}/compressed/${name}.webp`;
     imgElement.alt = name;
     imgElement.className = "card-img-top";
     imgElement.loading = "lazy";
@@ -277,8 +277,8 @@ function createArtCard(ballName, art, index) {
         artContainer.setAttribute("title", art.alt);
     }
     
-    const webpSrc = `assets/dexes/Ballsdex/previous/${ballName}/${index + 1}.webp`;
-    const gifSrc = `assets/dexes/Ballsdex/previous/${ballName}/${index + 1}.gif`;
+    const webpSrc = `https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/dexes/Ballsdex/previous/${ballName}/${index + 1}.webp`;
+    const gifSrc = `https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/dexes/Ballsdex/previous/${ballName}/${index + 1}.gif`;
     
     artContainer.innerHTML = `
         <img src="${webpSrc}" alt="${ballName} art" class="card-img-top" loading="lazy" 
@@ -312,7 +312,7 @@ function showEnlargedArt(ballName, dexName) {
     
     modalBody.innerHTML = `
         <div class="popup-enlarged-art-container text-center" style="min-height: 0; height: 100%; width: 100%; padding: 0;">
-            <img src="assets/dexes/${dexName}/${ballName}.png" alt="${ballName} art" class="img-fluid popup-enlarged-art-image" loading="lazy">
+            <img src="https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/dexes/${dexName}/${ballName}.png" alt="${ballName} art" class="img-fluid popup-enlarged-art-image" loading="lazy">
         </div>
     `;
     

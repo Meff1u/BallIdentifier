@@ -530,19 +530,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const configs = {
             'ballsdex': { 
                 name: 'Ballsdex', 
-                icon: 'assets/icons/Ballsdex.png'
+                icon: 'https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/Ballsdex.png'
             },
             'fooddex': { 
                 name: 'FoodDex', 
-                icon: 'assets/icons/FoodDex.png'
+                icon: 'https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/FoodDex.png'
             },
             'historydex': {
                 name: 'HistoryDex',
-                icon: 'assets/icons/HistoryDex.png'
+                icon: 'https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/HistoryDex.png'
             },
             'jojodex': {
                 name: 'JoJoDex',
-                icon: 'assets/icons/JoJoDex.png'
+                icon: 'https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/JoJoDex.png'
             }
         };
         return configs[bot] || configs['ballsdex'];
@@ -602,7 +602,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         for (const ball of ballsList) {
             const img = new Image();
-            img.src = `assets/dexes/${botName}/compressed/${ball}.png`;
+            img.src = `https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/dexes/${botName}/compressed/${ball}.png`;
             imageCache.push(img);
         }
         
@@ -902,7 +902,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const botName = botConfig.name;
         
         // Format ball name for file path (use compressed version)
-        const imagePath = `assets/dexes/${botName}/compressed/${ballName}.webp`;
+        const imagePath = `https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/dexes/${botName}/compressed/${ballName}.webp`;
         
         messageDiv.innerHTML = `
             <div class="trainer-message-avatar">
@@ -978,7 +978,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Disable button and show loading
         button.disabled = true;
-        button.innerHTML = '<img src="assets/trainer/loading.webp" alt="Loading" style="height: 10px; width: 100%; object-fit: contain;">';
+        button.innerHTML = '<img src="https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/trainer/loading.webp" alt="Loading" style="height: 10px; width: 100%; object-fit: contain;">';
         
         // Random delay between 500-1300 milliseconds
         const delay = rn(500, 1300);
