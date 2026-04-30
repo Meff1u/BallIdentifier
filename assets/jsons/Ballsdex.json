@@ -1341,8 +1341,7 @@
         "id": 40,
         "common_value": "2",
         "cc": "2,500",
-        "demand": "F",
-        "collectors": ["815509459345735690"]
+        "demand": "F"
     },
     "Netherlands": {
         "rarity": 131,

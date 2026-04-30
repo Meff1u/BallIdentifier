@@ -559,7 +559,6 @@
             ],
             "Portuguese Insulindia": ["insulindia", "portugal", "portuguese empire"],
             "Portuguese Guinea": ["guinea"],
-            "Oltre Giuba": ["trans juba", "jubaland"],
             "Italian Libya": ["italy", "libya"],
             "Italian Somaliland": ["italy", "somalia", "somaliland"],
             "Italian Eritrea": ["italy", "eritrea"],
@@ -592,7 +591,9 @@
             "Emirate of Diriyah": ["diriyah"],
             "Archduchy of Austria": ["austria"],
             "Tripolitanian Republic": ["libya"],
-            "Virginia Colony": ["virginia"]
+            "Virginia Colony": ["virginia"],
+            "Peasant Battalions": ["peasant battalion", "polish peasants", "farmer battalion"],
+            "Republic of Crimea": ["crimea"]
         }
     }
 }
