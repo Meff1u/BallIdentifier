@@ -946,15 +946,15 @@
         "artist": "king_of_pingas",
         "id": 409
     },
+    "Fascist Thailand": {
+        "rarity": 22,
+        "artist": "dark3nd",
+        "id": 132
+    },
     "Kara-Khanid Khanate": {
         "rarity": 22,
         "artist": "n0tch21_98933",
         "id": 467
-    },
-    "Prathet Thai": {
-        "rarity": 22,
-        "artist": "dark3nd",
-        "id": 132
     },
     "Socialist Federal Republic of Yugoslavia": {
         "rarity": 22,
@@ -1572,7 +1572,7 @@
         "id": 454,
         "collectors": ["558678655945932801"]
     },
-    "U.S. Occupied Greenland": {
+    "U.S.-Occupied Greenland": {
         "rarity": 40,
         "artist": "n0tch21_98933",
         "id": 989
@@ -1688,7 +1688,7 @@
         "artist": "not_woterbottle",
         "id": 864
     },
-    "Hejaz": {
+    "Hashemite Kingdom of Hejaz": {
         "rarity": 44,
         "artist": "oreo_eater5892",
         "id": 12
@@ -1752,6 +1752,11 @@
         "rarity": 45,
         "artist": "ocean_wav3",
         "id": 29
+    },
+    "Catalan Republic": {
+        "rarity": 46,
+        "artist": "average_countryballs_fan",
+        "id": 143
     },
     "Dominion of Australia": {
         "rarity": 46,
@@ -2501,7 +2506,7 @@
         "artist": "4rgenti",
         "id": 507
     },
-    "Couronian Gambia": {
+    "Curonian Gambia": {
         "rarity": 79,
         "artist": "average_countryballs_fan",
         "id": 929
@@ -2617,15 +2622,15 @@
         "artist": "king_banananananana",
         "id": 938
     },
-    "British Transjordania": {
-        "rarity": 90,
-        "artist": "protoria",
-        "id": 1041
-    },
     "Danish Gold Coast": {
         "rarity": 90,
         "artist": "floridianirishguy",
         "id": 361
+    },
+    "Emirate of Transjordan": {
+        "rarity": 90,
+        "artist": "protoria",
+        "id": 1041
     },
     "Islamic Republic of Afghanistan": {
         "rarity": 90,
@@ -2713,11 +2718,6 @@
         "artist": "mmm_chloroform",
         "id": 398
     },
-    "Caithness and Sutherland": {
-        "rarity": 97,
-        "artist": "keldoidotec",
-        "id": 397
-    },
     "Russian America": {
         "rarity": 97,
         "artist": "juanreturns",
@@ -2728,7 +2728,7 @@
         "artist": "vuin141",
         "id": 391
     },
-    "Ancient Athens": {
+    "Athenian Empire": {
         "rarity": 99,
         "artist": "tu_hispano_de_confianza",
         "id": 597
@@ -3147,7 +3147,7 @@
         "artist": "dynsic",
         "id": 599
     },
-    "Nazi Occupied Denmark": {
+    "Nazi-Occupied Denmark": {
         "rarity": 154,
         "artist": "lordaxolotl7",
         "id": 890
@@ -3688,7 +3688,7 @@
         "artist": "m.oxxy",
         "id": 739
     },
-    "British Occupied Faroe Islands": {
+    "British-Occupied Faroe Islands": {
         "rarity": 196,
         "artist": "lordaxolotl7",
         "id": 1052
@@ -3949,11 +3949,6 @@
         "artist": "capithecap",
         "id": 147
     },
-    "Bessarabian Germans": {
-        "rarity": 217,
-        "artist": "claythekat",
-        "id": 309
-    },
     "Hudson Bay Company": {
         "rarity": 218,
         "artist": ".lunatuna",
@@ -4019,7 +4014,7 @@
         "artist": "unfunnichez_",
         "id": 293
     },
-    "German Occupied Sealand": {
+    "German-Occupied Sealand": {
         "rarity": 235,
         "artist": "officialmonikaddlc",
         "id": 885

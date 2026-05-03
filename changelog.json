@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1777790714",
+            "changes": [
+                "Updated to new HistoryDex ball (Catalan Republic)",
+                "Updated to new HistoryDex ball display names (Ancient Athens -> Athenian Empire, British Occupied Faroe Islands -> British-Occupied Faroe Islands, Couronian Gambia -> Curonian Gambia, British Transjordania -> Emirate of Transjordan, German Occupied Sealand -> German-Occupied Sealand, Hejaz -> Hashemite Kingdom of Hejaz, Nazi Occupied Denmark -> Nazi-Occupied Denmark, Parthet Thai -> Fascist Thailand, U.S. Occupied Greenland -> U.S.-Occupied Greenland)",
+                "Removed 2 balls from HistoryDex as they are not catchable anymore (Bessarabian Germans, Caithness and Sutherland)"
+            ]
+        },
+        {
             "timestamp": "1777780685",
             "changes": [
                 "Updated to new HistoryDex ball (Equinoctial France)",

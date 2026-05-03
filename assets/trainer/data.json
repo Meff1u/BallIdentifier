@@ -293,7 +293,7 @@
             "Duchy of Luxembourg": ["luxembourg"],
             "Duchy of Bavaria": ["bavaria"],
             "Grand Duchy of Finland": ["finland"],
-            "Ancient Athens": ["athens"],
+            "Athenian Empire": ["athens"],
             "Ancient Egypt": ["egypt"],
             "Ancient Greece": ["greece"],
             "Ancient Sparta": ["sparta"],
@@ -377,7 +377,7 @@
             "Almoravid Dynasty": ["almoravid"],
             "Colony of Ivory Coast": ["ivory coast"],
             "Colony of Niger": ["niger"],
-            "Couronian Gambia": ["gambia"],
+            "Curonian Gambia": ["gambia"],
             "Dominion of Ghana": ["ghana"],
             "Emirate of Abdelkader": ["abdelkader"],
             "Emirate of Cyrenaica": ["cyrenaica"],
@@ -470,7 +470,7 @@
             "International Criminal Tribunal for Yugoslavia": ["yugoslavia"],
             "Czech and Slovak Federative Republic": ["czech", "slovakia", "czechoslovakia"],
             "Eastern Hungarian Kingdom": ["kingdom of hungary", "eastern hungary", "hungary"],
-            "U.S. Occupied Greenland": ["greenland", "us occupied greenland", "us greenland"],
+            "U.S.-Occupied Greenland": ["greenland", "us occupied greenland", "us greenland"],
             "Kholodny Yar Republic": [
                 "kholodny yar",
                 "yar",
@@ -510,7 +510,7 @@
             "British Solomon Islands": ["solomon islands", "bsi"],
             "British Ceylon": ["ceylon"],
             "British Cyprus": ["cyprus"],
-            "British Transjordania": ["transjordania"],
+            "Emirate of Transjordan": ["transjordan"],
             "Nyasaland Protectorate": ["nyasaland", "malawi"],
             "Dutch Formosa": ["formosa"],
             "British Windward Islands": ["windward islands"],
@@ -539,7 +539,7 @@
             ],
             "Saint-Domingue": ["saint domingue", "domingue", "haiti"],
             "Dutch New Guinea": ["new guinea"],
-            "Dutch India and Ceylon": ["india", "ceylon"],
+            "Dutch India": ["india", "ceylon"],
             "Dutch Bengal": ["bengal"],
             "Dutch Cape Colony": [
                 "cape colony",
@@ -575,11 +575,12 @@
             "Protectorate of Qatar": ["qatar"],
             "British Sierra Leone": ["sierra leone"],
             "Sheikhdom of Kuwait": ["kuwait"],
-            "British Occupied Faroe Islands": [
+            "British-Occupied Faroe Islands": [
                 "faroe islands",
                 "british faroe islands",
                 "faroe",
-                "bofi"
+                "bofi",
+                "british occupied faroe islands"
             ],
             "British Burma": ["burma", "myanmar"],
             "British Seychelles": ["seychelles"],
@@ -594,7 +595,12 @@
             "Virginia Colony": ["virginia"],
             "Peasant Battalions": ["peasant battalion", "polish peasants", "farmer battalion"],
             "Republic of Crimea": ["crimea"],
-            "Mahdist State": ["sudan"]
+            "Mahdist State": ["sudan"],
+            "Fascist Thailand": ["thailand"],
+            "Hashemite Kingdom of Hejaz": ["hejaz"],
+            "Catalan Republic": ["catalonia"],
+            "Nazi-Occupied Denmark": ["denmark", "nazi occupied denmark"],
+            "German-Occupied Sealand": ["sealand", "german occupied sealand"]
         }
     }
 }
