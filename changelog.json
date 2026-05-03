@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1777780685",
+            "changes": [
+                "Updated to new HistoryDex ball (Equinoctial France)",
+                "Updated to new spawn art in HistoryDex (British Heligoland)",
+                "Updated to new HistoryDex ball display name (Dutch India and Ceylon -> Dutch India)"
+            ]
+        },
+        {
             "timestamp": "1777585399",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Germania)"

@@ -3763,7 +3763,7 @@
         "artist": "pixology",
         "id": 478
     },
-    "Dutch India and Ceylon": {
+    "Dutch India": {
         "rarity": 201,
         "artist": "censorbar_",
         "id": 1004
@@ -3898,6 +3898,11 @@
         "artist": "._pudd_.",
         "id": 485
     },
+    "Equinoctial France": {
+        "rarity": 211,
+        "artist": "vexab",
+        "id": 1065
+    },
     "Portuguese Macau": {
         "rarity": 212,
         "artist": "average_countryballs_fan",
@@ -3981,7 +3986,7 @@
     },
     "British Heligoland": {
         "rarity": 228,
-        "artist": "not_woterbottle",
+        "artist": "pixology.",
         "id": 1049
     },
     "Free State of Bottleneck": {
