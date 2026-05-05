@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1777982857",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Japanese Korea, Khorezm People's Soviet Republic, Kingdom of Benin, State of the Comoros)"
+            ]
+        },
+        {
             "timestamp": "1777802960",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Autonomous Province of Western Bosnia, Kingdom of Tlemcen, Vijayanagara Empire)"

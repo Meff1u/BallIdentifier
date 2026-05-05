@@ -473,7 +473,6 @@
             "U.S.-Occupied Greenland": ["greenland", "us occupied greenland", "us greenland"],
             "Kholodny Yar Republic": [
                 "kholodny yar",
-                "yar",
                 "yar republic",
                 "cold ravine republic"
             ],
@@ -600,7 +599,8 @@
             "Hashemite Kingdom of Hejaz": ["hejaz"],
             "Catalan Republic": ["catalonia"],
             "Nazi-Occupied Denmark": ["denmark", "nazi occupied denmark"],
-            "German-Occupied Sealand": ["sealand", "german occupied sealand"]
+            "German-Occupied Sealand": ["sealand", "german occupied sealand"],
+            "Quebec Liberation Front": ["quebec"]
         }
     }
 }
