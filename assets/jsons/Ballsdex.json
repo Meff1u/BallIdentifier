@@ -813,7 +813,7 @@
         "common_value": "4",
         "cc": "1,600",
         "demand": "A",
-        "collectors": ["1123072817911562260", "1094973531223248969"]
+        "collectors": ["1094973531223248969"]
     },
     "Antarctica": {
         "rarity": 85,
@@ -861,7 +861,8 @@
         "id": 205,
         "common_value": "4",
         "cc": "1,650",
-        "demand": "D"
+        "demand": "D",
+        "collectors": ["435521183618826240"]
     },
     "League of Nations": {
         "rarity": 89,
@@ -1609,7 +1610,7 @@
         "common_value": "1.5",
         "cc": "2,800",
         "demand": "C",
-        "collectors": ["1321223793091411979", "756488900263936081"]
+        "collectors": ["716952050608504832", "756488900263936081"]
     },
     "Quebec": {
         "rarity": 160,
@@ -2712,7 +2713,8 @@
         "id": 123,
         "common_value": "1",
         "cc": "3,950",
-        "demand": "E"
+        "demand": "E",
+        "collectors": ["1167573138675093547"]
     },
     "Cote d'Ivoire": {
         "rarity": 275,
@@ -3235,8 +3237,7 @@
         "id": 150,
         "common_value": "1",
         "cc": "4,200",
-        "demand": "C",
-        "collectors": ["1110635077014142986"]
+        "demand": "C"
     },
     "Lesotho": {
         "rarity": 324,

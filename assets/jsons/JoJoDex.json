@@ -1527,7 +1527,8 @@
 	"Danny": {
 		"rarity": 294,
 		"artist": "Hirohiko Araki",
-		"id": 328
+		"id": 328,
+		"collectors": ["522919220376502276"]
 	},
 	"Dire": {
 		"rarity": 294,

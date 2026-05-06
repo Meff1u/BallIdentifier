@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1778065218",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Independent State of Croatia, Kalmar Copenhagen, Province of Quebec)",
+                "Removed 1 ball from HistoryDex as it is not catchable anymore (Sanusiyyah)"
+            ]
+        },
+        {
             "timestamp": "1777982857",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Japanese Korea, Khorezm People's Soviet Republic, Kingdom of Benin, State of the Comoros)"
