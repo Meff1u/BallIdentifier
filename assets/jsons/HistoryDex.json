@@ -928,7 +928,7 @@
     },
     "Armenian Empire": {
         "rarity": 22,
-        "artist": "sksjssm",
+        "artist": "hortaas",
         "id": 83
     },
     "County of Portugal": {
@@ -1138,7 +1138,7 @@
     },
     "Weimar Republic": {
         "rarity": 28,
-        "artist": "edougamer",
+        "artist": "hortaas",
         "id": 441
     },
     "West Francia": {
@@ -2106,7 +2106,7 @@
     },
     "Federation of Ethiopia and Eritrea": {
         "rarity": 56,
-        "artist": "king_banananananana",
+        "artist": "dynsic",
         "id": 948
     },
     "Hashemite Kingdom of Iraq": {
@@ -3161,6 +3161,11 @@
         "rarity": 155,
         "artist": "neburra_28409",
         "id": 592
+    },
+    "Republic of Artsakh": {
+        "rarity": 155,
+        "artist": "censorbar_",
+        "id": 1066
     },
     "German New Guinea": {
         "rarity": 156,

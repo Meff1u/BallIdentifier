@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1778509009",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Armenian Empire, Federation of Ethiopia and Eritrea, Weimar Republic)",
+                "Fixed wrong spawn art in HistoryDex (Rashidun Caliphate)",
+                "Updated to new HistoryDex ball (Republic of Artsakh)"
+            ]
+        },
+        {
             "timestamp": "1778065218",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Independent State of Croatia, Kalmar Copenhagen, Province of Quebec)",
