@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1778769194",
+            "changes": [
+                "Updated Ballsdex rarities",
+                "Updated to new spawn art in HistoryDex (New Swabia)"
+            ]
+        },
+        {
             "timestamp": "1778509269",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Armenian Empire, Federation of Ethiopia and Eritrea, Trust Territory of Somaliland, Weimar Republic)",
