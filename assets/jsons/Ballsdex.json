@@ -185,16 +185,6 @@
         "demand": "C",
         "collectors": ["334411435633541121", "1087972330162110485", "518434646502014980", "976732248726466570", "1397257455041515520"]
     },
-    "Gupta Empire": {
-        "rarity": 20,
-        "artist": "topwanted_",
-        "wave": 8,
-        "id": 536,
-        "common_value": "35",
-        "cc": "600",
-        "demand": "A",
-        "collectors": ["1358091528731627570"]
-    },
     "German Empire": {
         "rarity": 20,
         "artist": "tubula",
@@ -204,6 +194,16 @@
         "cc": "650",
         "demand": "B",
         "collectors": ["1279093286606209048", "1291551975162253429", "1250476361705852989"]
+    },
+    "Gupta Empire": {
+        "rarity": 20,
+        "artist": "topwanted_",
+        "wave": 8,
+        "id": 536,
+        "common_value": "35",
+        "cc": "600",
+        "demand": "A",
+        "collectors": ["1358091528731627570"]
     },
     "Vatican": {
         "rarity": 22,
