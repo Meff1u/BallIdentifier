@@ -600,7 +600,9 @@
             "Catalan Republic": ["catalonia"],
             "Nazi-Occupied Denmark": ["denmark", "nazi occupied denmark"],
             "German-Occupied Sealand": ["sealand", "german occupied sealand"],
-            "Quebec Liberation Front": ["quebec"]
+            "Quebec Liberation Front": ["quebec"],
+            "Imperial Moscow": ["moscow", "moskva"],
+            "Spanish Protectorate of Cambodia": ["cambodia"]
         }
     }
 }

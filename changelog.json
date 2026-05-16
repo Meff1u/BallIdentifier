@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1778931467",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (British Fiji, Emirate of Transjordan, Greater Ottoman Empire, Italian East Africa, Kingdom of Great Britain, People's Republic of Bulgaria)",
+                "Updated to new HistoryDex balls (Imperial Moscow, Spanish Protectorate of Cambodia)"
+            ]
+        },
+        {
             "timestamp": "1778769194",
             "changes": [
                 "Updated Ballsdex rarities",

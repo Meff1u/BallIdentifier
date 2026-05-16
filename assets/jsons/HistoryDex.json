@@ -166,7 +166,7 @@
     },
     "Greater Ottoman Empire": {
         "rarity": 6,
-        "artist": "ethan_heathcliff",
+        "artist": "hortaas",
         "id": 33,
         "collectors": ["1163451939997093968"]
     },
@@ -257,7 +257,7 @@
     },
     "Kingdom of Great Britain": {
         "rarity": 8,
-        "artist": "scotto6353",
+        "artist": "hortaas",
         "id": 26
     },
     "Maurya Empire": {
@@ -521,6 +521,16 @@
         "rarity": 14,
         "artist": "kobersv2 & semana0359",
         "id": 82
+    },
+    "Imperial Moscow": {
+        "rarity": 14,
+        "artist": "ragnitxt",
+        "id": 1067
+    },
+    "Imperial Saint Petersburg": {
+        "rarity": 14,
+        "artist": "Arga#1008",
+        "id": 1068
     },
     "North Vietnam": {
         "rarity": 14,
@@ -1191,11 +1201,6 @@
         "artist": "dynsic",
         "id": 956
     },
-    "Imperial Saint Petersburg": {
-        "rarity": 30,
-        "artist": "Arga#1008",
-        "id": 281
-    },
     "Italian Regency of Carnaro": {
         "rarity": 30,
         "artist": "vexab",
@@ -1619,7 +1624,7 @@
     },
     "Italian East Africa": {
         "rarity": 42,
-        "artist": "dynsic",
+        "artist": "_chaotical",
         "id": 848
     },
     "Kingdom of Saxony": {
@@ -1956,7 +1961,7 @@
     },
     "People's Republic of Bulgaria": {
         "rarity": 51,
-        "artist": "finski._.",
+        "artist": "shellfish72",
         "id": 667
     },
     "Sokoto Caliphate": {
@@ -2624,7 +2629,7 @@
     },
     "Emirate of Transjordan": {
         "rarity": 90,
-        "artist": "protoria",
+        "artist": "hortaas",
         "id": 1041
     },
     "Islamic Republic of Afghanistan": {
@@ -3745,13 +3750,18 @@
     },
     "British Fiji": {
         "rarity": 200,
-        "artist": "thefloridianirishguy",
+        "artist": "hortaas",
         "id": 1036
     },
     "New Sweden": {
         "rarity": 200,
         "artist": "xxsnowlaswhitexx",
         "id": 448
+    },
+    "Spanish Protectorate of Cambodia": {
+        "rarity": 200,
+        "artist": "undertaleisfun777",
+        "id": 1069
     },
     "Trucial States": {
         "rarity": 200,
