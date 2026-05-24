@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1779620272",
+            "changes": [
+                "Updated to new JoJoDex stand (Fatty Valentine)"
+            ]
+        },
+        {
             "timestamp": "1779191721",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Abbasid Caliphate, Franco-British Union, Iberian Union)"
