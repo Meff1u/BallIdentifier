@@ -558,7 +558,8 @@
         "id": 12,
         "common_value": "7",
         "cc": "1,150",
-        "demand": "A"
+        "demand": "A",
+        "collectors": ["968179619058548816"]
     },
     "Kingdom of Italy": {
         "rarity": 55,
@@ -1630,7 +1631,8 @@
         "id": 164,
         "common_value": "1.5",
         "cc": "2,800",
-        "demand": "D"
+        "demand": "D",
+        "collectors": ["1245819876266999851"]
     },
     "South Vietnam": {
         "rarity": 160,
@@ -2087,7 +2089,8 @@
         "id": 273,
         "common_value": "1",
         "cc": "3,350",
-        "demand": "C"
+        "demand": "C",
+        "collectors": ["857338034713526282"]
     },
     "Emirate of Nejd": {
         "rarity": 217,
@@ -2414,7 +2417,7 @@
         "common_value": "1",
         "cc": "3,650",
         "demand": "B",
-        "collectors": ["416250218775052301"]
+        "collectors": ["1037930045882257548", "416250218775052301"]
     },
     "Mali": {
         "rarity": 237,

@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1779727253",
+            "changes": [
+                "Updated to new spawn art in HistoryDex (Kingdom of Nepal)",
+                "Updated to new spawn art in Ballsdex (Papal States)"
+            ]
+        },
+        {
             "timestamp": "1779620272",
             "changes": [
                 "Updated to new JoJoDex stand (Fatty Valentine)"
