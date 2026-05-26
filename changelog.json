@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1779828523",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Dominion of Newfoundland, Revolutionary Paris)"
+            ]
+        },
+        {
             "timestamp": "1779727253",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Kingdom of Nepal)",
