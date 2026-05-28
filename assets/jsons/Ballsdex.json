@@ -213,7 +213,7 @@
         "common_value": "35",
         "cc": "650",
         "demand": "B",
-        "collectors": ["1310790400067371162"]
+        "collectors": ["1310790400067371162", "917968126044434453"]
     },
     "China": {
         "rarity": 23,
@@ -2533,7 +2533,8 @@
         "id": 477,
         "common_value": "1",
         "cc": "3,700",
-        "demand": "C"
+        "demand": "C",
+        "collectors": ["1132787734788984993"]
     },
     "Malawi": {
         "rarity": 263,
