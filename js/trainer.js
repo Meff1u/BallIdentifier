@@ -602,7 +602,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         for (const ball of ballsList) {
             const img = new Image();
-            img.src = `https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/dexes/${botName}/compressed/${ball}.png`;
+            img.src = `https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/dexes/${botName}/compressed/${ball}.webp`;
             imageCache.push(img);
         }
         
