@@ -20,6 +20,9 @@
         <link rel="icon" href="assets/icons/icon.webp" type="image/png" />
         <title>BallIdentifier - Privacy Policy</title>
         <style>
+            .text-muted {
+                color: #cbd5e1 !important;
+            }
             .doc-container {
                 max-width: 900px;
                 margin: 0 auto;
@@ -91,7 +94,7 @@
                     <h1 class="display-5 text-light mb-3">
                         <i class="bi bi-shield-lock me-2"></i>Privacy Policy
                     </h1>
-                    <p class="text-muted">Last updated: February 10, 2026</p>
+                    <p class="text-muted">Last updated: May 29, 2026</p>
                 </div>
 
                 <div class="section-content">
@@ -99,14 +102,13 @@
                         <i class="bi bi-info-circle me-2"></i>1. Introduction
                     </div>
                     <p>
-                        BallIdentifier ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains what data we collect, 
-                        how we use it, and your rights regarding your information when you use our Discord bot.
+                        BallIdentifier ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains what data we collect, how we use it, and what happens when you use the bot, dashboard, website, and related services.
                     </p>
 
                     <div class="section-title">
                         <i class="bi bi-database me-2"></i>2. Data We Collect
                     </div>
-                    <p><strong>User Data:</strong> When you use the BallIdentifier bot, we collect the following information:</p>
+                    <p><strong>User Data:</strong> When you use BallIdentifier, we may collect and store the following information:</p>
                     <table class="data-table w-100">
                         <thead>
                             <tr>
@@ -121,19 +123,23 @@
                             </tr>
                             <tr>
                                 <td><strong>Username</strong></td>
-                                <td>Your Discord username for identification purposes</td>
+                                <td>Your Discord username for logging and support purposes</td>
                             </tr>
                             <tr>
                                 <td><strong>Identification Count</strong></td>
-                                <td>Number of times you've used the identifier feature</td>
+                                <td>Number of successful identifications attributed to your account</td>
                             </tr>
                             <tr>
-                                <td><strong>Vote Status</strong></td>
-                                <td>Whether you've voted for the bot on approved voting sites</td>
+                                <td><strong>Notification Preferences</strong></td>
+                                <td>Your optional settings for thank-you messages and upvote reminder DMs</td>
                             </tr>
                             <tr>
-                                <td><strong>Identification History</strong></td>
-                                <td>Timestamp of when you used the identifier and what result was returned</td>
+                                <td><strong>Upvote Cache</strong></td>
+                                <td>A local cache of current upvoters fetched from Discord Bot List</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Operational Logs</strong></td>
+                                <td>Command names, usernames, guild names, and error details needed to operate and debug the service</td>
                             </tr>
                         </tbody>
                     </table>
@@ -152,98 +158,98 @@
                                 <td>Your Discord server's unique identifier</td>
                             </tr>
                             <tr>
-                                <td><strong>Role ID (Notifier)</strong></td>
-                                <td>Role ID configured for the Spawn Notifier feature</td>
+                                <td><strong>Notifier Configuration</strong></td>
+                                <td>Selected bot IDs, role ID, custom message, setup user, and setup timestamp stored for the dashboard-managed notifier</td>
                             </tr>
                             <tr>
-                                <td><strong>Setup User ID</strong></td>
-                                <td>User ID of the person who configured the bot for your server</td>
+                                <td><strong>Guild Usage Counts</strong></td>
+                                <td>Aggregated identification totals used for public bot statistics</td>
                             </tr>
                         </tbody>
                     </table>
 
                     <div class="highlight-box">
-                        <strong><i class="bi bi-info-circle me-2"></i>Note:</strong> We do NOT collect message content, images, or other personal information beyond what is listed above.
+                        <strong><i class="bi bi-info-circle me-2"></i>Note:</strong> We do not permanently store raw spawn images. Attachments are processed temporarily to generate hashes, and the temporary file is deleted after processing.
                     </div>
 
                     <div class="section-title">
-                        <i class="bi bi-hourglass-split me-2"></i>3. Data Retention
+                        <i class="bi bi-image me-2"></i>3. Media Processing & Reports
+                    </div>
+                    <p>
+                        When you use the identify command or notifier features, the bot downloads the attached spawn image, creates a temporary resized copy, computes an image hash, and then removes the temporary file.
+                    </p>
+                    <p>
+                        If the match confidence is low or an error occurs, the bot may send a report to a configured webhook. Those reports can include your Discord tag or ID, the detected match, the original image URL, the bot involved, and error details.
+                    </p>
+
+                    <div class="section-title">
+                        <i class="bi bi-hourglass-split me-2"></i>4. Data Retention
                     </div>
                     <p><strong>User Data:</strong></p>
                     <ul>
-                        <li>Your user data (ID, username, identification count, vote status, and identification history) is <strong>stored permanently</strong> for service functionality and statistics.</li>
+                        <li>Your user statistics and notification preferences are stored until you ask us to remove them or stop using the service.</li>
                     </ul>
                     <p><strong>Server Data:</strong></p>
                     <ul>
-                        <li>Server configuration data (server ID, role ID, setup user ID) is retained <strong>until you remove the bot setup</strong> from your server.</li>
-                        <li>Once you delete the bot's configuration from your server, associated server data is deleted.</li>
+                        <li>Notifier configuration is retained until it is removed through the dashboard or deleted from storage.</li>
+                        <li>Aggregated usage counters are kept for service statistics.</li>
                     </ul>
 
                     <div class="section-title">
-                        <i class="bi bi-cloud-fill me-2"></i>4. Where Data is Stored
+                        <i class="bi bi-cloud-fill me-2"></i>5. Where Data is Stored
                     </div>
                     <p>
-                        All data collected by BallIdentifier is securely stored on our hosting infrastructure. 
-                        Your data is protected using industry-standard security practices and encryption where applicable.
+                        Data is stored in the bot's asset files on our hosting infrastructure and in any configured third-party services used for bot operations, such as Discord Bot List and optional webhooks.
                     </p>
 
                     <div class="section-title">
-                        <i class="bi bi-share me-2"></i>5. Data Sharing
+                        <i class="bi bi-share me-2"></i>6. Data Sharing
                     </div>
                     <p>
-                        We <strong>do not share, sell, or distribute</strong> your personal data to any third parties. Your data is used exclusively for:
+                        We do not sell your personal data. We may share limited data only when necessary to run the service, including the following:
                     </p>
                     <ul>
-                        <li>Providing and improving the BallIdentifier bot features</li>
-                        <li>Enforcing rate limits and usage policies</li>
-                        <li>Identifying vote status for premium features</li>
-                        <li>Server administration and configuration</li>
-                        <li>Statistical analysis and service improvement</li>
+                        <li>Discord Bot List for fetching upvote status and posting bot stats</li>
+                        <li>Discord DMs for optional thanks messages and upvote reminders</li>
+                        <li>Configured log, error, report or upvote webhooks</li>
+                        <li>Hosting and storage infrastructure used to run the bot and dashboard</li>
                     </ul>
 
                     <div class="section-title">
-                        <i class="bi bi-person-check me-2"></i>6. Your Rights & Data Deletion
+                        <i class="bi bi-person-check me-2"></i>7. Your Rights & Data Deletion
                     </div>
                     <p>
-                        You have the right to request deletion of all your personal data collected by BallIdentifier. 
-                        To delete your data, please contact the bot developer directly on Discord:
+                        You can request deletion of your personal data by contacting the developer on Discord. Include the relevant Discord user ID, username, or guild ID so we can locate the correct records.
                     </p>
                     <div class="highlight-box">
                         <strong><i class="bi bi-discord me-2"></i>Contact:</strong> 
                         <a href="https://discord.com/users/334411435633541121" target="_blank" class="text-decoration-none text-primary">
                             @meffiu
                         </a>
-                        <br>
-                        <small class="text-muted">Include your Discord username and user ID in your request</small>
                     </div>
                     <p>
-                        <strong>Data Deletion Timeline:</strong> Your data will be deleted within <strong>7 business days</strong> of your request. 
-                        This includes all user identification history and statistics, but may not include archive backups which are deleted on their regular schedule.
+                        We will remove data we control when reasonably possible. Some operational logs or backups may persist for a limited time until they are rotated or overwritten.
                     </p>
 
                     <div class="section-title">
-                        <i class="bi bi-exclamation-triangle me-2"></i>7. Data Security
+                        <i class="bi bi-exclamation-triangle me-2"></i>8. Data Security
                     </div>
                     <p>
-                        We take data security seriously and implement reasonable security measures to protect your information. 
-                        However, no method of transmission over the internet is 100% secure. While we strive to protect your data, 
-                        we cannot guarantee absolute security.
+                        We use reasonable operational safeguards, but no method of transmission or storage is completely secure. We cannot guarantee absolute security.
                     </p>
 
                     <div class="section-title">
-                        <i class="bi bi-chat-dots me-2"></i>8. Changes to This Privacy Policy
+                        <i class="bi bi-chat-dots me-2"></i>9. Changes to This Privacy Policy
                     </div>
                     <p>
-                        We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated timestamp. 
-                        We encourage you to review this policy periodically to stay informed about how we protect your data.
+                        We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated timestamp.
                     </p>
 
                     <div class="section-title">
-                        <i class="bi bi-headset me-2"></i>9. Contact Us
+                        <i class="bi bi-headset me-2"></i>10. Contact Us
                     </div>
                     <p>
-                        If you have questions, concerns, or requests regarding this Privacy Policy or your personal data, 
-                        please contact the bot developer:
+                        If you have questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact the bot developer:
                     </p>
                     <div class="highlight-box">
                         <strong><i class="bi bi-discord me-2"></i>Discord:</strong> 
@@ -254,16 +260,14 @@
 
                     <div class="alert alert-info mt-4" role="alert">
                         <i class="bi bi-info-circle me-2"></i>
-                        <strong>GDPR & Data Protection:</strong> If you are located in the European Union or other jurisdictions with data protection laws, 
-                        you have additional rights under those laws. Contact us directly for specific requests related to GDPR or other data protection regulations.
+                        <strong>GDPR & Data Protection:</strong> If you are located in the European Union or another jurisdiction with data protection laws, you may have additional rights under those laws. Contact us directly for specific requests.
                     </div>
 
                     <div class="section-title">
-                        <i class="bi bi-info-lg me-2"></i>10. Final Note
+                        <i class="bi bi-info-lg me-2"></i>11. Final Note
                     </div>
                     <p>
-                        BallIdentifier is not affiliated with The Ballsdex Team, Discord Inc., or any official Ballsdex related projects. 
-                        This privacy policy is specific to the BallIdentifier bot and does not represent the policies of other services or platforms.
+                        BallIdentifier is not affiliated with The Ballsdex Team, Discord Inc., or any official Ballsdex-related projects. This privacy policy applies only to BallIdentifier and not to other services or platforms.
                     </p>
                 </div>
             </div>

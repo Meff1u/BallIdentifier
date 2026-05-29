@@ -20,6 +20,9 @@
         <link rel="icon" href="assets/icons/icon.webp" type="image/png" />
         <title>BallIdentifier - Terms of Service</title>
         <style>
+            .text-muted {
+                color: #cbd5e1 !important;
+            }
             .doc-container {
                 max-width: 900px;
                 margin: 0 auto;
@@ -74,7 +77,7 @@
                     <h1 class="display-5 text-light mb-3">
                         <i class="bi bi-file-text me-2"></i>Terms of Service
                     </h1>
-                    <p class="text-muted">Last updated: February 10, 2026</p>
+                    <p class="text-muted">Last updated: May 29, 2026</p>
                 </div>
 
                 <div class="section-content">
@@ -82,46 +85,44 @@
                         <i class="bi bi-info-circle me-2"></i>1. Acceptance of Terms
                     </div>
                     <p>
-                        By using BallIdentifier Discord bot, you agree to comply with and be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use the bot.
+                        By using the BallIdentifier bot, dashboard, website, or related services, you agree to these Terms of Service. If you do not agree with any part of these terms, please do not use the service.
                     </p>
 
                     <div class="section-title">
-                        <i class="bi bi-lightbulb me-2"></i>2. Bot Features & Usage
+                        <i class="bi bi-lightbulb me-2"></i>2. Features & Usage
                     </div>
-                    <p>The BallIdentifier bot provides the following features:</p>
+                    <p>BallIdentifier currently provides the following features:</p>
                     <ul>
-                        <li><strong>Identifier:</strong> Right-click any spawn message and select "Apps → Identify" to instantly recognize balls and receive detailed information including name, rarity, and artist.</li>
-                        <li><strong>Notifications & Rewards:</strong> Set up reminders for daily activities. Upvoting the bot on approved voting sites grants unlimited identification capabilities without rate limits.</li>
-                        <li><strong>Spawn Notifier:</strong> Configure automatic role pings whenever selected bots spawn balls in your server with customizable notification text.</li>
-                        <li><strong>Catch Trainer:</strong> Practice catching balls and measure your reaction time in milliseconds.</li>
+                        <li><strong>Identify:</strong> Right-click supported spawn messages from Ballsdex, FoodDex, HistoryDex, or JoJoDex and select "Apps → Identify" to recognize the ball and get its rarity and artist.</li>
+                        <li><strong>Info:</strong> Use <code>/info</code> to view details about a specific entry, including rarity, wave, common value, collector requirement, demand tier, and collectors when available.</li>
+                        <li><strong>Collectors:</strong> Use <code>/collectors</code> to browse collector lists for supported dexes in an interactive view.</li>
+                        <li><strong>Notifications:</strong> Use <code>/notifications</code> in DMs to manage optional thank-you messages and upvote reminder DMs.</li>
+                        <li><strong>Notifier:</strong> Server notifier configuration is managed in the dashboard at <a href="https://ballidentifier.xyz/dashboard" target="_blank" class="text-decoration-none text-primary">ballidentifier.xyz/dashboard</a>.</li>
+                        <li><strong>Help & Stats:</strong> Use <code>/help</code> to view bot status, supported bots, usage statistics, and useful links.</li>
                     </ul>
 
                     <div class="section-title">
                         <i class="bi bi-exclamation-triangle me-2"></i>3. Rate Limits
                     </div>
                     <p>
-                        The BallIdentifier bot enforces a <strong>rate limit of 1 identification per 10 minutes</strong> for regular users. 
-                        You can remove this rate limit by upvoting the bot on approved bot listing sites such as 
-                        <a href="https://discordbotlist.com" target="_blank" class="text-decoration-none text-primary">Discord Bot List</a>.
+                        Non-upvoters are limited to <strong>1 identification per 10 minutes</strong>. Users who currently appear in the bot's upvote cache have no identification cooldown.
                     </p>
                     <p class="text-muted mt-2">
-                        Attempting to bypass rate limits using bots, scripts, or other automated methods is prohibited and will result in account restrictions.
+                        Upvote status is checked against Discord Bot List and refreshed periodically. Attempting to bypass rate limits using bots, scripts, or other automated methods is prohibited and may result in restrictions.
                     </p>
 
                     <div class="highlight-box">
-                        <strong><i class="bi bi-shield-check me-2"></i>Pro Tip:</strong> Upvote the bot to enjoy unlimited identification and support its development!
+                        <strong><i class="bi bi-shield-check me-2"></i>Pro Tip:</strong> Upvoting the bot removes the identification cooldown and can enable optional upvote reminders if you turn them on.
                     </div>
 
                     <div class="section-title">
                         <i class="bi bi-bug me-2"></i>4. Accuracy & Error Reporting
                     </div>
                     <p>
-                        The BallIdentifier bot uses advanced image recognition technology to identify balls. However, if you receive an incorrect identification result, 
-                        this likely indicates that the ball has received a new artwork update. When an incorrect result is detected, a reporting button will appear.
+                        BallIdentifier uses image hashing and comparison against maintained assets to identify spawn images. When confidence is low, bot marks the result as unknown and automatically sends a verification report.
                     </p>
                     <p>
-                        <strong>Please report any inaccuracies!</strong> Your feedback helps us maintain an accurate ball database and update art recognition models. 
-                        You can report issues directly through the bot's interface or contact the developer on Discord.
+                        <strong>Please report inaccuracies when you see them.</strong> Feedback helps keep the asset database accurate and improves future matches.
                     </p>
 
                     <div class="section-title">
@@ -129,11 +130,11 @@
                     </div>
                     <p>You agree not to:</p>
                     <ul>
-                        <li>Attempt to exploit, hack, or abuse the bot in any way</li>
-                        <li>Use the bot to harm, harass, or disrupt other users or servers</li>
+                        <li>Attempt to exploit, hack, reverse engineer, or abuse the bot, dashboard, or API</li>
+                        <li>Use the bot to harm, harass, spam, or disrupt other users or servers</li>
                         <li>Attempt to bypass rate limits or access restrictions</li>
-                        <li>Use the bot for illegal purposes or activities that violate Discord's Terms of Service</li>
-                        <li>Engage in any form of abuse or misuse that negatively impacts the bot's operation</li>
+                        <li>Use the service for illegal purposes or activities that violate Discord's Terms of Service</li>
+                        <li>Send abusive, misleading, or intentionally harmful content through the bot, dashboard, or webhook-backed features</li>
                     </ul>
 
                     <div class="highlight-box">
@@ -152,7 +153,7 @@
                         <i class="bi bi-headset me-2"></i>6. Support & Contact
                     </div>
                     <p>
-                        For issues, questions, or to report bugs, please contact the bot developer on Discord:
+                        For issues, questions, bug reports, or data deletion requests, please contact the bot developer on Discord:
                         <a href="https://discord.com/users/334411435633541121" target="_blank" class="text-decoration-none text-primary">
                             <i class="bi bi-discord me-1"></i>@meffiu
                         </a>
@@ -162,9 +163,11 @@
                         <i class="bi bi-gear me-2"></i>7. System & Data
                     </div>
                     <p>
-                        The BallIdentifier bot is hosted on a reliable hosting platform. For detailed information about data collection and storage, 
-                        please review our 
+                        The service stores user statistics, server notifier configuration, notification preferences, and upvote cache data as described in our 
                         <a href="privacy.html" class="text-decoration-none text-primary">Privacy Policy</a>.
+                    </p>
+                    <p>
+                        Some features send operational data to Discord Bot List, Discord DMs, or configured webhooks. Identification also temporarily processes message attachments to generate hashes, and temporary files are deleted after processing.
                     </p>
 
                     <div class="section-title">
@@ -179,15 +182,14 @@
                         <i class="bi bi-shield-exclamation me-2"></i>9. Disclaimer of Warranties
                     </div>
                     <p>
-                        The BallIdentifier bot is provided "as-is" without any warranties of any kind. We do not guarantee that the bot will be error-free, 
-                        uninterrupted, or that all identifications will be accurate. The developers are not liable for any indirect, incidental, or consequential damages.
+                        BallIdentifier is provided "as-is" without warranties of any kind. We do not guarantee the service will be error-free, uninterrupted, or that every identification will be correct. The developers are not liable for indirect, incidental, or consequential damages to the extent allowed by law.
                     </p>
 
                     <div class="section-title">
                         <i class="bi bi-info-lg me-2"></i>10. Final Note
                     </div>
                     <p>
-                        BallIdentifier is not affiliated with The Ballsdex Team or any official Ballsdex related projects. It is an independent tool created to help users identify balls from these communities.
+                        BallIdentifier is not affiliated with The Ballsdex Team, Discord Inc., or any official Ballsdex-related projects. It is an independent tool created to help users identify balls from supported communities.
                     </p>
                 </div>
             </div>
