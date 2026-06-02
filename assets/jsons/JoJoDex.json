@@ -8,7 +8,9 @@
 		"rarity": 1,
 		"artist": "Hirohiko Araki",
 		"id": 103,
-        "collectors": ["1052285408555319297"]
+		"collectors": [
+			"1052285408555319297"
+		]
 	},
 	"Giorno Giovanna": {
 		"rarity": 1,
@@ -19,19 +21,25 @@
 		"rarity": 1,
 		"artist": "Hirohiko Araki",
 		"id": 106,
-        "collectors": ["807647519126847529"]
+		"collectors": [
+			"807647519126847529"
+		]
 	},
 	"Jotaro Kujo": {
 		"rarity": 1,
 		"artist": "Hirohiko Araki",
 		"id": 101,
-        "collectors": ["514512372518354945"]
+		"collectors": [
+			"514512372518354945"
+		]
 	},
 	"Gyro Zeppeli": {
 		"rarity": 5,
 		"artist": "Hirohiko Araki",
 		"id": 107,
-        "collectors": ["709854993733386321"]
+		"collectors": [
+			"709854993733386321"
+		]
 	},
 	"Joseph Joestar": {
 		"rarity": 5,
@@ -43,15 +51,10 @@
 		"artist": "Hirohiko Araki",
 		"id": 108
 	},
-	"Locacaca": {
+	"Josuke Higashikata": {
 		"rarity": 5,
 		"artist": "Hirohiko Araki",
-		"id": 266
-	},
-	"Green Baby": {
-		"rarity": 9,
-		"artist": "Hirohiko Araki",
-		"id": 85
+		"id": 114
 	},
 	"Jodio Joestar": {
 		"rarity": 9,
@@ -68,2337 +71,2568 @@
 		"artist": "Hirohiko Araki",
 		"id": 98
 	},
-	"Josuke Higashikata": {
+	"Locacaca": {
 		"rarity": 9,
 		"artist": "Hirohiko Araki",
-		"id": 114
-	},
-	"Saint's Corpse": {
-		"rarity": 9,
-		"artist": "Hirohiko Araki",
-		"id": 86
-	},
-	"Bubbles": {
-		"rarity": 15,
-		"artist": "Hirohiko Araki",
-		"id": 297
+		"id": 266
 	},
 	"Diavolo": {
-		"rarity": 15,
+		"rarity": 13,
 		"artist": "Hirohiko Araki",
 		"id": 122,
-        "collectors": ["1052285408555319297", "1038908088952037418"]
+		"collectors": [
+			"1052285408555319297",
+			"1038908088952037418"
+		]
 	},
 	"Enrico Pucci": {
-		"rarity": 15,
+		"rarity": 13,
 		"artist": "Hirohiko Araki",
 		"id": 105
 	},
 	"Funny Valentine": {
-		"rarity": 15,
+		"rarity": 13,
 		"artist": "Hirohiko Araki",
 		"id": 116
 	},
-	"Stand Arrow": {
-		"rarity": 15,
-		"artist": "Hirohiko Araki",
-		"id": 84
-	},
 	"Toru": {
-		"rarity": 15,
+		"rarity": 13,
 		"artist": "Hirohiko Araki",
 		"id": 504
 	},
-	"Tusk (Act 4)": {
-		"rarity": 15,
-		"artist": "Hirohiko Araki",
-		"id": 53
-	},
-	"Death Thirteen": {
-		"rarity": 22,
-		"artist": "Hirohiko Araki",
-		"id": 124
-	},
 	"Dio Brando": {
-		"rarity": 22,
+		"rarity": 17,
 		"artist": "Hirohiko Araki",
 		"id": 138
 	},
 	"Hacca Howler": {
-		"rarity": 22,
+		"rarity": 17,
 		"artist": "Hirohiko Araki",
 		"id": 509
 	},
-	"Heaven's Door (Part 9)": {
-		"rarity": 22,
-		"artist": "Hirohiko Araki",
-		"id": 265
-	},
 	"Kars": {
-		"rarity": 22,
+		"rarity": 17,
 		"artist": "Hirohiko Araki",
 		"id": 102
 	},
+	"Yoshikage Kira": {
+		"rarity": 17,
+		"artist": "Hirohiko Araki",
+		"id": 150
+	},
+	"Bubbles": {
+		"rarity": 21,
+		"artist": "Hirohiko Araki",
+		"id": 297
+	},
+	"Green Baby": {
+		"rarity": 21,
+		"artist": "Hirohiko Araki",
+		"id": 85
+	},
+	"Saint's Corpse": {
+		"rarity": 21,
+		"artist": "Hirohiko Araki",
+		"id": 86
+	},
+	"Stand Arrow": {
+		"rarity": 21,
+		"artist": "Hirohiko Araki",
+		"id": 84
+	},
+	"(TS) Rohan Kishibe": {
+		"rarity": 25,
+		"artist": "Hirohiko Araki",
+		"id": 533
+	},
+	"Dirty Deeds Done Dirt Cheap": {
+		"rarity": 25,
+		"artist": "Hirohiko Araki",
+		"id": 58
+	},
 	"Red Stone Of Aja": {
-		"rarity": 22,
+		"rarity": 25,
 		"artist": "Hirohiko Araki",
 		"id": 96
 	},
+	"Soft & Wet": {
+		"rarity": 25,
+		"artist": "Hirohiko Araki",
+		"id": 64
+	},
+	"Tusk (Act 4)": {
+		"rarity": 25,
+		"artist": "Hirohiko Araki",
+		"id": 53
+	},
+	"Death Thirteen": {
+		"rarity": 30,
+		"artist": "Hirohiko Araki",
+		"id": 124
+	},
+	"Heaven's Door (Part 9)": {
+		"rarity": 30,
+		"artist": "Hirohiko Araki",
+		"id": 265
+	},
+	"Rohan Kishibe": {
+		"rarity": 30,
+		"artist": "Hirohiko Araki",
+		"id": 149,
+		"collectors": [
+			"514512372518354945"
+		]
+	},
+	"The Hand": {
+		"rarity": 30,
+		"artist": "Hirohiko Araki",
+		"id": 12
+	},
 	"Tusk (Part 8)": {
-		"rarity": 22,
+		"rarity": 30,
 		"artist": "Hirohiko Araki",
 		"id": 261
 	},
 	"Weather Report": {
-		"rarity": 22,
+		"rarity": 30,
 		"artist": "Hirohiko Araki",
 		"id": 42,
-        "collectors": ["1456050520878874826"]
-	},
-	"Yoshikage Kira": {
-		"rarity": 22,
-		"artist": "Hirohiko Araki",
-		"id": 150
+		"collectors": [
+			"1456050520878874826"
+		]
 	},
 	"Bruno Bucciarati": {
-		"rarity": 31,
+		"rarity": 36,
 		"artist": "Hirohiko Araki",
 		"id": 121
 	},
+	"Caesar Zeppeli": {
+		"rarity": 36,
+		"artist": "Hirohiko Araki",
+		"id": 125
+	},
 	"Diego Brando": {
-		"rarity": 31,
+		"rarity": 36,
 		"artist": "Hirohiko Araki",
 		"id": 128,
-        "collectors": ["1283894007050666121"]
-	},
-	"Dirty Deeds Done Dirt Cheap": {
-		"rarity": 31,
-		"artist": "Hirohiko Araki",
-		"id": 58
+		"collectors": [
+			"1283894007050666121"
+		]
 	},
 	"Dragona Joestar": {
-		"rarity": 31,
+		"rarity": 36,
 		"artist": "Hirohiko Araki",
 		"id": 132
 	},
 	"Ermes Costello": {
-		"rarity": 31,
+		"rarity": 36,
 		"artist": "Hirohiko Araki",
 		"id": 161
 	},
+	"F.F.": {
+		"rarity": 36,
+		"artist": "Hirohiko Araki",
+		"id": 164
+	},
+	"Heaven's Door": {
+		"rarity": 36,
+		"artist": "Hirohiko Araki",
+		"id": 31
+	},
 	"Jean Pierre Polnareff": {
-		"rarity": 31,
+		"rarity": 36,
 		"artist": "Hirohiko Araki",
 		"id": 143
 	},
 	"King Crimson": {
-		"rarity": 31,
+		"rarity": 36,
 		"artist": "Hirohiko Araki",
 		"id": 29,
-        "collectors": ["1188980487860015198", "891067582034112533"]
+		"collectors": [
+			"1188980487860015198",
+			"891067582034112533"
+		]
 	},
 	"Mandom": {
-		"rarity": 31,
+		"rarity": 36,
 		"artist": "Hirohiko Araki",
 		"id": 61
 	},
 	"Noriaki Kakyoin": {
-		"rarity": 31,
+		"rarity": 36,
 		"artist": "Hirohiko Araki",
 		"id": 142
 	},
 	"Okuyasu Nijimura": {
-		"rarity": 31,
+		"rarity": 36,
 		"artist": "Hirohiko Araki",
 		"id": 126
 	},
 	"Robert E.O. Speedwagon": {
-		"rarity": 31,
+		"rarity": 36,
 		"artist": "Hirohiko Araki",
 		"id": 137
 	},
-	"Rohan Kishibe": {
-		"rarity": 31,
-		"artist": "Hirohiko Araki",
-		"id": 149,
-        "collectors": ["514512372518354945"]
-	},
 	"The World": {
-		"rarity": 31,
+		"rarity": 36,
 		"artist": "Hirohiko Araki",
 		"id": 7
 	},
+	"Usagi Alohaoe": {
+		"rarity": 36,
+		"artist": "Hirohiko Araki",
+		"id": 288
+	},
 	"Yasuho Hirose": {
-		"rarity": 31,
+		"rarity": 36,
 		"artist": "Hirohiko Araki",
 		"id": 173,
-        "collectors": ["1283894007050666121"]
-	},
-	"Caesar Zeppeli": {
-		"rarity": 45,
-		"artist": "Hirohiko Araki",
-		"id": 125
-	},
-	"Heaven's Door": {
-		"rarity": 45,
-		"artist": "Hirohiko Araki",
-		"id": 31
-	},
-	"Heaven's Door (TSRK)": {
-		"rarity": 45,
-		"artist": "Hirohiko Araki",
-		"id": 267
-	},
-	"Jobin Higashikata": {
-		"rarity": 45,
-		"artist": "Hirohiko Araki",
-		"id": 176,
-        "collectors": ["1188980487860015198"]
-	},
-	"Joseph Joestar (Part 3)": {
-		"rarity": 45,
-		"artist": "Hirohiko Araki",
-		"id": 100
-	},
-	"Killer Queen (Part 8)": {
-		"rarity": 45,
-		"artist": "Hirohiko Araki",
-		"id": 260
-	},
-	"Kosaku Kawajiri (Kira)": {
-		"rarity": 45,
-		"artist": "Hirohiko Araki",
-		"id": 379
-	},
-	"Lucy Steel": {
-		"rarity": 45,
-		"artist": "Hirohiko Araki",
-		"id": 167
-	},
-	"Risotto Nero": {
-		"rarity": 45,
-		"artist": "Hirohiko Araki",
-		"id": 134,
-        "collectors": ["242019678120050688"]
-	},
-	"Soft & Wet": {
-		"rarity": 45,
-		"artist": "Hirohiko Araki",
-		"id": 64
-	},
-	"Star Platinum (Part 6)": {
-		"rarity": 45,
-		"artist": "Hirohiko Araki",
-		"id": 38
-	},
-	"The Hand": {
-		"rarity": 45,
-		"artist": "Hirohiko Araki",
-		"id": 12
-	},
-	"The World (Part 6)": {
-		"rarity": 45,
-		"artist": "Hirohiko Araki",
-		"id": 235
-	},
-	"The World (Part 7)": {
-		"rarity": 45,
-		"artist": "Hirohiko Araki",
-		"id": 62
-	},
-	"Vinegar Doppio": {
-		"rarity": 45,
-		"artist": "Hirohiko Araki",
-		"id": 159,
-        "collectors": ["1052285408555319297"]
-	},
-	"Akira Otoishi": {
-		"rarity": 60,
-		"artist": "Hirohiko Araki",
-		"id": 384
-	},
-	"Ball Breaker": {
-		"rarity": 60,
-		"artist": "Hirohiko Araki",
-		"id": 54
+		"collectors": [
+			"1283894007050666121"
+		]
 	},
 	"Charming Man": {
-		"rarity": 60,
+		"rarity": 52,
 		"artist": "Hirohiko Araki",
 		"id": 506
 	},
-	"Cioccolata": {
-		"rarity": 60,
-		"artist": "Hirohiko Araki",
-		"id": 419,
-        "collectors": ["1300902013416243231"]
-	},
-	"Crazy Diamond": {
-		"rarity": 60,
-		"artist": "Hirohiko Araki",
-		"id": 10
-	},
-	"Cream": {
-		"rarity": 60,
-		"artist": "Hirohiko Araki",
-		"id": 9
-	},
 	"Emporio Alnino": {
-		"rarity": 60,
+		"rarity": 52,
 		"artist": "Hirohiko Araki",
 		"id": 162
 	},
-    "Fatty Valentine": {
-        "rarity": 60,
-        "artist": "Hirohiko Araki",
-        "id": 530
-    },
-	"F.F.": {
-		"rarity": 60,
+	"Fatty Valentine": {
+		"rarity": 52,
 		"artist": "Hirohiko Araki",
-		"id": 164
-	},
-	"Gold Experience": {
-		"rarity": 60,
-		"artist": "Hirohiko Araki",
-		"id": 21
+		"id": 530
 	},
 	"Guido Mista": {
-		"rarity": 60,
+		"rarity": 52,
 		"artist": "Hirohiko Araki",
 		"id": 155
 	},
+	"Heaven's Door (TSRK)": {
+		"rarity": 52,
+		"artist": "Hirohiko Araki",
+		"id": 267
+	},
 	"Hot Pants": {
-		"rarity": 60,
+		"rarity": 52,
 		"artist": "Hirohiko Araki",
 		"id": 168
 	},
+	"Jobin Higashikata": {
+		"rarity": 52,
+		"artist": "Hirohiko Araki",
+		"id": 176,
+		"collectors": [
+			"1188980487860015198"
+		]
+	},
+	"Joseph Joestar (Part 3)": {
+		"rarity": 52,
+		"artist": "Hirohiko Araki",
+		"id": 100
+	},
 	"Joshu Higashikata": {
-		"rarity": 60,
+		"rarity": 52,
 		"artist": "Hirohiko Araki",
 		"id": 109
 	},
 	"Jotaro Kujo (Part 4)": {
-		"rarity": 60,
+		"rarity": 52,
 		"artist": "Hirohiko Araki",
 		"id": 148,
-        "collectors": ["514512372518354945"]
+		"collectors": [
+			"514512372518354945"
+		]
 	},
 	"Jotaro Kujo (Part 6)": {
-		"rarity": 60,
+		"rarity": 52,
 		"artist": "Hirohiko Araki",
 		"id": 163,
-        "collectors": ["514512372518354945"]
-	},
-	"Killer Queen": {
-		"rarity": 60,
-		"artist": "Hirohiko Araki",
-		"id": 16
+		"collectors": [
+			"514512372518354945"
+		]
 	},
 	"Koichi Hirose": {
-		"rarity": 60,
+		"rarity": 52,
 		"artist": "Hirohiko Araki",
 		"id": 147
 	},
-	"Metallica": {
-		"rarity": 60,
+	"Lucy Steel": {
+		"rarity": 52,
 		"artist": "Hirohiko Araki",
-		"id": 33
-	},
-	"Mountain Tim": {
-		"rarity": 60,
-		"artist": "Hirohiko Araki",
-		"id": 451
+		"id": 167
 	},
 	"Muhammad Avdol": {
-		"rarity": 60,
+		"rarity": 52,
 		"artist": "Hirohiko Araki",
 		"id": 141
 	},
 	"Paco Laburantes": {
-		"rarity": 60,
+		"rarity": 52,
 		"artist": "Hirohiko Araki",
 		"id": 505,
-        "collectors": ["1456050520878874826"]
+		"collectors": [
+			"1456050520878874826"
+		]
+	},
+	"Star Platinum (Part 6)": {
+		"rarity": 52,
+		"artist": "Hirohiko Araki",
+		"id": 38
+	},
+	"Steven Steel": {
+		"rarity": 52,
+		"artist": "Hirohiko Araki",
+		"id": 450
+	},
+	"The World (Part 7)": {
+		"rarity": 52,
+		"artist": "Hirohiko Araki",
+		"id": 62
+	},
+	"Vinegar Doppio": {
+		"rarity": 52,
+		"artist": "Hirohiko Araki",
+		"id": 159,
+		"collectors": [
+			"1052285408555319297"
+		]
+	},
+	"Akira Otoishi": {
+		"rarity": 71,
+		"artist": "Hirohiko Araki",
+		"id": 384
+	},
+	"Ball Breaker": {
+		"rarity": 71,
+		"artist": "Hirohiko Araki",
+		"id": 54
+	},
+	"Cioccolata": {
+		"rarity": 71,
+		"artist": "Hirohiko Araki",
+		"id": 419,
+		"collectors": [
+			"1300902013416243231"
+		]
+	},
+	"Crazy Diamond": {
+		"rarity": 71,
+		"artist": "Hirohiko Araki",
+		"id": 10
+	},
+	"Cream": {
+		"rarity": 71,
+		"artist": "Hirohiko Araki",
+		"id": 9
+	},
+	"Gold Experience": {
+		"rarity": 71,
+		"artist": "Hirohiko Araki",
+		"id": 21
+	},
+	"Killer Queen": {
+		"rarity": 71,
+		"artist": "Hirohiko Araki",
+		"id": 16
+	},
+	"Killer Queen (Part 8)": {
+		"rarity": 71,
+		"artist": "Hirohiko Araki",
+		"id": 260
+	},
+	"Kosaku Kawajiri (Kira)": {
+		"rarity": 71,
+		"artist": "Hirohiko Araki",
+		"id": 379
+	},
+	"Lisa Lisa": {
+		"rarity": 71,
+		"artist": "Hirohiko Araki",
+		"id": 139
+	},
+	"Metallica": {
+		"rarity": 71,
+		"artist": "Hirohiko Araki",
+		"id": 33
+	},
+	"Mountain Tim": {
+		"rarity": 71,
+		"artist": "Hirohiko Araki",
+		"id": 451
 	},
 	"Parallel World Diego": {
-		"rarity": 60,
+		"rarity": 71,
 		"artist": "Hirohiko Araki",
 		"id": 466
 	},
 	"Pengu": {
-		"rarity": 60,
+		"rarity": 71,
 		"artist": "panda8mc329870",
 		"id": 87
 	},
 	"Rai Mamezuku": {
-		"rarity": 60,
+		"rarity": 71,
 		"artist": "Hirohiko Araki",
 		"id": 175,
-        "collectors": ["804105593140150333"]
+		"collectors": [
+			"804105593140150333"
+		]
 	},
 	"Ringo Roadagain": {
-		"rarity": 60,
+		"rarity": 71,
 		"artist": "Hirohiko Araki",
 		"id": 171
 	},
+	"Risotto Nero": {
+		"rarity": 71,
+		"artist": "Hirohiko Araki",
+		"id": 134,
+		"collectors": [
+			"242019678120050688"
+		]
+	},
 	"Speed King": {
-		"rarity": 60,
+		"rarity": 71,
 		"artist": "Hirohiko Araki",
 		"id": 69
 	},
 	"Star Platinum (Part 4)": {
-		"rarity": 60,
+		"rarity": 71,
 		"artist": "Hirohiko Araki",
 		"id": 11
 	},
-	"Steven Steel": {
-		"rarity": 60,
-		"artist": "Hirohiko Araki",
-		"id": 450
-	},
 	"Tamaki Damo": {
-		"rarity": 60,
+		"rarity": 71,
 		"artist": "Hirohiko Araki",
 		"id": 486
 	},
-	"Usagi Alohaoe": {
-		"rarity": 60,
+	"The World (Part 6)": {
+		"rarity": 71,
 		"artist": "Hirohiko Araki",
-		"id": 288
+		"id": 235
 	},
 	"Whitesnake": {
-		"rarity": 60,
+		"rarity": 71,
 		"artist": "Hirohiko Araki",
 		"id": 44
 	},
-	"Yoshihiro Kira": {
-		"rarity": 60,
-		"artist": "Hirohiko Araki",
-		"id": 388
-	},
-	"Anjuro Katagiri": {
-		"rarity": 91,
-		"artist": "Hirohiko Araki",
-		"id": 380
-	},
-	"Atom Heart Father": {
-		"rarity": 91,
-		"artist": "Hirohiko Araki",
-		"id": 201
-	},
 	"Blackmore": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 458
 	},
 	"Bohemian Rhapsody": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 47
 	},
-	"Boku No Rhythm Wo Kiitekure": {
-		"rarity": 91,
-		"artist": "Hirohiko Araki",
-		"id": 236,
-        "collectors": ["804105593140150333"]
-	},
 	"Catch The Rainbow": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 237
 	},
 	"DIO (Part 6)": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 443
 	},
-	"DISCS": {
-		"rarity": 91,
-		"artist": "Hirohiko Araki",
-		"id": 91
-	},
 	"Esidisi": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 333
 	},
 	"Iggy": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 144
 	},
-	"Josefumi Kujo": {
-		"rarity": 91,
-		"artist": "Hirohiko Araki",
-		"id": 502
-	},
-	"Keicho Nijimura": {
-		"rarity": 91,
-		"artist": "Hirohiko Araki",
-		"id": 381
-	},
-	"Kyoka Izumi": {
-		"rarity": 91,
-		"artist": "Hirohiko Araki",
-		"id": 517,
-        "collectors": ["514512372518354945"]
-	},
 	"Leone Abbacchio": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 154,
-        "collectors": ["558678655945932801"]
+		"collectors": [
+			"558678655945932801"
+		]
 	},
 	"Limp Bizkit": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 228
 	},
-	"Lisa Lisa": {
-		"rarity": 91,
-		"artist": "Hirohiko Araki",
-		"id": 139
-	},
 	"Narancia Ghirga": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 156
 	},
 	"Narciso Anasui": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 166
 	},
 	"Norisuke Higashikata IV": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 174
 	},
 	"Pannacotta Fugo": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 157
 	},
 	"Rohan Kishibe (Part 9)": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 508,
-        "collectors": ["514512372518354945"]
+		"collectors": [
+			"514512372518354945"
+		]
 	},
 	"Rudol Von Stroheim": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 140
 	},
 	"Sheer Heart Attack": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 17
 	},
 	"Star Platinum": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 1
 	},
-	"Sun": {
-		"rarity": 91,
-		"artist": "Hirohiko Araki",
-		"id": 187
-	},
 	"Ticket To Ride": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 55
 	},
 	"Trish Una": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 158
 	},
 	"Vanilla Ice": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 146
 	},
 	"Vitamin C": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 253
 	},
 	"Wamuu": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 334
 	},
 	"Weather Report (User)": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 165,
-        "collectors": ["1456050520878874826"]
+		"collectors": [
+			"1456050520878874826"
+		]
 	},
 	"Will A. Zeppeli": {
-		"rarity": 91,
+		"rarity": 93,
 		"artist": "Hirohiko Araki",
 		"id": 318
 	},
-	"Yoshikage Kira (Part 8)": {
-		"rarity": 91,
-		"artist": "Hirohiko Araki",
-		"id": 501
-	},
-	"20th Century BOY": {
-		"rarity": 124,
-		"artist": "Hirohiko Araki",
-		"id": 240
-	},
 	"Atum": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 196
 	},
-	"Charmy Green": {
-		"rarity": 124,
-		"artist": "CLAMP",
-		"id": 290
-	},
 	"Daiya Higashikata": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 478
 	},
-	"Daniel J. D'Arby": {
-		"rarity": 124,
+	"DISCS": {
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
-		"id": 368
-	},
-	"Dio's Mansion": {
-		"rarity": 124,
-		"artist": "Slavic_serb",
-		"id": 273,
-        "collectors": ["1052285408555319297"]
+		"id": 91
 	},
 	"Donatello Versus": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 439
 	},
 	"Enya The Hag": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 355
 	},
+	"Erina Pendleton": {
+		"rarity": 116,
+		"artist": "Hirohiko Araki",
+		"id": 327
+	},
 	"Green Day": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 83
 	},
 	"Hanged Man": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 183
 	},
 	"Hato Higashikata": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 479
 	},
-	"Hayato Kawajiri": {
-		"rarity": 124,
-		"artist": "Hirohiko Araki",
-		"id": 398
-	},
 	"Hierophant Green": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 4
 	},
 	"Hol Horse": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 145
 	},
-	"I Am A Rock": {
-		"rarity": 124,
-		"artist": "Hirohiko Araki",
-		"id": 304,
-        "collectors": ["1188980487860015198"]
-	},
 	"Justice": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 186
 	},
-	"Meryl Mei Qi": {
-		"rarity": 124,
-		"artist": "Hirohiko Araki",
-		"id": 507
-	},
 	"November Rain": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 71
 	},
 	"Osiris": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 195
 	},
 	"Oyecomova": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 455
 	},
 	"Polpo": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 407
 	},
-	"Scarlet Valentine": {
-		"rarity": 124,
+	"Purple Haze": {
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
-		"id": 469
+		"id": 26
+	},
+	"Red Hot Chili Pepper": {
+		"rarity": 116,
+		"artist": "Hirohiko Araki",
+		"id": 19
 	},
 	"Scary Monsters": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 56
 	},
-	"Secco": {
-		"rarity": 124,
+	"Sports Maxx": {
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
-		"id": 420
-	},
-	"Spin": {
-		"rarity": 124,
-		"artist": "Hirohiko Araki",
-		"id": 270
+		"id": 431
 	},
 	"Sticky Fingers": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 23
 	},
 	"Stone Free": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 37,
-        "collectors": ["1283894007050666121"]
+		"collectors": [
+			"1283894007050666121"
+		]
 	},
 	"Suzi Q": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 342
 	},
 	"THE MATTEKUDASAI": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 263
 	},
-	"Telence T. D'Arby": {
-		"rarity": 124,
-		"artist": "Hirohiko Araki",
-		"id": 370
-	},
 	"Tsurugi Higashikata": {
-		"rarity": 124,
+		"rarity": 116,
 		"artist": "Hirohiko Araki",
 		"id": 477
 	},
-	"Blue Hawaii": {
-		"rarity": 155,
+	"20th Century BOY": {
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
-		"id": 254
+		"id": 240
+	},
+	"Anjuro Katagiri": {
+		"rarity": 141,
+		"artist": "Hirohiko Araki",
+		"id": 380
+	},
+	"Atom Heart Father": {
+		"rarity": 141,
+		"artist": "Hirohiko Araki",
+		"id": 201
+	},
+	"Boku No Rhythm Wo Kiitekure": {
+		"rarity": 141,
+		"artist": "Hirohiko Araki",
+		"id": 236,
+		"collectors": [
+			"804105593140150333"
+		]
+	},
+	"Charmy Green": {
+		"rarity": 141,
+		"artist": "CLAMP",
+		"id": 290
+	},
+	"Dio's Mansion": {
+		"rarity": 141,
+		"artist": "Slavic_serb",
+		"id": 273,
+		"collectors": [
+			"1052285408555319297"
+		]
 	},
 	"Doctor Wu": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 257
 	},
-	"Erina Pendleton": {
-		"rarity": 155,
-		"artist": "Hirohiko Araki",
-		"id": 327
-	},
 	"Ghiaccio": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 415,
-        "collectors": ["841350270595891280", "1456050520878874826"]
+		"collectors": [
+			"841350270595891280",
+			"1456050520878874826"
+		]
 	},
-	"Green Dolphin Street Prison": {
-		"rarity": 155,
+	"Hayato Kawajiri": {
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
-		"id": 276
-	},
-	"Green, Green Grass of Home": {
-		"rarity": 155,
-		"artist": "Hirohiko Araki",
-		"id": 233
-	},
-	"J. Geil": {
-		"rarity": 155,
-		"artist": "Hirohiko Araki",
-		"id": 352
+		"id": 398
 	},
 	"Jean Pierre Polnareff (Part 5)": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 160
 	},
-	"Joestar Birthmark": {
-		"rarity": 155,
+	"Kiss": {
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
-		"id": 268
+		"id": 40
 	},
-	"Joseph Joestar (Part 4)": {
-		"rarity": 155,
+	"Kyoka Izumi": {
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
-		"id": 153
-	},
-	"Mannish Boy": {
-		"rarity": 155,
-		"artist": "Hirohiko Araki",
-		"id": 358
-	},
-	"Mitsuba Higashikata": {
-		"rarity": 155,
-		"artist": "Hirohiko Araki",
-		"id": 480
+		"id": 517,
+		"collectors": [
+			"514512372518354945"
+		]
 	},
 	"Ozon Baby": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 256
 	},
+	"Paisley Park": {
+		"rarity": 141,
+		"artist": "Hirohiko Araki",
+		"id": 65
+	},
 	"Pet Shop": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 369
 	},
 	"Planet Waves": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 230
 	},
 	"Pocoloco": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 170
 	},
-	"Prosciutto": {
-		"rarity": 155,
-		"artist": "Hirohiko Araki",
-		"id": 412
-	},
-	"Red Hot Chili Pepper": {
-		"rarity": 155,
-		"artist": "Hirohiko Araki",
-		"id": 19
-	},
 	"Rikiel": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 438
 	},
-	"Rina Higashikata": {
-		"rarity": 155,
-		"artist": "Hirohiko Araki",
-		"id": 476
-	},
 	"Robert E. O. Speedwagon (Part 2)": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 337
 	},
 	"Smooth Operators": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 72
 	},
 	"Soundman": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 169
 	},
-	"Sports Maxx": {
-		"rarity": 155,
-		"artist": "Hirohiko Araki",
-		"id": 431
-	},
-	"Sugar Mountain (User)": {
-		"rarity": 155,
-		"artist": "Hirohiko Araki",
-		"id": 459
-	},
-	"Tompetty": {
-		"rarity": 155,
-		"artist": "Hirohiko Araki",
-		"id": 319
-	},
 	"Tonio Trussardi": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 152
 	},
 	"Under World": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 49
 	},
 	"Ungalo": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 437,
-        "collectors": ["1106648451904704612"]
+		"collectors": [
+			"1106648451904704612"
+		]
 	},
 	"Wekapipo": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 462
 	},
 	"White Album": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 217,
-        "collectors": ["1456050520878874826"]
+		"collectors": [
+			"1456050520878874826"
+		]
 	},
 	"Wu Tomoki": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 494
 	},
 	"Yukako Yamagishi": {
-		"rarity": 155,
+		"rarity": 141,
 		"artist": "Hirohiko Araki",
 		"id": 151
 	},
 	"Aisho Dainenjiyama": {
-		"rarity": 188,
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
 		"id": 488
 	},
+	"Angelo Rock": {
+		"rarity": 169,
+		"artist": "Hirohiko Araki",
+		"id": 535
+	},
+	"Bakin": {
+		"rarity": 169,
+		"artist": "Hirohiko Araki",
+		"id": 546
+	},
 	"Boingo": {
-		"rarity": 188,
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
 		"id": 363
 	},
-	"Bruford": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 324
-	},
-	"Bruno Mars": {
-		"rarity": 188,
-		"artist": "Papi Bruno",
-		"id": 113
-	},
 	"California King Bed": {
-		"rarity": 188,
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
 		"id": 247
 	},
-	"D-I-S-C-O": {
-		"rarity": 188,
+	"Daniel J. D'Arby": {
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
-		"id": 465
-	},
-	"Diver Down": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 43
-	},
-	"Dr. Ferdinand": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 457
-	},
-	"GOATSHU": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 94
-	},
-	"George Joestar II": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 343
-	},
-	"Hamon": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 95
+		"id": 368
 	},
 	"Highway Star": {
-		"rarity": 188,
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
 		"id": 203
 	},
-	"Holy Joestar-Kira": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 483
-	},
-	"Holy Kujo": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 371
-	},
 	"Horus": {
-		"rarity": 188,
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
 		"id": 82
 	},
-	"Johngalli A.": {
-		"rarity": 188,
+	"Josefumi Kujo": {
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
-		"id": 427
+		"id": 502
+	},
+	"Joseph Joestar (Part 4)": {
+		"rarity": 169,
+		"artist": "Hirohiko Araki",
+		"id": 153
 	},
 	"Kaato Higashikata": {
-		"rarity": 188,
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
 		"id": 482
 	},
 	"Kei Nijimura": {
-		"rarity": 188,
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
 		"id": 481
 	},
-	"Kiss": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 40
-	},
-	"Lava Rock": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 269
-	},
 	"Magent Magent": {
-		"rarity": 188,
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
 		"id": 463
 	},
+	"Mannish Boy": {
+		"rarity": 169,
+		"artist": "Hirohiko Araki",
+		"id": 358
+	},
 	"Mariah": {
-		"rarity": 188,
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
 		"id": 366
 	},
-	"Midler": {
-		"rarity": 188,
+	"Meryl Mei Qi": {
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
-		"id": 360
+		"id": 507
 	},
 	"Mikitaka Hazekura": {
-		"rarity": 188,
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
 		"id": 396
 	},
-	"Morioh Station": {
-		"rarity": 188,
+	"Mitsuba Higashikata": {
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
-		"id": 274
+		"id": 480
 	},
 	"Oasis": {
-		"rarity": 188,
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
 		"id": 221
 	},
-	"Paisley Park": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 65
-	},
-	"Pesci": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 413
-	},
 	"Poor Tom": {
-		"rarity": 188,
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
 		"id": 493
 	},
-	"Purple Haze": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 26
-	},
 	"Reimi Sugimoto": {
-		"rarity": 188,
+		"rarity": 169,
 		"artist": "Hirohiko Araki",
 		"id": 401
 	},
+	"Shigekiyo Yangu": {
+		"rarity": 169,
+		"artist": "Hirohiko Araki",
+		"id": 387
+	},
+	"Silver Chariot (Part 5)": {
+		"rarity": 169,
+		"artist": "Hirohiko Araki",
+		"id": 35
+	},
+	"Spin": {
+		"rarity": 169,
+		"artist": "Hirohiko Araki",
+		"id": 270
+	},
+	"Sugar Mountain (User)": {
+		"rarity": 169,
+		"artist": "Hirohiko Araki",
+		"id": 459
+	},
+	"Sun": {
+		"rarity": 169,
+		"artist": "Hirohiko Araki",
+		"id": 187
+	},
+	"Telence T. D'Arby": {
+		"rarity": 169,
+		"artist": "Hirohiko Araki",
+		"id": 370
+	},
+	"Tompetty": {
+		"rarity": 169,
+		"artist": "Hirohiko Araki",
+		"id": 319
+	},
+	"Yoma Hashimoto": {
+		"rarity": 169,
+		"artist": "Hirohiko Araki",
+		"id": 532
+	},
+	"Yoshikage Kira (Part 8)": {
+		"rarity": 169,
+		"artist": "Hirohiko Araki",
+		"id": 501
+	},
+	"Yotsuyu Yagiyama": {
+		"rarity": 169,
+		"artist": "Hirohiko Araki",
+		"id": 487
+	},
+	"Aerosmith": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 25
+	},
+	"Aqua Necklace": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 197
+	},
+	"Black Sabbath": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 32
+	},
+	"Bruford": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 324
+	},
+	"Bruno Mars": {
+		"rarity": 200,
+		"artist": "Papi Bruno",
+		"id": 113
+	},
+	"Burning Down The House": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 39
+	},
+	"D-I-S-C-O": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 465
+	},
+	"Diver Down": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 43
+	},
+	"Doggy Style": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 67
+	},
+	"Echoes (Act 3)": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 15
+	},
+	"Emperor": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 8
+	},
+	"Foo Fighters": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 41
+	},
+	"Hermit Purple": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 3
+	},
+	"I Am A Rock": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 304,
+		"collectors": [
+			"1188980487860015198"
+		]
+	},
+	"J. Geil": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 352
+	},
+	"King Nothing": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 66
+	},
+	"Magician's Red": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 2
+	},
+	"Moody Blues": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 24,
+		"collectors": [
+			"558678655945932801"
+		]
+	},
+	"Nut King Call": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 68
+	},
+	"Pearl Jam": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 77
+	},
 	"Rolling Stones": {
-		"rarity": 188,
+		"rarity": 200,
 		"artist": "Hirohiko Araki",
 		"id": 301
 	},
 	"Rubber Soul": {
-		"rarity": 188,
+		"rarity": 200,
 		"artist": "Hirohiko Araki",
 		"id": 351
 	},
-	"San Diego Beach": {
-		"rarity": 188,
+	"Santana": {
+		"rarity": 200,
 		"artist": "Hirohiko Araki",
-		"id": 277
+		"id": 335,
+		"collectors": [
+			"1188980487860015198"
+		]
 	},
-	"Shigekiyo Yangu": {
-		"rarity": 188,
+	"Secco": {
+		"rarity": 200,
 		"artist": "Hirohiko Araki",
-		"id": 387
+		"id": 420
 	},
-	"Silver Bullet": {
-		"rarity": 188,
+	"Sex Pistols": {
+		"rarity": 200,
 		"artist": "Hirohiko Araki",
-		"id": 129
+		"id": 30,
+		"collectors": [
+			"804105593140150333"
+		]
 	},
-	"Silver Chariot (Part 5)": {
-		"rarity": 188,
+	"Silver Chariot": {
+		"rarity": 200,
 		"artist": "Hirohiko Araki",
-		"id": 35
+		"id": 5
 	},
-	"Slow Dancer": {
-		"rarity": 188,
+	"Spice Girl": {
+		"rarity": 200,
 		"artist": "Hirohiko Araki",
-		"id": 110
-	},
-	"Steel Ball": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 90
-	},
-	"Stone Mask": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 89
+		"id": 27
 	},
 	"Straizo (Part 2)": {
-		"rarity": 188,
+		"rarity": 200,
 		"artist": "Hirohiko Araki",
 		"id": 336
 	},
 	"Tarkus": {
-		"rarity": 188,
+		"rarity": 200,
 		"artist": "Hirohiko Araki",
 		"id": 325
 	},
+	"The Fool": {
+		"rarity": 200,
+		"artist": "Hirohiko Araki",
+		"id": 6
+	},
 	"The Grateful Dead": {
-		"rarity": 188,
+		"rarity": 200,
 		"artist": "Hirohiko Araki",
 		"id": 215
 	},
-	"Tomoko Hishigakata": {
-		"rarity": 188,
+	"Wall Eyes": {
+		"rarity": 200,
 		"artist": "Hirohiko Araki",
-		"id": 394
-	},
-	"Valkyrie": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 111,
-        "collectors": ["1304766697143795712"]
+		"id": 541
 	},
 	"Yellow Temperance": {
-		"rarity": 188,
+		"rarity": 200,
 		"artist": "Hirohiko Araki",
 		"id": 182
 	},
-	"Yotsuyu Yagiyama": {
-		"rarity": 188,
+	"Yoshihiro Kira": {
+		"rarity": 200,
 		"artist": "Hirohiko Araki",
-		"id": 487
-	},
-	"Yuya Fungami": {
-		"rarity": 188,
-		"artist": "Hirohiko Araki",
-		"id": 390
-	},
-	"Aerosmith": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 25
-	},
-	"Anubis": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 192
-	},
-	"Aqua Necklace": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 197
+		"id": 388
 	},
 	"Awaking III Leaves": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 249
 	},
-	"Black Sabbath": {
-		"rarity": 236,
+	"Blue Hawaii": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 32
+		"id": 254
 	},
 	"Born This Way": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 252
 	},
 	"Brain Storm": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 255
 	},
-	"Burning Down The House": {
-		"rarity": 236,
+	"Café Deux Magots": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 39
-	},
-	"Caesar's Headband": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 93
+		"id": 542
 	},
 	"Clash": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 218
 	},
-	"Doggy Style": {
-		"rarity": 236,
+	"Dio's Castle": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 67
-	},
-	"Doobie Wah!": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 305
-	},
-	"Dragon's Dream": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 231
-	},
-	"Echoes (Act 3)": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 15
+		"id": 538
 	},
 	"Echoes (Part 5)": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 34
 	},
-	"Emperor": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 8
-	},
-	"Empress": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 184
-	},
-	"Enigma": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 205
-	},
-	"Foo Fighters": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 41
-	},
 	"Geb": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 190
 	},
-	"Gets Up": {
-		"rarity": 236,
+	"GOATSHU": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 244
+		"id": 94
 	},
-	"Hermit Purple": {
-		"rarity": 236,
+	"Green Dolphin Street Prison": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 3
+		"id": 276
 	},
-	"Hey! Ya!": {
-		"rarity": 236,
+	"Green, Green Grass of Home": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 245
+		"id": 233
+	},
+	"Hamon": {
+		"rarity": 234,
+		"artist": "Hirohiko Araki",
+		"id": 95
 	},
 	"Higashikata Residence": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 518
 	},
-	"High Priestess": {
-		"rarity": 236,
+	"Holy Joestar-Kira": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 189
+		"id": 483
+	},
+	"Holy Kujo": {
+		"rarity": 234,
+		"artist": "Hirohiko Araki",
+		"id": 371
 	},
 	"Jail House Lock": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 234,
-        "collectors": ["1425109627636285511"]
+		"collectors": [
+			"1425109627636285511"
+		]
 	},
-	"Joseph Joestar (Part 8)": {
-		"rarity": 236,
+	"Johngalli A.": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 500
+		"id": 427
 	},
-	"Jumpin' Jack Flash": {
-		"rarity": 236,
+	"Keicho Nijimura": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 227
+		"id": 381
 	},
 	"Key West": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 512
 	},
-	"King Nothing": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 66
-	},
 	"Laem Chabang": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 513
 	},
-	"Loggins": {
-		"rarity": 236,
+	"Midler": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 340
-	},
-	"Luck And Pluck": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 112
-	},
-	"Lucy Steel (Part 8)": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 499
-	},
-	"Magician's Red": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 2
-	},
-	"Manhattan Transfer": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 224
-	},
-	"Messina": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 341
+		"id": 360
 	},
 	"Milagroman": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 259
 	},
-	"Moody Blues": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 24,
-        "collectors": ["558678655945932801"]
-	},
-	"Mr. President's Room": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 275
-	},
 	"Ningbo": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 514
 	},
 	"Notorious B.I.G.": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 220
 	},
-	"Nut King Call": {
-		"rarity": 236,
+	"Pesci": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 68
+		"id": 413
 	},
-	"Ojiro Sasame": {
-		"rarity": 236,
+	"Prosciutto": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 485
+		"id": 412
 	},
-	"Pearl Jam": {
-		"rarity": 236,
+	"Rohan's House": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 77
+		"id": 520
 	},
-	"Santana": {
-		"rarity": 236,
+	"Silver Bullet": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 335,
-        "collectors": ["1188980487860015198"]
-	},
-	"Sex Pistols": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 30,
-        "collectors": ["804105593140150333"]
-	},
-	"Silver Chariot": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 5
+		"id": 129
 	},
 	"Sky High": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 48
 	},
-	"Smokey Brown": {
-		"rarity": 236,
+	"Slow Dancer": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 339
+		"id": 110
 	},
-	"Spice Girl": {
-		"rarity": 236,
+	"Steel Ball": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 27
+		"id": 90
+	},
+	"Stone Mask": {
+		"rarity": 234,
+		"artist": "Hirohiko Araki",
+		"id": 89
 	},
 	"Straizo": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 321
 	},
 	"Talking Head": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 219,
-        "collectors": ["804105593140150333"]
-	},
-	"The Fool": {
-		"rarity": 236,
-		"artist": "Hirohiko Araki",
-		"id": 6
+		"collectors": [
+			"804105593140150333"
+		]
 	},
 	"Tohth": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 191
 	},
-	"Tusk (Act 3)": {
-		"rarity": 236,
+	"Tomoko Higashikata": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 52
+		"id": 394
+	},
+	"Valkyrie": {
+		"rarity": 234,
+		"artist": "Hirohiko Araki",
+		"id": 111,
+		"collectors": [
+			"1304766697143795712"
+		]
 	},
 	"Walking Heart": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 248
 	},
 	"Yo-Yo Ma": {
-		"rarity": 236,
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
 		"id": 232
 	},
-	"A. Phex Brothers": {
-		"rarity": 294,
+	"Yuya Fungami": {
+		"rarity": 234,
 		"artist": "Hirohiko Araki",
-		"id": 489
+		"id": 390
+	},
+	"Anubis": {
+		"rarity": 275,
+		"artist": "Hirohiko Araki",
+		"id": 192
 	},
 	"Axl RO": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 464
 	},
 	"Big Mouth Strikes Again": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 264
 	},
 	"Cinderella": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 79
 	},
-	"Danny": {
-		"rarity": 294,
-		"artist": "Hirohiko Araki",
-		"id": 328,
-		"collectors": ["522919220376502276"]
-	},
 	"Dire": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 320
 	},
+	"Doobie Wah!": {
+		"rarity": 275,
+		"artist": "Hirohiko Araki",
+		"id": 305
+	},
+	"Dr. Ferdinand": {
+		"rarity": 275,
+		"artist": "Hirohiko Araki",
+		"id": 457
+	},
+	"Dragon's Dream": {
+		"rarity": 275,
+		"artist": "Hirohiko Araki",
+		"id": 231
+	},
 	"Earth Wind And Fire": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 78
 	},
-	"George Joestar I": {
-		"rarity": 294,
+	"Enigma": {
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
-		"id": 326
+		"id": 205
+	},
+	"George Joestar II": {
+		"rarity": 275,
+		"artist": "Hirohiko Araki",
+		"id": 343
 	},
 	"Gwess": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 426
 	},
+	"Hermit Purple (Part 4)": {
+		"rarity": 275,
+		"artist": "Hirohiko Araki",
+		"id": 20
+	},
 	"Hey Ya!": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 63
 	},
-	"Howler's Megayacht": {
-		"rarity": 294,
+	"High Priestess": {
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
-		"id": 519
+		"id": 189
 	},
 	"Iwasuke": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 496
 	},
 	"Joestar Mansion": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 271
 	},
-	"Jonathan's Stand": {
-		"rarity": 294,
+	"Jumpin' Jack Flash": {
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
-		"id": 300
+		"id": 227
 	},
-	"Kenzou": {
-		"rarity": 294,
+	"Libeccio": {
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
-		"id": 433
+		"id": 534
+	},
+	"Loggins": {
+		"rarity": 275,
+		"artist": "Hirohiko Araki",
+		"id": 340
 	},
 	"Love Deluxe": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 75
 	},
+	"Manhattan Transfer": {
+		"rarity": 275,
+		"artist": "Hirohiko Araki",
+		"id": 224
+	},
 	"Melone": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 414
 	},
-	"Merlai Anne": {
-		"rarity": 294,
+	"Messina": {
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
-		"id": 372
+		"id": 341
 	},
 	"Mike O.": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 461
 	},
+	"Morioh Station": {
+		"rarity": 275,
+		"artist": "Hirohiko Araki",
+		"id": 274
+	},
+	"Mutsu-kabe Hill": {
+		"rarity": 275,
+		"artist": "Hirohiko Araki",
+		"id": 543
+	},
 	"N'Doul": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 361
 	},
-	"Nena": {
-		"rarity": 294,
+	"New York City": {
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
-		"id": 353
+		"id": 540
 	},
 	"Norisuke Higashikata I": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 468
 	},
 	"Oh! Lonesome Me": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 243
 	},
 	"Paper Moon King": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 246
 	},
 	"Poco": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 330
 	},
-	"Rohan's House": {
-		"rarity": 294,
+	"Rina Higashikata": {
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
-		"id": 520
+		"id": 476
 	},
-	"Roses": {
-		"rarity": 294,
+	"Scarlet Valentine": {
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
-		"id": 377
-	},
-	"Scolippi": {
-		"rarity": 294,
-		"artist": "Hirohiko Araki",
-		"id": 421
-	},
-	"Shinobu Kawajiri": {
-		"rarity": 294,
-		"artist": "Hirohiko Araki",
-		"id": 397
-	},
-	"Shizuka Joestar": {
-		"rarity": 294,
-		"artist": "Hirohiko Araki",
-		"id": 403
+		"id": 469
 	},
 	"Skeleton Heel Stone": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 272
 	},
+	"Smokey Brown": {
+		"rarity": 275,
+		"artist": "Hirohiko Araki",
+		"id": 339
+	},
 	"Space Trucking": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 250
 	},
 	"Squalo": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 416
 	},
 	"Stray Cat": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 208
 	},
-	"Sugar Mountain": {
-		"rarity": 294,
-		"artist": "Hirohiko Araki",
-		"id": 238
-	},
-	"Suzi Q (Part 3)": {
-		"rarity": 294,
-		"artist": "Hirohiko Araki",
-		"id": 373
-	},
-	"TATOO YOU!": {
-		"rarity": 294,
-		"artist": "Hirohiko Araki",
-		"id": 303
-	},
 	"Terunosuke Miyamoto": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 392
 	},
 	"Tiziano": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 417
 	},
 	"Toshikazu Hazamada": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 383
 	},
-	"Tusk (Act 2)": {
-		"rarity": 294,
+	"Tusk (Act 3)": {
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
-		"id": 51
+		"id": 52
+	},
+	"Under The Moon": {
+		"rarity": 275,
+		"artist": "Hirohiko Araki",
+		"id": 549
 	},
 	"Wang Chan": {
-		"rarity": 294,
+		"rarity": 275,
 		"artist": "Hirohiko Araki",
 		"id": 322
 	},
-	"Wild Cat Size": {
-		"rarity": 294,
+	"A. Phex Brothers": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 515
-	},
-	"200 Balloons": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 314
-	},
-	"Achtung Baby": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 207
-	},
-	"Alessi": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 367
-	},
-	"Andre Boomboom": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 453
-	},
-	"Arabia Fats": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 357
+		"id": 489
 	},
 	"Arnold": {
-		"rarity": 337,
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
 		"id": 400
 	},
 	"Aya Tsuji": {
-		"rarity": 337,
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
 		"id": 399
 	},
 	"Baby Face": {
-		"rarity": 337,
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
 		"id": 216
 	},
 	"Bad Company": {
-		"rarity": 337,
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
 		"id": 198
 	},
-	"Bags' Groove": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 311
-	},
-	"Barbara Ann Joestar": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 516
-	},
-	"Bastet": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 193
-	},
-	"Beach Boy": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 214
-	},
-	"Benjamin Boomboom": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 452
-	},
 	"Bobby Jean": {
-		"rarity": 337,
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
 		"id": 511
 	},
-	"Boiling Water Stand": {
-		"rarity": 337,
+	"Caesar's Headband": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 302
-	},
-	"Boy II Man": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 202
-	},
-	"Bug-Eaten": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 385
-	},
-	"Cameo": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 359
-	},
-	"Captain Tennille": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 348
-	},
-	"Carne": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 418
-	},
-	"Cat Size": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 310
-	},
-	"Chaka": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 364
-	},
-	"Cheap Trick": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 206
+		"id": 93
 	},
 	"Chocolate Disco": {
-		"rarity": 337,
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
 		"id": 242
 	},
-	"Civil War": {
-		"rarity": 337,
+	"Danny": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 241
-	},
-	"Cream Starter": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 57
-	},
-	"D an G": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 434
+		"id": 328,
+		"collectors": [
+			"522919220376502276"
+		]
 	},
 	"Danny (Mouse)": {
-		"rarity": 337,
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
 		"id": 449
 	},
-	"Dario Brando": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 329
-	},
-	"Dark Blue Moon": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 179
-	},
-	"Devo The Cursed": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 350
-	},
 	"Dolomite": {
-		"rarity": 337,
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
 		"id": 490
 	},
-	"Donatella Una": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 424
-	},
-	"Donovan": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 345
-	},
 	"Doremifasolati Do": {
-		"rarity": 337,
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
 		"id": 492
 	},
-	"Dot Han": {
-		"rarity": 337,
+	"Eco-Terrorist": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 472
+		"id": 562
 	},
-	"Ebony Devil": {
-		"rarity": 337,
+	"Empress": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 181
+		"id": 184
 	},
-	"Echoes (Act 1)": {
-		"rarity": 337,
+	"George Joestar I": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 13
+		"id": 326
 	},
-	"Echoes (Act 2)": {
-		"rarity": 337,
+	"Gessler's Hotel": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 14
+		"id": 537
 	},
-	"Eleven Men": {
-		"rarity": 337,
+	"Gets Up": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 460
+		"id": 244
 	},
-	"Erina Joestar (Part 2)": {
-		"rarity": 337,
+	"Hey! Ya!": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 338
+		"id": 245
 	},
-	"Forever": {
-		"rarity": 337,
+	"Howler's Megayacht": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 349
+		"id": 519
 	},
-	"Formaggio": {
-		"rarity": 337,
+	"Joestar Birthmark": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 410
+		"id": 268
 	},
-	"Fritz Von Stroheim": {
-		"rarity": 337,
+	"Jonathan's Stand": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 473
+		"id": 300
 	},
-	"Frog": {
-		"rarity": 337,
+	"Joseph Joestar (Part 8)": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 332
-	},
-	"Fun Fun Fun": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 251
-	},
-	"Gaucho": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 474
-	},
-	"Giorno's Mother": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 423
-	},
-	"Glory Days": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 312
-	},
-	"Goo Goo Dolls": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 223
-	},
-	"Gray Fly": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 347
-	},
-	"Guccio": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 435
-	},
-	"Harvest": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 74
-	},
-	"Hermit Purple (Part 4)": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 20
-	},
-	"Highway To Hell": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 225
-	},
-	"Holy's Stand": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 298
-	},
-	"Illuso": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 411
-	},
-	"In A Silent Way": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 60
-	},
-	"Jack The Ripper": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 323
-	},
-	"Jolyne's Mother": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 442,
-        "collectors": ["1283894007050666121"]
-	},
-	"Joseph's Stand": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 308
-	},
-	"Josuke's Savior": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 402
-	},
-	"Judgement": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 188
+		"id": 500
 	},
 	"Karera Sakunami": {
-		"rarity": 337,
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
 		"id": 484
 	},
-	"Ken Oyanagi": {
-		"rarity": 337,
+	"Kennedy Space Center": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 389
+		"id": 539
 	},
-	"Kenny G.": {
-		"rarity": 337,
+	"Kenzou": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 374
+		"id": 433
 	},
-	"Khan": {
-		"rarity": 337,
+	"Kujo Mansion": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 365
+		"id": 536
 	},
-	"Khnum": {
-		"rarity": 337,
+	"Lava Rock": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 73
+		"id": 269
 	},
-	"Kraft Work": {
-		"rarity": 337,
+	"Louvre": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 211
-	},
-	"L.A. Boomboom": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 454
-	},
-	"Lang Rangler": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 430
-	},
-	"Leaky-Eye Luca": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 406
-	},
-	"Les Feuilles": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 309
-	},
-	"Little Feet": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 212
-	},
-	"Loccobarocco": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 441
+		"id": 545
 	},
 	"Love Love Deluxe": {
-		"rarity": 337,
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
 		"id": 258
 	},
-	"Lovers": {
-		"rarity": 337,
+	"Luck And Pluck": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 81
+		"id": 112
+	},
+	"Lucy Steel (Part 8)": {
+		"rarity": 321,
+		"artist": "Hirohiko Araki",
+		"id": 499
 	},
 	"Lulu": {
-		"rarity": 337,
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
 		"id": 510
 	},
-	"Lyin' Eyes": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 313
-	},
-	"Maako Kitani": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 495
-	},
-	"Malena": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 376
-	},
-	"Man In The Mirror": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 213
-	},
-	"Mansaku Nijimura": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 404
-	},
 	"Marilyn Manson": {
-		"rarity": 337,
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
 		"id": 226
 	},
-	"Mario Zucchero": {
-		"rarity": 337,
+	"Merlai Anne": {
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
-		"id": 408
-	},
-	"Masazo Kinoto": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 393
+		"id": 372
 	},
 	"Miraschon": {
-		"rarity": 337,
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
 		"id": 429
 	},
 	"Miuccia Miuller": {
-		"rarity": 337,
+		"rarity": 321,
 		"artist": "Hirohiko Araki",
 		"id": 436
 	},
+	"Moon Rabbit": {
+		"rarity": 321,
+		"artist": "Hirohiko Araki",
+		"id": 554
+	},
+	"Mr. President's Room": {
+		"rarity": 321,
+		"artist": "Hirohiko Araki",
+		"id": 275
+	},
+	"Nena": {
+		"rarity": 321,
+		"artist": "Hirohiko Araki",
+		"id": 353
+	},
+	"Ojiro Sasame": {
+		"rarity": 321,
+		"artist": "Hirohiko Araki",
+		"id": 485
+	},
+	"Roses": {
+		"rarity": 321,
+		"artist": "Hirohiko Araki",
+		"id": 377
+	},
+	"San Diego Beach": {
+		"rarity": 321,
+		"artist": "Hirohiko Araki",
+		"id": 277
+	},
+	"Shinobu Kawajiri": {
+		"rarity": 321,
+		"artist": "Hirohiko Araki",
+		"id": 397
+	},
+	"Shizuka Joestar": {
+		"rarity": 321,
+		"artist": "Hirohiko Araki",
+		"id": 403
+	},
+	"Strength": {
+		"rarity": 321,
+		"artist": "Hirohiko Araki",
+		"id": 180
+	},
+	"Sugar Mountain": {
+		"rarity": 321,
+		"artist": "Hirohiko Araki",
+		"id": 238
+	},
+	"Suzi Q (Part 3)": {
+		"rarity": 321,
+		"artist": "Hirohiko Araki",
+		"id": 373
+	},
+	"The Hustle": {
+		"rarity": 321,
+		"artist": "Hirohiko Araki",
+		"id": 262,
+		"collectors": [
+			"1456050520878874826"
+		]
+	},
+	"Urban Guerrilla": {
+		"rarity": 321,
+		"artist": "Hirohiko Araki",
+		"id": 491
+	},
+	"Viviano Westwood": {
+		"rarity": 321,
+		"artist": "Hirohiko Araki",
+		"id": 432
+	},
+	"Wild Cat Size": {
+		"rarity": 321,
+		"artist": "Hirohiko Araki",
+		"id": 515
+	},
+	"200 Balloons": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 314
+	},
+	"Aki Mochizuki": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 553
+	},
+	"Alessi": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 367
+	},
+	"Bags' Groove": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 311
+	},
+	"Barbara Ann Joestar": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 516
+	},
+	"Bastet": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 193
+	},
+	"Beach Boy": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 214
+	},
+	"Benjamin Boomboom": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 452
+	},
+	"Carne": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 418
+	},
+	"Cat Size": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 310
+	},
+	"Chaka": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 364
+	},
+	"Cheap Trick": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 206
+	},
+	"Civil War": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 241
+	},
+	"Coire electricus lorenzinia": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 555
+	},
+	"Cream Starter": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 57
+	},
+	"D an G": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 434
+	},
+	"Dario Brando": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 329
+	},
+	"Devo The Cursed": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 350
+	},
+	"Dot Han": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 472
+	},
+	"Ebony Devil": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 181
+	},
+	"Echoes (Act 2)": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 14
+	},
+	"Eleven Men": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 460
+	},
+	"Formaggio": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 410
+	},
+	"Fun Fun Fun": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 251
+	},
+	"Glory Days": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 312
+	},
+	"Goo Goo Dolls": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 223
+	},
+	"Guccio": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 435
+	},
+	"Harvest": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 74
+	},
+	"Ikkyu": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 552
+	},
+	"Illuso": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 411
+	},
+	"In A Silent Way": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 60
+	},
+	"Judgement": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 188
+	},
+	"Lang Rangler": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 430
+	},
+	"Little Feet": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 212
+	},
+	"Loccobarocco": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 441
+	},
+	"Lyin' Eyes": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 313
+	},
+	"Mai Katahira": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 556
+	},
+	"Man In The Mirror": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 213
+	},
 	"Mr. President": {
-		"rarity": 337,
+		"rarity": 372,
 		"artist": "Hirohiko Araki",
 		"id": 28
 	},
-	"Mrs. Robinson": {
-		"rarity": 337,
+	"Mutsu-kabe Shrine": {
+		"rarity": 372,
 		"artist": "Hirohiko Araki",
-		"id": 467
+		"id": 544
 	},
-	"Not Bug-Eaten": {
-		"rarity": 337,
+	"Nanase Fujikura": {
+		"rarity": 372,
 		"artist": "Hirohiko Araki",
-		"id": 386
+		"id": 550
 	},
-	"Nukesaku": {
-		"rarity": 337,
+	"Naoko Osato": {
+		"rarity": 372,
 		"artist": "Hirohiko Araki",
-		"id": 375
+		"id": 547
 	},
 	"Oingo": {
-		"rarity": 337,
+		"rarity": 372,
 		"artist": "Hirohiko Araki",
 		"id": 362
 	},
 	"Pericolo": {
-		"rarity": 337,
+		"rarity": 372,
 		"artist": "Hirohiko Araki",
 		"id": 422
 	},
-	"Perla Pucci": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 444
-	},
-	"Poco's Sister": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 331
-	},
 	"Pork Pie Hat Kid": {
-		"rarity": 337,
+		"rarity": 372,
 		"artist": "Hirohiko Araki",
 		"id": 456
 	},
 	"Ratt": {
-		"rarity": 337,
+		"rarity": 372,
 		"artist": "Hirohiko Araki",
 		"id": 200
 	},
-	"Romeo Jisso": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 440
-	},
-	"Ryohei Higashikata": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 405
-	},
-	"Sale": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 409
-	},
 	"Schott Key No.1": {
-		"rarity": 337,
+		"rarity": 372,
 		"artist": "Hirohiko Araki",
 		"id": 306
 	},
 	"Schott Key No.2": {
-		"rarity": 337,
+		"rarity": 372,
 		"artist": "Hirohiko Araki",
 		"id": 307
 	},
+	"Scolippi": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 421
+	},
 	"Sethan": {
-		"rarity": 337,
+		"rarity": 372,
 		"artist": "Hirohiko Araki",
 		"id": 194
 	},
+	"Steely Dan": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 356
+	},
+	"Surface": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 199
+	},
+	"Tamami Kobayashi": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 382
+	},
+	"TATOO YOU!": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 303
+	},
+	"Tubular Bells": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 239
+	},
+	"Tusk (Act 2)": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 51
+	},
+	"West End Girl": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 315
+	},
+	"Wired": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 80
+	},
+	"Yabubako-Hoshi": {
+		"rarity": 372,
+		"artist": "Hirohiko Araki",
+		"id": 560
+	},
+	"Achtung Baby": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 207
+	},
+	"Andre Boomboom": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 453
+	},
+	"Arabia Fats": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 357
+	},
+	"Boiling Water Stand": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 302
+	},
+	"Boy II Man": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 202
+	},
+	"Bug-Eaten": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 385
+	},
+	"Cameo": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 359
+	},
+	"Captain Tennille": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 348
+	},
+	"Dark Blue Moon": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 179
+	},
+	"Donatella Una": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 424
+	},
+	"Donovan": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 345
+	},
+	"Echoes (Act 1)": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 13
+	},
+	"Erina Joestar (Part 2)": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 338
+	},
+	"Eve": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 561
+	},
+	"Forever": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 349
+	},
+	"Fritz Von Stroheim": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 473
+	},
+	"Frog": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 332
+	},
+	"Gaucho": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 474
+	},
+	"Giorno's Mother": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 423
+	},
+	"Gray Fly": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 347
+	},
+	"Gunpei Kamafusa": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 548
+	},
+	"Highway To Hell": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 225
+	},
+	"Holy's Stand": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 298
+	},
+	"Jack The Ripper": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 323
+	},
+	"Jolyne's Mother": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 442,
+		"collectors": [
+			"1283894007050666121"
+		]
+	},
+	"Joseph's Stand": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 308
+	},
+	"Josuke's Savior": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 402
+	},
+	"Ken Oyanagi": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 389
+	},
+	"Kenny G.": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 374
+	},
+	"Khan": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 365
+	},
+	"Khnum": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 73
+	},
+	"Kraft Work": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 211
+	},
+	"L.A. Boomboom": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 454
+	},
+	"Leaky-Eye Luca": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 406
+	},
+	"Les Feuilles": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 309
+	},
+	"Lovers": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 81
+	},
+	"Maako Kitani": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 495
+	},
+	"Malena": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 376
+	},
+	"Mansaku Nijimura": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 404
+	},
+	"Mao Katahira": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 557
+	},
+	"Mario Zucchero": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 408
+	},
+	"Masazo Kinoto": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 393
+	},
+	"Mika Hayamura": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 559
+	},
+	"Mrs. Robinson": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 467
+	},
+	"Nizaemon Yamamura": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 551
+	},
+	"Not Bug-Eaten": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 386
+	},
+	"Nukesaku": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 375
+	},
+	"Obanazawa": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 558
+	},
+	"Perla Pucci": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 444
+	},
+	"Poco's Sister": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 331
+	},
+	"Romeo Jisso": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 440
+	},
+	"Ryohei Higashikata": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 405
+	},
+	"Sale": {
+		"rarity": 431,
+		"artist": "Hirohiko Araki",
+		"id": 409
+	},
 	"Soft Machine": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 210
 	},
 	"Sorbet And Gelato": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 425
 	},
 	"Soundman's Sister": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 470
 	},
-	"Steely Dan": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 356
-	},
-	"Strength": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 180
-	},
 	"Super Fly": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 204
 	},
-	"Surface": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 199
-	},
 	"Survivor": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 229
 	},
-	"Tamami Kobayash": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 382
-	},
 	"Taoka": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 498
 	},
 	"Tenore Sax": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 299
 	},
-	"The Hustle": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 262,
-        "collectors": ["1456050520878874826"]
-	},
 	"The Lock": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 76
 	},
 	"Thunder McQueen": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 428
 	},
 	"Tomb Of The Boom 1": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 446
 	},
 	"Tomb Of The Boom 2": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 447
 	},
 	"Tomb Of The Boom 3": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 448
 	},
 	"Tower Of Gray": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 178
 	},
 	"Toyohiro Kanedaichi": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 391
 	},
-	"Tubular Bells": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 239
-	},
 	"Tusk (Act 1)": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 50
 	},
-	"Urban Guerrilla": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 491
-	},
 	"Urmd Avdul": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 471
 	},
-	"Viviano Westwood": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 432
-	},
-	"West End Girl": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 315
-	},
 	"Wheel Of Fortune": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 185
 	},
-	"Wired": {
-		"rarity": 337,
-		"artist": "Hirohiko Araki",
-		"id": 80
-	},
 	"Wired Beck": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 344
 	},
-    "Zaihei Nigatake": {
-		"rarity": 337,
+	"Zaihei Nigatake": {
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 497
 	},
 	"ZZ": {
-		"rarity": 337,
+		"rarity": 431,
 		"artist": "Hirohiko Araki",
 		"id": 354
 	}

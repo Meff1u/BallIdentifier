@@ -602,7 +602,9 @@
             "German-Occupied Sealand": ["sealand", "german occupied sealand"],
             "Quebec Liberation Front": ["quebec"],
             "Imperial Moscow": ["moscow", "moskva"],
-            "Spanish Protectorate of Cambodia": ["cambodia"]
+            "Spanish Protectorate of Cambodia": ["cambodia"],
+            "French Equatorial Africa": ["french africa"],
+            "Belgian Empire": ["belgium"]
         }
     }
 }
