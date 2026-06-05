@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "",
+            "changes": [
+                "Updated to new HistoryDex balls (Burgundian Netherlands, Commonwealth Warsaw, Federation of Malaya, Funj Sultanate, Khmer Empire, Kingdom of Cayor/Holland/Lithuania, Korea State, Korean Empire, Medieval Kingdom of Denmark, Nazist Berlin, Selk'nam Peoples, Sultanate of Bone, The Great National Assembly in Alba Iulia, Union of Poland-Saxony, United Baltic Duchy, West Berlin)",
+                "Updated to new spawn arts in HistoryDex (Balkan League, British Burma/Kenya, County of Vaduz, Emirate of Nejd and Hasa, Kingdom of Bavaria/Cusco, Song)"
+            ]
+        },
+        {
             "timestamp": "1780404062",
             "changes": [
                 "Updated JoJoDex rarities",

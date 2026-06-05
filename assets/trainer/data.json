@@ -604,7 +604,24 @@
             "Imperial Moscow": ["moscow", "moskva"],
             "Spanish Protectorate of Cambodia": ["cambodia"],
             "French Equatorial Africa": ["french africa"],
-            "Belgian Empire": ["belgium"]
+            "Belgian Empire": ["belgium"],
+            "Kingdom of Holland": ["holland", "netherlands"],
+            "Federation of Malaya": ["malaya"],
+            "West Berlin": ["berlin"],
+            "Union of Poland-Saxony": ["poland", "saxony", "poland saxony", "plc"],
+            "Funj Sultanate": ["funj", "sennar", "sultanate of sennar"],
+            "Selk'nam Peoples": ["selknam", "selk'nam", "selknam people", "selk'nam people", "onawo", "onawo people", "onawo peoples"],
+            "Sultanate of Bone": ["bone", "bone state"],
+            "Burgundian Netherlands": ["netherlands"],
+            "Korea State": ["korea"],
+            "Khmer Empire": ["khmer", "cambodia"],
+            "Medieval Kingdom of Denmark": ["denmark", "medieval denmark", "danes", "danish kingdom"],
+            "Nazist Berlin": ["berlin"],
+            "Commonwealth Warsaw": ["warsaw"],
+            "Korean Empire": ["korea"],
+            "Kingdom of Lithuania": ["lithuania"],
+            "Kingdom of Cayor": ["cayor"],
+            "The Great National Assembly in Alba Iulia": ["alba iulia", "tgnaai"]
         }
     }
 }
