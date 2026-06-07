@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1780824728",
+            "changes": [
+                "Updated JoJoDex rarities",
+                "Updated to new spawn arts in HistoryDex (Kara-Khanid Khanate, Almohad Caliphate)"
+            ]
+        },
+        {
             "timestamp": "1780664223",
             "changes": [
                 "Updated to new HistoryDex balls (Burgundian Netherlands, Commonwealth Warsaw, Federation of Malaya, Funj Sultanate, Khmer Empire, Kingdom of Cayor/Holland/Lithuania, Korea State, Korean Empire, Medieval Kingdom of Denmark, Nazist Berlin, Selk'nam Peoples, Sultanate of Bone, The Great National Assembly in Alba Iulia, Union of Poland-Saxony, United Baltic Duchy, West Berlin)",

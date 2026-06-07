@@ -1,9 +1,4 @@
 {
-	"Replay": {
-		"rarity": 0,
-		"artist": "Pengu & Replay",
-		"id": 136
-	},
 	"DIO": {
 		"rarity": 1,
 		"artist": "Hirohiko Araki",
@@ -174,6 +169,11 @@
 		"rarity": 30,
 		"artist": "Hirohiko Araki",
 		"id": 265
+	},
+    "Replay": {
+		"rarity": 30,
+		"artist": "Pengu & Replay",
+		"id": 136
 	},
 	"Rohan Kishibe": {
 		"rarity": 30,
