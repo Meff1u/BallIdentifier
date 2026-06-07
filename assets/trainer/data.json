@@ -622,7 +622,8 @@
             "Kingdom of Lithuania": ["lithuania"],
             "Kingdom of Cayor": ["cayor"],
             "The Great National Assembly in Alba Iulia": ["alba iulia", "tgnaai"],
-            "Saffarid Empire": ["iran", "saffarid"]
+            "Saffarid Empire": ["iran", "saffarid"],
+            "Medieval Kingdom of Serbia": ["serbia"]
         }
     }
 }

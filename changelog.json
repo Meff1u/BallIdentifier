@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1780853581",
+            "changes": [
+                "Fixed wrong names in JoJoDex (Tamami Kobayash -> Tamami Kobayashi, Tomoko Hishigakata -> Tomoko Higashikata)",
+                "Updated to new spawn arts in HistoryDex (Axis Powers, Palmyrene Empire)"
+            ]
+        },
+        {
             "timestamp": "1780824728",
             "changes": [
                 "Updated JoJoDex rarities",
