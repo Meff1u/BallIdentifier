@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1780953048",
+            "changes": [
+                "Updated to re-added HistoryDex ball (Caithness and Sutherland)",
+                "Updated to new spawn arts in HistoryDex (Hudson Bay Company, Little Entente)"
+            ]
+        },
+        {
             "timestamp": "1780932339",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Kingdom of Sardinia)",
