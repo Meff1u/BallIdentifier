@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1780932339",
+            "changes": [
+                "Updated to new spawn art in HistoryDex (Kingdom of Sardinia)",
+                "Updated to new HistoryDex balls (American Tientsin, Empire of Vietnam, Hanseatic League, Hungarian State, Japanese Tientsin, Kingdom of Imerina/Tunisia, Provisional Government of the French Republic)"
+            ]
+        },
+        {
             "timestamp": "1780853581",
             "changes": [
                 "Fixed wrong names in JoJoDex (Tamami Kobayash -> Tamami Kobayashi, Tomoko Hishigakata -> Tomoko Higashikata)",

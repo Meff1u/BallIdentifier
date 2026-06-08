@@ -361,6 +361,11 @@
         "artist": "acrestronk",
         "id": 70
     },
+    "Hanseatic League": {
+        "rarity": 10,
+        "artist": "king_banananananana",
+        "id": 1093
+    },
     "Holy Roman Empire": {
         "rarity": 10,
         "artist": "lilhector_",
@@ -1936,6 +1941,11 @@
         "artist": "hortaas",
         "id": 919
     },
+    "Kingdom of Imerina": {
+        "rarity": 50,
+        "artist": "_imthegreatest_",
+        "id": 1094
+    },
     "Old Swiss Confederacy": {
         "rarity": 50,
         "artist": "bhapydageek",
@@ -2395,7 +2405,7 @@
     },
     "Kingdom of Sardinia": {
         "rarity": 66,
-        "artist": "funniaccount._",
+        "artist": "fordcraft",
         "id": 256
     },
     "New York Colony": {
@@ -2582,6 +2592,11 @@
         "rarity": 80,
         "artist": "navid_habibi",
         "id": 481
+    },
+    "Hungarian State": {
+        "rarity": 80,
+        "artist": "gusta._.vo",
+        "id": 1097
     },
     "North Dorsetia-Somersetia": {
         "rarity": 80,
@@ -2891,6 +2906,11 @@
         "artist": "unfunnichez_",
         "id": 645
     },
+    "Kingdom of Tunisia": {
+        "rarity": 105,
+        "artist": "not_woterbottle",
+        "id": 1095
+    },
     "Kingdom of Zimbabwe": {
         "rarity": 105,
         "artist": "dotrer666_lhentsi",
@@ -3098,6 +3118,11 @@
         "artist": "censorbar_",
         "id": 504
     },
+    "Empire of Vietnam": {
+        "rarity": 135,
+        "artist": "elizaveta_hedervary",
+        "id": 1092
+    },
     "Italian Eritrea": {
         "rarity": 135,
         "artist": "ltzbrw",
@@ -3274,6 +3299,11 @@
         "artist": "finski._.",
         "id": 501,
         "collectors": ["558678655945932801"]
+    },
+    "Provisional Government of the French Republic": {
+        "rarity": 158,
+        "artist": "hortaas",
+        "id": 1096
     },
     "Corsican Republic": {
         "rarity": 159,
@@ -3770,6 +3800,11 @@
         "artist": "kyp4rissos",
         "id": 94
     },
+    "American Tientsin": {
+        "rarity": 195,
+        "artist": "_.lamia_",
+        "id": 524
+    },
     "Cisplatina": {
         "rarity": 195,
         "artist": "claythekat",
@@ -3819,6 +3854,11 @@
         "rarity": 199,
         "artist": "average_countryballs_fan",
         "id": 1008
+    },
+    "Japanese Tientsin": {
+        "rarity": 199,
+        "artist": "_.lamia_",
+        "id": 527
     },
     "State of Los Altos": {
         "rarity": 199,

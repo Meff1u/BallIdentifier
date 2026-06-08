@@ -506,7 +506,7 @@
             "Colony of Australia": ["australia"],
             "Upper Volta": ["volta", "germany"],
             "Dominion of Australia": ["australia"],
-            "British Solomon Islands": ["solomon islands", "bsi"],
+            "British Solomon Islands": ["solomon islands", "solomon"],
             "British Ceylon": ["ceylon"],
             "British Cyprus": ["cyprus"],
             "Emirate of Transjordan": ["transjordan"],
@@ -623,7 +623,15 @@
             "Kingdom of Cayor": ["cayor"],
             "The Great National Assembly in Alba Iulia": ["alba iulia", "tgnaai"],
             "Saffarid Empire": ["iran", "saffarid"],
-            "Medieval Kingdom of Serbia": ["serbia"]
+            "Medieval Kingdom of Serbia": ["serbia"],
+            "Empire of Vietnam": ["vietnam"],
+            "Hanseatic League": ["hanse league"],
+            "Kingdom of Imerina": ["imerina", "madagascar"],
+            "Kingdom of Tunisia": ["tunisia"],
+            "Provisional Government of the French Republic": ["france", "government of france", "pgfr", "free france"],
+            "Hungarian State": ["hungary", "kingdom of hungary"],
+            "Japanese Tientsin": ["tientsin"],
+            "American Tientsin": ["tientsin"]
         }
     }
 }
