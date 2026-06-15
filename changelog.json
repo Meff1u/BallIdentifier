@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1781538811",
+            "changes": [
+                "Updated to new Ballsdex ball (Umayyad Caliphate)",
+                "Updated Ballsdex rarities"
+            ]
+        },
+        {
             "timestamp": "1780953048",
             "changes": [
                 "Updated to re-added HistoryDex ball (Caithness and Sutherland)",
