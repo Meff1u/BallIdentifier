@@ -1,6 +1,16 @@
 {
     "changes": [
         {
+            "timestamp": "1781736556",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (British Barbados, Colony of New South Wales, Czechoslovak Socialist Republic, Eastern Bloc, Entente Powers, French Guinea/Madagascar and Dependencies, Holy Roman Empire, Kingdom of Abemama/Zimbabwe, Majapahit Empire, Spanish Cuba/Florida, Umayyad Caliphate, Zand Dynasty)",
+                "Updated to new HistoryDex ball display names (Avar Khaganate -> Avar Nutsaldom, U.S.-Occupied Greenland -> American-Occupied Greenland, British Malaya -> British Straits Settlements, Rhine Confederation -> Confederation of the Rhine, Colony of Niger -> French Niger, Kingdom of Makuria -> Makuria, Qing -> Qing Dynasty, Rhodesia -> Republic of Rhodesia, Song -> Song Dynasty, Thirteen Colonies -> United Colonies)",
+                "Updated to new HistoryDex balls (303rd R.A.F. Division, Arab Islamic Republic, Ashanti Empire, Austro-Hungarian/French/Italian/Russian Tientsin, Azerbaijan Democratic Republic, Bashkiria, British Union of Fascists, Colony of Greenland/Liberia, Denmark-Norway, Etruscans, European Economic Community, First Republic of the Congo, Freikorps, Göktürk Khaganate, Independent Albania, Iroquois Confederancy, Kingdom of Arles/Kurdistan, Latin Empire, Moldavian Democratic Republic, North Inspectorate of Greenland, Provisional Democratic Government, Queer Insurrection and Liberation Army, Republic of Cospaia, Sosiyalist Melli Kargaran Iran, Spanish Protectorate of Morocco, Spartacus League, State of Singapore, Syrian Federation, Uryankhay Krai, Witu Sultanate)",
+                "Updated HistoryDex rarities",
+                "Removed disabled HistoryDex balls (2ball, 4ball, Ancient Aratta, North Dorsetia-Somersetia, Selk'nam Peoples)"
+            ]
+        },
+        {
             "timestamp": "1781538811",
             "changes": [
                 "Updated to new Ballsdex ball (Umayyad Caliphate)",

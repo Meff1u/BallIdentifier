@@ -7,6 +7,10 @@ node_modules
 # Image processing file
 assets/p.js
 assets/t.js
+assets/cr.js
+
+# VS Code Counter
+.VSCodeCounter/*
 
 # .env
 .env
