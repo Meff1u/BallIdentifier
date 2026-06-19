@@ -662,7 +662,10 @@
             "Avar Nutsaldom": ["avar", "avar khanate", "avaria"],
             "Qing Dynasty": ["qing"],
             "Republic of Rhodesia": ["rhodesia"],
-            "Song Dynasty": ["song"]
+            "Song Dynasty": ["song"],
+            "Kingdom of Bosnia": ["bosnia"],
+            "People's Socialist Republic of Albania": ["albania"],
+            "French Mauritania": ["mauritania"]
         }
     }
 }

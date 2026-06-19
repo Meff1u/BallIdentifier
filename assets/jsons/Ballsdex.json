@@ -411,7 +411,7 @@
         "common_value": "12",
         "cc": "950",
         "demand": "A",
-        "collectors": ["543424976292675604"]
+        "collectors": ["543424976292675604", "825507497334538301", "695527136131285023"]
     },
     "Achaemenid Empire": {
         "rarity": 43,
@@ -3263,7 +3263,8 @@
         "id": 332,
         "common_value": "1",
         "cc": "4,200",
-        "demand": "F"
+        "demand": "F",
+        "collectors": ["1490307338546970714"]
     },
     "Liberia": {
         "rarity": 325,
