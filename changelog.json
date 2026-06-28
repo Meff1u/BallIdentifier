@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1782666721",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (British Sierra Leone, French Congo, Hanseatic League, Korean Empire, Mali Federation, Nueva Granada, Republic of Martyazo, Roman Republic, Sheikhdom of Kuwait, Spanish Protectorate of Morocco, Taiping Heavenly Kingdom)"
+            ]
+        },
+        {
             "timestamp": "1781860303",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Emirate of Transjordan, French Mauritania, State of Katanga)"

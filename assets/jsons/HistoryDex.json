@@ -187,7 +187,7 @@
     },
     "Roman Republic": {
         "rarity": 6,
-        "artist": "n0tch21_98933",
+        "artist": "hortaas",
         "id": 791
     },
     "Umayyad Caliphate": {
@@ -378,8 +378,9 @@
     },
     "Hanseatic League": {
         "rarity": 10,
-        "artist": "king_banananananana",
-        "id": 1093
+        "artist": "shellfish72",
+        "id": 1093,
+        "collectors": ["558678655945932801"]
     },
     "Holy Roman Empire": {
         "rarity": 10,
@@ -1065,7 +1066,7 @@
     },
     "Korean Empire": {
         "rarity": 24,
-        "artist": "tu_hispano_de_confianza",
+        "artist": "pepsikosc",
         "id": 1087
     },
     "Siberian Republic": {
@@ -1570,7 +1571,7 @@
     },
     "Nueva Granada": {
         "rarity": 39,
-        "artist": "soyr3lever",
+        "artist": "sksjssm",
         "id": 112
     },
     "Republic of Egypt": {
@@ -1812,7 +1813,7 @@
     },
     "Mali Federation": {
         "rarity": 45,
-        "artist": "king_banananananana",
+        "artist": "yourlocal_shit_stain",
         "id": 933
     },
     "State of Turkey": {
@@ -2008,7 +2009,7 @@
     },
     "Taiping Heavenly Kingdom": {
         "rarity": 50,
-        "artist": "heterodontosaurus",
+        "artist": "t0e_lob0tomy",
         "id": 416
     },
     "Ukrainian Soviet Socialist Republic": {
@@ -2949,7 +2950,7 @@
     },
     "French Congo": {
         "rarity": 104,
-        "artist": "baconmaxyy",
+        "artist": "idk_empire14",
         "id": 775
     },
     "Litbel": {
@@ -3105,7 +3106,7 @@
     },
     "Spanish Protectorate of Morocco": {
         "rarity": 123,
-        "artist": "bfbrobloxplayz",
+        "artist": "hortaas",
         "id": 1102
     },
     "French Somaliland": {
@@ -3161,7 +3162,7 @@
     },
     "Sheikhdom of Kuwait": {
         "rarity": 130,
-        "artist": "navid_habibi",
+        "artist": "carolea_ii_of_citrus",
         "id": 1053
     },
     "Zulu Kingdom": {
@@ -3634,7 +3635,7 @@
     },
     "British Sierra Leone": {
         "rarity": 175,
-        "artist": "n0tch21_98933",
+        "artist": "pepsikosc",
         "id": 1058
     },
     "Grand Duchy of Warsaw": {
@@ -4077,7 +4078,7 @@
     },
     "Republic of Martyazo": {
         "rarity": 202,
-        "artist": "galic10012",
+        "artist": "hortaas",
         "id": 926
     },
     "Belgian Tientsin": {
