@@ -1,6 +1,15 @@
 {
     "changes": [
         {
+            "timestamp": "1782992770",
+            "changes": [
+                "Updated to new HistoryDex balls (County of Edessa/Tripoli, Duchy of Brittany, Grand Principality of Great Kabarda, Green Ukraine, Hashemite Arab Federation, Hospitaller Tripoli, Independent Republic of La Boca, Khamag Mongol, Kingdom of Cyprus/Galicia-Volhynia, Ma'n Dynasty, Magadha Kingdom, Napoleonic Paris, Principality of Antioch, Proto-German Empire, Republic of Aras/Florence, Second Republic of Syria, Sijilmasa, Spanish Tripoli)",
+                "Updated to new spawn arts in HistoryDex (Dominion of Pakistan, Dutch Republic, Rashidun Caliphate, United Colonies, Uryankhay Krai, Vijayanagara Empire)",
+                "Updated to new HistoryDex ball display names (British Hawaii -> British Protectorate of Hawaii, Han -> Han Dynasty, Jin -> Jin Dynasty, Khiva -> Khanate of Khiva, Qin -> Qin Dynasty, Shang -> Shang Dynasty, Shun -> Shun Dynasty, Sui -> Sui Dynasty, Xin -> Xin Dynasty, Zhou -> Zhou Dynasty)",
+                "Updated HistoryDex rarities"
+            ]
+        },
+        {
             "timestamp": "1782666721",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (British Sierra Leone, French Congo, Hanseatic League, Korean Empire, Mali Federation, Nueva Granada, Republic of Martyazo, Roman Republic, Sheikhdom of Kuwait, Spanish Protectorate of Morocco, Taiping Heavenly Kingdom)"
