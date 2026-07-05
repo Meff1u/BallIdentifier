@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1783292375",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Great Ming, Napoleonic Spain)"
+            ]
+        },
+        {
             "timestamp": "1782992770",
             "changes": [
                 "Updated to new HistoryDex balls (County of Edessa/Tripoli, Duchy of Brittany, Grand Principality of Great Kabarda, Green Ukraine, Hashemite Arab Federation, Hospitaller Tripoli, Independent Republic of La Boca, Khamag Mongol, Kingdom of Cyprus/Galicia-Volhynia, Ma'n Dynasty, Magadha Kingdom, Napoleonic Paris, Principality of Antioch, Proto-German Empire, Republic of Aras/Florence, Second Republic of Syria, Sijilmasa, Spanish Tripoli)",
