@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1784043006",
+            "changes": [
+                "Updated to new spawn arts in HistoryDex (Angevin/Athenian Empire, Bechuanaland Protectorate, British Ceylon/Somaliland, Despotate of the Morea, French Colony of Martinique and Saint Lucia/Sudan, German New Guinea, Republic of Tanganyika, Sultanate of Zanzibar, Yakut Autonomous Soviet Socialist Republic)",
+                "Fixed wrong spawn arts in HistoryDex (Karakorum Government, Latvian Soviet Socialist Republic, Russian America)",
+                "Updated to new HistoryDex balls (Anglo-Saxon England, Austrian Nicobar Islands, Bavarian Illuminati, Belgian Santo Tomas, Beylik of Aydin, Chola/Jagiallonian Dyansty, Circassia, Cisleithania, Duchy of Savoy, Gaul, Israeli Military Governorate, Kalmyk Khanate, Kingdom of Iberia/Singapura, Medieval Thessaloniki, Portuguese Hormuz, Providence Island Colony, Reichskommisariat Belgien-Nordfrankreich/Niderlande/Norwegen, Republic of Central Lithuania, Shamkhalate of Tarki, Southern Inspectorate of Greenland, Sovereign Principality of the United Netherlands, Transleithania, United Belgian States)"
+            ]
+        },
+        {
             "timestamp": "1784023069",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Algeria, Bahamas, Chile, Finland, Gabon, Gambia, Hunnic Empire, Madagascar, Myanmar, Slovenia, Taiwan, Tannu Tuva, Tuvalu, United States)"

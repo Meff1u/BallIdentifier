@@ -364,7 +364,12 @@
             "Portuguese Timor": ["timor"],
             "Hungarian Revolutionaries": ["hungary"],
             "Slovak Republic": ["slovakia"],
-            "Makhnovshchina": ["anarchist ukraine", "anarchy ukraine", "ukraine anarchy", "chetniks"],
+            "Makhnovshchina": [
+                "anarchist ukraine",
+                "anarchy ukraine",
+                "ukraine anarchy",
+                "chetniks"
+            ],
             "French Congo": ["congo"],
             "Italian Regency of Carnaro": ["carnaro"],
             "Brazilian Military Dictatorship": ["brazil"],
@@ -470,10 +475,7 @@
             "Czech and Slovak Federative Republic": ["czech", "slovakia", "czechoslovakia"],
             "Eastern Hungarian Kingdom": ["kingdom of hungary", "eastern hungary", "hungary"],
             "American-Occupied Greenland": ["greenland", "us occupied greenland", "us greenland"],
-            "Kholodny Yar Republic": [
-                "kholodny yar",
-                "cold ravine republic"
-            ],
+            "Kholodny Yar Republic": ["kholodny yar", "cold ravine republic"],
             "Autonomous Province of Western Bosnia": ["bosnia", "western bosnia", "west bosnia"],
             "Franco-British Union": ["franco british union"],
             "Crown of the Kingdom of Poland": ["poland", "crown of poland"],
@@ -608,12 +610,25 @@
             "West Berlin": ["berlin"],
             "Union of Poland-Saxony": ["poland", "saxony", "poland saxony", "plc"],
             "Funj Sultanate": ["funj", "sennar", "sultanate of sennar"],
-            "Selk'nam Peoples": ["selknam", "selk'nam", "selknam people", "selk'nam people", "onawo", "onawo people", "onawo peoples"],
+            "Selk'nam Peoples": [
+                "selknam",
+                "selk'nam",
+                "selknam people",
+                "selk'nam people",
+                "onawo",
+                "onawo people",
+                "onawo peoples"
+            ],
             "Sultanate of Bone": ["bone", "bone state"],
             "Burgundian Netherlands": ["netherlands"],
             "Korea State": ["korea"],
             "Khmer Empire": ["khmer", "cambodia"],
-            "Medieval Kingdom of Denmark": ["denmark", "medieval denmark", "danes", "danish kingdom"],
+            "Medieval Kingdom of Denmark": [
+                "denmark",
+                "medieval denmark",
+                "danes",
+                "danish kingdom"
+            ],
             "Nazist Berlin": ["berlin"],
             "Commonwealth Warsaw": ["warsaw"],
             "Korean Empire": ["korea"],
@@ -626,7 +641,12 @@
             "Hanseatic League": ["hanse league"],
             "Kingdom of Imerina": ["imerina", "madagascar"],
             "Kingdom of Tunisia": ["tunisia"],
-            "Provisional Government of the French Republic": ["france", "government of france", "pgfr", "free france"],
+            "Provisional Government of the French Republic": [
+                "france",
+                "government of france",
+                "pgfr",
+                "free france"
+            ],
             "Hungarian State": ["hungary", "kingdom of hungary"],
             "Japanese Tientsin": ["tientsin"],
             "American Tientsin": ["tientsin"],
@@ -634,16 +654,32 @@
             "European Economic Community": ["eec", "european community", "ec"],
             "Kingdom of Kurdistan": ["kurdistan"],
             "Latin Empire": ["latin"],
-            "North Inspectorate of Greenland": ["north greenland", "greenland", "danish greenland", "colony of greenland"],
+            "North Inspectorate of Greenland": [
+                "north greenland",
+                "greenland",
+                "danish greenland",
+                "colony of greenland"
+            ],
             "Republic of Cospaia": ["cospaia"],
             "Spanish Protectorate of Morocco": ["morocco", "spanish morocco"],
             "Witu Sultanate": ["witu", "vitu", "wituland", "witu protectorate", "german wituland"],
             "Colony of Greenland": ["greenland"],
             "Colony of Liberia": ["liberia"],
             "Denmark-Norway": ["denmark", "norway"],
-            "Göktürk Khaganate": ["gokturk khaganate", "first turkic khaganate", "gokturks", "the gokturks"],
+            "Göktürk Khaganate": [
+                "gokturk khaganate",
+                "first turkic khaganate",
+                "gokturks",
+                "the gokturks"
+            ],
             "Independent Albania": ["albania"],
-            "Queer Insurrection and Liberation Army": ["queer", "queer insurrection", "liberation army", "syria", "kurdistan"],
+            "Queer Insurrection and Liberation Army": [
+                "queer",
+                "queer insurrection",
+                "liberation army",
+                "syria",
+                "kurdistan"
+            ],
             "Sosiyalist Melli Kargaran Iran": ["sumka"],
             "303rd R.A.F. Division": ["303"],
             "Azerbaijan Democratic Republic": ["azerbaijan"],
@@ -695,7 +731,68 @@
             "Xin Dynasty": ["xin"],
             "Zhou Dynasty": ["zhou"],
             "Khanate of Khiva": ["khiva"],
-            "Zaporozhian Sich": ["zaporozhia"]
+            "Zaporozhian Sich": ["zaporozhia"],
+            "Far Eastern Republic": ["far"],
+            "Anglo-Saxon England": [
+                "england",
+                "wessex",
+                "kent",
+                "northumbria",
+                "mercia",
+                "east anglia",
+                "essex",
+                "sussex",
+                "heptarchy",
+                "anglo-saxon",
+                "anglo",
+                "saxon"
+            ],
+            "Austrian Nicobar Islands": [
+                "austrian empire",
+                "austria",
+                "austrian india",
+                "india",
+                "nicobar",
+                "nicobar islands"
+            ],
+            "Belgian Santo Tomas": ["belgium", "santo tomas"],
+            "Medieval Thessaloniki": [
+                "thessaloniki",
+                "salonika",
+                "thessalonica",
+                "salonica",
+                "salloniq",
+                "thessalonika",
+                "saloniki"
+            ],
+            "Providence Island Colony": ["providence island", "tgacoaotcowftpotiopochoaatailutcoa"],
+            "Beylik of Aydin": ["aydinids", "aydinid dynasty", "principality of aydin"],
+            "Chola Dynasty": ["chola"],
+            "Duchy of Savoy": ["savoy", "state of savoy"],
+            "Jagiellonian Dynasty": ["poland"],
+            "Kalmyk Khanate": ["kalmykia"],
+            "Kingdom of Iberia": ["iberia", "georgia"],
+            "Kingdom of Singapura": ["singapura", "singapore"],
+            "Portuguese Hormuz": ["kingdom of hormuz", "hormuz"],
+            "Republic of Central Lithuania": [
+                "central lithuania",
+                "middle lithuania",
+                "polish lithuania",
+                "wilno",
+                "vilnius",
+                "poland",
+                "lithuania"
+            ],
+            "Shamkhalate of Tarki": ["tarki shamkhalate", "tarki", "shamkhal", "kumykia", "kumykistan", "dagestan"],
+            "United Belgian States": ["belgian states", "belgium"],
+            "Bavarian Illuminati": ["illuminati"],
+            "Circassia": ["zichia"],
+            "Israeli Military Governorate": ["israel", "idf", "img"],
+            "Southern Inspectorate of Greenland": ["greenland", "south greenland", "danish greenland", "colony of south greenland", "colony of greenland"],
+            "Sovereign Principality of the United Netherlands": ["netherlands"],
+            "Reichskommissariat Norwegen": ["norway"],
+            "Reichskommissariat Belgien-Nordfrankreich": ["belgium"],
+            "Reichskommissariat Niederlande": ["netherlands"]
         }
     }
 }
