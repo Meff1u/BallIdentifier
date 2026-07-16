@@ -37,7 +37,7 @@ async function loadAvailableDexes() {
         AppState.availableDexes = data.dexes || [];
     } catch (error) {
         console.error('Error loading dexes list:', error);
-        AppState.availableDexes = ['Ballsdex', 'FoodDex'];
+        AppState.availableDexes = ['Ballsdex', 'FoodDex', 'HistoryDex', 'JoJoDex', "Empireballs Reboot"];
     }
 }
 
@@ -53,7 +53,7 @@ function populateDexSelectors() {
         select.innerHTML = '';
         dexes.forEach((dex, index) => {
             const option = document.createElement('option');
-            option.value = dex;
+            option.value = dex.replace(/\s+/g, '').toLowerCase();
             option.textContent = dex;
             if (index === 0) option.selected = true;
             select.appendChild(option);
