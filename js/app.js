@@ -53,7 +53,7 @@ function populateDexSelectors() {
         select.innerHTML = '';
         dexes.forEach((dex, index) => {
             const option = document.createElement('option');
-            option.value = dex.replace(/\s+/g, '');
+            option.value = dex;
             option.textContent = dex;
             if (index === 0) option.selected = true;
             select.appendChild(option);
