@@ -352,7 +352,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (botSelect) {
             botSelect.value = currentConfig.bot;
             const abbreviationWarning = document.getElementById('abbreviation-warning');
-            if (abbreviationWarning && ['historydex', 'empireballsreboot'].includes(currentConfig.bot.toLowerCase())) {
+            if (abbreviationWarning && ['historydex', 'empireballs reboot'].includes(currentConfig.bot.toLowerCase())) {
                 abbreviationWarning.style.display = 'block';
             }
         }
@@ -431,7 +431,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const abbreviationWarning = document.getElementById('abbreviation-warning');
             if (abbreviationWarning) {
-                if (['historydex', 'empireballsreboot'].includes(this.value.toLowerCase())) {
+                if (['historydex', 'empireballs reboot'].includes(this.value.toLowerCase())) {
                     abbreviationWarning.style.display = 'block';
                 } else {
                     abbreviationWarning.style.display = 'none';
@@ -494,7 +494,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'fooddex': 'FoodDex',
             'historydex': 'HistoryDex',
             'jojodex': 'JoJoDex',
-            'empireballsreboot': 'EmpireballsReboot'
+            'empireballs reboot': 'EmpireballsReboot'
         };
         const jsonName = jsonNames[bot] || 'Ballsdex';
         
@@ -545,7 +545,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'JoJoDex',
                 icon: 'https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/JoJoDex.png'
             },
-            'empireballsreboot': {
+            'empireballs reboot': {
                 name: 'Empireballs Reboot',
                 icon: 'https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/EmpireballsReboot.png'
             }
