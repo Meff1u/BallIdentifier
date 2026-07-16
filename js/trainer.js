@@ -494,7 +494,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'fooddex': 'FoodDex',
             'historydex': 'HistoryDex',
             'jojodex': 'JoJoDex',
-            'empireballs reboot': 'EmpireballsReboot'
+            'empireballs reboot': 'Empireballs Reboot'
         };
         const jsonName = jsonNames[bot] || 'Ballsdex';
         
@@ -547,7 +547,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             'empireballs reboot': {
                 name: 'Empireballs Reboot',
-                icon: 'https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/EmpireballsReboot.png'
+                icon: 'https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/Empireballs%20Reboot.png'
             }
         };
         return configs[bot] || configs['ballsdex'];
