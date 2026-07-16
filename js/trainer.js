@@ -351,9 +351,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (botSelect) {
             botSelect.value = currentConfig.bot;
-            const historydexWarning = document.getElementById('historydex-warning');
-            if (historydexWarning && currentConfig.bot.toLowerCase() === 'historydex') {
-                historydexWarning.style.display = 'block';
+            const abbreviationWarning = document.getElementById('abbreviation-warning');
+            if (abbreviationWarning && ['historydex', 'empireballs'].includes(currentConfig.bot.toLowerCase())) {
+                abbreviationWarning.style.display = 'block';
             }
         }
     }
@@ -429,12 +429,12 @@ document.addEventListener('DOMContentLoaded', function() {
             currentConfig.bot = this.value;
             saveConfig(currentConfig);
             
-            const historydexWarning = document.getElementById('historydex-warning');
-            if (historydexWarning) {
-                if (this.value.toLowerCase() === 'historydex') {
-                    historydexWarning.style.display = 'block';
+            const abbreviationWarning = document.getElementById('abbreviation-warning');
+            if (abbreviationWarning) {
+                if (['historydex', 'empireballs'].includes(this.value.toLowerCase())) {
+                    abbreviationWarning.style.display = 'block';
                 } else {
-                    historydexWarning.style.display = 'none';
+                    abbreviationWarning.style.display = 'none';
                 }
             }
         });
@@ -493,7 +493,8 @@ document.addEventListener('DOMContentLoaded', function() {
             'ballsdex': 'Ballsdex',
             'fooddex': 'FoodDex',
             'historydex': 'HistoryDex',
-            'jojodex': 'JoJoDex'
+            'jojodex': 'JoJoDex',
+            'empireballs': 'Empireballs'
         };
         const jsonName = jsonNames[bot] || 'Ballsdex';
         
@@ -543,6 +544,10 @@ document.addEventListener('DOMContentLoaded', function() {
             'jojodex': {
                 name: 'JoJoDex',
                 icon: 'https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/JoJoDex.png'
+            },
+            'empireballs': {
+                name: 'Empireballs',
+                icon: 'https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/Empireballs.png'
             }
         };
         return configs[bot] || configs['ballsdex'];

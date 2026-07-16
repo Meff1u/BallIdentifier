@@ -1,6 +1,12 @@
 {
     "changes": [
         {
+            "timestamp": "1784197872",
+            "changes": [
+                "Added Empireballs bot"
+            ]
+        },
+        {
             "timestamp": "1784043006",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Angevin/Athenian Empire, Bechuanaland Protectorate, British Ceylon/Somaliland, Despotate of the Morea, French Colony of Martinique and Saint Lucia/Sudan, German New Guinea, Republic of Tanganyika, Sultanate of Zanzibar, Yakut Autonomous Soviet Socialist Republic)",

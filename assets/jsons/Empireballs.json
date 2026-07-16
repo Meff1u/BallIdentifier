@@ -1,0 +1,537 @@
+{
+    "Roman Empire": {
+        "rarity": 0.8,
+        "artist": "drael.heart",
+        "id": 114
+    },
+    "Mongol Empire": {
+        "rarity": 0.9,
+        "artist": "repancdg",
+        "id": 138
+    },
+    "Spanish Empire": {
+        "rarity": 0.9,
+        "artist": "dark3nd",
+        "id": 47
+    },
+    "German Empire": {
+        "rarity": 1,
+        "artist": ".crean",
+        "id": 43
+    },
+    "First French Colonial Empire": {
+        "rarity": 2,
+        "artist": "drael.heart",
+        "id": 8
+    },
+    "Imperialist United States": {
+        "rarity": 2,
+        "artist": "ocean_wav3",
+        "id": 24
+    },
+    "Nazi Germany": {
+        "rarity": 2,
+        "artist": "edougamer",
+        "id": 62
+    },
+    "Japanese Empire": {
+        "rarity": 2.5,
+        "artist": "elizaveta_hedervary",
+        "id": 50
+    },
+    "Macedon Empire": {
+        "rarity": 2.5,
+        "artist": "fordcraft",
+        "id": 26
+    },
+    "Qing Dynasty": {
+        "rarity": 2.5,
+        "artist": "repancdg",
+        "id": 111
+    },
+    "Han Dynasty": {
+        "rarity": 3,
+        "artist": "topwanted_",
+        "id": 94
+    },
+    "Napoleonic France": {
+        "rarity": 3,
+        "artist": "edougamer",
+        "id": 65
+    },
+    "Byzantine Empire": {
+        "rarity": 4,
+        "artist": "topwanted_",
+        "id": 68
+    },
+    "Dutch Colonial Empire": {
+        "rarity": 4.5,
+        "artist": "fandomely (tiktok)",
+        "id": 27
+    },
+    "Papal States": {
+        "rarity": 5,
+        "artist": "estonia0786",
+        "id": 127
+    },
+    "Austrian Empire": {
+        "rarity": 5.5,
+        "artist": "topwanted_",
+        "id": 2
+    },
+    "Rashidun Caliphate": {
+        "rarity": 5.5,
+        "artist": "estonia0786",
+        "id": 11
+    },
+    "Yuan Dynasty": {
+        "rarity": 6,
+        "artist": "kyp4rissos",
+        "id": 139
+    },
+    "Ottoman Empire": {
+        "rarity": 6.5,
+        "artist": "topwanted_",
+        "id": 64
+    },
+    "Shang Dynasty": {
+        "rarity": 6.5,
+        "artist": "account_gmd",
+        "id": 55
+    },
+    "Crown of Castile": {
+        "rarity": 7,
+        "artist": "drael.heart",
+        "id": 10
+    },
+    "Second French Colonial Empire": {
+        "rarity": 7.5,
+        "artist": "fordcraft",
+        "id": 37
+    },
+    "Gupta Empire": {
+        "rarity": 8,
+        "artist": "xhousepets",
+        "id": 49
+    },
+    "Neo-Babylonian Empire": {
+        "rarity": 8.5,
+        "artist": "Deleted user",
+        "id": 106
+    },
+    "Zhou Dynasty": {
+        "rarity": 8.5,
+        "artist": "account_gmd",
+        "id": 46
+    },
+    "Austro-Hungarian Empire": {
+        "rarity": 9,
+        "artist": "idk_empire14",
+        "id": 120
+    },
+    "Holy Roman Empire": {
+        "rarity": 9,
+        "artist": "drael.heart",
+        "id": 71
+    },
+    "Mughal Empire": {
+        "rarity": 9.5,
+        "artist": "djiyippy_.",
+        "id": 60
+    },
+    "Timurid Empire": {
+        "rarity": 9.5,
+        "artist": "drael.heart",
+        "id": 108
+    },
+    "Kingdom of England": {
+        "rarity": 10,
+        "artist": "manocraft",
+        "id": 69
+    },
+    "Kingdom of Italy": {
+        "rarity": 10,
+        "artist": "fordcraft",
+        "id": 6
+    },
+    "Sassanid Empire": {
+        "rarity": 10,
+        "artist": "topwanted_",
+        "id": 74
+    },
+    "Gokturk Khaganate": {
+        "rarity": 10.5,
+        "artist": "calcenaintnormal",
+        "id": 22
+    },
+    "Seljuk Empire": {
+        "rarity": 10.5,
+        "artist": "smasherbutcool",
+        "id": 29
+    },
+    "Dzungar Khanate": {
+        "rarity": 11,
+        "artist": "repancdg",
+        "id": 97
+    },
+    "Tsardom of Russia": {
+        "rarity": 12,
+        "artist": "drael.heart",
+        "id": 91
+    },
+    "Fatimid Caliphate": {
+        "rarity": 13,
+        "artist": "drael.heart",
+        "id": 9
+    },
+    "Western Roman Empire": {
+        "rarity": 14,
+        "artist": ".micko.",
+        "id": 40
+    },
+    "Aztec Empire": {
+        "rarity": 15,
+        "artist": "._themagicalflame_.",
+        "id": 33
+    },
+    "Mayan Empire": {
+        "rarity": 15,
+        "artist": "estonia0786",
+        "id": 109
+    },
+    "Crown of Aragon": {
+        "rarity": 16,
+        "artist": "valencian_guy",
+        "id": 73
+    },
+    "Great Moravia": {
+        "rarity": 16,
+        "artist": "moravianguy.cz",
+        "id": 102
+    },
+    "Hunnic Empire": {
+        "rarity": 17,
+        "artist": "estonia0786",
+        "id": 4
+    },
+    "Assyrian Empire": {
+        "rarity": 18,
+        "artist": "argahalakbatak",
+        "id": 110
+    },
+    "Golden Horde": {
+        "rarity": 19,
+        "artist": "idk_empire14",
+        "id": 3
+    },
+    "Kievan Rus": {
+        "rarity": 19,
+        "artist": "anjabbon",
+        "id": 132
+    },
+    "Danish Empire": {
+        "rarity": 20,
+        "artist": "lego_sansyt",
+        "id": 44
+    },
+    "Omani Empire": {
+        "rarity": 20.5,
+        "artist": "snappedishere",
+        "id": 82
+    },
+    "Kamakura Shogunate": {
+        "rarity": 21,
+        "artist": "_randrs",
+        "id": 131
+    },
+    "Mamluk Sultanate": {
+        "rarity": 22,
+        "artist": "ali_elsherif",
+        "id": 25
+    },
+    "Belgian Colonial Empire": {
+        "rarity": 23,
+        "artist": "elizaveta_hedervary",
+        "id": 39
+    },
+    "Kingdom of Scotland": {
+        "rarity": 23.5,
+        "artist": "estonia0786",
+        "id": 104
+    },
+    "Grand Duchy of Moscow": {
+        "rarity": 24,
+        "artist": "invictus_quercus",
+        "id": 32
+    },
+    "Chagatai Khanate": {
+        "rarity": 24.5,
+        "artist": "estonia0786",
+        "id": 140
+    },
+    "Kingdom of Wessex": {
+        "rarity": 25,
+        "artist": "repancdg",
+        "id": 88
+    },
+    "Karkota Dynasty": {
+        "rarity": 26,
+        "artist": "99292599",
+        "id": 58
+    },
+    "Goryeo Dynasty": {
+        "rarity": 27,
+        "artist": "topwanted_",
+        "id": 67
+    },
+    "Joseon Dynasty": {
+        "rarity": 27,
+        "artist": "estonia0786",
+        "id": 70
+    },
+    "Gojoseon Dynasty": {
+        "rarity": 27.5,
+        "artist": "idk_empire14",
+        "id": 81
+    },
+    "Ilkhanate": {
+        "rarity": 28,
+        "artist": "dark3nd",
+        "id": 5
+    },
+    "North Sea Empire": {
+        "rarity": 28,
+        "artist": "frido724",
+        "id": 30
+    },
+    "Mali Empire": {
+        "rarity": 29,
+        "artist": ".micko.",
+        "id": 92
+    },
+    "Armenian Empire": {
+        "rarity": 30,
+        "artist": ".wowie888",
+        "id": 61
+    },
+    "Liu-Song Dynasty": {
+        "rarity": 31,
+        "artist": "pepsikosc",
+        "id": 107
+    },
+    "Majapahit Empire": {
+        "rarity": 32,
+        "artist": "Deleted User #0000",
+        "id": 53
+    },
+    "Nguyen Dynasty": {
+        "rarity": 33,
+        "artist": "not_woterbottle",
+        "id": 59
+    },
+    "Almohad Caliphate": {
+        "rarity": 34,
+        "artist": "estonia0786",
+        "id": 21
+    },
+    "Kingdom of Yugoslavia": {
+        "rarity": 35,
+        "artist": "elizaveta.hedervary",
+        "id": 34
+    },
+    "Kingdom of Jerusalem": {
+        "rarity": 36,
+        "artist": "soundbolt21",
+        "id": 56
+    },
+    "Kalmar Union": {
+        "rarity": 37,
+        "artist": "smasherbutcool",
+        "id": 1
+    },
+    "Tsardom of Bulgaria": {
+        "rarity": 38,
+        "artist": "fordcraft",
+        "id": 38
+    },
+    "Malacca Sultanate": {
+        "rarity": 39,
+        "artist": "_le3n_",
+        "id": 14
+    },
+    "Kingdom of Hannover": {
+        "rarity": 40,
+        "artist": "fordcraft",
+        "id": 36
+    },
+    "Kingdom of Hejaz and Nejd": {
+        "rarity": 41,
+        "artist": "kyp4rissos",
+        "id": 16
+    },
+    "Kingdom of Norway": {
+        "rarity": 42,
+        "artist": "norwaybestvideos",
+        "id": 18
+    },
+    "First Mexican Empire": {
+        "rarity": 43,
+        "artist": "ancientdex",
+        "id": 112
+    },
+    "Kingdom of Hawaii": {
+        "rarity": 44,
+        "artist": "ocean_wav3",
+        "id": 28
+    },
+    "Kingdom of Georgia": {
+        "rarity": 45,
+        "artist": "repancdg",
+        "id": 85
+    },
+    "Ghana Empire": {
+        "rarity": 46,
+        "artist": "smasherbutcool",
+        "id": 23
+    },
+    "Duchy of Burgundy": {
+        "rarity": 47,
+        "artist": "largecelery",
+        "id": 113
+    },
+    "Kingdom of Numidia": {
+        "rarity": 48,
+        "artist": "colin_iii",
+        "id": 15
+    },
+    "Serbian Empire": {
+        "rarity": 49,
+        "artist": "estonia0786",
+        "id": 7
+    },
+    "Johor Sultanate": {
+        "rarity": 50,
+        "artist": "thebaldball_lol",
+        "id": 45
+    },
+    "Emirate of Jabal Shammar": {
+        "rarity": 51,
+        "artist": "videojuegos.",
+        "id": 90
+    },
+    "Latin Empire": {
+        "rarity": 52,
+        "artist": "bryaint",
+        "id": 66
+    },
+    "Samo's Empire": {
+        "rarity": 53,
+        "artist": "justinjester",
+        "id": 129
+    },
+    "Kingdom of Romania": {
+        "rarity": 54,
+        "artist": ".crean",
+        "id": 63
+    },
+    "Sokoto Caliphate": {
+        "rarity": 54.5,
+        "artist": "edougamer",
+        "id": 93
+    },
+    "Principality of Montenegro": {
+        "rarity": 55,
+        "artist": ".micko.",
+        "id": 35
+    },
+    "Grand Duchy of Baden": {
+        "rarity": 56,
+        "artist": "0vergamed",
+        "id": 41
+    },
+    "Aq Qoyunlu": {
+        "rarity": 57,
+        "artist": "carl11110515",
+        "id": 13
+    },
+    "Kingdom of Bosnia": {
+        "rarity": 58,
+        "artist": "0vergamed",
+        "id": 54
+    },
+    "Grand Duchy of Luxembourg": {
+        "rarity": 59,
+        "artist": "estonia0786",
+        "id": 130
+    },
+    "First Haitian Empire": {
+        "rarity": 60,
+        "artist": "._themagicalflame_.",
+        "id": 20
+    },
+    "Empire of China": {
+        "rarity": 61,
+        "artist": "soundbolt21",
+        "id": 52
+    },
+    "Kingdom of Brazil": {
+        "rarity": 62,
+        "artist": "loomaingamer12",
+        "id": 72
+    },
+    "Tu'i Tonga Empire": {
+        "rarity": 63,
+        "artist": "topwanted_",
+        "id": 51
+    },
+    "Sibir Khanate": {
+        "rarity": 64,
+        "artist": "idk_empire14",
+        "id": 105
+    },
+    "Empire of Trebizond": {
+        "rarity": 65,
+        "artist": "perilouspokey",
+        "id": 103
+    },
+    "Kingdom of Tavolara": {
+        "rarity": 66,
+        "artist": "videojuegos.",
+        "id": 19
+    },
+    "Kingdom of Iberia": {
+        "rarity": 67,
+        "artist": "soundbolt21",
+        "id": 84
+    },
+    "Duchy of Livonia": {
+        "rarity": 68,
+        "artist": "dronovek",
+        "id": 101
+    },
+    "Kingdom of Cyprus": {
+        "rarity": 69,
+        "artist": "xele.is.here",
+        "id": 57
+    },
+    "Central African Empire": {
+        "rarity": 70,
+        "artist": "largecelery",
+        "id": 87
+    },
+    "Sultanate of The Maldive Islands": {
+        "rarity": 72,
+        "artist": "smasherbutcool",
+        "id": 42
+    },
+    "Sultanate of Zanzibar": {
+        "rarity": 73,
+        "artist": "soundbolt21",
+        "id": 126
+    },
+    "Principality of Elba": {
+        "rarity": 74,
+        "artist": "smasherbutcool",
+        "id": 115
+    }
+}
