@@ -52,7 +52,8 @@
     "Han Dynasty": {
         "rarity": 3,
         "artist": "topwanted_",
-        "id": 94
+        "id": 94,
+        "collectors": ["1343265063615856773"]
     },
     "Napoleonic France": {
         "rarity": 3,
@@ -67,12 +68,14 @@
     "Dutch Colonial Empire": {
         "rarity": 4.5,
         "artist": "fandomely (tiktok)",
-        "id": 27
+        "id": 27,
+        "collectors": ["935901262715699290", "1343265063615856773"]
     },
     "Papal States": {
         "rarity": 5,
         "artist": "estonia0786",
-        "id": 127
+        "id": 127,
+        "collectors": ["558678655945932801"]
     },
     "Austrian Empire": {
         "rarity": 5.5,
@@ -103,6 +106,11 @@
         "rarity": 7,
         "artist": "drael.heart",
         "id": 10
+    },
+    "Jagiellonian Dynasty": {
+        "rarity": 7,
+        "artist": "repancdg",
+        "id": 118
     },
     "Second French Colonial Empire": {
         "rarity": 7.5,
@@ -142,7 +150,8 @@
     "Timurid Empire": {
         "rarity": 9.5,
         "artist": "drael.heart",
-        "id": 108
+        "id": 108,
+        "collectors": ["644693239420682279"]
     },
     "Kingdom of England": {
         "rarity": 10,
@@ -152,7 +161,8 @@
     "Kingdom of Italy": {
         "rarity": 10,
         "artist": "fordcraft",
-        "id": 6
+        "id": 6,
+        "collectors": ["1495379516376223761"]
     },
     "Sassanid Empire": {
         "rarity": 10,
@@ -173,6 +183,11 @@
         "rarity": 11,
         "artist": "repancdg",
         "id": 97
+    },
+    "Bengal Sultanate": {
+        "rarity": 12,
+        "artist": "defrosted_xahloing",
+        "id": 151
     },
     "Tsardom of Russia": {
         "rarity": 12,
@@ -217,7 +232,8 @@
     "Assyrian Empire": {
         "rarity": 18,
         "artist": "argahalakbatak",
-        "id": 110
+        "id": 110,
+        "collectors": ["835569593266339911"]
     },
     "Golden Horde": {
         "rarity": 19,
@@ -257,7 +273,8 @@
     "Kingdom of Scotland": {
         "rarity": 23.5,
         "artist": "estonia0786",
-        "id": 104
+        "id": 104,
+        "collectors": ["844832315963867176"]
     },
     "Grand Duchy of Moscow": {
         "rarity": 24,
@@ -292,7 +309,8 @@
     "Gojoseon Dynasty": {
         "rarity": 27.5,
         "artist": "idk_empire14",
-        "id": 81
+        "id": 81,
+        "collectors": ["1393309932513657053"]
     },
     "Ilkhanate": {
         "rarity": 28,
@@ -314,10 +332,20 @@
         "artist": ".wowie888",
         "id": 61
     },
+    "Chola Dynasty": {
+        "rarity": 30,
+        "artist": "censorbar_",
+        "id": 148
+    },
     "Liu-Song Dynasty": {
         "rarity": 31,
         "artist": "pepsikosc",
         "id": 107
+    },
+    "Ayutthaya Kingdom": {
+        "rarity": 32,
+        "artist": "gabriel_96779",
+        "id": 146
     },
     "Majapahit Empire": {
         "rarity": 32,
@@ -332,7 +360,13 @@
     "Almohad Caliphate": {
         "rarity": 34,
         "artist": "estonia0786",
-        "id": 21
+        "id": 21,
+        "collectors": ["1085237902826557571"]
+    },
+    "Ghurid Dynasty": {
+        "rarity": 34,
+        "artist": "idiotevanstickman",
+        "id": 142
     },
     "Kingdom of Yugoslavia": {
         "rarity": 35,
@@ -357,7 +391,13 @@
     "Malacca Sultanate": {
         "rarity": 39,
         "artist": "_le3n_",
-        "id": 14
+        "id": 14,
+        "collectors": ["1127886955896639519"]
+    },
+    "Hotak Dynasty": {
+        "rarity": 40,
+        "artist": "frk_04",
+        "id": 143
     },
     "Kingdom of Hannover": {
         "rarity": 40,
@@ -389,6 +429,11 @@
         "artist": "repancdg",
         "id": 85
     },
+    "Kingdom of Nepal": {
+        "rarity": 45,
+        "artist": "pepsikosc",
+        "id": 149
+    },
     "Ghana Empire": {
         "rarity": 46,
         "artist": "smasherbutcool",
@@ -412,12 +457,28 @@
     "Johor Sultanate": {
         "rarity": 50,
         "artist": "thebaldball_lol",
-        "id": 45
+        "id": 45,
+        "collectors": ["1127886955896639519"]
     },
     "Emirate of Jabal Shammar": {
         "rarity": 51,
         "artist": "videojuegos.",
         "id": 90
+    },
+    "Kingdom of Tondo": {
+        "rarity": 51,
+        "artist": "estonia0786",
+        "id": 150
+    },
+    "Sultanate of Maguindanao": {
+        "rarity": 51,
+        "artist": "idiotevanstickman",
+        "id": 141
+    },
+    "Sultanate of Ternate": {
+        "rarity": 51,
+        "artist": "idiotevanstickman",
+        "id": 152
     },
     "Latin Empire": {
         "rarity": 52,
@@ -427,17 +488,24 @@
     "Samo's Empire": {
         "rarity": 53,
         "artist": "justinjester",
-        "id": 129
+        "id": 129,
+        "collectors": ["1320889131131338904"]
     },
     "Kingdom of Romania": {
         "rarity": 54,
         "artist": ".crean",
-        "id": 63
+        "id": 63,
+        "collectors": ["1085237902826557571"]
     },
     "Sokoto Caliphate": {
         "rarity": 54.5,
         "artist": "edougamer",
         "id": 93
+    },
+    "Kingdom of Bakkara": {
+        "rarity": 55,
+        "artist": "argahalakbatak",
+        "id": 144
     },
     "Principality of Montenegro": {
         "rarity": 55,
@@ -449,20 +517,32 @@
         "artist": "0vergamed",
         "id": 41
     },
+    "Pahang Kingdom": {
+        "rarity": 56,
+        "artist": "idk_empire14",
+        "id": 155
+    },
     "Aq Qoyunlu": {
         "rarity": 57,
         "artist": "carl11110515",
         "id": 13
     },
+    "Sultanate of Siak": {
+        "rarity": 57,
+        "artist": "landau_fr",
+        "id": 154
+    },
     "Kingdom of Bosnia": {
         "rarity": 58,
         "artist": "0vergamed",
-        "id": 54
+        "id": 54,
+        "collectors": ["835569593266339911"]
     },
     "Grand Duchy of Luxembourg": {
         "rarity": 59,
         "artist": "estonia0786",
-        "id": 130
+        "id": 130,
+        "collectors": ["773572859947647046"]
     },
     "First Haitian Empire": {
         "rarity": 60,
@@ -473,6 +553,11 @@
         "rarity": 61,
         "artist": "soundbolt21",
         "id": 52
+    },
+    "Sulu Sultanate": {
+        "rarity": 61,
+        "artist": "eilyr_.",
+        "id": 145
     },
     "Kingdom of Brazil": {
         "rarity": 62,
@@ -494,10 +579,16 @@
         "artist": "perilouspokey",
         "id": 103
     },
+    "Sultanate of Brunei": {
+        "rarity": 65,
+        "artist": "estonia0786",
+        "id": 153
+    },
     "Kingdom of Tavolara": {
         "rarity": 66,
         "artist": "videojuegos.",
-        "id": 19
+        "id": 19,
+        "collectors": ["1115730895467462796"]
     },
     "Kingdom of Iberia": {
         "rarity": 67,
@@ -533,5 +624,10 @@
         "rarity": 74,
         "artist": "smasherbutcool",
         "id": 115
+    },
+    "Kingdom of Singapura": {
+        "rarity": 75,
+        "artist": "censorbar_",
+        "id": 147
     }
 }

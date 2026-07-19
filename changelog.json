@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1784496842",
+            "changes": [
+                "Updated to Empireballs 1.1.5 Update (Ayutthaya/Pahang Kingdom, Bengal/Sulu Sultanate, Chola/Ghurid/Hotak Dynasty, Kingdom of Bakkara/Nepal/Singapura/Tondo, Sultanate of Brunei/Maguindanao/Siak/Ternate)",
+                "Updated to new spawn art in HistoryDex (Bolsheviks)"
+            ]
+        },
+        {
             "timestamp": "1784197872",
             "changes": [
                 "Added Empireballs bot"
