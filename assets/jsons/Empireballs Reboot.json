@@ -1,4 +1,9 @@
 {
+    "Atlantis": {
+        "rarity": 0.7,
+        "artist": "ocean_wav3",
+        "id": 159
+    },
     "Roman Empire": {
         "rarity": 0.8,
         "artist": "drael.heart",
@@ -21,7 +26,7 @@
     },
     "First French Colonial Empire": {
         "rarity": 2,
-        "artist": "drael.heart",
+        "artist": "ocean_wav3",
         "id": 8
     },
     "Imperialist United States": {
@@ -352,6 +357,11 @@
         "artist": "Deleted User #0000",
         "id": 53
     },
+    "State of the Teutonic Order": {
+        "rarity": 32,
+        "artist": "estonia0786",
+        "id": 157
+    },
     "Nguyen Dynasty": {
         "rarity": 33,
         "artist": "not_woterbottle",
@@ -433,6 +443,11 @@
         "rarity": 45,
         "artist": "pepsikosc",
         "id": 149
+    },
+    "Principality of Monaco": {
+        "rarity": 45,
+        "artist": "margraviate.of.austria",
+        "id": 160
     },
     "Ghana Empire": {
         "rarity": 46,
@@ -629,5 +644,10 @@
         "rarity": 75,
         "artist": "censorbar_",
         "id": 147
+    },
+    "Kingdom of Rapa Nui": {
+        "rarity": 76,
+        "artist": "pepsikosc",
+        "id": 158
     }
 }

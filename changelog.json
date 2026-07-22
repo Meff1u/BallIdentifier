@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1784721001",
+            "changes": [
+                "Updated to new spawn arts in Ballsdex (Netherlands, Seychelles, Togo)",
+                "Fixed wrong spawn art in HistoryDex (Dutch Republic)",
+                "Updated to Empireballs 1.1.6 Update (added Atlantis, Kingdom of Rapa Nui, Principality of Monaco, State of the Teutonic Order, updated First French Colonial Empire)"
+            ]
+        },
+        {
             "timestamp": "1784496842",
             "changes": [
                 "Updated to Empireballs 1.1.5 Update (Ayutthaya/Pahang Kingdom, Bengal/Sulu Sultanate, Chola/Ghurid/Hotak Dynasty, Kingdom of Bakkara/Nepal/Singapura/Tondo, Sultanate of Brunei/Maguindanao/Siak/Ternate)",
