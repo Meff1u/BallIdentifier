@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1784806584",
+            "changes": [
+                "Updated to Empireballs 1.1.7 Update (added Volga Bulgaria, removed Holy Roman Empire, Duchy of Livonia, updated Tu'i Tonga)",
+                "Updated Empireballs rarities",
+                "Updated to new spawn art in HistoryDex (Kingdom of Prussia)"
+            ]
+        },
+        {
             "timestamp": "1784721001",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Netherlands, Seychelles, Togo)",
