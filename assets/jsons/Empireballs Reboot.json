@@ -122,11 +122,6 @@
         "artist": "fordcraft",
         "id": 37
     },
-    "Danish Empire": {
-        "rarity": 8,
-        "artist": "lego_sansyt",
-        "id": 165
-    },
     "Gupta Empire": {
         "rarity": 8,
         "artist": "xhousepets",
@@ -146,6 +141,11 @@
         "rarity": 9,
         "artist": "idk_empire14",
         "id": 120
+    },
+    "Holy Roman Empire": {
+        "rarity": 9,
+        "artist": "drael.heart",
+        "id": 71
     },
     "Mughal Empire": {
         "rarity": 9.5,
@@ -249,6 +249,11 @@
         "rarity": 19,
         "artist": "anjabbon",
         "id": 132
+    },
+    "Danish Empire": {
+        "rarity": 20,
+        "artist": "n0tch21_98933",
+        "id": 44
     },
     "Omani Empire": {
         "rarity": 20.5,
@@ -574,11 +579,6 @@
         "artist": "eilyr_.",
         "id": 145
     },
-    "Kingdom of Brazil": {
-        "rarity": 62,
-        "artist": "loomaingamer12",
-        "id": 72
-    },
     "Tu'i Tonga Empire": {
         "rarity": 63,
         "artist": "estonia0786",
@@ -598,12 +598,6 @@
         "rarity": 65,
         "artist": "estonia0786",
         "id": 153
-    },
-    "Kingdom of Tavolara": {
-        "rarity": 66,
-        "artist": "videojuegos.",
-        "id": 19,
-        "collectors": ["1115730895467462796"]
     },
     "Kingdom of Iberia": {
         "rarity": 67,

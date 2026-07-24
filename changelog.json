@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1784885834",
+            "changes": [
+                "Updated to Empireballs 1.1.7 Update Follow up (readded Danish Empire, Holy Roman Empire, removed Kingdom of Tavolara/Brazil)",
+                "Updated to new spawn art in Ballsdex (Tonga)"
+            ]
+        },
+        {
             "timestamp": "1784806584",
             "changes": [
                 "Updated to Empireballs 1.1.7 Update (added Volga Bulgaria, removed Holy Roman Empire, Duchy of Livonia, updated Tu'i Tonga)",

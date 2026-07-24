@@ -792,6 +792,9 @@
             "Reichskommissariat Norwegen": ["norway"],
             "Reichskommissariat Belgien-Nordfrankreich": ["belgium"],
             "Reichskommissariat Niederlande": ["netherlands"]
+        },
+        "empireballs reboot": {
+            "State of the Teutonic Order": ["teutonic order", "teutonic empire", "estonia"]
         }
     }
 }
