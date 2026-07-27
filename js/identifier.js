@@ -15,6 +15,9 @@ function initializeIdentifier() {
     setupCopyButton();
 }
 
+let changelogData = null;
+let activeChangelogType = "website";
+
 function setupNotesToggle() {
     const toggleNotes = document.getElementById("toggleNotes");
     const notesContainer = document.getElementById("notesContainer");
@@ -328,34 +331,60 @@ function setupChangelog() {
 
         await loadChangelog();
     });
+
+    document.querySelectorAll("[data-changelog-type]").forEach((button) => {
+        button.addEventListener("click", async () => {
+            activeChangelogType = button.getAttribute("data-changelog-type") || "website";
+            renderChangelog();
+        });
+    });
 }
 
 async function loadChangelog() {
     try {
-        const response = await fetch("changelog.json");
-        const data = await response.json();
-        
-        const changelogList = document.getElementById("changelogList");
-        changelogList.innerHTML = "";
-        
-        data.changes.forEach(change => {
-            const changeItem = document.createElement("div");
-            changeItem.className = "changelog-item";
-            
-            const date = new Date(change.timestamp * 1000);
-            const formattedDate = date.toLocaleString("en-GB", {
-                day: "2-digit", month: "long", year: "numeric",
-                hour: "2-digit", minute: "2-digit", hour12: false
-            });
-            
-            changeItem.innerHTML = `<strong>${formattedDate}</strong><ul>${change.changes.map(c => `<li>${c}</li>`).join("")}</ul>`;
-            changelogList.appendChild(changeItem);
-        });
-        
+        if (!changelogData) {
+            const response = await fetch("changelog.json");
+            changelogData = await response.json();
+        }
+
+        renderChangelog();
         window.changelogOffcanvas?.show();
     } catch (error) {
         console.error("Error fetching changelog:", error);
     }
+}
+
+function renderChangelog() {
+    const changelogList = document.getElementById("changelogList");
+    if (!changelogList || !changelogData) return;
+
+    document.querySelectorAll("[data-changelog-type]").forEach((button) => {
+        const isActive = button.getAttribute("data-changelog-type") === activeChangelogType;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+    });
+
+    const filteredChanges = changelogData.changes.filter((change) => change.type === activeChangelogType);
+    changelogList.innerHTML = "";
+
+    if (!filteredChanges.length) {
+        changelogList.innerHTML = '<div class="text-muted small">No entries for this category.</div>';
+        return;
+    }
+
+    filteredChanges.forEach((change) => {
+        const changeItem = document.createElement("div");
+        changeItem.className = "changelog-item";
+
+        const date = new Date(change.timestamp * 1000);
+        const formattedDate = date.toLocaleString("en-GB", {
+            day: "2-digit", month: "long", year: "numeric",
+            hour: "2-digit", minute: "2-digit", hour12: false
+        });
+
+        changeItem.innerHTML = `<strong>${formattedDate}</strong><ul>${change.changes.map((c) => `<li>${c}</li>`).join("")}</ul>`;
+        changelogList.appendChild(changeItem);
+    });
 }
 
 function setupCopyButton() {

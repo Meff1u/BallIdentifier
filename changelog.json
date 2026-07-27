@@ -1,24 +1,34 @@
 {
     "changes": [
         {
+            "timestamp": "1785159182",
+            "changes": [
+                "Changelog has been updated - changes have been broken down into dex changes and website changes"
+            ],
+            "type": "website"
+        },
+        {
             "timestamp": "1785157715",
             "changes": [
                 "Updated to Empireballs 1.1.8 Update (added Chera Dynasty, Emirate of Herat, updated Belgian Colonial Empire, Kingdom of Norway, Omani Empire, Sultanate of Siak)",
                 "Updated to new spawn art in HistoryDex (Tang Dynasty)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1785061763",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Romania)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1784885834",
             "changes": [
                 "Updated to Empireballs 1.1.7 Update Follow up (readded Danish Empire, Holy Roman Empire, removed Kingdom of Tavolara/Brazil)",
                 "Updated to new spawn art in Ballsdex (Tonga)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1784806584",
@@ -26,7 +36,8 @@
                 "Updated to Empireballs 1.1.7 Update (added Volga Bulgaria, removed Holy Roman Empire, Duchy of Livonia, updated Tu'i Tonga)",
                 "Updated Empireballs rarities",
                 "Updated to new spawn art in HistoryDex (Kingdom of Prussia)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1784721001",
@@ -34,20 +45,23 @@
                 "Updated to new spawn arts in Ballsdex (Netherlands, Seychelles, Togo)",
                 "Fixed wrong spawn art in HistoryDex (Dutch Republic)",
                 "Updated to Empireballs 1.1.6 Update (added Atlantis, Kingdom of Rapa Nui, Principality of Monaco, State of the Teutonic Order, updated First French Colonial Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1784496842",
             "changes": [
                 "Updated to Empireballs 1.1.5 Update (Ayutthaya/Pahang Kingdom, Bengal/Sulu Sultanate, Chola/Ghurid/Hotak Dynasty, Kingdom of Bakkara/Nepal/Singapura/Tondo, Sultanate of Brunei/Maguindanao/Siak/Ternate)",
                 "Updated to new spawn art in HistoryDex (Bolsheviks)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1784197872",
             "changes": [
-                "Added Empireballs bot"
-            ]
+                "Added Empireballs Reboot bot"
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1784043006",
@@ -55,19 +69,22 @@
                 "Updated to new spawn arts in HistoryDex (Angevin/Athenian Empire, Bechuanaland Protectorate, British Ceylon/Somaliland, Despotate of the Morea, French Colony of Martinique and Saint Lucia/Sudan, German New Guinea, Republic of Tanganyika, Sultanate of Zanzibar, Yakut Autonomous Soviet Socialist Republic)",
                 "Fixed wrong spawn arts in HistoryDex (Karakorum Government, Latvian Soviet Socialist Republic, Russian America)",
                 "Updated to new HistoryDex balls (Anglo-Saxon England, Austrian Nicobar Islands, Bavarian Illuminati, Belgian Santo Tomas, Beylik of Aydin, Chola/Jagiallonian Dyansty, Circassia, Cisleithania, Duchy of Savoy, Gaul, Israeli Military Governorate, Kalmyk Khanate, Kingdom of Iberia/Singapura, Medieval Thessaloniki, Portuguese Hormuz, Providence Island Colony, Reichskommisariat Belgien-Nordfrankreich/Niderlande/Norwegen, Republic of Central Lithuania, Shamkhalate of Tarki, Southern Inspectorate of Greenland, Sovereign Principality of the United Netherlands, Transleithania, United Belgian States)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1784023069",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Algeria, Bahamas, Chile, Finland, Gabon, Gambia, Hunnic Empire, Madagascar, Myanmar, Slovenia, Taiwan, Tannu Tuva, Tuvalu, United States)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1783292375",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Great Ming, Napoleonic Spain)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1782992770",
@@ -76,19 +93,22 @@
                 "Updated to new spawn arts in HistoryDex (Dominion of Pakistan, Dutch Republic, Rashidun Caliphate, United Colonies, Uryankhay Krai, Vijayanagara Empire)",
                 "Updated to new HistoryDex ball display names (British Hawaii -> British Protectorate of Hawaii, Han -> Han Dynasty, Jin -> Jin Dynasty, Khiva -> Khanate of Khiva, Qin -> Qin Dynasty, Shang -> Shang Dynasty, Shun -> Shun Dynasty, Sui -> Sui Dynasty, Xin -> Xin Dynasty, Zhou -> Zhou Dynasty)",
                 "Updated HistoryDex rarities"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1782666721",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (British Sierra Leone, French Congo, Hanseatic League, Korean Empire, Mali Federation, Nueva Granada, Republic of Martyazo, Roman Republic, Sheikhdom of Kuwait, Spanish Protectorate of Morocco, Taiping Heavenly Kingdom)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1781860303",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Emirate of Transjordan, French Mauritania, State of Katanga)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1781736556",
@@ -98,49 +118,56 @@
                 "Updated to new HistoryDex balls (303rd R.A.F. Division, Arab Islamic Republic, Ashanti Empire, Austro-Hungarian/French/Italian/Russian Tientsin, Azerbaijan Democratic Republic, Bashkiria, British Union of Fascists, Colony of Greenland/Liberia, Denmark-Norway, Etruscans, European Economic Community, First Republic of the Congo, Freikorps, Göktürk Khaganate, Independent Albania, Iroquois Confederancy, Kingdom of Arles/Kurdistan, Latin Empire, Moldavian Democratic Republic, North Inspectorate of Greenland, Provisional Democratic Government, Queer Insurrection and Liberation Army, Republic of Cospaia, Sosiyalist Melli Kargaran Iran, Spanish Protectorate of Morocco, Spartacus League, State of Singapore, Syrian Federation, Uryankhay Krai, Witu Sultanate)",
                 "Updated HistoryDex rarities",
                 "Removed disabled HistoryDex balls (2ball, 4ball, Ancient Aratta, North Dorsetia-Somersetia, Selk'nam Peoples)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1781538811",
             "changes": [
                 "Updated to new Ballsdex ball (Umayyad Caliphate)",
                 "Updated Ballsdex rarities"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1780953048",
             "changes": [
                 "Updated to re-added HistoryDex ball (Caithness and Sutherland)",
                 "Updated to new spawn arts in HistoryDex (Hudson Bay Company, Little Entente)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1780932339",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Kingdom of Sardinia)",
                 "Updated to new HistoryDex balls (American Tientsin, Empire of Vietnam, Hanseatic League, Hungarian State, Japanese Tientsin, Kingdom of Imerina/Tunisia, Provisional Government of the French Republic)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1780853581",
             "changes": [
                 "Fixed wrong names in JoJoDex (Tamami Kobayash -> Tamami Kobayashi, Tomoko Hishigakata -> Tomoko Higashikata)",
                 "Updated to new spawn arts in HistoryDex (Axis Powers, Palmyrene Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1780824728",
             "changes": [
                 "Updated JoJoDex rarities",
                 "Updated to new spawn arts in HistoryDex (Kara-Khanid Khanate, Almohad Caliphate)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1780664223",
             "changes": [
                 "Updated to new HistoryDex balls (Burgundian Netherlands, Commonwealth Warsaw, Federation of Malaya, Funj Sultanate, Khmer Empire, Kingdom of Cayor/Holland/Lithuania, Korea State, Korean Empire, Medieval Kingdom of Denmark, Nazist Berlin, Selk'nam Peoples, Sultanate of Bone, The Great National Assembly in Alba Iulia, Union of Poland-Saxony, United Baltic Duchy, West Berlin)",
                 "Updated to new spawn arts in HistoryDex (Balkan League, British Burma/Kenya, County of Vaduz, Emirate of Nejd and Hasa, Kingdom of Bavaria/Cusco, Song)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1780404062",
@@ -149,46 +176,53 @@
                 "Updated to new spawn art in JoJoDex (Jotaro Kujo)",
                 "Updated to new entries in JoJoDex ((TS) Rohan Kishibe, Aki Mochizuki, Angelo Rock, Bakin, Café Deux Magots, Coire electricus lorenzinia, Dio's Castle, Eco-Terrorist, Eve, Gessler's Hotel, Gunpei Kamafusa, Ikkyu, Kennedy Space Center, Kujo Mansion, Libeccio, Louvre, Mai Katahira, Mao Katahira, Mika Hayamura, Moon Rabbit, Mutsu-kabe Hill, Mutsu-kabe Shrine, Nanase Fujikura, Naoko Osato, New York City, Nizaemon Yamamura, Obanazawa, Under The Moon, Wall Eyes, Yabubako-Hoshi, Yoma Hashimoto)",
                 "Updated to new spawn arts in HistoryDex (Confederate States, Republic of Tanganyika)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1779828523",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Dominion of Newfoundland, Revolutionary Paris)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1779727253",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Kingdom of Nepal)",
                 "Updated to new spawn art in Ballsdex (Papal States)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1779620272",
             "changes": [
                 "Updated to new JoJoDex stand (Fatty Valentine)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1779191721",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Abbasid Caliphate, Franco-British Union, Iberian Union)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1778931467",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (British Fiji, Emirate of Transjordan, Greater Ottoman Empire, Italian East Africa, Kingdom of Great Britain, People's Republic of Bulgaria)",
                 "Updated to new HistoryDex balls (Imperial Moscow, Spanish Protectorate of Cambodia)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1778769194",
             "changes": [
                 "Updated Ballsdex rarities",
                 "Updated to new spawn art in HistoryDex (New Swabia)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1778509269",
@@ -196,26 +230,30 @@
                 "Updated to new spawn arts in HistoryDex (Armenian Empire, Federation of Ethiopia and Eritrea, Trust Territory of Somaliland, Weimar Republic)",
                 "Fixed wrong spawn art in HistoryDex (Rashidun Caliphate)",
                 "Updated to new HistoryDex ball (Republic of Artsakh)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1778065218",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Independent State of Croatia, Kalmar Copenhagen, Province of Quebec)",
                 "Removed 1 ball from HistoryDex as it is not catchable anymore (Sanusiyyah)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1777982857",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Japanese Korea, Khorezm People's Soviet Republic, Kingdom of Benin, State of the Comoros)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1777802960",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Autonomous Province of Western Bosnia, Kingdom of Tlemcen, Vijayanagara Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1777790714",
@@ -223,7 +261,8 @@
                 "Updated to new HistoryDex ball (Catalan Republic)",
                 "Updated to new HistoryDex ball display names (Ancient Athens -> Athenian Empire, British Occupied Faroe Islands -> British-Occupied Faroe Islands, Couronian Gambia -> Curonian Gambia, British Transjordania -> Emirate of Transjordan, German Occupied Sealand -> German-Occupied Sealand, Hejaz -> Hashemite Kingdom of Hejaz, Nazi Occupied Denmark -> Nazi-Occupied Denmark, Parthet Thai -> Fascist Thailand, U.S. Occupied Greenland -> U.S.-Occupied Greenland)",
                 "Removed 2 balls from HistoryDex as they are not catchable anymore (Bessarabian Germans, Caithness and Sutherland)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1777780685",
@@ -231,19 +270,22 @@
                 "Updated to new HistoryDex ball (Equinoctial France)",
                 "Updated to new spawn art in HistoryDex (British Heligoland)",
                 "Updated to new HistoryDex ball display name (Dutch India and Ceylon -> Dutch India)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1777585399",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Germania)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1777542007",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Spanish Haiti)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1777484819",
@@ -252,103 +294,119 @@
                 "Updated to new spawn arts in HistoryDex (Danish Empire, Spanish Cuba)",
                 "Updated to neglected balls that were disabled by mistake but are now back (Archduchy of Austria, Emirate of Diriyah, Territory of Hawaii)",
                 "Updated to new HistoryDex ball display name (Makhnovia -> Makhnovshchina)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1777298533",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Knight's Templar, Qin)",
                 "Updated to new HistoryDex ball display name (Union Army -> The North)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1777243270",
             "changes": [
                 "Updated HistoryDex rarities and IDs"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1777221570",
             "changes": [
                 "Updated to new HistoryDex balls (2ball, Revolutionary Paris, Schutzstaffel)",
                 "Updated to new spawn art in HistoryDex (Ghurid Dynasty)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1777113453",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Nguyễn Dynasty, Polish-Lithuanian Commonwealth, Republic of the Sudan, Weimar Republic)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1776951058",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Ancient Egypt, Dominion of Ghana, Franco-British Union)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1776939627",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (First Mexican Empire, Virginia Colony)",
                 "Updated to new HistoryDex balls (Autonomous Province of Western Bosnia, Czech and Slovak Federative Republic, Delian League, Eastern Hungarian Kingdom, International Criminal Tribunal for Yugoslavia, U.S. Occupied Greenland)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1776890206",
             "changes": [
                 "Mobile UI fixes and improvements",
                 "Better view of enlarged spawn arts"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1776880844",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Kingdom of Siam, Khedivate of Egypt)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1776769260",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Kingdom of Montenegro, Ottoman Qatar)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1776720047",
             "changes": [
                 "Updated to new HistoryDex ball (Soviet Republic of Naissaar)",
                 "Updated to new spawn art in HistoryDex (Mamluk Sultanate)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1776701304",
             "changes": [
                 "Updated to new spawn art in JoJoDex (Kars)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1776678951",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Babylon, Imperialist United States, Mali Federation, Polish People's Republic, Soviet Union)",
                 "Updated to HistoryDex South East Asian/Pacific Wave Update - 20 new balls (Bruneian Sultanate, Champasak Kingdom, Dominion of Pakistan, Gay and Lesbian Kingdom of the Coral Sea Islands, Kingdom of Abemama, Kingdom of Bora Bora, Kingdom of Siam, Kingdom of Tonga, Konbaung Dynasty, Malayan Peoples' Anti-Japanese Army, Netherlands-Indonesia Union, New Swabia, Srivijaya Empire, Sultanate of Maguindanao, Territory of Western Samoa, Timor Timur, Toyotomi Clan, United States of Indonesia, United Tribes Of New Zealand, Vijayanagara Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1776607481",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Empire of the Sahara)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1776589821",
             "changes": [
                 "Updated to new HistoryDex balls (Confederacy of Independent Kingdoms of Fiji, Dominion of The Gambia, Hitler Youth, Islamic Republic of Afghanistan, Liang Dynasty, Lordship of Ireland, Salvadorian Military Dictatorship, Second United Chinese Front)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1776554505",
             "changes": [
                 "Updated missings from HistoryDex Africa Wave Update (Alodia, First Republic of Rwanda, Issaq Sultanate)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1776521988",
@@ -356,13 +414,15 @@
                 "Updated to new spawn arts in HistoryDex (Republic of Pisa, State of Turkey)",
                 "Updated to HistoryDex Africa Wave Update - 45 new balls (Adal Sultanate, Almoravid Dynasty, Colony of Ivory Coast, Colony of Niger, Couronian Gambia, Dominion of Ghana, Emirate of Abdelkader, Emirate of Cyrenaica, Federation of Ethiopia and Eritrea, French Upper Volta, Jolof Empire, Kingfom of Altava, Kingdom of Benin, Kingdom of Burundi, Kingdom of Dahomey, Kingdom of Kongo, Kingdom of Loango, Kingdom of Makuria, Kingdom of Numidia, Kingdom of Rwanda, Kingdom of the Aurès, Kingdom of Tlemcen, Kingdom of Zimbabwe, Kooki Kingdom, Mahdist State, Mali Federation, People's Republic of Zanzibar, Republic of Egypt, Republic of Tanganyika, Republic of the Sudan, Sanusiyyah, Second Republic of Uganda, South Kasai, State of Katanga, State of Somaliland, State of the Comoros, Sultanate of Zanzibar, Territory of Cameroon, Toucouleur Empire, Vandal Kingdom, Zirid Dynasty)",
                 "Missings (artist + spawn art): Alodia, First Republic of Rwanda, Issaq Sultanate"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1776367232",
             "changes": [
                 "Updated to new HistoryDex balls (Province of Quebec, Quebec Liberation Front, Republic of Lower Canada)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1776351431",
@@ -370,130 +430,150 @@
                 "Added JoJoDex to BallIdentifier",
                 "Updated to new spawn art in Ballsdex (Spain)",
                 "Updated to new spawn arts in HistoryDex (Romanian People's Republic, Warsaw Pact)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1776248556",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Azad Hind, Mercia, Second Mexican Empire, Seljuk Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1776079381",
             "changes": [
                 "Updated to new HistoryDex ball (Realm of Julius Nepos)",
                 "Updated to new spawn arts in HistoryDex (Ancient Egypt, Weimar Republic)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1775917086",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (First French Republic, Kievan Rus', Saar Protectorate, Somali Democratic Republic, Ukrainian Soviet Socialist Republic)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1775815081",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Argentina, Byzantium, Estonia, Napoleonic France, Union of South Africa)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1775735473",
             "changes": [
                 "Updated to new HistoryDex balls (British Hawaii, Cretan State, Crown of the Kingdom of Poland, East Prussia, Italian Protectorate of Albania, Nazi Occupied Denmark, Peasant Battalions, Shanghai International Settlement, Spanish Armada, Spanish Guinea, Spanish Louisiana, State of Thessaloniki)",
                 "Updated to new spawn arts in HistoryDex (Hawaiian Kingdom, Kushan Empire, Organization of African Unity, Roanoke Colony, Roman Empire, United Kingdom of Portugal, Brazil, and Algarves)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1775578446",
             "changes": [
                 "Updated to new HistoryDex balls (German Occupied Sealand, Prussian Berlin, Virginia Colony)",
                 "Updated to new spawn arts in HistoryDex (Golden Circle, Kingdom of Hanover, Kingdom of Poland, New Atlantis, Oregon Territory, Ottoman Qatar, Roman Republic, Trust Territory of the Pacific Islands)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1775507590",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Anglo-Egyptian Sudan, Chagatai Khanate, Kara-Khanid Khanate, Portuguese Timor)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1775481583",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Ba'athist Syria, French Algeria, Safavid Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1775469134",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Orange Free State, Reichskolonialbund)",
                 "Updated to new HistoryDex balls (Ba'athist Syria, Derg, Free City of Frankfurt)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1775405555",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Dutch Empire, Grand Duchy of Lithuania, Inca Empire, State of Buenos Aires, Ukrainian Soviet Socialist Republic)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1775144338",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Ba'athist Iraq, Emirate of Bukhara, Estonian Soviet Socialist Republic, Hashemite Kingdom of Iraq, Hungarian People's Republic)",
                 "Removed War German Empire from HistoryDex (april fools ended)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1775037485",
             "changes": [
                 "Fixed HistoryDex's War German Empire rarity from 1 to 74 (We got fooled)",
                 "Updated to new spawn art in HistoryDex (Khwarazmian Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1774999809",
             "changes": [
                 "Updated to new HistoryDex ball (War German Empire)",
                 "Updated to new spawn art in HistoryDex (European Coal and Steel Community)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1774978275",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (British Raj, Carthage, German Togoland, Porfiriato, British Colony of Bermuda, Buyid Dynasty, Kingdom of Galicia)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1774894666",
             "changes": [
                 "Updated to new HistoryDex balls (Emirate of Bukhara, Ghassanid Kingdom, Uzbek Khanate)",
                 "Updated to new spawn arts in HistoryDex (Crimean Regional Government, Portuguese Angola, Portuguese Nagasaki, Zulu Kingdom, Kingdom of Fiji, Makhnovia, Republic of China, Union of South Africa)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1774832919",
             "changes": [
                 "Updated to new HistoryDex balls (Imperial Geramn General Government of Belgium, Territory of Ruanda-Urundi)",
                 "Updated to new spawn arts in HistoryDex (Bornu Empire, Holy Roman Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1774798466",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Saffarid Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1774651987",
             "changes": [
                 "Updated to new HistoryDex balls (Herodian Kingdom of Judea, Imperialist Washington D.C.)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1774619060",
             "changes": [
                 "Re-added HistoryDex because it's active again"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1774128287",
@@ -503,7 +583,8 @@
                 "Updated mobile popup to be the most discord-like",
                 "Added Average Catch Time statistic to the trainer",
                 "Minor bug fixes and improvements"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1773975095",
@@ -515,13 +596,15 @@
                 "Support for multiple bots",
                 "Mobile-responsive interface with sidebar toggle and adaptive layout",
                 "Smooth animations and interactions with Bootstrap 5.3.0 components"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1773233801",
             "changes": [
                 "Removed Game Token from Ballsdex (Ballsdex Games 3 are over)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1768677737",
@@ -530,14 +613,16 @@
                 "Added feature tabs: Identifier, Notifications, Notifier, and Trainer",
                 "Each feature now has detailed description and preview images",
                 "Added image zoom functionality - click on any image to enlarge it"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1768661161",
             "changes": [
                 "Removed HistoryDex, DynastyDex and Empireballs dexes cus all of them are inactive or deleted permanently",
                 "Reorganized dex assets structure and added dynamic dex loading"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1768263954",
@@ -545,75 +630,87 @@
                 "Integrated Spawn Arts and Bot subpages into main page as tabs - no more separate pages",
                 "Improved Spawn Arts loading speed",
                 "UI improvements and layout fixes"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1768260375",
             "changes": [
                 "Added Game Token back to Ballsdex. Ballsdex Games 3 announced",
                 "Updated FoodDex IDs"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1767559394",
             "changes": [
                 "Added FoodDex to BallIdentifier"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1767196109",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Free France, India)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1766940750",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Joseon)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1765753699",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Italy)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1765223107",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Kingdom of Ulaid)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1765081320",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Paris Commune, Vatican)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1764881965",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Congo, French Empire, Iberian Union, Japanese Empire, Kenya, Konbaung Empire, Nanda Empire, Russia, Somalia, Uzbekistan)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1763750417",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (England, Germany)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1763635737",
             "changes": [
                 "Updated to Wave 8.1 of Ballsdex (Kingdom of Connacht, Kingdom of Ulaid)",
                 "Updated Ballsdex rarities"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1762509122",
             "changes": [
                 "Updated DynastyDex rarities"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1760916827",
@@ -622,13 +719,15 @@
                 "2 new spawn arts (Fidel's Cuba, Kingdom of Montenegro)",
                 "16 new balls (Corinth, Dacia, Kingdom of Bulgaria, Kingdom of Croatia, Kingdom of Hungary, Kingdom of Serbia, Magyar Tribes, Olympia, Ottoman Empire, Rhodes, Roman Empire, Serbian Empire, Sparta, Thebes, Troy, Yugoslavia)",
                 "Updated DynastyDex rarities"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1760440692",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Costa Rica)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1758284043",
@@ -643,55 +742,64 @@
                 "Updated all pages with modern Bootstrap components and utility classes",
                 "Added hover effects and interactive animations throughout the interface",
                 "Improved accessibility and mobile responsiveness across all features"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1758275625",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Kara-Khanid Khanate, Union of South Africa)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1757598749",
             "changes": [
                 "Updated to DynastyDex Update 2.0.1 (3 new balls: Kingdom of Armenia, Kingdom of Georgia, Kingdom of Kurdistan)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1757337067",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Belize, Japanese Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1756566185",
             "changes": [
                 "Updated to new spawn art in HistoryDex (New York Colony)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1756027761",
             "changes": [
                 "Updated to DynastyDex 2.0 Update (Fresh Start, 62 dynastyballs to catch)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1755435713",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Omani Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1755114198",
             "changes": [
                 "Added sorting by ID in HistoryDex list"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1754996743",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Kenya, Equatorial Guinea)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1754949660",
@@ -699,50 +807,58 @@
                 "Updated to Wave 8 of Ballsdex (Akkadian Empire, Ancient Troy, Armenian Empire, Assyrian Empire, Gupta Empire, Han Dynasty, Kingdom of Cao Wei, Kingdom of Iberia, Kingdom of Leinster, Kingdom of Munster, Kingdom of Shu Han, Kingdom of Sun Wu, Olmecs, Phoenicia, Sumer, Xia Dynasty, Zapotecs)",
                 "Updated to new Ballsdex ball display names (Zhou -> Zhou Dynasty, Qing -> Qing Dynasty)",
                 "Updated Ballsdex rarities"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1753976899",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Luxembourg)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1753965651",
             "changes": [
                 "Updated to new Dynastydex ball display names (Mayan Empire -> The Maya, Novgorod Republic -> Great Novgorod, Ayyubid Dynasty -> Ayyubid Sultanate, Kingdom of Aksum -> Aksumite Empire, Land of Punt -> Punt)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1753621262",
             "changes": [
                 "Updated to new spawn art in Empireballs (Han Dynasty)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1753566365",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Kingdom of Brandenburg, Kingdom of Egypt, St. Vincent and the Grenadines, Republic of China)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1753484559",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Comoros, Senegal, Paraguay, Northern Ireland)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1753452136",
             "changes": [
                 "Updated to new Dynastydex ball display name (British Palestine -> Mandatory Palestine)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1753388849",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Papua New Guinea)",
                 "Updated to new Dynastydex ball (Abbasid Caliphate)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1753301963",
@@ -750,162 +866,188 @@
                 "Updated to new Dynastydex ball display name (Goths -> Ostroghotic Kingdom)",
                 "Updated to Dynastydex Wave 7 Part 1 Update - 12 new balls (Sumeria, Babylon, Republic of Genoa, Vandal Kingdoom, Crimean Khanate, British Raj, Visigothic Kingdom, Ryukyu Kingdom, Archbishopric of Mainz, Alemanni, Republic of Zaire)",
                 "Updated to new spawn arts in Dynastydex (Kingdom of Bavaria, German Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1753034026",
             "changes": [
                 "Fixed wrong spawn art in HistoryDex (Roman Republic)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1752929291",
             "changes": [
                 "Updated to new spawn art in Ballsdex (NATO)",
                 "Fixed wrong spawn art in Empireballs (Qin Dynasty)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1752300650",
             "changes": [
                 "Updated to new spawn art in Empireballs (Abbasid Caliphate)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1751576507",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Japanese Taiwan, Ottoman Algiers, United Fruit Company)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1751285554",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Qajar Dynasty, Swedish Overseas Colonies)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1751211910",
             "changes": [
                 "Updated to new Dynastydex ball (DD Token)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1751211287",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Chechen Republic of Ichkeria, Corsican Republic)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1751112987",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Napoleonic France)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1750957045",
             "changes": [
                 "Updated to new HistoryDex balls (British Colony of Bermuda, Empire of the Sahara)",
                 "Updated to new spawn arts in HistoryDex (British Malta, Duchy of Pomerania-Stolp, Swedish Saint Barthélemy)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1750862845",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Portuguese Macau, Ryukyu Kingdom)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1750846788",
             "changes": [
                 "Updated to new spawn art in HistoryDex (People's Socialist Republic of Albania)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1750759446",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Roman Republic)",
                 "Updated to new HistoryDex balls (Constantinople, Imperial Rome, Roman Kingdom)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1750262239",
             "changes": [
                 "Updated to new spawn arts in Empireballs (Kingdom of Armenia, Polish-Lithuanian Commonwealth, Achaemenid Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1750069264",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Tanzania)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1750057095",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (German Empire, Tokugawa Shogunate)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1749898973",
             "changes": [
                 "Added Discord Bot subpage - you can now add BallIdentifier discord bot to your apps and identify balls faster!"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1749320350",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Ancient Egypt)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1749041232",
             "changes": [
                 "Updated to new spawn art in Empireballs (Kingdom of Hungary)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1748647228",
             "changes": [
                 "Updated to new spawn art in Empireballs (Timurid Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1748627523",
             "changes": [
                 "List - added new option to settings menu - On click: enlarge spawn art or show previous arts"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1748622204",
             "changes": [
                 "List - Added IDs to Empireballs",
                 "Updated to new Empireballs ball display name (Caral-Supe City -> Caral-Supe)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1748354860",
             "changes": [
                 "List - Added IDs to DynastyDex"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1748280120",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Eswatini)",
                 "Updated to new Empireballs ball display name (Dutch Republic -> Dutch Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1748262307",
             "changes": [
                 "Updated to new spawn art in Empireballs (Tang Dynasty)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1748218878",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Austrian Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1748106825",
@@ -917,86 +1059,100 @@
                 "Updated to new Empireballs balls (Hunnic Empire, Imperialist United States, Kingdom of Hawaii)",
                 "Updated to new spawn art in Empireballs (German Empire, Empire of China, Kingdom of Bosnia, Kazakh Khanate, Tokugawa Shogunate, Reichtangle, Ancient Egypt)",
                 "Updated to new Empireballs ball display name (Armenian Empire -> Kingdom of Armenia)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1748018497",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Qajar Dynasty)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1747065959",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Ireland)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1747002181",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Croatia, Spanish Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1746652905",
             "changes": [
                 "Updated to new spawn art in Ballsdex (South Korea)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1746439410",
             "changes": [
                 "Updated to new spawn art in Ballsdex (El Salvador)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1746297104",
             "changes": [
                 "Updated to new spawn arts in Empireballs (British Empire, Galactic Empire, Goryeo, Joseon, Kingdom of Finland, Mayan Empire, Rebel Alliance, Reichtangle, Seljuk Turks, Serbian Empire, Swedish Empire, Tokugawa Shogunate, Umayyad Caliphate)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1746289730",
             "changes": [
                 "Massive Spawn Arts List update - added DynastyDex, Empireballs and HistoryDex to choose from"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1746285736",
             "changes": [
                 "Updated to new Empireballs balls (Rashidun Caliphate, Denmark-Norway)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1746272113",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Kingdom of Hungary)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1746094354",
             "changes": [
                 "Updated to new Empireballs ball (Mayan Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1746024781",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Japan)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1746010955",
             "changes": [
                 "Updated to new spawn art in Empireballs (Sokoto Caliphate)",
                 "Updated to new HistoryDex balls (Icelandic Commonwealth, Kingdom of Iceland)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1745951104",
             "changes": [
                 "Updated to new HistoryDex balls (South Seas Mandate, Trust Territory of the Pacific Islands)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1745879580",
@@ -1004,351 +1160,401 @@
                 "Updated Empireballs rarities",
                 "Updated to new Empireballs ball (Kingdom of Romania)",
                 "Updated to new spawn arts in Empireballs (Belgian Colonial Empire, Golden Horde, Kingdom of Bavaria, Kingdom of Italy, Parthian Empire, Western Roman Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1745673885",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Ancient Greece)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1745667705",
             "changes": [
                 "Updated to new HistoryDex balls (Banate of Bosnia, Khedivate of Egypt, Soviet Stalingrad, Union of Poland-Hungary)",
                 "Updated HistoryDex rarities"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1745441649",
             "changes": [
                 "Updated to new spawn art in Empireballs (Nazi Germany)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1745433648",
             "changes": [
                 "Updated to new HistoryDex balls (Chagatai Khanate, Imperialist United States, Italian East Africa, Ottoman Algiers, Ottoman Qatar, Ottoman Tripolitania, Ottoman Tunisia)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1745405241",
             "changes": [
                 "Updated to new spawn art in Empireballs (Ottoman Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1745324732",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Qin Dynasty)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1745229069",
             "changes": [
                 "Updated to new spawn art in Empireballs (North Sea Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1745062248",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Ecuador)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1744969452",
             "changes": [
                 "Updated to new spawn art in Ballsdex (China)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1744906630",
             "changes": [
                 "Updated to new spawn arts in Empireballs (Caral-Supe City, Gran Colombia)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1744796515",
             "changes": [
                 "Updated to new spawn art in Empireballs (Tsardom of Russia)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1744747909",
             "changes": [
                 "Ballsdex Spawn Arts List subpage - moved cache note and implemented search bar"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1744670132",
             "changes": [
                 "Updated to new spawn arts in Empireballs (Korean Empire, Napoleonic France)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1744627540",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Arab League)",
                 "Updated to new spawn art in HistoryDex (Central Powers)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1744571688",
             "changes": [
                 "Updated to new spawn arts in Empireballs (Assyria, Babylon, Kalmar Union, Majapahit Empire, Mali Empire, Polish-Lithuanian Commonwealth, Roman Empire, Sokoto Caliphate)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1744492321",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Taiwan)",
                 "Updated to new spawn arts in Empireballs (Dutch Republic, Gokturk Khaganate)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1744473728",
             "changes": [
                 "Updated to new spawn arts in Empireballs (Babylon, Carthage, Ilkhanate, Mamluk Sultanate, Second Mexican Empire, Swedish Empire, Yuan Dynasty, German Empire, Kingdom of Bohemia, Mauryan Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1744303380",
             "changes": [
                 "Updated to new spawn arts in Empireballs (Almohad Caliphate, Spanish Empire, Galactic Empire, Kievan Rus)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1744215721",
             "changes": [
                 "Added new subpage with list of all Ballsdex spawn arts (with previous one aswell, but still updating)"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1744193578",
             "changes": [
                 "Updated to new Empireballs balls (Belgian Colonial Empire, Empire of China, Gupta Empire)",
                 "Updated to new spawn art in Empireballs (Portuguese Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1744127111",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Colombia)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1744060526",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Empire of Brazil, Roman Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1743883255",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Lebanon)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1743591892",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Cape Verde, Third French Republic, Confederate States)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1742834494",
             "changes": [
                 "Updated Ballsdex rarities"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1742806398",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Lebanon)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1742761410",
             "changes": [
                 "Updated to new spawn art in HistoryDex (East Berlin)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1742739127",
             "changes": [
                 "Updated to new Ballsdex ball (ASEAN)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1742569667",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Mayan Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1742549392",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Safavid Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1742467466",
             "changes": [
                 "Added drag and drop function"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1742336675",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Territory of Papua)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1742298397",
             "changes": [
                 "Updated to HistoryDex European Crowns Update - 10 new balls and art updates (County of Portugal, County of Vaduz, Couto Misto, Italian Regenancy of Carnaro, Kingdom of Galicia, Kingdom of Portugal, Kingdom of the Algarves, Kingdom of Westphalia, Napoleonic Kingdom of Italy, Old Swiss Confederacy, British Guiana, Carthage, Dutch Empire, East Berlin, Gaddafist Libya, Iberian Union, Imperial Berlin, Maurya Empire, Northern Wei)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1742044173",
             "changes": [
                 "Updated to new Empireballs balls (Qin Dynasty, First Haitian Empire)",
                 "Updated Empireballs rarities"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1742027661",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Xiongnu, British Raj)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1741639620",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Russian Empire)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1741543702",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Middle Francia, Mutawakkilite Kingdom of Yemen)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1741435693",
             "changes": [
                 "Updated to new HistoryDex ball (Kalmar Copenhagen)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1741371338",
             "changes": [
                 "Updated to new spawn art in Empireballs (Soviet Union)",
                 "Updated to new spawn art in HistoryDex (Italian Social Republic, Zhou)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1740848288",
             "changes": [
                 "Updated to new spawn art in HistoryDex (Weimar Republic)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1740670655",
             "changes": [
                 "Updated to new spawn arts in HistoryDex (Kingdom of Norway, Portuguese Mozambique)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1740515260",
             "changes": [
                 "Added HistoryDex to comparsion"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1740346906",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Syria)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1740219266",
             "changes": [
                 "Updated to new spawn art in Empireballs (Byzantium)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1739968106",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Canada, Weimar Republic, Saint Kitts and Nevis)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1738889383",
             "changes": [
                 "Updated to new spawn art in Ballsdex (East Germany)",
                 "Deleted Game Token from Ballsdex (won't spawn anymore)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1738774156",
             "changes": [
                 "Added paste button for mobile users"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1738771577",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Namibia)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1738525419",
             "changes": [
                 "Updated to new spawn arts in Dynastydex (Lotharingia, Gran Colombia, Maori, Kingdom of Norway)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1738413820",
             "changes": [
                 "Added Empireballs to comparsion"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1738358044",
             "changes": [
                 "Added ability to paste URL of discord photo"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1738326422",
             "changes": [
                 "Using hash comparsion instead of pixel comparsion (10x faster and more accurate)"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1738268772",
             "changes": [
                 "Added display of rarity and artist in the result window"
-            ]
-        },
-        {
-            "timestamp": "1738237061",
-            "changes": [
-                "Fixed a bug where a photo weighing more than 6MB couldn't be uploaded to the server (AWS Lambda limit)"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1738181600",
             "changes": [
                 "Fixed some upload and comparsion issues (there shouldn't be any more problems with pasting)"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1738009456",
             "changes": [
                 "Minor upload fixes (pasting still dont work well)",
                 "Added showing similarity in result window"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1737999322",
@@ -1357,13 +1563,15 @@
                 "Added display of the number of balls for every dex",
                 "Added footer",
                 "Added Dynastydex balls to comparsion"
-            ]
+            ],
+            "type": "website"
         },
         {
             "timestamp": "1737986120",
             "changes": [
                 "Added changelog function"
-            ]
+            ],
+            "type": "website"
         }
     ]
 }

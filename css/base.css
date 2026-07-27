@@ -37,6 +37,15 @@ body {
 .btn-outline-primary:hover { background-color: var(--primary) !important; border-color: var(--primary) !important; color: #fff !important; }
 .btn-outline-primary:focus, .btn-outline-primary.focus { box-shadow: 0 0 0 0.2rem rgba(var(--primary-rgb), 0.5) !important; }
 
+#changelogOffcanvas [data-changelog-type].active,
+#changelogOffcanvas [data-changelog-type].active:hover,
+#changelogOffcanvas [data-changelog-type].active:focus {
+    background-color: #c77dff !important;
+    border-color: #c77dff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+}
+
 .border-primary { border-color: var(--primary) !important; }
 .text-primary { color: var(--primary) !important; }
 .bg-primary { background-color: var(--primary) !important; }
