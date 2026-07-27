@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1785157715",
+            "changes": [
+                "Updated to Empireballs 1.1.8 Update (added Chera Dynasty, Emirate of Herat, updated Belgian Colonial Empire, Kingdom of Norway, Omani Empire, Sultanate of Siak)",
+                "Updated to new spawn art in HistoryDex (Tang Dynasty)"
+            ]
+        },
+        {
             "timestamp": "1785061763",
             "changes": [
                 "Updated to new spawn art in Ballsdex (Romania)"

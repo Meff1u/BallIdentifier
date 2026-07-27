@@ -794,7 +794,9 @@
             "Reichskommissariat Niederlande": ["netherlands"]
         },
         "empireballs reboot": {
-            "State of the Teutonic Order": ["teutonic order", "teutonic empire", "estonia"]
+            "State of the Teutonic Order": ["teutonic order", "teutonic empire", "estonia"],
+            "Duchy of Luxembourg": ["luxembourg"],
+            "Sultanate of Siak": ["siak"]
         }
     }
 }

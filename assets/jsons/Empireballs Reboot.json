@@ -257,7 +257,7 @@
     },
     "Omani Empire": {
         "rarity": 20.5,
-        "artist": "snappedishere",
+        "artist": "deutsches_.kaiserreich",
         "id": 82
     },
     "Kamakura Shogunate": {
@@ -272,7 +272,7 @@
     },
     "Belgian Colonial Empire": {
         "rarity": 23,
-        "artist": "elizaveta_hedervary",
+        "artist": "n0tch21_98933",
         "id": 39
     },
     "Kingdom of Scotland": {
@@ -421,7 +421,7 @@
     },
     "Kingdom of Norway": {
         "rarity": 42,
-        "artist": "norwaybestvideos",
+        "artist": "estonia0786",
         "id": 18
     },
     "First Mexican Empire": {
@@ -468,6 +468,11 @@
         "rarity": 48,
         "artist": "colin_iii",
         "id": 15
+    },
+    "Chera Dynasty": {
+        "rarity": 49,
+        "artist": "bacons_thebest",
+        "id": 172
     },
     "Serbian Empire": {
         "rarity": 49,
@@ -549,7 +554,7 @@
     },
     "Sultanate of Siak": {
         "rarity": 57,
-        "artist": "landau_fr",
+        "artist": "hortaas",
         "id": 154
     },
     "Kingdom of Bosnia": {
@@ -578,6 +583,11 @@
         "rarity": 61,
         "artist": "eilyr_.",
         "id": 145
+    },
+    "Emirate of Herat": {
+        "rarity": 62,
+        "artist": "estonia0786",
+        "id": 171
     },
     "Tu'i Tonga Empire": {
         "rarity": 63,

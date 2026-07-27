@@ -433,7 +433,7 @@ async function loadGuildConfig(token, guildId) {
                 data-bot-name="${bot.name}"
             >
                 <img 
-                    src="assets/icons/${bot.name.replace(/\s+/g, '')}.png" 
+                    src="assets/icons/${encodeURIComponent(bot.name)}.png" 
                     alt="${bot.name}" 
                     class="me-2"
                     style="width: 24px; height: 24px; border-radius: 50%;"
