@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1786022397",
+            "changes": [
+                "Updated to new spawn arts in Ballsdex (Georgia, Korea, Yugoslavia)",
+                "Updated to new spawn art in JoJoDex (Oyecomova)"
+            ],
+            "type": "dex"
+        },
+        {
             "timestamp": "1785159182",
             "changes": [
                 "Changelog has been updated - changes have been broken down into dex changes and website changes"

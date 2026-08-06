@@ -315,7 +315,7 @@
     },
     "Korea": {
         "rarity": 31,
-        "artist": "._themagicalflame_.",
+        "artist": ".wken",
         "wave": 3,
         "id": 182,
         "common_value": "20",
@@ -740,7 +740,7 @@
     },
     "Yugoslavia": {
         "rarity": 69,
-        "artist": "Cattitan",
+        "artist": "flowerrring",
         "wave": 3,
         "id": 177,
         "common_value": "6",
@@ -1680,7 +1680,8 @@
         "id": 272,
         "common_value": "1.5",
         "cc": "2,800",
-        "demand": "D"
+        "demand": "D",
+        "collectors": ["888141306323423333"]
     },
     "Kingdom of Egypt": {
         "rarity": 175,
@@ -2888,7 +2889,8 @@
         "id": 487,
         "common_value": "1",
         "cc": "3,950",
-        "demand": "D"
+        "demand": "D",
+        "collectors": ["1088187160504582254"]
     },
     "Mozambique": {
         "rarity": 276,
