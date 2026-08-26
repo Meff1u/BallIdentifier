@@ -782,12 +782,25 @@
                 "poland",
                 "lithuania"
             ],
-            "Shamkhalate of Tarki": ["tarki shamkhalate", "tarki", "shamkhal", "kumykia", "kumykistan", "dagestan"],
+            "Shamkhalate of Tarki": [
+                "tarki shamkhalate",
+                "tarki",
+                "shamkhal",
+                "kumykia",
+                "kumykistan",
+                "dagestan"
+            ],
             "United Belgian States": ["belgian states", "belgium"],
             "Bavarian Illuminati": ["illuminati"],
             "Circassia": ["zichia"],
             "Israeli Military Governorate": ["israel", "idf", "img"],
-            "Southern Inspectorate of Greenland": ["greenland", "south greenland", "danish greenland", "colony of south greenland", "colony of greenland"],
+            "Southern Inspectorate of Greenland": [
+                "greenland",
+                "south greenland",
+                "danish greenland",
+                "colony of south greenland",
+                "colony of greenland"
+            ],
             "Sovereign Principality of the United Netherlands": ["netherlands"],
             "Reichskommissariat Norwegen": ["norway"],
             "Reichskommissariat Belgien-Nordfrankreich": ["belgium"],
