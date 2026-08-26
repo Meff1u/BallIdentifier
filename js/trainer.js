@@ -302,6 +302,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const userCatchingRadios = document.querySelectorAll('input[name="user-catching"]');
     const botSelect = document.getElementById('bot-select');
 
+
+    let availableDexes = [];
+    let incompleteAbbreviationsDexes = [];
+
+    function getDexProperName(botKey) {
+        const match = availableDexes.find(dex => dex.toLowerCase() === botKey.toLowerCase());
+        return match || null;
+    }
+
+    function hasIncompleteAbbreviations(botKey) {
+        return incompleteAbbreviationsDexes.some(dex => dex.toLowerCase() === botKey.toLowerCase());
+    }
+
     // Load and populate bot options from dexes.json
     async function loadBotOptions() {
         try {
@@ -309,6 +322,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = await response.json();
             
             if (data.dexes && Array.isArray(data.dexes) && botSelect) {
+                availableDexes = data.dexes;
+                incompleteAbbreviationsDexes = Array.isArray(data.incompleteAbbreviations) ? data.incompleteAbbreviations : [];
+
                 // Clear existing options
                 botSelect.innerHTML = '';
                 
@@ -352,7 +368,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (botSelect) {
             botSelect.value = currentConfig.bot;
             const abbreviationWarning = document.getElementById('abbreviation-warning');
-            if (abbreviationWarning && ['historydex', 'empireballs reboot'].includes(currentConfig.bot.toLowerCase())) {
+            if (abbreviationWarning && hasIncompleteAbbreviations(currentConfig.bot)) {
                 abbreviationWarning.style.display = 'block';
             }
         }
@@ -431,11 +447,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const abbreviationWarning = document.getElementById('abbreviation-warning');
             if (abbreviationWarning) {
-                if (['historydex', 'empireballs reboot'].includes(this.value.toLowerCase())) {
-                    abbreviationWarning.style.display = 'block';
-                } else {
-                    abbreviationWarning.style.display = 'none';
-                }
+                abbreviationWarning.style.display = hasIncompleteAbbreviations(this.value) ? 'block' : 'none';
             }
         });
     }
@@ -489,14 +501,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load balls list from selected dex
     async function loadBallsList() {
         const bot = currentConfig.bot.toLowerCase();
-        const jsonNames = {
-            'ballsdex': 'Ballsdex',
-            'fooddex': 'FoodDex',
-            'historydex': 'HistoryDex',
-            'jojodex': 'JoJoDex',
-            'empireballs reboot': 'Empireballs Reboot'
-        };
-        const jsonName = jsonNames[bot] || 'Ballsdex';
+        const jsonName = getDexProperName(bot) || 'Ballsdex';
         
         try {
             const response = await fetch(`assets/jsons/${jsonName}.json`);
@@ -528,29 +533,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get bot config with name and icon path
     function getBotConfig() {
         const bot = currentConfig.bot.toLowerCase();
-        const configs = {
-            'ballsdex': { 
-                name: 'Ballsdex', 
-                icon: 'https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/Ballsdex.png'
-            },
-            'fooddex': { 
-                name: 'FoodDex', 
-                icon: 'https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/FoodDex.png'
-            },
-            'historydex': {
-                name: 'HistoryDex',
-                icon: 'https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/HistoryDex.png'
-            },
-            'jojodex': {
-                name: 'JoJoDex',
-                icon: 'https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/JoJoDex.png'
-            },
-            'empireballs reboot': {
-                name: 'Empireballs Reboot',
-                icon: 'https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/Empireballs%20Reboot.png'
-            }
-        };
-        return configs[bot] || configs['ballsdex'];
+        const name = getDexProperName(bot) || 'Ballsdex';
+        const icon = `https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/icons/${encodeURIComponent(name)}.png`;
+        return { name, icon };
     }
     
 // ============================================================================

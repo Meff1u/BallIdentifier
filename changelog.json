@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "",
+            "changes": [
+                "Added MapsDex to BallIdentifier"
+            ],
+            "type": "dex"
+        },
+        {
             "timestamp": "1787767538",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Argentina, China, Denmark, Italy, Oman)"
