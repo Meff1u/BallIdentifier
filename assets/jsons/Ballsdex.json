@@ -520,7 +520,7 @@
         "common_value": "8",
         "cc": "1,100",
         "demand": "C",
-        "collectors": ["502146206869225473"]
+        "collectors": ["502146206869225473", "1316562147551084595"]
     },
     "Portuguese Empire": {
         "rarity": 50,
@@ -562,7 +562,7 @@
     },
     "Italy": {
         "rarity": 56,
-        "artist": "obunga1384",
+        "artist": "screegif",
         "wave": 1,
         "id": 12,
         "common_value": "7",
@@ -596,7 +596,8 @@
         "id": 13,
         "common_value": "6",
         "cc": "1,200",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["1391172041620586651"]
     },
     "Russian Soviet Federative Socialist Republic": {
         "rarity": 61,
@@ -1283,7 +1284,7 @@
     },
     "Argentina": {
         "rarity": 132,
-        "artist": "al3ph_null",
+        "artist": "4l3ph_null",
         "wave": 1,
         "id": 41,
         "common_value": "2",
@@ -1821,7 +1822,7 @@
     },
     "Denmark": {
         "rarity": 177,
-        "artist": "pawsicles",
+        "artist": ".nintendoswitchlite.",
         "wave": 1,
         "id": 59,
         "common_value": "1",
@@ -1953,7 +1954,7 @@
     },
     "Oman": {
         "rarity": 177,
-        "artist": "Finland",
+        "artist": "anty0",
         "wave": 1,
         "id": 83,
         "common_value": "1",

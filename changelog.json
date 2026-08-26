@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1787767538",
+            "changes": [
+                "Updated to new spawn arts in Ballsdex (Argentina, China, Denmark, Italy, Oman)"
+            ],
+            "type": "dex"
+        },
+        {
             "timestamp": "1786965748",
             "changes": [
                 "Updated to Empireballs 1.1.9 Update (added Kalinga Empire, Khmer Empire, Kingfom of Anuradhapura, Magadha Kingdom, Pallava Dynasty, updated Almohad Caliphate, Ayutthaya Kingdom, Chera Dynasty, Empire of China, Ghurid Dynasty, Gupta Empire, Imperialist United States, Johor Sultanate, Kingdom of Hawaii/Iberia/Jerusalem/Singapura, Macedon Empire, Seljuk Empire, Sultanate of Zanzibar, removed Duchy of Burgundy)",
