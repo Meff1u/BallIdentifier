@@ -1,0 +1,3687 @@
+{
+    "Allied Powers": {
+        "rarity": 1,
+        "artist": "abdo",
+        "id": 375
+    },
+    "International Union of Earth": {
+        "rarity": 1,
+        "artist": "chen",
+        "id": 648
+    },
+    "The Eastern Imperial Pact": {
+        "rarity": 1,
+        "artist": "abdo",
+        "id": 569
+    },
+    "United Galactic Federation": {
+        "rarity": 1,
+        "artist": "chen",
+        "id": 739
+    },
+    "Entente Powers": {
+        "rarity": 2,
+        "artist": "abdo",
+        "id": 377
+    },
+    "Jolly Roger": {
+        "rarity": 2,
+        "artist": "chen",
+        "id": 650
+    },
+    "North American Union": {
+        "rarity": 2,
+        "artist": "chen",
+        "id": 342
+    },
+    "South American Union": {
+        "rarity": 2,
+        "artist": "PeterSchulzDA",
+        "id": 343
+    },
+    "Union of Africa": {
+        "rarity": 2,
+        "artist": "The_Changerang",
+        "id": 457
+    },
+    "Union of Asia": {
+        "rarity": 2,
+        "artist": "AprimitiveMartian",
+        "id": 635
+    },
+    "Union of Oceania": {
+        "rarity": 2,
+        "artist": "theCre8tiveCoconut",
+        "id": 636
+    },
+    "United European Union": {
+        "rarity": 2,
+        "artist": "chen",
+        "id": 344
+    },
+    "United Middle East": {
+        "rarity": 2,
+        "artist": "alexmaster097",
+        "id": 455
+    },
+    "American Empire": {
+        "rarity": 3,
+        "artist": "abdo",
+        "id": 244
+    },
+    "British Empire": {
+        "rarity": 3,
+        "artist": "abdo",
+        "id": 144
+    },
+    "Eastern Bloc": {
+        "rarity": 3,
+        "artist": "abdo",
+        "id": 379
+    },
+    "Fascist Russia": {
+        "rarity": 3,
+        "artist": "abdo",
+        "id": 314
+    },
+    "Fourth German Reich": {
+        "rarity": 3,
+        "artist": "abdo",
+        "id": 309
+    },
+    "Axis Powers": {
+        "rarity": 4,
+        "artist": "abdo",
+        "id": 376
+    },
+    "Neo-Soviet Union": {
+        "rarity": 4,
+        "artist": "chen",
+        "id": 735
+    },
+    "Russian Empire": {
+        "rarity": 4,
+        "artist": "abdo",
+        "id": 143
+    },
+    "Third German Reich": {
+        "rarity": 4,
+        "artist": "abdo",
+        "id": 142
+    },
+    "United Nations": {
+        "rarity": 4,
+        "artist": "chen",
+        "id": 649
+    },
+    "Tibetan Empire": {
+        "rarity": 5,
+        "artist": "chen",
+        "id": 259
+    },
+    "Union of Sweden And Norway": {
+        "rarity": 5,
+        "artist": "chen",
+        "id": 385
+    },
+    "German Empire": {
+        "rarity": 8,
+        "artist": "abdo",
+        "id": 141
+    },
+    "Lost City of Atlantis": {
+        "rarity": 9,
+        "artist": "Wolfmoon25",
+        "id": 740
+    },
+    "Mongol Empire": {
+        "rarity": 9,
+        "artist": "abdo",
+        "id": 153
+    },
+    "Western Bloc": {
+        "rarity": 9,
+        "artist": "abdo",
+        "id": 378
+    },
+    "ASEAN": {
+        "rarity": 10,
+        "artist": "chen",
+        "id": 630
+    },
+    "Emirate of Granada": {
+        "rarity": 10,
+        "artist": "chen",
+        "id": 685
+    },
+    "Pacific Union": {
+        "rarity": 10,
+        "artist": "chen",
+        "id": 340
+    },
+    "Russian National Revolutionary Action": {
+        "rarity": 10,
+        "artist": "abdo",
+        "id": 310
+    },
+    "NATO": {
+        "rarity": 12,
+        "artist": "chen",
+        "id": 656
+    },
+    "Imperial America": {
+        "rarity": 13,
+        "artist": "chen",
+        "id": 734
+    },
+    "United Colony of Mars": {
+        "rarity": 14,
+        "artist": "cookiecrums124",
+        "id": 741
+    },
+    "Commonwealth of Independent States": {
+        "rarity": 15,
+        "artist": "chen",
+        "id": 715
+    },
+    "Macedonian Empire": {
+        "rarity": 15,
+        "artist": "chen",
+        "id": 444
+    },
+    "Qin Dynasty": {
+        "rarity": 15,
+        "artist": "chen",
+        "id": 733
+    },
+    "North Sea Empire": {
+        "rarity": 16,
+        "artist": "chen",
+        "id": 699
+    },
+    "Yuan Dynasty": {
+        "rarity": 19,
+        "artist": "chen",
+        "id": 264
+    },
+    "Zhou Dynasty": {
+        "rarity": 21,
+        "artist": "baggedmany",
+        "id": 732
+    },
+    "Chagatai Khanate": {
+        "rarity": 22,
+        "artist": "chen",
+        "id": 265
+    },
+    "Aerica": {
+        "rarity": 23,
+        "artist": "chen",
+        "id": 665
+    },
+    "Grand Duchy of Lithuania": {
+        "rarity": 23,
+        "artist": "chen",
+        "id": 399
+    },
+    "Dacian Kingdom": {
+        "rarity": 24,
+        "artist": "chen",
+        "id": 725
+    },
+    "Dutch East India Company": {
+        "rarity": 25,
+        "artist": "chen",
+        "id": 683
+    },
+    "Uyghur Khaganate": {
+        "rarity": 25,
+        "artist": "chen",
+        "id": 682
+    },
+    "British Union of Fascists": {
+        "rarity": 26,
+        "artist": "abdo",
+        "id": 308
+    },
+    "Khmer Empire": {
+        "rarity": 26,
+        "artist": "chen",
+        "id": 608
+    },
+    "Kushan Empire": {
+        "rarity": 29,
+        "artist": "chen",
+        "id": 710
+    },
+    "Babylonian Empire": {
+        "rarity": 31,
+        "artist": "chen",
+        "id": 727
+    },
+    "United States of America": {
+        "rarity": 31,
+        "artist": "abdo",
+        "id": 1
+    },
+    "Latin Empire": {
+        "rarity": 32,
+        "artist": "chen",
+        "id": 730
+    },
+    "Ottoman Caliphate": {
+        "rarity": 32,
+        "artist": "abdo",
+        "id": 374
+    },
+    "Union of Soviet Socialist Republics": {
+        "rarity": 32,
+        "artist": "abdo",
+        "id": 140
+    },
+    "County of Edessa": {
+        "rarity": 34,
+        "artist": "chen",
+        "id": 474
+    },
+    "County of Tripoli": {
+        "rarity": 34,
+        "artist": "chen",
+        "id": 476
+    },
+    "Ottoman Empire": {
+        "rarity": 34,
+        "artist": "abdo",
+        "id": 150
+    },
+    "Principality of Antioch": {
+        "rarity": 34,
+        "artist": "chen",
+        "id": 475
+    },
+    "Tsardom of Vidin": {
+        "rarity": 34,
+        "artist": "chen",
+        "id": 658
+    },
+    "Kingdom of Aragon": {
+        "rarity": 35,
+        "artist": "chen",
+        "id": 686
+    },
+    "Roman Empire": {
+        "rarity": 35,
+        "artist": "abdo",
+        "id": 149
+    },
+    "Scandinavia": {
+        "rarity": 35,
+        "artist": "abdo",
+        "id": 187
+    },
+    "Golden Horde": {
+        "rarity": 36,
+        "artist": "chen",
+        "id": 262
+    },
+    "Kingdom of Kush": {
+        "rarity": 36,
+        "artist": "chen",
+        "id": 723
+    },
+    "United States of China": {
+        "rarity": 36,
+        "artist": "chen",
+        "id": 736
+    },
+    "Dominion of Canada": {
+        "rarity": 37,
+        "artist": "chen",
+        "id": 278
+    },
+    "Spanish Empire": {
+        "rarity": 40,
+        "artist": "abdo",
+        "id": 189
+    },
+    "Aceh Sultanate": {
+        "rarity": 41,
+        "artist": "chen",
+        "id": 627
+    },
+    "Hunnic Empire": {
+        "rarity": 41,
+        "artist": "abdo",
+        "id": 158
+    },
+    "Seleucid Empire": {
+        "rarity": 41,
+        "artist": "chen",
+        "id": 728
+    },
+    "Sikh Empire": {
+        "rarity": 41,
+        "artist": "chen",
+        "id": 590
+    },
+    "Austrian Empire": {
+        "rarity": 43,
+        "artist": "abdo",
+        "id": 151
+    },
+    "BRICS": {
+        "rarity": 43,
+        "artist": "GH0STB4C0N",
+        "id": 248
+    },
+    "Japanese Empire": {
+        "rarity": 43,
+        "artist": "abdo",
+        "id": 154
+    },
+    "Northumbria": {
+        "rarity": 43,
+        "artist": "chen",
+        "id": 679
+    },
+    "Second Mexican Empire": {
+        "rarity": 43,
+        "artist": "chen",
+        "id": 337
+    },
+    "Hittite Empire": {
+        "rarity": 44,
+        "artist": "Greyspeir",
+        "id": 721
+    },
+    "Mesopotamia": {
+        "rarity": 44,
+        "artist": "Alagremm",
+        "id": 458
+    },
+    "Mughal Empire": {
+        "rarity": 44,
+        "artist": "chen",
+        "id": 588
+    },
+    "Polish-Lithuanian Commonwealth": {
+        "rarity": 44,
+        "artist": "abdo",
+        "id": 159
+    },
+    "Pan-Celtics": {
+        "rarity": 45,
+        "artist": "chen",
+        "id": 705
+    },
+    "Union of South American Nations": {
+        "rarity": 45,
+        "artist": "chen",
+        "id": 748
+    },
+    "Confederate States of America": {
+        "rarity": 46,
+        "artist": "chen",
+        "id": 208
+    },
+    "New Republic of Brazil": {
+        "rarity": 46,
+        "artist": "chen",
+        "id": 737
+    },
+    "Mali Empire": {
+        "rarity": 47,
+        "artist": "chen",
+        "id": 508
+    },
+    "Mayan Empire": {
+        "rarity": 47,
+        "artist": "Pleum_Zaa",
+        "id": 355
+    },
+    "Second Bulgarian Empire": {
+        "rarity": 47,
+        "artist": "chen",
+        "id": 438
+    },
+    "Champa": {
+        "rarity": 48,
+        "artist": "chen",
+        "id": 756
+    },
+    "European Union": {
+        "rarity": 48,
+        "artist": "wikimedia commons",
+        "id": 238
+    },
+    "Portuguese Empire": {
+        "rarity": 48,
+        "artist": "abdo",
+        "id": 227
+    },
+    "Vermont Republic": {
+        "rarity": 48,
+        "artist": "chen",
+        "id": 706
+    },
+    "Carthage": {
+        "rarity": 49,
+        "artist": "Alagremm",
+        "id": 502
+    },
+    "Sultanate of Sulu": {
+        "rarity": 49,
+        "artist": "chen",
+        "id": 623
+    },
+    "Goryeo Dynasty": {
+        "rarity": 51,
+        "artist": "chen",
+        "id": 620
+    },
+    "Kingdom of Georgia": {
+        "rarity": 51,
+        "artist": "chen",
+        "id": 680
+    },
+    "Republic of China": {
+        "rarity": 51,
+        "artist": "abdo",
+        "id": 252
+    },
+    "Holy Roman Empire": {
+        "rarity": 52,
+        "artist": "chen",
+        "id": 165
+    },
+    "Timurid Empire": {
+        "rarity": 52,
+        "artist": "chen",
+        "id": 482
+    },
+    "Empire of China": {
+        "rarity": 53,
+        "artist": "chen",
+        "id": 257
+    },
+    "Gupta Empire": {
+        "rarity": 53,
+        "artist": "chen",
+        "id": 712
+    },
+    "Kingdom of León": {
+        "rarity": 53,
+        "artist": "chen",
+        "id": 702
+    },
+    "Nanda Empire": {
+        "rarity": 53,
+        "artist": "chen",
+        "id": 711
+    },
+    "Peru–Bolivian Confederation": {
+        "rarity": 53,
+        "artist": "chen",
+        "id": 681
+    },
+    "Phoenicia": {
+        "rarity": 53,
+        "artist": "chen",
+        "id": 720
+    },
+    "Russian Soviet Federative Socialist Republic": {
+        "rarity": 53,
+        "artist": "abdo",
+        "id": 285
+    },
+    "Sassanid Empire": {
+        "rarity": 53,
+        "artist": "chen",
+        "id": 481
+    },
+    "Sultanate of Delhi": {
+        "rarity": 53,
+        "artist": "chen",
+        "id": 587
+    },
+    "Baltic Union": {
+        "rarity": 54,
+        "artist": "chen",
+        "id": 396
+    },
+    "Russia": {
+        "rarity": 54,
+        "artist": "abdo",
+        "id": 51
+    },
+    "Srivijaya Empire": {
+        "rarity": 54,
+        "artist": "indostinianlikeplanes13",
+        "id": 755
+    },
+    "Sultanate of Johor": {
+        "rarity": 54,
+        "artist": "chen",
+        "id": 624
+    },
+    "Swedish Empire": {
+        "rarity": 54,
+        "artist": "abdo",
+        "id": 221
+    },
+    "Ancient Egypt": {
+        "rarity": 55,
+        "artist": "chen",
+        "id": 717
+    },
+    "Antigonid Dynasty": {
+        "rarity": 55,
+        "artist": "chen",
+        "id": 729
+    },
+    "Austria-Hungary": {
+        "rarity": 55,
+        "artist": "abdo",
+        "id": 152
+    },
+    "Byzantine Empire": {
+        "rarity": 56,
+        "artist": "abdo",
+        "id": 242
+    },
+    "Joseon Dynasty": {
+        "rarity": 56,
+        "artist": "chen",
+        "id": 619
+    },
+    "Aboriginal Australians": {
+        "rarity": 57,
+        "artist": "chen",
+        "id": 633
+    },
+    "Berber": {
+        "rarity": 57,
+        "artist": "chen",
+        "id": 704
+    },
+    "Essex": {
+        "rarity": 57,
+        "artist": "chen",
+        "id": 677
+    },
+    "Gagauzia": {
+        "rarity": 57,
+        "artist": "chen",
+        "id": 698
+    },
+    "Kingdom of Sardinia": {
+        "rarity": 57,
+        "artist": "chen",
+        "id": 696
+    },
+    "South Korea": {
+        "rarity": 57,
+        "artist": "abdo",
+        "id": 85
+    },
+    "African Union": {
+        "rarity": 58,
+        "artist": "chen",
+        "id": 456
+    },
+    "Durrani Empire": {
+        "rarity": 58,
+        "artist": "chen",
+        "id": 585
+    },
+    "First Mexican Empire": {
+        "rarity": 58,
+        "artist": "chen",
+        "id": 338
+    },
+    "Kingdom of Iha": {
+        "rarity": 58,
+        "artist": "chen",
+        "id": 628
+    },
+    "Ladonia": {
+        "rarity": 58,
+        "artist": "chen",
+        "id": 663
+    },
+    "Romanian National Legionary State": {
+        "rarity": 58,
+        "artist": "abdo",
+        "id": 311
+    },
+    "Umayyad Caliphate": {
+        "rarity": 58,
+        "artist": "abdo",
+        "id": 226
+    },
+    "Achaemenid Empire": {
+        "rarity": 59,
+        "artist": "chen",
+        "id": 480
+    },
+    "Al Qaeda": {
+        "rarity": 59,
+        "artist": "abdo",
+        "id": 225
+    },
+    "Canaan": {
+        "rarity": 59,
+        "artist": "chen",
+        "id": 719
+    },
+    "Cornwall": {
+        "rarity": 59,
+        "artist": "chen",
+        "id": 678
+    },
+    "Dutch New Guinea": {
+        "rarity": 59,
+        "artist": "chen",
+        "id": 629
+    },
+    "Japan": {
+        "rarity": 59,
+        "artist": "abdo",
+        "id": 86
+    },
+    "Kilwa Sultanate": {
+        "rarity": 59,
+        "artist": "chen",
+        "id": 549
+    },
+    "Serbian Empire": {
+        "rarity": 59,
+        "artist": "chen",
+        "id": 430
+    },
+    "Tokyo": {
+        "rarity": 59,
+        "artist": "chen",
+        "id": 763
+    },
+    "Ilkhanate": {
+        "rarity": 60,
+        "artist": "chen",
+        "id": 263
+    },
+    "Kingdom of Galicia": {
+        "rarity": 60,
+        "artist": "chen",
+        "id": 751
+    },
+    "Konbaung Dynasty": {
+        "rarity": 60,
+        "artist": "chen",
+        "id": 599
+    },
+    "Maratha Empire": {
+        "rarity": 60,
+        "artist": "chen",
+        "id": 589
+    },
+    "Upper Mustang": {
+        "rarity": 60,
+        "artist": "chen",
+        "id": 709
+    },
+    "Hephthalite Empire": {
+        "rarity": 62,
+        "artist": "chen",
+        "id": 581
+    },
+    "Nguyễn Dynasty": {
+        "rarity": 62,
+        "artist": "chen",
+        "id": 713
+    },
+    "Principality of Hungary": {
+        "rarity": 62,
+        "artist": "chen",
+        "id": 691
+    },
+    "Siberia": {
+        "rarity": 62,
+        "artist": "chen",
+        "id": 447
+    },
+    "Anuradhapura Kingdom": {
+        "rarity": 63,
+        "artist": "chen",
+        "id": 602
+    },
+    "Federated Malay States": {
+        "rarity": 63,
+        "artist": "chen",
+        "id": 625
+    },
+    "India": {
+        "rarity": 63,
+        "artist": "abdo",
+        "id": 73
+    },
+    "United Provinces of the Río de la Plata": {
+        "rarity": 63,
+        "artist": "chen",
+        "id": 750
+    },
+    "Akkadian Empire": {
+        "rarity": 64,
+        "artist": "chen",
+        "id": 726
+    },
+    "Majapahit": {
+        "rarity": 64,
+        "artist": "chen",
+        "id": 626
+    },
+    "Principality of Serbia": {
+        "rarity": 64,
+        "artist": "chen",
+        "id": 675
+    },
+    "The First French Empire": {
+        "rarity": 64,
+        "artist": "abdo",
+        "id": 211
+    },
+    "Tokugawa Shogunate": {
+        "rarity": 64,
+        "artist": "chen",
+        "id": 621
+    },
+    "'Kingdom of Hungary": {
+        "rarity": 65,
+        "artist": "chen",
+        "id": 659
+    },
+    "Cossack Hetmanate": {
+        "rarity": 65,
+        "artist": "chen",
+        "id": 428
+    },
+    "Crimean Khanate": {
+        "rarity": 65,
+        "artist": "chen",
+        "id": 690
+    },
+    "Kingdom of Cyprus": {
+        "rarity": 65,
+        "artist": "chen",
+        "id": 716
+    },
+    "Minoans": {
+        "rarity": 65,
+        "artist": "chen",
+        "id": 731
+    },
+    "Northern Territory": {
+        "rarity": 65,
+        "artist": "chen",
+        "id": 632
+    },
+    "Polish Radical Camp": {
+        "rarity": 65,
+        "artist": "abdo",
+        "id": 312
+    },
+    "Tang Dynasty": {
+        "rarity": 65,
+        "artist": "chen",
+        "id": 260
+    },
+    "French Empire": {
+        "rarity": 66,
+        "artist": "chen",
+        "id": 364
+    },
+    "Kingdom of Sikkim": {
+        "rarity": 66,
+        "artist": "chen",
+        "id": 618
+    },
+    "New York City": {
+        "rarity": 66,
+        "artist": "chen",
+        "id": 339
+    },
+    "People's Republic of China": {
+        "rarity": 66,
+        "artist": "abdo",
+        "id": 83
+    },
+    "Tsardom of Russia": {
+        "rarity": 66,
+        "artist": "abdo",
+        "id": 220
+    },
+    "Antarctica": {
+        "rarity": 67,
+        "artist": "chen",
+        "id": 282
+    },
+    "Arab League": {
+        "rarity": 67,
+        "artist": "abdo",
+        "id": 228
+    },
+    "France": {
+        "rarity": 67,
+        "artist": "abdo",
+        "id": 27
+    },
+    "Iran": {
+        "rarity": 67,
+        "artist": "abdo",
+        "id": 58
+    },
+    "Khanate of Kokand": {
+        "rarity": 67,
+        "artist": "chen",
+        "id": 582
+    },
+    "Kingdom of Fiji": {
+        "rarity": 67,
+        "artist": "chen",
+        "id": 684
+    },
+    "Louisiana": {
+        "rarity": 67,
+        "artist": "abdo",
+        "id": 652
+    },
+    "State of Finland": {
+        "rarity": 67,
+        "artist": "chen",
+        "id": 660
+    },
+    "Teutonic Order": {
+        "rarity": 67,
+        "artist": "chen",
+        "id": 400
+    },
+    "Egypt": {
+        "rarity": 68,
+        "artist": "abdo",
+        "id": 118
+    },
+    "Federal Republic of Central America": {
+        "rarity": 68,
+        "artist": "chen",
+        "id": 336
+    },
+    "Kingdom of Sicily": {
+        "rarity": 68,
+        "artist": "chen",
+        "id": 697
+    },
+    "Kingdom of The Philippines": {
+        "rarity": 68,
+        "artist": "chen",
+        "id": 738
+    },
+    "Mongolian People's Republic": {
+        "rarity": 68,
+        "artist": "chen",
+        "id": 617
+    },
+    "Persia": {
+        "rarity": 68,
+        "artist": "abdo",
+        "id": 186
+    },
+    "Australia": {
+        "rarity": 69,
+        "artist": "abdo",
+        "id": 137
+    },
+    "Caucasian Imamate": {
+        "rarity": 69,
+        "artist": "chen",
+        "id": 468
+    },
+    "East Germany": {
+        "rarity": 69,
+        "artist": "chen",
+        "id": 653
+    },
+    "Israel": {
+        "rarity": 69,
+        "artist": "abdo",
+        "id": 61
+    },
+    "Kazakh Khanate": {
+        "rarity": 69,
+        "artist": "chen",
+        "id": 573
+    },
+    "Kingdom of Luang Phrabang": {
+        "rarity": 69,
+        "artist": "chen",
+        "id": 609
+    },
+    "Kingdom of Vientiane": {
+        "rarity": 69,
+        "artist": "chen",
+        "id": 610
+    },
+    "Malacca Sultanate": {
+        "rarity": 69,
+        "artist": "indostinianlikeplanes13",
+        "id": 753
+    },
+    "Siam": {
+        "rarity": 69,
+        "artist": "chen",
+        "id": 601
+    },
+    "Volgograd Oblast": {
+        "rarity": 69,
+        "artist": "chen",
+        "id": 694
+    },
+    "Brazil": {
+        "rarity": 70,
+        "artist": "abdo",
+        "id": 22
+    },
+    "East Africa Protectorate": {
+        "rarity": 70,
+        "artist": "chen",
+        "id": 547
+    },
+    "Emirate of Afghanistan": {
+        "rarity": 70,
+        "artist": "chen",
+        "id": 584
+    },
+    "Hafsid Dynasty": {
+        "rarity": 70,
+        "artist": "chen",
+        "id": 501
+    },
+    "Italy": {
+        "rarity": 70,
+        "artist": "abdo",
+        "id": 43
+    },
+    "Mataram Sultanate": {
+        "rarity": 70,
+        "artist": "indostinianlikeplanes13",
+        "id": 754
+    },
+    "Moscow": {
+        "rarity": 70,
+        "artist": "chen",
+        "id": 445
+    },
+    "Qing Dynasty": {
+        "rarity": 70,
+        "artist": "abdo",
+        "id": 155
+    },
+    "Republic of Egypt": {
+        "rarity": 70,
+        "artist": "chen",
+        "id": 514
+    },
+    "Republic of Venice": {
+        "rarity": 70,
+        "artist": "chen",
+        "id": 410
+    },
+    "Transcaucasia": {
+        "rarity": 70,
+        "artist": "chen",
+        "id": 461
+    },
+    "United Kingdom": {
+        "rarity": 70,
+        "artist": "chen",
+        "id": 574
+    },
+    "Vancouver": {
+        "rarity": 70,
+        "artist": "chen",
+        "id": 764
+    },
+    "Dagestan": {
+        "rarity": 71,
+        "artist": "chen",
+        "id": 670
+    },
+    "Iberian Union": {
+        "rarity": 71,
+        "artist": "RyanB-74",
+        "id": 380
+    },
+    "Kingdom of Hungary": {
+        "rarity": 71,
+        "artist": "chen",
+        "id": 418
+    },
+    "Korea": {
+        "rarity": 71,
+        "artist": "abdo",
+        "id": 157
+    },
+    "Normandy": {
+        "rarity": 71,
+        "artist": "chen",
+        "id": 668
+    },
+    "Ptolemaic Kingdom": {
+        "rarity": 71,
+        "artist": "chen",
+        "id": 718
+    },
+    "Turkey": {
+        "rarity": 71,
+        "artist": "abdo",
+        "id": 44
+    },
+    "Duchy of Brittany": {
+        "rarity": 73,
+        "artist": "chen",
+        "id": 692
+    },
+    "Hiraab Imamate": {
+        "rarity": 73,
+        "artist": "chen",
+        "id": 522
+    },
+    "Indonesia": {
+        "rarity": 73,
+        "artist": "abdo",
+        "id": 89
+    },
+    "Kingdom of Amber": {
+        "rarity": 73,
+        "artist": "chen",
+        "id": 592
+    },
+    "Kingdom of Benin": {
+        "rarity": 73,
+        "artist": "chen",
+        "id": 538
+    },
+    "Pakistan": {
+        "rarity": 73,
+        "artist": "abdo",
+        "id": 74
+    },
+    "Rubenid Dynasty": {
+        "rarity": 73,
+        "artist": "chen",
+        "id": 462
+    },
+    "Yugoslavia": {
+        "rarity": 73,
+        "artist": "abdo",
+        "id": 148
+    },
+    "Germany": {
+        "rarity": 74,
+        "artist": "abdo",
+        "id": 26
+    },
+    "Kingdom of Serbia": {
+        "rarity": 74,
+        "artist": "abdo",
+        "id": 223
+    },
+    "Sevastopol": {
+        "rarity": 74,
+        "artist": "chen",
+        "id": 695
+    },
+    "South Vietnam": {
+        "rarity": 74,
+        "artist": "abdo",
+        "id": 253
+    },
+    "Warsaw Pact": {
+        "rarity": 74,
+        "artist": "abdo",
+        "id": 245
+    },
+    "Allied Occupied Japan": {
+        "rarity": 75,
+        "artist": "chen",
+        "id": 622
+    },
+    "Armenian Empire": {
+        "rarity": 75,
+        "artist": "chen",
+        "id": 463
+    },
+    "Bougainville": {
+        "rarity": 75,
+        "artist": "chen",
+        "id": 631
+    },
+    "British West Africa": {
+        "rarity": 75,
+        "artist": "chen",
+        "id": 528
+    },
+    "Emirate of Bukhara": {
+        "rarity": 75,
+        "artist": "chen",
+        "id": 571
+    },
+    "Federation of Arab Republics": {
+        "rarity": 75,
+        "artist": "chen",
+        "id": 496
+    },
+    "Golden Circle": {
+        "rarity": 75,
+        "artist": "abdo",
+        "id": 246
+    },
+    "Göktürk Horde": {
+        "rarity": 75,
+        "artist": "chen",
+        "id": 453
+    },
+    "Khedivate of Egypt": {
+        "rarity": 75,
+        "artist": "abdo",
+        "id": 241
+    },
+    "Kingdom of Egypt": {
+        "rarity": 75,
+        "artist": "abdo",
+        "id": 188
+    },
+    "Kingdom of Poland": {
+        "rarity": 75,
+        "artist": "chen",
+        "id": 404
+    },
+    "Okinawa": {
+        "rarity": 75,
+        "artist": "chen",
+        "id": 762
+    },
+    "Republic of Molossia": {
+        "rarity": 75,
+        "artist": "chen",
+        "id": 661
+    },
+    "Sami": {
+        "rarity": 75,
+        "artist": "chen",
+        "id": 391
+    },
+    "Sarakatsani": {
+        "rarity": 75,
+        "artist": "chen",
+        "id": 440
+    },
+    "Saudi Arabia": {
+        "rarity": 75,
+        "artist": "abdo",
+        "id": 54
+    },
+    "Spain": {
+        "rarity": 75,
+        "artist": "abdo",
+        "id": 28
+    },
+    "Adal Sultanate": {
+        "rarity": 76,
+        "artist": "chen",
+        "id": 518
+    },
+    "Assyria": {
+        "rarity": 76,
+        "artist": "chen",
+        "id": 459
+    },
+    "Chola Dynasty": {
+        "rarity": 76,
+        "artist": "chen",
+        "id": 708
+    },
+    "Kingdom of Kongo": {
+        "rarity": 76,
+        "artist": "chen",
+        "id": 541
+    },
+    "Lydia": {
+        "rarity": 76,
+        "artist": "SipylumMagnesia",
+        "id": 722
+    },
+    "Mali Federation": {
+        "rarity": 76,
+        "artist": "chen",
+        "id": 527
+    },
+    "Mamluk Sultanate": {
+        "rarity": 76,
+        "artist": "abdo",
+        "id": 247
+    },
+    "Tui Tonga Empire": {
+        "rarity": 76,
+        "artist": "chen",
+        "id": 634
+    },
+    "Adygea": {
+        "rarity": 77,
+        "artist": "chen",
+        "id": 669
+    },
+    "Afsharid Dynasty": {
+        "rarity": 77,
+        "artist": "chen",
+        "id": 472
+    },
+    "Balochistan": {
+        "rarity": 77,
+        "artist": "chen",
+        "id": 591
+    },
+    "Delhi": {
+        "rarity": 77,
+        "artist": "chen",
+        "id": 593
+    },
+    "Kingdom of Greece": {
+        "rarity": 77,
+        "artist": "chen",
+        "id": 442
+    },
+    "Kingdom of Iraq": {
+        "rarity": 77,
+        "artist": "chen",
+        "id": 479
+    },
+    "Kingdom of Maldives": {
+        "rarity": 77,
+        "artist": "chen",
+        "id": 606
+    },
+    "Kingdom of Montenegro": {
+        "rarity": 77,
+        "artist": "chen",
+        "id": 433
+    },
+    "Paris": {
+        "rarity": 77,
+        "artist": "chen",
+        "id": 363
+    },
+    "Safavid Dynasty": {
+        "rarity": 77,
+        "artist": "chen",
+        "id": 471
+    },
+    "Sussex": {
+        "rarity": 77,
+        "artist": "chen",
+        "id": 701
+    },
+    "Taiwan": {
+        "rarity": 77,
+        "artist": "abdo",
+        "id": 91
+    },
+    "United Arab Republic": {
+        "rarity": 77,
+        "artist": "abdo",
+        "id": 240
+    },
+    "Zaire": {
+        "rarity": 77,
+        "artist": "chen",
+        "id": 542
+    },
+    "Azad Kashmir": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 586
+    },
+    "Benelux": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 651
+    },
+    "Bengal Subah": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 597
+    },
+    "Berlin": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 383
+    },
+    "Budapest": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 417
+    },
+    "Empire of Brazil": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 346
+    },
+    "Ethiopian Empire": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 519
+    },
+    "Imamate of Futa Jallon": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 531
+    },
+    "Kingdom of Dahomey": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 536
+    },
+    "Kingdom of Italy": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 214
+    },
+    "Kingdom of Portugal": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 491
+    },
+    "Median Empire": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 163
+    },
+    "Omani Empire": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 483
+    },
+    "People's Republic of Albania": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 674
+    },
+    "Rhodesia": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 554
+    },
+    "Rome": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 407
+    },
+    "Saint Petersburg": {
+        "rarity": 78,
+        "artist": "chen",
+        "id": 446
+    },
+    "Sweden": {
+        "rarity": 78,
+        "artist": "abdo",
+        "id": 36
+    },
+    "Athens": {
+        "rarity": 79,
+        "artist": "chen",
+        "id": 441
+    },
+    "Canada": {
+        "rarity": 79,
+        "artist": "abdo",
+        "id": 2
+    },
+    "Crimean Tatar": {
+        "rarity": 79,
+        "artist": "chen",
+        "id": 452
+    },
+    "Gran Colombia": {
+        "rarity": 79,
+        "artist": "chen",
+        "id": 356
+    },
+    "Greenland": {
+        "rarity": 79,
+        "artist": "abdo",
+        "id": 11
+    },
+    "Jerusalem": {
+        "rarity": 79,
+        "artist": "chen",
+        "id": 486
+    },
+    "Kazakh Soviet Socialist Republic": {
+        "rarity": 79,
+        "artist": "abdo",
+        "id": 289
+    },
+    "Kingdom of Makuria": {
+        "rarity": 79,
+        "artist": "chen",
+        "id": 513
+    },
+    "Liberland": {
+        "rarity": 79,
+        "artist": "chen",
+        "id": 664
+    },
+    "Monaco": {
+        "rarity": 79,
+        "artist": "abdo",
+        "id": 133
+    },
+    "New York": {
+        "rarity": 79,
+        "artist": "chen",
+        "id": 198
+    },
+    "Novgorod Republic": {
+        "rarity": 79,
+        "artist": "chen",
+        "id": 448
+    },
+    "Nunavut": {
+        "rarity": 79,
+        "artist": "chen",
+        "id": 277
+    },
+    "Occitània": {
+        "rarity": 79,
+        "artist": "chen",
+        "id": 693
+    },
+    "Ajuran Sultanate": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 520
+    },
+    "Alaska": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 206
+    },
+    "Asante Empire": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 533
+    },
+    "Belgrade": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 429
+    },
+    "Chechen Republic": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 467
+    },
+    "Donetsk Oblast": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 672
+    },
+    "Duchy of Milan": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 408
+    },
+    "Emirate of Jabal Shammar": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 487
+    },
+    "Falangist Spain": {
+        "rarity": 80,
+        "artist": "abdo",
+        "id": 313
+    },
+    "Federation of Rhodesia and Nyasaland": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 552
+    },
+    "Kanem Empire": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 512
+    },
+    "Kingdom of Hanover": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 700
+    },
+    "Kingdom of Syria": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 478
+    },
+    "People's Republic of Hungary": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 655
+    },
+    "Principality of Wallachia": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 421
+    },
+    "Sakha Republic": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 614
+    },
+    "Sultanate of Egypt": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 495
+    },
+    "São Paulo": {
+        "rarity": 80,
+        "artist": "chen",
+        "id": 351
+    },
+    "Agin-Buryat Okrug": {
+        "rarity": 81,
+        "artist": "chridtina7171",
+        "id": 744
+    },
+    "Batavian Republic": {
+        "rarity": 81,
+        "artist": "chen",
+        "id": 557
+    },
+    "British Raj": {
+        "rarity": 81,
+        "artist": "abdo",
+        "id": 156
+    },
+    "Congo Free State": {
+        "rarity": 81,
+        "artist": "chen",
+        "id": 516
+    },
+    "Free City of Danzig": {
+        "rarity": 81,
+        "artist": "chen",
+        "id": 673
+    },
+    "Hyderabad": {
+        "rarity": 81,
+        "artist": "chen",
+        "id": 595
+    },
+    "Jammu and Kashmir": {
+        "rarity": 81,
+        "artist": "chen",
+        "id": 596
+    },
+    "Kaliningrad Oblast": {
+        "rarity": 81,
+        "artist": "chen",
+        "id": 397
+    },
+    "Mengjiang": {
+        "rarity": 81,
+        "artist": "chen",
+        "id": 258
+    },
+    "Omsk Oblast": {
+        "rarity": 81,
+        "artist": "chen",
+        "id": 615
+    },
+    "People's Republic of Bulgaria": {
+        "rarity": 81,
+        "artist": "chen",
+        "id": 439
+    },
+    "People's Republic of Romania": {
+        "rarity": 81,
+        "artist": "chen",
+        "id": 422
+    },
+    "Republic of The Rif": {
+        "rarity": 81,
+        "artist": "chen",
+        "id": 505
+    },
+    "Sardinia": {
+        "rarity": 81,
+        "artist": "chen",
+        "id": 412
+    },
+    "Sultanate of Nejd": {
+        "rarity": 81,
+        "artist": "chen",
+        "id": 488
+    },
+    "Sultanate of Zanzibar": {
+        "rarity": 81,
+        "artist": "chen",
+        "id": 550
+    },
+    "Western Canada": {
+        "rarity": 81,
+        "artist": "chen",
+        "id": 280
+    },
+    "Alabama": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 193
+    },
+    "Alexandria": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 497
+    },
+    "Amsterdam": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 373
+    },
+    "Arab Islamic Republic": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 498
+    },
+    "Beirut": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 485
+    },
+    "Czechoslovakia": {
+        "rarity": 82,
+        "artist": "abdo",
+        "id": 160
+    },
+    "Emirate of Harar": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 525
+    },
+    "Florida": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 202
+    },
+    "Francoist Spain": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 215
+    },
+    "Free Russia": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 449
+    },
+    "Helsinki": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 392
+    },
+    "Kingdom of Afghanistan": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 583
+    },
+    "Kingdom of Tlemcen": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 503
+    },
+    "Lisbon": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 370
+    },
+    "Maryland": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 199
+    },
+    "New Mexico": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 194
+    },
+    "Principality of Albania": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 431
+    },
+    "State of Aleppo": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 477
+    },
+    "Tatarstan": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 671
+    },
+    "Tennessee": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 745
+    },
+    "Warsaw": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 402
+    },
+    "Xinjiang": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 256
+    },
+    "Zand Dynasty": {
+        "rarity": 82,
+        "artist": "chen",
+        "id": 489
+    },
+    "Argentina": {
+        "rarity": 84,
+        "artist": "abdo",
+        "id": 19
+    },
+    "Arizona": {
+        "rarity": 84,
+        "artist": "chen",
+        "id": 195
+    },
+    "British Ceylon": {
+        "rarity": 84,
+        "artist": "chen",
+        "id": 604
+    },
+    "British Columbia": {
+        "rarity": 84,
+        "artist": "chen",
+        "id": 270
+    },
+    "California": {
+        "rarity": 84,
+        "artist": "chen",
+        "id": 192
+    },
+    "Democratic Republic of Georgia": {
+        "rarity": 84,
+        "artist": "chen",
+        "id": 465
+    },
+    "Georgia (State)": {
+        "rarity": 84,
+        "artist": "chen",
+        "id": 203
+    },
+    "Greece": {
+        "rarity": 84,
+        "artist": "abdo",
+        "id": 45
+    },
+    "Indiana": {
+        "rarity": 84,
+        "artist": "chen",
+        "id": 200
+    },
+    "Inner Mongolia": {
+        "rarity": 84,
+        "artist": "chen",
+        "id": 765
+    },
+    "Kingdom of Burundi": {
+        "rarity": 84,
+        "artist": "chen",
+        "id": 548
+    },
+    "Kingdom of Kent": {
+        "rarity": 84,
+        "artist": "chen",
+        "id": 724
+    },
+    "Manchuria": {
+        "rarity": 84,
+        "artist": "chen",
+        "id": 229
+    },
+    "Northwest Territories": {
+        "rarity": 84,
+        "artist": "chen",
+        "id": 275
+    },
+    "Republika Srpska": {
+        "rarity": 84,
+        "artist": "chen",
+        "id": 667
+    },
+    "Scotland": {
+        "rarity": 84,
+        "artist": "abdo",
+        "id": 48
+    },
+    "Septinsular Republic": {
+        "rarity": 84,
+        "artist": "chen",
+        "id": 443
+    },
+    "Sofia": {
+        "rarity": 84,
+        "artist": "chen",
+        "id": 437
+    },
+    "Ulaanbaatar": {
+        "rarity": 84,
+        "artist": "chen",
+        "id": 261
+    },
+    "Alberta": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 273
+    },
+    "Aruba": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 333
+    },
+    "Bavaria": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 384
+    },
+    "Bucharest": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 423
+    },
+    "Burma": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 600
+    },
+    "Crimea": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 426
+    },
+    "District of Columbia": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 204
+    },
+    "Hawaii": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 207
+    },
+    "Kingdom of Kakheti": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 466
+    },
+    "Kingdom of Yemen": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 492
+    },
+    "Nevada": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 196
+    },
+    "New Found Land": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 279
+    },
+    "Newfoundland and Labrador": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 274
+    },
+    "Rapa Nui": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 760
+    },
+    "Sicily": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 411
+    },
+    "Transnistria": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 425
+    },
+    "Ukraine": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 575
+    },
+    "Vichy France": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 216
+    },
+    "Vietnam": {
+        "rarity": 85,
+        "artist": "abdo",
+        "id": 95
+    },
+    "Vilnius": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 395
+    },
+    "Yukon": {
+        "rarity": 85,
+        "artist": "chen",
+        "id": 276
+    },
+    "Altai Republic": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 613
+    },
+    "Artsakh": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 460
+    },
+    "City of Madrid": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 366
+    },
+    "Colorado": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 191
+    },
+    "Democratic Kampuchea": {
+        "rarity": 86,
+        "artist": "abdo",
+        "id": 254
+    },
+    "Falkland Islands": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 284
+    },
+    "Federation of Bosnia and Herzegovina": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 416
+    },
+    "French Morocco": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 504
+    },
+    "Greater Lebanon": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 484
+    },
+    "Guadeloupe": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 325
+    },
+    "Inca Empire": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 347
+    },
+    "Libreville": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 544
+    },
+    "Manipur Kingdom": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 594
+    },
+    "Manitoba": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 269
+    },
+    "Minnesota": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 201
+    },
+    "North Korea": {
+        "rarity": 86,
+        "artist": "abdo",
+        "id": 84
+    },
+    "Orange Free State": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 559
+    },
+    "Patagonia": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 349
+    },
+    "People's Republic of Benin": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 537
+    },
+    "Poland": {
+        "rarity": 86,
+        "artist": "abdo",
+        "id": 46
+    },
+    "Saint Pierre and Miquelon": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 281
+    },
+    "Saint Vincent and the Grenadines": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 328
+    },
+    "San Diego": {
+        "rarity": 86,
+        "artist": "San Diego",
+        "id": 350
+    },
+    "Saskatchewan": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 272
+    },
+    "Sparta": {
+        "rarity": 86,
+        "artist": "abdo",
+        "id": 250
+    },
+    "Thailand": {
+        "rarity": 86,
+        "artist": "abdo",
+        "id": 77
+    },
+    "Thuringia": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 657
+    },
+    "Tirana": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 432
+    },
+    "Trinidad and Tobago": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 332
+    },
+    "Tuva Republic": {
+        "rarity": 86,
+        "artist": "chen",
+        "id": 616
+    },
+    "Tuvan People's Republic": {
+        "rarity": 86,
+        "artist": "Joseph Walid",
+        "id": 251
+    },
+    "Ukrainian Soviet Socialist Republic": {
+        "rarity": 86,
+        "artist": "abdo",
+        "id": 286
+    },
+    "Weimar Republic": {
+        "rarity": 86,
+        "artist": "abdo",
+        "id": 219
+    },
+    "Aden Colony": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 493
+    },
+    "Afar": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 524
+    },
+    "Algeria": {
+        "rarity": 87,
+        "artist": "abdo",
+        "id": 108
+    },
+    "Bermuda": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 335
+    },
+    "Bonaire": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 330
+    },
+    "British Virgin Islands": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 320
+    },
+    "Buganda": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 546
+    },
+    "Chicago": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 352
+    },
+    "Chișinău": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 424
+    },
+    "Cocos (Keeling) Islands": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 758
+    },
+    "Darfur": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 530
+    },
+    "French Polynesia": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 759
+    },
+    "Hamburg": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 382
+    },
+    "Kingdom of Kakongo": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 545
+    },
+    "Kingdom of Kandy": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 603
+    },
+    "Kyiv": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 427
+    },
+    "Lombardy": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 409
+    },
+    "London": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 358
+    },
+    "Natalia Republic": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 558
+    },
+    "Nigeria": {
+        "rarity": 87,
+        "artist": "abdo",
+        "id": 115
+    },
+    "Norway": {
+        "rarity": 87,
+        "artist": "abdo",
+        "id": 35
+    },
+    "Nova Scotia": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 267
+    },
+    "Ontario": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 266
+    },
+    "Republican Spain": {
+        "rarity": 87,
+        "artist": "abdo",
+        "id": 222
+    },
+    "Riga": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 394
+    },
+    "Romani": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 390
+    },
+    "South Yemen": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 494
+    },
+    "Tbilisi": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 464
+    },
+    "Transylvania": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 420
+    },
+    "United States Virgin Islands": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 319
+    },
+    "Utah": {
+        "rarity": 87,
+        "artist": "chen",
+        "id": 197
+    },
+    "Adjara": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 612
+    },
+    "Almaty": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 572
+    },
+    "Ambazonia": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 539
+    },
+    "Antananarivo": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 565
+    },
+    "Baku": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 473
+    },
+    "Basque Country": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 703
+    },
+    "Batken": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 580
+    },
+    "Belarusian People's Republic": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 401
+    },
+    "Belize": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 334
+    },
+    "Brussels": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 372
+    },
+    "Curaçao": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 331
+    },
+    "Cusco": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 348
+    },
+    "Kazakhstan": {
+        "rarity": 88,
+        "artist": "abdo",
+        "id": 306
+    },
+    "Kraków": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 403
+    },
+    "Kurdistan": {
+        "rarity": 88,
+        "artist": "abdo",
+        "id": 161
+    },
+    "Maputo": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 553
+    },
+    "Martinique": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 326
+    },
+    "Netherlands": {
+        "rarity": 88,
+        "artist": "abdo",
+        "id": 67
+    },
+    "New Brunswick": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 268
+    },
+    "Prince Edward Island": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 271
+    },
+    "Republic of Abkhazia": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 450
+    },
+    "Sint Maarten": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 321
+    },
+    "Tallinn": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 393
+    },
+    "Texas": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 190
+    },
+    "Wyoming": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 205
+    },
+    "Zürich": {
+        "rarity": 88,
+        "artist": "chen",
+        "id": 406
+    },
+    "Bosnia and Herzegovina": {
+        "rarity": 89,
+        "artist": "chen",
+        "id": 577
+    },
+    "Bratislava": {
+        "rarity": 89,
+        "artist": "chen",
+        "id": 419
+    },
+    "British Togoland": {
+        "rarity": 89,
+        "artist": "chen",
+        "id": 534
+    },
+    "Denver": {
+        "rarity": 89,
+        "artist": "chen",
+        "id": 353
+    },
+    "Mauritius": {
+        "rarity": 89,
+        "artist": "chen",
+        "id": 566
+    },
+    "Mexico": {
+        "rarity": 89,
+        "artist": "abdo",
+        "id": 4
+    },
+    "Northern Mariana Islands": {
+        "rarity": 89,
+        "artist": "chen",
+        "id": 746
+    },
+    "Principality of Nitra": {
+        "rarity": 89,
+        "artist": "justinjester",
+        "id": 742
+    },
+    "South Ossetia": {
+        "rarity": 89,
+        "artist": "chen",
+        "id": 451
+    },
+    "Switzerland": {
+        "rarity": 89,
+        "artist": "abdo",
+        "id": 39
+    },
+    "The Canary Islands": {
+        "rarity": 89,
+        "artist": "chen",
+        "id": 369
+    },
+    "Turks and Caicos Islands": {
+        "rarity": 89,
+        "artist": "chen",
+        "id": 317
+    },
+    "Zagreb": {
+        "rarity": 89,
+        "artist": "chen",
+        "id": 413
+    },
+    "Anguilla": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 315
+    },
+    "Antigua and Barbuda": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 323
+    },
+    "Azawad": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 507
+    },
+    "Azerbaijani Soviet Socialist Republic": {
+        "rarity": 90,
+        "artist": "abdo",
+        "id": 291
+    },
+    "Beylik of Tunis": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 500
+    },
+    "Catalonia": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 367
+    },
+    "Cayman Islands": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 316
+    },
+    "Croatia": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 576
+    },
+    "England": {
+        "rarity": 90,
+        "artist": "abdo",
+        "id": 71
+    },
+    "Kathmandu": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 598
+    },
+    "Kenya": {
+        "rarity": 90,
+        "artist": "abdo",
+        "id": 123
+    },
+    "Minsk": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 398
+    },
+    "Mogadishu": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 523
+    },
+    "New Caledonia": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 676
+    },
+    "Ottawa": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 354
+    },
+    "Prussia": {
+        "rarity": 90,
+        "artist": "abdo",
+        "id": 139
+    },
+    "Puerto Rico": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 578
+    },
+    "Réunion": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 567
+    },
+    "Saint Kitts and Nevis": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 322
+    },
+    "Saint Lucia": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 327
+    },
+    "Seychelles": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 568
+    },
+    "Somaliland": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 521
+    },
+    "South Georgia and the South Sandwich Islands": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 283
+    },
+    "Timor-Leste": {
+        "rarity": 90,
+        "artist": "abdo",
+        "id": 255
+    },
+    "United Arab Emirates": {
+        "rarity": 90,
+        "artist": "abdo",
+        "id": 132
+    },
+    "Yerevan": {
+        "rarity": 90,
+        "artist": "chen",
+        "id": 470
+    },
+    "Ayyubid Sultanate": {
+        "rarity": 91,
+        "artist": "burenter",
+        "id": 180
+    },
+    "Bern": {
+        "rarity": 91,
+        "artist": "chen",
+        "id": 405
+    },
+    "Bremen": {
+        "rarity": 91,
+        "artist": "chen",
+        "id": 381
+    },
+    "Brittany": {
+        "rarity": 91,
+        "artist": "chen",
+        "id": 362
+    },
+    "Corsica": {
+        "rarity": 91,
+        "artist": "chen",
+        "id": 365
+    },
+    "Cyprus": {
+        "rarity": 91,
+        "artist": "abdo",
+        "id": 56
+    },
+    "Frankish Empire": {
+        "rarity": 91,
+        "artist": "wikimedia commons",
+        "id": 243
+    },
+    "French Guiana": {
+        "rarity": 91,
+        "artist": "chen",
+        "id": 345
+    },
+    "Iraq": {
+        "rarity": 91,
+        "artist": "abdo",
+        "id": 57
+    },
+    "Kingdom of Hejaz": {
+        "rarity": 91,
+        "artist": "abdo",
+        "id": 224
+    },
+    "Kingdom of Kurdistan": {
+        "rarity": 91,
+        "artist": "burenter",
+        "id": 179
+    },
+    "Kingdom of Slavonia": {
+        "rarity": 91,
+        "artist": "chen",
+        "id": 414
+    },
+    "Montenegro": {
+        "rarity": 91,
+        "artist": "chen",
+        "id": 434
+    },
+    "Montserrat": {
+        "rarity": 91,
+        "artist": "chen",
+        "id": 324
+    },
+    "Myanmar": {
+        "rarity": 91,
+        "artist": "abdo",
+        "id": 75
+    },
+    "North Macedonia": {
+        "rarity": 91,
+        "artist": "chen",
+        "id": 436
+    },
+    "Rojava": {
+        "rarity": 91,
+        "artist": "burenter",
+        "id": 176
+    },
+    "Romania": {
+        "rarity": 91,
+        "artist": "abdo",
+        "id": 47
+    },
+    "Saint Barthélemy": {
+        "rarity": 91,
+        "artist": "pacificalts)",
+        "id": 743
+    },
+    "Syria": {
+        "rarity": 91,
+        "artist": "abdo",
+        "id": 59
+    },
+    "The Balearic Islands": {
+        "rarity": 91,
+        "artist": "chen",
+        "id": 368
+    },
+    "Thirteen Colonies": {
+        "rarity": 91,
+        "artist": "abdo",
+        "id": 231
+    },
+    "Vanuatu": {
+        "rarity": 91,
+        "artist": "chen",
+        "id": 638
+    },
+    "Venezuela": {
+        "rarity": 91,
+        "artist": "abdo",
+        "id": 14
+    },
+    "Bahamas": {
+        "rarity": 92,
+        "artist": "abdo",
+        "id": 30
+    },
+    "Bangladesh": {
+        "rarity": 92,
+        "artist": "abdo",
+        "id": 82
+    },
+    "Byelorussian Soviet Socialist Republic": {
+        "rarity": 92,
+        "artist": "abdo",
+        "id": 287
+    },
+    "Czech Republic": {
+        "rarity": 92,
+        "artist": "abdo",
+        "id": 41
+    },
+    "Emirate of Soran": {
+        "rarity": 92,
+        "artist": "burenter",
+        "id": 181
+    },
+    "Finnmark": {
+        "rarity": 92,
+        "artist": "chen",
+        "id": 389
+    },
+    "Grenada": {
+        "rarity": 92,
+        "artist": "chen",
+        "id": 329
+    },
+    "Guam": {
+        "rarity": 92,
+        "artist": "chen",
+        "id": 761
+    },
+    "Karakalpakstan": {
+        "rarity": 92,
+        "artist": "chen",
+        "id": 570
+    },
+    "Malaysia": {
+        "rarity": 92,
+        "artist": "abdo",
+        "id": 81
+    },
+    "Marwanid Dynasty": {
+        "rarity": 92,
+        "artist": "burenter",
+        "id": 182
+    },
+    "Norfolk Island": {
+        "rarity": 92,
+        "artist": "chen",
+        "id": 757
+    },
+    "Peru": {
+        "rarity": 92,
+        "artist": "abdo",
+        "id": 8
+    },
+    "Qatar": {
+        "rarity": 92,
+        "artist": "chen",
+        "id": 579
+    },
+    "Quebec": {
+        "rarity": 92,
+        "artist": "chen",
+        "id": 212
+    },
+    "Republic of Ararat": {
+        "rarity": 92,
+        "artist": "burenter",
+        "id": 177
+    },
+    "Republic of Mahabad": {
+        "rarity": 92,
+        "artist": "burenter",
+        "id": 178
+    },
+    "Sarajevo": {
+        "rarity": 92,
+        "artist": "chen",
+        "id": 415
+    },
+    "Tajikistan": {
+        "rarity": 92,
+        "artist": "abdo",
+        "id": 301
+    },
+    "The Comoros": {
+        "rarity": 92,
+        "artist": "chen",
+        "id": 564
+    },
+    "Wales": {
+        "rarity": 92,
+        "artist": "wikimedia commons",
+        "id": 210
+    },
+    "Zanzibar": {
+        "rarity": 92,
+        "artist": "chen",
+        "id": 551
+    },
+    "Azerbaijan": {
+        "rarity": 93,
+        "artist": "abdo",
+        "id": 304
+    },
+    "Belgium": {
+        "rarity": 93,
+        "artist": "abdo",
+        "id": 69
+    },
+    "Chile": {
+        "rarity": 93,
+        "artist": "abdo",
+        "id": 21
+    },
+    "Colombia": {
+        "rarity": 93,
+        "artist": "abdo",
+        "id": 13
+    },
+    "Costa Rica": {
+        "rarity": 93,
+        "artist": "abdo",
+        "id": 23
+    },
+    "Dominica": {
+        "rarity": 93,
+        "artist": "chen",
+        "id": 318
+    },
+    "Fiji": {
+        "rarity": 93,
+        "artist": "abdo",
+        "id": 136
+    },
+    "Guyana": {
+        "rarity": 93,
+        "artist": "abdo",
+        "id": 16
+    },
+    "Hungary": {
+        "rarity": 93,
+        "artist": "abdo",
+        "id": 55
+    },
+    "Isle of Man": {
+        "rarity": 93,
+        "artist": "chen",
+        "id": 357
+    },
+    "Jamaica": {
+        "rarity": 93,
+        "artist": "abdo",
+        "id": 7
+    },
+    "Malta": {
+        "rarity": 93,
+        "artist": "abdo",
+        "id": 135
+    },
+    "Morocco": {
+        "rarity": 93,
+        "artist": "abdo",
+        "id": 97
+    },
+    "Northern Cyprus": {
+        "rarity": 93,
+        "artist": "chen",
+        "id": 611
+    },
+    "Palau": {
+        "rarity": 93,
+        "artist": "chen",
+        "id": 644
+    },
+    "Philippines": {
+        "rarity": 93,
+        "artist": "abdo",
+        "id": 90
+    },
+    "Portugal": {
+        "rarity": 93,
+        "artist": "abdo",
+        "id": 70
+    },
+    "Samoa": {
+        "rarity": 93,
+        "artist": "chen",
+        "id": 640
+    },
+    "Serbia": {
+        "rarity": 93,
+        "artist": "abdo",
+        "id": 145
+    },
+    "South Africa": {
+        "rarity": 93,
+        "artist": "chen",
+        "id": 556
+    },
+    "Tonga": {
+        "rarity": 93,
+        "artist": "chen",
+        "id": 639
+    },
+    "Uganda": {
+        "rarity": 93,
+        "artist": "abdo",
+        "id": 98
+    },
+    "Uzbek Soviet Socialist Republic": {
+        "rarity": 93,
+        "artist": "abdo",
+        "id": 288
+    },
+    "Wallis & Futuna": {
+        "rarity": 93,
+        "artist": "indostinianlikeplanes13",
+        "id": 747
+    },
+    "Öland": {
+        "rarity": 93,
+        "artist": "chen",
+        "id": 388
+    },
+    "American Samoa": {
+        "rarity": 95,
+        "artist": "chen",
+        "id": 641
+    },
+    "Armenia": {
+        "rarity": 95,
+        "artist": "abdo",
+        "id": 300
+    },
+    "Austria": {
+        "rarity": 95,
+        "artist": "abdo",
+        "id": 40
+    },
+    "Barbados": {
+        "rarity": 95,
+        "artist": "abdo",
+        "id": 34
+    },
+    "British Indian Ocean Territory": {
+        "rarity": 95,
+        "artist": "chen",
+        "id": 607
+    },
+    "Christmas Island": {
+        "rarity": 95,
+        "artist": "chen",
+        "id": 714
+    },
+    "Democratic Republic Of Congo": {
+        "rarity": 95,
+        "artist": "abdo",
+        "id": 127
+    },
+    "Finland": {
+        "rarity": 95,
+        "artist": "abdo",
+        "id": 38
+    },
+    "Gotland": {
+        "rarity": 95,
+        "artist": "chen",
+        "id": 387
+    },
+    "Guernsey": {
+        "rarity": 95,
+        "artist": "chen",
+        "id": 360
+    },
+    "Jersey": {
+        "rarity": 95,
+        "artist": "chen",
+        "id": 361
+    },
+    "Kiribati": {
+        "rarity": 95,
+        "artist": "chen",
+        "id": 645
+    },
+    "Lithuania": {
+        "rarity": 95,
+        "artist": "wikimedia commons",
+        "id": 235
+    },
+    "Lithuanian Soviet Socialist Republic": {
+        "rarity": 95,
+        "artist": "abdo",
+        "id": 292
+    },
+    "Mali": {
+        "rarity": 95,
+        "artist": "chen",
+        "id": 509
+    },
+    "Marshall Islands": {
+        "rarity": 95,
+        "artist": "chen",
+        "id": 646
+    },
+    "Micronesia": {
+        "rarity": 95,
+        "artist": "chen",
+        "id": 647
+    },
+    "Namibia": {
+        "rarity": 95,
+        "artist": "chen",
+        "id": 555
+    },
+    "Northern Ireland": {
+        "rarity": 95,
+        "artist": "chen",
+        "id": 218
+    },
+    "Senegal": {
+        "rarity": 95,
+        "artist": "chen",
+        "id": 526
+    },
+    "Slovakia": {
+        "rarity": 95,
+        "artist": "abdo",
+        "id": 42
+    },
+    "Solomon Islands": {
+        "rarity": 95,
+        "artist": "chen",
+        "id": 637
+    },
+    "The Azores": {
+        "rarity": 95,
+        "artist": "chen",
+        "id": 371
+    },
+    "Western Sahara": {
+        "rarity": 95,
+        "artist": "chen",
+        "id": 506
+    },
+    "Zimbabwe": {
+        "rarity": 95,
+        "artist": "abdo",
+        "id": 100
+    },
+    "Angola": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 99
+    },
+    "Armenian Soviet Socialist Republic": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 296
+    },
+    "Belarus": {
+        "rarity": 96,
+        "artist": "chen",
+        "id": 168
+    },
+    "Bolivia": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 18
+    },
+    "Bornholm": {
+        "rarity": 96,
+        "artist": "chen",
+        "id": 386
+    },
+    "Bulgaria": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 53
+    },
+    "Burkina Faso": {
+        "rarity": 96,
+        "artist": "chen",
+        "id": 511
+    },
+    "Burundi": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 110
+    },
+    "Cabo Verde": {
+        "rarity": 96,
+        "artist": "chen",
+        "id": 535
+    },
+    "Cuba": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 10
+    },
+    "Denmark": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 72
+    },
+    "Ecuador": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 20
+    },
+    "Equatorial Guinea": {
+        "rarity": 96,
+        "artist": "chen",
+        "id": 543
+    },
+    "Estonia": {
+        "rarity": 96,
+        "artist": "wikimedia commons",
+        "id": 236
+    },
+    "Eswatini": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 105
+    },
+    "Ethiopia": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 128
+    },
+    "Free France": {
+        "rarity": 96,
+        "artist": "wikimedia commons",
+        "id": 239
+    },
+    "Jordan": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 62
+    },
+    "Latvia": {
+        "rarity": 96,
+        "artist": "wikimedia commons",
+        "id": 237
+    },
+    "Mauritania": {
+        "rarity": 96,
+        "artist": "chen",
+        "id": 510
+    },
+    "New Zealand": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 94
+    },
+    "Oman": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 52
+    },
+    "Shetland": {
+        "rarity": 96,
+        "artist": "chen",
+        "id": 359
+    },
+    "Sudan": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 138
+    },
+    "Tajik Soviet Socialist Republic": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 295
+    },
+    "Tanzania": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 121
+    },
+    "Togo": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 113
+    },
+    "Tunisia": {
+        "rarity": 96,
+        "artist": "abdo",
+        "id": 96
+    },
+    "Afghanistan": {
+        "rarity": 97,
+        "artist": "abdo",
+        "id": 76
+    },
+    "Brunei": {
+        "rarity": 97,
+        "artist": "chen",
+        "id": 170
+    },
+    "Guinea": {
+        "rarity": 97,
+        "artist": "abdo",
+        "id": 107
+    },
+    "Ironland": {
+        "rarity": 97,
+        "artist": "chen",
+        "id": 666
+    },
+    "Ivory Coast": {
+        "rarity": 97,
+        "artist": "chen",
+        "id": 532
+    },
+    "Kuwait": {
+        "rarity": 97,
+        "artist": "abdo",
+        "id": 65
+    },
+    "Libya": {
+        "rarity": 97,
+        "artist": "abdo",
+        "id": 124
+    },
+    "Liechtenstein": {
+        "rarity": 97,
+        "artist": "abdo",
+        "id": 134
+    },
+    "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysil": {
+        "rarity": 97,
+        "artist": "abdo",
+        "id": 454
+    },
+    "Maldives": {
+        "rarity": 97,
+        "artist": "chen",
+        "id": 605
+    },
+    "Singapore": {
+        "rarity": 97,
+        "artist": "chen",
+        "id": 172
+    },
+    "Sri lanka": {
+        "rarity": 97,
+        "artist": "abdo",
+        "id": 92
+    },
+    "São Tomé and Príncipe": {
+        "rarity": 97,
+        "artist": "chen",
+        "id": 560
+    },
+    "Yemen": {
+        "rarity": 97,
+        "artist": "abdo",
+        "id": 63
+    },
+    "Albania": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 49
+    },
+    "Andorra": {
+        "rarity": 98,
+        "artist": "chen",
+        "id": 162
+    },
+    "Bahrain": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 66
+    },
+    "Botswana": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 102
+    },
+    "Cambodia": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 80
+    },
+    "Cameroon": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 125
+    },
+    "Central African Republic": {
+        "rarity": 98,
+        "artist": "chen",
+        "id": 540
+    },
+    "Chad": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 116
+    },
+    "Dominican Republic": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 9
+    },
+    "Eritrea": {
+        "rarity": 98,
+        "artist": "chen",
+        "id": 517
+    },
+    "Estonian Soviet Socialist Republic": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 298
+    },
+    "Faroe Islands": {
+        "rarity": 98,
+        "artist": "chen",
+        "id": 217
+    },
+    "French Southern And Antarctic Lands": {
+        "rarity": 98,
+        "artist": "chen",
+        "id": 167
+    },
+    "Gambia": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 106
+    },
+    "Georgia": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 305
+    },
+    "Georgian Soviet Socialist Republic": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 290
+    },
+    "Ghana": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 109
+    },
+    "Gibraltar": {
+        "rarity": 98,
+        "artist": "chen",
+        "id": 175
+    },
+    "Guatemala": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 17
+    },
+    "Honduras": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 15
+    },
+    "Hong Kong": {
+        "rarity": 98,
+        "artist": "chen",
+        "id": 169
+    },
+    "Ireland": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 50
+    },
+    "Kirghiz Soviet Socialist Republic": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 294
+    },
+    "Latvian Soviet Socialist Republic": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 293
+    },
+    "Lesotho": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 111
+    },
+    "Macau": {
+        "rarity": 98,
+        "artist": "chen",
+        "id": 171
+    },
+    "Moldova": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 303
+    },
+    "Mongolia": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 87
+    },
+    "Mozambique": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 103
+    },
+    "Naoero": {
+        "rarity": 98,
+        "artist": "chen",
+        "id": 643
+    },
+    "Niger": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 114
+    },
+    "Palestine": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 64
+    },
+    "Paraguay": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 31
+    },
+    "Republic of Congo": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 126
+    },
+    "San Marino": {
+        "rarity": 98,
+        "artist": "wikimedia commons",
+        "id": 233
+    },
+    "Sierra Leone": {
+        "rarity": 98,
+        "artist": "chen",
+        "id": 529
+    },
+    "Slovenia": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 147
+    },
+    "Somalia": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 122
+    },
+    "South Sudan": {
+        "rarity": 98,
+        "artist": "chen",
+        "id": 515
+    },
+    "Turkmen Soviet Socialist Republic": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 297
+    },
+    "Turkmenistan": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 299
+    },
+    "Tuvalu": {
+        "rarity": 98,
+        "artist": "chen",
+        "id": 642
+    },
+    "Uruguay": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 32
+    },
+    "Uzbekistan": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 307
+    },
+    "Vatican City": {
+        "rarity": 98,
+        "artist": "wikimedia commons",
+        "id": 234
+    },
+    "Zambia": {
+        "rarity": 98,
+        "artist": "abdo",
+        "id": 104
+    },
+    "Åland Islands": {
+        "rarity": 98,
+        "artist": "chen",
+        "id": 174
+    },
+    "Benin": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 119
+    },
+    "Bhutan": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 79
+    },
+    "Djibouti": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 101
+    },
+    "El Salvador": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 12
+    },
+    "Gabon": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 120
+    },
+    "Guinea-Bissau": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 129
+    },
+    "Haiti": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 6
+    },
+    "Iceland": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 37
+    },
+    "Kosovo": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 146
+    },
+    "Kyrgyzstan": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 302
+    },
+    "Laos": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 88
+    },
+    "Lebanon": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 60
+    },
+    "Liberia": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 117
+    },
+    "Luxembourg": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 68
+    },
+    "Madagascar": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 130
+    },
+    "Malawi": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 112
+    },
+    "Nepal": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 78
+    },
+    "Nicaragua": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 24
+    },
+    "Panama": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 5
+    },
+    "Papua New Guinea": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 93
+    },
+    "Rwanda": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 131
+    },
+    "Sealand": {
+        "rarity": 99,
+        "artist": "chen",
+        "id": 662
+    },
+    "Suriname": {
+        "rarity": 99,
+        "artist": "abdo",
+        "id": 33
+    },
+    "Ohio": {
+        "rarity": 100,
+        "artist": "chen",
+        "id": 166
+    }
+}

@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1787912711",
+            "changes": [
+                "Added FlagsDex to BallIdentifier"
+            ],
+            "type": "dex"
+        },
+        {
             "timestamp": "1787770768",
             "changes": [
                 "Added MapsDex to BallIdentifier"
