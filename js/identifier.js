@@ -311,7 +311,7 @@ async function updateTitleWithBallCount() {
     const dex = document.getElementById("dexSelector").value;
     
     try {
-        const response = await fetch(`assets/jsons/${dex}Hashes.json`);
+        const response = await fetch(`assets/jsons/${dex}.json`);
         const data = await response.json();
         document.getElementById("title").textContent = `(${Object.keys(data).length} entries)`;
     } catch (error) {

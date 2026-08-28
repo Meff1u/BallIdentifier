@@ -127,7 +127,7 @@ exports.handler = async (event) => {
         const hash = await hashImage(img1.data);
         console.log("Hash:", hash);
 
-        for (const [hashKey, countryName] of Object.entries(JSON.parse(ballHashes))) {
+        for (const [countryName, hashKey] of Object.entries(JSON.parse(ballHashes))) {
             const diff = hashDiff(hash, hashKey);
             if (diff === 0) {
                 console.log("Exact match found:", countryName);
