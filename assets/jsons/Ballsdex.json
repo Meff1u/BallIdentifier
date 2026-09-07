@@ -123,7 +123,7 @@
         "common_value": "55",
         "cc": "400",
         "demand": "B",
-        "collectors": ["761662821704007722", "841190405868748830"]
+        "collectors": ["761662821704007722", "841190405868748830", "1250476361705852989"]
     },
     "Japanese Empire": {
         "rarity": 12,
@@ -202,7 +202,7 @@
         "common_value": "35",
         "cc": "650",
         "demand": "B",
-        "collectors": ["1279093286606209048", "1291551975162253429", "1250476361705852989"]
+        "collectors": ["1279093286606209048", "1291551975162253429"]
     },
     "Gupta Empire": {
         "rarity": 21,
@@ -236,7 +236,7 @@
     },
     "Russia": {
         "rarity": 24,
-        "artist": "27bblack6",
+        "artist": "aurvengard",
         "wave": 1,
         "id": 2,
         "common_value": "25",
@@ -385,7 +385,7 @@
     },
     "France": {
         "rarity": 40,
-        "artist": "atlanta1996",
+        "artist": ".wken",
         "wave": 1,
         "id": 8,
         "common_value": "12",
@@ -415,7 +415,7 @@
     },
     "Achaemenid Empire": {
         "rarity": 43,
-        "artist": "Yomers",
+        "artist": "perilouspokey",
         "wave": 4,
         "id": 203,
         "common_value": "10",
@@ -510,7 +510,7 @@
         "common_value": "8",
         "cc": "1,100",
         "demand": "B",
-        "collectors": ["1250476361705852989", "1437092068039065743"]
+        "collectors": ["1437092068039065743"]
     },
     "Greenland": {
         "rarity": 50,
@@ -1091,7 +1091,7 @@
     },
     "European Union": {
         "rarity": 112,
-        "artist": "miron",
+        "artist": "comrad_haix",
         "wave": 1,
         "id": 79,
         "common_value": "3",
@@ -1347,7 +1347,8 @@
         "id": 44,
         "common_value": "2",
         "cc": "2,500",
-        "demand": "B"
+        "demand": "B",
+        "collectors": ["921731205458722839"]
     },
     "Myanmar": {
         "rarity": 132,
@@ -1398,7 +1399,7 @@
     },
     "Philippines": {
         "rarity": 132,
-        "artist": "v3rdammt",
+        "artist": "screegif",
         "wave": 1,
         "id": 53,
         "common_value": "2",
@@ -2394,7 +2395,7 @@
     },
     "Ireland": {
         "rarity": 238,
-        "artist": "bfbrobloxplayz",
+        "artist": "mangle_1375",
         "wave": 1,
         "id": 101,
         "common_value": "1",
@@ -2707,7 +2708,7 @@
     },
     "Cameroon": {
         "rarity": 276,
-        "artist": "koskesh431",
+        "artist": "remy_thecb",
         "wave": 1,
         "id": 109,
         "common_value": "1",
@@ -3106,7 +3107,7 @@
     },
     "Vanuatu": {
         "rarity": 316,
-        "artist": "Mtcat101",
+        "artist": "_finland_",
         "wave": 5.1,
         "id": 340,
         "common_value": "1",
@@ -3441,7 +3442,7 @@
     },
     "Suriname": {
         "rarity": 325,
-        "artist": "abiotic",
+        "artist": "tennysball20",
         "wave": 1,
         "id": 143,
         "common_value": "1",
