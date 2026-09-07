@@ -4,7 +4,8 @@
             "timestamp": "1788773531",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Achaemenid Empire, Belgium, Cameroon, European Union, France, Ireland, Philippines, Russia, Suriname, Vanuatu, Warsaw Pact)"
-            ]
+            ],
+            "type": "dex"
         },
         {
             "timestamp": "1787912711",
