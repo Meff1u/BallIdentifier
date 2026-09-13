@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1789293391",
+            "changes": [
+                "Updated to new spawn arts in Ballsdex (Australia, Guinea, Iran, Iraq, Lesotho, Mossi Kingdoms, Parthian Empire, Principality of Moldavia, Safavid Empire)"
+            ],
+            "type": "dex"
+        },
+        {
             "timestamp": "1788773531",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Achaemenid Empire, Belgium, Cameroon, European Union, France, Ireland, Philippines, Russia, Suriname, Vanuatu, Warsaw Pact)"
