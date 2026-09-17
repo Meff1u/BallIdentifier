@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1789638713",
+            "changes": [
+                "Updated to new spawn arts in Ballsdex (Bulgaria, Guatemala, Moldova, Qing Dynasty, Solomon Islands)"
+            ],
+            "type": "dex"
+        },
+        {
             "timestamp": "1789293391",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Australia, Guinea, Iran, Iraq, Lesotho, Mossi Kingdoms, Parthian Empire, Principality of Moldavia, Safavid Empire)"
