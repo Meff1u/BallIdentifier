@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1789640581",
+            "changes": [
+                "Updated to new Ballsdex ball display name (Nauru -> Naoero)"
+            ],
+            "type": "dex"
+        },
+        {
             "timestamp": "1789638713",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Bulgaria, Guatemala, Moldova, Qing Dynasty, Solomon Islands)"
