@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1791296816",
+            "changes": [
+                "Updated to new spawn arts in Ballsdex (Bahrain, Bhutan, Brazil, Congo Free State, Ecuador, Faroe Islands, Kingdom of Saxony, Liberia, Nanda Empire, Republican Spain, Russian Soviet Federative Socialist Republic, Union of South Africa, Yemen)"
+            ],
+            "type": "dex"
+        },
+        {
             "timestamp": "1790149405",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Bangladesh, Kenya, Malta, Namibia, Northern Ireland, Palau)"
