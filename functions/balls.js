@@ -1,68 +1,28 @@
-const fs = require("fs");
-const { safeEqual, describeRequest } = require("../lib/api-key");
-const path = require("path");
-
-// API Key validation middleware
-function validateApiKey(event) {
-    const providedKey = event.headers?.["x-api-key"] || event.queryStringParameters?.api_key;
-    const validKey = process.env.API_KEY;
-
-    if (!validKey) {
-        console.error("API_KEY environment variable not set");
-        return { valid: false, error: "Server configuration error" };
-    }
-
-    if (!providedKey) {
-        return { valid: false, error: "API key required" };
-    }
-
-    if (!safeEqual(providedKey, validKey)) {
-        return { valid: false, error: "Invalid API key" };
-    }
-
-    return { valid: true };
-}
+const { checkApiKey } = require("../lib/api-key");
+const { getAvailableDexes, getDexData } = require("../lib/dex-data");
 
 exports.handler = async (event) => {
     console.log("Received event.");
     try {
         // Validate API key
-        const apiKeyValidation = validateApiKey(event);
-        if (!apiKeyValidation.valid) {
-            console.warn("API key validation failed:", apiKeyValidation.error);
-            console.warn(describeRequest(event));
-            return {
-                statusCode: 401,
-                headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
-                body: JSON.stringify({ error: apiKeyValidation.error }),
-            };
-        }
+        const authError = checkApiKey(event, event.headers?.["x-api-key"] || event.queryStringParameters?.api_key);
+        if (authError) return authError;
 
-        const jsonsPath = path.join(process.cwd(), "assets/jsons");
-
-        const dexesConfig = JSON.parse(fs.readFileSync(path.join(jsonsPath, "dexes.json"), "utf8"));
-        const jsonFiles = dexesConfig.dexes.map((dex) => `${dex}.json`);
-
+        // Dex JSON files are cached per warm function instance
+        const availableDexes = getAvailableDexes();
         const allBalls = [];
         const loadedSources = {};
 
-        for (const file of jsonFiles) {
-            const filePath = path.join(jsonsPath, file);
-
+        for (const source of availableDexes) {
             try {
-                const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
-                const source = file.replace(".json", "");
+                const data = getDexData(source);
                 loadedSources[source] = Object.keys(data).length;
 
                 for (const [name, info] of Object.entries(data)) {
-                    allBalls.push({
-                        name,
-                        ...info,
-                        source: source,
-                    });
+                    allBalls.push({ name, ...info, source });
                 }
             } catch (err) {
-                console.error(`Error reading ${file} (${filePath}):`, err.message);
+                console.error(`Error reading ${source}.json:`, err.message);
             }
         }
 
@@ -90,8 +50,8 @@ exports.handler = async (event) => {
             };
         }
 
-        // Validate source parameter (only allow alphanumeric and underscore)
-        if (source && !/^[a-z0-9_]+$/i.test(source)) {
+        // Validate source parameter against known dexes (allows names with spaces, e.g. "Empireballs Reboot")
+        if (source && !availableDexes.some((dex) => dex.toLowerCase() === source.toLowerCase())) {
             return {
                 statusCode: 400,
                 body: JSON.stringify({ error: "Invalid source parameter" }),

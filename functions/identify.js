@@ -1,56 +1,9 @@
-const fs = require('fs');
-const path = require('path');
-const busboy = require('busboy');
+const { parseMultipartFormData } = require('../lib/multipart');
+const { identifyBuffer, identifyUrl, getDexData, errorToResponse } = require('../lib/identify-core');
 
 const RATE_LIMIT_WINDOW_MS = 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 30;
 const rateLimitStore = new Map();
-
-function normalizeBaseUrl(rawUrl) {
-    if (!rawUrl || typeof rawUrl !== 'string') {
-        return null;
-    }
-
-    return rawUrl.endsWith('/') ? rawUrl.slice(0, -1) : rawUrl;
-}
-
-function getInternalBaseUrl() {
-    const deployUrl = normalizeBaseUrl(process.env.DEPLOY_URL);
-    const deployPrimeUrl = normalizeBaseUrl(process.env.DEPLOY_PRIME_URL);
-    const siteName = (process.env.SITE_NAME || '').trim();
-    const siteUrl = normalizeBaseUrl(process.env.URL);
-
-    if (deployUrl && !deployUrl.includes('localhost')) {
-        return deployUrl;
-    }
-
-    if (deployPrimeUrl && !deployPrimeUrl.includes('localhost')) {
-        return deployPrimeUrl;
-    }
-
-    if (siteName) {
-        return `https://${siteName}.netlify.app`;
-    }
-
-    if (siteUrl && !siteUrl.includes('localhost')) {
-        return siteUrl;
-    }
-
-    return 'http://localhost:8888';
-}
-
-async function parseJsonResponse(response, endpointName) {
-    const contentType = response.headers.get('content-type') || '';
-    const bodyText = await response.text();
-
-    try {
-        return JSON.parse(bodyText);
-    } catch (error) {
-        const preview = bodyText.slice(0, 120);
-        const contentTypeNote = contentType ? `, content-type: ${contentType}` : '';
-        throw new Error(`${endpointName} returned invalid JSON (${response.status}${contentTypeNote}): ${preview}`);
-    }
-}
 
 function jsonResponse(statusCode, body) {
     return {
@@ -114,181 +67,81 @@ function checkRateLimit(clientIp) {
     return { allowed: true };
 }
 
-async function parseMultipartFormData(event) {
-    return new Promise((resolve, reject) => {
-        try {
-            const bb = busboy({ headers: event.headers || {} });
-            const formData = {};
-
-            bb.on('file', (fieldname, file, filename, encoding, mimetype) => {
-                const chunks = [];
-                file.on('data', (chunk) => chunks.push(chunk));
-                file.on('end', () => {
-                    formData[fieldname] = {
-                        buffer: Buffer.concat(chunks),
-                        filename: filename || 'upload-image',
-                        mimetype: mimetype || 'application/octet-stream'
-                    };
-                });
-            });
-
-            bb.on('field', (fieldname, val) => {
-                formData[fieldname] = val;
-            });
-
-            bb.on('finish', () => resolve(formData));
-            bb.on('error', (error) => reject(error));
-
-            const bodyBuffer = Buffer.from(event.body || '', event.isBase64Encoded ? 'base64' : 'utf8');
-            bb.end(bodyBuffer);
-        } catch (error) {
-            reject(error);
-        }
-    });
-}
-
-async function compareImagePrivate(imageBuffer, dex, apiKey) {
-    const FormData = (await import('form-data')).default;
-    const fetchFn = (await import('node-fetch')).default;
-    const formData = new FormData();
-
-    formData.append('file', imageBuffer, 'image');
-    formData.append('dex', dex);
-
-    const response = await fetchFn(`${getInternalBaseUrl()}/.netlify/functions/compareImage`, {
-        method: 'POST',
-        headers: {
-            ...formData.getHeaders(),
-            'x-api-key': apiKey
-        },
-        body: formData
-    });
-
-    const result = await parseJsonResponse(response, 'compareImage');
-    if (!response.ok) {
-        throw new Error(result.error || 'compareImage function failed');
-    }
-
-    return result;
-}
-
-async function findBallPrivate(url, dex, apiKey) {
-    const fetchFn = (await import('node-fetch')).default;
-    const encodedUrl = encodeURIComponent(url);
-    const encodedDex = encodeURIComponent(dex);
-
-    const response = await fetchFn(`${getInternalBaseUrl()}/.netlify/functions/findBall?url=${encodedUrl}&dex=${encodedDex}`, {
-        method: 'GET',
-        headers: {
-            'x-api-key': apiKey
-        }
-    });
-
-    const result = await parseJsonResponse(response, 'findBall');
-    if (!response.ok) {
-        throw new Error(result.message || result.error || 'findBall function failed');
-    }
-
-    return result;
-}
-
-function getDexes() {
-    const jsonsPath = path.join(process.cwd(), 'assets/jsons');
-    const dexesConfig = JSON.parse(fs.readFileSync(path.join(jsonsPath, 'dexes.json'), 'utf8'));
-    return dexesConfig.dexes;
-}
-
+/**
+ * Public identification endpoint used by the website.
+ * - JSON body { url, dex }        -> download from Discord CDN and identify
+ * - multipart { file, dex }       -> identify the uploaded image
+ * Everything runs inside this one function (no internal HTTP calls to other functions).
+ */
 exports.handler = async (event) => {
     console.log('Received identify request');
 
+    if (!isAllowedPublicHost(event)) {
+        return jsonResponse(403, { error: 'Forbidden host' });
+    }
+
+    if (event.httpMethod === 'OPTIONS') {
+        return {
+            statusCode: 200,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Headers': 'Content-Type',
+                'Access-Control-Allow-Methods': 'POST, OPTIONS'
+            },
+            body: ''
+        };
+    }
+
+    const rateLimit = checkRateLimit(getClientIp(event));
+    if (!rateLimit.allowed) {
+        return jsonResponse(429, {
+            error: 'Too many requests. Please retry later.',
+            retryAfterSec: rateLimit.retryAfterSec
+        });
+    }
+
     try {
-        if (!isAllowedPublicHost(event)) {
-            return jsonResponse(403, {
-                error: 'Forbidden host'
-            });
-        }
-
-        if (event.httpMethod === 'OPTIONS') {
-            return {
-                statusCode: 200,
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Headers': 'Content-Type',
-                    'Access-Control-Allow-Methods': 'POST, OPTIONS'
-                },
-                body: ''
-            };
-        }
-
-        const clientIp = getClientIp(event);
-        const rateLimit = checkRateLimit(clientIp);
-        if (!rateLimit.allowed) {
-            return jsonResponse(429, {
-                error: 'Too many requests. Please retry later.',
-                retryAfterSec: rateLimit.retryAfterSec
-            });
-        }
-
-        const apiKey = process.env.API_KEY;
-        if (!apiKey) {
-            return jsonResponse(500, { error: 'Server configuration error' });
-        }
-
-        const availableDexes = getDexes();
         const contentType = event.headers?.['content-type'] || event.headers?.['Content-Type'] || '';
-
-        let dex;
-        let url;
-        let imageBuffer;
 
         if (contentType.includes('multipart/form-data')) {
             const formData = await parseMultipartFormData(event);
             const file = formData.file;
-            dex = formData.dex;
 
-            if (!file || !file.buffer || file.buffer.length === 0) {
+            if (!file?.buffer?.length) {
                 return jsonResponse(400, { error: 'File is missing from the form data' });
             }
 
-            imageBuffer = file.buffer;
-        } else {
-            const body = JSON.parse(event.body || '{}');
-            url = body.url;
-            dex = body.dex;
-
-            if (!url || typeof url !== 'string') {
-                return jsonResponse(400, { error: 'Missing or invalid URL' });
-            }
-        }
-
-        if (!dex || !availableDexes.includes(dex)) {
-            return jsonResponse(400, {
-                error: 'Invalid dex',
-                availableDexes
-            });
-        }
-
-        if (url) {
-            const result = await findBallPrivate(url, dex, apiKey);
+            const result = await identifyBuffer(file.buffer, formData.dex);
             return jsonResponse(200, {
                 success: true,
-                country: result.name,
+                country: result.country,
                 diff: result.diff,
-                extras: result.extras
+                extras: getDexData(formData.dex)[result.country]
             });
         }
 
-        const compareResult = await compareImagePrivate(imageBuffer, dex, apiKey);
+        let body;
+        try {
+            body = JSON.parse(event.body || '{}');
+        } catch {
+            return jsonResponse(400, { error: 'Invalid JSON body' });
+        }
+
+        if (!body.url || typeof body.url !== 'string') {
+            return jsonResponse(400, { error: 'Missing or invalid URL' });
+        }
+
+        const result = await identifyUrl(body.url, body.dex);
         return jsonResponse(200, {
             success: true,
-            country: compareResult.country,
-            diff: compareResult.diff
+            country: result.country,
+            diff: result.diff,
+            extras: result.extras
         });
     } catch (error) {
-        console.error('identify handler error:', error);
-        return jsonResponse(500, {
-            error: 'Error processing request',
-            message: error.message
-        });
+        if (error.statusCode === 413) {
+            return jsonResponse(413, { error: error.message });
+        }
+        return errorToResponse(error, { 'Access-Control-Allow-Origin': '*' });
     }
 };

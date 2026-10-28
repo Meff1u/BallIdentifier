@@ -1,267 +1,64 @@
-const fs = require('fs');
-const { safeEqual, describeRequest } = require('../lib/api-key');
-const path = require('path');
-const url_module = require('url');
+const { checkApiKey } = require("../lib/api-key");
+const { getAvailableDexes, identifyUrl, errorToResponse } = require("../lib/identify-core");
 
-function normalizeBaseUrl(rawUrl) {
-    if (!rawUrl || typeof rawUrl !== 'string') {
-        return null;
-    }
+const CORS_HEADERS = { "Access-Control-Allow-Origin": "*" };
 
-    return rawUrl.endsWith('/') ? rawUrl.slice(0, -1) : rawUrl;
-}
-
-function getInternalBaseUrl() {
-    const deployUrl = normalizeBaseUrl(process.env.DEPLOY_URL);
-    const deployPrimeUrl = normalizeBaseUrl(process.env.DEPLOY_PRIME_URL);
-    const siteName = (process.env.SITE_NAME || '').trim();
-    const siteUrl = normalizeBaseUrl(process.env.URL);
-
-    if (deployUrl && !deployUrl.includes('localhost')) {
-        return deployUrl;
-    }
-
-    if (deployPrimeUrl && !deployPrimeUrl.includes('localhost')) {
-        return deployPrimeUrl;
-    }
-
-    if (siteName) {
-        return `https://${siteName}.netlify.app`;
-    }
-
-    if (siteUrl && !siteUrl.includes('localhost')) {
-        return siteUrl;
-    }
-
-    return 'http://localhost:8888';
-}
-
-async function parseJsonResponse(response, endpointName) {
-    const contentType = response.headers.get('content-type') || '';
-    const bodyText = await response.text();
-
-    try {
-        return JSON.parse(bodyText);
-    } catch (error) {
-        const preview = bodyText.slice(0, 120);
-        const contentTypeNote = contentType ? `, content-type: ${contentType}` : '';
-        throw new Error(`${endpointName} returned invalid JSON (${response.status}${contentTypeNote}): ${preview}`);
-    }
-}
-
-// API Key validation middleware
-function validateApiKey(event) {
-  const providedKey = event.headers?.['x-api-key'] || event.queryStringParameters?.api_key;
-  const validKey = process.env.API_KEY;
-  
-  if (!validKey) {
-    console.error('API_KEY environment variable not set');
-    return { valid: false, error: 'Server configuration error' };
-  }
-  
-  if (!providedKey) {
-    return { valid: false, error: 'API key required' };
-  }
-  
-  if (!safeEqual(providedKey, validKey)) {
-    return { valid: false, error: 'Invalid API key' };
-  }
-  
-  return { valid: true };
-}
-
-async function downloadImageFromEndpoint(imageUrl, apiKey) {
-    try {
-        const fetchFn = (await import('node-fetch')).default;
-        
-        if (!imageUrl || typeof imageUrl !== 'string') {
-            throw new Error('Invalid URL parameter');
-        }
-
-        console.log('Calling downloadImage endpoint for: ' + imageUrl);
-        
-        const downloadEndpointUrl = `${getInternalBaseUrl()}/.netlify/functions/downloadImage`;
-        
-        const response = await fetchFn(downloadEndpointUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-api-key': apiKey
-            },
-            body: JSON.stringify({ url: imageUrl }),
-            timeout: 10000
-        });
-        
-        console.log(`Download endpoint response status: ${response.status}`);
-        
-        if (!response.ok) {
-            const errorBody = await response.text();
-            throw new Error(`Failed to download image: ${response.status} ${response.statusText} - ${errorBody}`);
-        }
-
-        const arrayBuffer = await response.arrayBuffer();
-        const buffer = Buffer.from(arrayBuffer);
-
-        if (!buffer.length) {
-            throw new Error('No image data in response');
-        }
-
-        console.log(`Successfully downloaded image. Size: ${buffer.length} bytes`);
-        
-        return buffer;
-    } catch (error) {
-        console.error("Error downloading the image:", error);
-        throw error;
-    }
-}
-
-async function callCompareImageFunction(imageBuffer, dex, apiKey) {
-    try {
-        const FormData = (await import('form-data')).default;
-        const fetchFn = (await import('node-fetch')).default;
-        const formData = new FormData();
-        
-        formData.append('file', imageBuffer, 'image');
-        formData.append('dex', dex);
-        
-        const compareImageUrl = `${getInternalBaseUrl()}/.netlify/functions/compareImage`;
-        
-        console.log('Calling compareImage endpoint...');
-        
-        // Call compareImage function with API key
-        const response = await fetchFn(compareImageUrl, {
-            method: 'POST',
-            headers: {
-                ...formData.getHeaders(),
-                'x-api-key': apiKey
-            },
-            body: formData
-        });
-
-        const result = await parseJsonResponse(response, 'compareImage');
-        
-        if (!response.ok) {
-            throw new Error(result.error || 'compareImage function failed');
-        }
-
-        return result;
-    } catch (error) {
-        console.error('compareImage call error:', error);
-        throw error;
-    }
-}
-
+/**
+ * Identify a ball from an image URL.
+ * GET /.netlify/functions/findBall?url=<encoded Discord CDN url>&dex=<dex>
+ * Requires x-api-key (or ?api_key=). Response: { success, name, diff, extras }
+ */
 exports.handler = async (event) => {
-    console.log("Received event.");
+    const authError = checkApiKey(event, event.headers?.["x-api-key"] || event.queryStringParameters?.api_key);
+    if (authError) return authError;
+
     try {
-        // Validate API key
-        const apiKeyValidation = validateApiKey(event);
-        if (!apiKeyValidation.valid) {
-            console.warn("API key validation failed:", apiKeyValidation.error);
-            console.warn(describeRequest(event));
-            return {
-                statusCode: 401,
-                headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-                body: JSON.stringify({ error: apiKeyValidation.error })
-            };
-        }
+        // Parse the raw query string so full URLs with their own query params are preserved
+        const params = event.rawQueryString
+            ? new URLSearchParams(event.rawQueryString)
+            : new URLSearchParams(event.queryStringParameters || {});
+        let url = params.get("url");
+        const dex = params.get("dex");
 
-        const apiKey = event.headers?.['x-api-key'] || event.queryStringParameters?.api_key;
-        const jsonsPath = path.join(process.cwd(), 'assets/jsons');
-        
-        // Load available dexes
-        const dexesConfig = JSON.parse(fs.readFileSync(path.join(jsonsPath, 'dexes.json'), 'utf8'));
-        const availableDexes = dexesConfig.dexes;
-
-        // Parse query parameters manually from rawQueryString to preserve full URLs with query params
-        let url, dex;
-        
-        if (event.rawQueryString) {
-            // Parse raw query string manually to preserve URL query params
-            const params = new url_module.URLSearchParams(event.rawQueryString);
-            url = params.get('url');
-            dex = params.get('dex');
-        } else {
-            // Fallback to queryStringParameters
-            const queryParams = event.queryStringParameters || {};
-            url = queryParams.url;
-            dex = queryParams.dex;
-        }
-
-        // Decode URL if encoded
+        // Decode URL if it was double-encoded
         if (url) {
             try {
                 url = decodeURIComponent(url);
-            } catch (e) {
-                // URL might not be encoded, use as-is
+            } catch {
+                // Not encoded - use as-is
             }
         }
 
-        // Validate parameters
         if (!url || !dex) {
-            const exampleUrl = 'https://cdn.discordapp.com/attachments/123/456/image.png';
+            const availableDexes = getAvailableDexes();
+            const exampleUrl = "https://cdn.discordapp.com/attachments/123/456/image.png";
             return {
                 statusCode: 400,
-                headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+                headers: { "Content-Type": "application/json", ...CORS_HEADERS },
                 body: JSON.stringify({
-                    error: 'Missing required parameters',
+                    error: "Missing required parameters",
                     message: 'Both "url" and "dex" parameters are required. URL should be encoded with encodeURIComponent()',
-                    availableDexes: availableDexes,
-                    examples: availableDexes.slice(0, 5).map(d => ({
+                    availableDexes,
+                    examples: availableDexes.slice(0, 5).map((d) => ({
                         dex: d,
-                        url: `/.netlify/functions/findBall?url=${encodeURIComponent(exampleUrl)}&dex=${d}`
-                    }))
-                })
+                        url: `/.netlify/functions/findBall?url=${encodeURIComponent(exampleUrl)}&dex=${d}`,
+                    })),
+                }),
             };
         }
 
-        // Validate dex exists
-        if (!availableDexes.includes(dex)) {
-            return {
-                statusCode: 400,
-                headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-                body: JSON.stringify({
-                    error: 'Invalid dex',
-                    message: `Dex "${dex}" not found`,
-                    availableDexes: availableDexes
-                })
-            };
-        }
-
-        const dexJson = JSON.parse(fs.readFileSync(path.join(jsonsPath, `${dex}.json`), 'utf8'));
-
-        console.log(`Processing request: url=${url}, dex=${dex}`);
-
-        // Step 1: Download image from URL via downloadImage endpoint
-        console.log('Step 1: Downloading image from endpoint...');
-        const imageBuffer = await downloadImageFromEndpoint(url, apiKey);
-
-        // Step 2: Send to compareImage endpoint
-        console.log('Step 2: Sending to compareImage endpoint...');
-        const comparisonResult = await callCompareImageFunction(imageBuffer, dex, apiKey);
-
-        console.log('Final result:', comparisonResult);
-
+        const result = await identifyUrl(url, dex);
         return {
             statusCode: 200,
-            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+            headers: { "Content-Type": "application/json", ...CORS_HEADERS },
             body: JSON.stringify({
                 success: true,
-                name: comparisonResult.country,
-                diff: comparisonResult.diff,
-                extras: dexJson[comparisonResult.country]
-            })
+                name: result.country,
+                diff: result.diff,
+                extras: result.extras,
+            }),
         };
-
     } catch (error) {
-        console.error('Handler error:', error);
-        return {
-            statusCode: 500,
-            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-            body: JSON.stringify({
-                error: 'Error processing request',
-                message: error.message
-            })
-        };
+        return errorToResponse(error, CORS_HEADERS);
     }
 };
