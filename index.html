@@ -17,8 +17,11 @@
             property="og:description"
         />
         <meta content="https://ballidentifier.xyz/" property="og:url" />
-        <meta content="https://ballidentifier.xyz/assets/bot/icons/pfp.png" property="og:image" />
-        <meta content="#A94DC1" name="theme-color" />
+        <meta content="https://ballidentifier.xyz/assets/brand/og-image.png" property="og:image" />
+        <meta content="1200" property="og:image:width" />
+        <meta content="630" property="og:image:height" />
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta content="#9B3ABF" name="theme-color" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
         <!-- Modular CSS -->
@@ -29,7 +32,9 @@
         <link rel="stylesheet" href="css/bot.css" />
         <link rel="stylesheet" href="css/trainer.css" />
         <link rel="stylesheet" href="css/responsive.css" />
-        <link rel="icon" href="assets/icons/icon.webp" type="image/png" />
+        <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="assets/brand/favicon-32.png" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
         <title>Ball Identifier - Recognize the ball in a second!</title>
     </head>
     <body class="bg-dark text-light min-vh-100 d-flex flex-column">
@@ -39,6 +44,9 @@
         <nav class="navbar navbar-dark bg-dark border-bottom border-secondary sticky-top main-navbar">
             <div class="container-fluid">
                 <div class="d-flex align-items-center gap-3 flex-grow-1">
+                    <a class="navbar-brand m-0 p-0 d-flex" href="index.html" aria-label="BallIdentifier home">
+                        <img src="assets/brand/logo-mark.svg" alt="" width="32" height="32">
+                    </a>
                     <!-- Tab Navigation -->
                     <ul class="nav nav-pills main-tabs" id="mainTabs" role="tablist">
                         <li class="nav-item" role="presentation">
@@ -217,7 +225,7 @@
                     <!-- Bot Header Section -->
                     <div class="bot-header text-center mb-5">
                         <div class="bot-icon-wrapper mb-4">
-                            <img src="https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets/bot/icons/pfp.png" alt="BallIdentifier Bot" class="bot-icon">
+                            <img src="assets/brand/avatar-512.png" alt="BallIdentifier Bot" class="bot-icon" width="140" height="140">
                         </div>
                         <h1 class="bot-title mb-3">
                             <i class="bi bi-discord me-2"></i>BallIdentifier
@@ -899,4 +907,4 @@
             });
         </script>
     </body>
-</html>
+</html>

@@ -16,14 +16,14 @@
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    border: 4px solid #5865F2;
-    box-shadow: 0 8px 32px rgba(88, 101, 242, 0.4);
+    border: 4px solid #9B3ABF;
+    box-shadow: 0 8px 32px rgba(155, 58, 191, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .bot-icon:hover {
     transform: scale(1.05);
-    box-shadow: 0 12px 40px rgba(88, 101, 242, 0.6);
+    box-shadow: 0 12px 40px rgba(155, 58, 191, 0.6);
 }
 
 .bot-title {
