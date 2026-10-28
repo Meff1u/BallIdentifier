@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { safeEqual, describeRequest } = require('../lib/api-key');
 const path = require('path');
 const url_module = require('url');
 
@@ -62,7 +63,7 @@ function validateApiKey(event) {
     return { valid: false, error: 'API key required' };
   }
   
-  if (providedKey !== validKey) {
+  if (!safeEqual(providedKey, validKey)) {
     return { valid: false, error: 'Invalid API key' };
   }
   
@@ -157,7 +158,7 @@ exports.handler = async (event) => {
         const apiKeyValidation = validateApiKey(event);
         if (!apiKeyValidation.valid) {
             console.warn("API key validation failed:", apiKeyValidation.error);
-            console.warn(event);
+            console.warn(describeRequest(event));
             return {
                 statusCode: 401,
                 headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },

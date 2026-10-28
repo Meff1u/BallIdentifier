@@ -1,26 +1,28 @@
 const { botApiFetch } = require('../lib/bot-api');
 
+const ALLOWED_ORIGINS = [
+    'https://ballidentifier.xyz',
+    'http://localhost:8888'
+];
+
 // CSRF Protection: Validate Origin header
 function isValidOrigin(event) {
     const origin = event.headers.origin || event.headers.Origin;
-    const allowedOrigins = [
-        'https://ballidentifier.xyz',
-        'http://localhost:8888'
-    ];
-    
-    return origin && allowedOrigins.includes(origin);
+    return Boolean(origin) && ALLOWED_ORIGINS.includes(origin);
 }
 
 // Save guild configuration to bot API
 exports.handler = async (event) => {
     try {
         // CORS response headers
+        // Only reflect allowed origins (no cookies are used, so no Allow-Credentials)
+        const requestOrigin = event.headers.origin || event.headers.Origin;
         const responseHeaders = {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': event.headers.origin || event.headers.Origin || '*',
+            'Access-Control-Allow-Origin': ALLOWED_ORIGINS.includes(requestOrigin) ? requestOrigin : ALLOWED_ORIGINS[0],
             'Access-Control-Allow-Methods': 'POST, OPTIONS',
             'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-            'Access-Control-Allow-Credentials': 'true'
+            'Vary': 'Origin'
         };
         
         // Handle CORS preflight

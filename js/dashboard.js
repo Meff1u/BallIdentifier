@@ -79,6 +79,14 @@ function validateCustomMessage(message) {
         };
     }
 
+    // Block direct mentions - only {role} may ping (also enforced by the bot)
+    if (/@(everyone|here)/i.test(message) || /<@[!&]?\d+>/.test(message)) {
+        return {
+            valid: false,
+            error: "❌ Mentions are not allowed, use the {role} placeholder",
+        };
+    }
+
     // Block links in plain text and markdown form
     const linkPatterns = /(https?:\/\/|www\.|\[.*?\]\(.*?\))/gi;
     if (linkPatterns.test(message)) {
@@ -141,10 +149,17 @@ function checkAuth() {
         if (hash) {
             const params = new URLSearchParams(hash.substring(1));
             const accessToken = params.get("access_token");
+            const returnedState = params.get("state");
+            const expectedState = sessionStorage.getItem("oauth_state");
+            sessionStorage.removeItem("oauth_state");
 
-            if (accessToken) {
+            // Remove the token from the address bar and browser history
+            history.replaceState(null, "", window.location.pathname + window.location.search);
+
+            if (accessToken && (!expectedState || returnedState !== expectedState)) {
+                console.warn("Discord login rejected: OAuth state mismatch");
+            } else if (accessToken) {
                 localStorage.setItem("discord_access_token", accessToken);
-                window.location.hash = "";
                 loginScreen.style.display = "none";
                 guildsScreen.style.display = "block";
                 document.body.style.overflow = "auto";
@@ -154,17 +169,23 @@ function checkAuth() {
     }
 }
 
+// Random value stored for this tab and checked when Discord redirects back (CSRF protection)
+function createOAuthState() {
+    const state = crypto.randomUUID();
+    sessionStorage.setItem("oauth_state", state);
+    return state;
+}
+
 function getDiscordAuthUrl() {
     const params = new URLSearchParams({
         client_id: DISCORD_CLIENT_ID,
         redirect_uri: OAUTH_REDIRECT_URI,
         response_type: "code",
         scope: SCOPES.join(" "),
+        state: createOAuthState(),
     });
 
     const authUrl = `https://discord.com/oauth2/authorize?${params.toString()}`;
-    console.log("Discord Auth URL:", authUrl);
-    console.log("Redirect URI being used:", OAUTH_REDIRECT_URI);
     return authUrl;
 }
 
@@ -179,7 +200,7 @@ navbarLogoutBtn.addEventListener("click", () => {
     configScreen.style.display = "none";
     navbarUserProfile.style.display = "none";
     document.body.style.overflow = "hidden";
-    window.location.hash = "";
+    history.replaceState(null, "", window.location.pathname + window.location.search);
 });
 
 backToGuildsBtn.addEventListener("click", () => {
