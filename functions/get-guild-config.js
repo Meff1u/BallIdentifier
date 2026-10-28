@@ -1,9 +1,9 @@
+const { botApiFetch } = require('../lib/bot-api');
+
 // Get guild configuration from bot API
 exports.handler = async (event) => {
     try {
         const { guildId } = event.queryStringParameters || {};
-        const BOT_API_URL = 'http://fi11.bot-hosting.net:21302';
-        const BOT_API_KEY = process.env.API_KEY;
         
         if (!guildId) {
             return {
@@ -12,10 +12,10 @@ exports.handler = async (event) => {
             };
         }
         
-        if (!BOT_API_KEY) {
+        if (!/^\d{17,20}$/.test(guildId)) {
             return {
-                statusCode: 500,
-                body: JSON.stringify({ error: 'BOT_API_KEY not configured' })
+                statusCode: 400,
+                body: JSON.stringify({ error: 'Invalid guildId' })
             };
         }
         
@@ -75,14 +75,8 @@ exports.handler = async (event) => {
             };
         }
         
-        // Fetch guild config from bot API
-        const response = await fetch(`${BOT_API_URL}/api/guilds/${guildId}/config`, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${BOT_API_KEY}`,
-                'Content-Type': 'application/json'
-            }
-        });
+        // Fetch guild config from bot API (signed request)
+        const response = await botApiFetch(`/api/guilds/${guildId}/config`);
         
         // Handle rate limit errors
         if (response.status === 429) {

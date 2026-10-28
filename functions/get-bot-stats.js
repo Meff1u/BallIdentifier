@@ -1,3 +1,5 @@
+const { botApiPublicFetch } = require('../lib/bot-api');
+
 /**
  * Get Bot Statistics Function
  * Fetches bot statistics from Express bot API server
@@ -39,15 +41,8 @@ exports.handler = async (event) => {
   }
 
   try {
-    const botUrl = 'http://fi11.bot-hosting.net:21302';
-    
-    // Fetch stats from bot API
-    const response = await fetch(`${botUrl}/api/stats`, {
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
+    // Fetch stats from bot API (public endpoint, no signature needed)
+    const response = await botApiPublicFetch('/api/stats');
 
     if (!response.ok) {
       return {

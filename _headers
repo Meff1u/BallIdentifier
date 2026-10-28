@@ -1,3 +1,7 @@
 /assets/dexes/*/compressed/*
   Cache-Control: public, max-age=2592000, immutable
   Content-Type: image/webp
+
+/dashboard.html
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com; img-src 'self' data: https://cdn.discordapp.com; connect-src 'self' https://discord.com; frame-ancestors 'none'; base-uri 'self'
+  Referrer-Policy: no-referrer

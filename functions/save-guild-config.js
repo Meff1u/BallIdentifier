@@ -1,3 +1,5 @@
+const { botApiFetch } = require('../lib/bot-api');
+
 // CSRF Protection: Validate Origin header
 function isValidOrigin(event) {
     const origin = event.headers.origin || event.headers.Origin;
@@ -37,8 +39,6 @@ exports.handler = async (event) => {
         }
         
         const { guildId, selectedBots, selectedRole, customMessage, isDelete } = JSON.parse(event.body || '{}');
-        const BOT_API_URL = 'http://fi11.bot-hosting.net:21302';
-        const BOT_API_KEY = process.env.API_KEY;
         
         // Validate required fields
         if (!guildId) {
@@ -50,6 +50,13 @@ exports.handler = async (event) => {
             };
         }
         
+        if (!/^\d{17,20}$/.test(String(guildId))) {
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ error: 'Invalid guildId' })
+            };
+        }
+        
         // If not deleting, validate required configuration fields
         if (!isDelete && (!selectedBots || !selectedRole || !customMessage)) {
             return {
@@ -57,13 +64,6 @@ exports.handler = async (event) => {
                 body: JSON.stringify({ 
                     error: 'Missing required fields: selectedBots, selectedRole, customMessage' 
                 })
-            };
-        }
-        
-        if (!BOT_API_KEY) {
-            return {
-                statusCode: 500,
-                body: JSON.stringify({ error: 'BOT_API_KEY not configured' })
             };
         }
         
@@ -145,7 +145,7 @@ exports.handler = async (event) => {
             };
         }
         
-        // Send configuration to bot API
+        // Send configuration to bot API (signed request)
         const requestBody = isDelete 
             ? { isDelete: true }
             : {
@@ -156,13 +156,9 @@ exports.handler = async (event) => {
                 setupAt: new Date().getTime()
             };
         
-        const response = await fetch(`${BOT_API_URL}/api/guilds/${guildId}/config`, {
+        const response = await botApiFetch(`/api/guilds/${guildId}/config`, {
             method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${BOT_API_KEY}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(requestBody)
+            body: requestBody
         });
         
         // Handle rate limit errors
