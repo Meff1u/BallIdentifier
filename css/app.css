@@ -390,8 +390,12 @@ input, textarea { caret-color: var(--accent); }
 
 .main {
     min-width: 0;
-    padding: var(--space-4) var(--space-4) var(--space-10);
+    padding: var(--space-4) var(--space-4) var(--space-6);
+    /* The page grows and pushes the footer to the bottom, also on short pages */
+    display: flex;
+    flex-direction: column;
 }
+#views { flex: 1 0 auto; min-width: 0; }
 .main:focus { outline: none; }
 
 .view { max-width: var(--content-max); margin: 0 auto; animation: view-in var(--dur-3) var(--ease-out); }
@@ -481,7 +485,7 @@ input, textarea { caret-color: var(--accent); }
     :root[data-sidebar="collapsed"] .sidebar .nav-label {
         position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
     }
-    .main { padding: var(--space-6) var(--space-8) var(--space-12); }
+    .main { padding: var(--space-6) var(--space-8) var(--space-6); }
     .bottomnav { display: none; }
 }
 
@@ -1296,7 +1300,7 @@ a.server:hover { border-color: var(--accent); text-decoration: none; transform: 
 .page-404 { margin-top: 12vh; }
 
 /* Footer (inside main) */
-.app-footer { max-width: var(--content-max); margin: var(--space-10) auto 0; padding-top: var(--space-5); border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); justify-content: space-between; color: var(--text-3); font-size: var(--fs-xs); }
+.app-footer { width: 100%; max-width: var(--content-max); margin: var(--space-10) auto 0; padding-top: var(--space-5); border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); justify-content: space-between; color: var(--text-3); font-size: var(--fs-xs); }
 .app-footer nav { display: flex; gap: var(--space-4); flex-wrap: wrap; }
 .app-footer a { color: var(--text-2); }
 body[data-route="trainer"] .app-footer { display: none; }
