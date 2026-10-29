@@ -500,8 +500,6 @@ export function createView() {
         }
     }
 
-    const priceText = (value) => (/^\d+(\.\d+)?\+?$/.test(value) ? `${value}c` : value);
-
     function specialEmoji(special) {
         if (special.emoji) return h("span.spc-emoji", { "aria-hidden": "true" }, special.emoji);
         const custom = /^<a?:\w+:(\d+)>$/.exec(special.officialEmoji || "");
@@ -510,22 +508,19 @@ export function createView() {
         return h("span.spc-emoji.is-empty", { "aria-hidden": "true" }, icon("sparkles"));
     }
 
-    function specialCard(special, { canEdit, windowDays }) {
+    function specialCard(special, { canEdit }) {
         const title = special.alias || special.name || `Special #${special.id}`;
         const rows = [];
         const add = (label, iconName, value) => value && rows.push(h("div.spc-row", h("dt", icon(iconName, "icon-sm"), label), h("dd", value)));
 
         const avg = special.priceAverage;
         const high = special.priceHighest;
-        if (avg && high && avg !== high) add("Common price", "gem", h("span", priceText(avg), h("span.subtle", " avg · "), priceText(high), h("span.subtle", " highest")));
-        else if (avg || high) add("Common price", "gem", priceText(avg || high));
+        if (avg && high && avg !== high) add("Common price", "gem", h("span", avg, h("span.subtle", " avg · "), high, h("span.subtle", " highest")));
+        else if (avg || high) add("Common price", "gem", avg || high);
         add("Spawn rate", "gauge", special.spawnRate);
         add("Duration", "timer", special.duration);
         if (special.startDate || special.endDate) {
             add("Dates", "calendar-days", `${special.startDate ? formatDate(special.startDate) : "?"} – ${special.endDate ? formatDate(special.endDate) : "no end"}`);
-        }
-        if (special.market?.sales) {
-            add(`Market (${windowDays || 30}d)`, "trophy", `median ${fmt(special.market.median)} · ${fmt(special.market.sales)} sale${special.market.sales === 1 ? "" : "s"}`);
         }
 
         return h(
@@ -539,19 +534,25 @@ export function createView() {
             special.tradeable === false || special.priceAverage === "Untradable" ? h("span.spc-badge.is-warn", icon("lock", "icon-sm"), "Untradeable") : null,
             rows.length ? h("dl.spc-rows", rows) : h("p.subtle", "No details yet."),
             special.notes ? h("p.spc-notes", special.notes) : null,
-            canEdit ? h("button.btn.btn-sm.spc-edit", { type: "button", onclick: () => editSpecial(special) }, icon("sliders-horizontal", "icon-sm"), h("span", "Edit")) : null,
+            special.market || canEdit
+                ? h(
+                      "div.row.spc-actions",
+                      special.market ? h("button.btn.btn-sm", { type: "button", onclick: () => openMarket(special) }, icon("trophy", "icon-sm"), h("span", "Market data")) : null,
+                      canEdit ? h("button.btn.btn-sm", { type: "button", onclick: () => editSpecial(special) }, icon("sliders-horizontal", "icon-sm"), h("span", "Edit")) : null,
+                  )
+                : null,
         );
     }
 
     function renderSpecials() {
-        const { specials = [], canEdit, marketWindowDays, officialLoadedAt, officialError } = specialsData;
+        const { specials = [], canEdit, officialLoadedAt, officialError } = specialsData;
         const search = h("input.input", { type: "search", placeholder: "Search by name, alias or ID", "aria-label": "Search specials", autocomplete: "off", spellcheck: false, value: specialsQuery });
         const grid = h("div.spc-grid");
 
         function paint() {
             const q = specialsQuery.trim().toLowerCase();
             const shown = specials.filter((s) => !q || String(s.id) === q.replace("#", "") || [s.name, s.alias].some((v) => v?.toLowerCase().includes(q)));
-            grid.replaceChildren(...(shown.length ? shown.map((s) => specialCard(s, { canEdit, windowDays: marketWindowDays })) : [h("p.subtle", "No special matches your search.")]));
+            grid.replaceChildren(...(shown.length ? shown.map((s) => specialCard(s, { canEdit })) : [h("p.subtle", "No special matches your search.")]));
         }
         search.addEventListener("input", () => {
             specialsQuery = search.value;
@@ -572,6 +573,114 @@ export function createView() {
                 grid,
             ),
         );
+    }
+
+    /* Market data of one special, loaded when its button is clicked */
+
+    const SVG = "http://www.w3.org/2000/svg";
+    function svg(tag, attrs = {}) {
+        const node = document.createElementNS(SVG, tag);
+        for (const [key, value] of Object.entries(attrs)) node.setAttribute(key, value);
+        return node;
+    }
+
+    function priceChart(series) {
+        const points = series.map((b, i) => ({ ...b, i })).filter((b) => b.count > 0 && b.median != null);
+        if (points.length < 2) return null;
+        const W = 300;
+        const H = 90;
+        const pad = 6;
+        const lo = Math.min(...points.map((b) => b.low ?? b.median));
+        const hi = Math.max(...points.map((b) => b.high ?? b.median));
+        const x = (i) => pad + (i / Math.max(1, series.length - 1)) * (W - pad * 2);
+        const y = (v) => H - pad - ((v - lo) / Math.max(1, hi - lo)) * (H - pad * 2);
+        const chart = svg("svg", { viewBox: `0 0 ${W} ${H}`, class: "spc-chart", role: "img", "aria-label": "Median sale price over time" });
+        for (const b of points) {
+            if (b.low != null && b.high != null) chart.append(svg("line", { x1: x(b.i), x2: x(b.i), y1: y(b.low), y2: y(b.high), class: "spc-chart-range" }));
+        }
+        chart.append(svg("polyline", { points: points.map((b) => `${x(b.i).toFixed(1)},${y(b.median).toFixed(1)}`).join(" "), class: "spc-chart-line" }));
+        for (const b of points) {
+            const dot = svg("circle", { cx: x(b.i), cy: y(b.median), r: 2.5, class: "spc-chart-dot" });
+            const title = svg("title");
+            title.textContent = `${formatDate(b.start)} – ${formatDate(b.end)}: median ${fmt(b.median)}, ${fmt(b.count)} sale${b.count === 1 ? "" : "s"}${b.low != null ? `, ${fmt(b.low)}–${fmt(b.high)}` : ""}`;
+            dot.append(title);
+            chart.append(dot);
+        }
+        return h(
+            "figure.spc-chart-wrap",
+            h("div.spc-chart-scale", h("span", fmt(hi)), h("span", fmt(lo))),
+            chart,
+            h("figcaption.spc-chart-axis", h("span", formatDate(series[0].start)), h("span", "Median per period, line = lowest to highest sale"), h("span", formatDate(series[series.length - 1].end))),
+        );
+    }
+
+    function ballList(rows, describe) {
+        return h(
+            "ul.spc-balls",
+            rows.map((row) => h("li", img(compressedArtUrl("Ballsdex", row.country), "", "spc-ball-art"), h("span.spc-ball-name", row.country), h("span.subtle", describe(row)))),
+        );
+    }
+
+    function renderMarket(special, data) {
+        const recent = special.market?.recent;
+        const all = special.market?.all;
+        const allLabel = data.windowDays ? `All time (${fmt(data.windowDays)}d)` : "All time";
+        const cell = (v) => h("td", v == null ? "—" : fmt(v));
+        const table = h(
+            "table.spc-mkt-table",
+            h("thead", h("tr", h("th", ""), h("th", "Last 30 days"), h("th", allLabel))),
+            h(
+                "tbody",
+                h("tr", h("th", "Median"), cell(recent?.median), cell(all?.median)),
+                h("tr", h("th", "Average"), cell(recent?.mean), cell(all?.mean)),
+                h("tr", h("th", "Sales"), cell(recent?.sales ?? 0), cell(all?.sales ?? data.totalSales)),
+                h("tr", h("th", "Different balls"), cell(recent?.distinctBalls ?? 0), cell(all?.distinctBalls ?? data.ballsSold)),
+            ),
+        );
+
+        const facts = [];
+        const fact = (label, value) => value != null && facts.push(h("div.spc-fact", h("span.subtle", label), h("strong", value)));
+        fact("Lowest sale", data.lowestSale != null ? fmt(data.lowestSale) : null);
+        fact("Highest sale", data.highestSale != null ? fmt(data.highestSale) : null);
+        fact("Last sale", data.lastSaleAt ? timeAgo(data.lastSaleAt) : null);
+        if (recent?.median && all?.median) {
+            const change = Math.round(((recent.median - all.median) / all.median) * 100);
+            fact("30 days vs all time", `${change > 0 ? "+" : ""}${change}%`);
+        }
+        if (recent?.sales && all?.sales) fact("Sales in the last 30 days", `${Math.round((recent.sales / all.sales) * 100)}% of all`);
+
+        const parts = [table, facts.length ? h("div.spc-facts", facts) : null, priceChart(data.series)];
+        if (data.topBalls.length) parts.push(h("h3.spc-mkt-h", "Most sold balls"), ballList(data.topBalls, (b) => `${fmt(b.count)} sale${b.count === 1 ? "" : "s"} · median ${fmt(b.median)}`));
+        if (data.cheapestBalls.length >= 2) {
+            parts.push(
+                h(
+                    "div.spc-mkt-cols",
+                    h("div", h("h3.spc-mkt-h", "Cheapest balls"), ballList(data.cheapestBalls, (b) => `median ${fmt(b.median)}`)),
+                    h("div", h("h3.spc-mkt-h", "Most expensive balls"), ballList(data.priciestBalls, (b) => `median ${fmt(b.median)}`)),
+                ),
+            );
+        }
+        if (data.recentSales.length) parts.push(h("h3.spc-mkt-h", "Recent sales"), ballList(data.recentSales, (s) => `${fmt(s.price)} · ${timeAgo(s.endsAt)}`));
+        if (!data.totalSales && !recent && !all) parts.push(h("p.subtle", "No sales of this special on the Ballsdex market yet."));
+        parts.push(
+            h(
+                "p.hint",
+                "From completed single-ball auctions on the Ballsdex market. Cheapest and most expensive count balls with at least 2 sales.",
+                data.multiItemLots ? ` ${fmt(data.multiItemLots)} multi-ball lot${data.multiItemLots === 1 ? " isn't" : "s aren't"} counted.` : "",
+            ),
+        );
+        return h("div.spc-mkt", parts);
+    }
+
+    async function openMarket(special) {
+        const content = h("div.spc-mkt-loading", spinner());
+        openDialog({ title: `${special.alias || special.name} · market`, body: content, wide: true });
+        try {
+            const data = await api("specials", { query: { market: special.id } });
+            content.replaceWith(renderMarket(special, data));
+        } catch (error) {
+            content.replaceWith(h("p", error.message));
+        }
     }
 
     const SPECIAL_FIELDS = [
@@ -596,7 +705,7 @@ export function createView() {
         const form = h(
             "form.spc-form",
             { id: "spc-form" },
-            h("p.hint", `${special.name || "Unnamed"} · #${special.id}. Leave a field empty to hide it. Numbers in prices are shown as commons.`),
+            h("p.hint", `${special.name || "Unnamed"} · #${special.id}. Leave a field empty to hide it.`),
             h("div.spc-form-grid", fields),
             h("div.field", h("label.label", { for: "spc-notes" }, "Notes"), inputs.notes),
         );

@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1793287446",
+            "type": "website",
+            "changes": [
+                "Specials: market prices now open with a \"Market data\" button and show much more: median, average and sales for the last 30 days and all time, lowest and highest sale, a price chart, the most sold, cheapest and most expensive balls and the latest sales"
+            ]
+        },
+        {
             "timestamp": "1793285715",
             "type": "website",
             "changes": [
