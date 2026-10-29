@@ -22,12 +22,16 @@ const C = { bg: "#0E0B14", surface: "#1A1524", surface2: "#221C2E", border: "#2E
 const W = 1200;
 const H = 630;
 
-const root = () => process.cwd(); // Netlify runs functions with the site root as cwd
-const readAsset = (file) => fs.readFileSync(path.join(root(), "assets", file));
+// Netlify runs functions with the site root as cwd. Each folder is spelled out on purpose: with a variable
+// folder the bundler would pack the whole assets/ folder (every spawn art) into the function.
+const fontFile = (weight) => fs.readFileSync(path.join(process.cwd(), "assets/og", `outfit-latin-${weight}-normal.woff`));
+const iconFile = (dex) => fs.readFileSync(path.join(process.cwd(), "assets/icons", `${dex}.png`));
+const dexFile = (dex) => fs.readFileSync(path.join(process.cwd(), "assets/jsons", `${dex}.json`), "utf8");
+const logoFile = () => fs.readFileSync(path.join(process.cwd(), "assets/brand/logo-mark.svg"));
 
 let fonts = null;
 function getFonts() {
-    fonts ??= [400, 600, 800].map((weight) => ({ name: "Outfit", weight, style: "normal", data: readAsset(`og/outfit-latin-${weight}-normal.woff`) }));
+    fonts ??= [400, 600, 800].map((weight) => ({ name: "Outfit", weight, style: "normal", data: fontFile(weight) }));
     return fonts;
 }
 
@@ -83,7 +87,7 @@ const row = (label, value, wide = false) =>
 const titleSize = (value) => (value.length <= 12 ? 76 : value.length <= 18 ? 64 : value.length <= 26 ? 52 : 42);
 
 function frame({ visual, kicker, title, subtitle, chips, rows }) {
-    const logo = dataUri(readAsset("brand/logo-mark.svg"), "image/svg+xml");
+    const logo = dataUri(logoFile(), "image/svg+xml");
     return el(
         "div",
         {
@@ -128,14 +132,14 @@ function frame({ visual, kicker, title, subtitle, chips, rows }) {
 async function ballCard(dexParam, nameParam) {
     const dex = DEXES.find((name) => name.toLowerCase() === String(dexParam || "").toLowerCase());
     if (!dex) return null;
-    const data = JSON.parse(readAsset(`jsons/${dex}.json`).toString("utf8"));
+    const data = JSON.parse(dexFile(dex));
     const name = Object.keys(data).find((key) => key !== "hashes" && key.toLowerCase() === String(nameParam || "").toLowerCase());
     if (!name) return null;
     const ball = data[name];
 
     const [art, icon] = await Promise.all([
         fetchBuffer(`${RAW}/dexes/${encodeURIComponent(dex)}/${encodeURIComponent(name)}.png`).then(picture),
-        Promise.resolve().then(() => picture(readAsset(`icons/${dex}.png`))).catch(() => null),
+        Promise.resolve().then(() => picture(iconFile(dex))).catch(() => null),
     ]);
     const chips = [
         ball.rarity !== undefined ? chip(`T${ball.rarity}`) : null,
