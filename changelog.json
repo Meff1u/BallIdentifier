@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1793301985",
+            "type": "bot",
+            "changes": [
+                "Notification DMs from the bot now arrive as tidy cards with buttons to the website, and update DMs show each dex with its icon"
+            ]
+        },
+        {
             "timestamp": "1793297170",
             "type": "dex",
             "dex": "Ballsdex",
