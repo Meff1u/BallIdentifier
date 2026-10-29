@@ -1,10 +1,10 @@
 {
     "changes": [
         {
-            "timestamp": "1793303250",
+            "timestamp": "1793304705",
             "type": "website",
             "changes": [
-                "New Fast Sync in the Ballsdex tab: upload the countryball export from Ballsdex's /player settings and your whole collection is imported in seconds, checked against your Ballsdex account (once every 30 minutes)"
+                "New Fast Sync in the Ballsdex tab: paste the link of the export Ballsdex sends after /player settings and your whole collection is imported in seconds, checked against your Ballsdex account (once every 30 minutes)"
             ]
         },
         {

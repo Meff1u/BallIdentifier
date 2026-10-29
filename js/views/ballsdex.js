@@ -11,125 +11,9 @@ import { compressedArtUrl } from "../core/data.js";
 import { refreshNotifications } from "../notifications.js";
 
 const KEYS_URL = "https://ballsdex.com/api/keys";
-// Fast Sync: the CSV that Ballsdex's /player settings exports (<discord id>_countryball.csv)
-const EXPORT_HEADER = ["id", "catch_date", "health_bonus", "attack_bonus", "attack", "health", "hex_id", "traded_with", "special_card", "countryball"];
-const EXPORT_FILE = /^(\d{17,20})_countryball(?: ?\(\d+\))?\.csv$/i;
-const EXPORT_MAX_BYTES = 300 * 1024 * 1024;
-
-/**
- * player_data.zip from Ballsdex -> the countryball CSV inside it ({ name, text }).
- * Small ZIP reader: central directory -> local header -> stored or deflate data (DecompressionStream).
- */
-async function readExportZip(file) {
-    const bytes = new Uint8Array(await file.arrayBuffer());
-    const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
-    let end = -1;
-    for (let i = bytes.length - 22; i >= Math.max(0, bytes.length - 65557); i--) {
-        if (view.getUint32(i, true) === 0x06054b50) {
-            end = i;
-            break;
-        }
-    }
-    if (end < 0) throw new Error("That zip file is damaged. Download the export from Ballsdex again.");
-    const count = view.getUint16(end + 10, true);
-    let offset = view.getUint32(end + 16, true);
-    const names = new TextDecoder();
-    for (let n = 0; n < count && offset + 46 <= bytes.length; n++) {
-        if (view.getUint32(offset, true) !== 0x02014b50) break;
-        const method = view.getUint16(offset + 10, true);
-        const size = view.getUint32(offset + 20, true);
-        const nameLength = view.getUint16(offset + 28, true);
-        const next = offset + 46 + nameLength + view.getUint16(offset + 30, true) + view.getUint16(offset + 32, true);
-        const path = names.decode(bytes.subarray(offset + 46, offset + 46 + nameLength));
-        const name = path.split("/").pop();
-        const local = view.getUint32(offset + 42, true);
-        offset = next;
-        if (!EXPORT_FILE.test(name)) continue;
-        if (view.getUint32(local, true) !== 0x04034b50) break;
-        const start = local + 30 + view.getUint16(local + 26, true) + view.getUint16(local + 28, true);
-        const data = bytes.subarray(start, start + size);
-        if (method === 0) return { name, text: new TextDecoder().decode(data) };
-        if (method !== 8 || typeof DecompressionStream === "undefined") throw new Error("Your browser can't open this zip. Extract the .csv from it and choose that instead.");
-        const stream = new Blob([data]).stream().pipeThrough(new DecompressionStream("deflate-raw"));
-        return { name, text: await new Response(stream).text() };
-    }
-    throw new Error("No countryball export (<your Discord ID>_countryball.csv) in that zip file.");
-}
-
-/** One CSV line -> fields (handles "quoted, values" and "" escapes). */
-function parseCsvLine(line) {
-    const out = [];
-    let field = "";
-    let quoted = false;
-    for (let i = 0; i < line.length; i++) {
-        const c = line[i];
-        if (quoted) {
-            if (c === '"' && line[i + 1] === '"') {
-                field += '"';
-                i++;
-            } else if (c === '"') quoted = false;
-            else field += c;
-        } else if (c === ",") {
-            out.push(field);
-            field = "";
-        } else if (c === '"' && !field) quoted = true;
-        else field += c;
-    }
-    out.push(field);
-    return out;
-}
-
-/** "2023-05-18 08:03:12.31984+00" -> unix seconds, or NaN */
-function exportDate(value) {
-    const iso = value.trim().replace(" ", "T").replace(/(\.\d{3})\d+/, "$1").replace(/([+-]\d{2})$/, "$1:00");
-    return Math.floor(Date.parse(iso) / 1000);
-}
-
-/**
- * Checks a Ballsdex countryball export and turns it into upload rows:
- * [instance id, ball name, special name or "", caught at (unix s), traded 0/1]. Throws with a readable message.
- */
-function readExport(text, fileName, userId) {
-    const match = EXPORT_FILE.exec(fileName);
-    if (!match) throw new Error(`This isn't a Ballsdex export: the file should be named ${userId}_countryball.csv.`);
-    if (match[1] !== userId) throw new Error("This export belongs to another Discord account. Export your own with /player settings.");
-
-    const lines = text.replace(/^\uFEFF/, "").split(/\r?\n/).filter((line) => line.trim());
-    if (lines.length < 2) throw new Error("The file has no balls in it.");
-    const header = parseCsvLine(lines[0]).map((name) => name.trim());
-    if (header.join(",") !== EXPORT_HEADER.join(",")) throw new Error("The file's columns don't match a Ballsdex export. Upload it as Ballsdex sent it, without opening it in Excel.");
-
-    const rows = [];
-    const ids = new Set();
-    const balls = new Set();
-    let specials = 0;
-    let newest = 0;
-    const now = Date.now() / 1000;
-    const isInt = (value) => /^-?\d+$/.test(value);
-    for (let i = 1; i < lines.length; i++) {
-        const fields = parseCsvLine(lines[i]);
-        const where = `Row ${i + 1} of the file`;
-        if (fields.length !== EXPORT_HEADER.length) throw new Error(`${where} has the wrong number of columns.`);
-        const [id, catchDate, healthBonus, attackBonus, attack, health, hexId, tradedWith, special, country] = fields;
-        if (!/^\d{1,20}$/.test(id)) throw new Error(`${where} has an invalid ball id.`);
-        if (BigInt(id).toString(16).toUpperCase() !== hexId.trim().toUpperCase()) throw new Error(`${where} has an id that doesn't match its hex id. The file was changed.`);
-        if (ids.has(id)) throw new Error(`${where} repeats a ball that's already in the file.`);
-        const caughtAt = exportDate(catchDate);
-        if (!Number.isFinite(caughtAt) || caughtAt < 1500000000 || caughtAt > now + 86400) throw new Error(`${where} has an invalid catch date.`);
-        if (![healthBonus, attackBonus, attack, health].every(isInt) || Math.abs(Number(healthBonus)) > 100 || Math.abs(Number(attackBonus)) > 100) {
-            throw new Error(`${where} has invalid stats.`);
-        }
-        if (tradedWith && !/^\d{17,20}$/.test(tradedWith)) throw new Error(`${where} has an invalid trade partner.`);
-        if (!country.trim() || country.length > 100 || special.length > 100) throw new Error(`${where} has an invalid ball name.`);
-        ids.add(id);
-        balls.add(country);
-        if (special) specials += 1;
-        newest = Math.max(newest, caughtAt);
-        rows.push([id, country, special, caughtAt, tradedWith ? 1 : 0]);
-    }
-    return { rows, stats: { total: rows.length, unique: balls.size, specials, newest } };
-}
-const POLL_MS = 3000;
+// Fast Sync: link to player_data.zip that Ballsdex posts in your DMs (the bot downloads and checks it)
+const EXPORT_LINK = /^https:\/\/(cdn\.discordapp\.com|media\.discordapp\.net)\/attachments\/\d{17,20}\/(\d{17,20})\/player_data\.zip\?\S*hm=\S+$/i;
+const exportUploadedAt = (attachmentId) => Number((BigInt(attachmentId) >> 22n) + 1420070400000n);
 
 export function createView() {
     let data = null;
@@ -336,7 +220,7 @@ export function createView() {
         const name = summary?.displayName && summary.displayName !== "Unknown" ? summary.displayName : user?.displayName || "You";
 
         const syncBtn = h("button.btn.btn-primary", { type: "button" });
-        const fastBtn = h("button.btn", { type: "button", title: "Import your collection from the Ballsdex /player settings export" });
+        const fastBtn = h("button.btn", { type: "button", title: "Import your collection from the export of Ballsdex's /player settings" });
         const cancelBtn = h("button.btn", { type: "button", hidden: !sync.inProgress && !sync.paused, disabled: Boolean(sync.cancelRequested) }, icon("circle-stop"), h("span", sync.cancelRequested ? "Cancelling…" : sync.paused ? "Discard paused sync" : "Cancel sync"));
         const unlinkBtn = h("button.btn.btn-danger", { type: "button", hidden: Boolean(sync.inProgress) }, icon("unlink"), h("span", "Unlink"));
         const status = h("p.sync-status", { "aria-live": "polite" });
@@ -440,12 +324,13 @@ export function createView() {
         const p = sync.progress || { phase: "starting", fetched: 0, total: null };
         const total = Number.isFinite(p.total) && p.total > 0 ? p.total : null;
         const fetched = Math.max(0, p.fetched || 0);
-        const ratio = p.phase === "saving" ? 1 : p.phase === "verifying" ? null : total ? Math.min(1, fetched / total) : null;
+        const ratio = p.phase === "saving" ? 1 : p.phase === "verifying" || p.phase === "downloading" ? null : total ? Math.min(1, fetched / total) : null;
 
         let label = "Connecting to Ballsdex…";
         if (p.phase === "balls") label = total ? `Importing balls: ${fmt(fetched)} of ${fmt(total)}` : `Importing balls: ${fmt(fetched)} so far`;
         if (p.phase === "saving") label = "Saving your stats…";
         if (p.phase === "verifying") label = "Checking the file against your Ballsdex account…";
+        if (p.phase === "downloading") label = "Downloading your export from Discord…";
 
         let eta = "";
         const startedAt = sync.startedAt ? new Date(sync.startedAt).getTime() : null;
@@ -971,89 +856,56 @@ export function createView() {
     function openFastSync() {
         const user = getUser();
         if (!user) return;
-        let parsed = null;
 
-        const fileInput = h("input", { type: "file", accept: ".zip,.csv,application/zip,text/csv", id: "fs-file", class: "fs-file" });
+        const input = h("input.input", { id: "fs-link", type: "url", autocomplete: "off", spellcheck: false, placeholder: "https://cdn.discordapp.com/attachments/…/player_data.zip?ex=…" });
         const result = h("div.fs-result", { "aria-live": "polite" });
-        const fill = h("div.meter-fill");
-        const meterLabel = h("span", "Uploading…");
-        const meter = h("div.fs-meter", { hidden: true }, h("div.meter-head", meterLabel), h("div.meter-track", { role: "progressbar", "aria-label": "Upload progress" }, fill));
         const importBtn = h("button.btn.btn-primary", { type: "button", disabled: true }, icon("upload"), h("span", "Import"));
 
         const body = h(
             "div.stack.fs-body",
-            h("p", "Import your whole collection in a few seconds from the file Ballsdex gives you, instead of pulling it from the API 25 balls at a time."),
+            h("p", "Import your whole collection in a few seconds from the export Ballsdex sends you, instead of pulling it from the API 25 balls at a time."),
             h(
                 "ol.fs-steps",
-                h("li", "In any server with Ballsdex, run ", h("code", "/player settings"), " and use the export option to download your countryballs."),
-                h("li", "Ballsdex sends you ", h("code", "player_data.zip"), ". Download it and don't change anything in it."),
-                h("li", "Choose the zip below (or the ", h("code", `${user.id}_countryball.csv`), " from inside it). BallIdentifier checks the file, then compares its balls with your Ballsdex account."),
+                h("li", "In any server with Ballsdex, run ", h("code", "/player settings"), " and export your countryballs. Ballsdex sends ", h("code", "player_data.zip"), " in your DMs."),
+                h("li", "Right-click the file (on a phone: hold it) and choose ", h("b", "Copy Link"), ". Don't download or change it."),
+                h("li", "Paste the link here. BallIdentifier downloads the file straight from Discord, checks it and compares it with your Ballsdex account."),
             ),
-            h("label.fs-drop", { for: "fs-file" }, icon("upload", "icon-lg"), h("span", "Choose player_data.zip"), fileInput),
+            h("div.field", h("label.label", { for: "fs-link" }, "Link to player_data.zip"), input),
             result,
-            meter,
-            h("p.hint", "The export has no favorites, frames or catch times; a normal sync fills those in. Fast Sync can be used once every 30 minutes. Export a fresh file right before uploading: the ball count must match your account. Edited files are caught: random balls from the file are checked in your Ballsdex account, and adding yourself as a collector checks that ball again."),
+            h("p.hint", "The export has no favorites, frames or catch times; a normal sync fills those in. Fast Sync can be used once every 30 minutes, with an export from the last 24 hours. Random balls from the file are checked in your Ballsdex account, and adding yourself as a collector checks that ball again."),
         );
         const dialog = openDialog({ title: "Fast Sync", body, footer: [h("button.btn.btn-ghost", { type: "button", onclick: () => dialog.close() }, "Cancel"), importBtn] });
 
-        fileInput.addEventListener("change", async () => {
-            parsed = null;
+        function check() {
+            const value = input.value.trim();
             importBtn.disabled = true;
-            const file = fileInput.files[0];
-            if (!file) return result.replaceChildren();
-            if (file.size > EXPORT_MAX_BYTES) return result.replaceChildren(h("p.callout.callout-danger", icon("circle-x", "icon-sm"), h("span", "The file is too big.")));
-            result.replaceChildren(h("p.subtle", spinner(), " Checking the file…"));
-            try {
-                const csv = /\.zip$/i.test(file.name) ? await readExportZip(file) : { name: file.name, text: await file.text() };
-                const { rows, stats } = readExport(csv.text, csv.name, user.id);
-                parsed = { rows, fileName: csv.name };
-                result.replaceChildren(
-                    h(
-                        "p.callout.callout-success",
-                        icon("circle-check", "icon-sm"),
-                        h("span", `${fmt(stats.total)} balls (${fmt(stats.unique)} different, ${fmt(stats.specials)} specials), latest catch ${timeAgo(stats.newest * 1000)}.`),
-                    ),
-                );
-                importBtn.disabled = false;
-            } catch (error) {
-                result.replaceChildren(h("p.callout.callout-danger", icon("circle-x", "icon-sm"), h("span", error.message)));
-            }
-        });
+            if (!value) return result.replaceChildren();
+            const match = EXPORT_LINK.exec(value);
+            let problem = "";
+            if (!match) problem = "That isn't a Discord link to player_data.zip. Copy the link of the file Ballsdex sent you (it ends with ?ex=…&is=…&hm=…).";
+            else if (Date.now() - exportUploadedAt(match[2]) > 24 * 60 * 60 * 1000) problem = "This export is more than a day old. Run /player settings again and use the new file.";
+            if (problem) return result.replaceChildren(h("p.callout.callout-danger", icon("circle-x", "icon-sm"), h("span", problem)));
+            result.replaceChildren(h("p.callout.callout-success", icon("circle-check", "icon-sm"), h("span", `Export from ${timeAgo(exportUploadedAt(match[2]))}. Ready to import.`)));
+            importBtn.disabled = false;
+        }
+        input.addEventListener("input", check);
 
         importBtn.addEventListener("click", async () => {
-            if (!parsed) return;
             importBtn.disabled = true;
-            fileInput.disabled = true;
-            meter.hidden = false;
+            input.disabled = true;
             try {
-                const { rows, fileName } = parsed;
-                const start = await api("ballsdex", { method: "POST", body: { action: "fast-start", fileName, total: rows.length } });
-                const size = start.chunkRows;
-                const chunks = Math.ceil(rows.length / size);
-                for (let index = 0; index < chunks; index++) {
-                    const body = { action: "fast-chunk", uploadId: start.uploadId, index, rows: rows.slice(index * size, (index + 1) * size) };
-                    try {
-                        await api("ballsdex", { method: "POST", body });
-                    } catch (error) {
-                        if (!(error instanceof ApiError) || error.status < 500) throw error;
-                        await api("ballsdex", { method: "POST", body }); // one retry for a network hiccup
-                    }
-                    fill.style.width = `${Math.round(((index + 1) / chunks) * 100)}%`;
-                    meterLabel.textContent = `Uploading… ${Math.round(((index + 1) / chunks) * 100)}%`;
-                }
-                meterLabel.textContent = "Checking with Ballsdex…";
-                const done = await api("ballsdex", { method: "POST", body: { action: "fast-finish", uploadId: start.uploadId } });
+                const done = await api("ballsdex", { method: "POST", body: { action: "fast-sync", url: input.value.trim() } });
                 dialog.close();
                 data = { ...data, sync: done.sync || { inProgress: true, source: "file" } };
                 render();
             } catch (error) {
                 if (handleAuthError(error)) return dialog.close();
-                meter.hidden = true;
-                fileInput.disabled = false;
+                input.disabled = false;
                 importBtn.disabled = false;
                 result.replaceChildren(h("p.callout.callout-danger", icon("circle-x", "icon-sm"), h("span", error.message)));
             }
         });
+        input.focus();
     }
 
     async function startSync({ auto = false } = {}) {

@@ -6,9 +6,7 @@
  * POST /.netlify/functions/ballsdex  { action: "unlink" }
  * POST /.netlify/functions/ballsdex  { action: "sync" }
  * POST /.netlify/functions/ballsdex  { action: "cancel" }
- * POST /.netlify/functions/ballsdex  { action: "fast-start", fileName, total }        Fast Sync from the /player settings export
- * POST /.netlify/functions/ballsdex  { action: "fast-chunk", uploadId, index, rows }
- * POST /.netlify/functions/ballsdex  { action: "fast-finish", uploadId }
+ * POST /.netlify/functions/ballsdex  { action: "fast-sync", url }   Fast Sync from the Discord link of the /player settings export
  * GET  /.netlify/functions/ballsdex?view=raws  -> rare non-special balls x tier value
  * GET  /.netlify/functions/ballsdex?view=ratelimit  -> Ballsdex API limit usage (your key + the bot's IP)
  *
@@ -62,13 +60,11 @@ exports.handler = async (event) => {
                 return forward(await botApiFetch(`${base}/sync`, { method: "POST", body: {} }));
             case "cancel":
                 return forward(await botApiFetch(`${base}/cancel`, { method: "POST", body: {} }));
-            case "fast-start":
-                return forward(await botApiFetch(`${base}/fast-sync/start`, { method: "POST", body: { fileName: String(body.fileName || "").slice(0, 120), total: Number(body.total) } }));
-            case "fast-chunk":
-                if (!Array.isArray(body.rows)) return json(400, { error: "Invalid chunk" });
-                return forward(await botApiFetch(`${base}/fast-sync/chunk`, { method: "POST", body: { uploadId: String(body.uploadId || ""), index: Number(body.index), rows: body.rows } }));
-            case "fast-finish":
-                return forward(await botApiFetch(`${base}/fast-sync/finish`, { method: "POST", body: { uploadId: String(body.uploadId || "") } }));
+            case "fast-sync": {
+                const url = typeof body.url === "string" ? body.url.trim() : "";
+                if (!url || url.length > 600) return json(400, { error: "Paste the link of player_data.zip from Discord." });
+                return forward(await botApiFetch(`${base}/fast-sync`, { method: "POST", body: { url } }));
+            }
             default:
                 return json(400, { error: "Unknown action" });
         }
