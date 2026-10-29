@@ -214,7 +214,7 @@ export function createView() {
         const name = summary?.displayName && summary.displayName !== "Unknown" ? summary.displayName : user?.displayName || "You";
 
         const syncBtn = h("button.btn.btn-primary", { type: "button" });
-        const cancelBtn = h("button.btn", { type: "button", hidden: !sync.inProgress, disabled: Boolean(sync.cancelRequested) }, icon("circle-stop"), h("span", sync.cancelRequested ? "Cancelling…" : "Cancel sync"));
+        const cancelBtn = h("button.btn", { type: "button", hidden: !sync.inProgress && !sync.paused, disabled: Boolean(sync.cancelRequested) }, icon("circle-stop"), h("span", sync.cancelRequested ? "Cancelling…" : sync.paused ? "Discard paused sync" : "Cancel sync"));
         const unlinkBtn = h("button.btn.btn-danger", { type: "button", hidden: Boolean(sync.inProgress) }, icon("unlink"), h("span", "Unlink"));
         const status = h("p.sync-status", { "aria-live": "polite" });
 
@@ -228,7 +228,7 @@ export function createView() {
             }
             syncBtn.disabled = retry > 0;
             const wait = retry >= 3600 ? `${Math.floor(retry / 3600)}h ${Math.floor((retry % 3600) / 60)}m` : `${Math.floor(retry / 60)}:${String(retry % 60).padStart(2, "0")}`;
-            syncBtn.replaceChildren(icon(retry > 0 ? "clock" : "refresh-cw"), h("span", retry > 0 ? `Sync again in ${wait}` : "Sync now"));
+            syncBtn.replaceChildren(icon(retry > 0 ? "clock" : "refresh-cw"), h("span", retry > 0 ? `Sync again in ${wait}` : sync.paused ? "Continue sync" : "Sync now"));
             if (data.collection?.lastSyncedAt) {
                 status.replaceChildren(icon("history", "icon-sm"), h("span", `Last synced ${timeAgo(data.collection.lastSyncedAt)} · ${fmt(data.collection.ballCount)} balls`));
             } else {
@@ -240,7 +240,13 @@ export function createView() {
         const remaining = () => Math.max(0, (sync.retryAfterSec || 0) - (Date.now() - fetchedAt) / 1000);
 
         syncBtn.addEventListener("click", () => startSync());
-        cancelBtn.addEventListener("click", cancelSync);
+        cancelBtn.addEventListener("click", async () => {
+            if (sync.paused) {
+                const ok = await confirmDialog({ title: "Discard the paused sync?", message: `The ${fmt(sync.pausedFetched || 0)} balls fetched so far are thrown away and the next sync starts from the beginning.`, confirmLabel: "Discard", danger: true });
+                if (!ok) return;
+            }
+            cancelSync();
+        });
         unlinkBtn.addEventListener("click", unlink);
         paintSync();
 
@@ -261,6 +267,16 @@ export function createView() {
 
         const parts = [head];
         if (sync.inProgress) parts.push(syncProgress(sync));
+        else if (sync.paused) {
+            parts.push(
+                h(
+                    "p.callout.callout-warning",
+                    { style: { "margin-top": "16px" } },
+                    icon("clock", "icon-sm"),
+                    h("span", `Sync paused at ${fmt(sync.pausedFetched || 0)} balls: today's Ballsdex API requests ran out. It continues by itself ${sync.resumeAt ? timeAgo(sync.resumeAt) : "later"}, nothing is lost.`),
+                ),
+            );
+        }
         else if (sync.busy) {
             parts.push(
                 h(
@@ -585,6 +601,7 @@ export function createView() {
         if (!next || next.sync?.inProgress) return;
         if (before?.sync?.inProgress) {
             if (next.sync?.cancelled) toast("Sync cancelled. You can start a new one in 5 minutes.", "info");
+            else if (next.sync?.paused) toast("Sync paused: today's Ballsdex API requests ran out. It continues by itself, nothing is lost.", "info", 8000);
             else if (next.sync?.error) toast(`Sync failed: ${next.sync.error}`, "error");
             else toast(`Synced ${fmt(next.sync?.ballCount ?? next.collection?.ballCount)} balls.`, "success");
             refreshNotifications();

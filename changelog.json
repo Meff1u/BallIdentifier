@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1793284631",
+            "type": "bot",
+            "changes": [
+                "Ballsdex sync: when today's Ballsdex API requests run out, the sync pauses and keeps its progress, then continues by itself once the quota resets, so even huge collections finish over a few days"
+            ]
+        },
+        {
             "timestamp": "1793282477",
             "type": "website",
             "changes": [

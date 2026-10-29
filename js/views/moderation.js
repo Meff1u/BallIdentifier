@@ -84,7 +84,11 @@ export function createView() {
                 h("div.mod-actions", cancelBtn),
             );
         }
-        const queue = [...sync.waiting.map((id) => [id, "Waiting for the slot"]), ...sync.resumeQueue.map((id) => [id, "Queued to resume"])];
+        const queue = [
+            ...sync.waiting.map((id) => [id, "Waiting for the slot"]),
+            ...sync.resumeQueue.map((id) => [id, "Queued to resume"]),
+            ...(sync.paused || []).map((entry) => [entry.userId, `Paused at ${fmt(entry.fetched || 0)} balls · continues ${timeAgo(entry.resumeAt)}`]),
+        ];
         if (queue.length) {
             card.append(h("h3", "Waiting"), h("ul.mod-list", queue.map(([id, why]) => h("li", person(id), h("span.badge", why)))));
         }
