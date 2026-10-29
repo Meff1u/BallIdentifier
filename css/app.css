@@ -1058,6 +1058,42 @@ dialog.prev-arts-dialog { width: min(calc(var(--n, 3) * 202px + 40px), calc(100v
 .shots { align-items: start; }
 .shot span { font-size: var(--fs-xs); color: var(--text-3); font-weight: 600; }
 
+/* Bot overview: supported dexes, feature cards, command list */
+.bot-overview { display: grid; gap: var(--space-4); }
+.bot-overview code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.88em; padding: 1px 6px; border-radius: 6px; background: var(--surface-3); color: var(--accent-text); white-space: nowrap; }
+.works-with { display: grid; gap: var(--space-3); padding-bottom: var(--space-6); }
+.works-with .eyebrow { font-size: var(--fs-xs); font-weight: 700; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.06em; }
+.dex-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.dex-list li { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 36px; padding: 0 var(--space-3) 0 6px; border-radius: var(--r-pill); background: var(--surface-2); border: 1px solid var(--border); font-size: var(--fs-sm); font-weight: 650; }
+.dex-list .dex-ico { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; background: var(--surface-3); }
+.feature-copy .checks span { color: var(--text-2); }
+.feature-copy .checks b { color: var(--text); }
+
+.more-grid { display: grid; gap: var(--space-4); }
+@media (min-width: 760px) { .more-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.more-card { display: grid; gap: var(--space-3); align-content: start; grid-template-rows: auto auto 1fr auto; }
+.more-card h3 { font-size: var(--fs-md); display: flex; align-items: center; gap: var(--space-2); }
+.more-card .icon-wrap, .cmd-card h2 .icon-wrap { width: 32px; height: 32px; flex: none; border-radius: var(--r-md); display: grid; place-items: center; background: var(--accent-soft); color: var(--accent-text); }
+.more-card > p { color: var(--text-2); }
+.more-points { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--space-2); align-content: start; font-size: var(--fs-sm); color: var(--text-2); }
+.more-points li { position: relative; padding-left: var(--space-4); }
+.more-points li::before { content: ""; position: absolute; left: 2px; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.more-action { padding-top: var(--space-1); }
+
+.cmd-card h2 { font-size: var(--fs-lg); display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-3); }
+.cmd-list { list-style: none; margin: 0; padding: 0; display: grid; }
+.cmd-list li { display: grid; gap: var(--space-1) var(--space-4); grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "name where" "what what"; padding: var(--space-3) 0; border-top: 1px solid var(--border); align-items: center; }
+.cmd-list li:first-child { border-top: 0; }
+.cmd-name { grid-area: name; display: flex; flex-wrap: wrap; align-items: center; gap: 4px var(--space-2); font-weight: 650; }
+.cmd-how { display: inline-flex; align-items: center; gap: 4px; font-size: var(--fs-xs); font-weight: 600; color: var(--text-3); }
+.cmd-arg { font-size: var(--fs-xs); font-weight: 600; color: var(--text-3); border: 1px dashed var(--border-strong); border-radius: 6px; padding: 0 6px; }
+.cmd-list p { grid-area: what; color: var(--text-2); font-size: var(--fs-sm); }
+.cmd-list .badge { grid-area: where; }
+@media (min-width: 900px) {
+    .cmd-list li { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr) 96px; grid-template-areas: "name what where"; }
+    .cmd-list .badge { justify-self: end; }
+}
+
 /* Notifier — server list */
 .server-list { display: grid; gap: var(--space-2); }
 @media (min-width: 720px) { .server-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); } }

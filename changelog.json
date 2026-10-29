@@ -10,7 +10,9 @@
                 "Changelog moved to the What's new panel (newspaper icon), with a dot when there's something new",
                 "Notifications (bell icon): sync results, vote reminders and updates on the website, each one optionally also as a Discord DM",
                 "Ballsdex Raws tab and /ballsdex raws: value of your rare (T1-T23) non-special balls",
-                "Ballsdex sync: live progress, cancel button, one sync at a time and a 12-hour cooldown"
+                "Ballsdex sync: live progress, cancel button, one sync at a time and a 12-hour cooldown",
+                "Notification settings now live only on the website; the /notifications bot command was removed",
+                "Bot tab overview rewritten: every bot feature and command explained in one place"
             ],
             "type": "website"
         },

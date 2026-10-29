@@ -1,5 +1,5 @@
 /**
- * Bot — overview (what the bot does, invite, live stats) and the Notifier settings,
+ * Bot — overview (every feature and command, invite, live stats) and the Notifier settings,
  * which need a Discord login: server list -> per-server configuration with live preview.
  */
 
@@ -9,6 +9,7 @@ import { api, ApiError } from "../core/api.js";
 import { getUser, onAuthChange, loadSession, login, sessionExpired, sessionReady } from "../core/auth.js";
 import { dexIcon } from "../core/data.js";
 import { renderDiscordMarkdown } from "../core/discord-md.js";
+import { openNotifications } from "../notifications.js";
 
 const CLIENT_ID = "510775326310268930";
 const INVITE_URL = `https://discord.com/oauth2/authorize?client_id=${CLIENT_ID}`;
@@ -42,7 +43,7 @@ export function createView() {
             h(
                 "div.bot-id",
                 h("h1", "BallIdentifier", h("span.badge.badge-accent", "Discord bot")),
-                h("p", "Identify balls, get spawn pings and reminders, right inside Discord."),
+                h("p", "Identify spawns, get pinged for new ones and keep track of your Ballsdex collection, right inside Discord."),
             ),
             h(
                 "div.bot-actions",
@@ -99,49 +100,138 @@ export function createView() {
         return h("h2", h("span.icon-wrap", icon(iconName)), title);
     }
 
+    const DEXES = ["Ballsdex", "FoodDex", "HistoryDex", "JoJoDex", "Empireballs Reboot", "MapsDex", "FlagsDex"];
+    const code = (text) => h("code", text);
+
+    function infoCard(iconName, title, intro, points, action) {
+        return h(
+            "article.card.card-pad.more-card",
+            h("h3", h("span.icon-wrap", icon(iconName)), title),
+            h("p", intro),
+            h("ul.more-points", points.map((point) => h("li", point))),
+            action ? h("div.more-action", action) : null,
+        );
+    }
+
+    const COMMANDS = [
+        [[h("b", "Identify")], "Right-click a spawn → Apps", "Names the ball in a spawn message, with rarity and artist.", "Servers"],
+        [[h("b", "Check collections")], "Right-click a member → Apps", "Lists the collector balls that member owns, in every supported dex.", "Servers"],
+        [[code("/info"), " ", h("span.cmd-arg", "dex"), " ", h("span.cmd-arg", "name or ID")], null, "Rarity, wave, common value, collector requirement, demand tier and collectors of one entry.", "Anywhere"],
+        [[code("/collectors"), " ", h("span.cmd-arg", "dex")], null, "Browse every collector ball of a dex, or search one by name or ID.", "Anywhere"],
+        [[code("/ballsdex link"), " · ", code("unlink")], null, "Connect or remove your Ballsdex API key. The key is stored encrypted.", "Anywhere"],
+        [[code("/ballsdex sync")], null, "Import your Ballsdex collection, with live progress and a cancel button.", "Anywhere"],
+        [[code("/ballsdex collection")], null, "Totals, specials and your top 5 rankings from the last sync.", "Anywhere"],
+        [[code("/ballsdex raws")], null, "Value of your rare non-special balls, counted per tier.", "Anywhere"],
+        [[code("/help")], null, "Bot status, supported dexes, statistics and links.", "Anywhere"],
+        [[code("/notifier")], null, "Links to the Notifier settings on this website.", "Servers"],
+    ];
+
     const overview = h(
-        "div.card.card-pad",
+        "div.bot-overview",
         h(
-            "article.feature",
+            "div.card.card-pad",
             h(
-                "div.feature-copy",
-                featureHead("scan-search", "Identify in two clicks"),
-                h("p", "Right-click any spawn message, open ", h("b", "Apps"), " and pick ", h("b", "Identify"), ". The bot replies with the ball's name, rarity and artist."),
-                h("ol.steps", h("li", "Right-click the spawn message"), h("li", "Choose Apps → Identify"), h("li", "Get the answer instantly")),
-            ),
-            h("div.shots", { style: { "--cols": "2" } }, shot("assets/bot/identifier/1.png", "Ballsdex result"), shot("assets/bot/identifier/2.png", "JoJoDex result")),
-        ),
-        h(
-            "article.feature",
-            h(
-                "div.feature-copy",
-                featureHead("bell", "Reminders and rewards"),
-                h("p", "Set reminders so you never miss your daily activities, and get a thank-you message when you upvote the bot."),
-                h("p.callout", icon("star", "icon-sm"), h("span", h("b", "Upvote reward: "), "upvoting lets you use the bot without rate limits.")),
+                "div.works-with",
+                h("span.eyebrow", "Works with"),
+                h("ul.dex-list", DEXES.map((dex) => h("li", img(dexIcon(dex), "", "dex-ico", { width: 24, height: 24 }), dex))),
             ),
             h(
-                "div.shots",
-                { style: { "--cols": "3" } },
-                shot("assets/bot/notifications/1.png", "Step 1"),
-                shot("assets/bot/notifications/2.png", "Step 2"),
-                shot("assets/bot/notifications/3.png", "Final message"),
-            ),
-        ),
-        h(
-            "article.feature",
-            h(
-                "div.feature-copy",
-                featureHead("megaphone", "Spawn Notifier"),
-                h("p", "Never miss a spawn. The Notifier pings a role whenever a bot you choose spawns a ball on your server."),
+                "article.feature",
                 h(
-                    "ul.checks",
-                    h("li", icon("check", "icon-sm"), "Pick which bots to watch"),
-                    h("li", icon("check", "icon-sm"), "Pick the role to ping"),
-                    h("li", icon("check", "icon-sm"), "Write your own message"),
+                    "div.feature-copy",
+                    featureHead("scan-search", "Identify in two clicks"),
+                    h("p", "Right-click a spawn message, open ", h("b", "Apps"), " and pick ", h("b", "Identify"), ". Only you see the answer, so you can use it in any server channel without spamming it."),
+                    h("ol.steps", h("li", "Right-click the spawn message"), h("li", "Choose Apps → Identify"), h("li", "Read the name, rarity and artist")),
+                    h(
+                        "ul.checks",
+                        h("li", icon("check", "icon-sm"), h("span", "Shows how similar the spawn is to the matched art, and how many balls you've identified so far.")),
+                        h("li", icon("check", "icon-sm"), h("span", "One identify every 10 minutes. ", h("b", "No cooldown"), " for 12 hours after you upvote the bot.")),
+                        h("li", icon("check", "icon-sm"), h("span", "Unsure matches (usually brand-new spawn arts) are reported automatically, so the art gets added quickly.")),
+                    ),
+                    h("div", h("a.btn", { href: "https://discordbotlist.com/bots/ballidentifier/upvote", target: "_blank", rel: "noopener" }, icon("thumbs-up"), h("span", "Upvote the bot"))),
                 ),
-                h("div", h("a.btn.btn-primary", { href: "#/bot/notifier" }, icon("settings-2"), h("span", "Set up the Notifier"))),
+                h("div.shots", { style: { "--cols": "2" } }, shot("assets/bot/identifier/1.png", "Ballsdex result"), shot("assets/bot/identifier/2.png", "JoJoDex result")),
             ),
-            h("div.shots", { style: { "--cols": "1" } }, shot("assets/bot/notifier/1.png", "Notification example")),
+            h(
+                "article.feature",
+                h(
+                    "div.feature-copy",
+                    featureHead("megaphone", "Spawn Notifier"),
+                    h("p", "Never miss a spawn. When a dex you picked spawns a ball on your server, the bot replies to it with the ball's name and pings your role."),
+                    h(
+                        "ul.checks",
+                        h("li", icon("check", "icon-sm"), h("span", "Pick which dexes to watch and which role to ping.")),
+                        h("li", icon("check", "icon-sm"), h("span", "Write your own message with ", code("{ball}"), ", ", code("{rarity}"), ", ", code("{artist}"), " and ", code("{role}"), ".")),
+                        h("li", icon("check", "icon-sm"), h("span", "Only the chosen role can be pinged, never @everyone.")),
+                        h("li", icon("check", "icon-sm"), h("span", "New spawn arts show as “Unknown” and are reported for an update.")),
+                    ),
+                    h("p.subtle", "You need Administrator on the server, and the bot has to be in it."),
+                    h("div", h("a.btn.btn-primary", { href: "#/bot/notifier" }, icon("settings-2"), h("span", "Set up the Notifier"))),
+                ),
+                h("div.shots", { style: { "--cols": "1" } }, shot("assets/bot/notifier/1.png", "Notification example")),
+            ),
+        ),
+        h(
+            "div.more-grid",
+            infoCard(
+                "layers",
+                "Your Ballsdex collection",
+                "Link your Ballsdex API key once, then see your collection in the bot and on this website.",
+                [
+                    "Sync imports every ball you own. One sync runs at a time, and you can sync again 12 hours later.",
+                    "Collection shows totals, specials and your top 5 most owned balls and specials.",
+                    "Raws adds up your rare non-special balls (T1 to T23), weighted by tier.",
+                    "The key is encrypted before it's stored. Unlinking deletes it and your saved data.",
+                ],
+                h("a.btn", { href: "#/ballsdex" }, icon("layers"), h("span", "Open Ballsdex tab")),
+            ),
+            infoCard(
+                "bell",
+                "Notifications",
+                "Everything the bot tells you lands under the bell on this website. Choose what you get, and which ones also come as a Discord DM.",
+                [
+                    "Upvote thanks, and a reminder when your upvote runs out.",
+                    "Ballsdex: sync finished, sync available again, key linked or removed.",
+                    "Dex updates and new website or bot features.",
+                ],
+                h("button.btn", { type: "button", onclick: () => openNotifications() }, icon("bell"), h("span", "Open notifications")),
+            ),
+            infoCard(
+                "book-open",
+                "Dex lookups",
+                "Look up any entry of a supported dex without leaving Discord.",
+                [
+                    h("span", code("/info"), " gives rarity, wave, common value, collector requirement and demand tier."),
+                    h("span", code("/collectors"), " lists who owns each collector ball, with search by name or ID."),
+                    h("span", "Right-click a member → Apps → ", h("b", "Check collections"), " to see their collector balls."),
+                ],
+            ),
+            infoCard(
+                "fingerprint",
+                "How it works",
+                "The bot never guesses from names. It compares the spawn picture itself.",
+                [
+                    "Each spawn image is turned into a small fingerprint (an image hash) and compared with every known art of that dex.",
+                    "Dex data and new arts are downloaded every hour, so updates need no bot restart.",
+                    "Similarity below the safe threshold means the art is probably new, and it gets reported for checking.",
+                ],
+            ),
+        ),
+        h(
+            "section.card.card-pad.cmd-card",
+            { "aria-labelledby": "cmd-title" },
+            h("h2", { id: "cmd-title" }, h("span.icon-wrap", icon("square-terminal")), "All commands"),
+            h(
+                "ul.cmd-list",
+                COMMANDS.map(([name, how, what, where]) =>
+                    h(
+                        "li",
+                        h("div.cmd-name", name, how ? h("span.cmd-how", icon("mouse-pointer-click", "icon-sm"), how) : null),
+                        h("p", what),
+                        h(`span.badge${where === "Servers" ? "" : ".badge-accent"}`, where),
+                    ),
+                ),
+            ),
         ),
     );
 
