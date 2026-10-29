@@ -1,6 +1,6 @@
 /* ==========================================================================
    BallIdentifier — design system
-   Mobile first. Themes: light, dark, synthwave (data-theme on <html>).
+   Mobile first. Themes: light, dark, synthwave, sakura (data-theme on <html>).
    ========================================================================== */
 
 /* ---------- Fonts (self-hosted, Outfit = the logo's wordmark face) ---------- */
@@ -165,41 +165,77 @@
 
 :root[data-theme="synthwave"] {
     color-scheme: dark;
-    --bg: #0C0620;
-    --bg-elev: #120A2B;
-    --surface: #170D36;
-    --surface-2: #1F1346;
-    --surface-3: #2A1A5A;
-    --border: #35206A;
-    --border-strong: #523296;
-    --text: #F8EFFF;
-    --text-2: #D2BEF0;
-    --text-3: #A891D0;
-    --accent: #B33CF2;
-    --accent-hover: #C55BFF;
-    --accent-press: #9D2BDA;
-    --accent-text: #E79BFF;
-    --accent-soft: rgba(179, 60, 242, 0.2);
-    --accent-soft-2: rgba(179, 60, 242, 0.34);
+    --bg: #0D0519;
+    --bg-elev: #130826;
+    --surface: #190C31;
+    --surface-2: #211142;
+    --surface-3: #2C1856;
+    --border: #38226B;
+    --border-strong: #54339C;
+    --text: #F7EFFF;
+    --text-2: #CFBDF2;
+    --text-3: #A58FD4;
+    --accent: #A855F7;
+    --accent-hover: #BC72FF;
+    --accent-press: #9240E2;
+    --accent-text: #D9A9FF;
+    --accent-soft: rgba(168, 85, 247, 0.2);
+    --accent-soft-2: rgba(168, 85, 247, 0.34);
     --on-accent: #FFFFFF;
-    --focus: #3CE6F0;
+    --focus: #C084FC;
     --success: #34E3B0;
     --success-soft: rgba(52, 227, 176, 0.14);
     --warning: #FFC85A;
     --warning-soft: rgba(255, 200, 90, 0.14);
     --danger: #FF6A97;
     --danger-soft: rgba(255, 106, 151, 0.15);
-    --overlay: rgba(6, 2, 18, 0.7);
-    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 18px -8px rgba(30, 0, 60, 0.7);
-    --shadow-2: 0 2px 8px rgba(0, 0, 0, 0.45), 0 22px 46px -16px rgba(40, 0, 80, 0.8);
-    --chat-bg: #160C33;
-    --chat-sidebar: #110828;
+    --overlay: rgba(7, 3, 20, 0.7);
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 18px -8px rgba(35, 0, 70, 0.7);
+    --shadow-2: 0 2px 8px rgba(0, 0, 0, 0.45), 0 22px 46px -16px rgba(45, 0, 90, 0.8);
+    --chat-bg: #170B2F;
+    --chat-sidebar: #120725;
     --chat-hover: rgba(255, 255, 255, 0.05);
-    --mention: #7FF3FA;
-    --mention-bg: rgba(60, 230, 240, 0.14);
-    --neon-a: #FF3EA5;
-    --neon-b: #FF9E3D;
-    --neon-c: #3CE6F0;
+    --mention: #D3A6FF;
+    --mention-bg: rgba(168, 85, 247, 0.16);
+    --neon-a: #B04CFF;
+    --neon-b: #7C3AED;
+    --neon-c: #E0A6FF;
+}
+
+:root[data-theme="sakura"] {
+    color-scheme: light;
+    --bg: #FBF0F4;
+    --bg-elev: #FFFFFF;
+    --surface: #FFFFFF;
+    --surface-2: #F9E8EE;
+    --surface-3: #F3D9E2;
+    --border: #EFD3DD;
+    --border-strong: #DFB3C4;
+    --text: #41232F;
+    --text-2: #6E4A59;
+    --text-3: #855E6E;
+    --accent: #C93667;
+    --accent-hover: #B92D5C;
+    --accent-press: #A82652;
+    --accent-text: #BE2F60;
+    --accent-soft: rgba(201, 54, 103, 0.1);
+    --accent-soft-2: rgba(201, 54, 103, 0.2);
+    --on-accent: #FFFFFF;
+    --focus: #C93667;
+    --success: #17794E;
+    --success-soft: rgba(23, 121, 78, 0.1);
+    --warning: #9A5B05;
+    --warning-soft: rgba(196, 128, 16, 0.12);
+    --danger: #C23030;
+    --danger-soft: rgba(194, 48, 48, 0.09);
+    --overlay: rgba(65, 35, 47, 0.42);
+    --shadow-1: 0 1px 2px rgba(90, 30, 50, 0.06), 0 6px 16px -10px rgba(90, 30, 50, 0.16);
+    --shadow-2: 0 2px 6px rgba(90, 30, 50, 0.08), 0 22px 44px -18px rgba(90, 30, 50, 0.28);
+    --chat-bg: #FFFFFF;
+    --chat-sidebar: #F9E8EE;
+    --chat-hover: rgba(65, 35, 47, 0.035);
+    --mention: #BE2F60;
+    --mention-bg: rgba(201, 54, 103, 0.12);
 }
 
 /* ---------- Base ---------- */
@@ -259,14 +295,14 @@ input, textarea { caret-color: var(--accent); }
 
 [hidden] { display: none !important; }
 
-/* Synthwave ambient: sunset band + perspective grid, behind everything */
+/* Synthwave ambient: violet glow band + perspective grid, behind everything */
 :root[data-theme="synthwave"] body::before {
     content: "";
     position: fixed; inset: auto 0 0 0; height: 46vh; z-index: -1; pointer-events: none;
     background:
         linear-gradient(to bottom, var(--bg) 0%, transparent 35%),
-        repeating-linear-gradient(to right, rgba(179, 60, 242, 0.22) 0 1px, transparent 1px 64px),
-        repeating-linear-gradient(to bottom, rgba(60, 230, 240, 0.16) 0 1px, transparent 1px 40px);
+        repeating-linear-gradient(to right, rgba(168, 85, 247, 0.22) 0 1px, transparent 1px 64px),
+        repeating-linear-gradient(to bottom, rgba(224, 166, 255, 0.14) 0 1px, transparent 1px 40px);
     transform: perspective(380px) rotateX(58deg);
     transform-origin: bottom center;
     mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent 80%);
@@ -275,8 +311,8 @@ input, textarea { caret-color: var(--accent); }
     content: "";
     position: fixed; inset: auto 0 0 0; height: 60vh; z-index: -2; pointer-events: none;
     background:
-        radial-gradient(60% 45% at 50% 100%, rgba(255, 62, 165, 0.22), transparent 70%),
-        radial-gradient(40% 30% at 50% 100%, rgba(255, 158, 61, 0.16), transparent 70%);
+        radial-gradient(60% 45% at 50% 100%, rgba(176, 76, 255, 0.22), transparent 70%),
+        radial-gradient(40% 30% at 50% 100%, rgba(124, 58, 237, 0.16), transparent 70%);
 }
 
 /* ---------- App shell ---------- */
@@ -601,6 +637,7 @@ input, textarea { caret-color: var(--accent); }
 .badge-success { background: var(--success-soft); color: var(--success); }
 .badge-warning { background: var(--warning-soft); color: var(--warning); }
 .badge-danger { background: var(--danger-soft); color: var(--danger); }
+.badge-ico { width: 16px; height: 16px; border-radius: 50%; object-fit: cover; background: var(--surface-3); }
 
 .callout {
     display: flex; gap: var(--space-3); align-items: flex-start;
@@ -1283,7 +1320,7 @@ a.nf-item:hover { background: var(--surface-2); text-decoration: none; }
 
 /* ---------- Small utilities & late additions ---------- */
 img.is-broken { visibility: hidden; }
-.chip img.is-broken, .menu img.is-broken { display: none; }
+.chip img.is-broken, .menu img.is-broken, .badge img.is-broken { display: none; }
 .hide-sm { display: none; }
 @media (min-width: 640px) { .hide-sm { display: inline; } }
 .inline-icon { display: inline-block; vertical-align: -2px; margin-left: 3px; }
@@ -1292,8 +1329,10 @@ img.is-broken { visibility: hidden; }
 .avatar.skeleton { display: block; }
 .menu-item.is-danger { color: var(--danger); }
 .prev-art { margin: 0; }
-.cl-filters .segmented { width: 100%; }
+.cl-filters { display: flex; gap: var(--space-2); align-items: center; }
+.cl-filters .segmented { flex: 1; min-width: 0; }
 .cl-filters .segmented button { flex: 1; justify-content: center; }
+.cl-dex-select { flex: none; width: auto; max-width: 45%; min-height: 44px; }
 .changelog-drawer .dialog-inner { min-height: 0; }
 .rank-cols { display: grid; gap: var(--space-4); }
 @media (min-width: 720px) { .rank-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

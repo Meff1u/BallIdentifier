@@ -1,5 +1,5 @@
 /**
- * Themes: light, dark, synthwave, or follow the system (no data-theme attribute).
+ * Themes: light, dark, synthwave, sakura, or follow the system (no data-theme attribute).
  * js/theme-boot.js applies the saved choice before first paint.
  */
 
@@ -10,9 +10,10 @@ export const THEMES = [
     { id: "light", label: "Light", icon: "sun" },
     { id: "dark", label: "Dark", icon: "moon" },
     { id: "synthwave", label: "Synthwave", icon: "sparkles" },
+    { id: "sakura", label: "Sakura", icon: "flower" },
 ];
 
-const THEME_COLORS = { light: "#F6F4FA", dark: "#0E0B14", synthwave: "#0C0620" };
+const THEME_COLORS = { light: "#F6F4FA", dark: "#0E0B14", synthwave: "#0D0519", sakura: "#FBF0F4" };
 const media = window.matchMedia("(prefers-color-scheme: light)");
 const listeners = new Set();
 

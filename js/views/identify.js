@@ -48,7 +48,7 @@ export function createView() {
         fileInput,
     );
 
-    const latestPill = h("button.latest-update", { type: "button", hidden: true, onclick: () => openChangelog("dex") });
+    const latestPill = h("button.latest-update", { type: "button", hidden: true, onclick: () => openChangelog(dex) });
 
     const tips = h(
         "details.disclosure",
@@ -90,6 +90,7 @@ export function createView() {
         dexIconEl.classList.remove("is-broken");
         dexIconEl.src = dexIcon(dex);
         updateCount();
+        initLatest();
     });
 
     async function updateCount() {
@@ -104,10 +105,12 @@ export function createView() {
     }
 
     async function initLatest() {
+        const current = dex;
+        latestPill.hidden = true;
         try {
-            const entry = await latestEntry("dex");
-            if (!entry) return;
-            latestPill.replaceChildren(icon("sparkle", "icon-sm"), h("span", `Updated ${timeAgo(entry.time)}: ${entry.changes[0]}`));
+            const entry = await latestEntry(current);
+            if (!entry || current !== dex) return;
+            latestPill.replaceChildren(icon("sparkle", "icon-sm"), h("span", `${entry.dex || "Dex"} updated ${timeAgo(entry.time)}: ${entry.changes[0]}`));
             latestPill.hidden = false;
         } catch {
             /* optional */

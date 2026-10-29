@@ -3,9 +3,9 @@
  * with an unread dot on the bell. Entries come from changelog.json.
  */
 
-import { h, storage, store, timeAgo } from "./core/dom.js";
+import { h, img, storage, store, timeAgo } from "./core/dom.js";
 import { openDialog } from "./core/ui.js";
-import { getChangelog } from "./core/data.js";
+import { getChangelog, getDexList, dexIcon } from "./core/data.js";
 
 const SEEN_KEY = "changelogSeen";
 const PAGE = 25;
@@ -17,6 +17,7 @@ const FILTERS = [
 
 let bell;
 let entries = null;
+let dexNames = null;
 
 async function load() {
     if (entries) return entries;
@@ -26,6 +27,34 @@ async function load() {
         .filter((entry) => Number.isFinite(entry.time))
         .sort((a, b) => b.time - a.time);
     return entries;
+}
+
+/** Dexes found in the log, canonical order first. */
+async function getDexNames() {
+    if (dexNames) return dexNames;
+    const list = await load();
+    const inLog = [...new Set(list.filter((entry) => entry.dex).map((entry) => entry.dex))];
+    let known = [];
+    try {
+        ({ dexes: known } = await getDexList());
+    } catch {
+        /* order is decorative */
+    }
+    dexNames = [...known.filter((name) => inLog.includes(name)), ...inLog.filter((name) => !known.includes(name))];
+    return dexNames;
+}
+
+function matches(entry, filter) {
+    if (filter === "all") return true;
+    if (filter === "dex") return entry.type === "dex";
+    if (filter === "website") return entry.type === "website";
+    return entry.dex === filter;
+}
+
+function badge(entry) {
+    if (entry.type === "website") return h("span.badge.badge-accent", "Website");
+    if (entry.dex) return h("span.badge", img(dexIcon(entry.dex), "", "badge-ico"), entry.dex);
+    return h("span.badge", "Dex update");
 }
 
 export async function initChangelog(button) {
@@ -49,44 +78,58 @@ function setUnread(on) {
     bell?.setAttribute("aria-label", on ? "What's new (new updates)" : "What's new");
 }
 
-/** Latest entry of a type, for the "Updated …" pill on the Identifier. */
-export async function latestEntry(type) {
+/** Latest dex entry, optionally for one dex, for the "Updated …" pill on the Identifier. */
+export async function latestEntry(dexName = null) {
     const list = await load();
-    return list.find((entry) => !type || entry.type === type) || null;
+    return list.find((entry) => entry.type === "dex" && (!dexName || entry.dex === dexName)) || null;
 }
 
 export async function openChangelog(initialFilter = "all") {
-    let list;
+    let list, dexes;
     try {
         list = await load();
+        dexes = await getDexNames();
     } catch {
         list = [];
+        dexes = [];
     }
     const seen = seenTime();
-    let filter = initialFilter;
+    let filter = FILTERS.some((option) => option.id === initialFilter) || dexes.includes(initialFilter) ? initialFilter : "all";
     let shown = PAGE;
 
     const listEl = h("div.cl-list");
+    const dexSelect = h(
+        "select.select.cl-dex-select",
+        { "aria-label": "Filter by dex", hidden: filter !== "dex" && !dexes.includes(filter) },
+        h("option", { value: "dex" }, "All dexes"),
+        dexes.map((name) => h("option", { value: name, selected: name === filter }, name)),
+    );
+    dexSelect.addEventListener("change", () => setFilter(dexSelect.value));
+
     const tabs = FILTERS.map((option) =>
         h(
             "button",
             {
                 type: "button",
-                "aria-pressed": String(option.id === filter),
-                onclick: () => {
-                    filter = option.id;
-                    shown = PAGE;
-                    tabs.forEach((tab, i) => tab.setAttribute("aria-pressed", String(FILTERS[i].id === filter)));
-                    render();
-                    listEl.scrollTop = 0;
-                },
+                "aria-pressed": String(option.id === filter || (option.id === "dex" && dexes.includes(filter))),
+                onclick: () => setFilter(option.id),
             },
             option.label,
         ),
     );
 
+    function setFilter(next) {
+        filter = next;
+        shown = PAGE;
+        tabs.forEach((tab, i) => tab.setAttribute("aria-pressed", String(FILTERS[i].id === filter || (FILTERS[i].id === "dex" && dexes.includes(filter)))));
+        dexSelect.hidden = filter !== "dex" && !dexes.includes(filter);
+        dexSelect.value = dexes.includes(filter) ? filter : "dex";
+        render();
+        listEl.scrollTop = 0;
+    }
+
     function render() {
-        const filtered = list.filter((entry) => filter === "all" || entry.type === filter);
+        const filtered = list.filter((entry) => matches(entry, filter));
         const nodes = [];
         let month = "";
 
@@ -110,7 +153,7 @@ export async function openChangelog(initialFilter = "all") {
                         h(
                             "div.cl-meta",
                             h("time", { dateTime: new Date(entry.time).toISOString(), title: new Date(entry.time).toLocaleString("en-GB", { dateStyle: "full", timeStyle: "short" }) }, timeAgo(entry.time)),
-                            h(`span.badge${entry.type === "website" ? ".badge-accent" : ""}`, entry.type === "website" ? "Website" : "Dex update"),
+                            badge(entry),
                             entry.time > seen ? h("span.badge.badge-success", "New") : null,
                         ),
                         h("ul", entry.changes.map((change) => h("li", change))),
@@ -146,7 +189,7 @@ export async function openChangelog(initialFilter = "all") {
         className: "changelog-drawer",
     });
     // The drawer needs the filter row and its own scrolling list instead of the default body
-    dialog.querySelector(".dialog-inner").append(h("div.cl-filters", h("div.segmented", { role: "group", "aria-label": "Filter updates" }, tabs)), listEl);
+    dialog.querySelector(".dialog-inner").append(h("div.cl-filters", h("div.segmented", { role: "group", "aria-label": "Filter updates" }, tabs), dexSelect), listEl);
 
     if (list[0]) store(SEEN_KEY, list[0].time);
     setUnread(false);

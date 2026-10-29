@@ -2,7 +2,7 @@
 (function () {
     try {
         var theme = JSON.parse(localStorage.getItem("theme"));
-        if (theme === "light" || theme === "dark" || theme === "synthwave") {
+        if (theme === "light" || theme === "dark" || theme === "synthwave" || theme === "sakura") {
             document.documentElement.setAttribute("data-theme", theme);
         }
     } catch (e) {
