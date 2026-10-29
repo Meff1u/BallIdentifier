@@ -46,8 +46,8 @@ export function loadSession(force = false) {
 
 /** The view the user should come back to after Discord. */
 function currentReturnTo() {
-    const hash = location.hash.split("?")[0];
-    return /^#\/(identify|arts|trainer|bot|ballsdex)(\/[\w-]{0,40}){0,2}$/.test(hash) ? hash : "#/bot";
+    const hash = `#${location.pathname}`;
+    return /^#\/(identify|arts|trainer|bot|collectors|ballsdex|moderation)(\/[\w-]{0,40}){0,2}$/.test(hash) ? hash : "#/bot";
 }
 
 export function loginUrl(returnTo = currentReturnTo()) {

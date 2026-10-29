@@ -1,6 +1,15 @@
 {
     "changes": [
         {
+            "timestamp": "1793289203",
+            "type": "website",
+            "changes": [
+                "Cleaner links without the # (e.g. ballidentifier.xyz/ballsdex/specials). Old links still work",
+                "Links sent on Discord now show a preview of that exact page, including a ball's art and details or a special's price and spawn rate",
+                "Spawn Arts and Specials: \"Copy link\" buttons to share a single ball or special"
+            ]
+        },
+        {
             "timestamp": "1793287446",
             "type": "website",
             "changes": [

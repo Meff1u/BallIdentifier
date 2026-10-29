@@ -520,7 +520,9 @@ export function createView() {
         add("Spawn rate", "gauge", special.spawnRate);
         add("Duration", "timer", special.duration);
         if (special.startDate || special.endDate) {
-            add("Dates", "calendar-days", `${special.startDate ? formatDate(special.startDate) : "?"} – ${special.endDate ? formatDate(special.endDate) : "no end"}`);
+            const start = special.startDate ? formatDate(special.startDate) : "?";
+            const end = special.endDate ? formatDate(special.endDate) : "no end";
+            add("Dates", "calendar-days", start === end ? start : `${start} – ${end}`);
         }
 
         return h(
@@ -534,14 +536,22 @@ export function createView() {
             special.tradeable === false || special.priceAverage === "Untradable" ? h("span.spc-badge.is-warn", icon("lock", "icon-sm"), "Untradeable") : null,
             rows.length ? h("dl.spc-rows", rows) : h("p.subtle", "No details yet."),
             special.notes ? h("p.spc-notes", special.notes) : null,
-            special.market || canEdit
-                ? h(
-                      "div.row.spc-actions",
-                      special.market ? h("button.btn.btn-sm", { type: "button", onclick: () => openMarket(special) }, icon("trophy", "icon-sm"), h("span", "Market data")) : null,
-                      canEdit ? h("button.btn.btn-sm", { type: "button", onclick: () => editSpecial(special) }, icon("sliders-horizontal", "icon-sm"), h("span", "Edit")) : null,
-                  )
-                : null,
+            h(
+                "div.row.spc-actions",
+                special.market ? h("button.btn.btn-sm", { type: "button", onclick: () => openMarket(special) }, icon("trophy", "icon-sm"), h("span", "Market data")) : null,
+                canEdit ? h("button.btn.btn-sm", { type: "button", onclick: () => editSpecial(special) }, icon("sliders-horizontal", "icon-sm"), h("span", "Edit")) : null,
+                h("button.btn.btn-sm.btn-ghost", { type: "button", "aria-label": `Copy link to ${title}`, title: "Copy link", onclick: () => copySpecialLink(special) }, icon("link", "icon-sm")),
+            ),
         );
+    }
+
+    async function copySpecialLink(special) {
+        try {
+            await navigator.clipboard.writeText(`${location.origin}/ballsdex/specials/${special.id}`);
+            toast("Link copied.", "success");
+        } catch {
+            toast("Couldn't copy the link.", "error");
+        }
     }
 
     function renderSpecials() {
@@ -556,6 +566,7 @@ export function createView() {
         }
         search.addEventListener("input", () => {
             specialsQuery = search.value;
+            if (location.pathname !== "/ballsdex/specials") history.replaceState(null, "", "/ballsdex/specials");
             paint();
         });
         paint();
@@ -885,6 +896,8 @@ export function createView() {
             section = next;
             paintTabs();
             if (section === "specials") {
+                // /ballsdex/specials/4 shows just that special (shared links)
+                if (/^\d+$/.test(params[1] || "")) specialsQuery = `#${params[1]}`;
                 refresh({ quiet: Boolean(specialsData) });
                 return;
             }

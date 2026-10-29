@@ -1,1 +1,16 @@
+# App pages use clean paths; they all load index.html (link previews: netlify/edge-functions/page-meta.js)
+/identify    /index.html    200
+/identify/*    /index.html    200
+/arts    /index.html    200
+/arts/*    /index.html    200
+/trainer    /index.html    200
+/trainer/*    /index.html    200
+/bot    /index.html    200
+/bot/*    /index.html    200
+/collectors    /index.html    200
+/collectors/*    /index.html    200
+/ballsdex    /index.html    200
+/ballsdex/*    /index.html    200
+/moderation    /index.html    200
+/moderation/*    /index.html    200
 /*    /404.html   404

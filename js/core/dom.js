@@ -24,6 +24,8 @@ export function h(tag, props, ...children) {
             else if (key === "style") for (const [prop, v] of Object.entries(value)) el.style.setProperty(prop, v);
             else if (key.startsWith("on") && typeof value === "function") el.addEventListener(key.slice(2), value);
             else if (key === "text") el.textContent = value;
+            // App links use clean paths ("#/arts" -> "/arts"), so they can be copied and shared
+            else if (key === "href" && typeof value === "string" && value.startsWith("#/")) el.setAttribute("href", value.slice(1));
             else if (value === true) el.setAttribute(key, "");
             else if (key in el && !key.startsWith("aria-") && key !== "list" && key !== "form") el[key] = value;
             else el.setAttribute(key, value);

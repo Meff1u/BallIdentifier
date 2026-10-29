@@ -202,4 +202,4 @@ export function menuItem({ label, iconName, onSelect, checked, href, role = "men
 }
 
 window.addEventListener("resize", closeMenu);
-window.addEventListener("hashchange", closeMenu);
+window.addEventListener("popstate", closeMenu);

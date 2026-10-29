@@ -32,6 +32,7 @@ export function createView() {
     let balls = []; // [name, details, cardEl]
     let loadedDex = null;
     let loadToken = 0;
+    let pendingBall = null; // from a shared link: /arts/<dex>/<ball>
 
     const dexSelect = h("select.select", { "aria-label": "Dex" });
     const search = h("input.input", { type: "search", placeholder: "Search balls", "aria-label": "Search balls", autocomplete: "off", spellcheck: false, "data-search": "" });
@@ -100,6 +101,7 @@ export function createView() {
             balls = Object.entries(data).map(([name, details]) => [name, details, card(name, details)]);
             loadedDex = dex;
             sortAndRender();
+            openPending();
         } catch {
             if (token !== loadToken) return;
             grid.replaceChildren();
@@ -194,6 +196,17 @@ export function createView() {
         );
     }
 
+    function openPending() {
+        if (!pendingBall || loadedDex !== dex) return;
+        const wanted = pendingBall.toLowerCase();
+        pendingBall = null;
+        const match = balls.find(([name]) => name.toLowerCase() === wanted);
+        if (match) open(match[0]);
+        else toast("That ball isn't in this dex.", "info");
+    }
+
+    const ballPath = (dexName, name) => `/arts/${encodeURIComponent(dexName)}/${encodeURIComponent(name)}`;
+
     /** Ball details: the full art, the same facts as /info in the bot, collectors and previous arts. */
     function open(name) {
         const dexName = loadedDex;
@@ -258,10 +271,26 @@ export function createView() {
                 .catch(() => {});
         }
 
+        // The address bar shows this ball, so the link can be shared (with its own preview)
+        const path = ballPath(dexName, name);
+        history.replaceState(null, "", path);
+        const copyBtn = h("button.btn.btn-ghost", { type: "button" }, icon("link"), h("span", "Copy link"));
+        copyBtn.addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(location.origin + path);
+                toast("Link copied.", "success");
+            } catch {
+                toast("Couldn't copy the link.", "error");
+            }
+        });
+
         openDialog({
             title: name,
             wide: true,
             className: "ball-dialog",
+            onClose: () => {
+                if (location.pathname === path) history.replaceState(null, "", "/arts");
+            },
             body: [
                 h(
                     "div.bd-layout",
@@ -274,6 +303,7 @@ export function createView() {
                         h(
                             "div.bd-actions",
                             prevBtn,
+                            copyBtn,
                             h("a.btn.btn-ghost", { href: `https://github.com/Meff1u/BallIdentifier/blob/main/assets/jsons/${encodeURIComponent(dexName)}.json`, target: "_blank", rel: "noopener" }, icon("external-link"), h("span", "Wrong details? Fix on GitHub")),
                         ),
                     ),
@@ -338,6 +368,21 @@ export function createView() {
 
     return {
         el,
-        show() {},
+        show(params = []) {
+            const [dexParam, ballParam] = params;
+            if (!dexParam) return;
+            pendingBall = ballParam || null;
+            if (dexParam !== dex) {
+                dex = dexParam;
+                // Before init() finished, it validates the dex and loads it
+                if (dexSelect.options.length) {
+                    if (![...dexSelect.options].some((o) => o.value === dex)) dex = loadedDex || dexSelect.options[0].value;
+                    dexSelect.value = dex;
+                    load();
+                }
+                return;
+            }
+            openPending();
+        },
     };
 }

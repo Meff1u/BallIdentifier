@@ -32,19 +32,71 @@ const titleEl = $("#topbar-title");
 
 /* ---------- Routing ---------- */
 
-export function parseHash(hash = location.hash) {
-    const [path, query = ""] = hash.replace(/^#\/?/, "").split("?");
-    const [name, ...rest] = path.split("/").filter(Boolean);
-    return { name: ROUTES[name] ? name : "identify", params: rest, query: new URLSearchParams(query) };
+// Pages use clean paths (/ballsdex/specials), so every page can have its own link preview.
+// Old links (/#/ballsdex/specials) still work: they're turned into the new form on load.
+
+const decode = (part) => {
+    try {
+        return decodeURIComponent(part);
+    } catch {
+        return part;
+    }
+};
+
+export function parseRoute() {
+    const [name, ...rest] = location.pathname.split("/").filter(Boolean).map(decode);
+    return { name: ROUTES[name] ? name : "identify", params: rest, query: new URLSearchParams(location.search) };
 }
+
+/** "/#/bot?login=ok" -> "/bot?login=ok" */
+function upgradeLegacyHash() {
+    if (!location.hash.startsWith("#/")) return false;
+    const [path, query] = location.hash.slice(1).split("?");
+    history.replaceState(null, "", `${path}${query ? `?${query}` : ""}`);
+    return true;
+}
+
+function isAppPath(pathname) {
+    const first = pathname.split("/").filter(Boolean)[0];
+    return !first || Boolean(ROUTES[first]);
+}
+
+export function navigate(path, { replace = false } = {}) {
+    if (path !== location.pathname + location.search) history[replace ? "replaceState" : "pushState"](null, "", path);
+    route();
+}
+
+// Same-site links are handled here instead of reloading the page
+document.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const link = event.target.closest?.("a[href]");
+    if (!link || (link.target && link.target !== "_self") || link.hasAttribute("download")) return;
+    const raw = link.getAttribute("href");
+    if (raw.startsWith("#") && !raw.startsWith("#/")) {
+        // In-page anchor (skip link)
+        event.preventDefault();
+        const target = document.getElementById(decode(raw.slice(1)));
+        target?.focus?.();
+        target?.scrollIntoView();
+        return;
+    }
+    const url = new URL(link.href, location.href);
+    if (url.origin !== location.origin) return;
+    let path = url.pathname + url.search;
+    if (url.hash.startsWith("#/")) path = url.hash.slice(1);
+    if (!isAppPath(path.split("?")[0])) return;
+    event.preventDefault();
+    navigate(path);
+});
 
 async function route() {
     const token = ++routeToken;
-    const { name, params, query } = parseHash();
+    const { name, params, query } = parseRoute();
+    closeMenu();
 
     handleLoginResult(query);
     if (query.get("whatsnew")) {
-        history.replaceState(null, "", location.hash.split("?")[0]);
+        history.replaceState(null, "", location.pathname);
         openChangelog();
     }
 
@@ -102,7 +154,7 @@ function handleLoginResult(query) {
     const missing = (query.get("missing") || "").split(",").filter((name) => /^[A-Z_]{3,40}$/.test(name));
     if (result === "config" && missing.length) message = `Login isn't set up here: add ${missing.join(" and ")} to the environment variables.`;
     toast(message, type, type === "error" ? 9000 : 4200);
-    history.replaceState(null, "", location.hash.split("?")[0]);
+    history.replaceState(null, "", location.pathname);
 }
 
 /* ---------- Theme ---------- */
@@ -218,7 +270,9 @@ initChangelog($("#whats-new-btn"));
 initNotifications($("#notifications-btn"));
 $("#whats-new-btn").addEventListener("click", () => openChangelog());
 
-window.addEventListener("hashchange", route);
+window.addEventListener("popstate", route);
+window.addEventListener("hashchange", () => upgradeLegacyHash() && route());
+upgradeLegacyHash();
 route();
 loadSession();
 
