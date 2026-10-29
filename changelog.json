@@ -1,10 +1,10 @@
 {
     "changes": [
         {
-            "timestamp": "1793306211",
+            "timestamp": "1793308226",
             "type": "website",
             "changes": [
-                "Shared links to a spawn art (e.g. /arts/Ballsdex/Poland) or a special (e.g. /ballsdex/specials/59) now show a card image with the art or emoji and its details instead of plain text"
+                "Shared links to a spawn art (e.g. /arts/Ballsdex/Poland) or a special (e.g. /ballsdex/specials/59) now show a card image with the art or emoji and its details (including the number of collectors) instead of plain text"
             ]
         },
         {

@@ -1,7 +1,7 @@
 /**
  * Link preview images (1200x630 PNG) for shared links, drawn from the site's own data.
  *
- * GET /.netlify/functions/og?type=ball&dex=Ballsdex&name=Poland   spawn art + rarity, wave, id, artist, values
+ * GET /.netlify/functions/og?type=ball&dex=Ballsdex&name=Poland   spawn art + rarity, wave, id, artist, collectors, values
  * GET /.netlify/functions/og?type=special&id=59                   special emoji + alias, price, spawn rate, dates
  *
  * Used as og:image by netlify/edge-functions/page-meta.js. Layout with satori (text becomes vector shapes,
@@ -16,7 +16,8 @@ const { Resvg } = require("@resvg/resvg-js");
 const { botApiFetch } = require("../lib/bot-api");
 
 const RAW = "https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets";
-const DEXES = ["Ballsdex", "FoodDex", "HistoryDex", "JoJoDex", "Empireballs Reboot", "MapsDex", "FlagsDex"];
+const DEX_KEYS = { Ballsdex: "BD", FoodDex: "FOD", HistoryDex: "HD", JoJoDex: "JD", "Empireballs Reboot": "EB", MapsDex: "MD", FlagsDex: "FD" };
+const DEXES = Object.keys(DEX_KEYS);
 const WAVE_COLORS = { 1: "#FF7769", 1.1: "#424242", 2: "#F56300", 3: "#824300", 4: "#219540", 4.1: "#333333", 5: "#006D83", 5.1: "#666666", 5.2: "#999999", 6: "#4386F5", 7: "#B299F2", 7.1: "#484848", 7.2: "#484848", 8: "#FFBEBE", 8.1: "#666666" };
 const C = { bg: "#0E0B14", surface: "#1A1524", surface2: "#221C2E", border: "#2E2740", text: "#F1EDF7", text2: "#BBB3CB", text3: "#958DA8", accent: "#9B3ABF", accentText: "#CE8CEB" };
 const W = 1200;
@@ -137,9 +138,14 @@ async function ballCard(dexParam, nameParam) {
     if (!name) return null;
     const ball = data[name];
 
-    const [art, icon] = await Promise.all([
+    const [art, icon, collectors] = await Promise.all([
         fetchBuffer(`${RAW}/dexes/${encodeURIComponent(dex)}/${encodeURIComponent(name)}.png`).then(picture),
         Promise.resolve().then(() => picture(iconFile(dex))).catch(() => null),
+        // Same list as the Collectors section on the website (left out if the bot doesn't answer)
+        botApiFetch(`/api/collectors/${DEX_KEYS[dex]}`)
+            .then((response) => (response.ok ? response.json() : null))
+            .then((data) => (data?.entries ? (data.entries[ball.id] || []).length : null))
+            .catch(() => null),
     ]);
     const chips = [
         ball.rarity !== undefined ? chip(`T${ball.rarity}`) : null,
@@ -154,6 +160,7 @@ async function ballCard(dexParam, nameParam) {
         chips,
         rows: [
             row("Artist", ball.artist || "Unknown"),
+            row("Collectors", collectors === null ? null : collectors.toLocaleString("en-US")),
             row("Common value", ball.common_value),
             row("Collector (CC)", ball.cc),
             row("Demand", ball.demand),

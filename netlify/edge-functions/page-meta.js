@@ -65,14 +65,19 @@ async function ballMeta(origin, dexParam, ballParam) {
     const data = await getJson(`${origin}/assets/jsons/${encodeURIComponent(dex)}.json`);
     const name = Object.keys(data).find((key) => key !== "hashes" && key.toLowerCase() === ballParam.toLowerCase());
     if (!name) return null;
-    // The art's fingerprint changes with a new art, the details with any edit
-    const artHash = await getJson(`${origin}/assets/jsons/${encodeURIComponent(dex)}Hashes.json`)
-        .then((hashes) => hashes[name] || "")
-        .catch(() => "");
+    // The card changes with a new art (its fingerprint), any detail edit and the collector count
+    const [artHash, collectors] = await Promise.all([
+        getJson(`${origin}/assets/jsons/${encodeURIComponent(dex)}Hashes.json`)
+            .then((hashes) => hashes[name] || "")
+            .catch(() => ""),
+        getJson(`${origin}/.netlify/functions/collectors?dex=${encodeURIComponent(dex)}`)
+            .then((result) => (result.entries?.[data[name].id] || []).length)
+            .catch(() => null),
+    ]);
     return {
         title: `${name} · ${dex}`,
         description: "Spawn art, details and collectors on BallIdentifier.",
-        image: cardUrl(origin, { type: "ball", dex, name, v: version([data[name], artHash]) }),
+        image: cardUrl(origin, { type: "ball", dex, name, v: version([data[name], artHash, collectors]) }),
         card: true,
     };
 }
