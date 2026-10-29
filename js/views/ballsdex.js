@@ -360,7 +360,9 @@ export function createView() {
                         : kv("Total balls", fmt(s.totalBalls)),
                     kv("Unique", fmt(s.uniqueBalls)),
                     kv("Duplicates", fmt(s.duplicateCount)),
-                    kv("Specials", fmt(s.specialCount)),
+                    Number.isFinite(s.specialKinds) && s.specialKinds > 0
+                        ? h("div", h("dt", "Specials"), h("dd", fmt(s.specialCount)), h("p.subtle", { style: { "margin-top": "2px" } }, `${fmt(s.specialKinds)} different specials`))
+                        : kv("Specials", fmt(s.specialCount)),
                     kv("Self-caught", fmt(s.selfCaughtCount)),
                     kv("Favorites", fmt(s.favoriteCount)),
                     kv("Frames", fmt(s.frameCount)),
