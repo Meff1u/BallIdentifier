@@ -9,6 +9,9 @@ import { api, ApiError } from "./core/api.js";
 import { getUser, onAuthChange, login, sessionExpired } from "./core/auth.js";
 
 const POLL_MS = 60 * 1000;
+// Adds BallIdentifier to the user's Discord account (user install): that's what lets the bot DM people
+// it shares no server with.
+const USER_INSTALL_URL = "https://discord.com/oauth2/authorize?client_id=510775326310268930&integration_type=1&scope=applications.commands";
 const TYPE_ICONS = {
     vote_reminder: "thumbs-up",
     vote_thanks: "heart",
@@ -203,10 +206,24 @@ export function openNotifications() {
                 h("div.nf-controls", h("label.switch", h("span.sr-only", "On"), enabled), dmLabel),
             );
         });
-        return [
-            h("p.subtle.nf-hint", "On: shown here on the website. Discord DM: also sent to you by the bot (keep DMs open for BallIdentifier)."),
-            ...rows,
-        ];
+        const dmHelp =
+            state.dmReachable === false
+                ? h(
+                      "div.callout.callout-warning.nf-dm-help",
+                      icon("triangle-alert", "icon-sm"),
+                      h(
+                          "div",
+                          h("p", h("b", "Your last DM couldn't be delivered. "), "Discord only lets the bot message you if you share a server with it, or if you add BallIdentifier to your account."),
+                          h("a.btn.btn-discord.btn-sm", { href: USER_INSTALL_URL, target: "_blank", rel: "noopener" }, icon("discord", "icon-sm"), h("span", "Add to my account")),
+                      ),
+                  )
+                : h(
+                      "p.subtle.nf-hint",
+                      "On: shown here on the website. Discord DM: also sent to you by the bot. For DMs the bot needs a server in common with you, or ",
+                      h("a", { href: USER_INSTALL_URL, target: "_blank", rel: "noopener" }, "BallIdentifier added to your account"),
+                      ".",
+                  );
+        return [dmHelp, ...rows];
     }
 
     function render() {

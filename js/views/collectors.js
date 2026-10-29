@@ -88,9 +88,9 @@ export function createView() {
         }
     }
 
-    async function reloadCollectors() {
+    async function reloadCollectors({ fresh = false } = {}) {
         try {
-            const result = await api("collectors", { query: { dex } });
+            const result = await api("collectors", { query: fresh ? { dex, fresh: "1" } : { dex } });
             entries = result.entries || {};
             viewer = result.viewer;
             paint();
@@ -228,7 +228,7 @@ export function createView() {
                     try {
                         await api("collectors", { method: "POST", body: { action: "add", dex, ballId: ball.id, userId } });
                         toast(`Added as a verified collector of ${ball.name}.`, "success");
-                        await reloadCollectors();
+                        await reloadCollectors({ fresh: true });
                         fill();
                     } catch (error) {
                         handleError(error);
@@ -248,7 +248,7 @@ export function createView() {
             try {
                 await api("collectors", { method: "POST", body: { action: "add", dex, ballId: ballToAdd.id } });
                 toast(`You're now a collector of ${ballToAdd.name}.`, "success");
-                await reloadCollectors();
+                await reloadCollectors({ fresh: true });
                 fill();
             } catch (error) {
                 handleError(error);
@@ -268,7 +268,7 @@ export function createView() {
             try {
                 await api("collectors", { method: "POST", body: { action: "remove", dex, ballId: ballToChange.id, userId: collector.id } });
                 toast(self ? "Removed." : `${displayName(collector)} removed.`, "success");
-                await reloadCollectors();
+                await reloadCollectors({ fresh: true });
                 if (dialogRef?.dialog.isConnected) fill();
             } catch (error) {
                 handleError(error);

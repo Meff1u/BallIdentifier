@@ -5,6 +5,9 @@
         if (theme === "light" || theme === "dark" || theme === "synthwave" || theme === "sakura" || theme === "ruby") {
             document.documentElement.setAttribute("data-theme", theme);
         }
+        if (JSON.parse(localStorage.getItem("sidebarCollapsed")) === true) {
+            document.documentElement.setAttribute("data-sidebar", "collapsed");
+        }
     } catch (e) {
         /* no storage */
     }

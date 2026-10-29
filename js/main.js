@@ -2,7 +2,7 @@
  * BallIdentifier — app shell: routing, navigation, theme, account, What's new.
  */
 
-import { h, icon, setIcon, $, $$, img } from "./core/dom.js";
+import { h, icon, setIcon, $, $$, img, store } from "./core/dom.js";
 import { toast, toggleMenu, menuItem, closeMenu } from "./core/ui.js";
 import { THEMES, getThemeChoice, setTheme, applyTheme, onThemeChange, resolvedTheme } from "./core/theme.js";
 import { getUser, loadSession, onAuthChange, login, logout } from "./core/auth.js";
@@ -190,6 +190,25 @@ function renderAccount(user) {
 applyTheme();
 onAuthChange(renderAccount);
 autoEnhanceSelects();
+
+/* ---------- Sidebar collapse (desktop) ---------- */
+
+const sidebarToggle = $("#sidebar-toggle");
+function paintSidebar() {
+    const collapsed = document.documentElement.getAttribute("data-sidebar") === "collapsed";
+    sidebarToggle.setAttribute("aria-expanded", String(!collapsed));
+    sidebarToggle.title = collapsed ? "Expand sidebar" : "Collapse sidebar";
+    sidebarToggle.querySelector(".nav-label").textContent = collapsed ? "Expand" : "Collapse";
+    setIcon(sidebarToggle.querySelector("svg"), collapsed ? "panel-left-open" : "panel-left-close");
+}
+sidebarToggle?.addEventListener("click", () => {
+    const collapsed = document.documentElement.getAttribute("data-sidebar") !== "collapsed";
+    if (collapsed) document.documentElement.setAttribute("data-sidebar", "collapsed");
+    else document.documentElement.removeAttribute("data-sidebar");
+    store("sidebarCollapsed", collapsed);
+    paintSidebar();
+});
+if (sidebarToggle) paintSidebar();
 initChangelog($("#whats-new-btn"));
 initNotifications($("#notifications-btn"));
 $("#whats-new-btn").addEventListener("click", () => openChangelog());

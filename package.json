@@ -9,6 +9,8 @@
         "sharp": "^0.33.5"
     },
     "scripts": {
-        "build": "npm install"
+        "build": "npm install",
+        "dex:check": "node scripts/dex.js check",
+        "dex:build": "node scripts/dex.js build"
     }
 }

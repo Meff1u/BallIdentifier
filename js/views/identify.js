@@ -341,8 +341,9 @@ export function createView() {
         }
 
         const similarity = Math.max(0, Math.min(100, Math.round((100 - diff) * 10) / 10));
-        const level = similarity >= 90 ? "high" : similarity >= 75 ? "warn" : "low";
-        const verdict = { high: "Confident match", warn: "Probable match", low: "Unsure, double-check this one" }[level];
+        // Same line as the bot: a difference above 20 (below 80 %) is most likely a new spawn art
+        const level = similarity >= 90 ? "high" : similarity >= 80 ? "warn" : "low";
+        const verdict = { high: "Confident match", warn: "Probable match", low: "Unsure: probably a new spawn art, double-check" }[level];
 
         const fill = h("div.meter-fill");
         const copyBtn = h("button.btn", { type: "button" }, icon("copy"), h("span", "Copy name"));

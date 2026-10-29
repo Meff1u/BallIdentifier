@@ -4,6 +4,7 @@
 
 import { h, icon, img, fmt, storage, store } from "../core/dom.js";
 import { toast, openDialog } from "../core/ui.js";
+import { api } from "../core/api.js";
 import {
     getDexList,
     getDex,
@@ -23,7 +24,7 @@ const SORTS = [
     { id: "id", label: "ID" },
 ];
 
-const DEFAULTS = { showWave: true, showRarity: true, showArtist: true, showID: false, onClick: "previous-arts", sort: "rarity" };
+const DEFAULTS = { showWave: true, showRarity: true, showArtist: true, showID: false, sort: "rarity" };
 
 export function createView() {
     const settings = { ...DEFAULTS, ...(storage("displaySettings") || {}) };
@@ -50,7 +51,7 @@ export function createView() {
             h("div.toolbar-row", h("label.input-icon", icon("search"), search)),
             h("div.toolbar-row", dexSelect, optionsBtn),
         ),
-        h("div.arts-meta", metaCount, metaHint),
+        h("div.arts-meta", metaCount, h("span.arts-meta-end", metaHint, h("a.arts-contrib", { href: "https://github.com/Meff1u/BallIdentifier#contributing-dex-data", target: "_blank", rel: "noopener" }, icon("github", "icon-sm"), "Missing or wrong art? Help on GitHub"))),
         grid,
         emptyEl,
     );
@@ -66,8 +67,7 @@ export function createView() {
         grid.toggleAttribute("data-hide-rarity", !settings.showRarity);
         grid.toggleAttribute("data-hide-artist", !settings.showArtist);
         grid.toggleAttribute("data-hide-id", !settings.showID);
-        const canPrevious = DEX_WITH_PREVIOUS_ARTS.includes(dex);
-        metaHint.textContent = settings.onClick === "previous-arts" && canPrevious ? "Tap a ball to see its previous arts" : "Tap a ball to see its full art";
+        metaHint.textContent = "Tap a ball for its details";
     }
 
     function effectiveSort() {
@@ -167,40 +167,119 @@ export function createView() {
 
     /* ----- Card actions ----- */
 
-    async function open(name) {
-        const canPrevious = DEX_WITH_PREVIOUS_ARTS.includes(loadedDex);
-        if (settings.onClick === "previous-arts" && canPrevious) {
-            let arts;
-            try {
-                arts = (await getPreviousArts())[name];
-            } catch {
-                return toast("Couldn't load previous arts. Try again.", "error");
-            }
-            if (!arts?.length) return toast(`${name} has no previous arts yet.`, "info");
-            const { dialog } = openDialog({
-                title: `Previous arts of ${name}`,
-                className: "prev-arts-dialog",
-                body: h(
-                    "div.prev-arts",
-                    arts.map((art, index) => {
-                        const image = h("img", { src: previousArtUrl(name, index), alt: `${name}, art by ${art.artist}`, loading: "lazy" });
-                        image.addEventListener("error", () => (image.src = previousArtUrl(name, index, "gif")), { once: true });
-                        return h(
-                            "figure.prev-art",
-                            { title: art.alt || undefined },
-                            image,
-                            h("div", h("span", "Artist ", h("b", art.artist)), h("span", "Used until ", h("b", art.until)), art.alt ? h("span", art.alt) : null),
-                        );
-                    }),
-                ),
-            });
-            dialog.style.setProperty("--n", String(Math.min(arts.length, 5)));
-            return;
+    // Collectors per dex, loaded the first time a ball of that dex is opened
+    const collectorsCache = new Map(); // dex -> Promise<{ [ballId]: collector[] }>
+    function getCollectors(dexName) {
+        if (!collectorsCache.has(dexName)) {
+            const promise = api("collectors", { query: { dex: dexName } }).then((result) => result.entries || {});
+            promise.catch(() => collectorsCache.delete(dexName));
+            collectorsCache.set(dexName, promise);
         }
+        return collectorsCache.get(dexName);
+    }
+
+    function previousArtsGrid(name, arts) {
+        return h(
+            "div.prev-arts",
+            arts.map((art, index) => {
+                const image = h("img", { src: previousArtUrl(name, index), alt: `${name}, art by ${art.artist}`, loading: "lazy" });
+                image.addEventListener("error", () => (image.src = previousArtUrl(name, index, "gif")), { once: true });
+                return h(
+                    "figure.prev-art",
+                    { title: art.alt || undefined },
+                    image,
+                    h("div", h("span", "Artist ", h("b", art.artist)), h("span", "Used until ", h("b", art.until)), art.alt ? h("span", art.alt) : null),
+                );
+            }),
+        );
+    }
+
+    /** Ball details: the full art, the same facts as /info in the bot, collectors and previous arts. */
+    function open(name) {
+        const dexName = loadedDex;
+        const details = balls.find(([ballName]) => ballName === name)?.[1] || {};
+        const kv = (label, value, cls = "") => (value === undefined || value === null || value === "" ? null : h("div", h("dt", label), h(`dd${cls}`, String(value))));
+
+        const tags = h(
+            "div.bd-tags",
+            details.rarity !== undefined ? h("span.badge.badge-accent", `T${details.rarity}`) : null,
+            details.wave !== undefined ? h("span.badge", h("i.bd-wave", { style: { background: WAVE_COLORS[details.wave] || "#808080" } }), `Wave ${details.wave}`) : null,
+            details.id !== undefined ? h("span.badge", `#${details.id}`) : null,
+        );
+
+        const facts = h(
+            "dl.kv.bd-facts",
+            kv("Rarity", details.rarity !== undefined ? `T${details.rarity}` : null),
+            kv("Artist", details.artist || "Unknown", ".text"),
+            kv("Wave", details.wave),
+            kv("Common value", details.common_value),
+            kv("Collector requirement", details.cc),
+            kv("Demand tier", details.demand),
+            kv("ID", details.id),
+        );
+
+        const collectorsBody = h("div.bd-collectors", h("div.skeleton", { style: { height: "32px" } }));
+        const collectorsTitle = h("h3", icon("crown", "icon-sm"), "Collectors");
+        getCollectors(dexName)
+            .then((entries) => {
+                const list = entries[details.id] || [];
+                collectorsTitle.replaceChildren(icon("crown", "icon-sm"), `Collectors (${fmt(list.length)})`);
+                if (!list.length) return collectorsBody.replaceChildren(h("p.subtle", "No collectors yet."));
+                collectorsBody.replaceChildren(
+                    ...list.map((c) =>
+                        h(
+                            "span.bd-person",
+                            { title: c.username ? `@${c.username}` : c.id },
+                            img(c.avatarUrl, "", "col-avatar", { width: 24, height: 24 }),
+                            h("span", c.name || (c.missing ? "Unknown user" : `User ${c.id.slice(-4)}`)),
+                            c.source === "verified" ? icon("shield-check", "icon-sm bd-verified") : null,
+                        ),
+                    ),
+                );
+            })
+            .catch(() => collectorsBody.replaceChildren(h("p.subtle", "Couldn't load collectors.")));
+
+        const prevSection = h("section.bd-prev", { hidden: true });
+        const prevBtn = h("button.btn", { type: "button", hidden: true, "aria-expanded": "false" }, icon("history"), h("span", "Previous arts"));
+        if (DEX_WITH_PREVIOUS_ARTS.includes(dexName)) {
+            getPreviousArts()
+                .then((all) => {
+                    const arts = all?.[name];
+                    if (!arts?.length) return;
+                    prevBtn.hidden = false;
+                    prevBtn.querySelector("span").textContent = `Previous arts (${arts.length})`;
+                    prevBtn.addEventListener("click", () => {
+                        if (!prevSection.childElementCount) prevSection.append(h("h3", "Previous arts"), previousArtsGrid(name, arts));
+                        prevSection.hidden = !prevSection.hidden;
+                        prevBtn.setAttribute("aria-expanded", String(!prevSection.hidden));
+                        if (!prevSection.hidden) prevSection.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                    });
+                })
+                .catch(() => {});
+        }
+
         openDialog({
             title: name,
             wide: true,
-            body: h("img.enlarged-art", { src: artUrl(loadedDex, name), alt: `${name} spawn art` }),
+            className: "ball-dialog",
+            body: [
+                h(
+                    "div.bd-layout",
+                    h("a.bd-art", { href: artUrl(dexName, name), target: "_blank", rel: "noopener", title: "Open the full-size art" }, h("img", { src: artUrl(dexName, name), alt: `${name} spawn art` })),
+                    h(
+                        "div.bd-info",
+                        h("div.bd-head", tags, h("span.subtle", dexName)),
+                        facts,
+                        h("section.bd-section", collectorsTitle, collectorsBody),
+                        h(
+                            "div.bd-actions",
+                            prevBtn,
+                            h("a.btn.btn-ghost", { href: `https://github.com/Meff1u/BallIdentifier/blob/main/assets/jsons/${encodeURIComponent(dexName)}.json`, target: "_blank", rel: "noopener" }, icon("external-link"), h("span", "Wrong details? Fix on GitHub")),
+                        ),
+                    ),
+                ),
+                prevSection,
+            ],
         });
     }
 
@@ -208,7 +287,6 @@ export function createView() {
 
     optionsBtn.addEventListener("click", () => {
         const hasWaves = DEX_WITH_WAVES.includes(dex);
-        const hasPrevious = DEX_WITH_PREVIOUS_ARTS.includes(dex);
 
         const sortButtons = SORTS.filter((s) => s.id !== "wave" || hasWaves).map((s) =>
             h(
@@ -237,16 +315,6 @@ export function createView() {
             return h("label.switch", h("span", label, disabled ? h("span.subtle", " (not in this dex)") : null), input);
         };
 
-        const clickOption = (value, title, hint, disabled = false) => {
-            const input = h("input", { type: "radio", name: "arts-click", value, checked: settings.onClick === value || (disabled === false && value === "enlarge-art" && !hasPrevious), disabled });
-            input.addEventListener("change", () => {
-                settings.onClick = value;
-                save();
-                applyVisibility();
-            });
-            return h("label.option", input, h("strong", title), h("small", hint));
-        };
-
         const doneBtn = h("button.btn.btn-primary", { type: "button" }, "Done");
         const dialog = openDialog({
             title: "View options",
@@ -258,15 +326,6 @@ export function createView() {
                     "div.field",
                     h("span.label", "Show on cards"),
                     h("div", toggle("showRarity", "Rarity"), toggle("showArtist", "Artist"), toggle("showWave", "Wave", !hasWaves), toggle("showID", "ID")),
-                ),
-                h(
-                    "div.field",
-                    h("span.label", "When I tap a ball"),
-                    h(
-                        "div.option-grid",
-                        clickOption("previous-arts", "Previous arts", hasPrevious ? "Older versions of the art" : "Ballsdex only", !hasPrevious),
-                        clickOption("enlarge-art", "Full art", "The current art, enlarged"),
-                    ),
                 ),
                 h("p.callout", icon("info", "icon-sm"), h("span", "Arts are cached so the page loads faster. Missing a new art? Hard-refresh with Ctrl+F5, or pull down to refresh on your phone.")),
             ),

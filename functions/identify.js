@@ -74,8 +74,6 @@ function checkRateLimit(clientIp) {
  * Everything runs inside this one function (no internal HTTP calls to other functions).
  */
 exports.handler = async (event) => {
-    console.log('Received identify request');
-
     if (!isAllowedPublicHost(event)) {
         return jsonResponse(403, { error: 'Forbidden host' });
     }

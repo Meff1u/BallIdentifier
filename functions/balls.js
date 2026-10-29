@@ -2,7 +2,6 @@ const { checkApiKey } = require("../lib/api-key");
 const { getAvailableDexes, getDexData } = require("../lib/dex-data");
 
 exports.handler = async (event) => {
-    console.log("Received event.");
     try {
         // Validate API key
         const authError = checkApiKey(event, event.headers?.["x-api-key"] || event.queryStringParameters?.api_key);

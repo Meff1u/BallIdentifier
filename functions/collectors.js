@@ -50,7 +50,9 @@ exports.handler = async (event) => {
             if (!dexKey) return json(400, { error: "Unknown dex" });
 
             let cached = cache.get(dexKey);
-            if (!cached || Date.now() - cached.at > CACHE_MS) {
+            // After an add/remove the page asks for fresh data (logged-in users only, so it can't be used to skip the cache)
+            const fresh = event.queryStringParameters?.fresh === "1" && Boolean(viewer(event));
+            if (fresh || !cached || Date.now() - cached.at > CACHE_MS) {
                 const { status, data } = await readBot(await botApiFetch(`/api/collectors/${dexKey}`));
                 if (status !== 200) return json(status, data);
                 cached = { at: Date.now(), data };

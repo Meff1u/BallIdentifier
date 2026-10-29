@@ -1,6 +1,65 @@
 {
     "changes": [
         {
+            "timestamp": "1793282477",
+            "type": "website",
+            "changes": [
+                "Notification settings explain how to get Discord DMs from the bot: share a server with it or add BallIdentifier to your account (one click), with a warning if a DM couldn't be delivered"
+            ]
+        },
+        {
+            "timestamp": "1793278403",
+            "type": "website",
+            "changes": [
+                "Identify: matches under 80% similarity are now flagged as a probable new spawn art (the same rule the bot uses)",
+                "Collectors: adding or removing yourself now shows up right away",
+                "Fixed website features (Ballsdex, notifications, Notifier settings) failing with \"Too many requests\" when many people used them at the same time"
+            ]
+        },
+        {
+            "timestamp": "1793278403",
+            "type": "bot",
+            "changes": [
+                "/help: the What's new button now opens the full, up-to-date changelog on the website",
+                "Update DMs: one message per batch of updates instead of one per entry, with the dex name in the title",
+                "Upvoters keep their no-cooldown perk even if the vote list briefly fails to load",
+                "/ballsdex sync: fixed the remaining cooldown time sometimes showing as \"60 min\"",
+                "Collector lists now tell you how to add yourself on the website"
+            ]
+        },
+        {
+            "timestamp": "1793277770",
+            "type": "website",
+            "changes": [
+                "Spawn Arts: tap a ball to see its full art, details (like /info), collectors and previous arts in one window",
+                "The sidebar can be collapsed to icons on wide screens",
+                "Help keep the dex data up to date: new contributing guide on GitHub, linked in Spawn Arts and at the bottom of every page"
+            ]
+        },
+        {
+            "timestamp": "1793277770",
+            "type": "bot",
+            "changes": [
+                "A Ballsdex sync now continues where it stopped if the bot restarts"
+            ]
+        },
+        {
+            "timestamp": "1793277770",
+            "type": "dex",
+            "dex": "FlagsDex",
+            "changes": [
+                "Fixed 21 spawn arts that didn't load (including Albania, Persia, Romania, Syria and the Teutonic Order)"
+            ]
+        },
+        {
+            "timestamp": "1793277770",
+            "type": "dex",
+            "dex": "MapsDex",
+            "changes": [
+                "☀️Kingdom of Mercia☀️, ☀️Panama☀️ and ☀️Scotland☀️ are now identified with their correct names and details"
+            ]
+        },
+        {
             "timestamp": "1793275176",
             "type": "bot",
             "changes": [

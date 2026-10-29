@@ -34,17 +34,20 @@
                 </a>
                 <nav aria-label="Main">
                     <ul class="nav-list">
-                        <li><a class="nav-link" data-nav="identify" href="#/identify"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-scan-search" /></svg>Identify</a></li>
-                        <li><a class="nav-link" data-nav="arts" href="#/arts"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-images" /></svg>Spawn Arts</a></li>
-                        <li><a class="nav-link" data-nav="trainer" href="#/trainer"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-gamepad-2" /></svg>Catch Trainer</a></li>
-                        <li><a class="nav-link" data-nav="bot" href="#/bot"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-bot" /></svg>Bot</a></li>
-                        <li><a class="nav-link" data-nav="collectors" href="#/collectors"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-crown" /></svg>Collectors</a></li>
-                        <li><a class="nav-link" data-nav="ballsdex" href="#/ballsdex"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-layers" /></svg>Ballsdex</a></li>
+                        <li><a class="nav-link" data-nav="identify" href="#/identify" title="Identify"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-scan-search" /></svg><span class="nav-label">Identify</span></a></li>
+                        <li><a class="nav-link" data-nav="arts" href="#/arts" title="Spawn Arts"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-images" /></svg><span class="nav-label">Spawn Arts</span></a></li>
+                        <li><a class="nav-link" data-nav="trainer" href="#/trainer" title="Catch Trainer"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-gamepad-2" /></svg><span class="nav-label">Catch Trainer</span></a></li>
+                        <li><a class="nav-link" data-nav="bot" href="#/bot" title="Bot"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-bot" /></svg><span class="nav-label">Bot</span></a></li>
+                        <li><a class="nav-link" data-nav="collectors" href="#/collectors" title="Collectors"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-crown" /></svg><span class="nav-label">Collectors</span></a></li>
+                        <li><a class="nav-link" data-nav="ballsdex" href="#/ballsdex" title="Ballsdex"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-layers" /></svg><span class="nav-label">Ballsdex</span></a></li>
                     </ul>
                 </nav>
                 <div class="sidebar-foot">
-                    <a class="btn btn-discord btn-sm btn-block" href="https://discord.com/oauth2/authorize?client_id=510775326310268930" target="_blank" rel="noopener">
-                        <svg class="icon-sm" aria-hidden="true"><use href="assets/icons.svg#i-discord" /></svg>Add the bot
+                    <button class="nav-link sidebar-toggle" id="sidebar-toggle" type="button" aria-expanded="true" title="Collapse sidebar">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-panel-left-close" /></svg><span class="nav-label">Collapse</span>
+                    </button>
+                    <a class="btn btn-discord btn-sm btn-block sidebar-invite" href="https://discord.com/oauth2/authorize?client_id=510775326310268930" target="_blank" rel="noopener" title="Add the bot">
+                        <svg class="icon-sm" aria-hidden="true"><use href="assets/icons.svg#i-discord" /></svg><span class="nav-label">Add the bot</span>
                     </a>
                     <p>Not affiliated with The Ballsdex Team.</p>
                 </div>
@@ -81,6 +84,7 @@
                     <nav aria-label="Legal">
                         <a href="tos.html">Terms of Service</a>
                         <a href="privacy.html">Privacy Policy</a>
+                        <a href="https://github.com/Meff1u/BallIdentifier#contributing-dex-data" target="_blank" rel="noopener">Contribute</a>
                     </nav>
                 </footer>
             </main>
