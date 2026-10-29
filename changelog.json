@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1793297170",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "Previous arts: added the October event spawn arts of Taiwan, Cuba, Tannu Tuva, Equatorial Guinea, Spain, Tokugawa Shogunate and United Nations"
+            ]
+        },
+        {
             "timestamp": "1793296267",
             "type": "dex",
             "dex": "Ballsdex",
