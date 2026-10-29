@@ -1,6 +1,28 @@
 {
     "changes": [
         {
+            "timestamp": "1793275176",
+            "type": "bot",
+            "changes": [
+                "Ballsdex sync can now be used once every 24 hours (was 12 hours), in the bot and on the website",
+                "Collectors added on the website also show up in /collectors, /info and Check collections",
+                "/ballsdex collection: fixed the specials count, and rankings now show the top 5"
+            ]
+        },
+        {
+            "timestamp": "1793275176",
+            "type": "website",
+            "changes": [
+                "New Collectors tab: see who collects which ball in every dex, and add yourself as a collector after logging in",
+                "Ballsdex profile shows how much of the Ballsdex API limits is used, for your key and for the whole bot",
+                "New Ruby theme",
+                "Drop-down lists now match the selected theme",
+                "What's new: new Bot filter, and the filter buttons now fit on small screens",
+                "Collectors: collectors confirmed by the owner are marked as Verified",
+                "Collectors: to add yourself as a Ballsdex collector, sync your Ballsdex account first; you need at least half of the balls the collector requires"
+            ]
+        },
+        {
             "timestamp": "1793244493",
             "type": "website",
             "changes": [

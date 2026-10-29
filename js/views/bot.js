@@ -177,7 +177,7 @@ export function createView() {
                 "Your Ballsdex collection",
                 "Link your Ballsdex API key once, then see your collection in the bot and on this website.",
                 [
-                    "Sync imports every ball you own. One sync runs at a time, and you can sync again 12 hours later.",
+                    "Sync imports every ball you own. One sync runs at a time, and you can sync again 24 hours later.",
                     "Collection shows totals, specials and your top 5 most owned balls and specials.",
                     "Raws adds up your rare non-special balls (T1 to T23), weighted by tier.",
                     "The key is encrypted before it's stored. Unlinking deletes it and your saved data.",

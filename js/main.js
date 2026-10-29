@@ -8,12 +8,14 @@ import { THEMES, getThemeChoice, setTheme, applyTheme, onThemeChange, resolvedTh
 import { getUser, loadSession, onAuthChange, login, logout } from "./core/auth.js";
 import { initChangelog, openChangelog } from "./changelog.js";
 import { initNotifications } from "./notifications.js";
+import { autoEnhanceSelects } from "./core/select.js";
 
 const ROUTES = {
     identify: { title: "Identify", load: () => import("./views/identify.js") },
     arts: { title: "Spawn Arts", load: () => import("./views/arts.js") },
     trainer: { title: "Catch Trainer", load: () => import("./views/trainer.js") },
     bot: { title: "Bot", load: () => import("./views/bot.js") },
+    collectors: { title: "Collectors", load: () => import("./views/collectors.js") },
     ballsdex: { title: "Ballsdex", load: () => import("./views/ballsdex.js") },
 };
 
@@ -187,6 +189,7 @@ function renderAccount(user) {
 
 applyTheme();
 onAuthChange(renderAccount);
+autoEnhanceSelects();
 initChangelog($("#whats-new-btn"));
 initNotifications($("#notifications-btn"));
 $("#whats-new-btn").addEventListener("click", () => openChangelog());

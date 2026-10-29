@@ -100,6 +100,7 @@ export function createView() {
 
     onAuthChange(() => {
         data = null;
+        limits.reset();
         if (visible) refresh();
     });
 
@@ -283,6 +284,8 @@ export function createView() {
             );
         }
         parts.push(summary ? statsGrid(summary) : noData());
+        parts.push(limits.card);
+        limits.load();
         body.replaceChildren(...parts);
     }
 
@@ -324,7 +327,7 @@ export function createView() {
             { style: { "margin-top": "16px" } },
             h("div.empty-icon", icon("refresh-cw", "icon-lg")),
             h("h2", "No collection data yet"),
-            h("p", "Sync once to import your balls. After a sync you can sync again in 12 hours."),
+            h("p", "Sync once to import your balls. After a sync you can sync again in 24 hours."),
         );
     }
 
@@ -393,6 +396,65 @@ export function createView() {
             ),
         );
     }
+
+    /* ----- Ballsdex API limits ----- */
+
+    // One card for the whole view, so sync polling (which re-renders) doesn't refetch it
+    const limits = (() => {
+        const list = h("div.rl-groups");
+        const refreshBtn = h("button.btn.btn-ghost.btn-sm", { type: "button", onclick: () => load({ force: true }) }, icon("refresh-cw", "icon-sm"), h("span", "Refresh"));
+        const card = h(
+            "section.card.panel.rl-card",
+            h("div.rl-head", h("h2", icon("gauge"), "Ballsdex API limits"), refreshBtn),
+            h("p.subtle", "Your key's limits are only yours. The bot's limits are shared by everyone using BallIdentifier, because all requests come from one server."),
+            list,
+        );
+        let loadedAt = 0;
+        let loading = false;
+
+        function meter(limit) {
+            const ratio = limit.limit ? limit.used / limit.limit : 0;
+            const pct = Math.round(ratio * 100);
+            const fill = h("div.meter-fill");
+            fill.style.width = `${Math.min(100, pct)}%`;
+            const reset = limit.resetInSec ? ` · resets in ${limit.resetInSec >= 3600 ? `${Math.floor(limit.resetInSec / 3600)}h ${Math.floor((limit.resetInSec % 3600) / 60)}m` : limit.resetInSec >= 60 ? `${Math.floor(limit.resetInSec / 60)}m ${limit.resetInSec % 60}s` : `${limit.resetInSec}s`}` : "";
+            return h(
+                "div.meter",
+                { dataset: { level: ratio >= 0.8 ? "low" : ratio >= 0.5 ? "warn" : "high" } },
+                h("div.meter-head", h("span", limit.label), h("span.num.meter-value", `${pct}% used`)),
+                h("div.meter-track", { role: "progressbar", "aria-valuemin": "0", "aria-valuemax": "100", "aria-valuenow": String(pct), "aria-label": `${limit.label}: ${pct}% used` }, fill),
+                h("p.subtle", `${fmt(limit.remaining)} of ${fmt(limit.limit)} left${reset}`),
+            );
+        }
+
+        function group(title, snapshot) {
+            return h(
+                "div.rl-group",
+                h("h3", title),
+                snapshot?.limits?.length ? snapshot.limits.map(meter) : h("p.subtle", "No data yet."),
+            );
+        }
+
+        async function load({ force = false } = {}) {
+            if (loading || (!force && Date.now() - loadedAt < 30000)) return;
+            loading = true;
+            refreshBtn.disabled = true;
+            if (!loadedAt) list.replaceChildren(h("div.skeleton", { style: { height: "96px" } }));
+            try {
+                const result = await api("ballsdex", { query: { view: "ratelimit" } });
+                loadedAt = Date.now();
+                if (!result.available) list.replaceChildren(h("p.subtle", "Link your Ballsdex account to see its limits."));
+                else list.replaceChildren(group("Your API key", result.key), group("BallIdentifier bot (shared)", result.ip));
+            } catch (error) {
+                if (!handleAuthError(error)) list.replaceChildren(h("p.subtle", error.message));
+            } finally {
+                loading = false;
+                refreshBtn.disabled = false;
+            }
+        }
+
+        return { card, load, reset: () => (loadedAt = 0) };
+    })();
 
     /* ----- Raws ----- */
 

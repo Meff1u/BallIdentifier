@@ -7,6 +7,7 @@
  * POST /.netlify/functions/ballsdex  { action: "sync" }
  * POST /.netlify/functions/ballsdex  { action: "cancel" }
  * GET  /.netlify/functions/ballsdex?view=raws  -> rare non-special balls x tier value
+ * GET  /.netlify/functions/ballsdex?view=ratelimit  -> Ballsdex API limit usage (your key + the bot's IP)
  *
  * The Discord user id always comes from the encrypted session, never from the request.
  * The API key is encrypted end-to-end for the bot (encryptForBot) and stored encrypted by the bot.
@@ -36,7 +37,8 @@ exports.handler = async (event) => {
     try {
         if (event.httpMethod === "GET") {
             const view = event.queryStringParameters?.view;
-            return forward(await botApiFetch(view === "raws" ? `${base}/raws` : base));
+            const path = view === "raws" ? `${base}/raws` : view === "ratelimit" ? `${base}/ratelimit` : base;
+            return forward(await botApiFetch(path));
         }
 
         if (event.httpMethod !== "POST") return json(405, { error: "Method not allowed" });

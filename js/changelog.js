@@ -12,6 +12,7 @@ const PAGE = 25;
 const FILTERS = [
     { id: "all", label: "All" },
     { id: "website", label: "Website" },
+    { id: "bot", label: "Bot" },
     { id: "dex", label: "Dexes" },
 ];
 
@@ -48,11 +49,13 @@ function matches(entry, filter) {
     if (filter === "all") return true;
     if (filter === "dex") return entry.type === "dex";
     if (filter === "website") return entry.type === "website";
+    if (filter === "bot") return entry.type === "bot";
     return entry.dex === filter;
 }
 
 function badge(entry) {
     if (entry.type === "website") return h("span.badge.badge-accent", "Website");
+    if (entry.type === "bot") return h("span.badge.badge-primary", "Bot");
     if (entry.dex) return h("span.badge", img(dexIcon(entry.dex), "", "badge-ico"), entry.dex);
     return h("span.badge", "Dex update");
 }
@@ -81,7 +84,7 @@ function setUnread(on) {
 /** Latest dex entry, optionally for one dex, for the "Updated …" pill on the Identifier. */
 export async function latestEntry(dexName = null) {
     const list = await load();
-    return list.find((entry) => entry.type === "dex" && (!dexName || entry.dex === dexName)) || null;
+    return list.find((entry) => (entry.type === "dex" || entry.type === "bot") && (!dexName || entry.dex === dexName)) || null;
 }
 
 export async function openChangelog(initialFilter = "all") {
