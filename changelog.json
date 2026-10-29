@@ -15,6 +15,33 @@
             ]
         },
         {
+            "timestamp": "1793295284",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "New spawn art for Pakistan",
+                "Pakistan: artist monke83 → remy_thecb",
+                "The old art of Pakistan is now in Previous arts"
+            ]
+        },
+        {
+            "timestamp": "1793295182",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "New spawn art: Kievan Rus' (T0)"
+            ]
+        },
+        {
+            "timestamp": "1793294798",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "New spawn art: Novgorod (T70)",
+                "282 balls rarer than T70 moved one rarity down"
+            ]
+        },
+        {
             "timestamp": "1793294066",
             "type": "dex",
             "dex": "Ballsdex",
