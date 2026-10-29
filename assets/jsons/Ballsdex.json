@@ -463,8 +463,16 @@
         "demand": "A",
         "collectors": ["804340620873302036", "1124891646144823307", "1094973531223248969", "803768620580208662"]
     },
-    "Pakistan": {
+    "Kiev": {
         "rarity": 48,
+        "artist": "Chewytapioca",
+        "wave": 8.3,
+        "id": 557,
+        "common_value": "9",
+        "cc": "1050"
+    },
+    "Pakistan": {
+        "rarity": 49,
         "artist": "monke83",
         "wave": 1,
         "id": 10,
@@ -474,7 +482,7 @@
         "collectors": ["1238071837066395683"]
     },
     "Sumer": {
-        "rarity": 49,
+        "rarity": 50,
         "artist": "clar1nettist",
         "wave": 8,
         "id": 535,
@@ -484,7 +492,7 @@
         "collectors": ["1094973531223248969"]
     },
     "Ancient Egypt": {
-        "rarity": 50,
+        "rarity": 51,
         "artist": "freezysupra",
         "wave": 4,
         "id": 199,
@@ -494,7 +502,7 @@
         "collectors": ["1008613639579775016"]
     },
     "Brazil": {
-        "rarity": 50,
+        "rarity": 51,
         "artist": ".wken",
         "wave": 1,
         "id": 11,
@@ -503,7 +511,7 @@
         "demand": "A"
     },
     "Byzantium": {
-        "rarity": 50,
+        "rarity": 51,
         "artist": ".lunatuna",
         "wave": 3,
         "id": 188,
@@ -513,7 +521,7 @@
         "collectors": ["1437092068039065743"]
     },
     "Greenland": {
-        "rarity": 50,
+        "rarity": 51,
         "artist": "poooooooooof",
         "wave": 3,
         "id": 174,
@@ -523,7 +531,7 @@
         "collectors": ["502146206869225473", "1316562147551084595"]
     },
     "Portuguese Empire": {
-        "rarity": 50,
+        "rarity": 51,
         "artist": "fadewon",
         "wave": 5,
         "id": 286,
@@ -533,7 +541,7 @@
         "collectors": ["810750882538848296"]
     },
     "Qing Dynasty": {
-        "rarity": 50,
+        "rarity": 51,
         "artist": "Miron",
         "wave": 2,
         "id": 161,
@@ -542,7 +550,7 @@
         "demand": "D"
     },
     "British Raj": {
-        "rarity": 56,
+        "rarity": 57,
         "artist": "kapukvati",
         "wave": 2,
         "id": 158,
@@ -551,7 +559,7 @@
         "demand": "C"
     },
     "Carthage": {
-        "rarity": 56,
+        "rarity": 57,
         "artist": "kapukvati",
         "wave": 4,
         "id": 209,
@@ -561,7 +569,7 @@
         "collectors": ["1351066685817360485"]
     },
     "Italy": {
-        "rarity": 56,
+        "rarity": 57,
         "artist": "screegif",
         "wave": 1,
         "id": 12,
@@ -571,7 +579,7 @@
         "collectors": ["968179619058548816"]
     },
     "Kingdom of Italy": {
-        "rarity": 56,
+        "rarity": 57,
         "artist": "Franci#5323",
         "wave": 5,
         "id": 254,
@@ -581,7 +589,7 @@
         "collectors": ["1007052213752963122"]
     },
     "Third French Republic": {
-        "rarity": 56,
+        "rarity": 57,
         "artist": "fakedwebb",
         "wave": 7,
         "id": 495,
@@ -590,7 +598,7 @@
         "demand": "C"
     },
     "Egypt": {
-        "rarity": 61,
+        "rarity": 62,
         "artist": "miron",
         "wave": 1,
         "id": 13,
@@ -600,7 +608,7 @@
         "collectors": ["1391172041620586651"]
     },
     "Russian Soviet Federative Socialist Republic": {
-        "rarity": 61,
+        "rarity": 62,
         "artist": "tiztozz",
         "wave": 5,
         "id": 262,
@@ -609,7 +617,7 @@
         "demand": "C"
     },
     "Turkey": {
-        "rarity": 63,
+        "rarity": 64,
         "artist": "_finland_",
         "wave": 1,
         "id": 14,
@@ -619,7 +627,7 @@
         "collectors": ["855053763601498174"]
     },
     "French Empire": {
-        "rarity": 64,
+        "rarity": 65,
         "artist": "tubula",
         "wave": 6,
         "id": 427,
@@ -628,7 +636,7 @@
         "demand": "D"
     },
     "Iran": {
-        "rarity": 65,
+        "rarity": 66,
         "artist": "guadeterre",
         "wave": 1,
         "id": 15,
@@ -637,7 +645,7 @@
         "demand": "B"
     },
     "Kingdom of Greece": {
-        "rarity": 65,
+        "rarity": 66,
         "artist": "Galaxyotype & Cubic",
         "wave": 2,
         "id": 162,
@@ -646,7 +654,7 @@
         "demand": "C"
     },
     "Konbaung Empire": {
-        "rarity": 65,
+        "rarity": 66,
         "artist": "bfbrobloxplayz",
         "wave": 7,
         "id": 486,
@@ -655,7 +663,7 @@
         "demand": "C"
     },
     "North German Confederation": {
-        "rarity": 65,
+        "rarity": 66,
         "artist": "flame",
         "wave": 7,
         "id": 488,
@@ -665,7 +673,7 @@
         "collectors": ["986398841144233988", "1118257651449610270", "943704645627445278"]
     },
     "African Union": {
-        "rarity": 69,
+        "rarity": 70,
         "artist": "Cubic",
         "wave": 3,
         "id": 195,
@@ -674,7 +682,7 @@
         "demand": "C"
     },
     "Arab League": {
-        "rarity": 69,
+        "rarity": 70,
         "artist": "no_name_guy_1313",
         "wave": 5,
         "id": 275,
@@ -683,7 +691,7 @@
         "demand": "E"
     },
     "Confederate States": {
-        "rarity": 69,
+        "rarity": 70,
         "artist": "cattitan",
         "wave": 2,
         "id": 160,
@@ -692,7 +700,7 @@
         "demand": "C"
     },
     "Gaul": {
-        "rarity": 69,
+        "rarity": 70,
         "artist": "adam.kw",
         "wave": 4,
         "id": 206,
@@ -701,7 +709,7 @@
         "demand": "D"
     },
     "Germania": {
-        "rarity": 69,
+        "rarity": 70,
         "artist": "angelia4",
         "wave": 4,
         "id": 210,
@@ -710,7 +718,7 @@
         "demand": "D"
     },
     "Indonesia": {
-        "rarity": 69,
+        "rarity": 70,
         "artist": "fireandvoid",
         "wave": 1,
         "id": 16,
@@ -720,7 +728,7 @@
         "collectors": ["1132535280151298110", "764003995365670913", "756488900263936081"]
     },
     "Kingdom of Hungary": {
-        "rarity": 69,
+        "rarity": 70,
         "artist": "falsesurrender.",
         "wave": 6,
         "id": 434,
@@ -730,7 +738,7 @@
         "collectors": ["1128044882842370178"]
     },
     "Mayan Empire": {
-        "rarity": 69,
+        "rarity": 70,
         "artist": "_papster_",
         "wave": 4,
         "id": 208,
@@ -740,7 +748,7 @@
         "collectors": ["647598570270097458"]
     },
     "Yugoslavia": {
-        "rarity": 69,
+        "rarity": 70,
         "artist": "flowerrring",
         "wave": 3,
         "id": 177,
@@ -750,7 +758,7 @@
         "collectors": ["1291551975162253429", "1338106215523422222"]
     },
     "Germany": {
-        "rarity": 78,
+        "rarity": 79,
         "artist": "chewytapioca",
         "wave": 1,
         "id": 17,
@@ -760,7 +768,7 @@
         "collectors": ["913740201069776926", "943704645627445278"]
     },
     "Australia": {
-        "rarity": 79,
+        "rarity": 80,
         "artist": "edible_penguins",
         "wave": 1,
         "id": 18,
@@ -770,7 +778,7 @@
         "collectors": ["1087972330162110485", "913740201069776926"]
     },
     "Hong Kong": {
-        "rarity": 79,
+        "rarity": 80,
         "artist": "cogito.ergo.sum_.",
         "wave": 5.1,
         "id": 241,
@@ -780,7 +788,7 @@
         "collectors": ["1279093286606209048", "976732248726466570"]
     },
     "Israel": {
-        "rarity": 79,
+        "rarity": 80,
         "artist": "joelukx",
         "wave": 1,
         "id": 19,
@@ -789,7 +797,7 @@
         "demand": "E"
     },
     "Xiongnu": {
-        "rarity": 79,
+        "rarity": 80,
         "artist": "Cubic",
         "wave": 4,
         "id": 201,
@@ -799,7 +807,7 @@
         "collectors": ["1077411264759873607"]
     },
     "Swedish Empire": {
-        "rarity": 83,
+        "rarity": 84,
         "artist": "thatoneseller_",
         "wave": 6,
         "id": 447,
@@ -809,7 +817,7 @@
         "collectors": ["825507497334538301", "1149629048205615114"]
     },
     "Spain": {
-        "rarity": 84,
+        "rarity": 85,
         "artist": "screegif",
         "wave": 1,
         "id": 20,
@@ -818,7 +826,7 @@
         "demand": "C"
     },
     "Olmecs": {
-        "rarity": 85,
+        "rarity": 86,
         "artist": "gmo",
         "wave": 8,
         "id": 531,
@@ -828,7 +836,7 @@
         "collectors": ["1094973531223248969"]
     },
     "Antarctica": {
-        "rarity": 86,
+        "rarity": 87,
         "artist": "lucas",
         "wave": 3,
         "id": 171,
@@ -838,7 +846,7 @@
         "collectors": ["1488114857143177339", "1236663075382497292"]
     },
     "Ming Dynasty": {
-        "rarity": 86,
+        "rarity": 87,
         "artist": "Cubic",
         "wave": 6,
         "id": 439,
@@ -848,7 +856,7 @@
         "collectors": ["543424976292675604"]
     },
     "Saudi Arabia": {
-        "rarity": 86,
+        "rarity": 87,
         "artist": "froggo",
         "wave": 1,
         "id": 21,
@@ -857,7 +865,7 @@
         "demand": "B"
     },
     "Xia Dynasty": {
-        "rarity": 89,
+        "rarity": 90,
         "artist": "arneslotmachine",
         "wave": 8,
         "id": 532,
@@ -867,7 +875,7 @@
         "collectors": ["1094973531223248969"]
     },
     "Franks": {
-        "rarity": 90,
+        "rarity": 91,
         "artist": "_finland_",
         "wave": 4,
         "id": 205,
@@ -877,7 +885,7 @@
         "collectors": ["435521183618826240"]
     },
     "League of Nations": {
-        "rarity": 90,
+        "rarity": 91,
         "artist": "cogito.ergo.sum_.",
         "wave": 2,
         "id": 168,
@@ -887,7 +895,7 @@
         "collectors": ["947988956211998780", "1115825718853652591"]
     },
     "Monaco": {
-        "rarity": 90,
+        "rarity": 91,
         "artist": "Froggo",
         "wave": 4.1,
         "id": 229,
@@ -896,7 +904,7 @@
         "demand": "D"
     },
     "Union of South Africa": {
-        "rarity": 90,
+        "rarity": 91,
         "artist": "finski._.",
         "wave": 2,
         "id": 159,
@@ -906,7 +914,7 @@
         "collectors": ["852718632491548733"]
     },
     "Ukraine": {
-        "rarity": 94,
+        "rarity": 95,
         "artist": "kapukvati",
         "wave": 1,
         "id": 23,
@@ -915,7 +923,7 @@
         "demand": "B"
     },
     "Canada": {
-        "rarity": 95,
+        "rarity": 96,
         "artist": "pineapple.ca",
         "wave": 1,
         "id": 24,
@@ -925,7 +933,7 @@
         "collectors": ["433270158912389130", "804340620873302036", "1165659699463606302"]
     },
     "Kingdom of Two Sicilies": {
-        "rarity": 95,
+        "rarity": 96,
         "artist": "tringle",
         "wave": 7,
         "id": 497,
@@ -935,7 +943,7 @@
         "collectors": ["1218307572818514092"]
     },
     "Kingdom of Brandenburg": {
-        "rarity": 97,
+        "rarity": 98,
         "artist": "der_union",
         "wave": 6,
         "id": 433,
@@ -945,7 +953,7 @@
         "collectors": ["943704645627445278"]
     },
     "Kingdom of Ulaid": {
-        "rarity": 97,
+        "rarity": 98,
         "artist": "kapukvati",
         "wave": 8.1,
         "id": 550,
@@ -955,7 +963,7 @@
         "collectors": ["1094973531223248969"]
     },
     "Poland": {
-        "rarity": 97,
+        "rarity": 98,
         "artist": "tw20nty4our",
         "wave": 1,
         "id": 25,
@@ -965,7 +973,7 @@
         "collectors": ["334411435633541121", "1032722236483829811", "992367935324684298", "1203677021893296159"]
     },
     "Sweden": {
-        "rarity": 100,
+        "rarity": 101,
         "artist": "waffles.epek",
         "wave": 1,
         "id": 26,
@@ -975,7 +983,7 @@
         "collectors": ["825507497334538301", "815509459345735690"]
     },
     "Kingdom of Munster": {
-        "rarity": 101,
+        "rarity": 102,
         "artist": "fireforev",
         "wave": 8,
         "id": 537,
@@ -985,7 +993,7 @@
         "collectors": ["1124891646144823307", "1094973531223248969", "802153400732352550"]
     },
     "Macau": {
-        "rarity": 102,
+        "rarity": 103,
         "artist": "Arty",
         "wave": 5.1,
         "id": 343,
@@ -995,7 +1003,7 @@
         "collectors": ["870578696031977492"]
     },
     "Scotland": {
-        "rarity": 102,
+        "rarity": 103,
         "artist": "waffles.epek",
         "wave": 3,
         "id": 175,
@@ -1004,7 +1012,7 @@
         "demand": "C"
     },
     "South Africa": {
-        "rarity": 102,
+        "rarity": 103,
         "artist": "kole",
         "wave": 1,
         "id": 27,
@@ -1013,7 +1021,7 @@
         "demand": "D"
     },
     "Greece": {
-        "rarity": 105,
+        "rarity": 106,
         "artist": "altara",
         "wave": 1,
         "id": 28,
@@ -1022,7 +1030,7 @@
         "demand": "B"
     },
     "Safavid Empire": {
-        "rarity": 106,
+        "rarity": 107,
         "artist": "cattitan",
         "wave": 6,
         "id": 446,
@@ -1032,7 +1040,7 @@
         "collectors": ["1170908349538254889"]
     },
     "Vietnam": {
-        "rarity": 106,
+        "rarity": 107,
         "artist": "altara",
         "wave": 1,
         "id": 52,
@@ -1042,7 +1050,7 @@
         "collectors": ["789844940653330453"]
     },
     "Kingdom of Connacht": {
-        "rarity": 108,
+        "rarity": 109,
         "artist": "Anii",
         "wave": 8.1,
         "id": 549,
@@ -1052,7 +1060,7 @@
         "collectors": ["1124891646144823307", "1094973531223248969"]
     },
     "Parthian Empire": {
-        "rarity": 108,
+        "rarity": 109,
         "artist": "bfbrobloxplayz",
         "wave": 6,
         "id": 442,
@@ -1061,7 +1069,7 @@
         "demand": "E"
     },
     "Thailand": {
-        "rarity": 108,
+        "rarity": 109,
         "artist": "Miron",
         "wave": 1,
         "id": 30,
@@ -1070,7 +1078,7 @@
         "demand": "D"
     },
     "North Korea": {
-        "rarity": 111,
+        "rarity": 112,
         "artist": "froggo.8174",
         "wave": 1,
         "id": 31,
@@ -1080,7 +1088,7 @@
         "collectors": ["1031971884855734393"]
     },
     "England": {
-        "rarity": 112,
+        "rarity": 113,
         "artist": "ayellowlizard",
         "wave": 5.1,
         "id": 344,
@@ -1090,7 +1098,7 @@
         "collectors": ["468100475636678687", "756488900263936081"]
     },
     "European Union": {
-        "rarity": 112,
+        "rarity": 113,
         "artist": "comrad_haix",
         "wave": 1,
         "id": 79,
@@ -1099,7 +1107,7 @@
         "demand": "B"
     },
     "Francoist Spain": {
-        "rarity": 112,
+        "rarity": 113,
         "artist": "kiwiwos",
         "wave": 5,
         "id": 284,
@@ -1108,7 +1116,7 @@
         "demand": "F"
     },
     "Manchukuo": {
-        "rarity": 112,
+        "rarity": 113,
         "artist": "joelukx",
         "wave": 5,
         "id": 268,
@@ -1118,7 +1126,7 @@
         "collectors": ["1008613639579775016"]
     },
     "NATO": {
-        "rarity": 112,
+        "rarity": 113,
         "artist": "ayellowlizard",
         "wave": 1,
         "id": 80,
@@ -1128,7 +1136,7 @@
         "collectors": ["817379211102388235", "1291551975162253429"]
     },
     "Republican Spain": {
-        "rarity": 112,
+        "rarity": 113,
         "artist": "tehcoiled2763",
         "wave": 5,
         "id": 283,
@@ -1137,7 +1145,7 @@
         "demand": "E"
     },
     "United Arab Republic": {
-        "rarity": 112,
+        "rarity": 113,
         "artist": "tw20nty4our",
         "wave": 5,
         "id": 274,
@@ -1147,7 +1155,7 @@
         "collectors": ["1050732960044830731", "1462448616374534290"]
     },
     "United Nations": {
-        "rarity": 112,
+        "rarity": 113,
         "artist": "verdammt_.",
         "wave": 1,
         "id": 78,
@@ -1157,7 +1165,7 @@
         "collectors": ["693938707496960000", "997644823211294840", "1291551975162253429"]
     },
     "Warsaw Pact": {
-        "rarity": 112,
+        "rarity": 113,
         "artist": "alsomarty",
         "wave": 5,
         "id": 243,
@@ -1167,7 +1175,7 @@
         "collectors": ["518434646502014980", "334411435633541121"]
     },
     "Weimar Republic": {
-        "rarity": 112,
+        "rarity": 113,
         "artist": "v3rdammt",
         "wave": 5,
         "id": 267,
@@ -1177,7 +1185,7 @@
         "collectors": ["665493572312891403", "1291551975162253429", "1218307572818514092"]
     },
     "Zhou Dynasty": {
-        "rarity": 112,
+        "rarity": 113,
         "artist": "angelia4",
         "wave": 4,
         "id": 212,
@@ -1187,7 +1195,7 @@
         "collectors": ["1104510079769780317"]
     },
     "Argentine Confederation": {
-        "rarity": 123,
+        "rarity": 124,
         "artist": "ani",
         "wave": 7,
         "id": 474,
@@ -1196,7 +1204,7 @@
         "demand": "E"
     },
     "Armenian Empire": {
-        "rarity": 124,
+        "rarity": 125,
         "artist": "tubula",
         "wave": 8,
         "id": 539,
@@ -1206,7 +1214,7 @@
         "collectors": ["1094973531223248969"]
     },
     "Assyrian Empire": {
-        "rarity": 124,
+        "rarity": 125,
         "artist": "v.xcaniix",
         "wave": 8,
         "id": 540,
@@ -1216,7 +1224,7 @@
         "collectors": ["1094973531223248969"]
     },
     "ASEAN": {
-        "rarity": 126,
+        "rarity": 127,
         "artist": "pineapple",
         "wave": 7.2,
         "id": 526,
@@ -1226,7 +1234,7 @@
         "collectors": ["944033779041853460"]
     },
     "Kingdom of Hawaii": {
-        "rarity": 126,
+        "rarity": 127,
         "artist": "loading",
         "wave": 7,
         "id": 484,
@@ -1235,7 +1243,7 @@
         "demand": "C"
     },
     "Kingdom of Bali": {
-        "rarity": 128,
+        "rarity": 129,
         "artist": "verd",
         "wave": 7,
         "id": 482,
@@ -1244,7 +1252,7 @@
         "demand": "D"
     },
     "Kingdom of Bora Bora": {
-        "rarity": 128,
+        "rarity": 129,
         "artist": "mill",
         "wave": 7,
         "id": 483,
@@ -1254,7 +1262,7 @@
         "collectors": ["1310790400067371162"]
     },
     "Yuan Dynasty": {
-        "rarity": 128,
+        "rarity": 129,
         "artist": "yomers",
         "wave": 6,
         "id": 448,
@@ -1263,7 +1271,7 @@
         "demand": "E"
     },
     "Bavaria": {
-        "rarity": 131,
+        "rarity": 132,
         "artist": "yomers",
         "wave": 7,
         "id": 475,
@@ -1273,7 +1281,7 @@
         "collectors": ["692575463003914321", "943704645627445278"]
     },
     "Algeria": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "garsigars",
         "wave": 1,
         "id": 32,
@@ -1283,7 +1291,7 @@
         "collectors": ["1213899650751270972", "857338034713526282"]
     },
     "Argentina": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "4l3ph_null",
         "wave": 1,
         "id": 41,
@@ -1292,7 +1300,7 @@
         "demand": "C"
     },
     "Bangladesh": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "v.xcaniixx",
         "wave": 1,
         "id": 47,
@@ -1302,7 +1310,7 @@
         "collectors": ["966343802308665365"]
     },
     "Colombia": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "tetratomidae",
         "wave": 1,
         "id": 45,
@@ -1312,7 +1320,7 @@
         "collectors": ["1314335616581763117"]
     },
     "Czechia": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "alsomarty",
         "wave": 1,
         "id": 42,
@@ -1322,7 +1330,7 @@
         "collectors": ["841190405868748830"]
     },
     "Iraq": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "Cattitan",
         "wave": 1,
         "id": 35,
@@ -1331,7 +1339,7 @@
         "demand": "D"
     },
     "Malaysia": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "nebula",
         "wave": 1,
         "id": 49,
@@ -1341,7 +1349,7 @@
         "collectors": ["865639893791145994"]
     },
     "Mexico": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "Sunlight",
         "wave": 1,
         "id": 44,
@@ -1351,7 +1359,7 @@
         "collectors": ["921731205458722839"]
     },
     "Myanmar": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "bloxtales",
         "wave": 1,
         "id": 40,
@@ -1360,7 +1368,7 @@
         "demand": "F"
     },
     "Netherlands": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": ".wken",
         "wave": 1,
         "id": 38,
@@ -1370,7 +1378,7 @@
         "collectors": ["907582049253220402", "1218307572818514092"]
     },
     "Nigeria": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "Rajan",
         "wave": 1,
         "id": 36,
@@ -1379,7 +1387,7 @@
         "demand": "D"
     },
     "Norway": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "finitealtaraa",
         "wave": 1,
         "id": 34,
@@ -1389,7 +1397,7 @@
         "collectors": ["825507497334538301"]
     },
     "Peru": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "lee.lil.kitten.thing",
         "wave": 1,
         "id": 51,
@@ -1398,7 +1406,7 @@
         "demand": "C"
     },
     "Philippines": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "screegif",
         "wave": 1,
         "id": 53,
@@ -1408,7 +1416,7 @@
         "collectors": ["1470937033303265298", "468100475636678687", "772112995908190258"]
     },
     "Portugal": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": ".soomlane",
         "wave": 1,
         "id": 50,
@@ -1418,7 +1426,7 @@
         "collectors": ["1248960261021368341"]
     },
     "Prussia": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "verdammt_.",
         "wave": 2,
         "id": 166,
@@ -1428,7 +1436,7 @@
         "collectors": ["1291551975162253429", "943704645627445278"]
     },
     "Romania": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "comrad_haix",
         "wave": 1,
         "id": 39,
@@ -1438,7 +1446,7 @@
         "collectors": ["1232150116425531402"]
     },
     "Singapore": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "maviieawoo",
         "wave": 1,
         "id": 43,
@@ -1447,7 +1455,7 @@
         "demand": "A"
     },
     "Switzerland": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "limepostor_102",
         "wave": 1,
         "id": 33,
@@ -1456,7 +1464,7 @@
         "demand": "A"
     },
     "Syria": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "angelia4",
         "wave": 1,
         "id": 48,
@@ -1466,7 +1474,7 @@
         "collectors": ["880098456885141635"]
     },
     "Tuvalu": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": ".wken",
         "wave": 4.1,
         "id": 227,
@@ -1475,7 +1483,7 @@
         "demand": "E"
     },
     "United Arab Emirates": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "Cubic",
         "wave": 1,
         "id": 37,
@@ -1484,7 +1492,7 @@
         "demand": "C"
     },
     "Venezuela": {
-        "rarity": 132,
+        "rarity": 133,
         "artist": "Waffles",
         "wave": 1,
         "id": 46,
@@ -1493,7 +1501,7 @@
         "demand": "D"
     },
     "Kingdom of Cao Wei": {
-        "rarity": 155,
+        "rarity": 156,
         "artist": "hecker4223",
         "wave": 8,
         "id": 541,
@@ -1503,7 +1511,7 @@
         "collectors": ["1094973531223248969", "803768620580208662"]
     },
     "Kingdom of Shu Han": {
-        "rarity": 155,
+        "rarity": 156,
         "artist": "no_name_guy_1313",
         "wave": 8,
         "id": 534,
@@ -1513,7 +1521,7 @@
         "collectors": ["1094973531223248969"]
     },
     "Kingdom of Sun Wu": {
-        "rarity": 155,
+        "rarity": 156,
         "artist": "ayellowlizard",
         "wave": 8,
         "id": 543,
@@ -1523,7 +1531,7 @@
         "collectors": ["1094973531223248969"]
     },
     "Mali Empire": {
-        "rarity": 158,
+        "rarity": 159,
         "artist": ".tommy.froggy",
         "wave": 6,
         "id": 438,
@@ -1532,7 +1540,7 @@
         "demand": "F"
     },
     "Ukrainian Soviet Socialist Republic": {
-        "rarity": 159,
+        "rarity": 160,
         "artist": "kapukvati",
         "wave": 5,
         "id": 277,
@@ -1541,7 +1549,7 @@
         "demand": "E"
     },
     "Federal Republic of Central America": {
-        "rarity": 160,
+        "rarity": 161,
         "artist": "hara",
         "wave": 7,
         "id": 480,
@@ -1550,7 +1558,7 @@
         "demand": "D"
     },
     "Ancient Athens": {
-        "rarity": 161,
+        "rarity": 162,
         "artist": "ized_coffee",
         "wave": 4,
         "id": 200,
@@ -1560,7 +1568,7 @@
         "collectors": ["1314335616581763117", "554824606033379338"]
     },
     "Ancient Sparta": {
-        "rarity": 161,
+        "rarity": 162,
         "artist": "angelia4",
         "wave": 4,
         "id": 198,
@@ -1570,7 +1578,7 @@
         "collectors": ["554824606033379338"]
     },
     "Babylon": {
-        "rarity": 161,
+        "rarity": 162,
         "artist": "kapukvati",
         "wave": 4,
         "id": 207,
@@ -1580,7 +1588,7 @@
         "collectors": ["880098456885141635"]
     },
     "Czechoslovakia": {
-        "rarity": 161,
+        "rarity": 162,
         "artist": "Arty",
         "wave": 5,
         "id": 258,
@@ -1589,7 +1597,7 @@
         "demand": "B"
     },
     "Ethiopian Empire": {
-        "rarity": 161,
+        "rarity": 162,
         "artist": "derpxndytoosus",
         "wave": 5,
         "id": 271,
@@ -1599,7 +1607,7 @@
         "collectors": ["1149629048205615114"]
     },
     "French Indochina": {
-        "rarity": 161,
+        "rarity": 162,
         "artist": "Epik#0083",
         "wave": 5,
         "id": 266,
@@ -1609,7 +1617,7 @@
         "collectors": ["986398841144233988"]
     },
     "Naoero": {
-        "rarity": 161,
+        "rarity": 162,
         "artist": "notshad0w",
         "wave": 5.1,
         "id": 334,
@@ -1618,7 +1626,7 @@
         "demand": "C"
     },
     "Numidia": {
-        "rarity": 161,
+        "rarity": 162,
         "artist": "DerpXndyTooSus#4344",
         "wave": 4,
         "id": 213,
@@ -1628,7 +1636,7 @@
         "collectors": ["716952050608504832", "756488900263936081"]
     },
     "Quebec": {
-        "rarity": 161,
+        "rarity": 162,
         "artist": "bfbrobloxplayz",
         "wave": 3,
         "id": 180,
@@ -1637,7 +1645,7 @@
         "demand": "A"
     },
     "Siam": {
-        "rarity": 161,
+        "rarity": 162,
         "artist": ".soomlane",
         "wave": 2,
         "id": 164,
@@ -1647,7 +1655,7 @@
         "collectors": ["1245819876266999851"]
     },
     "South Vietnam": {
-        "rarity": 161,
+        "rarity": 162,
         "artist": "tw20nty4our",
         "wave": 5,
         "id": 269,
@@ -1657,7 +1665,7 @@
         "collectors": ["789844940653330453"]
     },
     "Taiwan": {
-        "rarity": 161,
+        "rarity": 162,
         "artist": "lepordmy",
         "wave": 1,
         "id": 22,
@@ -1667,7 +1675,7 @@
         "collectors": ["803768620580208662", "976732248726466570", "1282047312809431100"]
     },
     "Wales": {
-        "rarity": 161,
+        "rarity": 162,
         "artist": "_finland_",
         "wave": 5.1,
         "id": 341,
@@ -1676,7 +1684,7 @@
         "demand": "B"
     },
     "West Germany": {
-        "rarity": 161,
+        "rarity": 162,
         "artist": "miron",
         "wave": 5,
         "id": 272,
@@ -1686,7 +1694,7 @@
         "collectors": ["888141306323423333"]
     },
     "Kingdom of Egypt": {
-        "rarity": 175,
+        "rarity": 176,
         "artist": "_finland_",
         "wave": 5,
         "id": 279,
@@ -1696,7 +1704,7 @@
         "collectors": ["1221239207310266408"]
     },
     "Mughal Empire": {
-        "rarity": 176,
+        "rarity": 177,
         "artist": "Cubic",
         "wave": 6,
         "id": 440,
@@ -1705,7 +1713,7 @@
         "demand": "C"
     },
     "Angola": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "kai",
         "wave": 1,
         "id": 68,
@@ -1715,7 +1723,7 @@
         "collectors": ["1118257651449610270"]
     },
     "Austria": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "altara",
         "wave": 1,
         "id": 60,
@@ -1725,7 +1733,7 @@
         "collectors": ["802572554791288852", "1291551975162253429"]
     },
     "Azerbaijan": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "poooooooooof",
         "wave": 1,
         "id": 65,
@@ -1735,7 +1743,7 @@
         "collectors": ["1007361101249384520"]
     },
     "Bahamas": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "no_name_guy_1313",
         "wave": 4.1,
         "id": 236,
@@ -1745,7 +1753,7 @@
         "collectors": ["728081610368483429"]
     },
     "Belarus": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "Arty",
         "wave": 1,
         "id": 54,
@@ -1755,7 +1763,7 @@
         "collectors": ["734871954728943706", "1291551975162253429"]
     },
     "Belgium": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "haap_",
         "wave": 1,
         "id": 71,
@@ -1765,7 +1773,7 @@
         "collectors": ["914768686366199829", "764003995365670913"]
     },
     "Bolivia": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "devykii",
         "wave": 1,
         "id": 87,
@@ -1774,7 +1782,7 @@
         "demand": "D"
     },
     "Bulgaria": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "Arty",
         "wave": 1,
         "id": 69,
@@ -1784,7 +1792,7 @@
         "collectors": ["1351066685817360485"]
     },
     "Chile": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "ordinary_tophatman",
         "wave": 1,
         "id": 55,
@@ -1793,7 +1801,7 @@
         "demand": "C"
     },
     "Croatia": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "falsesurrender.",
         "wave": 1,
         "id": 64,
@@ -1803,7 +1811,7 @@
         "collectors": ["795598414918057984"]
     },
     "Cuba": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "Cubic",
         "wave": 1,
         "id": 72,
@@ -1813,7 +1821,7 @@
         "collectors": ["1149629048205615114"]
     },
     "Cyprus": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "engelious",
         "wave": 1,
         "id": 192,
@@ -1822,7 +1830,7 @@
         "demand": "C"
     },
     "Denmark": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": ".nintendoswitchlite.",
         "wave": 1,
         "id": 59,
@@ -1832,7 +1840,7 @@
         "collectors": ["647598570270097458"]
     },
     "DR Congo": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "_finland_",
         "wave": 1,
         "id": 81,
@@ -1841,7 +1849,7 @@
         "demand": "D"
     },
     "Ecuador": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "artistguy10_",
         "wave": 1,
         "id": 70,
@@ -1850,7 +1858,7 @@
         "demand": "B"
     },
     "Ethiopia": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "hecker",
         "wave": 1,
         "id": 67,
@@ -1859,7 +1867,7 @@
         "demand": "D"
     },
     "Finland": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "_finland_",
         "wave": 1,
         "id": 61,
@@ -1869,7 +1877,7 @@
         "collectors": ["991460053573972109"]
     },
     "Hungary": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "pho.supremacist",
         "wave": 1,
         "id": 58,
@@ -1879,7 +1887,7 @@
         "collectors": ["1128044882842370178", "1291551975162253429"]
     },
     "Iberian Union": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "._themagicalflame_.",
         "wave": 6,
         "id": 431,
@@ -1888,7 +1896,7 @@
         "demand": "C"
     },
     "Jordan": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "Xia & Cubic",
         "wave": 1,
         "id": 77,
@@ -1898,7 +1906,7 @@
         "collectors": ["1167032458726871080", "802153400732352550"]
     },
     "Kazakhstan": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "verdammt_.",
         "wave": 1,
         "id": 66,
@@ -1908,7 +1916,7 @@
         "collectors": ["970426556314972260"]
     },
     "Kenya": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "lemonsowoww_",
         "wave": 1,
         "id": 86,
@@ -1917,7 +1925,7 @@
         "demand": "D"
     },
     "Kuwait": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "fireforev",
         "wave": 1,
         "id": 73,
@@ -1926,7 +1934,7 @@
         "demand": "B"
     },
     "Libya": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "alsomarty",
         "wave": 1,
         "id": 74,
@@ -1935,7 +1943,7 @@
         "demand": "E"
     },
     "Morocco": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "austriahungary.ch",
         "wave": 1,
         "id": 57,
@@ -1944,7 +1952,7 @@
         "demand": "C"
     },
     "North Vietnam": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "tw20nty4our",
         "wave": 5,
         "id": 261,
@@ -1954,7 +1962,7 @@
         "collectors": ["789844940653330453"]
     },
     "Oman": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "anty0",
         "wave": 1,
         "id": 83,
@@ -1963,7 +1971,7 @@
         "demand": "C"
     },
     "Qatar": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "hecker",
         "wave": 1,
         "id": 82,
@@ -1973,7 +1981,7 @@
         "collectors": ["1483916465592598590"]
     },
     "San Marino": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "_finland_",
         "wave": 4.1,
         "id": 228,
@@ -1982,7 +1990,7 @@
         "demand": "C"
     },
     "Serbia": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "borzologist",
         "wave": 1,
         "id": 63,
@@ -1992,7 +2000,7 @@
         "collectors": ["1291551975162253429", "1025764874392973433"]
     },
     "Slovakia": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "cattitan",
         "wave": 1,
         "id": 62,
@@ -2001,7 +2009,7 @@
         "demand": "B"
     },
     "Sri Lanka": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "basedphoenician",
         "wave": 1,
         "id": 84,
@@ -2011,7 +2019,7 @@
         "collectors": ["1131618012970106990"]
     },
     "Sudan": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "gmo",
         "wave": 1,
         "id": 75,
@@ -2021,7 +2029,7 @@
         "collectors": ["852718632491548733"]
     },
     "Tunisia": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "fished0621",
         "wave": 1,
         "id": 76,
@@ -2030,7 +2038,7 @@
         "demand": "C"
     },
     "Turkmenistan": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "Hecker",
         "wave": 1,
         "id": 88,
@@ -2039,7 +2047,7 @@
         "demand": "F"
     },
     "Uzbekistan": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "kapukvati",
         "wave": 1,
         "id": 56,
@@ -2048,7 +2056,7 @@
         "demand": "E"
     },
     "Yemen": {
-        "rarity": 177,
+        "rarity": 178,
         "artist": "thehilossxdoficial",
         "wave": 1,
         "id": 85,
@@ -2057,7 +2065,7 @@
         "demand": "F"
     },
     "Republic of New Granada": {
-        "rarity": 214,
+        "rarity": 215,
         "artist": "Djugargo",
         "wave": 7,
         "id": 498,
@@ -2067,7 +2075,7 @@
         "collectors": ["1265119513167528032"]
     },
     "Faroe Islands": {
-        "rarity": 215,
+        "rarity": 216,
         "artist": "v.xcaniixx",
         "wave": 5.2,
         "id": 366,
@@ -2077,7 +2085,7 @@
         "collectors": ["797203198745378846"]
     },
     "Trinidad and Tobago": {
-        "rarity": 215,
+        "rarity": 216,
         "artist": "Cattitan",
         "wave": 5.2,
         "id": 376,
@@ -2086,7 +2094,7 @@
         "demand": "D"
     },
     "Orange Free State": {
-        "rarity": 217,
+        "rarity": 218,
         "artist": "clar",
         "wave": 7,
         "id": 489,
@@ -2096,7 +2104,7 @@
         "collectors": ["764003995365670913"]
     },
     "East Germany": {
-        "rarity": 218,
+        "rarity": 219,
         "artist": "cogito.ergo.sum_.",
         "wave": 5,
         "id": 273,
@@ -2106,7 +2114,7 @@
         "collectors": ["857338034713526282"]
     },
     "Emirate of Nejd": {
-        "rarity": 218,
+        "rarity": 219,
         "artist": "angelia",
         "wave": 7,
         "id": 478,
@@ -2115,7 +2123,7 @@
         "demand": "C"
     },
     "Free France": {
-        "rarity": 218,
+        "rarity": 219,
         "artist": "screegif",
         "wave": 5,
         "id": 259,
@@ -2125,7 +2133,7 @@
         "collectors": ["891168128778772481", "1050732960044830731", "921376970422493185", "1007052213752963122"]
     },
     "Golden Horde": {
-        "rarity": 218,
+        "rarity": 219,
         "artist": "._themagicalflame_.",
         "wave": 6,
         "id": 428,
@@ -2135,7 +2143,7 @@
         "collectors": ["1278538062669811858"]
     },
     "Jamaica": {
-        "rarity": 218,
+        "rarity": 219,
         "artist": "Cubic & gmo123",
         "wave": 3,
         "id": 186,
@@ -2144,7 +2152,7 @@
         "demand": "D"
     },
     "Maldives": {
-        "rarity": 218,
+        "rarity": 219,
         "artist": "araeofsunlight",
         "wave": 1,
         "id": 193,
@@ -2154,7 +2162,7 @@
         "collectors": ["740160036948541502"]
     },
     "Northern Ireland": {
-        "rarity": 218,
+        "rarity": 219,
         "artist": "remy_thecb",
         "wave": 5.1,
         "id": 342,
@@ -2164,7 +2172,7 @@
         "collectors": ["804340620873302036", "1124891646144823307"]
     },
     "Tibet": {
-        "rarity": 218,
+        "rarity": 219,
         "artist": "Bfbrblx",
         "wave": 5,
         "id": 260,
@@ -2174,7 +2182,7 @@
         "collectors": ["953082956140920882"]
     },
     "Vichy France": {
-        "rarity": 218,
+        "rarity": 219,
         "artist": "BFBRblx",
         "wave": 5,
         "id": 276,
@@ -2184,7 +2192,7 @@
         "collectors": ["999024009133953164", "891168128778772481"]
     },
     "Andorra": {
-        "rarity": 227,
+        "rarity": 228,
         "artist": "buckeeboi",
         "wave": 5.1,
         "id": 326,
@@ -2194,7 +2202,7 @@
         "collectors": ["502146206869225473"]
     },
     "Brunei": {
-        "rarity": 227,
+        "rarity": 228,
         "artist": "Cattitan",
         "wave": 5.2,
         "id": 377,
@@ -2204,7 +2212,7 @@
         "collectors": ["1316710639795699754"]
     },
     "Byelorussian Soviet Socialist Republic": {
-        "rarity": 227,
+        "rarity": 228,
         "artist": "fireforev",
         "wave": 5,
         "id": 264,
@@ -2214,7 +2222,7 @@
         "collectors": ["1291551975162253429", "518434646502014980"]
     },
     "Grand Duchy of Tuscany": {
-        "rarity": 227,
+        "rarity": 228,
         "artist": "angelia4",
         "wave": 6,
         "id": 429,
@@ -2223,7 +2231,7 @@
         "demand": "D"
     },
     "Khedivate of Egypt": {
-        "rarity": 227,
+        "rarity": 228,
         "artist": "bfbrobloxplayz",
         "wave": 6,
         "id": 435,
@@ -2232,7 +2240,7 @@
         "demand": "D"
     },
     "Micronesia": {
-        "rarity": 227,
+        "rarity": 228,
         "artist": "fakedwebb",
         "wave": 5.1,
         "id": 333,
@@ -2241,7 +2249,7 @@
         "demand": "B"
     },
     "Tonga": {
-        "rarity": 227,
+        "rarity": 228,
         "artist": "._themagicalflame_.",
         "wave": 5.1,
         "id": 339,
@@ -2251,7 +2259,7 @@
         "collectors": ["1291551975162253429", "647598570270097458"]
     },
     "Khmer Empire": {
-        "rarity": 234,
+        "rarity": 235,
         "artist": "Sun",
         "wave": 6,
         "id": 432,
@@ -2261,7 +2269,7 @@
         "collectors": ["1075898029745381457"]
     },
     "Barbados": {
-        "rarity": 235,
+        "rarity": 236,
         "artist": ".soomlane",
         "wave": 5.2,
         "id": 359,
@@ -2271,7 +2279,7 @@
         "collectors": ["798572086461202473"]
     },
     "Kingdom of Saxony": {
-        "rarity": 235,
+        "rarity": 236,
         "artist": "v.xcaniixx",
         "wave": 7,
         "id": 485,
@@ -2281,7 +2289,7 @@
         "collectors": ["734871954728943706"]
     },
     "Marshall Islands": {
-        "rarity": 235,
+        "rarity": 236,
         "artist": "Cattitan",
         "wave": 5.2,
         "id": 368,
@@ -2290,7 +2298,7 @@
         "demand": "D"
     },
     "Armenia": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "kapukvati",
         "wave": 1,
         "id": 102,
@@ -2300,7 +2308,7 @@
         "collectors": ["965032799142813696"]
     },
     "Bahrain": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "frelol1_ & zenozenozenooo",
         "wave": 1,
         "id": 103,
@@ -2309,7 +2317,7 @@
         "demand": "C"
     },
     "Cambodia": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "Cubic",
         "wave": 1,
         "id": 105,
@@ -2318,7 +2326,7 @@
         "demand": "D"
     },
     "Chad": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "Froggo",
         "wave": 1,
         "id": 92,
@@ -2328,7 +2336,7 @@
         "collectors": ["1238227008614301876", "802153400732352550", "1291551975162253429"]
     },
     "Congo Free State": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "perilouspokey",
         "wave": 5,
         "id": 281,
@@ -2338,7 +2346,7 @@
         "collectors": ["696994888960573470"]
     },
     "Equatorial Guinea": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "notshad0w",
         "wave": 5.1,
         "id": 330,
@@ -2348,7 +2356,7 @@
         "collectors": ["863141323049009154"]
     },
     "Fatimid Caliphate": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "Dem1111",
         "wave": 6,
         "id": 426,
@@ -2357,7 +2365,7 @@
         "demand": "D"
     },
     "Georgia": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "kapukvati",
         "wave": 1,
         "id": 93,
@@ -2366,7 +2374,7 @@
         "demand": "D"
     },
     "Ghana": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "not_what",
         "wave": 1,
         "id": 100,
@@ -2376,7 +2384,7 @@
         "collectors": ["864214006390980608"]
     },
     "Guatemala": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "Tringle",
         "wave": 1,
         "id": 96,
@@ -2385,7 +2393,7 @@
         "demand": "D"
     },
     "Guyana": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "Reichy",
         "wave": 4.1,
         "id": 233,
@@ -2394,7 +2402,7 @@
         "demand": "F"
     },
     "Ireland": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "mangle_1375",
         "wave": 1,
         "id": 101,
@@ -2404,7 +2412,7 @@
         "collectors": ["804340620873302036", "1124891646144823307"]
     },
     "Kyrgyzstan": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "araeofsunlight",
         "wave": 1,
         "id": 95,
@@ -2414,7 +2422,7 @@
         "collectors": ["751560791161045114", "996428228912742421", "1050732960044830731"]
     },
     "Latvia": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "fished",
         "wave": 1,
         "id": 99,
@@ -2424,7 +2432,7 @@
         "collectors": ["1244161823045845135", "970205715354517554"]
     },
     "Lithuania": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "kapukvati",
         "wave": 1,
         "id": 90,
@@ -2434,7 +2442,7 @@
         "collectors": ["1037930045882257548", "416250218775052301"]
     },
     "Mali": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "whitelight69",
         "wave": 1,
         "id": 104,
@@ -2443,7 +2451,7 @@
         "demand": "F"
     },
     "Malta": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "burenter",
         "wave": 4.1,
         "id": 230,
@@ -2453,7 +2461,7 @@
         "collectors": ["879479611946315817"]
     },
     "Mongolia": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "tashi",
         "wave": 1,
         "id": 106,
@@ -2462,7 +2470,7 @@
         "demand": "C"
     },
     "New Zealand": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "tw20nty4our",
         "wave": 1,
         "id": 89,
@@ -2472,7 +2480,7 @@
         "collectors": ["354188360719532032", "1374856391499583508", "976732248726466570"]
     },
     "Samoa": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "Cattitan",
         "wave": 5.1,
         "id": 336,
@@ -2482,7 +2490,7 @@
         "collectors": ["1374856391499583508", "1215100002972733491"]
     },
     "Slovenia": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "mist.sv",
         "wave": 1,
         "id": 91,
@@ -2492,7 +2500,7 @@
         "collectors": ["1367577234046587003", "1291551975162253429"]
     },
     "Togo": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": ".nintendoswitchlite.",
         "wave": 5.1,
         "id": 338,
@@ -2502,7 +2510,7 @@
         "collectors": ["993884168922607648", "1168627117794267167"]
     },
     "Uganda": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "hecker",
         "wave": 1,
         "id": 97,
@@ -2512,7 +2520,7 @@
         "collectors": ["1213600443352219648"]
     },
     "Uruguay": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": ".cxnnibal",
         "wave": 1,
         "id": 107,
@@ -2522,7 +2530,7 @@
         "collectors": ["1182344036892295250"]
     },
     "Zambia": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "derpcandy",
         "wave": 1,
         "id": 94,
@@ -2532,7 +2540,7 @@
         "collectors": ["1008613639579775016"]
     },
     "Zimbabwe": {
-        "rarity": 238,
+        "rarity": 239,
         "artist": "britains_mapper",
         "wave": 1,
         "id": 98,
@@ -2541,7 +2549,7 @@
         "demand": "E"
     },
     "Duchy of Limburg": {
-        "rarity": 264,
+        "rarity": 265,
         "artist": "pozie",
         "wave": 7,
         "id": 477,
@@ -2551,7 +2559,7 @@
         "collectors": ["1132787734788984993"]
     },
     "Malawi": {
-        "rarity": 264,
+        "rarity": 265,
         "artist": "Cattitan",
         "wave": 5.2,
         "id": 367,
@@ -2561,7 +2569,7 @@
         "collectors": ["1075898029745381457"]
     },
     "Kingdom of Sardinia": {
-        "rarity": 266,
+        "rarity": 267,
         "artist": "fadewon",
         "wave": 6,
         "id": 436,
@@ -2570,7 +2578,7 @@
         "demand": "D"
     },
     "Rashidi Emirate": {
-        "rarity": 266,
+        "rarity": 267,
         "artist": "Ized_Coffee",
         "wave": 7,
         "id": 492,
@@ -2579,7 +2587,7 @@
         "demand": "D"
     },
     "Costa Rica": {
-        "rarity": 268,
+        "rarity": 269,
         "artist": "gmo123",
         "wave": 5.1,
         "id": 329,
@@ -2589,7 +2597,7 @@
         "collectors": ["1021843029583208479"]
     },
     "Dominica": {
-        "rarity": 268,
+        "rarity": 269,
         "artist": "Cattitan",
         "wave": 5.2,
         "id": 362,
@@ -2599,7 +2607,7 @@
         "collectors": ["674999005020946483"]
     },
     "Guinea-Bissau": {
-        "rarity": 268,
+        "rarity": 269,
         "artist": "Cattitan",
         "wave": 5.2,
         "id": 365,
@@ -2609,7 +2617,7 @@
         "collectors": ["1231020711309742132"]
     },
     "Sao Tome and Principe": {
-        "rarity": 268,
+        "rarity": 269,
         "artist": "spommagetti",
         "wave": 5.2,
         "id": 374,
@@ -2619,7 +2627,7 @@
         "collectors": ["1326183331578122314"]
     },
     "Tannu Tuva": {
-        "rarity": 268,
+        "rarity": 269,
         "artist": "repancdg",
         "wave": 5,
         "id": 263,
@@ -2629,7 +2637,7 @@
         "collectors": ["679286504538767360"]
     },
     "Free City of Frankfurt": {
-        "rarity": 273,
+        "rarity": 274,
         "artist": "lm_finland",
         "wave": 7,
         "id": 481,
@@ -2638,7 +2646,7 @@
         "demand": "C"
     },
     "Kingdom of Iberia": {
-        "rarity": 273,
+        "rarity": 274,
         "artist": "cattian",
         "wave": 8,
         "id": 530,
@@ -2648,7 +2656,7 @@
         "collectors": ["1094973531223248969", "1361016992714195044"]
     },
     "Seychelles": {
-        "rarity": 273,
+        "rarity": 274,
         "artist": "bloxtales",
         "wave": 3,
         "id": 190,
@@ -2658,7 +2666,7 @@
         "collectors": ["607047519850987531"]
     },
     "Afghanistan": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "spommagetti & trashcancat",
         "wave": 1,
         "id": 124,
@@ -2667,7 +2675,7 @@
         "demand": "D"
     },
     "Albania": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "yomers",
         "wave": 1,
         "id": 121,
@@ -2677,7 +2685,7 @@
         "collectors": ["848798919504035870"]
     },
     "Belize": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "no_name_guy_1313",
         "wave": 5.2,
         "id": 360,
@@ -2687,7 +2695,7 @@
         "collectors": ["803400971652694056"]
     },
     "Bosnia and Herzegovina": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "tw20nty4our",
         "wave": 1,
         "id": 130,
@@ -2697,7 +2705,7 @@
         "collectors": ["1007052213752963122", "828263291418574869"]
     },
     "Botswana": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "joelukx",
         "wave": 1,
         "id": 112,
@@ -2707,7 +2715,7 @@
         "collectors": ["317707192851759104"]
     },
     "Cameroon": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "remy_thecb",
         "wave": 1,
         "id": 109,
@@ -2717,7 +2725,7 @@
         "collectors": ["924893438401478686"]
     },
     "Ceylon": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "n.itrogenitals",
         "wave": 5,
         "id": 278,
@@ -2727,7 +2735,7 @@
         "collectors": ["416250218775052301"]
     },
     "Congo": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "tubula",
         "wave": 1,
         "id": 123,
@@ -2737,7 +2745,7 @@
         "collectors": ["1167573138675093547"]
     },
     "Cote d'Ivoire": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "redthedge",
         "wave": 1,
         "id": 117,
@@ -2747,7 +2755,7 @@
         "collectors": ["1245819876266999851"]
     },
     "Dominican Republic": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "s.i.l.ly_at.su.i_a.ki_a.n.i",
         "wave": 1,
         "id": 126,
@@ -2757,7 +2765,7 @@
         "collectors": ["1310790400067371162"]
     },
     "Eritrea": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "kiwiwos",
         "wave": 1,
         "id": 131,
@@ -2766,7 +2774,7 @@
         "demand": "F"
     },
     "Estonia": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "_finland_",
         "wave": 1,
         "id": 113,
@@ -2776,7 +2784,7 @@
         "collectors": ["1058976534708359189", "674999005020946483", "1244161823045845135"]
     },
     "Eswatini": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "kapukvati",
         "wave": 5.1,
         "id": 331,
@@ -2785,7 +2793,7 @@
         "demand": "F"
     },
     "Fiji": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "Arty",
         "wave": 4.1,
         "id": 234,
@@ -2795,7 +2803,7 @@
         "collectors": ["934177841636073492", "944033779041853460"]
     },
     "Free City of Danzig": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "santiguti08_2011",
         "wave": 5,
         "id": 287,
@@ -2805,7 +2813,7 @@
         "collectors": ["802153400732352550", "334411435633541121"]
     },
     "Gambia": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "notshad0w",
         "wave": 3,
         "id": 183,
@@ -2815,7 +2823,7 @@
         "collectors": ["756488900263936081"]
     },
     "Haiti": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "Cubic",
         "wave": 1,
         "id": 127,
@@ -2825,7 +2833,7 @@
         "collectors": ["1274375813940252686"]
     },
     "Honduras": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": ".soomlane",
         "wave": 1,
         "id": 114,
@@ -2835,7 +2843,7 @@
         "collectors": ["347206367913836545"]
     },
     "Khiva": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "fireforev",
         "wave": 5,
         "id": 280,
@@ -2845,7 +2853,7 @@
         "collectors": ["895826815132766259", "1077959414922870784"]
     },
     "Laos": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "karuarp",
         "wave": 1,
         "id": 128,
@@ -2855,7 +2863,7 @@
         "collectors": ["947988956211998780", "647598570270097458"]
     },
     "Lebanon": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "tw20nty4our",
         "wave": 1,
         "id": 120,
@@ -2865,7 +2873,7 @@
         "collectors": ["1200792374536839231"]
     },
     "Liechtenstein": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "AustriaHungary.ch",
         "wave": 4.1,
         "id": 231,
@@ -2875,7 +2883,7 @@
         "collectors": ["588046045641179138", "838321128765521936"]
     },
     "Moldova": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "Sunlight",
         "wave": 1,
         "id": 110,
@@ -2885,7 +2893,7 @@
         "collectors": ["1031971884855734393"]
     },
     "Mossi Kingdoms": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "monke",
         "wave": 7,
         "id": 487,
@@ -2895,7 +2903,7 @@
         "collectors": ["1088187160504582254"]
     },
     "Mozambique": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "spommagetti",
         "wave": 1,
         "id": 122,
@@ -2904,7 +2912,7 @@
         "demand": "E"
     },
     "Nepal": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "clar1nettist",
         "wave": 1,
         "id": 125,
@@ -2914,7 +2922,7 @@
         "collectors": ["947988956211998780"]
     },
     "Nicaragua": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "Gmo",
         "wave": 1,
         "id": 129,
@@ -2923,7 +2931,7 @@
         "demand": "E"
     },
     "Niger": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "sunlight",
         "wave": 1,
         "id": 111,
@@ -2933,7 +2941,7 @@
         "collectors": ["1128044882842370178", "940891957650133052"]
     },
     "Palestine": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "tw20nty4our",
         "wave": 1,
         "id": 119,
@@ -2943,7 +2951,7 @@
         "collectors": ["1167032458726871080", "1206739600018640917", "1021843029583208479"]
     },
     "Paraguay": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "chewytapioca",
         "wave": 1,
         "id": 115,
@@ -2953,7 +2961,7 @@
         "collectors": ["1007052213752963122"]
     },
     "Saint Kitts and Nevis": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "alsomarty",
         "wave": 5.2,
         "id": 372,
@@ -2962,7 +2970,7 @@
         "demand": "F"
     },
     "Saint Lucia": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "Arty",
         "wave": 5.1,
         "id": 335,
@@ -2972,7 +2980,7 @@
         "collectors": ["1173717522164498432"]
     },
     "Somaliland": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": ".galactic_wolf",
         "wave": 5,
         "id": 270,
@@ -2982,7 +2990,7 @@
         "collectors": ["1484627489132249182"]
     },
     "South Sudan": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "Sunlight",
         "wave": 1,
         "id": 108,
@@ -2992,7 +3000,7 @@
         "collectors": ["1147661663479287928"]
     },
     "South Yemen": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "adistinguishedgentleman",
         "wave": 5,
         "id": 265,
@@ -3002,7 +3010,7 @@
         "collectors": ["976732248726466570"]
     },
     "Tajikistan": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "Cubic",
         "wave": 1,
         "id": 116,
@@ -3012,7 +3020,7 @@
         "collectors": ["770207429010522132"]
     },
     "Tanzania": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "chewytapioca",
         "wave": 1,
         "id": 118,
@@ -3021,7 +3029,7 @@
         "demand": "C"
     },
     "Western Sahara": {
-        "rarity": 276,
+        "rarity": 277,
         "artist": "Hecker",
         "wave": 3,
         "id": 181,
@@ -3030,7 +3038,7 @@
         "demand": "E"
     },
     "Peru-Bolivian Confederation": {
-        "rarity": 314,
+        "rarity": 315,
         "artist": "a distinguished gentleman",
         "wave": 7,
         "id": 491,
@@ -3039,7 +3047,7 @@
         "demand": "F"
     },
     "Zapotecs": {
-        "rarity": 315,
+        "rarity": 316,
         "artist": "._themagicalflame_.",
         "wave": 8,
         "id": 538,
@@ -3049,7 +3057,7 @@
         "collectors": ["1094973531223248969", "1146837555090833528"]
     },
     "Cape Verde": {
-        "rarity": 316,
+        "rarity": 317,
         "artist": "fakedwebb",
         "wave": 5.1,
         "id": 327,
@@ -3059,7 +3067,7 @@
         "collectors": ["797203198745378846"]
     },
     "Grenada": {
-        "rarity": 316,
+        "rarity": 317,
         "artist": "alsomarty",
         "wave": 5.2,
         "id": 363,
@@ -3068,7 +3076,7 @@
         "demand": "D"
     },
     "Guinea": {
-        "rarity": 316,
+        "rarity": 317,
         "artist": "Cattitan",
         "wave": 5.2,
         "id": 364,
@@ -3078,7 +3086,7 @@
         "collectors": ["1279093286606209048"]
     },
     "Palau": {
-        "rarity": 316,
+        "rarity": 317,
         "artist": "mangle_1375",
         "wave": 5.2,
         "id": 370,
@@ -3088,7 +3096,7 @@
         "collectors": ["1291551975162253429"]
     },
     "Solomon Islands": {
-        "rarity": 316,
+        "rarity": 317,
         "artist": "Cattitan",
         "wave": 5.2,
         "id": 375,
@@ -3097,7 +3105,7 @@
         "demand": "C"
     },
     "St. Vincent and the Grenadines": {
-        "rarity": 316,
+        "rarity": 317,
         "artist": "ordinary_tophatman",
         "wave": 5.2,
         "id": 373,
@@ -3106,7 +3114,7 @@
         "demand": "E"
     },
     "Vanuatu": {
-        "rarity": 316,
+        "rarity": 317,
         "artist": "_finland_",
         "wave": 5.1,
         "id": 340,
@@ -3116,7 +3124,7 @@
         "collectors": ["852718632491548733", "976732248726466570"]
     },
     "Principality of Moldavia": {
-        "rarity": 323,
+        "rarity": 324,
         "artist": "reichy",
         "wave": 6,
         "id": 450,
@@ -3126,7 +3134,7 @@
         "collectors": ["1110635077014142986"]
     },
     "Qajar Dynasty": {
-        "rarity": 324,
+        "rarity": 325,
         "artist": "n0tshad0w",
         "wave": 6,
         "id": 444,
@@ -3135,7 +3143,7 @@
         "demand": "E"
     },
     "Antigua and Barbuda": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "Cattitan",
         "wave": 5.2,
         "id": 358,
@@ -3144,7 +3152,7 @@
         "demand": "D"
     },
     "Benin": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "ilikehetalia",
         "wave": 5.2,
         "id": 361,
@@ -3153,7 +3161,7 @@
         "demand": "E"
     },
     "Bhutan": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "reinwashere8",
         "wave": 1,
         "id": 151,
@@ -3163,7 +3171,7 @@
         "collectors": ["1184965930741153792"]
     },
     "Burkina Faso": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "multiplyusers",
         "wave": 1,
         "id": 137,
@@ -3173,7 +3181,7 @@
         "collectors": ["976732248726466570"]
     },
     "Burundi": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "Cattitan",
         "wave": 4.1,
         "id": 235,
@@ -3182,7 +3190,7 @@
         "demand": "E"
     },
     "Central African Republic": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "unknowngirl4",
         "wave": 1,
         "id": 141,
@@ -3192,7 +3200,7 @@
         "collectors": ["1008613639579775016", "748185468067119144"]
     },
     "Comoros": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "tubula",
         "wave": 5.1,
         "id": 328,
@@ -3202,7 +3210,7 @@
         "collectors": ["1120140293275127848"]
     },
     "El Salvador": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "falsesurrender.",
         "wave": 1,
         "id": 134,
@@ -3212,7 +3220,7 @@
         "collectors": ["1161781360290172938"]
     },
     "Gabon": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "quocvuong1606",
         "wave": 1,
         "id": 138,
@@ -3222,7 +3230,7 @@
         "collectors": ["1128044882842370178", "383302371712827393"]
     },
     "Hejaz": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "Sunlight",
         "wave": 2,
         "id": 163,
@@ -3232,7 +3240,7 @@
         "collectors": ["1084355569109975070"]
     },
     "Iceland": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "Cubic",
         "wave": 1,
         "id": 145,
@@ -3242,7 +3250,7 @@
         "collectors": ["880098456885141635"]
     },
     "Kiribati": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "averageuser28",
         "wave": 4.1,
         "id": 232,
@@ -3252,7 +3260,7 @@
         "collectors": ["812380331613093959"]
     },
     "Kosovo": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "koskesh431",
         "wave": 1,
         "id": 150,
@@ -3261,7 +3269,7 @@
         "demand": "C"
     },
     "Lesotho": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "Cattitan",
         "wave": 5.1,
         "id": 332,
@@ -3271,7 +3279,7 @@
         "collectors": ["1490307338546970714"]
     },
     "Liberia": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "frelol1_",
         "wave": 1,
         "id": 147,
@@ -3281,7 +3289,7 @@
         "collectors": ["839560939237277697"]
     },
     "Luxembourg": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "no_name_guy_1313",
         "wave": 1,
         "id": 148,
@@ -3291,7 +3299,7 @@
         "collectors": ["1045033222788100226", "1244161823045845135"]
     },
     "Madagascar": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": ".tbblurb26",
         "wave": 1,
         "id": 136,
@@ -3301,7 +3309,7 @@
         "collectors": ["1443806366736056392"]
     },
     "Majapahit": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "the_artist_omarv2",
         "wave": 6,
         "id": 437,
@@ -3311,7 +3319,7 @@
         "collectors": ["756488900263936081"]
     },
     "Mauritania": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "Yomer",
         "wave": 1,
         "id": 132,
@@ -3321,7 +3329,7 @@
         "collectors": ["857338034713526282"]
     },
     "Mauritius": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "Cattitan",
         "wave": 5.2,
         "id": 369,
@@ -3331,7 +3339,7 @@
         "collectors": ["1083213770077249587"]
     },
     "Montenegro": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "borzologist",
         "wave": 1,
         "id": 139,
@@ -3341,7 +3349,7 @@
         "collectors": ["704763682437071023"]
     },
     "Namibia": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "element_eightythree",
         "wave": 1,
         "id": 133,
@@ -3351,7 +3359,7 @@
         "collectors": ["1277856586005479507"]
     },
     "Nanda Empire": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "aurvengard",
         "wave": 6,
         "id": 441,
@@ -3361,7 +3369,7 @@
         "collectors": ["1318222041807061054", "1124392407933386918"]
     },
     "North Macedonia": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "Estonia & Cubic",
         "wave": 1,
         "id": 142,
@@ -3371,7 +3379,7 @@
         "collectors": ["839560939237277697"]
     },
     "Panama": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "Cubic",
         "wave": 1,
         "id": 140,
@@ -3381,7 +3389,7 @@
         "collectors": ["1053118458251989202", "943944884191117352"]
     },
     "Papua New Guinea": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "starry7827",
         "wave": 1,
         "id": 135,
@@ -3391,7 +3399,7 @@
         "collectors": ["759169940367999006"]
     },
     "Paris Commune": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "tw20nty4our",
         "wave": 2,
         "id": 165,
@@ -3401,7 +3409,7 @@
         "collectors": ["891168128778772481"]
     },
     "Rwanda": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "celi_mimi",
         "wave": 5.2,
         "id": 371,
@@ -3411,7 +3419,7 @@
         "collectors": ["1242479109276176554", "852718632491548733"]
     },
     "Senegal": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "starry7827",
         "wave": 1,
         "id": 144,
@@ -3421,7 +3429,7 @@
         "collectors": ["1358465724515090795"]
     },
     "Sierra Leone": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "spommagetti",
         "wave": 1,
         "id": 146,
@@ -3431,7 +3439,7 @@
         "collectors": ["931315009932369960"]
     },
     "Somalia": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "element_eightythree",
         "wave": 1,
         "id": 149,
@@ -3441,7 +3449,7 @@
         "collectors": ["1459332843116302558"]
     },
     "Suriname": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "tennysball20",
         "wave": 1,
         "id": 143,
@@ -3451,7 +3459,7 @@
         "collectors": ["1215100002972733491"]
     },
     "Timor-Leste": {
-        "rarity": 325,
+        "rarity": 326,
         "artist": "Reichy",
         "wave": 5.1,
         "id": 337,
@@ -3461,7 +3469,7 @@
         "collectors": ["884477062830768128"]
     },
     "Dahomey": {
-        "rarity": 358,
+        "rarity": 359,
         "artist": "waffles",
         "wave": 7,
         "id": 476,
@@ -3471,7 +3479,7 @@
         "collectors": ["879479611946315817"]
     },
     "Djibouti": {
-        "rarity": 359,
+        "rarity": 360,
         "artist": "kelpo.#1809",
         "wave": 1,
         "id": 152,

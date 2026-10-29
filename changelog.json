@@ -1,6 +1,15 @@
 {
     "changes": [
         {
+            "timestamp": "1793294066",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "New spawn art: Kiev (T48)",
+                "312 balls from T48 on moved one rarity down"
+            ]
+        },
+        {
             "timestamp": "1793293111",
             "type": "bot",
             "changes": [
