@@ -1,5 +1,5 @@
 /**
- * Ballsdex — the web version of /ballsdex: link an API key, sync the collection, see the stats.
+ * Ballsdex — the web version of /ballsdex: connect the account (Sign in with Ballsdex), sync the collection, see the stats.
  * Everything runs through the bot (same encryption, cooldowns and account checks as in Discord).
  */
 
@@ -11,6 +11,23 @@ import { compressedArtUrl } from "../core/data.js";
 import { refreshNotifications } from "../notifications.js";
 
 const KEYS_URL = "https://ballsdex.com/api/keys";
+// "Sign in with Ballsdex" (functions/ballsdex-oauth.js): Ballsdex's consent screen, then back here with ?bdx=<result>
+const CONNECT_URL = "/.netlify/functions/ballsdex-oauth?action=start";
+const CONNECT_RESULTS = {
+    linked: ["Ballsdex account connected. Syncing your collection…", "success"],
+    reconnected: ["Ballsdex account reconnected.", "success"],
+    denied: ["Sign in with Ballsdex was cancelled.", "info"],
+    expired: ["The sign-in took too long or was opened twice. Try again.", "error"],
+    session: ["Log in with Discord on this site first, then sign in with Ballsdex.", "error"],
+    "wrong-account": ["You signed in to Ballsdex with a different Discord account than the one logged in here. Use the same account.", "error"],
+    "oauth-failed": ["Ballsdex refused the sign-in. Try again.", "error"],
+    "rate-limited": ["The Ballsdex API is busy right now. Try again in a few minutes.", "error"],
+    cooldown: ["Please wait a moment before trying again.", "info"],
+    "app-not-approved": ["BallIdentifier's Ballsdex app is still waiting for approval by the Ballsdex team. Try again later.", "info"],
+    "not-configured": ["Sign in with Ballsdex isn't set up on BallIdentifier yet.", "error"],
+    error: ["Couldn't connect your Ballsdex account. Try again in a moment.", "error"],
+};
+const connectButton = (label = "Sign in with Ballsdex") => h("a.btn.btn-primary.btn-lg", { href: CONNECT_URL }, icon("log-in"), h("span", label));
 // Fast Sync: link to player_data.zip that Ballsdex posts in your DMs (the bot downloads and checks it)
 const EXPORT_LINK = /^https:\/\/(cdn\.discordapp\.com|media\.discordapp\.net)\/attachments\/\d{17,20}\/(\d{17,20})\/player_data\.zip\?\S*hm=\S+$/i;
 const exportUploadedAt = (attachmentId) => Number((BigInt(attachmentId) >> 22n) + 1420070400000n);
@@ -118,93 +135,45 @@ export function createView() {
                 "div.card.empty",
                 h("div.empty-icon", icon("layers", "icon-lg")),
                 h("h2", "Connect your Ballsdex account"),
-                h("p", "Log in with Discord, link your Ballsdex API key once, and see your collection stats here and in the bot."),
+                h("p", "Log in with Discord, connect your Ballsdex account once with Sign in with Ballsdex, and see your collection stats here and in the bot."),
                 h("button.btn.btn-discord.btn-lg", { type: "button", onclick: () => login("#/ballsdex") }, icon("discord"), h("span", "Log in with Discord")),
             ),
         );
     }
 
-    /* ----- Not linked: link form ----- */
+    /* ----- Not linked: Sign in with Ballsdex ----- */
 
     function renderLinkForm() {
-        const input = h("input.input", {
-            id: "bdx-key",
-            type: "password",
-            autocomplete: "off",
-            spellcheck: false,
-            placeholder: "Paste your API key",
-            "aria-describedby": "bdx-key-note",
-        });
-        const reveal = h("button.icon-btn", { type: "button", "aria-label": "Show key", "aria-pressed": "false" }, icon("eye"));
-        reveal.addEventListener("click", () => {
-            const show = input.type === "password";
-            input.type = show ? "text" : "password";
-            reveal.setAttribute("aria-pressed", String(show));
-            reveal.setAttribute("aria-label", show ? "Hide key" : "Show key");
-        });
-        const submit = h("button.btn.btn-primary.btn-block", { type: "submit" }, icon("link"), h("span", "Link account"));
-        const error = h("p.form-error", { role: "alert" });
-
-        const form = h(
-            "form.panel.card",
-            h("h2", icon("key-round"), "Link your API key"),
-            h("div.field", h("label.label", { htmlFor: "bdx-key" }, "Ballsdex API key"), h("div.input-group", input, reveal)),
-            error,
-            submit,
+        const connect = h(
+            "div.panel.card.bdx-connect",
+            h("h2", icon("link"), "Connect your Ballsdex account"),
+            h("p.muted", "Ballsdex asks you to let BallIdentifier read your collection. No key to create or copy."),
+            connectButton(),
             h(
                 "p.callout",
-                { id: "bdx-key-note" },
                 icon("shield-check", "icon-sm"),
-                h("span", "The key travels over HTTPS, is encrypted again for the bot and stored encrypted. It's only used for Ballsdex requests on your behalf. Unlink any time to delete it."),
+                h("span", "BallIdentifier only gets read access, and the sign-in is stored encrypted. Remove it any time with Unlink here or on your ", h("a", { href: KEYS_URL, target: "_blank", rel: "noopener" }, "Ballsdex Keys page"), "."),
             ),
         );
 
-        form.addEventListener("submit", async (event) => {
-            event.preventDefault();
-            const apiKey = input.value.trim();
-            error.textContent = "";
-            if (!/^[\x21-\x7e]{10,200}$/.test(apiKey)) {
-                error.textContent = "That doesn't look like a Ballsdex API key.";
-                input.setAttribute("aria-invalid", "true");
-                return input.focus();
-            }
-            input.removeAttribute("aria-invalid");
-            submit.disabled = true;
-            submit.replaceChildren(spinner(), h("span", "Checking the key…"));
-            try {
-                await api("ballsdex", { method: "POST", body: { action: "link", apiKey } });
-                input.value = "";
-                toast("Ballsdex account linked. Syncing your collection…", "success");
-                await refresh();
-                startSync({ auto: true });
-            } catch (err) {
-                if (handleAuthError(err)) return;
-                error.textContent = err.message;
-                input.setAttribute("aria-invalid", "true");
-            } finally {
-                submit.disabled = false;
-                submit.replaceChildren(icon("link"), h("span", "Link account"));
-            }
-        });
-
         const steps = h(
             "div.panel.card",
-            h("h2", icon("info"), "Create an API key"),
+            h("h2", icon("info"), "How it works"),
             h(
                 "ol.link-steps",
-                h("li", h("span", "Open ", h("a", { href: KEYS_URL, target: "_blank", rel: "noopener" }, "Ballsdex API keys", icon("external-link", "icon-sm inline-icon")), ".")),
-                h("li", h("span", "Log in with the same Discord account you use here.")),
-                h("li", h("span", "Create a key with ", h("b", "all five scopes"), " selected.")),
-                h("li", h("span", "Copy the key and paste it in the form.")),
+                h("li", h("span", "Press ", h("b", "Sign in with Ballsdex"), ".")),
+                h("li", h("span", "Log in to Ballsdex with the same Discord account you use here.")),
+                h("li", h("span", "Allow BallIdentifier to read your data. You come right back here.")),
+                h("li", h("span", "Your collection syncs by itself. For big collections, Fast Sync is much quicker.")),
             ),
-            h("p.subtle", "The key lets BallIdentifier read data Ballsdex only shows to the account owner, like your full collection."),
+            h("p.subtle", "Had an API key linked before? Ballsdex replaced keys with this sign-in on November 1, 2026."),
         );
 
         const parts = [];
         if (data?.databaseAvailable === false) {
-            parts.push(h("p.callout.callout-warning", { style: { "margin-bottom": "16px" } }, icon("triangle-alert", "icon-sm"), h("span", "Collection storage is offline right now. You can link, but syncing may fail until it's back.")));
+            parts.push(h("p.callout.callout-warning", { style: { "margin-bottom": "16px" } }, icon("triangle-alert", "icon-sm"), h("span", "Collection storage is offline right now. You can connect, but syncing may fail until it's back.")));
         }
-        parts.push(h("div.bdx-grid", { style: { "margin-top": "0" } }, steps, form));
+        parts.push(h("div.bdx-grid", { style: { "margin-top": "0" } }, steps, connect));
         body.replaceChildren(...parts);
     }
 
@@ -279,6 +248,17 @@ export function createView() {
         );
 
         const parts = [head];
+        if (data.reconnect) {
+            parts.push(
+                h(
+                    "div.callout.callout-warning.bdx-reconnect",
+                    { style: { "margin-top": "16px" } },
+                    icon("triangle-alert", "icon-sm"),
+                    h("span", h("b", "Sign in with Ballsdex again. "), "Ballsdex replaced API keys with a new sign-in (or your sign-in expired). Your stats below are kept; you need to sign in again to sync."),
+                    h("a.btn.btn-sm.btn-primary", { href: CONNECT_URL }, icon("log-in", "icon-sm"), h("span", "Sign in")),
+                ),
+            );
+        }
         if (sync.inProgress) parts.push(syncProgress(sync));
         else if (sync.paused) {
             parts.push(
@@ -443,7 +423,7 @@ export function createView() {
         const card = h(
             "section.card.panel.rl-card",
             h("div.rl-head", h("h2", icon("gauge"), "Ballsdex API limits"), refreshBtn),
-            h("p.subtle", "Your key's limits are only yours. The bot's limits are shared by everyone using BallIdentifier, because all requests come from one server."),
+            h("p.subtle", "Your account's limits are only yours. The bot's limits are shared by everyone using BallIdentifier, because all requests come from one server."),
             list,
         );
         let loadedAt = 0;
@@ -480,8 +460,8 @@ export function createView() {
             try {
                 const result = await api("ballsdex", { query: { view: "ratelimit" } });
                 loadedAt = Date.now();
-                if (!result.available) list.replaceChildren(h("p.subtle", "Link your Ballsdex account to see its limits."));
-                else list.replaceChildren(group("Your API key", result.key), group("BallIdentifier bot (shared)", result.ip));
+                if (!result.available) list.replaceChildren(h("p.subtle", data?.reconnect ? "Sign in with Ballsdex again to see your limits." : "Connect your Ballsdex account to see its limits."));
+                else list.replaceChildren(group("Your account", result.key), group("BallIdentifier bot (shared)", result.ip));
             } catch (error) {
                 if (!handleAuthError(error)) list.replaceChildren(h("p.subtle", error.message));
             } finally {
@@ -773,7 +753,7 @@ export function createView() {
 
         if (!result.available) {
             const copy = {
-                NOT_LINKED: ["Link your Ballsdex account first", "Raws are counted from your synced collection. Link your API key on the Profile tab."],
+                NOT_LINKED: ["Connect your Ballsdex account first", "Raws are counted from your synced collection. Sign in with Ballsdex on the Profile tab."],
                 NO_DATA: ["Sync your collection first", "Raws are counted from your synced collection. Start a sync on the Profile tab."],
                 RESYNC: ["Sync once more to count raws", "Your saved collection is from before raws existed. One sync on the Profile tab fills this page."],
             }[result.reason] || ["No raws yet", ""];
@@ -947,7 +927,7 @@ export function createView() {
     async function unlink() {
         const ok = await confirmDialog({
             title: "Unlink your Ballsdex account?",
-            message: "The encrypted API key and your saved collection data are deleted. You can link again any time.",
+            message: "BallIdentifier's access to your Ballsdex account and your saved collection data are removed. You can connect again any time.",
             confirmLabel: "Unlink",
             danger: true,
         });
@@ -975,12 +955,29 @@ export function createView() {
                 refresh({ quiet: Boolean(specialsData) });
                 return;
             }
+            const query = new URLSearchParams(location.search);
+            const result = query.get("bdx");
+            const connect = query.get("connect") === "1";
+            if (result || connect) history.replaceState(null, "", location.pathname);
+            if (result) {
+                const [message, type] = CONNECT_RESULTS[result] || CONNECT_RESULTS.error;
+                toast(message, type, type === "error" ? 9000 : 5000);
+            }
+            const afterLoad = (loaded) => {
+                if (result === "linked" && loaded?.linked && !loaded.reconnect) startSync({ auto: true });
+                // From "/ballsdex link" in Discord: straight to the Ballsdex sign-in when it's needed
+                if (connect && loaded && (!loaded.linked || loaded.reconnect)) location.assign(CONNECT_URL);
+            };
             if (!sessionReady()) {
                 skeleton();
-                loadSession();
+                loadSession().then(() => (getUser() ? refresh().then(afterLoad) : connect && location.assign(CONNECT_URL)));
                 return;
             }
-            refresh({ quiet: Boolean(data) });
+            if (!getUser()) {
+                if (connect) return location.assign(CONNECT_URL);
+                return refresh();
+            }
+            refresh({ quiet: Boolean(data) }).then(afterLoad);
         },
         hide() {
             visible = false;

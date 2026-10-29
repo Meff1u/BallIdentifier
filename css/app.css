@@ -1761,3 +1761,9 @@ a.server:hover > .icon { color: var(--accent-text); }
 .uc-foot span { display: inline-flex; align-items: center; gap: 4px; }
 .col-person a { color: inherit; }
 .col-person a:hover b { text-decoration: underline; }
+
+/* Ballsdex: Sign in with Ballsdex */
+.bdx-connect .btn-lg { justify-self: start; }
+.bdx-reconnect { align-items: center; flex-wrap: wrap; }
+.bdx-reconnect > span { flex: 1 1 260px; }
+.bdx-reconnect .btn { margin-left: auto; }

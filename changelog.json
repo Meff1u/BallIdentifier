@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1793315174",
+            "type": "website",
+            "changes": [
+                "Ballsdex switched to its new API: you now connect your account with Sign in with Ballsdex instead of pasting an API key. Accounts linked with a key keep their stats but need to sign in once more to sync",
+                "/ballsdex link in the bot now takes you straight to Sign in with Ballsdex on the website"
+            ]
+        },
+        {
             "timestamp": "1793314242",
             "type": "bot",
             "changes": [

@@ -2,7 +2,6 @@
  * Ballsdex account features for the logged-in user.
  *
  * GET  /.netlify/functions/ballsdex  -> link status, sync status, collection summary
- * POST /.netlify/functions/ballsdex  { action: "link", apiKey }
  * POST /.netlify/functions/ballsdex  { action: "unlink" }
  * POST /.netlify/functions/ballsdex  { action: "sync" }
  * POST /.netlify/functions/ballsdex  { action: "cancel" }
@@ -11,13 +10,11 @@
  * GET  /.netlify/functions/ballsdex?view=ratelimit  -> Ballsdex API limit usage (your key + the bot's IP)
  *
  * The Discord user id always comes from the encrypted session, never from the request.
- * The API key is encrypted end-to-end for the bot (encryptForBot) and stored encrypted by the bot.
+ * Connecting the account is "Sign in with Ballsdex" (functions/ballsdex-oauth.js).
  */
 
-const { botApiFetch, encryptForBot } = require("../lib/bot-api");
+const { botApiFetch } = require("../lib/bot-api");
 const { json, requireSession, isAllowedOrigin, parseJsonBody } = require("../lib/http");
-
-const API_KEY_PATTERN = /^[\x21-\x7e]{10,200}$/;
 
 async function forward(response) {
     const data = await response.json().catch(() => ({}));
@@ -49,11 +46,6 @@ exports.handler = async (event) => {
         if (!body) return json(400, { error: "Invalid JSON body" });
 
         switch (body.action) {
-            case "link": {
-                const apiKey = typeof body.apiKey === "string" ? body.apiKey.trim() : "";
-                if (!API_KEY_PATTERN.test(apiKey)) return json(400, { error: "That doesn't look like a Ballsdex API key." });
-                return forward(await botApiFetch(`${base}/link`, { method: "POST", body: { encryptedKey: encryptForBot(apiKey) } }));
-            }
             case "unlink":
                 return forward(await botApiFetch(`${base}/unlink`, { method: "POST", body: {} }));
             case "sync":

@@ -25,7 +25,7 @@
         </header>
         <main class="doc">
             <h1>Privacy Policy</h1>
-            <p class="updated">Last updated: October 29, 2026</p>
+            <p class="updated">Last updated: October 30, 2026</p>
 
                     <h2>1. Introduction</h2>
                     <p>
@@ -68,7 +68,7 @@
                             </tr>
                             <tr>
                                 <td><strong>Ballsdex Link (optional)</strong></td>
-                                <td>If you link your Ballsdex account: your Ballsdex API key, stored encrypted, and the data synced from it (a collection summary such as counts, catch times and rankings, plus your special-variant records)</td>
+                                <td>If you connect your Ballsdex account with Sign in with Ballsdex: the access and refresh tokens Ballsdex gives BallIdentifier (read-only access, stored encrypted), and the data synced with them (a collection summary such as counts, catch times and rankings, plus your special-variant records). Accounts linked earlier with a Ballsdex API key: that key, stored encrypted, until you unlink or sign in again</td>
                             </tr>
                             <tr>
                                 <td><strong>Collectors</strong></td>
@@ -123,7 +123,7 @@
                     <p><strong>User Data:</strong></p>
                     <ul>
                         <li>Your user statistics and notification preferences are stored until you ask us to remove them or stop using the service.</li>
-                        <li>Your Ballsdex API key and synced collection data are kept until you unlink your account (on the website's Ballsdex tab or with <code>/ballsdex unlink</code>), which deletes them.</li>
+                        <li>Your Ballsdex sign-in and synced collection data are kept until you unlink your account (on the website's Ballsdex tab or with <code>/ballsdex unlink</code>), which deletes them and revokes BallIdentifier's access. You can also remove that access on your Ballsdex Keys page.</li>
                         <li>The website session cookie expires after 7 days at most, or when you log out.</li>
                         <li>Your profile settings are kept until you ask us to remove them. Turning off Public profile hides your profile and removes it from Users right away.</li>
                     </ul>
@@ -144,7 +144,7 @@
                     </p>
                     <ul>
                         <li>Discord Bot List for fetching upvote status and posting bot stats</li>
-                        <li>The Ballsdex API, called with your own API key, only when you link or sync your Ballsdex account</li>
+                        <li>The Ballsdex API, called with your own Ballsdex sign-in, only when you connect, sync or check your Ballsdex account (and, for the BallIdentifier owner's account, to load the public specials and market data)</li>
                         <li>Discord DMs for optional thanks messages and upvote reminders</li>
                         <li>Configured log, error, report or upvote webhooks</li>
                         <li>Hosting and storage infrastructure used to run the bot and website</li>
