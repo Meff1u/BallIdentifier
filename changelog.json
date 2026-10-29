@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1793295182",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "New spawn art: Kievan Rus' (T0)"
+            ]
+        },
+        {
             "timestamp": "1793294798",
             "type": "dex",
             "dex": "Ballsdex",

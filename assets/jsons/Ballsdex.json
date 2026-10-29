@@ -1,4 +1,12 @@
 {
+    "Kievan Rus'": {
+        "rarity": 0,
+        "artist": ".wken",
+        "wave": 8.3,
+        "id": 561,
+        "demand": "B",
+        "cc": "850"
+    },
     "British Empire": {
         "rarity": 1,
         "artist": "Cattitan",
