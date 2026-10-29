@@ -11,7 +11,7 @@
                 "Notifications (bell icon): sync results, vote reminders and updates on the website, each one optionally also as a Discord DM",
                 "Ballsdex Raws tab and /ballsdex raws: value of your rare (T1-T23) non-special balls",
                 "Ballsdex sync: live progress, cancel button, one sync at a time and a 12-hour cooldown",
-                "Notification settings now live only on the website; the /notifications bot command was removed",
+                "Notification settings now live only on the website; the /notifications and /notifier bot commands were removed (set up the Notifier in the Bot tab)",
                 "Bot tab overview rewritten: every bot feature and command explained in one place"
             ],
             "type": "website"

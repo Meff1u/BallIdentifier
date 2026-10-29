@@ -123,7 +123,6 @@ export function createView() {
         [[code("/ballsdex collection")], null, "Totals, specials and your top 5 rankings from the last sync.", "Anywhere"],
         [[code("/ballsdex raws")], null, "Value of your rare non-special balls, counted per tier.", "Anywhere"],
         [[code("/help")], null, "Bot status, supported dexes, statistics and links.", "Anywhere"],
-        [[code("/notifier")], null, "Links to the Notifier settings on this website.", "Servers"],
     ];
 
     const overview = h(
