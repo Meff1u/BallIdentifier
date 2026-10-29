@@ -407,20 +407,33 @@ export function createView() {
             reader.readAsDataURL(file);
         });
 
-    /** Adding before other balls: move every ball at this rarity or rarer one down? null = cancel */
-    function askShift(name, rarity, later) {
+    /**
+     * Adding next to other balls: move rarities one down (+1)?
+     * "higher" = only the rarer ones, "same" = this rarity and rarer, "" = keep, null = cancel
+     */
+    function askShift(name, rarity, same, higher) {
         return new Promise((resolve) => {
             let answer = null;
             const choose = (value) => {
                 answer = value;
                 dialog.close();
             };
+            const plural = (n) => `${n} ball${n === 1 ? "" : "s"}`;
             const dialog = openDialog({
-                title: "Move later rarities down?",
-                body: h("p.muted", `${later} ball${later === 1 ? " is" : "s are"} already at T${rarity} or rarer. Move them all one rarity down (T${rarity} → T${rarity + 1} and so on) so ${name} goes before them?`),
+                title: "Move rarities one down?",
+                body: h(
+                    "div.stack",
+                    h("p.muted", `${name} goes in as T${rarity}. Already there: ${plural(same)} at T${rarity} and ${plural(higher)} rarer.`),
+                    h(
+                        "ul.shift-options",
+                        h("li", h("b", "Only rarer: "), `the ${plural(higher)} rarer than T${rarity} move one down (+1).`),
+                        h("li", h("b", `T${rarity} and rarer: `), `all ${plural(same + higher)} move one down, so ${name} goes before the current T${rarity} balls.`),
+                    ),
+                ),
                 footer: [
-                    h("button.btn.btn-ghost", { type: "button", onclick: () => choose(false) }, "Keep their rarities"),
-                    h("button.btn.btn-primary", { type: "button", onclick: () => choose(true) }, "Move them down"),
+                    h("button.btn.btn-ghost", { type: "button", onclick: () => choose("") }, "Keep rarities"),
+                    h("button.btn", { type: "button", disabled: !higher, onclick: () => choose("higher") }, `Only rarer (> T${rarity})`),
+                    h("button.btn.btn-primary", { type: "button", onclick: () => choose("same") }, `T${rarity} and rarer (≥ T${rarity})`),
                 ],
                 onClose: () => resolve(answer),
             });
@@ -439,10 +452,11 @@ export function createView() {
 
     function applySaved(originalName, result, artUrl) {
         const from = result.shiftedFrom;
+        const moves = (rarity) => from !== null && from !== undefined && (result.shiftMode === "higher" ? rarity > from : rarity >= from);
         balls = balls
             .filter(([name]) => name !== originalName && name !== result.name)
             .map(([name, details, cardEl]) => {
-                if (from === null || from === undefined || Number(details.rarity) < from) return [name, details, cardEl];
+                if (!moves(Number(details.rarity))) return [name, details, cardEl];
                 const moved = { ...details, rarity: Math.round((Number(details.rarity) + 1) * 1000) / 1000 };
                 return [name, moved, card(name, moved)];
             });
@@ -525,12 +539,13 @@ export function createView() {
             if (isNew && !file) return toast("Pick the spawn art first.", "error");
             if (file && file.size > MAX_ART_BYTES) return toast("The spawn art is too big (5 MB max).", "error");
 
-            let shift = false;
+            let shift = "";
             if (isNew) {
                 const rarity = Number(details.rarity);
-                const later = balls.filter(([, d]) => Number(d.rarity) >= rarity).length;
-                if (Number.isFinite(rarity) && later) {
-                    shift = await askShift(name, rarity, later);
+                const same = balls.filter(([, d]) => Number(d.rarity) === rarity).length;
+                const higher = balls.filter(([, d]) => Number(d.rarity) > rarity).length;
+                if (Number.isFinite(rarity) && (same || higher)) {
+                    shift = await askShift(name, rarity, same, higher);
                     if (shift === null) return;
                 }
             }

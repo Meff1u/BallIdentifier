@@ -3,7 +3,7 @@
  * and hash, and commits the change (with a changelog entry) to the GitHub repo.
  *
  * POST /.netlify/functions/dex-admin
- *   { action: "save", dex, originalName?, name, details, image?: base64, shift?: boolean, previousAlt?: string }
+ *   { action: "save", dex, originalName?, name, details, image?: base64, shift?: "higher" | "same", previousAlt?: string }
  *   { action: "delete", dex, name }
  */
 
@@ -34,7 +34,7 @@ exports.handler = async (event) => {
             name: body.name,
             details: body.details && typeof body.details === "object" ? body.details : {},
             image: typeof body.image === "string" && body.image ? body.image : null,
-            shift: body.shift === true,
+            shift: body.shift === "higher" || body.shift === "same" ? body.shift : null,
             previousAlt: typeof body.previousAlt === "string" ? body.previousAlt.slice(0, 200) : "",
         };
     } else if (body.action === "delete") {
