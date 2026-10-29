@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1793293111",
+            "type": "bot",
+            "changes": [
+                "New Tradesman notifier: get your role pinged when a wandering tradesman shows up, with what's for sale. Set it up next to the Spawn notifier in Bot → Notifier"
+            ]
+        },
+        {
             "timestamp": "1793292549",
             "type": "bot",
             "changes": [

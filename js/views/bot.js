@@ -24,6 +24,35 @@ const PLACEHOLDERS = [
 ];
 const SAMPLE = { "{ball}": "Poland", "{rarity}": "12", "{artist}": "Artist" };
 
+// Two notifiers per server, saved separately: spawns, and the wandering tradesman
+const KINDS = [
+    {
+        id: "spawn",
+        key: "notifier",
+        label: "Spawn notifier",
+        icon: "bell-ring",
+        botsHint: "Spawns from these bots trigger a ping.",
+        defaultMessage: DEFAULT_MESSAGE,
+        placeholders: PLACEHOLDERS,
+        sample: SAMPLE,
+        replyText: "A wild countryball appeared!",
+    },
+    {
+        id: "tradesman",
+        key: "tradesman",
+        label: "Tradesman notifier",
+        icon: "megaphone",
+        botsHint: "A wandering tradesman from these bots triggers a ping.",
+        defaultMessage: "{role} The tradesman is here! Selling: {offers}",
+        placeholders: [
+            ["{role}", "Pings the role (required)"],
+            ["{offers}", "Balls for sale, with prices"],
+        ],
+        sample: { "{offers}": "✨ Ethiopia · 3,636 ballsbux, 💀 Tonga · 48,387 ballsbux" },
+        replyText: "The tradesman has arrived.",
+    },
+];
+
 export function createView() {
     let section = "overview";
     let params = [];
@@ -400,11 +429,25 @@ export function createView() {
             );
         }
 
-        panel.replaceChildren(back, head, configForm(guildId, data));
+        // Spawn / Tradesman switch; both forms stay in the page so unsaved edits survive switching
+        const forms = KINDS.map((kind) => configForm(guildId, data, kind));
+        const switchButtons = KINDS.map((kind, index) =>
+            h("button", { type: "button", "aria-pressed": String(index === 0), onclick: () => pick(index) }, icon(kind.icon, "icon-sm"), kind.label),
+        );
+        function pick(index) {
+            switchButtons.forEach((button, i) => button.setAttribute("aria-pressed", String(i === index)));
+            forms.forEach((form, i) => (form.hidden = i !== index));
+        }
+        pick(0);
+        panel.replaceChildren(back, head, h("div.tabs-bar.nf-kinds", h("nav.segmented", { "aria-label": "Notifier type" }, switchButtons)), ...forms);
     }
 
-    function configForm(guildId, data) {
-        const existing = data.configuration?.notifier || null;
+    function configForm(guildId, data, kind) {
+        const existing = data.configuration?.[kind.key] || null;
+        const DEFAULT_MESSAGE = kind.defaultMessage;
+        const PLACEHOLDERS = kind.placeholders;
+        const SAMPLE = kind.sample;
+        const ids = { role: `${kind.id}-role`, message: `${kind.id}-message`, help: `${kind.id}-message-help`, error: `${kind.id}-message-error` };
         const state = {
             bots: new Set(existing?.selectedBots || []),
             role: existing?.selectedRole || "",
@@ -432,7 +475,7 @@ export function createView() {
         const roles = data.availableRoles || [];
         const roleSelect = h(
             "select.select",
-            { id: "nf-role" },
+            { id: ids.role },
             h("option", { value: "" }, roles.length ? "Choose a role" : "No roles the bot can ping"),
             roles.map((role) => h("option", { value: role.id, selected: role.id === state.role }, role.name)),
         );
@@ -442,9 +485,9 @@ export function createView() {
         });
 
         /* Message */
-        const textarea = h("textarea.textarea", { id: "nf-message", maxLength: String(MAX_MESSAGE + 50), value: state.message, rows: 3, "aria-describedby": "nf-message-help nf-message-error" });
+        const textarea = h("textarea.textarea", { id: ids.message, maxLength: String(MAX_MESSAGE + 50), value: state.message, rows: 3, "aria-describedby": `${ids.help} ${ids.error}` });
         const count = h("span.char-count");
-        const messageError = h("p.form-error", { id: "nf-message-error", role: "alert" });
+        const messageError = h("p.form-error", { id: ids.error, role: "alert" });
         textarea.addEventListener("input", () => {
             state.message = textarea.value;
             update();
@@ -489,16 +532,22 @@ export function createView() {
                 "div.discord-preview",
                 h(
                     "div.t-msg",
-                    h("span.t-reply", icon("chevron-right", "icon-sm"), h("b", "Ballsdex"), h("span.t-reply-text", "A wild countryball appeared!")),
+                    h("span.t-reply", icon("chevron-right", "icon-sm"), h("b", "Ballsdex"), h("span.t-reply-text", kind.replyText)),
                     h("img.t-avatar", { src: "assets/brand/avatar-512.png", alt: "" }),
                     h("div", { style: { "min-width": "0" } }, h("div.t-msg-head", h("span.t-author.is-bot", "BallIdentifier"), h("span.t-time", "Today")), previewText),
                 ),
             ),
-            h("p.subtle", { style: { "margin-top": "12px" } }, "Sample values: ", h("b", "{ball}"), " Poland, ", h("b", "{rarity}"), " 12, ", h("b", "{artist}"), " Artist."),
+            h(
+                "p.subtle",
+                { style: { "margin-top": "12px" } },
+                "Sample values: ",
+                Object.entries(SAMPLE).map(([token, value], index, all) => [h("b", token), ` ${value}${index < all.length - 1 ? ", " : "."}`]),
+            ),
         );
 
         function renderPlaceholders(text) {
-            return text.split(/(\{role\}|\{ball\}|\{rarity\}|\{artist\})/).map((part) => {
+            const tokens = PLACEHOLDERS.map(([token]) => token.replace(/[{}]/g, "\\$&")).join("|");
+            return text.split(new RegExp(`(${tokens})`)).map((part) => {
                 if (part === "{role}") return h("span.t-mention", `@${roleName()}`);
                 return SAMPLE[part] ?? part;
             });
@@ -542,16 +591,16 @@ export function createView() {
             h(
                 "div.config-section",
                 h("h2", "Bots to watch"),
-                h("p.subtle", "Spawns from these bots trigger a ping."),
+                h("p.subtle", kind.botsHint),
                 botChips,
             ),
-            h("div.config-section", h("h2", h("label", { htmlFor: "nf-role" }, "Role to ping")), roleSelect, h("p.hint", "Only roles below BallIdentifier's highest role are listed.")),
+            h("div.config-section", h("h2", h("label", { htmlFor: ids.role }, "Role to ping")), roleSelect, h("p.hint", "Only roles below BallIdentifier's highest role are listed.")),
             h(
                 "div.config-section",
-                h("div.row", { style: { "justify-content": "space-between" } }, h("h2", h("label", { htmlFor: "nf-message" }, "Message")), count),
+                h("div.row", { style: { "justify-content": "space-between" } }, h("h2", h("label", { htmlFor: ids.message }, "Message")), count),
                 textarea,
                 messageError,
-                h("p.hint", { id: "nf-message-help" }, "Tap to insert. Discord formatting works: ", h("code", "**bold**"), " ", h("code", "`code`"), " ", h("code", "-# small"), " and new lines."),
+                h("p.hint", { id: ids.help }, "Tap to insert. Discord formatting works: ", h("code", "**bold**"), " ", h("code", "`code`"), " ", h("code", "-# small"), " and new lines."),
                 placeholderChips,
             ),
             h("div.save-bar", lastUpdate, h("div.row", { style: { gap: "8px" } }, deleteBtn, saveBtn)),
@@ -574,13 +623,13 @@ export function createView() {
             try {
                 const result = await api("save-guild-config", {
                     method: "POST",
-                    body: { guildId, selectedBots: [...state.bots], selectedRole: state.role, customMessage: state.message.trim() },
+                    body: { guildId, kind: kind.id, selectedBots: [...state.bots], selectedRole: state.role, customMessage: state.message.trim() },
                 });
                 state.message = state.message.trim();
                 savedSnapshot = snapshot();
                 setLastUpdate(result.configuration || { setupAt: Date.now(), setupBy: getUser()?.username });
                 deleteBtn.hidden = false;
-                toast("Notifier saved.", "success");
+                toast(`${kind.label} saved.`, "success");
             } catch (err) {
                 if (!handleAuthError(err)) toast(err.message, "error");
             } finally {
@@ -591,16 +640,16 @@ export function createView() {
 
         deleteBtn.addEventListener("click", async () => {
             const ok = await confirmDialog({
-                title: "Remove the Notifier?",
-                message: "The bot stops pinging on this server. You can set it up again any time.",
+                title: `Remove the ${kind.label}?`,
+                message: `The bot stops pinging for ${kind.id === "tradesman" ? "the tradesman" : "spawns"} on this server. You can set it up again any time.`,
                 confirmLabel: "Remove",
                 danger: true,
             });
             if (!ok) return;
             deleteBtn.disabled = true;
             try {
-                await api("save-guild-config", { method: "POST", body: { guildId, isDelete: true } });
-                toast("Notifier removed.", "success");
+                await api("save-guild-config", { method: "POST", body: { guildId, kind: kind.id, isDelete: true } });
+                toast(`${kind.label} removed.`, "success");
                 state.bots.clear();
                 state.role = "";
                 state.message = DEFAULT_MESSAGE;

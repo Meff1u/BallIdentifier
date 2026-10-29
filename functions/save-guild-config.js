@@ -1,7 +1,8 @@
 /**
  * Save or delete the Notifier configuration of one server (admins only).
  * POST /.netlify/functions/save-guild-config  (session cookie, same-origin only)
- * body: { guildId, selectedBots, selectedRole, customMessage } | { guildId, isDelete: true }
+ * body: { guildId, kind?, selectedBots, selectedRole, customMessage } | { guildId, kind?, isDelete: true }
+ * kind: "spawn" (default, Spawn notifier) or "tradesman" (Tradesman notifier)
  */
 
 const { botApiFetch } = require("../lib/bot-api");
@@ -28,6 +29,7 @@ exports.handler = async (event) => {
     if (!body) return json(400, { error: "Invalid JSON body" });
 
     const { guildId, selectedBots, selectedRole, customMessage, isDelete } = body;
+    const kind = body.kind === "tradesman" ? "tradesman" : "spawn";
     if (!SNOWFLAKE.test(String(guildId || ""))) return json(400, { error: "Invalid guildId" });
     if (!isDelete && (!Array.isArray(selectedBots) || !selectedBots.length || !selectedRole || !customMessage)) {
         return json(400, { error: "Pick at least one bot, a role and a message" });
@@ -43,8 +45,8 @@ exports.handler = async (event) => {
 
         const setupBy = auth.session.user.username;
         const requestBody = isDelete
-            ? { isDelete: true, setupBy }
-            : { selectedBots, selectedRole, customMessage, setupBy, setupAt: Date.now() };
+            ? { kind, isDelete: true, setupBy }
+            : { kind, selectedBots, selectedRole, customMessage, setupBy, setupAt: Date.now() };
 
         const response = await botApiFetch(`/api/guilds/${guildId}/config`, { method: "POST", body: requestBody });
         const data = await response.json().catch(() => ({}));
