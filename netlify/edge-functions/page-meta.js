@@ -4,6 +4,8 @@
  *
  * Static pages: /arts, /bot/notifier, /ballsdex/specials, ...
  * Dynamic:      /arts/<dex>/<ball> (the ball's art and details), /ballsdex/specials/<id> (the special)
+ *
+ * meta.image: a URL (shown instead of the banner), null (no image), or undefined (keep the site banner).
  */
 
 const DEXES = ["Ballsdex", "FoodDex", "HistoryDex", "JoJoDex", "Empireballs Reboot", "MapsDex", "FlagsDex"];
@@ -49,7 +51,7 @@ const escape = (text) => String(text).replace(/&/g, "&amp;").replace(/"/g, "&quo
 async function ballMeta(origin, dexParam, ballParam) {
     const dex = DEXES.find((name) => name.toLowerCase() === dexParam.toLowerCase());
     if (!dex) return null;
-    if (!ballParam) return { title: `${dex} spawn arts`, description: `Every ${dex} spawn art with rarity, artist and collectors.` };
+    if (!ballParam) return { title: `${dex} spawn arts`, description: `Every ${dex} spawn art with rarity, artist and collectors.`, image: null };
 
     const data = await getJson(`${origin}/assets/jsons/${encodeURIComponent(dex)}.json`);
     const name = Object.keys(data).find((key) => key !== "hashes" && key.toLowerCase() === ballParam.toLowerCase());
@@ -89,6 +91,7 @@ async function specialMeta(origin, idParam) {
     return {
         title: `${emoji ? `${emoji} ` : ""}${label}${special.alias && special.name && special.alias !== special.name ? ` (${special.name})` : ""} · Ballsdex special`,
         description: `${facts.join(" · ")}${special.notes ? `\n${special.notes}` : ""}`,
+        image: null,
     };
 }
 
@@ -125,9 +128,13 @@ export default async (request, context) => {
     html = setMeta(html, "property", "og:title", meta.title);
     html = setMeta(html, "property", "og:description", meta.description);
     html = setMeta(html, "property", "og:url", `${url.origin}${url.pathname}`);
-    if (meta.image) {
-        html = setMeta(html, "property", "og:image", meta.image);
+    if (meta.image !== undefined) {
         html = html.replace(/\s*<meta property="og:image:(width|height)" content="[^"]*" \/>/g, "");
+        if (meta.image) html = setMeta(html, "property", "og:image", meta.image);
+        else {
+            html = html.replace(/\s*<meta property="og:image" content="[^"]*" \/>/, "");
+            html = setMeta(html, "name", "twitter:card", "summary");
+        }
     }
 
     const headers = new Headers(response.headers);
