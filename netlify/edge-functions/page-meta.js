@@ -2,7 +2,7 @@
  * Link previews (Discord, Twitter, ...) per page: every app page loads the same index.html,
  * so this swaps its title, description and image for the page the link points to.
  *
- * Static pages: /arts, /bot/notifier, /ballsdex/specials, ...
+ * Static pages: /arts, /bot/notifier, /ballsdex/specials, ... (most get a generated card with live numbers, refreshed daily)
  * Dynamic:      /arts/<dex>/<ball> and /ballsdex/specials/<id> get a generated card image (functions/og.js)
  *
  * meta.image: a URL (shown instead of the banner), null (no image), or undefined (keep the site banner).
@@ -98,12 +98,20 @@ async function specialMeta(origin, idParam) {
     };
 }
 
+// Pages with a generated card (functions/og.js); "" = the home page (Identify)
+const PAGE_CARDS = { "": "identify", identify: "identify", arts: "arts", trainer: "trainer", bot: "bot", "bot/notifier": "bot", collectors: "collectors", "ballsdex/specials": "specials" };
+
 async function pageMeta(url) {
     const parts = url.pathname.split("/").filter(Boolean).map(decode);
     if (parts[0] === "arts" && parts[1]) return ballMeta(url.origin, parts[1], parts[2]);
     if (parts[0] === "ballsdex" && parts[1] === "specials" && parts[2]) return specialMeta(url.origin, parts[2]);
-    const page = PAGES[parts.slice(0, 2).join("/")] || PAGES[parts[0]];
-    return page ? { title: page[0], description: page[1] } : null;
+    const key = PAGES[parts.slice(0, 2).join("/")] ? parts.slice(0, 2).join("/") : parts[0] || "";
+    const page = PAGES[key];
+    const card = PAGE_CARDS[key] ?? PAGE_CARDS[parts[0] || ""];
+    if (!page && !card) return null;
+    // Numbers on these cards change slowly: a new card each day is enough
+    const meta = card ? { image: cardUrl(url.origin, { type: "page", page: card, v: new Date().toISOString().slice(0, 10) }), card: true } : {};
+    return page ? { ...meta, title: page[0], description: page[1] } : meta;
 }
 
 function setMeta(html, attr, key, value) {
@@ -124,12 +132,14 @@ export default async (request, context) => {
     }
     if (!meta) return response;
 
-    const pageTitle = `${meta.title} · BallIdentifier`;
     let html = await response.text();
-    html = html.replace(/<title>[^<]*<\/title>/, `<title>${escape(pageTitle)}</title>`);
-    html = setMeta(html, "name", "description", meta.description);
-    html = setMeta(html, "property", "og:title", meta.title);
-    html = setMeta(html, "property", "og:description", meta.description);
+    if (meta.title) {
+        // The home page keeps the site's own title and description
+        html = html.replace(/<title>[^<]*<\/title>/, `<title>${escape(`${meta.title} · BallIdentifier`)}</title>`);
+        html = setMeta(html, "name", "description", meta.description);
+        html = setMeta(html, "property", "og:title", meta.title);
+        html = setMeta(html, "property", "og:description", meta.description);
+    }
     html = setMeta(html, "property", "og:url", `${url.origin}${url.pathname}`);
     if (meta.card) {
         html = setMeta(html, "property", "og:image", meta.image);
@@ -149,5 +159,5 @@ export default async (request, context) => {
 };
 
 export const config = {
-    path: ["/arts", "/arts/*", "/trainer", "/bot", "/bot/*", "/collectors", "/ballsdex", "/ballsdex/*", "/moderation"],
+    path: ["/", "/identify", "/arts", "/arts/*", "/trainer", "/bot", "/bot/*", "/collectors", "/ballsdex", "/ballsdex/*", "/moderation"],
 };

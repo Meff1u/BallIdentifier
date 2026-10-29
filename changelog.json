@@ -4,7 +4,8 @@
             "timestamp": "1793308226",
             "type": "website",
             "changes": [
-                "Shared links to a spawn art (e.g. /arts/Ballsdex/Poland) or a special (e.g. /ballsdex/specials/59) now show a card image with the art or emoji and its details (including the number of collectors) instead of plain text"
+                "Shared links to a spawn art (e.g. /arts/Ballsdex/Poland) or a special (e.g. /ballsdex/specials/59) now show a card image with the art or emoji and its details (including the number of collectors) instead of plain text",
+                "Links to Identify, Spawn Arts, Catch Trainer, the bot, Collectors and Specials also get their own preview cards with live numbers, like how many balls we know, the bot's servers or the most traded special"
             ]
         },
         {
