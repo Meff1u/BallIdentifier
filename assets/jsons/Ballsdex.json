@@ -467,12 +467,13 @@
         "rarity": 48,
         "artist": "Chewytapioca",
         "wave": 8.3,
-        "id": 557,
+        "id": 560,
         "common_value": "9",
-        "cc": "1050"
+        "cc": "1050",
+        "demand": "C"
     },
     "Pakistan": {
-        "rarity": 49,
+        "rarity": 48,
         "artist": "monke83",
         "wave": 1,
         "id": 10,
