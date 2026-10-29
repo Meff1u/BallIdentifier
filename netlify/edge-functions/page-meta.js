@@ -3,13 +3,13 @@
  * so this swaps its title, description and image for the page the link points to.
  *
  * Static pages: /arts, /bot/notifier, /ballsdex/specials, ...
- * Dynamic:      /arts/<dex>/<ball> (the ball's art and details), /ballsdex/specials/<id> (the special)
+ * Dynamic:      /arts/<dex>/<ball> and /ballsdex/specials/<id> get a generated card image (functions/og.js)
  *
  * meta.image: a URL (shown instead of the banner), null (no image), or undefined (keep the site banner).
+ * meta.card: true when the image is a generated 1200x630 card (large preview).
  */
 
 const DEXES = ["Ballsdex", "FoodDex", "HistoryDex", "JoJoDex", "Empireballs Reboot", "MapsDex", "FlagsDex"];
-const RAW = "https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets";
 const DATA_TTL_MS = 10 * 60 * 1000;
 
 const PAGES = {
@@ -46,6 +46,15 @@ const decode = (part) => {
     }
 };
 
+/** Short hash of the data shown on a card, so previews refresh when it changes (the card is cached for a day). */
+function version(value) {
+    let hash = 2166136261;
+    for (const char of JSON.stringify(value)) hash = Math.imul(hash ^ char.charCodeAt(0), 16777619);
+    return (hash >>> 0).toString(36);
+}
+
+const cardUrl = (origin, params) => `${origin}/.netlify/functions/og?${new URLSearchParams(params)}`;
+
 const escape = (text) => String(text).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 async function ballMeta(origin, dexParam, ballParam) {
@@ -56,18 +65,15 @@ async function ballMeta(origin, dexParam, ballParam) {
     const data = await getJson(`${origin}/assets/jsons/${encodeURIComponent(dex)}.json`);
     const name = Object.keys(data).find((key) => key !== "hashes" && key.toLowerCase() === ballParam.toLowerCase());
     if (!name) return null;
-    const ball = data[name];
-    const facts = [
-        ball.rarity !== undefined ? `Rarity: T${ball.rarity}` : null,
-        ball.artist ? `Artist: ${ball.artist}` : null,
-        ball.wave !== undefined ? `Wave ${ball.wave}` : null,
-        ball.common_value ? `Common value: ${ball.common_value}` : null,
-        ball.id !== undefined ? `ID #${ball.id}` : null,
-    ].filter(Boolean);
+    // The art's fingerprint changes with a new art, the details with any edit
+    const artHash = await getJson(`${origin}/assets/jsons/${encodeURIComponent(dex)}Hashes.json`)
+        .then((hashes) => hashes[name] || "")
+        .catch(() => "");
     return {
         title: `${name} · ${dex}`,
-        description: `${facts.join(" · ")}\nSpawn art, details and collectors on BallIdentifier.`,
-        image: `${RAW}/dexes/${encodeURIComponent(dex)}/${encodeURIComponent(name)}.png`,
+        description: "Spawn art, details and collectors on BallIdentifier.",
+        image: cardUrl(origin, { type: "ball", dex, name, v: version([data[name], artHash]) }),
+        card: true,
     };
 }
 
@@ -79,19 +85,11 @@ async function specialMeta(origin, idParam) {
     if (!special) return null;
     const label = special.alias || special.name || `Special #${id}`;
     const emoji = special.emoji || (special.officialEmoji && !special.officialEmoji.startsWith("<") ? special.officialEmoji : "");
-    const avg = special.priceAverage;
-    const high = special.priceHighest;
-    const price = avg && high && avg !== high ? `${avg} avg / ${high} highest` : avg || high;
-    const facts = [
-        price ? `Common price: ${price}` : null,
-        special.spawnRate ? `Spawn rate: ${special.spawnRate}` : null,
-        special.duration ? `Duration: ${special.duration}` : null,
-        `Special #${id}`,
-    ].filter(Boolean);
     return {
-        title: `${emoji ? `${emoji} ` : ""}${label}${special.alias && special.name && special.alias !== special.name ? ` (${special.name})` : ""} · Ballsdex special`,
-        description: `${facts.join(" · ")}${special.notes ? `\n${special.notes}` : ""}`,
-        image: null,
+        title: `${emoji ? `${emoji} ` : ""}${label} · Ballsdex special`,
+        description: "Price, spawn rate, dates and market data on BallIdentifier.",
+        image: cardUrl(origin, { type: "special", id, v: version(special) }),
+        card: true,
     };
 }
 
@@ -128,7 +126,10 @@ export default async (request, context) => {
     html = setMeta(html, "property", "og:title", meta.title);
     html = setMeta(html, "property", "og:description", meta.description);
     html = setMeta(html, "property", "og:url", `${url.origin}${url.pathname}`);
-    if (meta.image !== undefined) {
+    if (meta.card) {
+        html = setMeta(html, "property", "og:image", meta.image);
+        html = setMeta(html, "name", "twitter:card", "summary_large_image");
+    } else if (meta.image !== undefined) {
         html = html.replace(/\s*<meta property="og:image:(width|height)" content="[^"]*" \/>/g, "");
         if (meta.image) html = setMeta(html, "property", "og:image", meta.image);
         else {

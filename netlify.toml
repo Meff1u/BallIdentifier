@@ -3,7 +3,7 @@
   command = "npm run build"
 
 [functions]
-  included_files = ["./assets/jsons/**"]
+  included_files = ["./assets/jsons/**", "./assets/og/**", "./assets/icons/**", "./assets/brand/logo-mark.svg"]
 
 [build.environment]
   NODE_VERSION = "20"
