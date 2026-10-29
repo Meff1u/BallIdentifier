@@ -3,8 +3,9 @@
  */
 
 import { h, icon, img, fmt, storage, store } from "../core/dom.js";
-import { toast, openDialog } from "../core/ui.js";
+import { toast, openDialog, confirmDialog } from "../core/ui.js";
 import { api } from "../core/api.js";
+import { getUser, onAuthChange } from "../core/auth.js";
 import {
     getDexList,
     getDex,
@@ -24,6 +25,10 @@ const SORTS = [
     { id: "id", label: "ID" },
 ];
 
+// The owner can add, edit and remove entries here (the bot checks it again and commits to GitHub)
+const OWNER_ID = "334411435633541121";
+const MAX_ART_BYTES = 5 * 1024 * 1024;
+
 const DEFAULTS = { showWave: true, showRarity: true, showArtist: true, showID: false, sort: "rarity" };
 
 export function createView() {
@@ -37,6 +42,7 @@ export function createView() {
     const dexSelect = h("select.select", { "aria-label": "Dex" });
     const search = h("input.input", { type: "search", placeholder: "Search balls", "aria-label": "Search balls", autocomplete: "off", spellcheck: false, "data-search": "" });
     const optionsBtn = h("button.btn", { type: "button", "aria-label": "View options" }, icon("sliders-horizontal"), h("span.hide-sm", "View"));
+    const addBtn = h("button.btn.btn-primary", { type: "button", hidden: true, "aria-label": "Add entry", onclick: () => editEntry(null) }, icon("plus"), h("span.hide-sm", "Add entry"));
 
     const metaCount = h("span.num");
     const metaHint = h("span");
@@ -50,7 +56,7 @@ export function createView() {
         h(
             "div.arts-toolbar",
             h("div.toolbar-row", h("label.input-icon", icon("search"), search)),
-            h("div.toolbar-row", dexSelect, optionsBtn),
+            h("div.toolbar-row", dexSelect, optionsBtn, addBtn),
         ),
         h("div.arts-meta", metaCount, h("span.arts-meta-end", metaHint, h("a.arts-contrib", { href: "https://github.com/Meff1u/BallIdentifier#contributing-dex-data", target: "_blank", rel: "noopener" }, icon("github", "icon-sm"), "Missing or wrong art? Help on GitHub"))),
         grid,
@@ -112,8 +118,28 @@ export function createView() {
         }
     }
 
-    function card(name, details) {
+    function card(name, details, artOverride = null) {
         const wave = details.wave;
+        const editChip = h(
+            "span.art-edit",
+            {
+                role: "button",
+                tabindex: "0",
+                title: "Edit entry",
+                "aria-label": `Edit ${name}`,
+                onclick: (event) => {
+                    event.stopPropagation();
+                    editEntry(name);
+                },
+                onkeydown: (event) => {
+                    if (event.key !== "Enter" && event.key !== " ") return;
+                    event.preventDefault();
+                    event.stopPropagation();
+                    editEntry(name);
+                },
+            },
+            icon("sliders-horizontal", "icon-sm"),
+        );
         return h(
             "button.art-card",
             { type: "button", role: "listitem", dataset: { name: name.toLowerCase() }, onclick: () => open(name) },
@@ -124,7 +150,7 @@ export function createView() {
                     : h("span"),
                 details.id !== undefined ? h("span.id-tag", `#${details.id}`) : null,
             ),
-            h("div.art-img", img(compressedArtUrl(dex, name), "")),
+            h("div.art-img", img(artOverride || compressedArtUrl(dex, name), ""), editChip),
             h(
                 "div.art-body",
                 h("span.art-name", name),
@@ -364,6 +390,185 @@ export function createView() {
         doneBtn.addEventListener("click", () => dialog.close());
     });
 
+    /* ----- Owner: add / edit / remove entries ----- */
+
+    function paintOwner() {
+        const owner = getUser()?.id === OWNER_ID;
+        grid.toggleAttribute("data-owner", owner);
+        addBtn.hidden = !owner;
+    }
+    onAuthChange(paintOwner);
+
+    const readBase64 = (file) =>
+        new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(String(reader.result).split(",")[1] || "");
+            reader.onerror = () => reject(new Error("Couldn't read the file."));
+            reader.readAsDataURL(file);
+        });
+
+    /** Adding before other balls: move every ball at this rarity or rarer one down? null = cancel */
+    function askShift(name, rarity, later) {
+        return new Promise((resolve) => {
+            let answer = null;
+            const choose = (value) => {
+                answer = value;
+                dialog.close();
+            };
+            const dialog = openDialog({
+                title: "Move later rarities down?",
+                body: h("p.muted", `${later} ball${later === 1 ? " is" : "s are"} already at T${rarity} or rarer. Move them all one rarity down (T${rarity} → T${rarity + 1} and so on) so ${name} goes before them?`),
+                footer: [
+                    h("button.btn.btn-ghost", { type: "button", onclick: () => choose(false) }, "Keep their rarities"),
+                    h("button.btn.btn-primary", { type: "button", onclick: () => choose(true) }, "Move them down"),
+                ],
+                onClose: () => resolve(answer),
+            });
+        });
+    }
+
+    const FORM_FIELDS = [
+        ["rarity", "Rarity", "e.g. 13", true],
+        ["artist", "Artist", "", true],
+        ["id", "ID", "", true],
+        ["wave", "Wave", "optional"],
+        ["common_value", "Common value", "optional"],
+        ["demand", "Demand", "optional"],
+        ["cc", "CC", "optional"],
+    ];
+
+    function applySaved(originalName, result, artUrl) {
+        const from = result.shiftedFrom;
+        balls = balls
+            .filter(([name]) => name !== originalName && name !== result.name)
+            .map(([name, details, cardEl]) => {
+                if (from === null || from === undefined || Number(details.rarity) < from) return [name, details, cardEl];
+                const moved = { ...details, rarity: Math.round((Number(details.rarity) + 1) * 1000) / 1000 };
+                return [name, moved, card(name, moved)];
+            });
+        balls.push([result.name, result.entry, card(result.name, result.entry, artUrl)]);
+        sortAndRender();
+    }
+
+    function editEntry(originalName) {
+        const dexName = loadedDex;
+        if (!dexName) return;
+        const current = originalName ? balls.find(([name]) => name === originalName)?.[1] || {} : {};
+        const isNew = !originalName;
+        let pickedUrl = null;
+
+        const nameInput = h("input.input", { id: "dex-name", type: "text", value: originalName || "", maxLength: 80, autocomplete: "off", required: true });
+        const inputs = {};
+        const fields = FORM_FIELDS.map(([key, label, placeholder, required]) => {
+            const value = current[key] ?? (key === "id" && isNew ? Math.max(0, ...balls.map(([, d]) => Number(d.id) || 0)) + 1 : "");
+            inputs[key] = h("input.input", { id: `dex-${key}`, type: "text", value: String(value), placeholder, autocomplete: "off", required: Boolean(required) });
+            return h("div.field", h("label.label", { for: `dex-${key}` }, label), inputs[key]);
+        });
+        const preview = h("img.dex-art-preview", { alt: "", src: isNew ? undefined : compressedArtUrl(dexName, originalName), hidden: isNew });
+        const fileInput = h("input", { id: "dex-art", type: "file", accept: "image/*", class: "dex-file" });
+        // Ballsdex keeps replaced arts in Previous arts, optionally with an alt text
+        const altInput = h("input.input", { id: "dex-alt", type: "text", maxLength: 200, autocomplete: "off", placeholder: "e.g. Special art for the birthday event" });
+        const altField = h(
+            "div.field",
+            { hidden: true },
+            h("label.label", { for: "dex-alt" }, "Alt text for the old art (optional)"),
+            altInput,
+            h("span.hint", "The current art moves to Previous arts with this note."),
+        );
+        fileInput.addEventListener("change", () => {
+            const file = fileInput.files[0];
+            altField.hidden = !(file && !isNew && dexName === "Ballsdex");
+            if (pickedUrl) URL.revokeObjectURL(pickedUrl);
+            pickedUrl = file ? URL.createObjectURL(file) : null;
+            const src = pickedUrl || (isNew ? null : compressedArtUrl(dexName, originalName));
+            if (src) preview.src = src;
+            preview.hidden = !src;
+        });
+
+        const saveBtn = h("button.btn.btn-primary", { type: "submit", form: "dex-form" }, icon("check"), h("span", isNew ? "Add" : "Save"));
+        const deleteBtn = isNew ? null : h("button.btn.btn-ghost.dex-delete", { type: "button" }, icon("trash-2"), h("span", "Remove"));
+        const form = h(
+            "form.dex-form",
+            { id: "dex-form" },
+            h("p.hint", `${dexName}. Saving commits the change to GitHub and adds it to the changelog; the site shows it after the next deploy.`),
+            h(
+                "div.dex-art-row",
+                h("div.dex-art-box", preview),
+                h("div.field", h("label.label", { for: "dex-art" }, isNew ? "Spawn art" : "New spawn art (optional)"), fileInput, h("span.hint", "PNG, WebP or JPG, 5 MB max. The preview and hash are made automatically.")),
+            ),
+            altField,
+            h("div.field", h("label.label", { for: "dex-name" }, "Name"), nameInput),
+            h("div.dex-form-grid", fields),
+        );
+        let saved = false;
+        const dialog = openDialog({
+            title: isNew ? `Add entry · ${dexName}` : `Edit ${originalName}`,
+            body: form,
+            wide: true,
+            footer: h("div.row.dex-foot", deleteBtn, h("button.btn", { type: "button", onclick: () => dialog.close() }, "Cancel"), saveBtn),
+            onClose: () => {
+                if (pickedUrl && !saved) URL.revokeObjectURL(pickedUrl);
+            },
+        });
+
+        const busy = (on, label) => {
+            saveBtn.disabled = on;
+            if (deleteBtn) deleteBtn.disabled = on;
+            saveBtn.querySelector("span").textContent = on ? label : isNew ? "Add" : "Save";
+        };
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const name = nameInput.value.trim();
+            const details = Object.fromEntries(Object.entries(inputs).map(([key, input]) => [key, input.value.trim()]).filter(([, value]) => value !== ""));
+            const file = fileInput.files[0];
+            if (isNew && !file) return toast("Pick the spawn art first.", "error");
+            if (file && file.size > MAX_ART_BYTES) return toast("The spawn art is too big (5 MB max).", "error");
+
+            let shift = false;
+            if (isNew) {
+                const rarity = Number(details.rarity);
+                const later = balls.filter(([, d]) => Number(d.rarity) >= rarity).length;
+                if (Number.isFinite(rarity) && later) {
+                    shift = await askShift(name, rarity, later);
+                    if (shift === null) return;
+                }
+            }
+
+            busy(true, "Saving…");
+            try {
+                const image = file ? await readBase64(file) : null;
+                const result = await api("dex-admin", { method: "POST", body: { action: "save", dex: dexName, originalName, name, details, image, shift, previousAlt: image ? altInput.value.trim() : "" } });
+                saved = true;
+                if (loadedDex === dexName) applySaved(originalName, result, pickedUrl);
+                toast(`${result.name} saved. The site shows it after the next deploy (about a minute).`, "success", 6000);
+                dialog.close();
+            } catch (error) {
+                busy(false);
+                toast(error.message, "error", 8000);
+            }
+        });
+
+        deleteBtn?.addEventListener("click", async () => {
+            const ok = await confirmDialog({ title: `Remove ${originalName}?`, message: `${originalName} will be removed from ${dexName} with its art and hash. This is committed to GitHub right away.`, confirmLabel: "Remove", danger: true });
+            if (!ok) return;
+            busy(true, "Saving…");
+            try {
+                await api("dex-admin", { method: "POST", body: { action: "delete", dex: dexName, name: originalName } });
+                if (loadedDex === dexName) {
+                    balls = balls.filter(([name]) => name !== originalName);
+                    sortAndRender();
+                }
+                toast(`${originalName} removed.`, "success");
+                dialog.close();
+            } catch (error) {
+                busy(false);
+                toast(error.message, "error", 8000);
+            }
+        });
+    }
+
+    paintOwner();
     init();
 
     return {

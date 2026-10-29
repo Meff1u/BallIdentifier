@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1793292549",
+            "type": "bot",
+            "changes": [
+                "Ballsdex rankings: \"Most owned\" now counts Bronze, Silver and Gold balls as the 1,000, 3,000 and 5,000 copies they stand for (sync again to update)"
+            ]
+        },
+        {
             "timestamp": "1793289203",
             "type": "website",
             "changes": [
