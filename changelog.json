@@ -1,6 +1,16 @@
 {
     "changes": [
         {
+            "timestamp": "1793296146",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "New spawn art for Kingdom of Italy",
+                "Kingdom of Italy: artist Franci#5323 → mangle_1375",
+                "The old art of Kingdom of Italy is now in Previous arts"
+            ]
+        },
+        {
             "timestamp": "1793296057",
             "type": "dex",
             "dex": "Ballsdex",
