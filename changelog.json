@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1793314242",
+            "type": "bot",
+            "changes": [
+                "When the Ballsdex API runs out of requests or is down, linking, syncing, Fast Sync, collector checks and the Specials market now say clearly what happened and when to try again, instead of showing odd errors or loading forever"
+            ]
+        },
+        {
             "timestamp": "1793313574",
             "type": "website",
             "changes": [
