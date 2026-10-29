@@ -7,6 +7,8 @@ import { h, icon, img, fmt, timeAgo, formatDate, formatDuration, spinner } from 
 import { toast, confirmDialog } from "../core/ui.js";
 import { api, ApiError } from "../core/api.js";
 import { getUser, onAuthChange, loadSession, login, sessionExpired, sessionReady } from "../core/auth.js";
+import { compressedArtUrl } from "../core/data.js";
+import { refreshNotifications } from "../notifications.js";
 
 const KEYS_URL = "https://ballsdex.com/api/keys";
 const POLL_MS = 3000;
@@ -17,14 +19,26 @@ export function createView() {
     let pollTimer = null;
     let countdownTimer = null;
     let visible = false;
+    let section = "profile";
+    let showMissing = false;
 
     const body = h("div");
+    const tabProfile = h("a", { href: "#/ballsdex" }, icon("user-round", "icon-sm"), "Profile");
+    const tabRaws = h("a", { href: "#/ballsdex/raws" }, icon("gem", "icon-sm"), "Raws");
     const el = h(
         "section.view",
         { dataset: { view: "ballsdex" }, "aria-labelledby": "bdx-title" },
-        h("div.page-head", h("h1", { id: "bdx-title" }, "Ballsdex"), h("p", "Your Ballsdex collection, synced from your account.")),
+        h("div.page-head", h("h1", { id: "bdx-title" }, "Ballsdex"), h("p", "Your Ballsdex account, collection stats and raws.")),
+        h("div.tabs-bar.bdx-tabs", h("nav.segmented", { "aria-label": "Ballsdex sections" }, tabProfile, tabRaws)),
         body,
     );
+
+    function paintTabs() {
+        for (const [tab, on] of [[tabProfile, section === "profile"], [tabRaws, section === "raws"]]) {
+            if (on) tab.setAttribute("aria-current", "page");
+            else tab.removeAttribute("aria-current");
+        }
+    }
 
     function stopTimers() {
         clearTimeout(pollTimer);
@@ -60,6 +74,7 @@ export function createView() {
             stopTimers();
             return renderLoggedOut();
         }
+        if (section === "raws") return loadRaws(token);
         if (!quiet || !data) skeleton();
         try {
             const next = await api("ballsdex");
@@ -198,7 +213,8 @@ export function createView() {
         const name = summary?.displayName && summary.displayName !== "Unknown" ? summary.displayName : user?.displayName || "You";
 
         const syncBtn = h("button.btn.btn-primary", { type: "button" });
-        const unlinkBtn = h("button.btn.btn-danger", { type: "button" }, icon("unlink"), h("span", "Unlink"));
+        const cancelBtn = h("button.btn", { type: "button", hidden: !sync.inProgress, disabled: Boolean(sync.cancelRequested) }, icon("circle-stop"), h("span", sync.cancelRequested ? "Cancelling…" : "Cancel sync"));
+        const unlinkBtn = h("button.btn.btn-danger", { type: "button", hidden: Boolean(sync.inProgress) }, icon("unlink"), h("span", "Unlink"));
         const status = h("p.sync-status", { "aria-live": "polite" });
 
         function paintSync() {
@@ -210,7 +226,8 @@ export function createView() {
                 return;
             }
             syncBtn.disabled = retry > 0;
-            syncBtn.replaceChildren(icon("refresh-cw"), h("span", retry > 0 ? `Sync again in ${Math.floor(retry / 60)}:${String(retry % 60).padStart(2, "0")}` : "Sync now"));
+            const wait = retry >= 3600 ? `${Math.floor(retry / 3600)}h ${Math.floor((retry % 3600) / 60)}m` : `${Math.floor(retry / 60)}:${String(retry % 60).padStart(2, "0")}`;
+            syncBtn.replaceChildren(icon(retry > 0 ? "clock" : "refresh-cw"), h("span", retry > 0 ? `Sync again in ${wait}` : "Sync now"));
             if (data.collection?.lastSyncedAt) {
                 status.replaceChildren(icon("history", "icon-sm"), h("span", `Last synced ${timeAgo(data.collection.lastSyncedAt)} · ${fmt(data.collection.ballCount)} balls`));
             } else {
@@ -222,6 +239,7 @@ export function createView() {
         const remaining = () => Math.max(0, (sync.retryAfterSec || 0) - (Date.now() - fetchedAt) / 1000);
 
         syncBtn.addEventListener("click", () => startSync());
+        cancelBtn.addEventListener("click", cancelSync);
         unlinkBtn.addEventListener("click", unlink);
         paintSync();
 
@@ -237,13 +255,33 @@ export function createView() {
             "div.card.bdx-head",
             img(user?.avatarUrl || "assets/brand/avatar-512.png", "", "avatar avatar-lg"),
             h("div.who", h("h2", { style: { "font-size": "var(--fs-xl)" } }, name), h("p.subtle", `Linked ${data.linkedAt ? timeAgo(data.linkedAt) : ""}`.trim()), status),
-            h("div.bdx-actions", syncBtn, unlinkBtn),
+            h("div.bdx-actions", syncBtn, cancelBtn, unlinkBtn),
         );
 
         const parts = [head];
         if (sync.inProgress) parts.push(syncProgress(sync));
+        else if (sync.busy) {
+            parts.push(
+                h(
+                    "p.callout",
+                    { style: { "margin-top": "16px" } },
+                    icon("clock", "icon-sm"),
+                    h("span", sync.waiting ? "Another collection is being synced right now. You'll get a notification as soon as you can start yours." : "Another collection is being synced right now. Only one sync runs at a time."),
+                ),
+            );
+        }
         const failed = sync.error && !sync.inProgress && (!data.collection?.lastSyncedAt || new Date(sync.finishedAt) > new Date(data.collection.lastSyncedAt));
         if (failed) parts.push(h("p.callout.callout-danger", { style: { "margin-top": "16px" } }, icon("circle-x", "icon-sm"), h("span", `Last sync failed: ${sync.error}`)));
+        if (summary && data.collection?.needsResync && !sync.inProgress) {
+            parts.push(
+                h(
+                    "p.callout.callout-warning",
+                    { style: { "margin-top": "16px" } },
+                    icon("refresh-cw", "icon-sm"),
+                    h("span", "These stats were saved before top 5 rankings and raws existed. Sync once to update them."),
+                ),
+            );
+        }
         parts.push(summary ? statsGrid(summary) : noData());
         body.replaceChildren(...parts);
     }
@@ -286,7 +324,7 @@ export function createView() {
             { style: { "margin-top": "16px" } },
             h("div.empty-icon", icon("refresh-cw", "icon-lg")),
             h("h2", "No collection data yet"),
-            h("p", "Sync once to import your balls. After that you can sync again every few minutes."),
+            h("p", "Sync once to import your balls. After a sync you can sync again in 12 hours."),
         );
     }
 
@@ -354,6 +392,104 @@ export function createView() {
         );
     }
 
+    /* ----- Raws ----- */
+
+    const fmt2 = (n) => Number(n).toLocaleString("en-US", { maximumFractionDigits: 2 });
+
+    async function loadRaws(token) {
+        stopTimers();
+        skeleton();
+        let result;
+        try {
+            result = await api("ballsdex", { query: { view: "raws" } });
+        } catch (error) {
+            if (token !== renderToken) return null;
+            if (handleAuthError(error)) return null;
+            body.replaceChildren(
+                h("div.card.empty", h("div.empty-icon", icon("triangle-alert", "icon-lg")), h("h2", "Couldn't load your raws"), h("p", error.message), h("button.btn", { type: "button", onclick: () => refresh() }, icon("refresh-cw"), h("span", "Try again"))),
+            );
+            return null;
+        }
+        if (token !== renderToken) return null;
+
+        if (!result.available) {
+            const copy = {
+                NOT_LINKED: ["Link your Ballsdex account first", "Raws are counted from your synced collection. Link your API key on the Profile tab."],
+                NO_DATA: ["Sync your collection first", "Raws are counted from your synced collection. Start a sync on the Profile tab."],
+                RESYNC: ["Sync once more to count raws", "Your saved collection is from before raws existed. One sync on the Profile tab fills this page."],
+            }[result.reason] || ["No raws yet", ""];
+            body.replaceChildren(
+                h("div.card.empty", h("div.empty-icon", icon("gem", "icon-lg")), h("h2", copy[0]), h("p", copy[1]), h("a.btn.btn-primary", { href: "#/ballsdex" }, icon("user-round"), h("span", "Go to Profile"))),
+            );
+            return null;
+        }
+        renderRaws(result.raws, result.lastSyncedAt);
+        return result;
+    }
+
+    function renderRaws(raws, lastSyncedAt) {
+        const missingToggle = h("input", { type: "checkbox", checked: showMissing });
+        const list = h("div.raws-list");
+
+        function paintList() {
+            const nodes = [];
+            for (const tier of raws.tiers) {
+                const rows = raws.rows.filter((row) => row.tier === tier.tier && (showMissing || row.count > 0));
+                if (!rows.length) continue;
+                nodes.push(
+                    h(
+                        "section.raws-tier",
+                        h(
+                            "header.raws-tier-head",
+                            h("span.raws-tier-name", `T${tier.tier}`),
+                            h("span.subtle", `×${tier.value} each`),
+                            h("span.raws-tier-total.num", tier.count ? `${fmt(tier.count)} × ${tier.value} = ${fmt2(tier.total)}` : "0"),
+                        ),
+                        h(
+                            "ul.raws-rows",
+                            rows.map((row) =>
+                                h(
+                                    "li.raws-row",
+                                    { class: row.count ? "" : "is-missing" },
+                                    img(compressedArtUrl("Ballsdex", row.name), "", "raws-thumb"),
+                                    h("span.raws-name", row.name),
+                                    h("span.raws-count.num", row.count ? `×${fmt(row.count)}` : "—"),
+                                    h("span.raws-value.num", row.count ? fmt2(row.total) : ""),
+                                ),
+                            ),
+                        ),
+                    ),
+                );
+            }
+            list.replaceChildren(...(nodes.length ? nodes : [h("p.subtle", { style: { padding: "16px 0" } }, "You don't have any rare non-special balls yet.")]));
+        }
+        missingToggle.addEventListener("change", () => {
+            showMissing = missingToggle.checked;
+            paintList();
+        });
+        paintList();
+
+        body.replaceChildren(
+            h(
+                "div.card.panel.raws-summary",
+                h(
+                    "dl.kv.cols-4",
+                    h("div", h("dt", "Raws value"), h("dd.raws-total", fmt2(raws.total))),
+                    h("div", h("dt", "Rare non-special balls"), h("dd", fmt(raws.rareCount))),
+                    h("div", h("dt", "Different rare balls"), h("dd", `${raws.ownedKinds} / ${raws.kinds}`)),
+                    h("div", h("dt", "Last synced"), h("dd.text", lastSyncedAt ? timeAgo(lastSyncedAt) : "—")),
+                ),
+                h("p.subtle", "Rare = tiers T1 to T23, specials not counted. Each ball is worth: T1 1 · T4 0.8 · T6 0.75 · T7 0.5 · T10 0.4 · T12 0.25 · T15 0.2 · T18 0.15 · T19 to T23 0.1."),
+            ),
+            h(
+                "div.card.panel",
+                { style: { "margin-top": "16px" } },
+                h("div.row", { style: { "justify-content": "space-between" } }, h("h2", icon("gem"), "By tier"), h("label.switch.raws-missing", h("span", "Show balls I don't have"), missingToggle)),
+                list,
+            ),
+        );
+    }
+
     /* ----- Actions ----- */
 
     async function startSync({ auto = false } = {}) {
@@ -363,8 +499,19 @@ export function createView() {
             render();
         } catch (error) {
             if (handleAuthError(error)) return;
-            if (!auto || error.code !== "COOLDOWN") toast(error.message, "error");
+            if (error.code === "BUSY") toast(error.message, "info", 8000);
+            else if (!auto || error.code !== "COOLDOWN") toast(error.message, "error");
             await refresh({ quiet: true });
+        }
+    }
+
+    async function cancelSync() {
+        try {
+            const result = await api("ballsdex", { method: "POST", body: { action: "cancel" } });
+            data = { ...data, sync: result.sync || data.sync };
+            render();
+        } catch (error) {
+            if (!handleAuthError(error)) toast(error.message, "error");
         }
     }
 
@@ -373,8 +520,10 @@ export function createView() {
         const next = await refresh({ quiet: true });
         if (!next || next.sync?.inProgress) return;
         if (before?.sync?.inProgress) {
-            if (next.sync?.error) toast(`Sync failed: ${next.sync.error}`, "error");
+            if (next.sync?.cancelled) toast("Sync cancelled. You can start a new one in 5 minutes.", "info");
+            else if (next.sync?.error) toast(`Sync failed: ${next.sync.error}`, "error");
             else toast(`Synced ${fmt(next.sync?.ballCount ?? next.collection?.ballCount)} balls.`, "success");
+            refreshNotifications();
         }
     }
 
@@ -397,8 +546,12 @@ export function createView() {
 
     return {
         el,
-        show() {
+        show(params = []) {
             visible = true;
+            const next = params[0] === "raws" ? "raws" : "profile";
+            if (next !== section) stopTimers();
+            section = next;
+            paintTabs();
             if (!sessionReady()) {
                 skeleton();
                 loadSession();

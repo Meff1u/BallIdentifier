@@ -1,13 +1,16 @@
 {
     "changes": [
         {
-            "timestamp": "1793238510",
+            "timestamp": "1793241414",
             "changes": [
                 "Completely redesigned website: new mobile-first layout and three themes (light, dark and synthwave)",
                 "Log in with Discord from any page",
                 "Notifier settings moved from the old dashboard to the Bot tab, with a live message preview",
                 "New Ballsdex tab: link your Ballsdex account, sync it and see your collection stats (same as /ballsdex in the bot)",
-                "Changelog moved to the What's new panel (bell icon), with a dot when there's something new"
+                "Changelog moved to the What's new panel (newspaper icon), with a dot when there's something new",
+                "Notifications (bell icon): sync results, vote reminders and updates on the website, each one optionally also as a Discord DM",
+                "Ballsdex Raws tab and /ballsdex raws: value of your rare (T1-T23) non-special balls",
+                "Ballsdex sync: live progress, cancel button, one sync at a time and a 12-hour cooldown"
             ],
             "type": "website"
         },

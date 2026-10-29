@@ -109,7 +109,7 @@ export function createView() {
                 h("p", "Right-click any spawn message, open ", h("b", "Apps"), " and pick ", h("b", "Identify"), ". The bot replies with the ball's name, rarity and artist."),
                 h("ol.steps", h("li", "Right-click the spawn message"), h("li", "Choose Apps → Identify"), h("li", "Get the answer instantly")),
             ),
-            h("div.shots", { style: { "--cols": "2" } }, shot("assets/bot/identifier/1.png", "Ballsdex result"), shot("assets/bot/identifier/2.png", "FoodDex result")),
+            h("div.shots", { style: { "--cols": "2" } }, shot("assets/bot/identifier/1.png", "Ballsdex result"), shot("assets/bot/identifier/2.png", "JoJoDex result")),
         ),
         h(
             "article.feature",

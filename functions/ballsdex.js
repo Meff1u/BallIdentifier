@@ -5,6 +5,8 @@
  * POST /.netlify/functions/ballsdex  { action: "link", apiKey }
  * POST /.netlify/functions/ballsdex  { action: "unlink" }
  * POST /.netlify/functions/ballsdex  { action: "sync" }
+ * POST /.netlify/functions/ballsdex  { action: "cancel" }
+ * GET  /.netlify/functions/ballsdex?view=raws  -> rare non-special balls x tier value
  *
  * The Discord user id always comes from the encrypted session, never from the request.
  * The API key is encrypted end-to-end for the bot (encryptForBot) and stored encrypted by the bot.
@@ -20,7 +22,7 @@ async function forward(response) {
     if (response.status >= 500) {
         console.error("Bot API error:", response.status, data);
         // 502 from the bot means the Ballsdex API failed; keep the bot's message for that case
-        const message = response.status === 502 && typeof data.error === "string" ? data.error : null;
+        const message = (response.status === 502 || response.status === 503) && typeof data.error === "string" ? data.error : null;
         return json(502, { error: message || "The bot is not responding. Try again in a moment." });
     }
     return json(response.status, data);
@@ -33,7 +35,8 @@ exports.handler = async (event) => {
 
     try {
         if (event.httpMethod === "GET") {
-            return forward(await botApiFetch(base));
+            const view = event.queryStringParameters?.view;
+            return forward(await botApiFetch(view === "raws" ? `${base}/raws` : base));
         }
 
         if (event.httpMethod !== "POST") return json(405, { error: "Method not allowed" });
@@ -52,6 +55,8 @@ exports.handler = async (event) => {
                 return forward(await botApiFetch(`${base}/unlink`, { method: "POST", body: {} }));
             case "sync":
                 return forward(await botApiFetch(`${base}/sync`, { method: "POST", body: {} }));
+            case "cancel":
+                return forward(await botApiFetch(`${base}/cancel`, { method: "POST", body: {} }));
             default:
                 return json(400, { error: "Unknown action" });
         }

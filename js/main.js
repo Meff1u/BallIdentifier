@@ -7,6 +7,7 @@ import { toast, toggleMenu, menuItem, closeMenu } from "./core/ui.js";
 import { THEMES, getThemeChoice, setTheme, applyTheme, onThemeChange, resolvedTheme } from "./core/theme.js";
 import { getUser, loadSession, onAuthChange, login, logout } from "./core/auth.js";
 import { initChangelog, openChangelog } from "./changelog.js";
+import { initNotifications } from "./notifications.js";
 
 const ROUTES = {
     identify: { title: "Identify", load: () => import("./views/identify.js") },
@@ -36,6 +37,10 @@ async function route() {
     const { name, params, query } = parseHash();
 
     handleLoginResult(query);
+    if (query.get("whatsnew")) {
+        history.replaceState(null, "", location.hash.split("?")[0]);
+        openChangelog();
+    }
 
     $$("[data-nav]").forEach((link) => {
         if (link.dataset.nav === name) link.setAttribute("aria-current", "page");
@@ -136,9 +141,9 @@ function renderAccount(user) {
         accountSlot.replaceChildren(
             h(
                 "button.btn.btn-discord.btn-sm",
-                { type: "button", onclick: () => login() },
+                { type: "button", "aria-label": "Log in with Discord", onclick: () => login() },
                 icon("discord", "icon-sm"),
-                h("span", "Log in"),
+                h("span.login-label", "Log in"),
             ),
         );
         return;
@@ -183,6 +188,7 @@ function renderAccount(user) {
 applyTheme();
 onAuthChange(renderAccount);
 initChangelog($("#whats-new-btn"));
+initNotifications($("#notifications-btn"));
 $("#whats-new-btn").addEventListener("click", () => openChangelog());
 
 window.addEventListener("hashchange", route);
