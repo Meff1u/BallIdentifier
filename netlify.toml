@@ -3,7 +3,9 @@
   command = "npm run build"
 
 [functions]
-  included_files = ["./assets/jsons/**", "./assets/og/**", "./assets/icons/**", "./assets/brand/logo-mark.svg"]
+  included_files = ["./assets/jsons/**", "./assets/og/**", "./assets/icons/**", "./assets/brand/logo-mark.svg",
+    # Leave out what Netlify doesn't run (musl builds of sharp, source maps): keeps functions under the upload limit
+    "!node_modules/@img/sharp-libvips-linuxmusl-x64/**", "!node_modules/@img/sharp-linuxmusl-x64/**", "!node_modules/**/*.map"]
 
 [build.environment]
   NODE_VERSION = "20"
