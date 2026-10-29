@@ -1,6 +1,16 @@
 {
     "changes": [
         {
+            "timestamp": "1793295284",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "New spawn art for Pakistan",
+                "Pakistan: artist monke83 → remy_thecb",
+                "The old art of Pakistan is now in Previous arts"
+            ]
+        },
+        {
             "timestamp": "1793295182",
             "type": "dex",
             "dex": "Ballsdex",
