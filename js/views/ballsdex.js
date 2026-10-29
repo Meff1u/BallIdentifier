@@ -4,7 +4,7 @@
  */
 
 import { h, icon, img, fmt, timeAgo, formatDate, formatDuration, spinner } from "../core/dom.js";
-import { toast, confirmDialog } from "../core/ui.js";
+import { toast, confirmDialog, openDialog } from "../core/ui.js";
 import { api, ApiError } from "../core/api.js";
 import { getUser, onAuthChange, loadSession, login, sessionExpired, sessionReady } from "../core/auth.js";
 import { compressedArtUrl } from "../core/data.js";
@@ -21,20 +21,23 @@ export function createView() {
     let visible = false;
     let section = "profile";
     let showMissing = false;
+    let specialsData = null;
+    let specialsQuery = "";
 
     const body = h("div");
     const tabProfile = h("a", { href: "#/ballsdex" }, icon("user-round", "icon-sm"), "Profile");
     const tabRaws = h("a", { href: "#/ballsdex/raws" }, icon("gem", "icon-sm"), "Raws");
+    const tabSpecials = h("a", { href: "#/ballsdex/specials" }, icon("sparkles", "icon-sm"), "Specials");
     const el = h(
         "section.view",
         { dataset: { view: "ballsdex" }, "aria-labelledby": "bdx-title" },
-        h("div.page-head", h("h1", { id: "bdx-title" }, "Ballsdex"), h("p", "Your Ballsdex account, collection stats and raws.")),
-        h("div.tabs-bar.bdx-tabs", h("nav.segmented", { "aria-label": "Ballsdex sections" }, tabProfile, tabRaws)),
+        h("div.page-head", h("h1", { id: "bdx-title" }, "Ballsdex"), h("p", "Your Ballsdex account, collection stats, raws and every special.")),
+        h("div.tabs-bar.bdx-tabs", h("nav.segmented", { "aria-label": "Ballsdex sections" }, tabProfile, tabRaws, tabSpecials)),
         body,
     );
 
     function paintTabs() {
-        for (const [tab, on] of [[tabProfile, section === "profile"], [tabRaws, section === "raws"]]) {
+        for (const [tab, on] of [[tabProfile, section === "profile"], [tabRaws, section === "raws"], [tabSpecials, section === "specials"]]) {
             if (on) tab.setAttribute("aria-current", "page");
             else tab.removeAttribute("aria-current");
         }
@@ -69,6 +72,7 @@ export function createView() {
 
     async function refresh({ quiet = false } = {}) {
         const token = ++renderToken;
+        if (section === "specials") return loadSpecials(token, { quiet });
         if (!sessionReady()) return skeleton();
         if (!getUser()) {
             stopTimers();
@@ -476,6 +480,144 @@ export function createView() {
 
     const fmt2 = (n) => Number(n).toLocaleString("en-US", { maximumFractionDigits: 2 });
 
+    /* ----- Specials (public; the owner can edit) ----- */
+
+    async function loadSpecials(token, { quiet = false } = {}) {
+        stopTimers();
+        if (!quiet || !specialsData) skeleton();
+        try {
+            const result = await api("specials");
+            if (token !== renderToken) return null;
+            specialsData = result;
+            renderSpecials();
+            return result;
+        } catch (error) {
+            if (token !== renderToken) return null;
+            body.replaceChildren(
+                h("div.card.empty", h("div.empty-icon", icon("triangle-alert", "icon-lg")), h("h2", "Couldn't load the specials"), h("p", error.message), h("button.btn", { type: "button", onclick: () => refresh() }, icon("refresh-cw"), h("span", "Try again"))),
+            );
+            return null;
+        }
+    }
+
+    const priceText = (value) => (/^\d+(\.\d+)?\+?$/.test(value) ? `${value}c` : value);
+
+    function specialEmoji(special) {
+        if (special.emoji) return h("span.spc-emoji", { "aria-hidden": "true" }, special.emoji);
+        const custom = /^<a?:\w+:(\d+)>$/.exec(special.officialEmoji || "");
+        if (custom) return h("span.spc-emoji", img(`https://cdn.discordapp.com/emojis/${custom[1]}.webp?size=64`, ""));
+        if (special.officialEmoji) return h("span.spc-emoji", { "aria-hidden": "true" }, special.officialEmoji);
+        return h("span.spc-emoji.is-empty", { "aria-hidden": "true" }, icon("sparkles"));
+    }
+
+    function specialCard(special, { canEdit, windowDays }) {
+        const title = special.alias || special.name || `Special #${special.id}`;
+        const rows = [];
+        const add = (label, iconName, value) => value && rows.push(h("div.spc-row", h("dt", icon(iconName, "icon-sm"), label), h("dd", value)));
+
+        const avg = special.priceAverage;
+        const high = special.priceHighest;
+        if (avg && high && avg !== high) add("Common price", "gem", h("span", priceText(avg), h("span.subtle", " avg · "), priceText(high), h("span.subtle", " highest")));
+        else if (avg || high) add("Common price", "gem", priceText(avg || high));
+        add("Spawn rate", "gauge", special.spawnRate);
+        add("Duration", "timer", special.duration);
+        if (special.startDate || special.endDate) {
+            add("Dates", "calendar-days", `${special.startDate ? formatDate(special.startDate) : "?"} – ${special.endDate ? formatDate(special.endDate) : "no end"}`);
+        }
+        if (special.market?.sales) {
+            add(`Market (${windowDays || 30}d)`, "trophy", `median ${fmt(special.market.median)} · ${fmt(special.market.sales)} sale${special.market.sales === 1 ? "" : "s"}`);
+        }
+
+        return h(
+            "article.card.spc-card",
+            h(
+                "div.spc-head",
+                specialEmoji(special),
+                h("div.spc-title", h("h3", title), special.alias && special.name && special.alias !== special.name ? h("p.subtle", special.name) : null),
+                h("span.spc-id", `#${special.id}`),
+            ),
+            special.tradeable === false || special.priceAverage === "Untradable" ? h("span.spc-badge.is-warn", icon("lock", "icon-sm"), "Untradeable") : null,
+            rows.length ? h("dl.spc-rows", rows) : h("p.subtle", "No details yet."),
+            special.notes ? h("p.spc-notes", special.notes) : null,
+            canEdit ? h("button.btn.btn-sm.spc-edit", { type: "button", onclick: () => editSpecial(special) }, icon("sliders-horizontal", "icon-sm"), h("span", "Edit")) : null,
+        );
+    }
+
+    function renderSpecials() {
+        const { specials = [], canEdit, marketWindowDays, officialLoadedAt, officialError } = specialsData;
+        const search = h("input.input", { type: "search", placeholder: "Search by name, alias or ID", "aria-label": "Search specials", autocomplete: "off", spellcheck: false, value: specialsQuery });
+        const grid = h("div.spc-grid");
+
+        function paint() {
+            const q = specialsQuery.trim().toLowerCase();
+            const shown = specials.filter((s) => !q || String(s.id) === q.replace("#", "") || [s.name, s.alias].some((v) => v?.toLowerCase().includes(q)));
+            grid.replaceChildren(...(shown.length ? shown.map((s) => specialCard(s, { canEdit, windowDays: marketWindowDays })) : [h("p.subtle", "No special matches your search.")]));
+        }
+        search.addEventListener("input", () => {
+            specialsQuery = search.value;
+            paint();
+        });
+        paint();
+
+        body.replaceChildren(
+            h(
+                "div.stack",
+                h(
+                    "div.card.card-pad.spc-intro",
+                    h("p", "Every Ballsdex special with its nickname, common price and event details. Prices are in commons: the first number is the average, the second the highest. They're community estimates, so treat them as a guide."),
+                    canEdit && officialError ? h("p.hint", icon("info", "icon-sm"), ` Official data unavailable: ${officialError}`) : null,
+                    officialLoadedAt ? h("p.hint", `Names, dates and market sales from the Ballsdex API, updated ${timeAgo(officialLoadedAt)}.`) : null,
+                ),
+                search,
+                grid,
+            ),
+        );
+    }
+
+    const SPECIAL_FIELDS = [
+        ["alias", "Alias", "e.g. Pumpkin", 60],
+        ["emoji", "Emoji", "e.g. 🎃", 40],
+        ["priceAverage", "Common price: average", "e.g. 10", 40],
+        ["priceHighest", "Common price: highest", "e.g. 20", 40],
+        ["spawnRate", "Spawn rate", "e.g. 3%", 120],
+        ["duration", "Duration", "e.g. 14 days", 120],
+    ];
+
+    function editSpecial(special) {
+        const inputs = {};
+        const fields = SPECIAL_FIELDS.map(([key, label, placeholder, max]) => {
+            inputs[key] = h("input.input", { id: `spc-${key}`, type: "text", value: special[key] || "", placeholder, maxLength: max, autocomplete: "off" });
+            return h("div.field", h("label.label", { for: `spc-${key}` }, label), inputs[key]);
+        });
+        inputs.notes = h("textarea.textarea", { id: "spc-notes", maxLength: 500, placeholder: "Anything else worth knowing" });
+        inputs.notes.value = special.notes || "";
+
+        const saveBtn = h("button.btn.btn-primary", { type: "submit", form: "spc-form" }, icon("check"), h("span", "Save"));
+        const form = h(
+            "form.spc-form",
+            { id: "spc-form" },
+            h("p.hint", `${special.name || "Unnamed"} · #${special.id}. Leave a field empty to hide it. Numbers in prices are shown as commons.`),
+            h("div.spc-form-grid", fields),
+            h("div.field", h("label.label", { for: "spc-notes" }, "Notes"), inputs.notes),
+        );
+        const dialog = openDialog({ title: `Edit ${special.alias || special.name || `#${special.id}`}`, body: form, footer: h("div.row", h("button.btn", { type: "button", onclick: () => dialog.close() }, "Cancel"), saveBtn) });
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            saveBtn.disabled = true;
+            try {
+                const patch = Object.fromEntries(Object.entries(inputs).map(([key, input]) => [key, input.value.trim()]));
+                await api("specials", { method: "POST", body: { id: special.id, fields: patch } });
+                toast("Special saved.", "success");
+                dialog.close();
+                refresh({ quiet: true });
+            } catch (error) {
+                saveBtn.disabled = false;
+                if (!handleAuthError(error)) toast(error.message, "error");
+            }
+        });
+    }
+
     async function loadRaws(token) {
         stopTimers();
         skeleton();
@@ -629,10 +771,14 @@ export function createView() {
         el,
         show(params = []) {
             visible = true;
-            const next = params[0] === "raws" ? "raws" : "profile";
+            const next = ["raws", "specials"].includes(params[0]) ? params[0] : "profile";
             if (next !== section) stopTimers();
             section = next;
             paintTabs();
+            if (section === "specials") {
+                refresh({ quiet: Boolean(specialsData) });
+                return;
+            }
             if (!sessionReady()) {
                 skeleton();
                 loadSession();

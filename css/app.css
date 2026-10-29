@@ -1541,3 +1541,27 @@ a.server:hover > .icon { color: var(--accent-text); }
 .mod-log li:first-child { border-top: 0; }
 .mod-log time { color: var(--text-3); white-space: nowrap; }
 .mod-log span { overflow-wrap: anywhere; color: var(--text-2); }
+
+/* ---------- Ballsdex: Specials ---------- */
+.spc-intro p { margin: 0; }
+.spc-intro .hint { margin-top: var(--space-2); }
+.spc-grid { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
+.spc-card { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-4); }
+.spc-head { display: flex; align-items: center; gap: var(--space-3); }
+.spc-emoji { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--surface-3); font-size: 24px; line-height: 1; }
+.spc-emoji img { width: 28px; height: 28px; object-fit: contain; }
+.spc-emoji.is-empty { color: var(--text-3); }
+.spc-title { min-width: 0; flex: 1; }
+.spc-title h3 { margin: 0; font-size: var(--fs-md, 1.05rem); overflow-wrap: anywhere; }
+.spc-title p { margin: 2px 0 0; }
+.spc-id { flex: none; align-self: flex-start; font-size: var(--fs-sm); font-variant-numeric: tabular-nums; color: var(--text-3); }
+.spc-badge { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border-radius: 999px; font-size: var(--fs-sm); font-weight: 600; background: var(--surface-3); color: var(--text-2); }
+.spc-badge.is-warn { background: var(--warning-soft); color: var(--warning); }
+.spc-rows { display: grid; gap: var(--space-2); margin: 0; }
+.spc-row { display: grid; grid-template-columns: 130px 1fr; gap: var(--space-2); align-items: baseline; }
+.spc-row dt { display: inline-flex; align-items: center; gap: 6px; color: var(--text-3); font-size: var(--fs-sm); }
+.spc-row dd { margin: 0; overflow-wrap: anywhere; }
+.spc-notes { margin: 0; padding-top: var(--space-3); border-top: 1px solid var(--border); color: var(--text-2); font-size: var(--fs-sm); white-space: pre-line; }
+.spc-edit { align-self: flex-start; margin-top: auto; }
+.spc-form { display: grid; gap: var(--space-4); }
+.spc-form-grid { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }

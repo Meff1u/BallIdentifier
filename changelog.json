@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1793285715",
+            "type": "website",
+            "changes": [
+                "New Specials page in the Ballsdex tab: every Ballsdex special with its nickname, estimated common price, spawn rate, event length and dates, plus recent market sales. Open to everyone, no login needed"
+            ]
+        },
+        {
             "timestamp": "1793284863",
             "type": "bot",
             "changes": [
