@@ -7,6 +7,7 @@ import { h, icon, timeAgo } from "./core/dom.js";
 import { openDialog, toast } from "./core/ui.js";
 import { api, ApiError } from "./core/api.js";
 import { getUser, onAuthChange, login, sessionExpired } from "./core/auth.js";
+import { openChangelog } from "./changelog.js";
 
 const POLL_MS = 60 * 1000;
 // Adds BallIdentifier to the user's Discord account (user install): that's what lets the bot DM people
@@ -149,10 +150,17 @@ export function openNotifications() {
                 href: item.link || undefined,
                 target: external ? "_blank" : undefined,
                 rel: external ? "noopener" : undefined,
-                onclick: () => {
+                onclick: (event) => {
                     if (!item.read) {
                         item.read = true;
                         markRead({ ids: [item.id] });
+                    }
+                    // Changelog updates open the changelog right here instead of going to the Identify page
+                    if (/[?&]whatsnew=/.test(item.link || "")) {
+                        event.preventDefault();
+                        close();
+                        openChangelog(item.type === "update_dex" ? "dex" : "all");
+                        return;
                     }
                     if (item.link && !external) close();
                 },

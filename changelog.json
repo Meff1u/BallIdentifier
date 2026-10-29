@@ -1,6 +1,20 @@
 {
     "changes": [
         {
+            "timestamp": "1793295471",
+            "type": "website",
+            "changes": [
+                "What's new and update notifications now group changes made close together into one update, so you get fewer, fuller notifications"
+            ]
+        },
+        {
+            "timestamp": "1793294726",
+            "type": "website",
+            "changes": [
+                "Clicking an update notification now opens What's new right where you are, instead of taking you to Identify"
+            ]
+        },
+        {
             "timestamp": "1793294066",
             "type": "dex",
             "dex": "Ballsdex",

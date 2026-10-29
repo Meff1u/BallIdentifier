@@ -16,8 +16,31 @@ const FILTERS = [
     { id: "dex", label: "Dexes" },
 ];
 
+// Entries of the same kind (type + dex) less than this apart are shown as one update
+// (the bot merges its update notifications the same way)
+const MERGE_GAP_MS = 60 * 60 * 1000;
+
 let bell;
 let entries = null;
+
+/** list: newest first. Same type and dex, each less than MERGE_GAP_MS after the previous one -> one entry. */
+function mergeEntries(list) {
+    const merged = [];
+    const open = new Map(); // "type|dex" -> group
+    for (const entry of list) {
+        const key = `${entry.type}|${entry.dex || ""}`;
+        const group = open.get(key);
+        if (group && group.oldest - entry.time <= MERGE_GAP_MS) {
+            group.changes.push(...entry.changes.filter((change) => !group.changes.includes(change)));
+            group.oldest = entry.time;
+            continue;
+        }
+        const fresh = { ...entry, changes: [...(entry.changes || [])], oldest: entry.time };
+        open.set(key, fresh);
+        merged.push(fresh);
+    }
+    return merged;
+}
 let dexNames = null;
 
 async function load() {
@@ -25,8 +48,9 @@ async function load() {
     const data = await getChangelog();
     entries = (data.changes || [])
         .map((entry) => ({ ...entry, time: Number(entry.timestamp) * 1000 }))
-        .filter((entry) => Number.isFinite(entry.time))
+        .filter((entry) => Number.isFinite(entry.time) && Array.isArray(entry.changes))
         .sort((a, b) => b.time - a.time);
+    entries = mergeEntries(entries);
     return entries;
 }
 

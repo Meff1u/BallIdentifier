@@ -480,14 +480,16 @@ export function createView() {
         });
         const preview = h("img.dex-art-preview", { alt: "", src: isNew ? undefined : compressedArtUrl(dexName, originalName), hidden: isNew });
         const fileInput = h("input", { id: "dex-art", type: "file", accept: "image/*", class: "dex-file" });
-        // Ballsdex keeps replaced arts in Previous arts, optionally with an alt text
+        // Ballsdex keeps replaced arts in Previous arts: "used until" (this month by default) and an optional alt text
+        const thisMonth = new Date().toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+        const untilInput = h("input.input", { id: "dex-until", type: "text", maxLength: 60, autocomplete: "off", value: thisMonth });
         const altInput = h("input.input", { id: "dex-alt", type: "text", maxLength: 200, autocomplete: "off", placeholder: "e.g. Special art for the birthday event" });
         const altField = h(
-            "div.field",
+            "div.dex-form-grid",
             { hidden: true },
-            h("label.label", { for: "dex-alt" }, "Alt text for the old art (optional)"),
-            altInput,
-            h("span.hint", "The current art moves to Previous arts with this note."),
+            h("div.field", h("label.label", { for: "dex-until" }, "Old art used until"), untilInput),
+            h("div.field", h("label.label", { for: "dex-alt" }, "Alt text for the old art (optional)"), altInput),
+            h("span.hint", { style: { "grid-column": "1 / -1" } }, "The current art moves to Previous arts with these details."),
         );
         fileInput.addEventListener("change", () => {
             const file = fileInput.files[0];
@@ -553,7 +555,7 @@ export function createView() {
             busy(true, "Saving…");
             try {
                 const image = file ? await readBase64(file) : null;
-                const result = await api("dex-admin", { method: "POST", body: { action: "save", dex: dexName, originalName, name, details, image, shift, previousAlt: image ? altInput.value.trim() : "" } });
+                const result = await api("dex-admin", { method: "POST", body: { action: "save", dex: dexName, originalName, name, details, image, shift, previousAlt: image ? altInput.value.trim() : "", previousUntil: image ? untilInput.value.trim() || thisMonth : "" } });
                 saved = true;
                 if (loadedDex === dexName) applySaved(originalName, result, pickedUrl);
                 toast(`${result.name} saved. The site shows it after the next deploy (about a minute).`, "success", 6000);
