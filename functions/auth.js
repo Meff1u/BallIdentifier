@@ -23,7 +23,7 @@ const { json, redirect, isAllowedOrigin } = require("../lib/http");
 
 const DISCORD_CLIENT_ID = "510775326310268930";
 const SCOPES = "identify guilds";
-const RETURN_ROUTES = /^#\/(identify|arts|trainer|bot|collectors|ballsdex|moderation)(\/[\w-]{0,40}){0,2}$/;
+const RETURN_ROUTES = /^#\/(identify|arts|trainer|bot|collectors|users|u|ballsdex|moderation)(\/[\w-]{0,40}){0,2}$/;
 
 function login(event) {
     const requested = event.queryStringParameters?.returnTo || "";

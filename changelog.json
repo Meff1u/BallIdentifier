@@ -1,6 +1,17 @@
 {
     "changes": [
         {
+            "timestamp": "1793313574",
+            "type": "website",
+            "changes": [
+                "Public profiles: open Your profile in the account menu to add a bio, pronouns, an accent color, your favorite dex and a showcase of up to 6 balls. Your profile stays private until you make it public, and your Ballsdex stats only show if you turn them on",
+                "Profiles show which balls you collect in every dex, and collector names on the Collectors page now open their profile",
+                "New Users tab: find other users with a public profile",
+                "Shared profile links get their own preview card with avatar, bio, showcase and stats",
+                "On phones and tablets the bottom bar is gone: the menu button in the top left opens every tab"
+            ]
+        },
+        {
             "timestamp": "1793308226",
             "type": "website",
             "changes": [

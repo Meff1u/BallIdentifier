@@ -19,6 +19,8 @@ const ROUTES = {
     trainer: { title: "Catch Trainer", load: () => import("./views/trainer.js") },
     bot: { title: "Bot", load: () => import("./views/bot.js") },
     collectors: { title: "Collectors", load: () => import("./views/collectors.js") },
+    users: { title: "Users", load: () => import("./views/users.js") },
+    u: { title: "Profile", load: () => import("./views/profile.js") },
     moderation: { title: "Moderation", load: () => import("./views/moderation.js") },
     ballsdex: { title: "Ballsdex", load: () => import("./views/ballsdex.js") },
 };
@@ -93,6 +95,7 @@ async function route() {
     const token = ++routeToken;
     const { name, params, query } = parseRoute();
     closeMenu();
+    setDrawer(false);
 
     handleLoginResult(query);
     if (query.get("whatsnew")) {
@@ -100,8 +103,9 @@ async function route() {
         openChangelog();
     }
 
+    const navName = name === "u" ? "users" : name;
     $$("[data-nav]").forEach((link) => {
-        if (link.dataset.nav === name) link.setAttribute("aria-current", "page");
+        if (link.dataset.nav === navName) link.setAttribute("aria-current", "page");
         else link.removeAttribute("aria-current");
     });
     titleEl.textContent = ROUTES[name].title;
@@ -223,6 +227,7 @@ function renderAccount(user) {
                     h("div", h("strong", user.displayName), h("small", `@${user.username}`)),
                 ),
                 h("div.menu-sep"),
+                menuItem({ label: "Your profile", iconName: "user-round", href: `#/u/${user.id}` }),
                 menuItem({ label: "Ballsdex account", iconName: "layers", href: "#/ballsdex" }),
                 menuItem({ label: "Notifier settings", iconName: "bell-ring", href: "#/bot/notifier" }),
                 user.id === OWNER_ID ? menuItem({ label: "Moderation", iconName: "shield-check", href: "#/moderation" }) : null,
@@ -241,6 +246,31 @@ function renderAccount(user) {
     );
     accountSlot.replaceChildren(trigger);
 }
+
+/* ---------- Navigation drawer (phones and tablets) ---------- */
+
+const navToggle = $("#nav-toggle");
+const drawerQuery = window.matchMedia("(max-width: 1023.98px)");
+
+function setDrawer(open) {
+    if (!navToggle) return;
+    const wasOpen = document.documentElement.classList.contains("nav-open");
+    document.documentElement.classList.toggle("nav-open", open);
+    navToggle.setAttribute("aria-expanded", String(open));
+    // Closed drawer: links out of the tab order on small screens
+    $("#sidebar")?.toggleAttribute("inert", drawerQuery.matches && !open);
+    if (open) $("#sidebar .nav-link[aria-current='page']")?.focus({ preventScroll: true });
+    else if (wasOpen && document.activeElement?.closest?.("#sidebar")) navToggle.focus({ preventScroll: true });
+}
+
+navToggle?.addEventListener("click", () => setDrawer(!document.documentElement.classList.contains("nav-open")));
+$("#nav-close")?.addEventListener("click", () => setDrawer(false));
+$("#nav-backdrop")?.addEventListener("click", () => setDrawer(false));
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && document.documentElement.classList.contains("nav-open")) setDrawer(false);
+});
+drawerQuery.addEventListener("change", () => setDrawer(false));
+setDrawer(false);
 
 /* ---------- Boot ---------- */
 

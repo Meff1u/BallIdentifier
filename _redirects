@@ -9,6 +9,10 @@
 /bot/*    /index.html    200
 /collectors    /index.html    200
 /collectors/*    /index.html    200
+/users    /index.html    200
+/users/*    /index.html    200
+/u    /index.html    200
+/u/*    /index.html    200
 /ballsdex    /index.html    200
 /ballsdex/*    /index.html    200
 /moderation    /index.html    200

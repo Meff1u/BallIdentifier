@@ -4,6 +4,7 @@
  * GET /.netlify/functions/og?type=ball&dex=Ballsdex&name=Poland   spawn art + rarity, wave, id, artist, collectors, values
  * GET /.netlify/functions/og?type=special&id=59                   special emoji + alias, price, spawn rate, dates
  * GET /.netlify/functions/og?type=page&page=<name>&v=<day>        identify, arts, trainer, bot, collectors, specials
+ * GET /.netlify/functions/og?type=profile&id=<discord id>&v=<hash>  public profile: avatar, bio, showcase, stats
  *
  * Used as og:image by netlify/edge-functions/page-meta.js. Layout with satori (text becomes vector shapes,
  * so no system fonts are needed), PNG with resvg (kept off sharp so the function stays small). Cached by
@@ -560,6 +561,76 @@ async function specialsCard() {
     });
 }
 
+/* ----- profile card ----- */
+
+const PROFILE_ACCENTS = { violet: "#9B3ABF", blue: "#3B82F6", cyan: "#06B6D4", green: "#22C55E", yellow: "#EAB308", orange: "#F97316", red: "#EF4444", pink: "#EC4899" };
+
+/** Public profile: avatar, name, bio, showcase strip and the numbers the user chose to show. */
+async function profileCard(idParam) {
+    if (!/^\d{17,20}$/.test(String(idParam || ""))) return null;
+    const result = await fromBot(() => botApiFetch(`/api/profiles/${idParam}`));
+    const p = result?.profile;
+    if (!p) return null;
+    const accent = PROFILE_ACCENTS[p.accent] || PROFILE_ACCENTS.violet;
+    const avatarUrl = String(p.avatarUrl || "").replace(/([?&])size=\d+/, "$1size=256");
+    const [avatar, ...showcase] = await Promise.all([
+        fetchBuffer(avatarUrl, 4000).then(picture).catch(() => null),
+        ...p.showcase.slice(0, 6).map((ball) => artImage(ball.dex, ball.name, 160).catch(() => null)),
+    ]);
+
+    const name = p.name || p.username || "BallIdentifier user";
+    const bio = (p.bio || "").replace(/\s+/g, " ").trim();
+    const collecting = (p.collections || []).reduce((sum, group) => sum + group.balls.length, 0);
+    const b = p.ballsdex && !p.ballsdex.unavailable ? p.ballsdex : null;
+
+    const visual = el(
+        "div",
+        { flexDirection: "column", alignItems: "center", gap: 26 },
+        el(
+            "div",
+            { width: 300, height: 300, borderRadius: 999, padding: 10, background: accent, alignItems: "center", justifyContent: "center" },
+            avatar
+                ? img(avatar, 280, 280, { borderRadius: 999, objectFit: "cover", border: `6px solid ${C.surface}` })
+                : el("div", { width: 280, height: 280, borderRadius: 999, background: C.surface2, border: `6px solid ${C.surface}` }),
+        ),
+        p.favoriteDex
+            ? el(
+                  "div",
+                  { alignItems: "center", gap: 10, padding: "8px 18px", borderRadius: 999, background: C.surface2, color: C.text2, fontSize: 22, fontWeight: 600 },
+                  dexIcon(p.favoriteDex) ? img(dexIcon(p.favoriteDex), 30, 30, { borderRadius: 8 }) : null,
+                  `Plays ${p.favoriteDex}`,
+              )
+            : null,
+    );
+
+    const strip = showcase.filter(Boolean).length
+        ? el(
+              "div",
+              { gap: 10 },
+              showcase
+                  .filter(Boolean)
+                  .map((art) => el("div", { width: 76, height: 76, borderRadius: 16, background: C.surface2, border: `2px solid ${C.border}`, alignItems: "center", justifyContent: "center" }, img(art, 64, 64))),
+          )
+        : null;
+
+    return frame({
+        visual,
+        kicker: el("div", { alignItems: "center", gap: 12, color: C.text2, fontSize: 26, fontWeight: 600 }, el("div", { width: 14, height: 14, borderRadius: 999, background: accent }), p.username ? `@${p.username}` : "Profile", p.pronouns ? text(`· ${p.pronouns}`, { color: C.text3, fontWeight: 400 }) : null),
+        title: name,
+        subtitle: bio ? (bio.length > 90 ? `${bio.slice(0, 88).trimEnd()}…` : bio) : null,
+        chips: strip ? [strip] : [],
+        rows: [
+            p.collections !== null ? row("Collecting", `${fmt(collecting)} ${collecting === 1 ? "ball" : "balls"}`) : null,
+            b?.totalBalls !== null && b?.totalBalls !== undefined ? row("Ballsdex balls", fmt(b.totalBalls)) : null,
+            b?.uniqueBalls ? row("Unique", b.dexSize ? `${fmt(b.uniqueBalls)} / ${fmt(b.dexSize)}` : fmt(b.uniqueBalls)) : null,
+            b?.specialCount ? row("Specials", fmt(b.specialCount)) : null,
+            p.identifyAmount ? row("Spawns identified", fmt(p.identifyAmount)) : null,
+        ]
+            .filter(Boolean)
+            .slice(0, 4),
+    });
+}
+
 const PAGE_CARDS = { identify: identifyCard, arts: artsCard, trainer: trainerCard, bot: botCard, collectors: collectorsCard, specials: specialsCard };
 
 async function render(tree) {
@@ -573,6 +644,7 @@ exports.handler = async (event) => {
         let tree = null;
         if (query.type === "ball") tree = await ballCard(query.dex, query.name);
         else if (query.type === "special") tree = await specialCard(query.id);
+        else if (query.type === "profile") tree = await profileCard(query.id);
         else if (query.type === "page" && Object.hasOwn(PAGE_CARDS, query.page)) tree = await PAGE_CARDS[query.page](query.v || new Date().toISOString().slice(0, 10));
         if (!tree) return { statusCode: 302, headers: { Location: "/assets/brand/og-image.png", "Cache-Control": "public, max-age=300" }, body: "" };
 

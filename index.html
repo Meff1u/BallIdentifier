@@ -28,11 +28,14 @@
         <a class="skip-link" href="#main">Skip to content</a>
 
         <div class="app">
-            <aside class="sidebar" aria-label="Main">
-                <a class="brand" href="/identify" aria-label="BallIdentifier home">
-                    <img src="assets/brand/logo-mark.svg" alt="" width="30" height="30" />
-                    <b>Ball<span>Identifier</span></b>
-                </a>
+            <aside class="sidebar" id="sidebar" aria-label="Main">
+                <div class="sidebar-head">
+                    <a class="brand" href="/identify" aria-label="BallIdentifier home">
+                        <img src="assets/brand/logo-mark.svg" alt="" width="30" height="30" />
+                        <b>Ball<span>Identifier</span></b>
+                    </a>
+                    <button class="icon-btn nav-close" id="nav-close" type="button" aria-label="Close menu"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-x" /></svg></button>
+                </div>
                 <nav aria-label="Main">
                     <ul class="nav-list">
                         <li><a class="nav-link" data-nav="identify" href="/identify" title="Identify"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-scan-search" /></svg><span class="nav-label">Identify</span></a></li>
@@ -40,6 +43,7 @@
                         <li><a class="nav-link" data-nav="trainer" href="/trainer" title="Catch Trainer"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-gamepad-2" /></svg><span class="nav-label">Catch Trainer</span></a></li>
                         <li><a class="nav-link" data-nav="bot" href="/bot" title="Bot"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-bot" /></svg><span class="nav-label">Bot</span></a></li>
                         <li><a class="nav-link" data-nav="collectors" href="/collectors" title="Collectors"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-crown" /></svg><span class="nav-label">Collectors</span></a></li>
+                        <li><a class="nav-link" data-nav="users" href="/users" title="Users"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-users" /></svg><span class="nav-label">Users</span></a></li>
                         <li><a class="nav-link" data-nav="ballsdex" href="/ballsdex" title="Ballsdex"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-layers" /></svg><span class="nav-label">Ballsdex</span></a></li>
                     </ul>
                 </nav>
@@ -55,6 +59,7 @@
             </aside>
 
             <header class="topbar">
+                <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-controls="sidebar" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-menu" /></svg></button>
                 <a class="brand" href="/identify" aria-label="BallIdentifier home">
                     <img src="assets/brand/logo-mark.svg" alt="" width="30" height="30" />
                     <b>Ball<span>Identifier</span></b>
@@ -91,14 +96,7 @@
             </main>
         </div>
 
-        <nav class="bottomnav" aria-label="Main">
-            <a data-nav="identify" href="/identify"><span class="nav-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-scan-search" /></svg></span>Identify</a>
-            <a data-nav="arts" href="/arts"><span class="nav-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-images" /></svg></span>Arts</a>
-            <a data-nav="trainer" href="/trainer"><span class="nav-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-gamepad-2" /></svg></span>Trainer</a>
-            <a data-nav="bot" href="/bot"><span class="nav-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-bot" /></svg></span>Bot</a>
-            <a data-nav="collectors" href="/collectors"><span class="nav-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-crown" /></svg></span>Collectors</a>
-            <a data-nav="ballsdex" href="/ballsdex"><span class="nav-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-layers" /></svg></span>Ballsdex</a>
-        </nav>
+        <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
 
         <div id="toasts" class="toasts" aria-live="polite"></div>
 

@@ -182,7 +182,12 @@ export function createView() {
                           h(
                               "li",
                               img(c.avatarUrl, "", "col-avatar col-avatar-lg", { width: 40, height: 40 }),
-                              h("div.col-person", h("b", displayName(c)), h("span.subtle", c.username ? `@${c.username}` : c.id)),
+                              h(
+                                  "div.col-person",
+                                  // Users with a public profile: their name opens it
+                                  c.hasProfile ? h("a", { href: `/u/${c.id}`, onclick: () => dialogRef?.close() }, h("b", displayName(c))) : h("b", displayName(c)),
+                                  h("span.subtle", c.username ? `@${c.username}` : c.id),
+                              ),
                               h(
                                   "div.col-tags",
                                   c.source === "verified" ? h("span.badge.badge-success", icon("shield-check", "icon-sm"), "Verified") : h("span.badge", { title: c.addedAt ? `Added ${timeAgo(c.addedAt)}` : "" }, "Self-added"),
