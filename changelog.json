@@ -1,6 +1,16 @@
 {
     "changes": [
         {
+            "timestamp": "1793296057",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "New spawn art for Cuba",
+                "Cuba: artist Cubic → tyler._j",
+                "The old art of Cuba is now in Previous arts"
+            ]
+        },
+        {
             "timestamp": "1793295471",
             "type": "website",
             "changes": [
