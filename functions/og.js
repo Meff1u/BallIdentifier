@@ -5,14 +5,14 @@
  * GET /.netlify/functions/og?type=special&id=59                   special emoji + alias, price, spawn rate, dates
  *
  * Used as og:image by netlify/edge-functions/page-meta.js. Layout with satori (text becomes vector shapes,
- * so no system fonts are needed), PNG with sharp. Cached by Netlify's CDN for a day; the edge function adds
+ * so no system fonts are needed), PNG with resvg (kept off sharp so the function stays small). Cached by Netlify's CDN for a day; the edge function adds
  * a version parameter that changes with the data, so edits show up in new previews right away.
  */
 
 const fs = require("fs");
 const path = require("path");
-const sharp = require("sharp");
 const satori = require("satori").default;
+const { Resvg } = require("@resvg/resvg-js");
 const { botApiFetch } = require("../lib/bot-api");
 
 const RAW = "https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets";
@@ -39,10 +39,10 @@ async function fetchBuffer(url) {
     return Buffer.from(await response.arrayBuffer());
 }
 
-/** Picture as a PNG data URI that fits in a box (spawn arts can be big). */
-async function picture(buffer, size) {
-    const png = await sharp(buffer).resize(size, size, { fit: "inside", withoutEnlargement: false }).png().toBuffer();
-    return dataUri(png, "image/png");
+/** Picture as a data URI (satori scales it into its box). */
+function picture(buffer) {
+    const type = buffer.subarray(0, 4).toString("hex") === "89504e47" ? "image/png" : buffer.subarray(8, 12).toString() === "WEBP" ? "image/webp" : "image/jpeg";
+    return dataUri(buffer, type);
 }
 
 /** Emoji -> Twemoji SVG (satori draws no color emoji by itself). */
@@ -134,8 +134,8 @@ async function ballCard(dexParam, nameParam) {
     const ball = data[name];
 
     const [art, icon] = await Promise.all([
-        fetchBuffer(`${RAW}/dexes/${encodeURIComponent(dex)}/${encodeURIComponent(name)}.png`).then((buffer) => picture(buffer, 440)),
-        picture(readAsset(`icons/${dex}.png`), 64).catch(() => null),
+        fetchBuffer(`${RAW}/dexes/${encodeURIComponent(dex)}/${encodeURIComponent(name)}.png`).then(picture),
+        Promise.resolve().then(() => picture(readAsset(`icons/${dex}.png`))).catch(() => null),
     ]);
     const chips = [
         ball.rarity !== undefined ? chip(`T${ball.rarity}`) : null,
@@ -171,7 +171,7 @@ async function specialCard(idParam) {
     const custom = /^<a?:\w+:(\d+)>$/.exec(special.officialEmoji || "");
     try {
         if (special.emoji) visual = img(await emojiImage(special.emoji), 300, 300);
-        else if (custom) visual = img(await picture(await fetchBuffer(`https://cdn.discordapp.com/emojis/${custom[1]}.png?size=256`), 300), 300, 300);
+        else if (custom) visual = img(picture(await fetchBuffer(`https://cdn.discordapp.com/emojis/${custom[1]}.png?size=256`)), 300, 300);
         else if (special.officialEmoji) visual = img(await emojiImage(special.officialEmoji), 300, 300);
     } catch {
         visual = null;
@@ -210,7 +210,7 @@ async function specialCard(idParam) {
 
 async function render(tree) {
     const svg = await satori(tree, { width: W, height: H, fonts: getFonts() });
-    return sharp(Buffer.from(svg)).png({ compressionLevel: 9 }).toBuffer();
+    return new Resvg(svg, { fitTo: { mode: "original" } }).render().asPng();
 }
 
 exports.handler = async (event) => {
