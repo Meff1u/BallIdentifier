@@ -1,6 +1,16 @@
 {
     "changes": [
         {
+            "timestamp": "1793296267",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "New spawn art for Kingdom of Cao Wei",
+                "Kingdom of Cao Wei: artist hecker4223 → tehcoiled2763",
+                "The old art of Kingdom of Cao Wei is now in Previous arts"
+            ]
+        },
+        {
             "timestamp": "1793296146",
             "type": "dex",
             "dex": "Ballsdex",
