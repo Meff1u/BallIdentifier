@@ -16,4 +16,9 @@ assets/cr.js
 .env
 .env.local
 
+# Design
+DESIGN.md
+PRODUCT.md
+.impeccable
+
 Chemistrydex.json

@@ -1,139 +1,40 @@
-const { botApiFetch } = require('../lib/bot-api');
+/**
+ * Notifier configuration of one server (admins only).
+ * GET /.netlify/functions/get-guild-config?guildId=<id>  (session cookie)
+ */
 
-// Get guild configuration from bot API
+const { botApiFetch } = require("../lib/bot-api");
+const { json, requireSession, discordApi, isGuildAdmin, discordErrorResponse, SNOWFLAKE } = require("../lib/http");
+
 exports.handler = async (event) => {
+    if (event.httpMethod !== "GET") return json(405, { error: "Method not allowed" });
+
+    const guildId = event.queryStringParameters?.guildId || "";
+    if (!SNOWFLAKE.test(guildId)) return json(400, { error: "Invalid guildId" });
+
+    const auth = requireSession(event);
+    if (auth.response) return auth.response;
+
     try {
-        const { guildId } = event.queryStringParameters || {};
-        
-        if (!guildId) {
-            return {
-                statusCode: 400,
-                body: JSON.stringify({ error: 'guildId parameter is required' })
-            };
-        }
-        
-        if (!/^\d{17,20}$/.test(guildId)) {
-            return {
-                statusCode: 400,
-                body: JSON.stringify({ error: 'Invalid guildId' })
-            };
-        }
-        
-        // Extract Discord access token from Authorization header
-        const authHeader = event.headers.authorization || event.headers.Authorization;
-        if (!authHeader || !authHeader.startsWith('Bearer ')) {
-            return {
-                statusCode: 401,
-                body: JSON.stringify({ error: 'Missing or invalid authorization header' })
-            };
-        }
-        
-        const discordToken = authHeader.substring(7);
-        
-        // Verify user has access to this guild via Discord API
-        try {
-            const userGuildsResponse = await fetch('https://discord.com/api/v10/users/@me/guilds', {
-                headers: {
-                    'Authorization': `Bearer ${discordToken}`
-                }
-            });
-            
-            if (!userGuildsResponse.ok) {
-                return {
-                    statusCode: 401,
-                    body: JSON.stringify({ error: 'Invalid Discord token' })
-                };
-            }
-            
-            const userGuilds = await userGuildsResponse.json();
-            const hasAccessToGuild = userGuilds.some(g => g.id === guildId);
-            
-            if (!hasAccessToGuild) {
-                return {
-                    statusCode: 403,
-                    body: JSON.stringify({ error: 'You do not have access to this guild' })
-                };
-            }
-            
-            // Check if user has admin permissions on this guild
-            const userGuild = userGuilds.find(g => g.id === guildId);
-            const permissions = BigInt(userGuild.permissions);
-            const ADMINISTRATOR = BigInt(8);
-            const hasAdmin = (permissions & ADMINISTRATOR) === ADMINISTRATOR;
-            
-            if (!hasAdmin) {
-                return {
-                    statusCode: 403,
-                    body: JSON.stringify({ error: 'You do not have administrator permissions on this guild' })
-                };
-            }
-        } catch (error) {
-            console.error('Error verifying Discord token:', error);
-            return {
-                statusCode: 401,
-                body: JSON.stringify({ error: 'Failed to verify Discord token' })
-            };
-        }
-        
-        // Fetch guild config from bot API (signed request)
+        const userGuilds = await discordApi("/users/@me/guilds", auth.session.token);
+        if (!userGuilds.ok) return discordErrorResponse(userGuilds);
+
+        const guild = (userGuilds.data || []).find((g) => g.id === guildId);
+        if (!guild) return json(403, { error: "You are not a member of this server" });
+        if (!isGuildAdmin(guild)) return json(403, { error: "You need Administrator permission on this server" });
+
         const response = await botApiFetch(`/api/guilds/${guildId}/config`);
-        
-        // Handle rate limit errors
-        if (response.status === 429) {
-            const retryAfter = response.headers.get('Retry-After');
-            const errorData = await response.json().catch(() => ({}));
-            
-            const headers = { 'Content-Type': 'application/json' };
-            if (retryAfter) headers['Retry-After'] = retryAfter;
-            
-            return {
-                statusCode: 429,
-                headers: headers,
-                body: JSON.stringify({
-                    error: errorData.error || 'Too many requests',
-                    retryAfter: retryAfter
-                })
-            };
-        }
-        
+        if (response.status === 404) return json(404, { error: "BallIdentifier is not on this server yet", code: "BOT_MISSING" });
+        if (response.status === 429) return json(429, { error: "Too many requests. Try again in a moment." });
         if (!response.ok) {
             const errorData = await response.json().catch(() => ({}));
             throw new Error(errorData.error || `Bot API returned ${response.status}`);
         }
-        
+
         const data = await response.json();
-        console.log('Bot API Response:', JSON.stringify(data, null, 2));
-        
-        // Extract and pass through rate limit headers
-        const headers = { 'Content-Type': 'application/json' };
-        const rateLimitLimit = response.headers.get('X-RateLimit-Limit');
-        const rateLimitRemaining = response.headers.get('X-RateLimit-Remaining');
-        const rateLimitReset = response.headers.get('X-RateLimit-Reset');
-        
-        if (rateLimitLimit) headers['X-RateLimit-Limit'] = rateLimitLimit;
-        if (rateLimitRemaining) headers['X-RateLimit-Remaining'] = rateLimitRemaining;
-        if (rateLimitReset) headers['X-RateLimit-Reset'] = rateLimitReset;
-        
-        return {
-            statusCode: 200,
-            headers: headers,
-            body: JSON.stringify({
-                success: true,
-                ...data,
-                timestamp: new Date().toISOString()
-            })
-        };
-        
+        return json(200, { success: true, ...data });
     } catch (error) {
-        console.error('Error getting guild config:', error);
-        return {
-            statusCode: 500,
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                success: false,
-                error: error.message,
-                timestamp: new Date().toISOString()
-            })
-        };
+        console.error("Error getting guild config:", error);
+        return json(502, { error: "The bot is not responding. Try again in a moment." });
     }
 };

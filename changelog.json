@@ -1,6 +1,17 @@
 {
     "changes": [
         {
+            "timestamp": "1793238510",
+            "changes": [
+                "Completely redesigned website: new mobile-first layout and three themes (light, dark and synthwave)",
+                "Log in with Discord from any page",
+                "Notifier settings moved from the old dashboard to the Bot tab, with a live message preview",
+                "New Ballsdex tab: link your Ballsdex account, sync it and see your collection stats (same as /ballsdex in the bot)",
+                "Changelog moved to the What's new panel (bell icon), with a dot when there's something new"
+            ],
+            "type": "website"
+        },
+        {
             "timestamp": "1791296816",
             "changes": [
                 "Updated to new spawn arts in Ballsdex (Bahrain, Bhutan, Brazil, Congo Free State, Ecuador, Faroe Islands, Kingdom of Saxony, Liberia, Nanda Empire, Republican Spain, Russian Soviet Federative Socialist Republic, Union of South Africa, Yemen)"
