@@ -1,6 +1,15 @@
 {
     "changes": [
         {
+            "timestamp": "1793294798",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "New spawn art: Novgorod (T70)",
+                "282 balls rarer than T70 moved one rarity down"
+            ]
+        },
+        {
             "timestamp": "1793294066",
             "type": "dex",
             "dex": "Ballsdex",
