@@ -1516,3 +1516,28 @@ a.server:hover > .icon { color: var(--accent-text); }
 .bd-prev { display: grid; gap: var(--space-3); margin-top: var(--space-5); padding-top: var(--space-4); border-top: 1px solid var(--border); }
 .nf-dm-help { margin: var(--space-3) 0; }
 .nf-dm-help > div { display: grid; gap: var(--space-2); justify-items: start; }
+
+/* Moderation (owner) */
+.mod-body { display: grid; gap: var(--space-4); }
+.mod-grid { display: grid; gap: var(--space-4); }
+@media (min-width: 900px) { .mod-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; } }
+.mod-card { display: grid; gap: var(--space-3); align-content: start; }
+.mod-card h3 { font-size: var(--fs-sm); color: var(--text-2); }
+.mod-state { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); color: var(--text-2); }
+.mod-person { display: inline-flex; align-items: center; gap: var(--space-2); min-width: 0; }
+.mod-person > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mod-person .col-avatar { border-width: 0; }
+.mod-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+.mod-list li { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
+.mod-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.mod-kv dd { font-size: var(--fs-md); }
+.mod-ok { color: var(--success); }
+.mod-bad { color: var(--danger); }
+.mod-tabs { display: flex; flex-wrap: wrap; width: 100%; }
+.mod-tabs button { flex: 1 1 auto; justify-content: center; }
+.mod-count { min-width: 18px; height: 18px; padding: 0 5px; border-radius: 99px; background: var(--surface-3); font-size: 11px; font-weight: 700; display: inline-grid; place-items: center; }
+.mod-log { list-style: none; margin: 0; padding: 0; display: grid; max-height: 420px; overflow-y: auto; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: var(--fs-xs); }
+.mod-log li { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: var(--space-3); padding: 6px 0; border-top: 1px solid var(--border); }
+.mod-log li:first-child { border-top: 0; }
+.mod-log time { color: var(--text-3); white-space: nowrap; }
+.mod-log span { overflow-wrap: anywhere; color: var(--text-2); }

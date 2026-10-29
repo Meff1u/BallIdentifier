@@ -10,12 +10,16 @@ import { initChangelog, openChangelog } from "./changelog.js";
 import { initNotifications } from "./notifications.js";
 import { autoEnhanceSelects } from "./core/select.js";
 
+// The owner sees "Moderation" in the profile menu (the page and the API check it again)
+const OWNER_ID = "334411435633541121";
+
 const ROUTES = {
     identify: { title: "Identify", load: () => import("./views/identify.js") },
     arts: { title: "Spawn Arts", load: () => import("./views/arts.js") },
     trainer: { title: "Catch Trainer", load: () => import("./views/trainer.js") },
     bot: { title: "Bot", load: () => import("./views/bot.js") },
     collectors: { title: "Collectors", load: () => import("./views/collectors.js") },
+    moderation: { title: "Moderation", load: () => import("./views/moderation.js") },
     ballsdex: { title: "Ballsdex", load: () => import("./views/ballsdex.js") },
 };
 
@@ -169,6 +173,7 @@ function renderAccount(user) {
                 h("div.menu-sep"),
                 menuItem({ label: "Ballsdex account", iconName: "layers", href: "#/ballsdex" }),
                 menuItem({ label: "Notifier settings", iconName: "bell-ring", href: "#/bot/notifier" }),
+                user.id === OWNER_ID ? menuItem({ label: "Moderation", iconName: "shield-check", href: "#/moderation" }) : null,
                 h("div.menu-sep"),
                 menuItem({
                     label: "Log out",
