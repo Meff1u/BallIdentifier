@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1793369668",
+            "type": "bot",
+            "changes": [
+                "Catch stats now work with Ballsdex only"
+            ]
+        },
+        {
             "timestamp": "1793368847",
             "type": "bot",
             "changes": [

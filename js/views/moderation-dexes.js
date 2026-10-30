@@ -11,6 +11,7 @@ import { dexIcon } from "../core/data.js";
 
 const DEPLOY_NOTE = "The bot uses it right away; the website after its next deploy (about 2 minutes).";
 const MAX_ICON_BYTES = 2 * 1024 * 1024;
+const CATCH_STATS_BOTS = ["999736048596816014"]; // Catch stats work with Ballsdex only (bot: utils/catch-phrases.js)
 
 const lines = (text) =>
     String(text || "")
@@ -126,16 +127,21 @@ export function createDexesCard({ handleError }) {
         const ignore = h("textarea.textarea", { rows: 3, placeholder: "One per line", value: (dex.catchIgnore ?? ["Wrong name", "already been caught", "not the right"]).join("\n") });
         const waves = checkbox("Waves", "Entries have a wave (shown and sortable on Spawn Arts).", Boolean(dex.waves));
         const incomplete = checkbox("Trainer abbreviations are incomplete", "The trainer warns that short names may not be accepted.", Boolean(dex.incomplete));
+        const catchStats = CATCH_STATS_BOTS.includes(dex.botId);
         const answer = await ask({
             title: `${dex.name} settings`,
             body: [
-                field("Catch phrases", phrases, "Catch stats count a message of this dex bot as a catch when it contains any of these."),
-                field("Ignore when it contains", ignore, "For answers like “wrong name”."),
+                catchStats ? field("Catch phrases", phrases, "Catch stats count a message of this dex bot as a catch when it contains any of these.") : null,
+                catchStats ? field("Ignore when it contains", ignore, "For answers like “wrong name”.") : null,
                 waves.el,
                 incomplete.el,
-            ],
+            ].filter(Boolean),
             confirmLabel: "Save",
-            read: () => ({ catchPhrases: lines(phrases.value), catchIgnore: lines(ignore.value), waves: waves.input.checked, incomplete: incomplete.input.checked }),
+            read: () => ({
+                ...(catchStats ? { catchPhrases: lines(phrases.value), catchIgnore: lines(ignore.value) } : {}),
+                waves: waves.input.checked,
+                incomplete: incomplete.input.checked,
+            }),
         });
         if (!answer) return;
         await run({ action: "dex-update", name: dex.name, ...answer }, `${dex.name} saved. ${DEPLOY_NOTE}`);
@@ -184,7 +190,6 @@ export function createDexesCard({ handleError }) {
                 field("Icon", iconInput, "Square image, made 128×128."),
                 waves.el,
                 enabled.el,
-                h("p.subtle", "Catch phrases start from the Ballsdex ones; change them in its settings after adding."),
             ],
             confirmLabel: "Add dex",
             canConfirm: valid,

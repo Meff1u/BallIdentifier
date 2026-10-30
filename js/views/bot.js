@@ -221,7 +221,7 @@ export function createView() {
             infoCard(
                 "timer",
                 "Catch stats",
-                "How fast do you catch? On servers where an admin turns it on, the bot answers each catch with your time.",
+                "How fast do you catch Ballsdex spawns? On servers where an admin turns it on, the bot answers each catch with your time.",
                 [
                     "Your average, your average and best for that ball, and a shout when you beat a record.",
                     "Rankings of the fastest catchers: all time, 30 days and 7 days, per server or everywhere.",

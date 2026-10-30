@@ -111,11 +111,11 @@ function aboutCard() {
     const item = (iconName, title, text) => h("div.cs-about-item", icon(iconName), h("div", h("b", title), h("p", text)));
     return h(
         "section.card.card-pad.cs-about",
-        h("div.cs-about-head", h("h2.section-title", icon("timer"), "Catch stats"), h("p.muted", "How fast do you catch? On servers where an admin turns this on, BallIdentifier answers every catch with your time and how it compares to your usual pace.")),
+        h("div.cs-about-head", h("h2.section-title", icon("timer"), "Catch stats"), h("p.muted", "How fast do you catch Ballsdex spawns? On servers where an admin turns this on, BallIdentifier answers every catch with your time and how it compares to your usual pace.")),
         h(
             "div.cs-about-grid",
             item("zap", "What it does", "After a catch the bot replies with the catch time, your average, your average and best for that ball, and tells you when you beat a record (yours or the server's). Admins choose what the reply shows, or make it reply only on records."),
-            item("clock", "How it's measured", "The time between the spawn message and the dex bot's catch message, both stamped by Discord. Typing the name and the dex bot's own delay are included, so it's the same for everyone. Works with every supported dex bot."),
+            item("clock", "How it's measured", "The time between the spawn message and Ballsdex's catch message, both stamped by Discord. Typing the name and Ballsdex's own delay are included, so it's the same for everyone. Works with Ballsdex only."),
             item("lock", "What's saved", "Your Discord ID, the server, the ball, the catch time and when it happened. Single catches are kept for 35 days (for the 7 and 30 day stats); totals, averages and records are kept until you opt out."),
             item("eye", "Who sees it", "Only you, by default. Turn on “Show my catch stats publicly” in your profile (or /catchstats settings) to show them on your profile and in the rankings. “Don't track me” under any reply, or the switch below, stops tracking and deletes your data."),
         ),
