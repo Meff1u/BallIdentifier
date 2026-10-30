@@ -145,16 +145,16 @@ export function createView() {
     }
 
     const COMMANDS = [
-        [[h("b", "Identify")], "Right-click a spawn → Apps", "Names the ball in a spawn message, with rarity and artist.", "Servers"],
-        [[h("b", "Check collections")], "Right-click a member → Apps", "Lists the collector balls that member owns, in every supported dex.", "Servers"],
-        [[code("/info"), " ", h("span.cmd-arg", "dex"), " ", h("span.cmd-arg", "name or ID")], null, "Rarity, wave, common value, collector requirement, demand tier and collectors of one entry.", "Anywhere"],
-        [[code("/collectors"), " ", h("span.cmd-arg", "dex")], null, "Browse every collector ball of a dex, or search one by name or ID.", "Anywhere"],
-        [[code("/ballsdex link"), " · ", code("unlink")], null, "Connect or remove your Ballsdex API key. The key is stored encrypted.", "Anywhere"],
-        [[code("/ballsdex sync")], null, "Import your Ballsdex collection, with live progress and a cancel button.", "Anywhere"],
-        [[code("/ballsdex collection")], null, "Totals, specials and your top 5 rankings from the last sync.", "Anywhere"],
-        [[code("/ballsdex raws")], null, "Value of your rare non-special balls, counted per tier.", "Anywhere"],
+        [[h("b", "Identify")], "Right-click a spawn → Apps", "Names the ball in a spawn message, with similarity, rarity and artist. Once every 10 minutes, no cooldown for upvoters.", "Servers"],
+        [[h("b", "Check collections")], "Right-click a member → Apps", "Lists the balls that member is a collector of, in every supported dex.", "Servers"],
+        [[code("/info"), " ", h("span.cmd-arg", "dex"), " ", h("span.cmd-arg", "name or ID")], null, "Rarity, wave, common value, collector requirement and demand tier of one entry, with a button to see its collectors.", "Anywhere"],
+        [[code("/collectors"), " ", h("span.cmd-arg", "dex")], null, "Browse the entries of a dex that have collectors, or search one by name or ID.", "Anywhere"],
+        [[code("/ballsdex link"), " · ", code("unlink")], null, "Connect your Ballsdex account with Sign in with Ballsdex, or disconnect it (this also deletes your saved collection data).", "Anywhere"],
+        [[code("/ballsdex sync")], null, "Import your Ballsdex collection, with live progress and a cancel button. Once every 24 hours.", "Anywhere"],
+        [[code("/ballsdex collection")], null, "Totals, specials, rankings and catch times from your last sync.", "Anywhere"],
+        [[code("/ballsdex raws")], null, "Value of your rare (T1 to T23) non-special balls, counted per tier.", "Anywhere"],
         [[code("/catchstats"), " ", h("span.cmd-arg", "me · server · settings")], null, "Your catch times, the server's fastest catchers, and who can see your stats.", "Anywhere"],
-        [[code("/help")], null, "Bot status, supported dexes, statistics and links.", "Anywhere"],
+        [[code("/help")], null, "Supported dexes, bot statistics, whether you've upvoted, and useful links.", "Anywhere"],
     ];
 
     const overview = h(
@@ -207,12 +207,12 @@ export function createView() {
             infoCard(
                 "layers",
                 "Your Ballsdex collection",
-                "Link your Ballsdex API key once, then see your collection in the bot and on this website.",
+                "Connect your Ballsdex account once with Sign in with Ballsdex, then see your collection in the bot and on this website.",
                 [
                     "Sync imports every ball you own. One sync runs at a time, and you can sync again 24 hours later.",
                     "Collection shows totals, specials and your top 5 most owned balls and specials.",
                     "Raws adds up your rare non-special balls (T1 to T23), weighted by tier.",
-                    "The key is encrypted before it's stored. Unlinking deletes it and your saved data.",
+                    "BallIdentifier gets read-only access, stored encrypted. Disconnecting removes that access and your saved data.",
                 ],
                 h("a.btn", { href: "#/ballsdex" }, icon("layers"), h("span", "Open Ballsdex tab")),
             ),

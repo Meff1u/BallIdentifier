@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1793365431",
+            "type": "website",
+            "changes": [
+                "The command list on the Bot page now matches what the commands actually do (including Sign in with Ballsdex)",
+                "Bot page tabs no longer break onto two lines on phones"
+            ]
+        },
+        {
             "timestamp": "1793364589",
             "type": "bot",
             "changes": [
