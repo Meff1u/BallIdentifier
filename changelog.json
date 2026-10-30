@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1793370778",
+            "type": "bot",
+            "changes": [
+                "Ballsdex syncs are faster: 50 balls per request instead of 25",
+                "When the Ballsdex API limits run out, BallIdentifier waits until they reset instead of trying again, so it doesn't get locked out for longer"
+            ]
+        },
+        {
             "timestamp": "1793369668",
             "type": "bot",
             "changes": [
