@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1793372595",
+            "type": "bot",
+            "changes": [
+                "Catch stats now pick up Ballsdex catches correctly (Ballsdex writes its catch message a moment after sending it)"
+            ]
+        },
+        {
             "timestamp": "1793370778",
             "type": "bot",
             "changes": [
