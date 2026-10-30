@@ -1391,6 +1391,10 @@ a.nf-item:hover { background: var(--surface-2); text-decoration: none; }
 .rl-costs { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--border); }
 .rl-costs li { display: flex; justify-content: space-between; gap: var(--space-3); padding: 10px 0; border-bottom: 1px solid var(--border); font-size: var(--fs-sm); }
 .rl-costs li span { color: var(--text-2); }
+.bdx-disabled { margin-top: var(--space-4); }
+.mod-switches { display: grid; gap: var(--space-1); padding: var(--space-2) var(--space-4); border-radius: var(--r-md); background: var(--surface-2); }
+.mod-switch > span { display: grid; gap: 2px; }
+.mod-switch small { font-size: var(--fs-xs); }
 .rl-empty.is-active { border-color: var(--danger); background: color-mix(in srgb, var(--danger-soft) 60%, var(--surface)); }
 .rl-empty.is-active .rl-head .icon { color: var(--danger); }
 .rl-effects { display: grid; gap: var(--space-4); }

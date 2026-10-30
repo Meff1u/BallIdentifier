@@ -4,6 +4,7 @@
  * GET  /.netlify/functions/admin                              -> sync status, bot status, recent logs
  * POST /.netlify/functions/admin { action: "cancel-sync" }    -> stop the running Ballsdex sync
  * POST /.netlify/functions/admin { action: "refresh-data" }   -> reload dex data in the bot now
+ * POST /.netlify/functions/admin { action: "sync-switches", syncDisabled?, fastSyncDisabled? } -> turn syncing off/on for everyone else
  *
  * Only the owner's Discord ID (from the encrypted session) gets through; the bot checks it again.
  */
@@ -36,6 +37,11 @@ exports.handler = async (event) => {
         const body = parseJsonBody(event);
         if (body?.action === "cancel-sync") return forward(await botApiFetch(`${base}/sync/cancel`, { method: "POST", body: {} }));
         if (body?.action === "refresh-data") return forward(await botApiFetch(`${base}/refresh-data`, { method: "POST", body: {} }));
+        if (body?.action === "sync-switches") {
+            const switches = {};
+            for (const key of ["syncDisabled", "fastSyncDisabled"]) if (typeof body[key] === "boolean") switches[key] = body[key];
+            return forward(await botApiFetch(`${base}/sync/switches`, { method: "POST", body: switches }));
+        }
         return json(400, { error: "Unknown action" });
     } catch (error) {
         console.error("Admin function error:", error);

@@ -1,6 +1,20 @@
 {
     "changes": [
         {
+            "timestamp": "1793349089",
+            "type": "website",
+            "changes": [
+                "If syncing or Fast Sync is temporarily turned off (for example when the Ballsdex API limits are tight), the Ballsdex tab and /ballsdex sync now say so instead of trying anyway"
+            ]
+        },
+        {
+            "timestamp": "1793348630",
+            "type": "bot",
+            "changes": [
+                "/collectors works again"
+            ]
+        },
+        {
             "timestamp": "1793347431",
             "type": "website",
             "changes": [

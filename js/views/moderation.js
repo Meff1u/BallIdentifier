@@ -42,10 +42,37 @@ export function createView() {
         );
     }
 
+    /** Switches that stop everyone but the owner from syncing (the Ballsdex tab shows them a note). */
+    function switchesBlock(switches = {}) {
+        const toggle = (key, title, hint) => {
+            const input = h("input", { type: "checkbox", checked: !switches[key] });
+            input.addEventListener("change", async () => {
+                input.disabled = true;
+                try {
+                    const result = await api("admin", { method: "POST", body: { action: "sync-switches", [key]: !input.checked } });
+                    data.sync.switches = result.switches;
+                    toast(`${title} ${result.switches[key] ? "turned off for everyone" : "turned back on"}.`, result.switches[key] ? "info" : "success");
+                } catch (error) {
+                    input.checked = !input.checked;
+                    handleError(error);
+                } finally {
+                    input.disabled = false;
+                }
+            });
+            return h("label.switch.mod-switch", h("span", h("b", title), h("small.hint", hint)), input);
+        };
+        return h(
+            "div.mod-switches",
+            toggle("syncDisabled", "Syncing", "Off: nobody can start a sync, and paused ones wait until it's back on. A sync that's running now finishes."),
+            toggle("fastSyncDisabled", "Fast Sync", "Off: nobody can import a /player settings export."),
+            h("p.subtle", "You can still use both yourself while they're off."),
+        );
+    }
+
     function syncCard() {
         const sync = data.sync;
         const active = sync.active;
-        const card = h("section.card.panel.mod-card", h("h2", icon("refresh-cw"), "Ballsdex sync"));
+        const card = h("section.card.panel.mod-card", h("h2", icon("refresh-cw"), "Ballsdex sync"), switchesBlock(sync.switches));
         if (!active) {
             card.append(h("p.mod-state", h("span.badge", "Idle"), " No sync is running."));
         } else {

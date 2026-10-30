@@ -200,17 +200,21 @@ export function createView() {
         function paintSync() {
             const retry = Math.ceil(remaining());
             const fastRetry = Math.ceil(fastRemaining());
-            fastBtn.disabled = Boolean(sync.inProgress) || fastRetry > 0;
-            fastBtn.replaceChildren(icon(fastRetry > 0 ? "clock" : "upload"), h("span", fastRetry > 0 ? `Fast Sync in ${Math.ceil(fastRetry / 60)} min` : "Fast Sync"));
+            fastBtn.disabled = Boolean(sync.inProgress) || fastRetry > 0 || Boolean(sync.fastDisabled);
+            fastBtn.replaceChildren(
+                icon(sync.fastDisabled ? "lock" : fastRetry > 0 ? "clock" : "upload"),
+                h("span", sync.fastDisabled ? "Fast Sync off" : fastRetry > 0 ? `Fast Sync in ${Math.ceil(fastRetry / 60)} min` : "Fast Sync"),
+            );
             if (sync.inProgress) {
                 syncBtn.disabled = true;
                 syncBtn.replaceChildren(spinner(), h("span", "Syncing…"));
                 status.replaceChildren(spinner(), h("span", sync.source === "file" ? "Importing your file…" : "Syncing with Ballsdex…"));
                 return;
             }
-            syncBtn.disabled = retry > 0;
+            syncBtn.disabled = retry > 0 || Boolean(sync.disabled);
             const wait = retry >= 3600 ? `${Math.floor(retry / 3600)}h ${Math.floor((retry % 3600) / 60)}m` : `${Math.floor(retry / 60)}:${String(retry % 60).padStart(2, "0")}`;
-            syncBtn.replaceChildren(icon(retry > 0 ? "clock" : "refresh-cw"), h("span", retry > 0 ? `Sync again in ${wait}` : sync.paused ? "Continue sync" : "Sync now"));
+            if (sync.disabled) syncBtn.replaceChildren(icon("lock"), h("span", "Sync off"));
+            else syncBtn.replaceChildren(icon(retry > 0 ? "clock" : "refresh-cw"), h("span", retry > 0 ? `Sync again in ${wait}` : sync.paused ? "Continue sync" : "Sync now"));
             if (data.collection?.lastSyncedAt) {
                 const viaFile = summary?.source === "file" ? " · from a file" : "";
                 status.replaceChildren(icon("history", "icon-sm"), h("span", `Last synced ${timeAgo(data.collection.lastSyncedAt)} · ${fmt(data.collection.ballCount)} balls${viaFile}`));
@@ -251,6 +255,17 @@ export function createView() {
         );
 
         const parts = [head];
+        // Turned off by the owner in Moderation
+        if ((sync.disabled || sync.fastDisabled) && !sync.inProgress) {
+            const what = sync.disabled && sync.fastDisabled ? "Syncing and Fast Sync are" : sync.disabled ? "Syncing is" : "Fast Sync is";
+            parts.push(
+                h(
+                    "p.callout.callout-warning.bdx-disabled",
+                    icon("lock", "icon-sm"),
+                    h("span", `${what} temporarily disabled by the administrators. Your saved stats are still here${sync.paused && sync.disabled ? ", and your paused sync continues once it's back on" : ""}.`),
+                ),
+            );
+        }
         if (data.reconnect) {
             parts.push(
                 h(
@@ -505,7 +520,7 @@ export function createView() {
                             item("Sign in with Ballsdex (connecting or reconnecting an account)"),
                             item("Syncs: a running sync pauses and continues by itself after the reset; new ones can't start"),
                             item("Fast Sync (the file is checked against your Ballsdex account)"),
-                            item("Adding yourself as a collector of a Ballsdex ball after a Fast Sync"),
+                            item("Adding yourself as a collector of a Ballsdex ball after syncing"),
                             item("Market data of a special, unless it was loaded in the last hour"),
                             item("Checking your account's limits on this tab"),
                         ),
@@ -537,7 +552,7 @@ export function createView() {
                     row("Sync", "1 per 25 balls (+2)"),
                     row("Fast Sync", "about 15"),
                     row("Sign in with Ballsdex", "2"),
-                    row("Adding yourself as a collector after Fast Sync", "up to 10"),
+                    row("Adding yourself as a collector after syncing", "up to 10"),
                     row("Checking your limits here", "1, at most every 5 min"),
                 ),
                 h("p.subtle", "For big collections Fast Sync saves a lot: a 10,000-ball sync takes about 400 requests."),
@@ -993,7 +1008,7 @@ export function createView() {
         } catch (error) {
             if (handleAuthError(error)) return;
             if (error.code === "BUSY") toast(error.message, "info", 8000);
-            else if (!auto || error.code !== "COOLDOWN") toast(error.message, "error");
+            else if (!auto || (error.code !== "COOLDOWN" && error.code !== "DISABLED")) toast(error.message, error.code === "DISABLED" ? "info" : "error");
             await refresh({ quiet: true });
         }
     }
