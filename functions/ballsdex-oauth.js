@@ -29,7 +29,7 @@ function callbackUri(event) {
     return "https://ballidentifier.xyz/.netlify/functions/ballsdex-oauth";
 }
 
-const back = (result, extra = []) => redirect(`/ballsdex?bdx=${encodeURIComponent(result)}`, extra);
+const back = (result, extra = [], params = {}) => redirect(`/ballsdex?${new URLSearchParams({ bdx: result, ...params })}`, extra);
 
 function sessionOf(event) {
     try {
@@ -77,7 +77,11 @@ async function callback(event, session) {
         if (response.ok) return back(data.reconnected ? "reconnected" : "linked", [done]);
         console.error("Ballsdex sign-in failed:", response.status, data.code, data.error);
         const known = ["WRONG_ACCOUNT", "OAUTH_FAILED", "RATE_LIMITED", "COOLDOWN", "APP_NOT_APPROVED", "NOT_CONFIGURED"];
-        return back(known.includes(data.code) ? data.code.toLowerCase().replace(/_/g, "-") : "error", [done]);
+        // Only numbers and a fixed word go back in the URL (the page builds the message itself)
+        const params = {};
+        if (Number.isFinite(Number(data.retryAfterSec)) && Number(data.retryAfterSec) > 0) params.wait = String(Math.min(Math.ceil(Number(data.retryAfterSec)), 7 * 86400));
+        if (data.scope === "ip" || data.scope === "key") params.scope = data.scope;
+        return back(known.includes(data.code) ? data.code.toLowerCase().replace(/_/g, "-") : "error", [done], params);
     } catch (error) {
         console.error("Ballsdex sign-in error:", error);
         return back("error", [done]);

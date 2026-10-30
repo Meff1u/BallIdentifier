@@ -9,16 +9,6 @@ import { api, ApiError } from "../core/api.js";
 import { getUser, onAuthChange, login, sessionExpired, sessionReady, loadSession } from "../core/auth.js";
 import { getDexList, getDex, dexIcon, compressedArtUrl } from "../core/data.js";
 
-export const ACCENTS = {
-    violet: "#9B3ABF",
-    blue: "#3B82F6",
-    cyan: "#06B6D4",
-    green: "#22C55E",
-    yellow: "#EAB308",
-    orange: "#F97316",
-    red: "#EF4444",
-    pink: "#EC4899",
-};
 
 const displayName = (p) => p.name || p.username || `User ${p.id.slice(-4)}`;
 const profileUrl = (id) => `${location.origin}/u/${id}`;
@@ -95,8 +85,6 @@ export function createView() {
 
     function paint() {
         const p = profile;
-        const accent = ACCENTS[p.accent] || ACCENTS.violet;
-        el.style.setProperty("--pf-accent", accent);
         document.title = `${displayName(p)} · BallIdentifier`;
 
         const copyBtn = h("button.btn.btn-sm", { type: "button", onclick: async () => toast((await copyText(profileUrl(p.id))) ? "Profile link copied." : "Couldn't copy the link.", "info") }, icon("link", "icon-sm"), h("span", "Copy link"));
@@ -271,20 +259,6 @@ export function createView() {
         const pronouns = h("input.input", { type: "text", maxLength: data.limits.pronouns, placeholder: "e.g. he/him", value: s.pronouns, autocomplete: "off" });
         const favDex = h("select.select", h("option", { value: "" }, "None"), dexes.map((dex) => h("option", { value: dex, selected: s.favoriteDex === dex }, dex)));
 
-        let accent = s.accent;
-        const swatches = h(
-            "div.pf-swatches",
-            { role: "radiogroup", "aria-label": "Accent color" },
-            Object.entries(ACCENTS).map(([id, color]) => {
-                const btn = h("button.pf-swatch", { type: "button", role: "radio", "aria-checked": String(id === accent), "aria-label": id, title: id, style: { "--sw": color } });
-                btn.addEventListener("click", () => {
-                    accent = id;
-                    swatches.querySelectorAll(".pf-swatch").forEach((b) => b.setAttribute("aria-checked", String(b === btn)));
-                });
-                return btn;
-            }),
-        );
-
         // Showcase: up to 6 balls from any dex
         const showList = h("div.pf-show-edit");
         const showDex = h("select.select", { "aria-label": "Dex" }, dexes.map((dex) => h("option", { value: dex, selected: dex === (s.favoriteDex || "Ballsdex") }, dex)));
@@ -344,7 +318,6 @@ export function createView() {
                 ),
                 h("div.field", h("label.label", "Bio"), bio, bioCount),
                 h("div.grid-2", h("div.field", h("label.label", "Pronouns"), pronouns), h("div.field", h("label.label", "Favorite dex"), favDex)),
-                h("div.field", h("span.label", "Accent color"), swatches),
                 h("div.field", h("span.label", `Showcase (up to ${data.limits.showcase})`), showList, h("div.pf-show-add", showDex, ballInput, ballList, addBtn)),
                 h(
                     "section.pf-edit-block",
@@ -365,7 +338,6 @@ export function createView() {
                 public: publicInput.checked,
                 bio: bio.value,
                 pronouns: pronouns.value,
-                accent,
                 favoriteDex: favDex.value || null,
                 showcase: s.showcase,
                 showBallsdex: bdxInput.checked,

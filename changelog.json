@@ -1,6 +1,15 @@
 {
     "changes": [
         {
+            "timestamp": "1793319280",
+            "type": "website",
+            "changes": [
+                "The theme menu shows each theme as a color circle instead of an icon",
+                "Profiles no longer have an accent color setting",
+                "If connecting your Ballsdex account hits the API limit, you now see whose limit it was and when to try again"
+            ]
+        },
+        {
             "timestamp": "1793315174",
             "type": "website",
             "changes": [

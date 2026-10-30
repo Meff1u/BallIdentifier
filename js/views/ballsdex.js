@@ -27,6 +27,7 @@ const CONNECT_RESULTS = {
     "not-configured": ["Sign in with Ballsdex isn't set up on BallIdentifier yet.", "error"],
     error: ["Couldn't connect your Ballsdex account. Try again in a moment.", "error"],
 };
+const waitText = (sec) => (sec < 60 ? `${Math.ceil(sec)} s` : sec < 3600 ? `${Math.ceil(sec / 60)} min` : `${Math.floor(sec / 3600)} h ${Math.round((sec % 3600) / 60)} min`);
 const connectButton = (label = "Sign in with Ballsdex") => h("a.btn.btn-primary.btn-lg", { href: CONNECT_URL }, icon("log-in"), h("span", label));
 // Fast Sync: link to player_data.zip that Ballsdex posts in your DMs (the bot downloads and checks it)
 const EXPORT_LINK = /^https:\/\/(cdn\.discordapp\.com|media\.discordapp\.net)\/attachments\/\d{17,20}\/(\d{17,20})\/player_data\.zip\?\S*hm=\S+$/i;
@@ -960,7 +961,12 @@ export function createView() {
             const connect = query.get("connect") === "1";
             if (result || connect) history.replaceState(null, "", location.pathname);
             if (result) {
-                const [message, type] = CONNECT_RESULTS[result] || CONNECT_RESULTS.error;
+                let [message, type] = CONNECT_RESULTS[result] || CONNECT_RESULTS.error;
+                if (result === "rate-limited") {
+                    const wait = Number(query.get("wait"));
+                    const who = query.get("scope") === "ip" ? "BallIdentifier's shared Ballsdex API limit (all users together)" : query.get("scope") === "key" ? "your Ballsdex account's API limit" : "the Ballsdex API limit";
+                    message = `Couldn't connect: ${who} is used up for now. ${wait > 0 ? `Try again in ${waitText(wait)}.` : "Try again later."}`;
+                }
                 toast(message, type, type === "error" ? 9000 : 5000);
             }
             const afterLoad = (loaded) => {

@@ -5,13 +5,14 @@
 
 import { storage, store } from "./dom.js";
 
+// swatch: [background, accent] shown as a color circle in the theme menu
 export const THEMES = [
-    { id: "system", label: "Match system", icon: "monitor" },
-    { id: "light", label: "Light", icon: "sun" },
-    { id: "dark", label: "Dark", icon: "moon" },
-    { id: "synthwave", label: "Synthwave", icon: "sparkles" },
-    { id: "sakura", label: "Sakura", icon: "flower" },
-    { id: "ruby", label: "Ruby", icon: "gem" },
+    { id: "system", label: "Match system", icon: "monitor", swatch: ["#F6F4FA", "#0E0B14"] },
+    { id: "light", label: "Light", icon: "sun", swatch: ["#F6F4FA", "#8A2DB0"] },
+    { id: "dark", label: "Dark", icon: "moon", swatch: ["#0E0B14", "#9B3ABF"] },
+    { id: "synthwave", label: "Synthwave", icon: "sparkles", swatch: ["#0D0519", "#A855F7"] },
+    { id: "sakura", label: "Sakura", icon: "flower", swatch: ["#FBF0F4", "#C93667"] },
+    { id: "ruby", label: "Ruby", icon: "gem", swatch: ["#160D10", "#E53950"] },
 ];
 
 const THEME_COLORS = { light: "#F6F4FA", dark: "#0E0B14", synthwave: "#0D0519", sakura: "#FBF0F4", ruby: "#F8F0F0" };

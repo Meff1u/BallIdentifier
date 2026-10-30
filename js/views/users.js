@@ -6,7 +6,6 @@ import { h, icon, img, fmt } from "../core/dom.js";
 import { api } from "../core/api.js";
 import { getUser, onAuthChange } from "../core/auth.js";
 import { dexIcon } from "../core/data.js";
-import { ACCENTS } from "./profile.js";
 
 export function createView() {
     let loadToken = 0;
@@ -70,7 +69,7 @@ export function createView() {
     function card(user) {
         return h(
             "a.card.uc-card",
-            { href: `/u/${user.id}`, role: "listitem", style: { "--pf-accent": ACCENTS[user.accent] || ACCENTS.violet } },
+            { href: `/u/${user.id}`, role: "listitem" },
             img(user.avatarUrl, "", "uc-avatar", { width: 56, height: 56 }),
             h(
                 "div.uc-body",

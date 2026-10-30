@@ -592,6 +592,14 @@ input, textarea { caret-color: var(--accent); }
 .menu-item:hover, .menu-item:focus-visible { background: var(--surface-2); outline: none; }
 .menu-item .check { margin-left: auto; color: var(--accent-text); visibility: hidden; }
 .menu-item[aria-checked="true"] .check { visibility: visible; }
+/* Theme menu: each theme as a circle of its background with its accent in the middle */
+.theme-swatch {
+    flex: none; width: 20px; height: 20px; border-radius: 50%;
+    background: radial-gradient(circle, var(--sw-accent) 0 34%, var(--sw-bg) 38%);
+    box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0.45);
+}
+.theme-swatch.is-system { background: linear-gradient(135deg, var(--sw-bg) 0 50%, var(--sw-accent) 50% 100%); }
+.menu-item[aria-checked="true"] .theme-swatch { box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0.45), 0 0 0 2px var(--surface), 0 0 0 4px var(--accent); }
 .menu-sep { height: 1px; background: var(--border); margin: var(--space-2) var(--space-1); }
 .menu-user { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-2) var(--space-3) var(--space-3); }
 .menu-user strong { display: block; font-weight: 650; }

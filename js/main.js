@@ -178,7 +178,7 @@ themeBtn.addEventListener("click", () =>
             THEMES.map((theme) =>
                 menuItem({
                     label: theme.label,
-                    iconName: theme.icon,
+                    lead: h("span.theme-swatch", { class: theme.id === "system" ? "is-system" : "", style: { "--sw-bg": theme.swatch[0], "--sw-accent": theme.swatch[1] }, "aria-hidden": "true" }),
                     checked: getThemeChoice() === theme.id,
                     onSelect: () => setTheme(theme.id),
                 }),

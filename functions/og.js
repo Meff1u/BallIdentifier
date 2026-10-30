@@ -563,7 +563,6 @@ async function specialsCard() {
 
 /* ----- profile card ----- */
 
-const PROFILE_ACCENTS = { violet: "#9B3ABF", blue: "#3B82F6", cyan: "#06B6D4", green: "#22C55E", yellow: "#EAB308", orange: "#F97316", red: "#EF4444", pink: "#EC4899" };
 
 /** Public profile: avatar, name, bio, showcase strip and the numbers the user chose to show. */
 async function profileCard(idParam) {
@@ -571,7 +570,7 @@ async function profileCard(idParam) {
     const result = await fromBot(() => botApiFetch(`/api/profiles/${idParam}`));
     const p = result?.profile;
     if (!p) return null;
-    const accent = PROFILE_ACCENTS[p.accent] || PROFILE_ACCENTS.violet;
+    const accent = C.accent;
     const avatarUrl = String(p.avatarUrl || "").replace(/([?&])size=\d+/, "$1size=256");
     const [avatar, ...showcase] = await Promise.all([
         fetchBuffer(avatarUrl, 4000).then(picture).catch(() => null),

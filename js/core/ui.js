@@ -175,8 +175,9 @@ export function toggleMenu(trigger, build, { label = "Menu" } = {}) {
     (el.querySelector('[aria-checked="true"]') || items()[0])?.focus();
 }
 
-export function menuItem({ label, iconName, onSelect, checked, href, role = "menuitem", danger }) {
-    const content = [iconName ? icon(iconName) : null, h("span", label)];
+export function menuItem({ label, iconName, lead, onSelect, checked, href, role = "menuitem", danger }) {
+    // lead: any element shown instead of an icon (e.g. a theme's color circle)
+    const content = [lead || (iconName ? icon(iconName) : null), h("span", label)];
     if (checked !== undefined) content.push(icon("check", "icon-sm check"));
     const props = {
         role: checked !== undefined ? "menuitemradio" : role,
