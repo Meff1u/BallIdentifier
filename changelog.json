@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1793368847",
+            "type": "bot",
+            "changes": [
+                "Catch stats explain in the bot logs why a catch wasn't counted (for example, when they are off on that server)"
+            ]
+        },
+        {
             "timestamp": "1793367813",
             "type": "website",
             "changes": [

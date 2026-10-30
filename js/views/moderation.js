@@ -15,6 +15,7 @@ const REFRESH_MS = 5000;
 const LOG_TABS = [
     ["ERRORS", "Errors"],
     ["BALLSDEX", "Ballsdex"],
+    ["CATCHES", "Catches"],
     ["COLLECTORS", "Collectors"],
     ["API", "API"],
     ["VOTES", "Votes"],
