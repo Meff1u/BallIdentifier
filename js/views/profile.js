@@ -3,7 +3,7 @@
  * if they allow it, their Ballsdex stats. Owners edit their profile here; it stays private until they publish it.
  */
 
-import { h, icon, img, fmt, formatDate, formatDuration, copyText } from "../core/dom.js";
+import { h, icon, img, fmt, formatDate, formatDuration, copyText, timeAgo } from "../core/dom.js";
 import { toast, openDialog, confirmDialog } from "../core/ui.js";
 import { api, ApiError } from "../core/api.js";
 import { getUser, onAuthChange, login, sessionExpired, sessionReady, loadSession } from "../core/auth.js";
@@ -134,6 +134,7 @@ export function createView() {
             ),
             showcaseSection(p),
             ballsdexSection(p),
+            lastCatchesSection(p),
             catchSection(p),
             collectionsSection(p),
         ];
@@ -186,7 +187,16 @@ export function createView() {
                     h(
                         "dl.kv.cols-4",
                         kv("Total balls", fmt(s.totalBalls)),
-                        h("div", h("dt", "Unique"), h("dd", fmt(s.uniqueBalls)), completion !== null ? h("div.pf-meter", { title: `${completion}% of ${fmt(s.dexSize)} balls` }, h("div.meter-fill", { style: { width: `${completion}%` } })) : null),
+                        // Official completion from the Ballsdex API when known, otherwise unique balls from the sync
+                        s.completion?.percent != null
+                            ? h(
+                                  "div",
+                                  h("dt", "Completion"),
+                                  h("dd", `${Number(s.completion.percent).toFixed(1).replace(/\.0$/, "")}%`),
+                                  h("p.subtle", `${fmt(s.completion.owned)} of ${fmt(s.completion.total)}`),
+                                  h("div.pf-meter", h("div.meter-fill", { style: { width: `${Math.min(100, s.completion.percent)}%` } })),
+                              )
+                            : h("div", h("dt", "Unique"), h("dd", fmt(s.uniqueBalls)), completion !== null ? h("div.pf-meter", { title: `${completion}% of ${fmt(s.dexSize)} balls` }, h("div.meter-fill", { style: { width: `${completion}%` } })) : null),
                         h("div", h("dt", "Specials"), h("dd", fmt(s.specialCount)), s.specialKinds ? h("p.subtle", `${fmt(s.specialKinds)} different`) : null),
                         kv("Self-caught", fmt(s.selfCaughtCount)),
                         s.fastestCatch ? h("div", h("dt", "Fastest catch"), h("dd", formatDuration(s.fastestCatch.durationMs)), h("p.subtle", s.fastestCatch.ballName)) : kv("Fastest catch", "—"),
@@ -196,6 +206,28 @@ export function createView() {
                     ),
                 ),
                 h("section.card.panel.span-2", h("div.rank-cols.pf-ranks", ranking("Most owned", s.topCountries), ranking("Top specials", s.topSpecials))),
+            ),
+        );
+    }
+
+    function lastCatchesSection(p) {
+        const list = p.lastCatches?.items;
+        if (!list?.length) return null;
+        return h(
+            "section.pf-section",
+            h("h2.section-title", icon("history"), "Last catches", h("span.subtle.pf-synced", "Ballsdex")),
+            h(
+                "div.pf-catches",
+                list.map((ball) =>
+                    h(
+                        "a.pf-catch",
+                        { href: artHref("Ballsdex", ball.name), title: ball.caughtAt ? `${ball.name} · ${new Date(ball.caughtAt).toLocaleString()}` : ball.name },
+                        h("span.pf-catch-art", img(compressedArtUrl("Ballsdex", ball.name), "", "", { width: 64, height: 64 })),
+                        h("b", ball.name),
+                        ball.special ? h("span.badge.badge-accent", ball.special) : null,
+                        h("span.subtle", ball.caughtAt ? timeAgo(ball.caughtAt) : ""),
+                    ),
+                ),
             ),
         );
     }
@@ -291,6 +323,7 @@ export function createView() {
         const publicInput = h("input", { type: "checkbox", checked: s.public, disabled: data.blocked });
         const bdxInput = h("input", { type: "checkbox", checked: s.showBallsdex });
         const colInput = h("input", { type: "checkbox", checked: s.showCollections });
+        const lastInput = h("input", { type: "checkbox", checked: s.showLastCatches !== false });
         const catchSettings = data.catchStats || { public: false, tracking: true };
         const catchPublicInput = h("input", { type: "checkbox", checked: catchSettings.public });
         const catchTrackInput = h("input", { type: "checkbox", checked: catchSettings.tracking });
@@ -370,6 +403,11 @@ export function createView() {
                         bdxInput,
                     ),
                     h("label.switch", h("span", h("b", "Show what I collect"), h("small.hint", "The balls you're a collector of, from the Collectors page.")), colInput),
+                    h(
+                        "label.switch",
+                        h("span", h("b", "Show my last catches"), h("small.hint", data.ballsdexLinked ? "Your newest Ballsdex catches, refreshed every 15 minutes at most." : "Link your Ballsdex account in the Ballsdex tab first.")),
+                        lastInput,
+                    ),
                 ),
                 h(
                     "section.pf-edit-block",
@@ -390,6 +428,7 @@ export function createView() {
                 showcase: s.showcase,
                 showBallsdex: bdxInput.checked,
                 showCollections: colInput.checked,
+                showLastCatches: lastInput.checked,
             };
             const catchChanges = { public: catchPublicInput.checked, tracking: catchTrackInput.checked };
             if (catchSettings.tracking && !catchChanges.tracking) {

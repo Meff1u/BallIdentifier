@@ -27,6 +27,15 @@ const SORTS = [
 
 // The owner can add, edit and remove entries here (the bot checks it again and commits to GitHub)
 const OWNER_ID = "334411435633541121";
+
+/** A special's emoji: custom Discord emoji as an image, otherwise the text emoji (same as the Specials tab). */
+function specialEmoji(special) {
+    if (special.emoji) return h("span.spc-emoji", { "aria-hidden": "true" }, special.emoji);
+    const custom = /^<a?:\w+:(\d+)>$/.exec(special.officialEmoji || "");
+    if (custom) return h("span.spc-emoji", img(`https://cdn.discordapp.com/emojis/${custom[1]}.webp?size=64`, ""));
+    if (special.officialEmoji) return h("span.spc-emoji", { "aria-hidden": "true" }, special.officialEmoji);
+    return h("span.spc-emoji.is-empty", { "aria-hidden": "true" }, icon("sparkles"));
+}
 const MAX_ART_BYTES = 5 * 1024 * 1024;
 
 const DEFAULTS = { showWave: true, showRarity: true, showArtist: true, showID: false, sort: "rarity" };
@@ -279,6 +288,22 @@ export function createView() {
             })
             .catch(() => collectorsBody.replaceChildren(h("p.subtle", "Couldn't load collectors.")));
 
+        // Ballsdex: which specials this ball can have (from the Ballsdex API, via the bot)
+        let specialsSection = null;
+        if (dexName === "Ballsdex" && details.id !== undefined) {
+            const specialsTitle = h("h3", icon("sparkles", "icon-sm"), "Available specials");
+            const specialsBody = h("div.bd-specials", h("div.skeleton", { style: { height: "32px" } }));
+            specialsSection = h("section.bd-section", specialsTitle, specialsBody);
+            api("specials", { query: { ball: details.id } })
+                .then((result) => {
+                    const list = result.specials || [];
+                    specialsTitle.replaceChildren(icon("sparkles", "icon-sm"), `Available specials (${fmt(list.length)})`);
+                    if (!list.length) return specialsBody.replaceChildren(h("p.subtle", result.loaded === false ? "Couldn't load the specials right now." : "None."));
+                    specialsBody.replaceChildren(...list.map((special) => h("a.bd-special", { href: `#/ballsdex/specials/${special.id}`, title: special.name, "aria-label": special.name }, specialEmoji(special))));
+                })
+                .catch(() => specialsBody.replaceChildren(h("p.subtle", "Couldn't load the specials right now.")));
+        }
+
         const prevSection = h("section.bd-prev", { hidden: true });
         const prevBtn = h("button.btn", { type: "button", hidden: true, "aria-expanded": "false" }, icon("history"), h("span", "Previous arts"));
         if (DEX_WITH_PREVIOUS_ARTS.includes(dexName)) {
@@ -327,6 +352,7 @@ export function createView() {
                         h("div.bd-head", tags, h("span.subtle", dexName)),
                         facts,
                         h("section.bd-section", collectorsTitle, collectorsBody),
+                        specialsSection,
                         h(
                             "div.bd-actions",
                             prevBtn,

@@ -7,7 +7,7 @@ import { h, icon, img, fmt, timeAgo, formatDate, formatDuration, spinner } from 
 import { toast, confirmDialog, openDialog } from "../core/ui.js";
 import { api, ApiError } from "../core/api.js";
 import { getUser, onAuthChange, loadSession, login, sessionExpired, sessionReady } from "../core/auth.js";
-import { compressedArtUrl } from "../core/data.js";
+import { compressedArtUrl, getDex } from "../core/data.js";
 import { refreshNotifications } from "../notifications.js";
 
 const KEYS_URL = "https://ballsdex.com/api/keys";
@@ -43,22 +43,27 @@ export function createView() {
     let showMissing = false;
     let specialsData = null;
     let specialsQuery = "";
+    // Completion tab
+    let completionSpecial = "";
+    let completionShow = "missing";
+    let completionQuery = "";
 
     const body = h("div");
     const tabProfile = h("a", { href: "#/ballsdex" }, icon("user-round", "icon-sm"), "Profile");
     const tabRaws = h("a", { href: "#/ballsdex/raws" }, icon("gem", "icon-sm"), "Raws");
     const tabSpecials = h("a", { href: "#/ballsdex/specials" }, icon("sparkles", "icon-sm"), "Specials");
+    const tabCompletion = h("a", { href: "#/ballsdex/completion" }, icon("check-check", "icon-sm"), "Completion");
     const tabLimits = h("a", { href: "#/ballsdex/limits" }, icon("gauge", "icon-sm"), "Limits");
     const el = h(
         "section.view",
         { dataset: { view: "ballsdex" }, "aria-labelledby": "bdx-title" },
         h("div.page-head", h("h1", { id: "bdx-title" }, "Ballsdex"), h("p", "Your Ballsdex account, collection stats, raws and every special.")),
-        h("div.tabs-bar.bdx-tabs", h("nav.segmented", { "aria-label": "Ballsdex sections" }, tabProfile, tabRaws, tabSpecials, tabLimits)),
+        h("div.tabs-bar.bdx-tabs", h("nav.segmented", { "aria-label": "Ballsdex sections" }, tabProfile, tabRaws, tabCompletion, tabSpecials, tabLimits)),
         body,
     );
 
     function paintTabs() {
-        for (const [tab, on] of [[tabProfile, section === "profile"], [tabRaws, section === "raws"], [tabSpecials, section === "specials"], [tabLimits, section === "limits"]]) {
+        for (const [tab, on] of [[tabProfile, section === "profile"], [tabRaws, section === "raws"], [tabCompletion, section === "completion"], [tabSpecials, section === "specials"], [tabLimits, section === "limits"]]) {
             if (on) tab.setAttribute("aria-current", "page");
             else tab.removeAttribute("aria-current");
         }
@@ -101,6 +106,7 @@ export function createView() {
             return renderLoggedOut();
         }
         if (section === "raws") return loadRaws(token);
+        if (section === "completion") return loadCompletion(token);
         if (!quiet || !data) skeleton();
         try {
             const next = await api("ballsdex");
@@ -627,6 +633,7 @@ export function createView() {
         if (avg && high && avg !== high) add("Common price", "gem", h("span", avg, h("span.subtle", " avg · "), high, h("span.subtle", " highest")));
         else if (avg || high) add("Common price", "gem", avg || high);
         add("Spawn rate", "gauge", special.spawnRate);
+        if (special.availableCount) add("Available on", "layers", `${fmt(special.availableCount)} ball${special.availableCount === 1 ? "" : "s"}`);
         add("Duration", "timer", special.duration);
         if (special.startDate || special.endDate) {
             const start = special.startDate ? formatDate(special.startDate) : "?";
@@ -847,6 +854,129 @@ export function createView() {
         });
     }
 
+    /* ----- Completion: owned and missing balls, from the Ballsdex API (/me/completion) ----- */
+
+    async function loadCompletion(token, { force = false } = {}) {
+        stopTimers();
+        if (!force) skeleton();
+        let result;
+        try {
+            const query = { view: "completion" };
+            if (completionSpecial) query.specialId = completionSpecial;
+            if (force) query.refresh = "1";
+            result = await api("ballsdex", { query });
+        } catch (error) {
+            if (token !== renderToken) return null;
+            if (handleAuthError(error)) return null;
+            if (force) {
+                toast(error.message, "error");
+                return null;
+            }
+            body.replaceChildren(
+                h("div.card.empty", h("div.empty-icon", icon("triangle-alert", "icon-lg")), h("h2", "Couldn't load your completion"), h("p", error.message), h("button.btn", { type: "button", onclick: () => refresh() }, icon("refresh-cw"), h("span", "Try again"))),
+            );
+            return null;
+        }
+        if (token !== renderToken) return null;
+        if (!result.available) {
+            const [title, text] =
+                result.reason === "RECONNECT"
+                    ? ["Sign in with Ballsdex again", "Completion comes straight from the Ballsdex API, so it needs a working sign-in. Reconnect on the Profile tab."]
+                    : ["Connect your Ballsdex account first", "Completion comes straight from the Ballsdex API: sign in with Ballsdex on the Profile tab (no sync needed)."];
+            body.replaceChildren(h("div.card.empty", h("div.empty-icon", icon("check-check", "icon-lg")), h("h2", title), h("p", text), h("a.btn.btn-primary", { href: "#/ballsdex" }, icon("user-round"), h("span", "Go to Profile"))));
+            return null;
+        }
+        await renderCompletion(result, token);
+        return result;
+    }
+
+    async function renderCompletion(result, token) {
+        // Rarity of each ball from the dex data (sorting and tiers), specials for the filter
+        const [dex, specials] = await Promise.all([
+            getDex("Ballsdex").catch(() => ({})),
+            specialsData ? Promise.resolve(specialsData) : api("specials").then((loaded) => (specialsData = loaded)).catch(() => null),
+        ]);
+        if (token !== renderToken) return;
+        const rarityOf = (name) => dex?.[name]?.rarity;
+        const byRarity = (a, b) => (rarityOf(a.name) ?? 1e9) - (rarityOf(b.name) ?? 1e9) || a.name.localeCompare(b.name);
+        const lists = { missing: [...result.missing].sort(byRarity), owned: [...result.owned].sort(byRarity) };
+        const percent = result.percent ?? (result.total ? (result.ownedCount / result.total) * 100 : 0);
+        const special = (specials?.specials || []).find((item) => String(item.id) === String(completionSpecial));
+
+        const refreshBtn = h("button.btn.btn-sm", { type: "button" }, icon("refresh-cw", "icon-sm"), h("span", "Refresh"));
+        refreshBtn.addEventListener("click", async () => {
+            refreshBtn.disabled = true;
+            await loadCompletion(++renderToken, { force: true });
+            refreshBtn.disabled = false;
+        });
+
+        const specialSelect = h(
+            "select.select",
+            { "aria-label": "Special" },
+            h("option", { value: "" }, "Every ball (no special)"),
+            (specials?.specials || [])
+                .filter((item) => item.availableCount !== 0)
+                .map((item) => h("option", { value: String(item.id), selected: String(item.id) === String(completionSpecial) }, item.alias || item.name || `Special #${item.id}`)),
+        );
+        specialSelect.addEventListener("change", () => {
+            completionSpecial = specialSelect.value;
+            loadCompletion(++renderToken);
+        });
+
+        const showButtons = ["missing", "owned"].map((key) => {
+            const button = h("button", { type: "button", "aria-pressed": String(completionShow === key) }, `${key === "missing" ? "Missing" : "Owned"} (${fmt(lists[key].length)})`);
+            button.addEventListener("click", () => {
+                completionShow = key;
+                showButtons.forEach((b) => b.setAttribute("aria-pressed", String(b === button)));
+                paint();
+            });
+            return button;
+        });
+        const search = h("input.input", { type: "search", placeholder: "Search a ball", "aria-label": "Search a ball", autocomplete: "off", spellcheck: false, value: completionQuery });
+        search.addEventListener("input", () => {
+            completionQuery = search.value;
+            paint();
+        });
+
+        const grid = h("div.cmp-grid");
+        function paint() {
+            const q = completionQuery.trim().toLowerCase();
+            const shown = lists[completionShow].filter((ball) => !q || ball.name.toLowerCase().includes(q));
+            grid.replaceChildren(
+                ...(shown.length
+                    ? shown.map((ball) =>
+                          h(
+                              "a.cmp-ball",
+                              { href: `/arts/Ballsdex/${encodeURIComponent(ball.name)}`, title: ball.name },
+                              img(compressedArtUrl("Ballsdex", ball.name), "", "cmp-thumb", { width: 48, height: 48 }),
+                              h("span.cmp-name", ball.name),
+                              rarityOf(ball.name) !== undefined ? h("span.subtle", `T${rarityOf(ball.name)}`) : null,
+                          ),
+                      )
+                    : [h("p.subtle", q ? "No ball matches your search." : completionShow === "missing" ? "Nothing missing. Well done!" : "Nothing here yet.")]),
+            );
+        }
+        paint();
+
+        body.replaceChildren(
+            h(
+                "div.stack",
+                h(
+                    "section.card.card-pad.cmp-summary",
+                    h(
+                        "div.cmp-head",
+                        h("div", h("p.cmp-percent.num", `${percent.toFixed(percent >= 99.95 || percent === 0 ? 0 : 1)}%`), h("p.subtle", `${fmt(result.ownedCount)} of ${fmt(result.total)} balls${special ? ` with ${special.alias || special.name}` : ""}`)),
+                        refreshBtn,
+                    ),
+                    h("div.cmp-meter", h("div.cmp-meter-fill", { style: { width: `${Math.min(100, percent)}%` } })),
+                    h("p.hint", `Straight from the Ballsdex API (no sync needed), updated ${timeAgo(result.updatedAt)}. Same rules as /balls completion in the bot.`),
+                ),
+                h("div.cmp-controls", h("div.segmented", { role: "group", "aria-label": "Show" }, showButtons), specialSelect, search),
+                grid,
+            ),
+        );
+    }
+
     async function loadRaws(token) {
         stopTimers();
         skeleton();
@@ -1057,7 +1187,7 @@ export function createView() {
         el,
         show(params = []) {
             visible = true;
-            const next = ["raws", "specials", "limits"].includes(params[0]) ? params[0] : "profile";
+            const next = ["raws", "completion", "specials", "limits"].includes(params[0]) ? params[0] : "profile";
             if (next !== section) stopTimers();
             section = next;
             paintTabs();

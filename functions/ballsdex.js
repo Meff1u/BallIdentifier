@@ -7,6 +7,7 @@
  * POST /.netlify/functions/ballsdex  { action: "cancel" }
  * POST /.netlify/functions/ballsdex  { action: "fast-sync", url }   Fast Sync from the Discord link of the /player settings export
  * GET  /.netlify/functions/ballsdex?view=raws  -> rare non-special balls x tier value
+ * GET  /.netlify/functions/ballsdex?view=completion[&specialId=4][&refresh=1]  -> owned / missing balls
  * GET  /.netlify/functions/ballsdex?view=ratelimit  -> Ballsdex API limit usage (your account + the bot's IP)
  * GET  /.netlify/functions/ballsdex?view=shared     -> the bot's shared Ballsdex limits (no login needed)
  *
@@ -47,6 +48,13 @@ exports.handler = async (event) => {
     try {
         if (event.httpMethod === "GET") {
             const view = event.queryStringParameters?.view;
+            if (view === "completion") {
+                const query = new URLSearchParams();
+                const specialId = event.queryStringParameters?.specialId;
+                if (/^\d{1,6}$/.test(String(specialId || ""))) query.set("specialId", specialId);
+                if (event.queryStringParameters?.refresh === "1") query.set("refresh", "1");
+                return forward(await botApiFetch(`${base}/completion${query.toString() ? `?${query}` : ""}`));
+            }
             const path = view === "raws" ? `${base}/raws` : view === "ratelimit" ? `${base}/ratelimit` : base;
             return forward(await botApiFetch(path));
         }

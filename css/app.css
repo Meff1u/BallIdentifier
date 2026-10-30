@@ -1876,3 +1876,39 @@ a.cs-person:hover span { text-decoration: underline; }
     .mod-dex { grid-template-columns: 36px minmax(0, 1fr) auto; }
     .mod-dex-actions { grid-column: 2 / -1; justify-content: flex-end; }
 }
+
+/* Profile: last catches */
+.pf-catches { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: var(--space-2); }
+.pf-catch { display: grid; justify-items: center; gap: 4px; padding: var(--space-3) var(--space-2); border-radius: var(--r-lg); border: 1px solid var(--border); background: var(--surface); color: inherit; text-decoration: none; text-align: center; min-width: 0; }
+a.pf-catch:hover { border-color: var(--accent); text-decoration: none; }
+.pf-catch-art { width: 64px; height: 64px; display: grid; place-items: center; }
+.pf-catch-art img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.pf-catch b { font-size: var(--fs-sm); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pf-catch .subtle { font-size: var(--fs-xs); }
+.pf-catch .badge { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Spawn Arts: available specials of a ball */
+.bd-specials { display: flex; flex-wrap: wrap; gap: 6px; }
+.bd-special { display: inline-flex; border-radius: 10px; text-decoration: none; }
+.bd-special .spc-emoji { width: 36px; height: 36px; font-size: 20px; border-radius: 10px; }
+.bd-special .spc-emoji img { width: 24px; height: 24px; }
+.bd-special:hover .spc-emoji, .bd-special:focus-visible .spc-emoji { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* Ballsdex: Completion */
+.cmp-summary { display: grid; gap: var(--space-3); }
+.cmp-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.cmp-percent { font-family: var(--font-display); font-size: var(--fs-2xl); font-weight: 800; line-height: 1; }
+.cmp-meter { height: 10px; border-radius: 99px; background: var(--surface-3); overflow: hidden; }
+.cmp-meter-fill { height: 100%; border-radius: inherit; background: var(--accent); }
+.cmp-controls { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+.cmp-controls .select { width: auto; max-width: 260px; }
+.cmp-controls .input { flex: 1 1 200px; }
+.cmp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--space-2); }
+.cmp-ball { display: grid; grid-template-columns: 48px minmax(0, 1fr); grid-template-rows: auto auto; column-gap: var(--space-2); align-items: center; padding: var(--space-2); border-radius: var(--r-md); border: 1px solid var(--border); background: var(--surface); color: inherit; text-decoration: none; min-width: 0; }
+a.cmp-ball:hover { border-color: var(--accent); text-decoration: none; }
+.cmp-thumb { grid-row: 1 / 3; width: 48px; height: 48px; object-fit: contain; }
+.cmp-name { font-weight: 650; font-size: var(--fs-sm); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; align-self: end; }
+.cmp-ball .subtle { font-size: var(--fs-xs); align-self: start; }
+.bdx-tabs .segmented { overflow-x: auto; scrollbar-width: none; }
+.bdx-tabs .segmented::-webkit-scrollbar { display: none; }
+@media (max-width: 479px) { .bdx-tabs .segmented a { flex: 0 0 auto; } }

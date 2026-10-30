@@ -1,6 +1,31 @@
 {
     "changes": [
         {
+            "timestamp": "1793377553",
+            "type": "website",
+            "changes": [
+                "New Ballsdex → Completion tab: which balls you own and which are still missing, for the whole dex or for one special, straight from Ballsdex (no sync needed)",
+                "Profiles with Ballsdex stats show your official completion"
+            ]
+        },
+        {
+            "timestamp": "1793377250",
+            "type": "website",
+            "changes": [
+                "Specials show how many balls can have them",
+                "Spawn Arts: Ballsdex balls list the specials they can have; hover an emoji for its name, click it to open the special",
+                "Profiles can show your last Ballsdex catches (turn it off in Edit profile)"
+            ]
+        },
+        {
+            "timestamp": "1793376217",
+            "type": "bot",
+            "changes": [
+                "Ballsdex sync progress and the Fast Sync check now count Bronze, Silver and Gold compressed cards correctly, so Fast Sync no longer rejects exports of accounts that have them",
+                "Clearer messages when Ballsdex temporarily switches off part of its API"
+            ]
+        },
+        {
             "timestamp": "1793372595",
             "type": "bot",
             "changes": [

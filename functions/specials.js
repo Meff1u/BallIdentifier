@@ -3,6 +3,7 @@
  *
  * GET  /.netlify/functions/specials            -> { specials, officialLoadedAt, marketWindowDays, canEdit }
  * GET  /.netlify/functions/specials?market=4   -> sale history and market numbers of one special
+ * GET  /.netlify/functions/specials?ball=123    -> specials that Ballsdex ball can have (Spawn Arts popup)
  * POST /.netlify/functions/specials  { id, fields: { alias, emoji, priceAverage, priceHighest, spawnRate, duration, notes } }
  *
  * Editing is owner-only: checked here from the encrypted session and again by the bot.
@@ -17,6 +18,7 @@ const CACHE_MS = 5 * 60 * 1000;
 let cache = null; // { at, data }
 const MARKET_CACHE_MS = 15 * 60 * 1000;
 const marketCache = new Map(); // id -> { at, data }
+const ballCache = new Map(); // ball id -> { at, data }
 
 function isOwner(event) {
     try {
@@ -37,6 +39,19 @@ async function readBot(response) {
 
 exports.handler = async (event) => {
     try {
+        if (event.httpMethod === "GET" && event.queryStringParameters?.ball) {
+            const id = Number(event.queryStringParameters.ball);
+            if (!Number.isInteger(id) || id < 1 || id > 1000000) return json(400, { error: "Invalid ball" });
+            const cached = ballCache.get(id);
+            if (cached && Date.now() - cached.at < MARKET_CACHE_MS) return json(200, cached.data, { headers: { "Cache-Control": "public, max-age=900" } });
+            const { status, data } = await readBot(await botApiFetch(`/api/specials/ball/${id}`));
+            if (status === 200 && data.loaded) {
+                if (ballCache.size > 2000) ballCache.clear();
+                ballCache.set(id, { at: Date.now(), data });
+            }
+            return json(status, data, status === 200 && data.loaded ? { headers: { "Cache-Control": "public, max-age=900" } } : {});
+        }
+
         if (event.httpMethod === "GET" && event.queryStringParameters?.market) {
             const id = Number(event.queryStringParameters.market);
             if (!Number.isInteger(id) || id < 1 || id > 100000) return json(400, { error: "Invalid special" });
