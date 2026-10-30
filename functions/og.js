@@ -20,8 +20,6 @@ const { botApiFetch, botApiPublicFetch } = require("../lib/bot-api");
 
 const RAW = "https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets";
 const SITE = process.env.URL || "https://ballidentifier.xyz";
-const DEX_KEYS = { Ballsdex: "BD", HistoryDex: "HD", JoJoDex: "JD", "Empireballs Reboot": "EB", MapsDex: "MD", FlagsDex: "FD" };
-const DEXES = Object.keys(DEX_KEYS);
 const WAVE_COLORS = { 1: "#FF7769", 1.1: "#424242", 2: "#F56300", 3: "#824300", 4: "#219540", 4.1: "#333333", 5: "#006D83", 5.1: "#666666", 5.2: "#999999", 6: "#4386F5", 7: "#B299F2", 7.1: "#484848", 7.2: "#484848", 8: "#FFBEBE", 8.1: "#666666" };
 const C = { bg: "#0E0B14", surface: "#1A1524", surface2: "#221C2E", border: "#2E2740", text: "#F1EDF7", text2: "#BBB3CB", text3: "#958DA8", accent: "#9B3ABF", accentText: "#CE8CEB", green: "#3BA55C" };
 const W = 1200;
@@ -33,6 +31,11 @@ const fontFile = (weight) => fs.readFileSync(path.join(process.cwd(), "assets/og
 const iconFile = (dex) => fs.readFileSync(path.join(process.cwd(), "assets/icons", `${dex}.png`));
 const dexFile = (dex) => fs.readFileSync(path.join(process.cwd(), "assets/jsons", `${dex}.json`), "utf8");
 const logoFile = () => fs.readFileSync(path.join(process.cwd(), "assets/brand/logo-mark.svg"));
+
+// Enabled dexes (assets/jsons/dexes.json, managed in Moderation -> Dexes; a change redeploys the site): name -> data key
+let dexKeyMap = null;
+const dexKeys = () => (dexKeyMap ??= Object.fromEntries((JSON.parse(dexFile("dexes")).registry || []).filter((dex) => dex.enabled !== false).map((dex) => [dex.name, dex.key])));
+const dexNames = () => Object.keys(dexKeys());
 
 let fonts = null;
 function getFonts() {
@@ -46,7 +49,7 @@ function getDexData(dex) {
     return dexCache.get(dex);
 }
 const ballNames = (data) => Object.keys(data).filter((key) => key !== "hashes" && data[key] && typeof data[key] === "object");
-const totalBalls = () => DEXES.reduce((sum, dex) => sum + ballNames(getDexData(dex)).length, 0);
+const totalBalls = () => dexNames().reduce((sum, dex) => sum + ballNames(getDexData(dex)).length, 0);
 
 const dataUri = (buffer, type) => `data:${type};base64,${buffer.toString("base64")}`;
 const fmt = (value) => Number(value).toLocaleString("en-US");
@@ -193,12 +196,12 @@ function frame({ visual, kicker, title, subtitle, chips = [], rows = [] }) {
     );
 }
 
-const dexIconsRow = (size = 44) => el("div", { gap: 10, alignItems: "center" }, DEXES.map(dexIcon).filter(Boolean).map((icon) => img(icon, size, size, { borderRadius: size / 4 })));
+const dexIconsRow = (size = 44) => el("div", { gap: 10, alignItems: "center" }, dexNames().map(dexIcon).filter(Boolean).map((icon) => img(icon, size, size, { borderRadius: size / 4 })));
 
 /* ----- ball and special cards ----- */
 
 async function ballCard(dexParam, nameParam) {
-    const dex = DEXES.find((name) => name.toLowerCase() === String(dexParam || "").toLowerCase());
+    const dex = dexNames().find((name) => name.toLowerCase() === String(dexParam || "").toLowerCase());
     if (!dex) return null;
     const data = getDexData(dex);
     const name = ballNames(data).find((key) => key.toLowerCase() === String(nameParam || "").toLowerCase());
@@ -208,7 +211,7 @@ async function ballCard(dexParam, nameParam) {
     const [art, collectors] = await Promise.all([
         artImage(dex, name, 880),
         // Same list as the Collectors section on the website (left out if the bot doesn't answer)
-        fromBot(() => botApiFetch(`/api/collectors/${DEX_KEYS[dex]}`)).then((result) => (result?.entries ? (result.entries[ball.id] || []).length : null)),
+        fromBot(() => botApiFetch(`/api/collectors/${dexKeys()[dex]}`)).then((result) => (result?.entries ? (result.entries[ball.id] || []).length : null)),
     ]);
     const chips = [
         ball.rarity !== undefined ? chip(`T${ball.rarity}`) : null,
@@ -331,7 +334,7 @@ async function identifyCard(seed) {
         subtitle: "Upload or paste a spawn image and get the ball in a second.",
         chips: [dexIconsRow()],
         rows: [
-            row("Dexes", fmt(DEXES.length)),
+            row("Dexes", fmt(dexNames().length)),
             row("Balls known", fmt(totalBalls())),
             stats?.identifiedBalls ? row("Spawns identified", fmt(stats.identifiedBalls)) : null,
             stats?.guilds ? row("Discord servers", fmt(stats.guilds)) : null,
@@ -345,7 +348,7 @@ async function artsCard(seed) {
     const picks = [];
     const used = new Set();
     while (picks.length < 12) {
-        const dex = picks.length < DEXES.length ? DEXES[picks.length] : pickFrom(random, DEXES);
+        const dex = picks.length < dexNames().length ? dexNames()[picks.length] : pickFrom(random, dexNames());
         const data = getDexData(dex);
         const name = pickFrom(random, ballNames(data));
         if (used.has(`${dex}/${name}`)) continue;
@@ -379,7 +382,7 @@ async function artsCard(seed) {
                 "div",
                 { flexDirection: "column", gap: 4 },
                 text("Spawn Arts", { fontSize: 64, fontWeight: 800, letterSpacing: -1, lineHeight: 1 }),
-                text(`${fmt(totalBalls())} spawn arts from ${DEXES.length} dexes, with rarity, artist and collectors`, { fontSize: 24, color: C.text2 }),
+                text(`${fmt(totalBalls())} spawn arts from ${dexNames().length} dexes, with rarity, artist and collectors`, { fontSize: 24, color: C.text2 }),
             ),
             el("div", { flexDirection: "column", alignItems: "flex-end", gap: 12 }, dexIconsRow(36), brand(20)),
         ),
@@ -433,7 +436,7 @@ async function trainerCard(seed) {
         title: "Practice catching",
         subtitle: "Balls spawn at random, other players chat and race you. Be the fastest.",
         chips: [greyChip("Easy"), chip("Medium"), greyChip("Hard")],
-        rows: [row("Dexes", fmt(DEXES.length)), row("Balls to learn", fmt(totalBalls())), row("Spawns every", "5–60 s"), row("After a round", "Your stats")],
+        rows: [row("Dexes", fmt(dexNames().length)), row("Balls to learn", fmt(totalBalls())), row("Spawns every", "5–60 s"), row("After a round", "Your stats")],
     });
 }
 
@@ -464,14 +467,14 @@ async function botCard() {
             stats?.guilds ? row("Servers", fmt(stats.guilds)) : null,
             stats?.users ? row("Users", fmt(stats.users)) : null,
             stats?.identifiedBalls ? row("Spawns identified", fmt(stats.identifiedBalls)) : null,
-            row("Dexes", fmt(DEXES.length)),
+            row("Dexes", fmt(dexNames().length)),
         ],
     });
 }
 
 /** Collectors: totals over every dex and the biggest collectors' avatars. */
 async function collectorsCard() {
-    const results = await Promise.all(DEXES.map((dex) => fromBot(() => botApiFetch(`/api/collectors/${DEX_KEYS[dex]}`))));
+    const results = await Promise.all(dexNames().map((dex) => fromBot(() => botApiFetch(`/api/collectors/${dexKeys()[dex]}`))));
     if (results.every((result) => !result?.entries)) throw new Error("collectors unavailable");
 
     const people = new Map(); // id -> { count, avatarUrl, name }
@@ -515,7 +518,7 @@ async function collectorsCard() {
         visual,
         kicker: kickerRow("Collectors"),
         title: "Who collects what",
-        subtitle: `Collectors of every ball in ${DEXES.length} dexes. Add yourself to the balls you collect.`,
+        subtitle: `Collectors of every ball in ${dexNames().length} dexes. Add yourself to the balls you collect.`,
         rows: [
             row("Collectors", fmt(people.size)),
             row("Collections", fmt(claims)),

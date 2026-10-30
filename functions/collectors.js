@@ -12,14 +12,10 @@ const { botApiFetch } = require("../lib/bot-api");
 const { json, requireSession, isAllowedOrigin, parseJsonBody } = require("../lib/http");
 const { getSession } = require("../lib/session");
 
-const DEX_KEYS = {
-    Ballsdex: "BD",
-    HistoryDex: "HD",
-    JoJoDex: "JD",
-    "Empireballs Reboot": "EB",
-    MapsDex: "MD",
-    FlagsDex: "FD",
-};
+const { getDexKey } = require("../lib/dex-data");
+
+// Enabled dexes from assets/jsons/dexes.json (managed in Moderation -> Dexes)
+const DEX_KEYS = new Proxy({}, { get: (_, dex) => (typeof dex === "string" ? getDexKey(dex) : undefined) });
 const ADMIN_ID = "334411435633541121";
 const CACHE_MS = 60 * 1000;
 const cache = new Map(); // dexKey -> { at, data }

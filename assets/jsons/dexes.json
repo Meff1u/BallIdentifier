@@ -1,4 +1,63 @@
 {
-    "dexes": ["Ballsdex", "HistoryDex", "JoJoDex", "Empireballs Reboot", "MapsDex", "FlagsDex"],
-    "incompleteAbbreviations": ["HistoryDex", "Empireballs Reboot", "JoJoDex", "MapsDex", "FlagsDex"]
+    "dexes": [
+        "Ballsdex",
+        "HistoryDex",
+        "JoJoDex",
+        "Empireballs Reboot",
+        "MapsDex",
+        "FlagsDex"
+    ],
+    "incompleteAbbreviations": [
+        "HistoryDex",
+        "Empireballs Reboot",
+        "JoJoDex",
+        "MapsDex",
+        "FlagsDex"
+    ],
+    "registry": [
+        {
+            "name": "Ballsdex",
+            "botId": "999736048596816014",
+            "key": "BD",
+            "enabled": true,
+            "launched": true,
+            "waves": true,
+            "previousArts": true
+        },
+        {
+            "name": "HistoryDex",
+            "botId": "1120942938126553190",
+            "key": "HD",
+            "enabled": true,
+            "launched": true
+        },
+        {
+            "name": "JoJoDex",
+            "botId": "1425109627636285511",
+            "key": "JD",
+            "enabled": true,
+            "launched": true
+        },
+        {
+            "name": "Empireballs Reboot",
+            "botId": "1500173453880197162",
+            "key": "EB",
+            "enabled": true,
+            "launched": true
+        },
+        {
+            "name": "MapsDex",
+            "botId": "1406796704807915630",
+            "key": "MD",
+            "enabled": true,
+            "launched": true
+        },
+        {
+            "name": "FlagsDex",
+            "botId": "1485343094064021625",
+            "key": "FD",
+            "enabled": true,
+            "launched": true
+        }
+    ]
 }

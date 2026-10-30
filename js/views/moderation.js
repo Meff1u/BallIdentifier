@@ -1,12 +1,14 @@
 /**
  * Moderation (owner only): Ballsdex sync status with a cancel button, bot health,
- * a manual dex data refresh and the latest important logs. Opened from the profile menu.
+ * a manual dex data refresh, the supported dexes (add / on-off / delete) and the latest important logs.
+ * Opened from the profile menu.
  */
 
 import { h, icon, img, fmt, timeAgo, formatDuration } from "../core/dom.js";
 import { toast, confirmDialog } from "../core/ui.js";
 import { api, ApiError } from "../core/api.js";
 import { getUser, onAuthChange, sessionReady, loadSession, sessionExpired } from "../core/auth.js";
+import { createDexesCard } from "./moderation-dexes.js";
 
 export const OWNER_ID = "334411435633541121";
 const REFRESH_MS = 5000;
@@ -26,10 +28,12 @@ export function createView() {
     let logTab = "ERRORS";
 
     const body = h("div.mod-body");
+    // Kept between refreshes (it has its own data and open dialogs)
+    const dexes = createDexesCard({ handleError: (error) => handleError(error) });
     const el = h(
         "section.view",
         { dataset: { view: "moderation" }, "aria-labelledby": "mod-title" },
-        h("div.page-head", h("h1", { id: "mod-title" }, "Moderation"), h("p", "Owner tools: sync status, bot health and recent logs. Refreshes every few seconds.")),
+        h("div.page-head", h("h1", { id: "mod-title" }, "Moderation"), h("p", "Owner tools: sync status, bot health, dexes and recent logs. Refreshes every few seconds.")),
         body,
     );
 
@@ -194,7 +198,7 @@ export function createView() {
 
     function render() {
         if (!data) return;
-        body.replaceChildren(h("div.mod-grid", syncCard(), botCard()), logsCard());
+        body.replaceChildren(h("div.mod-grid", syncCard(), botCard()), dexes.el, logsCard());
     }
 
     function handleError(error) {
@@ -216,6 +220,7 @@ export function createView() {
             return;
         }
         if (!data) body.replaceChildren(h("div.skeleton", { style: { height: "240px" } }));
+        if (!data) dexes.load();
         try {
             data = await api("admin");
             render();

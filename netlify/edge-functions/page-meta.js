@@ -9,11 +9,10 @@
  * meta.card: true when the image is a generated 1200x630 card (large preview).
  */
 
-const DEXES = ["Ballsdex", "HistoryDex", "JoJoDex", "Empireballs Reboot", "MapsDex", "FlagsDex"];
 const DATA_TTL_MS = 10 * 60 * 1000;
 
 const PAGES = {
-    arts: ["Spawn Arts", "Every spawn art of Ballsdex, HistoryDex, JoJoDex, Empireballs Reboot, MapsDex and FlagsDex, with rarity, artist, wave and collectors."],
+    arts: ["Spawn Arts", "Every spawn art of every supported dex, with rarity, artist, wave and collectors."],
     trainer: ["Catch Trainer", "Practice catching: name the ball from its spawn art as fast as you can."],
     bot: ["BallIdentifier Discord bot", "Identify spawns in two clicks, get spawn notifications, track your Ballsdex collection and more, right in Discord."],
     "bot/notifier": ["Spawn Notifier settings", "Set up spawn notifications for your Discord servers."],
@@ -62,7 +61,9 @@ const cardUrl = (origin, params) => `${origin}/.netlify/functions/og?${new URLSe
 const escape = (text) => String(text).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 async function ballMeta(origin, dexParam, ballParam) {
-    const dex = DEXES.find((name) => name.toLowerCase() === dexParam.toLowerCase());
+    // Enabled dexes (assets/jsons/dexes.json, managed in Moderation -> Dexes)
+    const { dexes = [] } = await getJson(`${origin}/assets/jsons/dexes.json`);
+    const dex = dexes.find((name) => name.toLowerCase() === dexParam.toLowerCase());
     if (!dex) return null;
     if (!ballParam) return { title: `${dex} spawn arts`, description: `Every ${dex} spawn art with rarity, artist and collectors.`, image: null };
 

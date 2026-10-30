@@ -17,9 +17,21 @@ function getJson(path) {
     return cache.get(path);
 }
 
-export async function getDexList() {
+/**
+ * Enabled dexes (assets/jsons/dexes.json, managed in Moderation -> Dexes). Also fills DEX_WITH_WAVES / DEX_WITH_PREVIOUS_ARTS.
+ * includeOff: turned-off dexes too (the owner fills a new dex in Spawn Arts before turning it on); `off` lists them.
+ */
+export async function getDexList({ includeOff = false } = {}) {
     try {
         const data = await getJson("assets/jsons/dexes.json");
+        if (Array.isArray(data.registry)) {
+            DEX_WITH_WAVES.splice(0, DEX_WITH_WAVES.length, ...data.registry.filter((dex) => dex.waves).map((dex) => dex.name));
+            DEX_WITH_PREVIOUS_ARTS.splice(0, DEX_WITH_PREVIOUS_ARTS.length, ...data.registry.filter((dex) => dex.previousArts).map((dex) => dex.name));
+            if (includeOff) {
+                const off = data.registry.filter((dex) => dex.enabled === false).map((dex) => dex.name);
+                return { dexes: [...(data.dexes || []), ...off], off, incomplete: data.incompleteAbbreviations || [] };
+            }
+        }
         return { dexes: data.dexes || [], incomplete: data.incompleteAbbreviations || [] };
     } catch {
         return { dexes: ["Ballsdex", "HistoryDex", "JoJoDex", "Empireballs Reboot", "MapsDex", "FlagsDex"], incomplete: [] };
@@ -43,6 +55,7 @@ export const compressedArtUrl = (dex, ball) => `${RAW}/dexes/${encodeURIComponen
 export const previousArtUrl = (ball, index, ext = "webp") =>
     `${RAW}/dexes/Ballsdex/previous/${encodeURIComponent(ball)}/${index + 1}.${ext}`;
 
+// Filled from dexes.json by getDexList() (these are the fallback)
 export const DEX_WITH_WAVES = ["Ballsdex"];
 export const DEX_WITH_PREVIOUS_ARTS = ["Ballsdex"];
 export const WAVE_COLORS = {

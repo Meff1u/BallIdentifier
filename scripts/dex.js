@@ -40,8 +40,10 @@ const readJson = (file, fallback) => (fs.existsSync(file) ? JSON.parse(fs.readFi
 const writeJson = (file, data) => fs.writeFileSync(file, JSON.stringify(data, null, 4) + "\n");
 const sortKeys = (object) => Object.fromEntries(Object.entries(object).sort(([a], [b]) => a.localeCompare(b, "en")));
 
+// Every dex in the list, turned-off ones too (assets/jsons/dexes.json, managed in Moderation -> Dexes)
 function getDexes() {
-    return readJson(path.join(JSONS_DIR, "dexes.json"), { dexes: [] }).dexes;
+    const file = readJson(path.join(JSONS_DIR, "dexes.json"), { dexes: [] });
+    return Array.isArray(file.registry) ? file.registry.map((dex) => dex.name) : file.dexes;
 }
 
 function listArts(dex) {

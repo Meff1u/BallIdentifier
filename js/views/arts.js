@@ -84,9 +84,10 @@ export function createView() {
     /* ----- Data ----- */
 
     async function init() {
-        const { dexes } = await getDexList();
+        // The owner also sees turned-off dexes (to fill a new one before turning it on in Moderation)
+        const { dexes, off = [] } = await getDexList({ includeOff: getUser()?.id === OWNER_ID });
         if (!dexes.includes(dex)) dex = dexes[0];
-        dexSelect.replaceChildren(...dexes.map((name) => h("option", { value: name, selected: name === dex }, name)));
+        dexSelect.replaceChildren(...dexes.map((name) => h("option", { value: name, selected: name === dex }, off.includes(name) ? `${name} (off)` : name)));
         load();
     }
 

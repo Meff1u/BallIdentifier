@@ -7,7 +7,7 @@ import { h, icon, img, fmt, initials, timeAgo, spinner } from "../core/dom.js";
 import { toast, openDialog, confirmDialog } from "../core/ui.js";
 import { api, ApiError } from "../core/api.js";
 import { getUser, onAuthChange, loadSession, login, sessionExpired, sessionReady } from "../core/auth.js";
-import { dexIcon } from "../core/data.js";
+import { dexIcon, getDexList } from "../core/data.js";
 import { renderDiscordMarkdown } from "../core/discord-md.js";
 import { openNotifications } from "../notifications.js";
 import { catchStatsPanel } from "./catch-stats.js";
@@ -131,7 +131,9 @@ export function createView() {
         return h("h2", h("span.icon-wrap", icon(iconName)), title);
     }
 
-    const DEXES = ["Ballsdex", "HistoryDex", "JoJoDex", "Empireballs Reboot", "MapsDex", "FlagsDex"];
+    // Supported dexes (assets/jsons/dexes.json)
+    const dexList = h("ul.dex-list");
+    getDexList().then(({ dexes }) => dexList.replaceChildren(...dexes.map((dex) => h("li", img(dexIcon(dex), "", "dex-ico", { width: 24, height: 24 }), dex))));
     const code = (text) => h("code", text);
 
     function infoCard(iconName, title, intro, points, action) {
@@ -164,7 +166,7 @@ export function createView() {
             h(
                 "div.works-with",
                 h("span.eyebrow", "Works with"),
-                h("ul.dex-list", DEXES.map((dex) => h("li", img(dexIcon(dex), "", "dex-ico", { width: 24, height: 24 }), dex))),
+                dexList,
             ),
             h(
                 "article.feature",

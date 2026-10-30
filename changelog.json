@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1793367813",
+            "type": "website",
+            "changes": [
+                "Supported dexes are now managed in one place, so new dexes can be added (or retired) much faster"
+            ]
+        },
+        {
             "timestamp": "1793366936",
             "type": "website",
             "changes": [

@@ -1855,3 +1855,24 @@ a.cs-person:hover span { text-decoration: underline; }
 .cs-line { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-2); align-items: start; cursor: pointer; }
 .cs-line input { margin-top: 3px; accent-color: var(--accent); width: 16px; height: 16px; }
 .cs-preview-body { min-width: 0; }
+
+/* Moderation: dexes */
+.mod-dexes[aria-busy="true"] { opacity: 0.7; pointer-events: none; }
+.mod-dexes-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.mod-dexes-head h2 { margin: 0; }
+.mod-dex-list { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--border); }
+.mod-dex { display: grid; grid-template-columns: 36px minmax(0, 1fr) auto auto; align-items: center; gap: var(--space-3); padding: 10px 0; border-bottom: 1px solid var(--border); }
+.mod-dex.is-off .mod-dex-icon, .mod-dex.is-off .mod-dex-body { opacity: 0.55; }
+.mod-dex-icon { width: 36px; height: 36px; border-radius: 10px; object-fit: cover; background: var(--surface-3); }
+.mod-dex-body { display: grid; gap: 2px; min-width: 0; }
+.mod-dex-body b { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.mod-dex-body .subtle { font-size: var(--fs-xs); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mod-dex-switch { min-height: 36px; }
+.mod-dex-actions { display: flex; gap: 2px; }
+.mod-danger:hover { color: var(--danger); }
+.mod-dex-skel { height: 56px; border-radius: var(--r-md); margin-top: var(--space-2); }
+.mod-dex-gone { margin: 0; padding-left: 1.2em; color: var(--text-2); font-size: var(--fs-sm); display: grid; gap: 2px; }
+@media (max-width: 479px) {
+    .mod-dex { grid-template-columns: 36px minmax(0, 1fr) auto; }
+    .mod-dex-actions { grid-column: 2 / -1; justify-content: flex-end; }
+}
