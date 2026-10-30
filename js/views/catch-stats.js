@@ -215,7 +215,7 @@ function previewReply(config) {
         h(
             "div.t-msg",
             h("span.t-reply", icon("chevron-right", "icon-sm"), h("b", "Ballsdex"), h("span.t-reply-text", "@you You caught Poland!")),
-            h("img.t-avatar", { src: "assets/brand/avatar-512.png", alt: "" }),
+            h("img.t-avatar", { src: "assets/brand/bot-avatar.png", alt: "" }),
             h("div.cs-preview-body", h("div.t-msg-head", h("span.t-author.is-bot", "BallIdentifier"), h("span.t-time", "Today")), text),
         ),
     );

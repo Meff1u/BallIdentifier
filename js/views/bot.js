@@ -552,7 +552,7 @@ export function createView() {
                 h(
                     "div.t-msg",
                     h("span.t-reply", icon("chevron-right", "icon-sm"), h("b", "Ballsdex"), h("span.t-reply-text", kind.replyText)),
-                    h("img.t-avatar", { src: "assets/brand/avatar-512.png", alt: "" }),
+                    h("img.t-avatar", { src: "assets/brand/bot-avatar.png", alt: "" }),
                     h("div", { style: { "min-width": "0" } }, h("div.t-msg-head", h("span.t-author.is-bot", "BallIdentifier"), h("span.t-time", "Today")), previewText),
                 ),
             ),

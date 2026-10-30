@@ -1,6 +1,20 @@
 {
     "changes": [
         {
+            "timestamp": "1793366504",
+            "type": "bot",
+            "changes": [
+                "Catch stats recognize catches more reliably, and the bot now reports in its logs when it can't answer a catch (for example, missing permissions)"
+            ]
+        },
+        {
+            "timestamp": "1793366203",
+            "type": "website",
+            "changes": [
+                "Bot message previews (Notifier and Catch stats) now show the bot's current Discord avatar"
+            ]
+        },
+        {
             "timestamp": "1793365577",
             "type": "website",
             "changes": [
