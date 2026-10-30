@@ -17,6 +17,7 @@ const PAGES = {
     trainer: ["Catch Trainer", "Practice catching: name the ball from its spawn art as fast as you can."],
     bot: ["BallIdentifier Discord bot", "Identify spawns in two clicks, get spawn notifications, track your Ballsdex collection and more, right in Discord."],
     "bot/notifier": ["Spawn Notifier settings", "Set up spawn notifications for your Discord servers."],
+    "bot/catch-stats": ["Catch stats", "How fast do you catch? Catch times, averages and records for every catch, plus rankings of the fastest catchers."],
     collectors: ["Collectors", "See who collects which ball in every dex, and add yourself as a collector."],
     users: ["Users", "Find BallIdentifier users with a public profile: what they collect, their showcase and Ballsdex stats."],
     u: ["Profile", "Public BallIdentifier profiles: what someone collects, their showcase and Ballsdex stats."],
@@ -121,7 +122,7 @@ async function specialMeta(origin, idParam) {
 }
 
 // Pages with a generated card (functions/og.js); "" = the home page (Identify)
-const PAGE_CARDS = { "": "identify", identify: "identify", arts: "arts", trainer: "trainer", bot: "bot", "bot/notifier": "bot", collectors: "collectors", "ballsdex/specials": "specials" };
+const PAGE_CARDS = { "": "identify", identify: "identify", arts: "arts", trainer: "trainer", bot: "bot", "bot/notifier": "bot", "bot/catch-stats": "bot", collectors: "collectors", "ballsdex/specials": "specials" };
 
 async function pageMeta(url) {
     const parts = url.pathname.split("/").filter(Boolean).map(decode);

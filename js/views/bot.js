@@ -10,6 +10,7 @@ import { getUser, onAuthChange, loadSession, login, sessionExpired, sessionReady
 import { dexIcon } from "../core/data.js";
 import { renderDiscordMarkdown } from "../core/discord-md.js";
 import { openNotifications } from "../notifications.js";
+import { catchStatsPanel } from "./catch-stats.js";
 
 const CLIENT_ID = "510775326310268930";
 const INVITE_URL = `https://discord.com/oauth2/authorize?client_id=${CLIENT_ID}`;
@@ -90,12 +91,13 @@ export function createView() {
 
     const tabOverview = h("a", { href: "#/bot" }, icon("info", "icon-sm"), "Overview");
     const tabNotifier = h("a", { href: "#/bot/notifier" }, icon("bell-ring", "icon-sm"), "Notifier");
+    const tabCatch = h("a", { href: "#/bot/catch-stats" }, icon("timer", "icon-sm"), "Catch stats");
     const panel = h("div");
     const el = h(
         "section.view",
         { dataset: { view: "bot" }, "aria-label": "Bot" },
         hero,
-        h("div.tabs-bar", h("nav.segmented", { "aria-label": "Bot sections" }, tabOverview, tabNotifier)),
+        h("div.tabs-bar", h("nav.segmented", { "aria-label": "Bot sections" }, tabOverview, tabNotifier, tabCatch)),
         panel,
     );
 
@@ -151,6 +153,7 @@ export function createView() {
         [[code("/ballsdex sync")], null, "Import your Ballsdex collection, with live progress and a cancel button.", "Anywhere"],
         [[code("/ballsdex collection")], null, "Totals, specials and your top 5 rankings from the last sync.", "Anywhere"],
         [[code("/ballsdex raws")], null, "Value of your rare non-special balls, counted per tier.", "Anywhere"],
+        [[code("/catchstats"), " ", h("span.cmd-arg", "me · server · settings")], null, "Your catch times, the server's fastest catchers, and who can see your stats.", "Anywhere"],
         [[code("/help")], null, "Bot status, supported dexes, statistics and links.", "Anywhere"],
     ];
 
@@ -214,6 +217,17 @@ export function createView() {
                 h("a.btn", { href: "#/ballsdex" }, icon("layers"), h("span", "Open Ballsdex tab")),
             ),
             infoCard(
+                "timer",
+                "Catch stats",
+                "How fast do you catch? On servers where an admin turns it on, the bot answers each catch with your time.",
+                [
+                    "Your average, your average and best for that ball, and a shout when you beat a record.",
+                    "Rankings of the fastest catchers: all time, 30 days and 7 days, per server or everywhere.",
+                    "Private by default. Make your stats public in your profile, or opt out any time.",
+                ],
+                h("a.btn", { href: "#/bot/catch-stats" }, icon("timer"), h("span", "Catch stats settings")),
+            ),
+            infoCard(
                 "bell",
                 "Notifications",
                 "Everything the bot tells you lands under the bell on this website. Choose what you get, and which ones also come as a Discord DM.",
@@ -268,12 +282,17 @@ export function createView() {
     function render() {
         const token = ++renderToken;
         const isNotifier = section === "notifier";
-        hero.hidden = isNotifier;
-        for (const [tab, on] of [[tabOverview, !isNotifier], [tabNotifier, isNotifier]]) {
+        hero.hidden = section !== "overview";
+        for (const [tab, on] of [[tabOverview, section === "overview"], [tabNotifier, isNotifier], [tabCatch, section === "catch-stats"]]) {
             if (on) tab.setAttribute("aria-current", "page");
             else tab.removeAttribute("aria-current");
         }
 
+        if (section === "catch-stats") {
+            if (!sessionReady()) return panel.replaceChildren(h("div.card.card-pad", { "aria-busy": "true" }, h("div.skeleton", { style: { height: "120px" } })));
+            document.title = "Catch stats · Bot · BallIdentifier";
+            return panel.replaceChildren(catchStatsPanel({ inviteFor }));
+        }
         if (!isNotifier) return panel.replaceChildren(overview);
         if (!sessionReady()) {
             return panel.replaceChildren(h("div.card.card-pad", { "aria-busy": "true" }, h("div.skeleton", { style: { height: "120px" } })));
@@ -285,7 +304,7 @@ export function createView() {
     }
 
     onAuthChange(() => {
-        if (!el.hidden && section === "notifier") render();
+        if (!el.hidden && section !== "overview") render();
     });
 
     function loginPrompt() {
@@ -674,11 +693,11 @@ export function createView() {
     return {
         el,
         show(routeParams = []) {
-            section = routeParams[0] === "notifier" ? "notifier" : "overview";
+            section = ["notifier", "catch-stats"].includes(routeParams[0]) ? routeParams[0] : "overview";
             params = routeParams.slice(1).filter((p) => /^\d{17,20}$/.test(p));
             loadStats();
             render();
-            if (section === "notifier" && !sessionReady()) loadSession().then(render);
+            if (section !== "overview" && !sessionReady()) loadSession().then(render);
         },
     };
 }

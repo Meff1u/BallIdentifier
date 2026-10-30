@@ -4,7 +4,7 @@
  * GET  /.netlify/functions/profile?id=<discord id>   -> { profile, viewer }   (own profile also while private)
  * GET  /.netlify/functions/profile?q=<name>          -> { total, users }      (public profiles only)
  * GET  /.netlify/functions/profile?action=me         -> own settings + profile (login)
- * POST /.netlify/functions/profile { action: "save", settings }                  (login)
+ * POST /.netlify/functions/profile { action: "save", settings, catchStats? }     (login; catchStats: { public, tracking })
  * POST /.netlify/functions/profile { action: "moderate", id, op }               (owner)
  */
 
@@ -37,6 +37,15 @@ async function cached(key, path) {
     if (result.status === 200 || result.status === 404) cache.set(key, result);
     if (cache.size > 500) cache.delete(cache.keys().next().value);
     return result;
+}
+
+// Catch stats privacy sent with the profile: only the two switches
+function catchStatsInput(input) {
+    if (!input || typeof input !== "object") return undefined;
+    const out = {};
+    if (typeof input.public === "boolean") out.public = input.public;
+    if (typeof input.tracking === "boolean") out.tracking = input.tracking;
+    return Object.keys(out).length ? out : undefined;
 }
 
 exports.handler = async (event) => {
@@ -79,7 +88,7 @@ exports.handler = async (event) => {
         if (body.action === "save") {
             if (!body.settings || typeof body.settings !== "object") return json(400, { error: "Invalid settings" });
             // The name and avatar shown on the profile come from the Discord login
-            const { status, data } = await readBot(await botApiFetch(`/api/users/${userId}/profile`, { method: "POST", body: { settings: body.settings, discord: publicUser(auth.session) } }));
+            const { status, data } = await readBot(await botApiFetch(`/api/users/${userId}/profile`, { method: "POST", body: { settings: body.settings, discord: publicUser(auth.session), catchStats: catchStatsInput(body.catchStats) } }));
             if (status === 200) {
                 cache.delete(`id:${userId}`);
                 for (const key of cache.keys()) if (key.startsWith("q:")) cache.delete(key);

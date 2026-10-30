@@ -1,6 +1,23 @@
 {
     "changes": [
         {
+            "timestamp": "1793364589",
+            "type": "bot",
+            "changes": [
+                "New: Catch stats. On servers where an admin turns them on, the bot answers each catch with how fast it was, your average, your average and best for that ball, and a shout when you beat your own or the server's record",
+                "New /catchstats command: your stats, the server's fastest catchers (all time, 30 or 7 days) and who can see your stats",
+                "Catch stats are private by default. \"Don't track me\" under any catch reply stops tracking and deletes your catch data"
+            ]
+        },
+        {
+            "timestamp": "1793364588",
+            "type": "website",
+            "changes": [
+                "New Bot → Catch stats page: what it does and what it saves, rankings of the fastest catchers (all time, 30 days, 7 days), your own stats, and on/off switches for servers you administer, with a choice of what the reply shows or replying only on records",
+                "Profiles can show your catch stats. New switches in Edit profile: \"Show my catch stats publicly\" and \"Track my catches\""
+            ]
+        },
+        {
             "timestamp": "1793349089",
             "type": "website",
             "changes": [

@@ -79,6 +79,10 @@
                                 <td>If you create a profile on the website: your bio, pronouns, accent color, favorite dex, showcase balls and visibility settings, plus your Discord display name, username and avatar URL. It stays private until you turn on Public profile; then anyone can see it at ballidentifier.xyz/u/&lt;your Discord ID&gt; and find it in Users, together with the balls you collect and, only if you turn it on, a summary of your Ballsdex stats (never your API key or ball IDs)</td>
                             </tr>
                             <tr>
+                                <td><strong>Catch Stats</strong></td>
+                                <td>On servers where an admin turned on Catch stats, the bot reads the dex bots' spawn and catch messages there and, for each catch, saves your Discord ID, the server ID, the dex and ball, how long the catch took (the time between the spawn message and the catch message) and when it happened. From these it keeps your totals: number of catches, average and fastest time, overall, per ball and per server. Your catch stats are private (only you see them) unless you turn on “Show my catch stats publicly”; then they appear on your profile and in the Catch stats rankings. You can stop being tracked at any time (“Don't track me” under a catch reply, <code>/catchstats settings tracking:False</code> or your profile), which deletes this data</td>
+                            </tr>
+                            <tr>
                                 <td><strong>Website Login (optional)</strong></td>
                                 <td>When you log in on the website with Discord: an encrypted, HttpOnly session cookie with your Discord ID, username, avatar and a Discord access token used to list your servers. It is kept in your browser, not on our servers</td>
                             </tr>
@@ -101,6 +105,10 @@
                             <tr>
                                 <td><strong>Notifier Configuration</strong></td>
                                 <td>Selected bot IDs, role ID, custom message, setup user, and setup timestamp stored for the notifier managed on the website</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Catch Stats Settings</strong></td>
+                                <td>Whether Catch stats are on, the reply settings, who changed them and when, and the server's fastest catch</td>
                             </tr>
                             <tr>
                                 <td><strong>Guild Usage Counts</strong></td>
@@ -126,10 +134,12 @@
                         <li>Your Ballsdex sign-in and synced collection data are kept until you unlink your account (on the website's Ballsdex tab or with <code>/ballsdex unlink</code>), which deletes them and revokes BallIdentifier's access. You can also remove that access on your Ballsdex Keys page.</li>
                         <li>The website session cookie expires after 7 days at most, or when you log out.</li>
                         <li>Your profile settings are kept until you ask us to remove them. Turning off Public profile hides your profile and removes it from Users right away.</li>
+                        <li>Single catches (for the 7 and 30 day Catch stats) are deleted automatically after 35 days. Your catch totals, averages and records are kept until you turn off catch tracking, which deletes all of your catch data right away.</li>
                     </ul>
                     <p><strong>Server Data:</strong></p>
                     <ul>
                         <li>Notifier configuration is retained until it is removed on the website or deleted from storage.</li>
+                        <li>Catch stats settings are kept until an admin changes them; turning Catch stats off stops new catches from being counted on that server.</li>
                         <li>Aggregated usage counters are kept for service statistics.</li>
                     </ul>
 

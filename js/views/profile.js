@@ -8,6 +8,7 @@ import { toast, openDialog, confirmDialog } from "../core/ui.js";
 import { api, ApiError } from "../core/api.js";
 import { getUser, onAuthChange, login, sessionExpired, sessionReady, loadSession } from "../core/auth.js";
 import { getDexList, getDex, dexIcon, compressedArtUrl } from "../core/data.js";
+import { formatMs } from "./catch-stats.js";
 
 
 const displayName = (p) => p.name || p.username || `User ${p.id.slice(-4)}`;
@@ -133,6 +134,7 @@ export function createView() {
             ),
             showcaseSection(p),
             ballsdexSection(p),
+            catchSection(p),
             collectionsSection(p),
         ];
         body.replaceChildren(...sections.filter(Boolean));
@@ -198,6 +200,44 @@ export function createView() {
         );
     }
 
+    function catchSection(p) {
+        const c = p.catches;
+        if (!c?.all) {
+            if (!isSelf()) return null;
+            return hintCard("timer", "Catch stats", c ? "No catches tracked yet. They count on servers where an admin turned on Catch stats." : "Catch tracking is off. Turn on Track my catches in Edit profile to start counting.", "/bot/catch-stats");
+        }
+        const kv = (label, value, sub) => h("div", h("dt", label), h("dd", value), sub ? h("p.subtle", sub) : null);
+        const span = (w) => (w?.count ? `${fmt(w.count)} catches · best ${formatMs(w.bestMs)}` : "No catches");
+        const balls = c.all.fastestBalls || [];
+        return h(
+            "section.pf-section",
+            h("h2.section-title", icon("timer"), "Catch stats", isSelf() ? h("span.subtle.pf-synced", c.public ? "Public" : "Only you can see this") : null),
+            h(
+                "div.bdx-grid",
+                h(
+                    "section.card.panel.span-2",
+                    h(
+                        "dl.kv.cols-4",
+                        kv("Catches", fmt(c.all.count), c.all.uniqueBalls ? `${fmt(c.all.uniqueBalls)} different balls` : null),
+                        kv("Average", formatMs(c.all.averageMs)),
+                        kv("Fastest", formatMs(c.all.bestMs), c.all.best?.ball || null),
+                        kv("Last 30 days", c.last30?.count ? formatMs(c.last30.averageMs) : "—", span(c.last30)),
+                    ),
+                ),
+                balls.length
+                    ? h(
+                          "section.card.panel.span-2",
+                          h(
+                              "div.rank-group",
+                              h("h3", "Fastest balls (average, 3+ catches)"),
+                              h("ol.rank", balls.map((b, i) => h("li", h("span.pos", i + 1), h("span.name", { title: b.dex ? `${b.ball} · ${b.dex}` : b.ball }, b.ball), h("span.val.num", formatMs(b.averageMs))))),
+                          ),
+                      )
+                    : null,
+            ),
+        );
+    }
+
     function collectionsSection(p) {
         if (p.collections === null) return null;
         if (!p.collections.length) return isSelf() ? hintCard("crown", "Collecting", "You don't collect anything yet. Add yourself to the balls you collect on the Collectors page.", "/collectors") : null;
@@ -251,6 +291,9 @@ export function createView() {
         const publicInput = h("input", { type: "checkbox", checked: s.public, disabled: data.blocked });
         const bdxInput = h("input", { type: "checkbox", checked: s.showBallsdex });
         const colInput = h("input", { type: "checkbox", checked: s.showCollections });
+        const catchSettings = data.catchStats || { public: false, tracking: true };
+        const catchPublicInput = h("input", { type: "checkbox", checked: catchSettings.public });
+        const catchTrackInput = h("input", { type: "checkbox", checked: catchSettings.tracking });
         const bio = h("textarea.textarea", { maxLength: data.limits.bio, rows: 4, placeholder: "A few words about you, what you collect, your trade rules…", value: s.bio });
         const bioCount = h("span.hint");
         const updateCount = () => (bioCount.textContent = `${bio.value.length} / ${data.limits.bio}`);
@@ -328,6 +371,11 @@ export function createView() {
                     ),
                     h("label.switch", h("span", h("b", "Show what I collect"), h("small.hint", "The balls you're a collector of, from the Collectors page.")), colInput),
                 ),
+                h(
+                    "section.pf-edit-block",
+                    h("label.switch", h("span", h("b", "Show my catch stats publicly"), h("small.hint", "Your catch times on your profile and in the Catch stats rankings. Off: only you see them.")), catchPublicInput),
+                    h("label.switch", h("span", h("b", "Track my catches"), h("small.hint", "Off stops Catch stats for you and deletes your catch data.")), catchTrackInput),
+                ),
             ],
             footer: [h("button.btn", { type: "button", onclick: () => dialog.close() }, "Cancel"), saveBtn],
         });
@@ -343,8 +391,16 @@ export function createView() {
                 showBallsdex: bdxInput.checked,
                 showCollections: colInput.checked,
             };
+            const catchChanges = { public: catchPublicInput.checked, tracking: catchTrackInput.checked };
+            if (catchSettings.tracking && !catchChanges.tracking) {
+                const ok = await confirmDialog({ title: "Stop tracking your catches?", message: "Your catch data is deleted right away and the bot won't answer your catches anymore.", confirmLabel: "Stop and delete", danger: true });
+                if (!ok) {
+                    saveBtn.disabled = false;
+                    return;
+                }
+            }
             try {
-                const result = await api("profile", { method: "POST", body: { action: "save", settings } });
+                const result = await api("profile", { method: "POST", body: { action: "save", settings, catchStats: catchChanges } });
                 dialog.close();
                 toast(settings.public && !s.public ? "Your profile is public now." : "Profile saved.", "success");
                 if (profileId === getUser()?.id && result.profile) {
