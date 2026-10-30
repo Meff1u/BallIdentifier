@@ -22,8 +22,8 @@ export function createView() {
         "section.view",
         { dataset: { view: "users" }, "aria-labelledby": "users-title" },
         h("div.page-head", h("h1", { id: "users-title" }, "Users"), h("p", "Public profiles of BallIdentifier users: what they collect, their showcase and Ballsdex stats.")),
-        ownCta,
         h("div.arts-toolbar", h("div.toolbar-row", h("label.input-icon", icon("search"), search))),
+        ownCta,
         meta,
         grid,
         emptyEl,
@@ -31,6 +31,7 @@ export function createView() {
 
     function paintCta() {
         const user = getUser();
+        if (!user) return ownCta.replaceChildren();
         ownCta.replaceChildren(
             user
                 ? h(

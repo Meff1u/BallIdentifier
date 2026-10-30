@@ -115,7 +115,8 @@ export function createView() {
         ].filter(Boolean);
 
         const collected = (p.collections || []).reduce((sum, group) => sum + group.balls.length, 0);
-        body.replaceChildren(
+        // (replaceChildren would print an empty section as the text "null")
+        const sections = [
             isSelf() && !p.public
                 ? h(
                       "p.callout.callout-warning",
@@ -145,7 +146,8 @@ export function createView() {
             showcaseSection(p),
             ballsdexSection(p),
             collectionsSection(p),
-        );
+        ];
+        body.replaceChildren(...sections.filter(Boolean));
     }
 
     function stat(value, label, show) {

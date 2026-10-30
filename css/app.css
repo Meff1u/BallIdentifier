@@ -408,7 +408,7 @@ input, textarea { caret-color: var(--accent); }
 
 /* Navigation drawer (phones and tablets): the sidebar slides in from the left */
 .sidebar-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
-.nav-close, .nav-backdrop { display: none; }
+.sidebar-head .nav-close, .nav-backdrop { display: none; }
 .nav-toggle { margin-left: -6px; }
 @media (max-width: 1023.98px) {
     .sidebar {
@@ -422,8 +422,9 @@ input, textarea { caret-color: var(--accent); }
     }
     :root.nav-open .sidebar { transform: none; visibility: visible; transition: transform var(--dur-2) var(--ease-out), visibility 0s; }
     .sidebar .brand { padding: 6px var(--space-2) 0; }
-    .nav-close { display: inline-grid; }
-    .sidebar-toggle { display: none; }
+    .sidebar-head .nav-close { display: inline-grid; }
+    /* Collapse/expand is for the desktop sidebar only (.nav-link later in the file would show it again) */
+    .sidebar-foot .sidebar-toggle { display: none; }
     .sidebar .nav-link { padding-top: 12px; padding-bottom: 12px; }
     .sidebar-foot { margin-top: auto; display: grid; gap: var(--space-3); padding: 0 var(--space-2); }
     .sidebar-foot p { font-size: var(--fs-xs); color: var(--text-3); }
@@ -435,7 +436,7 @@ input, textarea { caret-color: var(--accent); }
     :root.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
     :root.nav-open body { overflow: hidden; }
 }
-@media (min-width: 1024px) { .nav-toggle { display: none; } }
+@media (min-width: 1024px) { .topbar .nav-toggle { display: none; } }
 @media (prefers-reduced-motion: reduce) { .sidebar, .nav-backdrop { transition: none !important; } }
 
 /* Sidebar navigation (desktop) */
@@ -1739,6 +1740,7 @@ a.server:hover > .icon { color: var(--accent-text); }
 
 /* Users */
 .uc-cta { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-4); margin-bottom: var(--space-4); }
+.uc-cta:empty { display: none; }
 .uc-cta p { display: grid; flex: 1; min-width: 0; }
 .uc-grid { display: grid; gap: var(--space-3); grid-template-columns: minmax(0, 1fr); }
 @media (min-width: 640px) { .uc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
