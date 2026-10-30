@@ -30,7 +30,6 @@ let current = null;
 let routeToken = 0;
 
 const viewsRoot = $("#views");
-const titleEl = $("#topbar-title");
 
 /* ---------- Routing ---------- */
 
@@ -108,7 +107,6 @@ async function route() {
         if (link.dataset.nav === navName) link.setAttribute("aria-current", "page");
         else link.removeAttribute("aria-current");
     });
-    titleEl.textContent = ROUTES[name].title;
     document.title = name === "identify" ? "BallIdentifier · Identify any ball in a second" : `${ROUTES[name].title} · BallIdentifier`;
     document.body.dataset.route = name;
 
@@ -165,9 +163,9 @@ function handleLoginResult(query) {
 
 const themeBtn = $("#theme-btn");
 
-function themeIcon() {
-    const choice = getThemeChoice();
-    return THEMES.find((theme) => theme.id === choice)?.icon || "monitor";
+/** The theme's color circle (both halves: its two main colors), used in the menu and on the button. */
+function themeSwatch(theme) {
+    return h("span.theme-swatch", { style: { "--sw-bg": theme.swatch[0], "--sw-accent": theme.swatch[1] }, "aria-hidden": "true" });
 }
 
 themeBtn.addEventListener("click", () =>
@@ -178,7 +176,7 @@ themeBtn.addEventListener("click", () =>
             THEMES.map((theme) =>
                 menuItem({
                     label: theme.label,
-                    lead: h("span.theme-swatch", { class: theme.id === "system" ? "is-system" : "", style: { "--sw-bg": theme.swatch[0], "--sw-accent": theme.swatch[1] }, "aria-hidden": "true" }),
+                    lead: themeSwatch(theme),
                     checked: getThemeChoice() === theme.id,
                     onSelect: () => setTheme(theme.id),
                 }),
@@ -189,7 +187,8 @@ themeBtn.addEventListener("click", () =>
 );
 
 onThemeChange(() => {
-    setIcon(themeBtn.querySelector("svg"), themeIcon());
+    const choice = THEMES.find((theme) => theme.id === getThemeChoice()) || THEMES[0];
+    themeBtn.replaceChildren(themeSwatch(choice));
     themeBtn.setAttribute("aria-label", `Theme: ${resolvedTheme()}`);
 });
 
