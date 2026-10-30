@@ -48,16 +48,17 @@ export function createView() {
     const tabProfile = h("a", { href: "#/ballsdex" }, icon("user-round", "icon-sm"), "Profile");
     const tabRaws = h("a", { href: "#/ballsdex/raws" }, icon("gem", "icon-sm"), "Raws");
     const tabSpecials = h("a", { href: "#/ballsdex/specials" }, icon("sparkles", "icon-sm"), "Specials");
+    const tabLimits = h("a", { href: "#/ballsdex/limits" }, icon("gauge", "icon-sm"), "Limits");
     const el = h(
         "section.view",
         { dataset: { view: "ballsdex" }, "aria-labelledby": "bdx-title" },
         h("div.page-head", h("h1", { id: "bdx-title" }, "Ballsdex"), h("p", "Your Ballsdex account, collection stats, raws and every special.")),
-        h("div.tabs-bar.bdx-tabs", h("nav.segmented", { "aria-label": "Ballsdex sections" }, tabProfile, tabRaws, tabSpecials)),
+        h("div.tabs-bar.bdx-tabs", h("nav.segmented", { "aria-label": "Ballsdex sections" }, tabProfile, tabRaws, tabSpecials, tabLimits)),
         body,
     );
 
     function paintTabs() {
-        for (const [tab, on] of [[tabProfile, section === "profile"], [tabRaws, section === "raws"], [tabSpecials, section === "specials"]]) {
+        for (const [tab, on] of [[tabProfile, section === "profile"], [tabRaws, section === "raws"], [tabSpecials, section === "specials"], [tabLimits, section === "limits"]]) {
             if (on) tab.setAttribute("aria-current", "page");
             else tab.removeAttribute("aria-current");
         }
@@ -93,6 +94,7 @@ export function createView() {
     async function refresh({ quiet = false } = {}) {
         const token = ++renderToken;
         if (section === "specials") return loadSpecials(token, { quiet });
+        if (section === "limits") return limits.load(token);
         if (!sessionReady()) return skeleton();
         if (!getUser()) {
             stopTimers();
@@ -295,8 +297,6 @@ export function createView() {
             );
         }
         parts.push(summary ? statsGrid(summary) : noData());
-        parts.push(limits.card);
-        limits.load();
         body.replaceChildren(...parts);
     }
 
@@ -415,63 +415,159 @@ export function createView() {
         );
     }
 
-    /* ----- Ballsdex API limits ----- */
+    /* ----- Limits (own tab): the bot's shared limits for everyone, your account's when logged in ----- */
 
-    // One card for the whole view, so sync polling (which re-renders) doesn't refetch it
     const limits = (() => {
-        const list = h("div.rl-groups");
-        const refreshBtn = h("button.btn.btn-ghost.btn-sm", { type: "button", onclick: () => load({ force: true }) }, icon("refresh-cw", "icon-sm"), h("span", "Refresh"));
-        const card = h(
-            "section.card.panel.rl-card",
-            h("div.rl-head", h("h2", icon("gauge"), "Ballsdex API limits"), refreshBtn),
-            h("p.subtle", "Your account's limits are only yours. The bot's limits are shared by everyone using BallIdentifier, because all requests come from one server."),
-            list,
-        );
-        let loadedAt = 0;
-        let loading = false;
+        const waitShort = (sec) => (sec >= 3600 ? `${Math.floor(sec / 3600)}h ${Math.floor((sec % 3600) / 60)}m` : sec >= 60 ? `${Math.floor(sec / 60)}m ${sec % 60}s` : `${sec}s`);
 
         function meter(limit) {
             const ratio = limit.limit ? limit.used / limit.limit : 0;
             const pct = Math.round(ratio * 100);
             const fill = h("div.meter-fill");
             fill.style.width = `${Math.min(100, pct)}%`;
-            const reset = limit.resetInSec ? ` · resets in ${limit.resetInSec >= 3600 ? `${Math.floor(limit.resetInSec / 3600)}h ${Math.floor((limit.resetInSec % 3600) / 60)}m` : limit.resetInSec >= 60 ? `${Math.floor(limit.resetInSec / 60)}m ${limit.resetInSec % 60}s` : `${limit.resetInSec}s`}` : "";
             return h(
                 "div.meter",
                 { dataset: { level: ratio >= 0.8 ? "low" : ratio >= 0.5 ? "warn" : "high" } },
                 h("div.meter-head", h("span", limit.label), h("span.num.meter-value", `${pct}% used`)),
                 h("div.meter-track", { role: "progressbar", "aria-valuemin": "0", "aria-valuemax": "100", "aria-valuenow": String(pct), "aria-label": `${limit.label}: ${pct}% used` }, fill),
-                h("p.subtle", `${fmt(limit.remaining)} of ${fmt(limit.limit)} left${reset}`),
+                h("p.subtle", `${fmt(limit.remaining)} of ${fmt(limit.limit)} left${limit.resetInSec ? ` · resets in ${waitShort(limit.resetInSec)}` : ""}`),
             );
         }
 
-        function group(title, snapshot) {
-            return h(
-                "div.rl-group",
-                h("h3", title),
-                snapshot?.limits?.length ? snapshot.limits.map(meter) : h("p.subtle", "No data yet."),
+        const meters = (snapshot) =>
+            snapshot?.limits?.length
+                ? [...snapshot.limits.map(meter), h("p.subtle.rl-asof", `As of ${timeAgo(snapshot.updatedAt)}, from the last request to Ballsdex.`)]
+                : [h("p.subtle", "No data yet: it shows up after the next request to Ballsdex.")];
+
+        const card = (iconName, title, subtitle, ...content) => h("section.card.panel.rl-card", h("div.rl-head", h("h2", icon(iconName), title)), subtitle ? h("p.subtle", subtitle) : null, ...content);
+
+        function sharedCard(shared, error) {
+            return card(
+                "server",
+                "BallIdentifier (shared)",
+                "Every request BallIdentifier sends to Ballsdex comes from one server, so everyone shares these limits: syncs, Fast Sync checks, sign-ins and the Specials data.",
+                error
+                    ? h("p.callout.callout-danger", icon("circle-x", "icon-sm"), h("span", error.message))
+                    : h(
+                          "div.rl-group",
+                          meters(shared.ip),
+                          shared.syncRunning ? h("p.callout", icon("refresh-cw", "icon-sm"), h("span", "A collection sync is running right now, so these numbers move quickly.")) : null,
+                          h("p.subtle", `Syncs pause by themselves when ${Math.round((shared.reserveShare || 0.2) * 100)}% of the daily limit is left, so the rest of BallIdentifier keeps working.`),
+                      ),
             );
         }
 
-        async function load({ force = false } = {}) {
-            if (loading || (!force && Date.now() - loadedAt < 30000)) return;
-            loading = true;
-            refreshBtn.disabled = true;
-            if (!loadedAt) list.replaceChildren(h("div.skeleton", { style: { height: "96px" } }));
-            try {
-                const result = await api("ballsdex", { query: { view: "ratelimit" } });
-                loadedAt = Date.now();
-                if (!result.available) list.replaceChildren(h("p.subtle", data?.reconnect ? "Sign in with Ballsdex again to see your limits." : "Connect your Ballsdex account to see its limits."));
-                else list.replaceChildren(group("Your account", result.key), group("BallIdentifier bot (shared)", result.ip));
-            } catch (error) {
-                if (!handleAuthError(error)) list.replaceChildren(h("p.subtle", error.message));
-            } finally {
-                loading = false;
-                refreshBtn.disabled = false;
+        function accountCard(mine, error) {
+            const subtitle = "Your own limits with BallIdentifier. Only requests made for your account count here.";
+            if (!getUser()) {
+                return card(
+                    "user-round",
+                    "Your account",
+                    subtitle,
+                    h("p.muted", "Log in to see the limits of your own Ballsdex account."),
+                    h("button.btn.btn-discord", { type: "button", onclick: () => login("#/ballsdex/limits") }, icon("discord"), h("span", "Log in with Discord")),
+                );
             }
+            if (error) return card("user-round", "Your account", subtitle, h("p.callout.callout-danger", icon("circle-x", "icon-sm"), h("span", error.message)));
+            if (!mine?.available) {
+                return card(
+                    "user-round",
+                    "Your account",
+                    subtitle,
+                    h("p.muted", data?.reconnect ? "Sign in with Ballsdex again to see your limits." : "Connect your Ballsdex account to see its limits."),
+                    h("a.btn.btn-primary", { href: CONNECT_URL }, icon("log-in"), h("span", "Sign in with Ballsdex")),
+                );
+            }
+            return card("user-round", "Your account", subtitle, h("div.rl-group", meters(mine.key)));
         }
 
-        return { card, load, reset: () => (loadedAt = 0) };
+        /** What happens when the shared daily limit is used up (highlighted while it is). */
+        function outOfLimitCard(shared) {
+            const day = shared?.ip?.limits?.find((limit) => limit.name === "ip_day");
+            const empty = day && day.remaining <= 0;
+            const item = (text) => h("li", text);
+            return h(
+                `section.card.panel.rl-card.rl-empty${empty ? ".is-active" : ""}`,
+                h("div.rl-head", h("h2", icon(empty ? "triangle-alert" : "info"), empty ? "The shared daily limit is used up" : "When the shared daily limit runs out")),
+                h(
+                    "p.muted",
+                    empty
+                        ? `BallIdentifier can't send requests to Ballsdex until the limit resets${day.resetInSec ? ` in ${waitShort(day.resetInSec)}` : ""}. Nothing is lost: everything below works again by itself after that.`
+                        : "At 100% of the daily limit BallIdentifier can't send any requests to Ballsdex until it resets (the time is shown above). Nothing is lost, and everything works again by itself after the reset.",
+                ),
+                h(
+                    "div.rl-effects",
+                    h(
+                        "div",
+                        h("h3", icon("circle-x", "icon-sm"), "Stops for now"),
+                        h(
+                            "ul",
+                            item("Sign in with Ballsdex (connecting or reconnecting an account)"),
+                            item("Syncs: a running sync pauses and continues by itself after the reset; new ones can't start"),
+                            item("Fast Sync (the file is checked against your Ballsdex account)"),
+                            item("Adding yourself as a collector of a Ballsdex ball after a Fast Sync"),
+                            item("Market data of a special, unless it was loaded in the last hour"),
+                            item("Checking your account's limits on this tab"),
+                        ),
+                    ),
+                    h(
+                        "div",
+                        h("h3", icon("circle-check", "icon-sm"), "Keeps working"),
+                        h(
+                            "ul",
+                            item("Identify, Spawn Arts, Catch Trainer and the Discord bot's identify and notifier"),
+                            item("Your saved Ballsdex stats and raws, here and in /ballsdex"),
+                            item("The Specials list (from the last time it was loaded)"),
+                            item("Collectors, profiles and Users"),
+                        ),
+                    ),
+                ),
+                h("p.subtle", "Syncs already pause at 20% left, so the rest usually keeps working even on busy days."),
+            );
+        }
+
+        function costsCard() {
+            const row = (what, cost) => h("li", h("span", what), h("b.num", cost));
+            return card(
+                "info",
+                "What uses requests",
+                null,
+                h(
+                    "ul.rl-costs",
+                    row("Sync", "1 per 25 balls (+2)"),
+                    row("Fast Sync", "about 15"),
+                    row("Sign in with Ballsdex", "2"),
+                    row("Adding yourself as a collector after Fast Sync", "up to 10"),
+                    row("Checking your limits here", "1, at most every 5 min"),
+                ),
+                h("p.subtle", "For big collections Fast Sync saves a lot: a 10,000-ball sync takes about 400 requests."),
+            );
+        }
+
+        async function load(token) {
+            stopTimers();
+            body.replaceChildren(h("div.rl-page", h("div.card.card-pad", h("div.skeleton", { style: { height: "120px" } })), h("div.card.card-pad", h("div.skeleton", { style: { height: "120px" } }))));
+            if (!sessionReady()) await loadSession();
+            const [shared, mine] = await Promise.all([
+                api("ballsdex", { query: { view: "shared" } }).then((value) => ({ value }), (error) => ({ error })),
+                getUser() ? api("ballsdex", { query: { view: "ratelimit" } }).then((value) => ({ value }), (error) => ({ error })) : Promise.resolve({}),
+            ]);
+            if (token !== renderToken) return null;
+            if (mine.error && handleAuthError(mine.error)) return null;
+            const refreshBtn = h("button.btn.btn-sm", { type: "button", onclick: () => refresh() }, icon("refresh-cw", "icon-sm"), h("span", "Refresh"));
+            body.replaceChildren(
+                h(
+                    "div.rl-page",
+                    h("div.rl-intro", h("p.muted", "Ballsdex limits how many requests BallIdentifier can make. When a limit runs out, syncs pause and actions ask you to try again later."), refreshBtn),
+                    h("div.rl-cards", sharedCard(shared.value, shared.error), accountCard(mine.value, mine.error)),
+                    outOfLimitCard(shared.value),
+                    costsCard(),
+                ),
+            );
+            return shared.value || null;
+        }
+
+        return { load, reset: () => {} };
     })();
 
     /* ----- Raws ----- */
@@ -946,10 +1042,14 @@ export function createView() {
         el,
         show(params = []) {
             visible = true;
-            const next = ["raws", "specials"].includes(params[0]) ? params[0] : "profile";
+            const next = ["raws", "specials", "limits"].includes(params[0]) ? params[0] : "profile";
             if (next !== section) stopTimers();
             section = next;
             paintTabs();
+            if (section === "limits") {
+                refresh();
+                return;
+            }
             if (section === "specials") {
                 // /ballsdex/specials/4 shows just that special (shared links)
                 if (/^\d+$/.test(params[1] || "")) specialsQuery = `#${params[1]}`;

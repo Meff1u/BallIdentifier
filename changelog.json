@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1793347431",
+            "type": "website",
+            "changes": [
+                "New Limits tab in Ballsdex: see how much of BallIdentifier's shared Ballsdex API limits is used right now (no login needed), your own account's limits, and what uses requests"
+            ]
+        },
+        {
             "timestamp": "1793319280",
             "type": "website",
             "changes": [

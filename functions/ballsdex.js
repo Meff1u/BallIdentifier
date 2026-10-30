@@ -7,7 +7,8 @@
  * POST /.netlify/functions/ballsdex  { action: "cancel" }
  * POST /.netlify/functions/ballsdex  { action: "fast-sync", url }   Fast Sync from the Discord link of the /player settings export
  * GET  /.netlify/functions/ballsdex?view=raws  -> rare non-special balls x tier value
- * GET  /.netlify/functions/ballsdex?view=ratelimit  -> Ballsdex API limit usage (your key + the bot's IP)
+ * GET  /.netlify/functions/ballsdex?view=ratelimit  -> Ballsdex API limit usage (your account + the bot's IP)
+ * GET  /.netlify/functions/ballsdex?view=shared     -> the bot's shared Ballsdex limits (no login needed)
  *
  * The Discord user id always comes from the encrypted session, never from the request.
  * Connecting the account is "Sign in with Ballsdex" (functions/ballsdex-oauth.js).
@@ -28,6 +29,17 @@ async function forward(response) {
 }
 
 exports.handler = async (event) => {
+    if (event.httpMethod === "GET" && event.queryStringParameters?.view === "shared") {
+        try {
+            const response = await forward(await botApiFetch("/api/ballsdex/limits"));
+            if (response.statusCode === 200) response.headers["Cache-Control"] = "public, max-age=15";
+            return response;
+        } catch (error) {
+            console.error("Ballsdex function error:", error);
+            return json(502, { error: "The bot is not responding. Try again in a moment." });
+        }
+    }
+
     const auth = requireSession(event);
     if (auth.response) return auth.response;
     const base = `/api/users/${auth.session.user.id}/ballsdex`;

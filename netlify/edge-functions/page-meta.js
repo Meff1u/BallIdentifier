@@ -22,6 +22,7 @@ const PAGES = {
     u: ["Profile", "Public BallIdentifier profiles: what someone collects, their showcase and Ballsdex stats."],
     ballsdex: ["Ballsdex", "Link your Ballsdex account, sync your collection and see your stats, raws and every special."],
     "ballsdex/raws": ["Ballsdex raws", "Count your raws from your synced Ballsdex collection."],
+    "ballsdex/limits": ["Ballsdex API limits", "How much of BallIdentifier's shared Ballsdex API limits is used right now, and your own account's limits."],
     "ballsdex/specials": ["Ballsdex Specials", "Every Ballsdex special with its nickname, estimated common price, spawn rate, event length and market data."],
     moderation: ["Moderation", "BallIdentifier moderation."],
 };
