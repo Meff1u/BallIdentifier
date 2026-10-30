@@ -1,4 +1,4 @@
 {
-    "dexes": ["Ballsdex", "FoodDex", "HistoryDex", "JoJoDex", "Empireballs Reboot", "MapsDex", "FlagsDex"],
+    "dexes": ["Ballsdex", "HistoryDex", "JoJoDex", "Empireballs Reboot", "MapsDex", "FlagsDex"],
     "incompleteAbbreviations": ["HistoryDex", "Empireballs Reboot", "JoJoDex", "MapsDex", "FlagsDex"]
 }

@@ -5,7 +5,7 @@ Identify any countryball from a spawn image in a second.
 - **Website:** [ballidentifier.xyz](https://ballidentifier.xyz): Identify, Spawn Arts, Catch Trainer, Collectors and Ballsdex stats
 - **Discord bot:** [BallIdentifier-bot](https://github.com/Meff1u/BallIdentifier-bot): right-click a spawn, *Apps → Identify*
 
-Supported dexes: Ballsdex, FoodDex, HistoryDex, JoJoDex, Empireballs Reboot, MapsDex, FlagsDex.
+Supported dexes: Ballsdex, HistoryDex, JoJoDex, Empireballs Reboot, MapsDex, FlagsDex.
 
 The website and the bot both read the dex data from this repository, so **a merged pull request here updates both** (the bot reloads the data every hour).
 

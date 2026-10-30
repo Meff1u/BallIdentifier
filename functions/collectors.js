@@ -14,7 +14,6 @@ const { getSession } = require("../lib/session");
 
 const DEX_KEYS = {
     Ballsdex: "BD",
-    FoodDex: "FOD",
     HistoryDex: "HD",
     JoJoDex: "JD",
     "Empireballs Reboot": "EB",

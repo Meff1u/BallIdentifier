@@ -1,6 +1,20 @@
 {
     "changes": [
         {
+            "timestamp": "1793366936",
+            "type": "website",
+            "changes": [
+                "FoodDex is no longer supported: it was removed from identification, spawn arts, the trainer, collectors and notifier settings"
+            ]
+        },
+        {
+            "timestamp": "1793366935",
+            "type": "bot",
+            "changes": [
+                "FoodDex is no longer supported: Identify, /info, /collectors, the Notifier and Catch stats no longer work with it"
+            ]
+        },
+        {
             "timestamp": "1793366504",
             "type": "bot",
             "changes": [

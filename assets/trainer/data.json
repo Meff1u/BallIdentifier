@@ -90,16 +90,6 @@
             "Timor-Leste": ["timor leste", "east timor"],
             "Cote d'Ivoire": ["ivory coast"]
         },
-        "fooddex": {
-            "Pepperoni Pizza": ["pizza"],
-            "Red Apple": ["apple"],
-            "Fried Chicken": ["chicken"],
-            "Hamburger": ["burger"],
-            "French Fries": ["fries"],
-            "Vanilla Cake": ["cake"],
-            "Chocolate Chip Cookie": ["cookie"],
-            "White Rice": ["rice"]
-        },
         "historydex": {
             "Chiefdom of Cocollán": ["cocollan", "chiefdom of cocollan"],
             "Free State of Bottleneck": ["bottleneck"],

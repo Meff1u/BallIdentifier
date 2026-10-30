@@ -131,7 +131,7 @@ export function createView() {
         return h("h2", h("span.icon-wrap", icon(iconName)), title);
     }
 
-    const DEXES = ["Ballsdex", "FoodDex", "HistoryDex", "JoJoDex", "Empireballs Reboot", "MapsDex", "FlagsDex"];
+    const DEXES = ["Ballsdex", "HistoryDex", "JoJoDex", "Empireballs Reboot", "MapsDex", "FlagsDex"];
     const code = (text) => h("code", text);
 
     function infoCard(iconName, title, intro, points, action) {
@@ -468,7 +468,8 @@ export function createView() {
         const SAMPLE = kind.sample;
         const ids = { role: `${kind.id}-role`, message: `${kind.id}-message`, help: `${kind.id}-message-help`, error: `${kind.id}-message-error` };
         const state = {
-            bots: new Set(existing?.selectedBots || []),
+            // (bots no longer supported, e.g. a removed dex, are dropped)
+            bots: new Set((existing?.selectedBots || []).filter((id) => data.supportedBots.some((bot) => bot.id === id))),
             role: existing?.selectedRole || "",
             message: existing?.customMessage || DEFAULT_MESSAGE,
         };

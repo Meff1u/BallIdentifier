@@ -9,11 +9,11 @@
  * meta.card: true when the image is a generated 1200x630 card (large preview).
  */
 
-const DEXES = ["Ballsdex", "FoodDex", "HistoryDex", "JoJoDex", "Empireballs Reboot", "MapsDex", "FlagsDex"];
+const DEXES = ["Ballsdex", "HistoryDex", "JoJoDex", "Empireballs Reboot", "MapsDex", "FlagsDex"];
 const DATA_TTL_MS = 10 * 60 * 1000;
 
 const PAGES = {
-    arts: ["Spawn Arts", "Every spawn art of Ballsdex, FoodDex, HistoryDex, JoJoDex, Empireballs Reboot, MapsDex and FlagsDex, with rarity, artist, wave and collectors."],
+    arts: ["Spawn Arts", "Every spawn art of Ballsdex, HistoryDex, JoJoDex, Empireballs Reboot, MapsDex and FlagsDex, with rarity, artist, wave and collectors."],
     trainer: ["Catch Trainer", "Practice catching: name the ball from its spawn art as fast as you can."],
     bot: ["BallIdentifier Discord bot", "Identify spawns in two clicks, get spawn notifications, track your Ballsdex collection and more, right in Discord."],
     "bot/notifier": ["Spawn Notifier settings", "Set up spawn notifications for your Discord servers."],

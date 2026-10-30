@@ -115,7 +115,7 @@ function aboutCard() {
         h(
             "div.cs-about-grid",
             item("zap", "What it does", "After a catch the bot replies with the catch time, your average, your average and best for that ball, and tells you when you beat a record (yours or the server's). Admins choose what the reply shows, or make it reply only on records."),
-            item("clock", "How it's measured", "The time between the spawn message and the dex bot's catch message, both stamped by Discord. Typing the name and the dex bot's own delay are included, so it's the same for everyone. Works with all 7 supported dex bots."),
+            item("clock", "How it's measured", "The time between the spawn message and the dex bot's catch message, both stamped by Discord. Typing the name and the dex bot's own delay are included, so it's the same for everyone. Works with every supported dex bot."),
             item("lock", "What's saved", "Your Discord ID, the server, the ball, the catch time and when it happened. Single catches are kept for 35 days (for the 7 and 30 day stats); totals, averages and records are kept until you opt out."),
             item("eye", "Who sees it", "Only you, by default. Turn on “Show my catch stats publicly” in your profile (or /catchstats settings) to show them on your profile and in the rankings. “Don't track me” under any reply, or the switch below, stops tracking and deletes your data."),
         ),

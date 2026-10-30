@@ -22,7 +22,7 @@ export async function getDexList() {
         const data = await getJson("assets/jsons/dexes.json");
         return { dexes: data.dexes || [], incomplete: data.incompleteAbbreviations || [] };
     } catch {
-        return { dexes: ["Ballsdex", "FoodDex", "HistoryDex", "JoJoDex", "Empireballs Reboot", "MapsDex", "FlagsDex"], incomplete: [] };
+        return { dexes: ["Ballsdex", "HistoryDex", "JoJoDex", "Empireballs Reboot", "MapsDex", "FlagsDex"], incomplete: [] };
     }
 }
 
@@ -43,7 +43,7 @@ export const compressedArtUrl = (dex, ball) => `${RAW}/dexes/${encodeURIComponen
 export const previousArtUrl = (ball, index, ext = "webp") =>
     `${RAW}/dexes/Ballsdex/previous/${encodeURIComponent(ball)}/${index + 1}.${ext}`;
 
-export const DEX_WITH_WAVES = ["Ballsdex", "FoodDex"];
+export const DEX_WITH_WAVES = ["Ballsdex"];
 export const DEX_WITH_PREVIOUS_ARTS = ["Ballsdex"];
 export const WAVE_COLORS = {
     1: "#FF7769", 1.1: "#424242", 2: "#F56300", 3: "#824300",

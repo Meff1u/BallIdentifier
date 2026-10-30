@@ -114,7 +114,7 @@ exports.handler = async (event) => {
                     endpoint: "/.netlify/functions/balls",
                     method: "GET",
                     parameters: {
-                        source: "Filter by dex name (e.g., Ballsdex, FoodDex)",
+                        source: "Filter by dex name (e.g., Ballsdex, HistoryDex)",
                         rarity: "Filter by exact rarity number",
                         id: "Filter by exact ball ID",
                         sort: "Sort results: rarity-asc, rarity-desc, name, id",
@@ -124,7 +124,7 @@ exports.handler = async (event) => {
                         "/.netlify/functions/balls?source=Ballsdex - Get only Ballsdex balls",
                         "/.netlify/functions/balls?rarity=1 - Get balls with rarity #1",
                         "/.netlify/functions/balls?sort=name - Sort alphabetically",
-                        "/.netlify/functions/balls?source=FoodDex&sort=rarity-asc - Combined filters",
+                        "/.netlify/functions/balls?source=HistoryDex&sort=rarity-asc - Combined filters",
                     ],
                 },
             }),
