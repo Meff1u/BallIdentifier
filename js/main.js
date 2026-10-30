@@ -228,7 +228,6 @@ function renderAccount(user) {
                 h("div.menu-sep"),
                 menuItem({ label: "Your profile", iconName: "user-round", href: `#/u/${user.id}` }),
                 menuItem({ label: "Ballsdex account", iconName: "layers", href: "#/ballsdex" }),
-                menuItem({ label: "Notifier settings", iconName: "bell-ring", href: "#/bot/notifier" }),
                 user.id === OWNER_ID ? menuItem({ label: "Moderation", iconName: "shield-check", href: "#/moderation" }) : null,
                 h("div.menu-sep"),
                 menuItem({

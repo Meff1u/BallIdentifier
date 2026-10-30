@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1793365577",
+            "type": "website",
+            "changes": [
+                "Notifier settings are no longer in the account menu. You'll find them in Bot → Notifier"
+            ]
+        },
+        {
             "timestamp": "1793365431",
             "type": "website",
             "changes": [
