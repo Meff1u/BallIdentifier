@@ -10,6 +10,7 @@ import { getUser, onAuthChange, loadSession, login, sessionExpired, sessionReady
 import { compressedArtUrl, getDex } from "../core/data.js";
 import { refreshNotifications } from "../notifications.js";
 
+const POLL_MS = 60 * 1000;
 const KEYS_URL = "https://ballsdex.com/api/keys";
 // "Sign in with Ballsdex" (functions/ballsdex-oauth.js): Ballsdex's consent screen, then back here with ?bdx=<result>
 const CONNECT_URL = "/.netlify/functions/ballsdex-oauth?action=start";
