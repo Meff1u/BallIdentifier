@@ -8,6 +8,7 @@ import { THEMES, getThemeChoice, setTheme, applyTheme, onThemeChange, resolvedTh
 import { getUser, loadSession, onAuthChange, login, logout } from "./core/auth.js";
 import { initChangelog, openChangelog } from "./changelog.js";
 import { initNotifications } from "./notifications.js";
+import { openSupport, openContact } from "./support.js";
 import { autoEnhanceSelects } from "./core/select.js";
 
 // The owner sees "Moderation" in the profile menu (the page and the API check it again)
@@ -297,6 +298,8 @@ if (sidebarToggle) paintSidebar();
 initChangelog($("#whats-new-btn"));
 initNotifications($("#notifications-btn"));
 $("#whats-new-btn").addEventListener("click", () => openChangelog());
+$("#support-btn").addEventListener("click", () => openSupport());
+$("#contact-btn").addEventListener("click", () => openContact());
 
 window.addEventListener("popstate", route);
 window.addEventListener("hashchange", () => upgradeLegacyHash() && route());

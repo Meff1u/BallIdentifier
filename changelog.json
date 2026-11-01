@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1793496231",
+            "type": "website",
+            "changes": [
+                "New heart button in the top bar: Project Support",
+                "New message button in the top bar: send a suggestion, bug report or question straight to the owner (Discord login required, one message every 10 minutes)"
+            ]
+        },
+        {
             "timestamp": "1793494273",
             "type": "website",
             "changes": [
