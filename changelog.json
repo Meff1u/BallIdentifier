@@ -2,7 +2,7 @@
     "changes": [
         {
             "timestamp": "1793494273",
-            "type": "bot",
+            "type": "website",
             "changes": [
                 "Specials: the Market button no longer disappears when the Ballsdex market data can't be fetched. Previous numbers are kept, the next try comes in 15 minutes."
             ]

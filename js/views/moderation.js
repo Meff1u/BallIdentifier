@@ -19,6 +19,7 @@ const LOG_TABS = [
     ["COLLECTORS", "Collectors"],
     ["API", "API"],
     ["VOTES", "Votes"],
+    ["SPECIALS", "Specials"],
     ["SYSTEM", "System"],
 ];
 
