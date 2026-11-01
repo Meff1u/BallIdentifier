@@ -12,6 +12,10 @@
  * POST { action: "dex-update", name, enabled?, waves?, incomplete?, catchPhrases?, catchIgnore?, announce? }
  * POST { action: "dex-delete", name, confirm (= name), announce? }
  *
+ * Deferred website deploys (the bot's utils/deploy.js):
+ * GET  /.netlify/functions/admin?view=deploy   -> { enabled, deploying, pending: [{ at, title, changes, url }], lastDeployAt }
+ * POST { action: "deploy" }                    -> trigger the Netlify build hook, the pending changes go live
+ *
  * Only the owner's Discord ID (from the encrypted session) gets through; the bot checks it again.
  */
 
@@ -39,6 +43,7 @@ exports.handler = async (event) => {
     try {
         if (event.httpMethod === "GET") {
             if (event.queryStringParameters?.view === "dexes") return forward(await botApiFetch(`${base}/dexes`));
+            if (event.queryStringParameters?.view === "deploy") return forward(await botApiFetch(`${base}/deploy`));
             return forward(await botApiFetch(`${base}/overview`));
         }
         if (event.httpMethod !== "POST") return json(405, { error: "Method not allowed" });
@@ -48,6 +53,7 @@ exports.handler = async (event) => {
         const body = parseJsonBody(event);
         if (body?.action === "cancel-sync") return forward(await botApiFetch(`${base}/sync/cancel`, { method: "POST", body: {} }));
         if (body?.action === "refresh-data") return forward(await botApiFetch(`${base}/refresh-data`, { method: "POST", body: {} }));
+        if (body?.action === "deploy") return forward(await botApiFetch(`${base}/deploy`, { method: "POST", body: {} }));
         if (body?.action === "sync-switches") {
             const switches = {};
             for (const key of ["syncDisabled", "fastSyncDisabled"]) if (typeof body[key] === "boolean") switches[key] = body[key];

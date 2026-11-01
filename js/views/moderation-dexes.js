@@ -9,7 +9,7 @@ import { toast, openDialog } from "../core/ui.js";
 import { api } from "../core/api.js";
 import { dexIcon } from "../core/data.js";
 
-const DEPLOY_NOTE = "The bot uses it right away; the website after its next deploy (about 2 minutes).";
+const DEPLOY_NOTE = "The bot uses it right away; the website after the next deploy (Deploy tile below).";
 const MAX_ICON_BYTES = 2 * 1024 * 1024;
 const CATCH_STATS_BOTS = ["999736048596816014"]; // Catch stats work with Ballsdex only (bot: utils/catch-phrases.js)
 

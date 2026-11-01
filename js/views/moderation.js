@@ -9,6 +9,7 @@ import { toast, confirmDialog } from "../core/ui.js";
 import { api, ApiError } from "../core/api.js";
 import { getUser, onAuthChange, sessionReady, loadSession, sessionExpired } from "../core/auth.js";
 import { createDexesCard } from "./moderation-dexes.js";
+import { createDeployCard } from "./moderation-deploy.js";
 
 export const OWNER_ID = "334411435633541121";
 const REFRESH_MS = 5000;
@@ -32,6 +33,7 @@ export function createView() {
     const body = h("div.mod-body");
     // Kept between refreshes (it has its own data and open dialogs)
     const dexes = createDexesCard({ handleError: (error) => handleError(error) });
+    const deployCard = createDeployCard({ handleError: (error) => handleError(error) });
     const el = h(
         "section.view",
         { dataset: { view: "moderation" }, "aria-labelledby": "mod-title" },
@@ -200,7 +202,7 @@ export function createView() {
 
     function render() {
         if (!data) return;
-        body.replaceChildren(h("div.mod-grid", syncCard(), botCard()), dexes.el, logsCard());
+        body.replaceChildren(h("div.mod-grid", syncCard(), botCard()), dexes.el, deployCard.el, logsCard());
     }
 
     function handleError(error) {
@@ -223,6 +225,7 @@ export function createView() {
         }
         if (!data) body.replaceChildren(h("div.skeleton", { style: { height: "240px" } }));
         if (!data) dexes.load();
+        deployCard.load();
         try {
             data = await api("admin");
             render();

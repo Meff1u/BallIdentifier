@@ -1907,6 +1907,14 @@ a.cs-person:hover span { text-decoration: underline; }
 .mod-dex-actions { display: flex; gap: 2px; }
 .mod-danger:hover { color: var(--danger); }
 .mod-dex-skel { height: 56px; border-radius: var(--r-md); margin-top: var(--space-2); }
+.mod-deploy-body { display: grid; gap: var(--space-3); }
+.mod-deploy-list { list-style: none; margin: 0; padding: 0; display: grid; max-height: 320px; overflow-y: auto; border-top: 1px solid var(--border); }
+.mod-deploy-item { display: grid; gap: 2px; padding: 10px 0; border-bottom: 1px solid var(--border); min-width: 0; }
+.mod-deploy-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); }
+.mod-deploy-head b { min-width: 0; overflow-wrap: anywhere; }
+.mod-deploy-head time { flex: none; font-size: var(--fs-xs); }
+.mod-deploy-item .subtle { margin: 0; font-size: var(--fs-xs); overflow-wrap: anywhere; }
+.mod-deploy-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
 .mod-dex-gone { margin: 0; padding-left: 1.2em; color: var(--text-2); font-size: var(--fs-sm); display: grid; gap: 2px; }
 @media (max-width: 479px) {
     .mod-dex { grid-template-columns: 36px minmax(0, 1fr) auto; }
