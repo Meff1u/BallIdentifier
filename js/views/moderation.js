@@ -12,6 +12,14 @@ import { createDexesCard } from "./moderation-dexes.js";
 import { createDeployCard } from "./moderation-deploy.js";
 
 export const OWNER_ID = "334411435633541121";
+
+/** " · about 3m 20s left" while balls are being fetched (the bot's etaMs), or a note until there is enough data */
+function etaText({ phase, etaMs, total } = {}) {
+    if (phase !== "balls" || !total) return "";
+    if (!Number.isFinite(etaMs)) return " · estimating the time left…";
+    const seconds = Math.max(1, Math.round(etaMs / 1000));
+    return ` · about ${seconds < 60 ? `${seconds}s` : formatDuration(Math.round(seconds / 5) * 5000)} left`;
+}
 const REFRESH_MS = 5000;
 const LOG_TABS = [
     ["ERRORS", "Errors"],
@@ -115,7 +123,7 @@ export function createView() {
                     h("div.meter-head", h("span", progress.phase === "saving" ? "Saving" : "Balls fetched"), h("span.num", `${fmt(progress.fetched || 0)}${progress.total ? ` / ${fmt(progress.total)}` : ""}`)),
                     h("div.meter-track", { class: ratio === null ? "is-indeterminate" : "" }, fill),
                 ),
-                h("p.subtle", `Started ${active.startedAt ? timeAgo(active.startedAt) : "just now"}`),
+                h("p.subtle", `Started ${active.startedAt ? timeAgo(active.startedAt) : "just now"}`, etaText(progress)),
                 h("div.mod-actions", cancelBtn),
             );
         }
