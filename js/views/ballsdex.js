@@ -634,7 +634,6 @@ export function createView() {
         if (avg && high && avg !== high) add("Common price", "gem", h("span", avg, h("span.subtle", " avg · "), high, h("span.subtle", " highest")));
         else if (avg || high) add("Common price", "gem", avg || high);
         add("Spawn rate", "gauge", special.spawnRate);
-        if (special.availableCount) add("Available on", "layers", `${fmt(special.availableCount)} ball${special.availableCount === 1 ? "" : "s"}`);
         add("Duration", "timer", special.duration);
         if (special.startDate || special.endDate) {
             const start = special.startDate ? formatDate(special.startDate) : "?";

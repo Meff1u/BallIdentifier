@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1793493300",
+            "type": "website",
+            "changes": [
+                "Specials no longer show how many balls can have them",
+                "Spawn Arts and Completion: event specials that only ever spawned on one or two balls (Event BE, Event Reichtangle, Event PLC, Event Djibouti, Ballsdex Games Souvenir) now count only for those balls"
+            ]
+        },
+        {
             "timestamp": "1793377553",
             "type": "website",
             "changes": [
