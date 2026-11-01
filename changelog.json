@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1793497023",
+            "type": "website",
+            "changes": [
+                "Collectors has a new Specials tab: add yourself as a collector of any Ballsdex special.",
+                "Profiles show the specials someone collects next to the balls they collect"
+            ]
+        },
+        {
             "timestamp": "1793496231",
             "type": "website",
             "changes": [

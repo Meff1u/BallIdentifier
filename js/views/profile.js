@@ -15,6 +15,15 @@ const displayName = (p) => p.name || p.username || `User ${p.id.slice(-4)}`;
 const profileUrl = (id) => `${location.origin}/u/${id}`;
 const artHref = (dex, name) => `/arts/${encodeURIComponent(dex)}/${encodeURIComponent(name)}`;
 
+/** A special's emoji: custom Discord emoji as an image, otherwise the text emoji. */
+function specialEmoji(special) {
+    if (special.emoji) return h("span.spc-emoji", { "aria-hidden": "true" }, special.emoji);
+    const custom = /^<a?:\w+:(\d+)>$/.exec(special.officialEmoji || "");
+    if (custom) return h("span.spc-emoji", img(`https://cdn.discordapp.com/emojis/${custom[1]}.webp?size=64`, ""));
+    if (special.officialEmoji) return h("span.spc-emoji", { "aria-hidden": "true" }, special.officialEmoji);
+    return h("span.spc-emoji.is-empty", { "aria-hidden": "true" }, icon("sparkles"));
+}
+
 export function createView() {
     let profileId = null;
     let profile = null;
@@ -103,7 +112,7 @@ export function createView() {
             p.createdAt ? h("span.pf-fact", icon("calendar-days", "icon-sm"), `Joined ${formatDate(p.createdAt, { month: "short", year: "numeric" })}`) : null,
         ].filter(Boolean);
 
-        const collected = (p.collections || []).reduce((sum, group) => sum + group.balls.length, 0);
+        const collected = (p.collections || []).reduce((sum, group) => sum + group.balls.length, 0) + (p.specialCollections || []).length;
         // (replaceChildren would print an empty section as the text "null")
         const sections = [
             isSelf() && !p.public
@@ -272,12 +281,25 @@ export function createView() {
 
     function collectionsSection(p) {
         if (p.collections === null) return null;
-        if (!p.collections.length) return isSelf() ? hintCard("crown", "Collecting", "You don't collect anything yet. Add yourself to the balls you collect on the Collectors page.", "/collectors") : null;
+        const specialList = p.specialCollections || [];
+        if (!p.collections.length && !specialList.length) return isSelf() ? hintCard("crown", "Collecting", "You don't collect anything yet. Add yourself to the balls and specials you collect on the Collectors page.", "/collectors") : null;
         return h(
             "section.pf-section",
             h("h2.section-title", icon("crown"), "Collecting"),
             h(
                 "div.pf-collections",
+                specialList.length
+                    ? h(
+                          "div.card.pf-col-group",
+                          h("h3", icon("sparkles", "badge-ico"), "Specials", h("span.subtle", fmt(specialList.length))),
+                          h(
+                              "div.pf-col-list",
+                              specialList.map((special) =>
+                                  h("a.pf-col-ball.pf-col-special", { href: "/collectors/specials", title: `${special.name} · self-added collector` }, specialEmoji(special), h("span", special.name)),
+                              ),
+                          ),
+                      )
+                    : null,
                 p.collections.map((group) =>
                     h(
                         "div.card.pf-col-group",

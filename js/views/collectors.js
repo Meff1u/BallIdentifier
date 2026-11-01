@@ -8,6 +8,7 @@ import { toast, openDialog, confirmDialog } from "../core/ui.js";
 import { api, ApiError } from "../core/api.js";
 import { getUser, onAuthChange, login, sessionExpired } from "../core/auth.js";
 import { getDexList, getDex, compressedArtUrl } from "../core/data.js";
+import { createSpecialsPanel } from "./collectors-specials.js";
 
 const PAGE = 48;
 const FILTERS = [
@@ -36,12 +37,10 @@ export function createView() {
     const moreBtn = h("button.btn", { type: "button", hidden: true, onclick: () => ((shown += PAGE), paint()) }, h("span", "Show more"));
     const emptyEl = h("div.empty", { hidden: true }, h("div.empty-icon", icon("users")), h("h2", "No collectors here"), h("p"));
 
-    const el = h(
-        "section.view",
-        { dataset: { view: "collectors" }, "aria-labelledby": "collectors-title" },
-        h("div.page-head", h("h1", { id: "collectors-title" }, "Collectors"), h("p", "Who collects which ball. Collect one yourself? Log in and add yourself to it.")),
+    const ballsPanel = h(
+        "div",
         h(
-            "div.arts-toolbar",
+            "div.arts-toolbar.col-toolbar",
             h("div.toolbar-row", h("label.input-icon", icon("search"), search)),
             h("div.toolbar-row", dexSelect),
         ),
@@ -50,6 +49,20 @@ export function createView() {
         grid,
         h("div.col-more", moreBtn),
         emptyEl,
+    );
+    const specialsPanel = createSpecialsPanel();
+    specialsPanel.el.hidden = true;
+    const tabBalls = h("a", { href: "/collectors" }, icon("layers", "icon-sm"), "Balls");
+    const tabSpecials = h("a", { href: "/collectors/specials" }, icon("sparkles", "icon-sm"), "Specials");
+    let mode = "balls";
+
+    const el = h(
+        "section.view",
+        { dataset: { view: "collectors" }, "aria-labelledby": "collectors-title" },
+        h("div.page-head", h("h1", { id: "collectors-title" }, "Collectors"), h("p", "Who collects which ball or special. Collect one yourself? Log in and add yourself to it.")),
+        h("div.tabs-bar", h("nav.segmented", { "aria-label": "Collectors sections" }, tabBalls, tabSpecials)),
+        ballsPanel,
+        specialsPanel.el,
     );
 
     /* ----- Data ----- */
@@ -330,22 +343,38 @@ export function createView() {
     });
     onAuthChange(() => {
         if (filter === "mine" && !getUser()) filter = "with";
-        if (visible) reloadCollectors();
+        if (visible && mode === "balls") reloadCollectors();
     });
 
     let started = false;
     return {
         el,
-        show() {
+        show(params = []) {
             visible = true;
+            mode = params[0] === "specials" ? "specials" : "balls";
+            ballsPanel.hidden = mode !== "balls";
+            specialsPanel.el.hidden = mode !== "specials";
+            for (const [tab, on] of [[tabBalls, mode === "balls"], [tabSpecials, mode === "specials"]]) {
+                if (on) tab.setAttribute("aria-current", "page");
+                else tab.removeAttribute("aria-current");
+            }
+            if (mode === "specials") {
+                clearTimeout(refreshTimer);
+                specialsPanel.show();
+                return;
+            }
+            specialsPanel.hide();
             if (!started) {
                 started = true;
                 init();
+            } else {
+                reloadCollectors();
             }
         },
         hide() {
             visible = false;
             clearTimeout(refreshTimer);
+            specialsPanel.hide();
         },
     };
 }

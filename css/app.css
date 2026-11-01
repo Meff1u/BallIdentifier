@@ -1474,9 +1474,16 @@ a.server:hover > .icon { color: var(--accent-text); }
 }
 
 /* Collectors */
+/* Not sticky and no negative margins (those are for Spawn Arts): here it sits under the tabs and the note */
+.arts-toolbar.col-toolbar { position: static; margin: 0 0 var(--space-3); padding: 0; background: none; border: 0; backdrop-filter: none; -webkit-backdrop-filter: none; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1024px) { .arts-toolbar.col-toolbar { margin: 0 0 var(--space-3); padding: 0; grid-template-columns: minmax(0, 1fr) auto; } }
+.col-toolbar .input-icon { display: block; }
+.col-toolbar .input[type="search"] { -webkit-appearance: none; appearance: none; padding-right: var(--space-3); }
+.col-toolbar .input[type="search"]::-webkit-search-cancel-button { margin-left: var(--space-2); }
+.view[data-view="collectors"] .tabs-bar { margin: var(--space-4) 0 var(--space-4); }
 .col-filters { margin-bottom: var(--space-3); }
-.col-filters .segmented { width: 100%; }
-.col-filters .segmented button { flex: 1; justify-content: center; }
+.col-filters .segmented { width: 100%; flex-wrap: wrap; }
+.col-filters .segmented button { flex: 1 1 auto; justify-content: center; white-space: nowrap; padding: 0 var(--space-3); }
 @media (min-width: 640px) { .col-filters .segmented { width: auto; } }
 .col-grid { display: grid; gap: var(--space-3); }
 @media (min-width: 700px) { .col-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -1496,7 +1503,7 @@ a.server:hover > .icon { color: var(--accent-text); }
 .col-name { font-family: var(--font-display); font-weight: 700; line-height: 1.25; overflow-wrap: anywhere; }
 .col-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: var(--fs-xs); color: var(--text-3); }
 .col-meta .badge { min-height: 20px; padding: 0 8px; margin-left: 4px; }
-.col-who { display: flex; align-items: center; gap: var(--space-2); font-size: var(--fs-sm); color: var(--text-2); }
+.col-who { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-2); min-width: 0; font-size: var(--fs-sm); color: var(--text-2); }
 .col-stack { display: flex; align-items: center; }
 .col-stack .col-avatar + .col-avatar { margin-left: -8px; }
 .col-avatar { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; background: var(--surface-3); border: 2px solid var(--surface); }
@@ -1505,6 +1512,20 @@ a.server:hover > .icon { color: var(--accent-text); }
 .col-more { display: flex; justify-content: center; margin-top: var(--space-4); }
 .col-dialog-head { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: var(--space-4); align-items: center; margin-bottom: var(--space-4); }
 .col-dialog-head img { width: 96px; height: 96px; object-fit: contain; border-radius: var(--r-md); background: var(--surface-2); }
+.col-dialog-head.is-special { grid-template-columns: 64px minmax(0, 1fr); }
+.col-dialog-head .spc-emoji { width: 64px; height: 64px; font-size: 34px; border-radius: var(--r-md); }
+.col-dialog-head .spc-emoji img { width: 40px; height: 40px; border-radius: 0; background: none; }
+.col-spc-note { margin: 0 0 var(--space-4); line-height: 1.5; }
+.col-card { min-width: 0; }
+.col-art .spc-emoji { background: none; }
+.view[data-view="collectors"] .arts-meta { flex-wrap: wrap; }
+@media (max-width: 479px) {
+    .col-dialog-head { grid-template-columns: 72px minmax(0, 1fr); gap: var(--space-3); }
+    .col-dialog-head img { width: 72px; height: 72px; }
+    .col-list li { grid-template-columns: 40px minmax(0, 1fr); }
+    .col-list li .col-tags { grid-column: 2; justify-content: flex-start; flex-wrap: wrap; }
+    .col-admin { flex-wrap: wrap; }
+}
 .col-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); max-height: min(50vh, 420px); overflow-y: auto; }
 .col-list li { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: var(--space-3); align-items: center; padding: var(--space-2); border-radius: var(--r-md); background: var(--surface-2); }
 .col-person { display: grid; min-width: 0; }
@@ -1750,6 +1771,8 @@ a.server:hover > .icon { color: var(--accent-text); }
 .pf-col-ball:hover { border-color: var(--pf-accent); text-decoration: none; }
 .pf-col-ball img { width: 36px; height: 36px; object-fit: contain; flex: none; }
 .pf-col-ball span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pf-col-special .spc-emoji { width: 36px; height: 36px; font-size: 20px; border-radius: 50%; background: var(--surface-3); }
+.pf-col-special .spc-emoji img { width: 22px; height: 22px; }
 .pf-verified { color: var(--success); flex: none; }
 .pf-hint { padding: var(--space-4); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); }
 .pf-setup { display: grid; justify-items: center; text-align: center; gap: var(--space-3); padding: var(--space-8) var(--space-5); }

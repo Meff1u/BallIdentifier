@@ -2,7 +2,9 @@
  * Collectors of every dex, with Discord names and avatars (resolved by the bot).
  *
  * GET  /.netlify/functions/collectors?dex=Ballsdex  -> { entries: { [ballId]: [collector] }, viewer }
+ * GET  /.netlify/functions/collectors?kind=specials -> { entries: { [specialId]: [collector] }, limits, viewer }
  * POST /.netlify/functions/collectors  { action: "add" | "remove", dex, ballId, userId? }  (login required)
+ * POST /.netlify/functions/collectors  { kind: "specials", action: "add" | "remove", specialId, userId? }  (login required)
  *
  * The acting user always comes from the encrypted session. Removing someone else is only
  * allowed for the admin, and the bot checks that again.
@@ -40,6 +42,19 @@ async function readBot(response) {
 
 exports.handler = async (event) => {
     try {
+        if (event.httpMethod === "GET" && event.queryStringParameters?.kind === "specials") {
+            let cached = cache.get("specials");
+            const fresh = event.queryStringParameters?.fresh === "1" && Boolean(viewer(event));
+            if (fresh || !cached || Date.now() - cached.at > CACHE_MS) {
+                const { status, data } = await readBot(await botApiFetch("/api/special-collectors"));
+                if (status !== 200) return json(status, data);
+                cached = { at: Date.now(), data };
+                if (data.pendingProfiles > 0) cached.at -= CACHE_MS - 10 * 1000;
+                cache.set("specials", cached);
+            }
+            return json(200, { ...cached.data, viewer: viewer(event) });
+        }
+
         if (event.httpMethod === "GET") {
             const dexKey = DEX_KEYS[event.queryStringParameters?.dex];
             if (!dexKey) return json(400, { error: "Unknown dex" });
@@ -65,10 +80,24 @@ exports.handler = async (event) => {
 
         const body = parseJsonBody(event);
         if (!body) return json(400, { error: "Invalid JSON body" });
+        const targetUserId = typeof body.userId === "string" && /^\d{17,20}$/.test(body.userId) ? body.userId : undefined;
+
+        if (body.kind === "specials") {
+            const specialId = Number(body.specialId);
+            if (!Number.isInteger(specialId) || !["add", "remove"].includes(body.action)) return json(400, { error: "Invalid request" });
+            const { status, data } = await readBot(
+                await botApiFetch(`/api/users/${auth.session.user.id}/special-collectors`, {
+                    method: "POST",
+                    body: { action: body.action, specialId, targetUserId },
+                }),
+            );
+            if (status === 200) cache.delete("specials");
+            return json(status, data);
+        }
+
         const dexKey = DEX_KEYS[body.dex];
         const ballId = Number(body.ballId);
         if (!dexKey || !Number.isInteger(ballId) || !["add", "remove"].includes(body.action)) return json(400, { error: "Invalid request" });
-        const targetUserId = typeof body.userId === "string" && /^\d{17,20}$/.test(body.userId) ? body.userId : undefined;
 
         const { status, data } = await readBot(
             await botApiFetch(`/api/users/${auth.session.user.id}/collectors`, {
