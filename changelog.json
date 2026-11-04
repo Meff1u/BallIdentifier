@@ -1,6 +1,16 @@
 {
     "changes": [
         {
+            "timestamp": "1793824000",
+            "type": "website",
+            "changes": [
+                "Notifications: new types for changes to your Collector entries made by the owner, for problems with a Notifier you set up (deleted role, missing permissions) and for when your turn to sync comes up",
+                "You now get a Discord DM when your account is blocked or unblocked",
+                "Fewer notifications: thank-you DMs for voting are off by default, Fast Sync no longer sends a notification, and paused syncs, reconnecting or unlinking Ballsdex only appear in your notification list (no DM). You get at most one DM per notification type per hour",
+                "Notifier problem alerts reach you only for Notifiers saved after this update, so re-save an older Notifier once to get them"
+            ]
+        },
+        {
             "timestamp": "1793822001",
             "type": "bot",
             "changes": [

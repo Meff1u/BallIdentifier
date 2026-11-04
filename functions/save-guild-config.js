@@ -49,7 +49,7 @@ exports.handler = async (event) => {
         const setupBy = auth.session.user.username;
         const requestBody = isDelete
             ? { kind, isDelete: true, setupBy }
-            : { kind, selectedBots, selectedRole, customMessage, setupBy, setupAt: Date.now() };
+            : { kind, selectedBots, selectedRole, customMessage, setupBy, setupById: auth.session.user.id, setupAt: Date.now() };
 
         const response = await botApiFetch(`/api/guilds/${guildId}/config`, { method: "POST", body: requestBody });
         const data = await response.json().catch(() => ({}));

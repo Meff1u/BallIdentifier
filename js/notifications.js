@@ -21,6 +21,10 @@ const TYPE_ICONS = {
     ballsdex_account: "key-round",
     update_dex: "sparkle",
     update_site: "newspaper",
+    sync_slot: "refresh-cw",
+    collector_status: "trophy",
+    account_status: "lock",
+    notifier_issue: "triangle-alert",
 };
 
 let bell;
