@@ -15,7 +15,7 @@ const KEYS_URL = "https://ballsdex.com/api/keys";
 // "Sign in with Ballsdex" (functions/ballsdex-oauth.js): Ballsdex's consent screen, then back here with ?bdx=<result>
 const CONNECT_URL = "/.netlify/functions/ballsdex-oauth?action=start";
 const CONNECT_RESULTS = {
-    linked: ["Ballsdex account connected. Syncing your collection…", "success"],
+    linked: ["Ballsdex account connected. Start a sync to load your collection.", "success"],
     reconnected: ["Ballsdex account reconnected.", "success"],
     denied: ["Sign in with Ballsdex was cancelled.", "info"],
     expired: ["The sign-in took too long or was opened twice. Try again.", "error"],
@@ -1130,7 +1130,7 @@ export function createView() {
         input.focus();
     }
 
-    async function startSync({ auto = false } = {}) {
+    async function startSync() {
         try {
             const result = await api("ballsdex", { method: "POST", body: { action: "sync" } });
             data = { ...data, sync: result.sync || { inProgress: true } };
@@ -1138,7 +1138,7 @@ export function createView() {
         } catch (error) {
             if (handleAuthError(error)) return;
             if (error.code === "BUSY") toast(error.message, "info", 8000);
-            else if (!auto || (error.code !== "COOLDOWN" && error.code !== "DISABLED")) toast(error.message, error.code === "DISABLED" ? "info" : "error");
+            else toast(error.message, error.code === "DISABLED" ? "info" : "error");
             await refresh({ quiet: true });
         }
     }
@@ -1215,7 +1215,6 @@ export function createView() {
                 toast(message, type, type === "error" ? 9000 : 5000);
             }
             const afterLoad = (loaded) => {
-                if (result === "linked" && loaded?.linked && !loaded.reconnect) startSync({ auto: true });
                 // From "/ballsdex link" in Discord: straight to the Ballsdex sign-in when it's needed
                 if (connect && loaded && (!loaded.linked || loaded.reconnect)) location.assign(CONNECT_URL);
             };

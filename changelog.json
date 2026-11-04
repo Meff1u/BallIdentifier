@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1793800500",
+            "type": "bot",
+            "changes": [
+                "Connecting your Ballsdex account no longer starts a sync by itself: start it yourself with Sync now when you want",
+                "Collectors: entries of deleted Discord accounts are removed automatically"
+            ]
+        },
+        {
             "timestamp": "1793795932",
             "type": "website",
             "changes": [
