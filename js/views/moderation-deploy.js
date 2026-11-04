@@ -17,7 +17,9 @@ export function createDeployCard({ handleError }) {
         const count = state.pending.length;
         const ok = await confirmDialog({
             title: "Deploy the website?",
-            message: `${count} change${count === 1 ? "" : "s"} will go live in about 2 minutes, all at once.`,
+            message: count
+                ? `${count} dex change${count === 1 ? "" : "s"} will go live in about 2 minutes, all at once, with one changelog entry per dex.`
+                : "The website will pull the latest version from GitHub. It goes live in about 2 minutes.",
             confirmLabel: "Deploy",
         });
         if (!ok || busy) return;
@@ -59,12 +61,12 @@ export function createDeployCard({ handleError }) {
             );
             return;
         }
-        const button = h("button.btn.btn-primary", { type: "button", disabled: busy || state.deploying || !pending.length }, icon("upload", "icon-sm"), h("span", busy || state.deploying ? "Deploying…" : "Deploy"));
+        const button = h("button.btn.btn-primary", { type: "button", disabled: busy || state.deploying }, icon("upload", "icon-sm"), h("span", busy || state.deploying ? "Deploying…" : "Deploy"));
         button.addEventListener("click", deploy);
         content.replaceChildren(
             pending.length
                 ? h("ul.mod-deploy-list", [...pending].reverse().map(change))
-                : h("p.subtle", "Nothing to deploy. Dex changes show up here until you press Deploy."),
+                : h("p.subtle", "No dex changes waiting. They show up here until a deploy; Deploy also pulls any other pushed commits."),
             h("div.mod-deploy-foot", button, h("span.subtle", lastDeployAt ? `Last deploy ${timeAgo(lastDeployAt)}` : "No deploy from here yet")),
         );
     }
