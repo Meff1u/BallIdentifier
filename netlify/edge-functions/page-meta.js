@@ -101,7 +101,7 @@ async function profileMeta(origin, idParam) {
         image: cardUrl(origin, {
             type: "profile",
             id: idParam,
-            v: version([profile.updatedAt, profile.name, profile.avatarUrl, collecting, profile.ballsdex?.lastSyncedAt, profile.identifyAmount]),
+            v: version([profile.updatedAt, profile.name, profile.avatarUrl, collecting, profile.ballsdex?.lastSyncedAt, profile.identifyAmount, "avatar-frame"]),
         }),
         card: true,
     };

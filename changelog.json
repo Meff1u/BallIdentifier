@@ -1,6 +1,20 @@
 {
     "changes": [
         {
+            "timestamp": "1793826001",
+            "type": "bot",
+            "changes": [
+                "/help now points to your Ballsdex account page and lists the newer commands"
+            ]
+        },
+        {
+            "timestamp": "1793826000",
+            "type": "website",
+            "changes": [
+                "Link previews of profiles now show animated avatars (their first frame) instead of leaving the avatar out"
+            ]
+        },
+        {
             "timestamp": "1793825000",
             "type": "bot",
             "changes": [

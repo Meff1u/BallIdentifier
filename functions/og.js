@@ -76,6 +76,15 @@ function picture(buffer) {
     return dataUri(buffer, type);
 }
 
+/** A Discord avatar as a PNG data URI. Animated ones (GIF or animated WebP) become their first frame; satori can't read WebP. */
+async function avatarPicture(buffer, size = 256) {
+    try {
+        return picture(await sharp(buffer, { pages: 1 }).resize(size, size, { fit: "cover" }).png().toBuffer());
+    } catch {
+        return picture(buffer);
+    }
+}
+
 /** Spawn art scaled down from the local file (falls back to the full PNG on GitHub). */
 async function artImage(dex, name, width) {
     const root = path.join(process.cwd(), "assets/dexes");
@@ -495,7 +504,7 @@ async function collectorsCard() {
         }
     });
     const top = [...people.values()].sort((a, b) => b.count - a.count);
-    const avatars = await Promise.all(top.slice(0, 9).map((p) => (p.avatarUrl ? fetchBuffer(p.avatarUrl, 4000).then(picture).catch(() => null) : null)));
+    const avatars = await Promise.all(top.slice(0, 9).map((p) => (p.avatarUrl ? fetchBuffer(p.avatarUrl, 4000).then((buffer) => avatarPicture(buffer, 126)).catch(() => null) : null)));
 
     const visual = el(
         "div",
@@ -578,7 +587,7 @@ async function profileCard(idParam) {
     const accent = C.accent;
     const avatarUrl = String(p.avatarUrl || "").replace(/([?&])size=\d+/, "$1size=256");
     const [avatar, ...showcase] = await Promise.all([
-        fetchBuffer(avatarUrl, 4000).then(picture).catch(() => null),
+        fetchBuffer(avatarUrl, 4000).then((buffer) => avatarPicture(buffer, 280)).catch(() => null),
         ...p.showcase.slice(0, 6).map((ball) => artImage(ball.dex, ball.name, 160).catch(() => null)),
     ]);
 
