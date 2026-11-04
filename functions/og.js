@@ -3,7 +3,7 @@
  *
  * GET /.netlify/functions/og?type=ball&dex=Ballsdex&name=Poland   spawn art + rarity, wave, id, artist, collectors, values
  * GET /.netlify/functions/og?type=special&id=59                   special emoji + alias, price, spawn rate, dates
- * GET /.netlify/functions/og?type=page&page=<name>&v=<day>        identify, arts, trainer, bot, notifier, catchstats, collectors, users, ballsdex, raws, completion, limits, specials
+ * GET /.netlify/functions/og?type=page&page=<name>&v=<day>        identify, arts, trainer, bot, notifier, catchstats, collectors, collectorspecials, users, ballsdex, raws, completion, limits, specials
  * GET /.netlify/functions/og?type=profile&id=<discord id>&v=<hash>  public profile: avatar, bio, showcase, stats
  *
  * Used as og:image by netlify/edge-functions/page-meta.js. Layout with satori (text becomes vector shapes,
@@ -31,6 +31,8 @@ const fontFile = (weight) => fs.readFileSync(path.join(process.cwd(), "assets/og
 const iconFile = (dex) => fs.readFileSync(path.join(process.cwd(), "assets/icons", `${dex}.png`));
 const dexFile = (dex) => fs.readFileSync(path.join(process.cwd(), "assets/jsons", `${dex}.json`), "utf8");
 const logoFile = () => fs.readFileSync(path.join(process.cwd(), "assets/brand/logo-mark.svg"));
+// The bot's face (same as the favicon and the bot avatar), used as the big icon on the bot-related cards
+const faceFile = () => fs.readFileSync(path.join(process.cwd(), "assets/brand/favicon.svg"));
 
 // Enabled dexes (assets/jsons/dexes.json, managed in Moderation -> Dexes; a change redeploys the site): name -> data key
 let dexKeyMap = null;
@@ -460,7 +462,7 @@ async function botCard() {
         el(
             "div",
             { width: 300, height: 300, borderRadius: 999, alignItems: "center", justifyContent: "center", background: "rgba(155,58,191,0.16)", border: `3px solid ${C.border}` },
-            img(dataUri(logoFile(), "image/svg+xml"), 210, 210),
+            img(dataUri(faceFile(), "image/svg+xml"), 230, 230),
         ),
         el(
             "div",
@@ -482,6 +484,27 @@ async function botCard() {
         ],
     });
 }
+
+/** A grid of the biggest collectors' avatars with their counts (Collectors and Special collectors cards). */
+const peopleVisual = (top, avatars) =>
+    el(
+        "div",
+        { flexWrap: "wrap", width: 414, gap: 18, justifyContent: "center" },
+        top.slice(0, 9).map((person, i) =>
+            el(
+                "div",
+                { position: "relative", width: 126, height: 126 },
+                avatars[i]
+                    ? img(avatars[i], 126, 126, { borderRadius: 999, objectFit: "cover", border: `3px solid ${C.border}` })
+                    : el("div", { width: 126, height: 126, borderRadius: 999, background: C.surface2 }),
+                el(
+                    "div",
+                    { position: "absolute", right: -4, bottom: -4, minWidth: 44, height: 40, padding: "0 10px", borderRadius: 999, alignItems: "center", justifyContent: "center", background: C.accent, color: "#fff", fontSize: 20, fontWeight: 800, border: `3px solid ${C.surface}` },
+                    fmt(person.count),
+                ),
+            ),
+        ),
+    );
 
 /** Collectors: totals over every dex and the biggest collectors' avatars. */
 async function collectorsCard() {
@@ -508,24 +531,7 @@ async function collectorsCard() {
     const top = [...people.values()].sort((a, b) => b.count - a.count);
     const avatars = await Promise.all(top.slice(0, 9).map((p) => (p.avatarUrl ? fetchBuffer(p.avatarUrl, 4000).then((buffer) => avatarPicture(buffer, 126)).catch(() => null) : null)));
 
-    const visual = el(
-        "div",
-        { flexWrap: "wrap", width: 414, gap: 18, justifyContent: "center" },
-        top.slice(0, 9).map((person, i) =>
-            el(
-                "div",
-                { position: "relative", width: 126, height: 126 },
-                avatars[i]
-                    ? img(avatars[i], 126, 126, { borderRadius: 999, objectFit: "cover", border: `3px solid ${C.border}` })
-                    : el("div", { width: 126, height: 126, borderRadius: 999, background: C.surface2 }),
-                el(
-                    "div",
-                    { position: "absolute", right: -4, bottom: -4, minWidth: 44, height: 40, padding: "0 10px", borderRadius: 999, alignItems: "center", justifyContent: "center", background: C.accent, color: "#fff", fontSize: 20, fontWeight: 800, border: `3px solid ${C.surface}` },
-                    fmt(person.count),
-                ),
-            ),
-        ),
-    );
+    const visual = peopleVisual(top, avatars);
 
     return frame({
         visual,
@@ -537,6 +543,37 @@ async function collectorsCard() {
             row("Collections", fmt(claims)),
             row("Verified", fmt(verified)),
             row("Balls collected", fmt(balls)),
+            top[0]?.name ? row("Top collector", `${top[0].name} · ${fmt(top[0].count)}`) : null,
+        ],
+    });
+}
+
+/** Collectors -> Specials: who collects which special. */
+async function specialCollectorsCard() {
+    const result = await fromBot(() => botApiFetch("/api/special-collectors"));
+    if (!result?.entries) throw new Error("special collectors unavailable");
+    const people = new Map();
+    let claims = 0;
+    const lists = Object.values(result.entries).filter((list) => list.length);
+    for (const list of lists) {
+        for (const collector of list) {
+            claims++;
+            const person = people.get(collector.id) || { count: 0, avatarUrl: collector.avatarUrl, name: collector.name || collector.username };
+            person.count++;
+            people.set(collector.id, person);
+        }
+    }
+    const top = [...people.values()].sort((a, b) => b.count - a.count);
+    const avatars = await Promise.all(top.slice(0, 9).map((p) => (p.avatarUrl ? fetchBuffer(p.avatarUrl, 4000).then((buffer) => avatarPicture(buffer, 126)).catch(() => null) : null)));
+    return frame({
+        visual: peopleVisual(top, avatars),
+        kicker: kickerRow("Collectors"),
+        title: "Special collectors",
+        subtitle: "Who collects which Ballsdex special. Add yourself to the specials you collect.",
+        rows: [
+            row("Collectors", fmt(people.size)),
+            row("Collections", fmt(claims)),
+            row("Specials collected", fmt(lists.length)),
             top[0]?.name ? row("Top collector", `${top[0].name} · ${fmt(top[0].count)}`) : null,
         ],
     });
@@ -658,7 +695,7 @@ const logoVisual = (pill) =>
         el(
             "div",
             { width: 300, height: 300, borderRadius: 999, alignItems: "center", justifyContent: "center", background: "rgba(155,58,191,0.16)", border: `3px solid ${C.border}` },
-            img(dataUri(logoFile(), "image/svg+xml"), 210, 210),
+            img(dataUri(faceFile(), "image/svg+xml"), 230, 230),
         ),
         pill ? el("div", { alignItems: "center", padding: "10px 22px", borderRadius: 999, background: C.surface2, border: `2px solid ${C.border}`, color: C.text2, fontSize: 24, fontWeight: 700 }, pill) : null,
     );
@@ -746,6 +783,7 @@ const PAGE_CARDS = {
     trainer: trainerCard,
     bot: botCard,
     collectors: collectorsCard,
+    collectorspecials: specialCollectorsCard,
     specials: specialsCard,
     notifier: notifierCard,
     catchstats: catchStatsCard,

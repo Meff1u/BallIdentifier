@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1793828000",
+            "type": "website",
+            "changes": [
+                "Link previews of the Bot, Notifier, Catch stats, Users and Ballsdex pages now use the same bot icon as the favicon",
+                "The Collectors \u2192 Specials page now has its own link preview card"
+            ]
+        },
+        {
             "timestamp": "1793827000",
             "type": "website",
             "changes": [
@@ -44,10 +52,31 @@
             ]
         },
         {
+            "timestamp": "1793823000",
+            "type": "website",
+            "changes": [
+                "Fixed the Ballsdex Limits tab and sync texts: a sync costs 1 request per 50 balls (not 25), so a 10,000-ball sync takes about 200 requests"
+            ]
+        },
+        {
             "timestamp": "1793822001",
             "type": "bot",
             "changes": [
                 "Links in the bot's messages now open the website pages directly"
+            ]
+        },
+        {
+            "timestamp": "1793822000",
+            "type": "website",
+            "changes": [
+                "Privacy Policy and Terms of Service updated: they now describe website accounts, blocks, profiles, Collectors and Catch stats as they really work"
+            ]
+        },
+        {
+            "timestamp": "1793821000",
+            "type": "website",
+            "changes": [
+                "Corrected outdated descriptions: Catch stats rankings cover 30 and 7 days only, Ballsdex sync starts when you press Sync now, and Ballsdex account notifications now say sign-in instead of API key"
             ]
         },
         {

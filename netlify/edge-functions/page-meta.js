@@ -18,6 +18,7 @@ const PAGES = {
     "bot/notifier": ["Notifier settings", "Set up Spawn and Tradesman notifications for your Discord servers."],
     "bot/catch-stats": ["Catch stats", "How fast do you catch? Catch times, averages and records for every catch, plus rankings of the fastest catchers."],
     collectors: ["Collectors", "See who collects which ball in every dex, with verified and unverified collectors, and add yourself as a collector."],
+    "collectors/specials": ["Special collectors", "See who collects which Ballsdex special, and add yourself as a collector."],
     users: ["Users", "Find BallIdentifier users with a public profile: what they collect, their showcase, what they are looking for and their Ballsdex stats."],
     u: ["Profile", "Public BallIdentifier profiles: what someone collects, their showcase, what they are looking for and their Ballsdex stats."],
     ballsdex: ["Ballsdex", "Sign in with Ballsdex, sync your collection and see your stats, raws, completion and every special."],
@@ -133,6 +134,7 @@ const PAGE_CARDS = {
     "bot/notifier": "notifier",
     "bot/catch-stats": "catchstats",
     collectors: "collectors",
+    "collectors/specials": "collectorspecials",
     users: "users",
     u: "users",
     ballsdex: "ballsdex",
@@ -201,5 +203,5 @@ export default async (request, context) => {
 };
 
 export const config = {
-    path: ["/", "/identify", "/arts", "/arts/*", "/trainer", "/bot", "/bot/*", "/collectors", "/users", "/u", "/u/*", "/ballsdex", "/ballsdex/*", "/moderation"],
+    path: ["/", "/identify", "/arts", "/arts/*", "/trainer", "/bot", "/bot/*", "/collectors", "/collectors/*", "/users", "/u", "/u/*", "/ballsdex", "/ballsdex/*", "/moderation"],
 };
