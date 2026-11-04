@@ -13,7 +13,7 @@ function inline(text, renderText) {
         }
         if (m.index > 0) out.push(...renderText(rest.slice(0, m.index)));
         const [, , code, bold, underline, strike, spoiler, italicStar, italicUnderscore] = m;
-        if (code !== undefined) out.push(h("code.md-code", code.trim()));
+        if (code !== undefined) out.push(h("code.md-code", renderText(code.trim())));
         else if (bold !== undefined) out.push(h("strong", inline(bold, renderText)));
         else if (underline !== undefined) out.push(h("u", inline(underline, renderText)));
         else if (strike !== undefined) out.push(h("s", inline(strike, renderText)));
@@ -37,7 +37,7 @@ export function renderDiscordMarkdown(source, renderText = (t) => [t]) {
             const first = line.trimStart().slice(3);
             const closesSameLine = first.length > 3 && first.endsWith("```");
             if (closesSameLine) {
-                blocks.push(h("pre.md-pre", first.slice(0, -3)));
+                blocks.push(h("pre.md-pre", renderText(first.slice(0, -3))));
                 continue;
             }
             let j = i + 1;
@@ -45,7 +45,7 @@ export function renderDiscordMarkdown(source, renderText = (t) => [t]) {
             if (j < lines.length) {
                 const last = lines[j].trimEnd().slice(0, -3);
                 if (last) body.push(last);
-                blocks.push(h("pre.md-pre", body.join("\n")));
+                blocks.push(h("pre.md-pre", renderText(body.join("\n"))));
                 i = j;
                 continue;
             }

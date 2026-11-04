@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1793789849",
+            "type": "website",
+            "changes": [
+                "Notifier preview: placeholders like {rarity} now show sample values also inside `code` formatting",
+                "Bot page: removed the extra Notifier settings button from the top card (the Notifier tab is still right below)"
+            ]
+        },
+        {
             "timestamp": "1793497023",
             "type": "website",
             "changes": [
