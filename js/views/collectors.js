@@ -221,7 +221,7 @@ export function createView() {
                               h(
                                   "div.col-tags",
                                   c.source === "verified" ? h("span.badge.badge-success", icon("shield-check", "icon-sm"), "Verified") : h("span.badge", { title: c.addedAt ? `Added ${timeAgo(c.addedAt)}` : "" }, "Unverified"),
-                                  viewer?.canModerate && c.origin !== "data"
+                                  viewer?.canModerate
                                       ? h(
                                             "button.btn.btn-sm",
                                             { type: "button", "aria-label": c.source === "verified" ? `Make ${displayName(c)} unverified` : `Verify ${displayName(c)}`, onclick: () => setStatus(ball, c) },
