@@ -11,7 +11,6 @@ import { compressedArtUrl, getDex } from "../core/data.js";
 import { refreshNotifications } from "../notifications.js";
 
 const POLL_MS = 60 * 1000;
-const KEYS_URL = "https://ballsdex.com/api/keys";
 // "Sign in with Ballsdex" (functions/ballsdex-oauth.js): Ballsdex's consent screen, then back here with ?bdx=<result>
 const CONNECT_URL = "/.netlify/functions/ballsdex-oauth?action=start";
 const CONNECT_RESULTS = {
@@ -162,7 +161,7 @@ export function createView() {
             h(
                 "p.callout",
                 icon("shield-check", "icon-sm"),
-                h("span", "BallIdentifier only gets read access, and the sign-in is stored encrypted. Remove it any time with Unlink here or on your ", h("a", { href: KEYS_URL, target: "_blank", rel: "noopener" }, "Ballsdex Keys page"), "."),
+                h("span", "BallIdentifier only gets read access, and the sign-in is stored encrypted. Remove it any time with Unlink here."),
             ),
         );
 
@@ -174,7 +173,7 @@ export function createView() {
                 h("li", h("span", "Press ", h("b", "Sign in with Ballsdex"), ".")),
                 h("li", h("span", "Log in to Ballsdex with the same Discord account you use here.")),
                 h("li", h("span", "Allow BallIdentifier to read your data. You come right back here.")),
-                h("li", h("span", "Your collection syncs by itself. For big collections, Fast Sync is much quicker.")),
+                h("li", h("span", "Start a sync when you are ready (Sync now). For big collections, Fast Sync is much quicker.")),
             ),
             h("p.subtle", "Had an API key linked before? Ballsdex replaced keys with this sign-in on November 1, 2026."),
         );
@@ -322,7 +321,7 @@ export function createView() {
         body.replaceChildren(...parts);
     }
 
-    /** Progress of a running sync: pages of 25 balls, paced by the Ballsdex rate limit. */
+    /** Progress of a running sync: pages of up to 50 balls, paced by the Ballsdex rate limit. */
     function syncProgress(sync) {
         const p = sync.progress || { phase: "starting", fetched: 0, total: null };
         const total = Number.isFinite(p.total) && p.total > 0 ? p.total : null;
@@ -344,7 +343,7 @@ export function createView() {
         } else if (sync.source === "file") {
             eta = "Fast Sync takes a few seconds.";
         } else if (p.phase !== "saving") {
-            eta = "Big collections take a while: the Ballsdex API hands out 25 balls per page, about one page a second. You can leave this page; the sync keeps going.";
+            eta = "Big collections take a while: the Ballsdex API hands out up to 50 balls per page and limits how fast they can be requested. You can leave this page; the sync keeps going.";
         }
 
         const fill = h("div.meter-fill");
@@ -556,13 +555,13 @@ export function createView() {
                 null,
                 h(
                     "ul.rl-costs",
-                    row("Sync", "1 per 25 balls (+2)"),
+                    row("Sync", "1 per 50 balls (+2)"),
                     row("Fast Sync", "about 15"),
                     row("Sign in with Ballsdex", "2"),
                     row("Adding yourself as a collector after syncing", "up to 10"),
                     row("Checking your limits here", "1, at most every 5 min"),
                 ),
-                h("p.subtle", "For big collections Fast Sync saves a lot: a 10,000-ball sync takes about 400 requests."),
+                h("p.subtle", "For big collections Fast Sync saves a lot: a 10,000-ball sync takes about 200 requests."),
             );
         }
 
@@ -1085,7 +1084,7 @@ export function createView() {
 
         const body = h(
             "div.stack.fs-body",
-            h("p", "Import your whole collection in a few seconds from the export Ballsdex sends you, instead of pulling it from the API 25 balls at a time."),
+            h("p", "Import your whole collection in a few seconds from the export Ballsdex sends you, instead of pulling it from the API 50 balls at a time."),
             h(
                 "ol.fs-steps",
                 h("li", "In any server with Ballsdex, run ", h("code", "/player settings"), " and export your countryballs. Ballsdex sends ", h("code", "player_data.zip"), " in your DMs."),

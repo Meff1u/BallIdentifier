@@ -25,7 +25,7 @@
         </header>
         <main class="doc">
             <h1>Privacy Policy</h1>
-            <p class="updated">Last updated: October 30, 2026</p>
+            <p class="updated">Last updated: November 4, 2026</p>
 
                     <h2>1. Introduction</h2>
                     <p>
@@ -72,19 +72,35 @@
                             </tr>
                             <tr>
                                 <td><strong>Collectors</strong></td>
-                                <td>If you add yourself as a collector on the website: your Discord ID, the dex and ball, and when you added it. For everyone listed as a collector, the bot caches the public Discord display name, username and avatar URL (refreshed weekly) to show the list</td>
+                                <td>If you add yourself as a collector on the website: your Discord ID, the dex and ball (or the special), when you added it, and its status (Verified or Unverified) with who set it and when. Some older collector entries are part of the dex data in the public BallIdentifier GitHub repository (Discord IDs only). Entries of accounts deleted on Discord are removed automatically. For everyone listed as a collector, the bot caches the public Discord display name, username and avatar URL (refreshed weekly) to show the list</td>
                             </tr>
                             <tr>
                                 <td><strong>Public Profile (optional)</strong></td>
-                                <td>If you create a profile on the website: your bio, pronouns, accent color, favorite dex, showcase balls and visibility settings, plus your Discord display name, username and avatar URL. It stays private until you turn on Public profile; then anyone can see it at ballidentifier.xyz/u/&lt;your Discord ID&gt; and find it in Users, together with the balls you collect and, only if you turn it on, a summary of your Ballsdex stats (never your API key or ball IDs). If your Ballsdex account is connected, the profile also shows your newest Ballsdex catches (ball, special and time), loaded from the Ballsdex API at most every 15 minutes while the profile is viewed and kept only in memory; you can turn this off in Edit profile</td>
+                                <td>If you create a profile on the website: your bio, pronouns, favorite dex, showcase balls, your Looking for list (up to 10 balls or specials you want, each with a priority) and visibility settings, plus your Discord display name, username and avatar URL. It stays private until you turn on Public profile; then anyone can see it at ballidentifier.xyz/u/&lt;your Discord ID&gt; and find it in Users, together with the balls you collect and, only if you turn it on, a summary of your Ballsdex stats (never your API key or ball IDs). If your Ballsdex account is connected, the profile also shows your newest Ballsdex catches (ball, special and time), loaded from the Ballsdex API at most every 15 minutes while the profile is viewed and kept only in memory; you can turn this off in Edit profile</td>
                             </tr>
                             <tr>
                                 <td><strong>Catch Stats</strong></td>
-                                <td>On servers where an admin turned on Catch stats, the bot reads Ballsdex's spawn and catch messages there and, for each catch, saves your Discord ID, the server ID, the ball, how long the catch took (the time between the spawn message and the catch message) and when it happened. From these it keeps your totals: number of catches, average and fastest time, overall, per ball and per server. Your catch stats are private (only you see them) unless you turn on “Show my catch stats publicly”; then they appear on your profile and in the Catch stats rankings. You can stop being tracked at any time (“Don't track me” under a catch reply, <code>/catchstats settings tracking:False</code> or your profile), which deletes this data</td>
+                                <td>On servers where an admin turned on Catch stats, the bot reads Ballsdex's spawn and catch messages there and, for each catch, saves your Discord ID, the server ID, the ball, how long the catch took (the time between the spawn message and the catch message) and when it happened. From these it works out your number of catches, average and fastest time over the last 30 days (and the last 7 days), overall, per ball and per server. Separately it keeps your personal best and your best per ball, with the date, and each server's fastest catch (with who caught it). Your catch stats are private (only you see them) unless you turn on “Show my catch stats publicly”; then they appear on your profile and in the Catch stats rankings. You can stop being tracked at any time (“Don't track me” under a catch reply, <code>/catchstats settings tracking:False</code> or your profile), which deletes this data</td>
                             </tr>
                             <tr>
                                 <td><strong>Website Login (optional)</strong></td>
-                                <td>When you log in on the website with Discord: an encrypted, HttpOnly session cookie with your Discord ID, username, avatar and a Discord access token used to list your servers. It is kept in your browser, not on our servers</td>
+                                <td>When you log in on the website with Discord: an encrypted, HttpOnly session cookie with your Discord ID, username, avatar and a Discord access token used to list your servers. The cookie is kept in your browser, not on our servers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Website Account Record</strong></td>
+                                <td>The first time you log in (or use a website feature that needs a login), we store a record with your Discord ID, username, display name, avatar identifier, the time of your first and latest login, how many times you logged in, the time of your latest activity on the website and the account status (active or blocked). Accounts that haven't been active for a long time can be asked to log in again</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Account Blocks</strong></td>
+                                <td>If the BallIdentifier owner blocks your account: the time, who blocked it and the reason, which is shown to you. A blocked account is logged out and can't log in or use the website's features or the bot's commands, and its public profile is hidden. Your collector entries and catch data are not removed by a block</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Notification History</strong></td>
+                                <td>Notifications shown on the website (for example sync results or vote reminders): the latest 40 entries, kept for accounts that have opened the website</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Contact Messages</strong></td>
+                                <td>A message sent with the website's contact form is forwarded to the owner by Discord direct message together with your Discord name and ID. It is not stored by BallIdentifier; only the time of your last message is kept to apply the 10 minute limit</td>
                             </tr>
                         </tbody>
                     </table>
@@ -131,10 +147,11 @@
                     <p><strong>User Data:</strong></p>
                     <ul>
                         <li>Your user statistics and notification preferences are stored until you ask us to remove them or stop using the service.</li>
-                        <li>Your Ballsdex sign-in and synced collection data are kept until you unlink your account (on the website's Ballsdex tab or with <code>/ballsdex unlink</code>), which deletes them and revokes BallIdentifier's access. You can also remove that access on your Ballsdex Keys page.</li>
+                        <li>Your Ballsdex sign-in and synced collection data are kept until you unlink your account (on the website's Ballsdex tab or with <code>/ballsdex unlink</code>), which deletes them and revokes BallIdentifier's access.</li>
                         <li>The website session cookie expires after 7 days at most, or when you log out.</li>
                         <li>Your profile settings are kept until you ask us to remove them. Turning off Public profile hides your profile and removes it from Users right away.</li>
-                        <li>Single catches (for the 7 and 30 day Catch stats) are deleted automatically after 35 days. Your catch totals, averages and records are kept until you turn off catch tracking, which deletes all of your catch data right away.</li>
+                        <li>Single catches are deleted automatically after 35 days; your averages and counts only ever cover the last 30 days. Your personal best and best per ball are kept until you turn off catch tracking, which deletes all of your catch data right away.</li>
+                        <li>Your website account record, block information and notification history are kept until you ask us to remove them.</li>
                     </ul>
                     <p><strong>Server Data:</strong></p>
                     <ul>
@@ -145,7 +162,7 @@
 
                     <h2>5. Where Data is Stored</h2>
                     <p>
-                        Data is stored in the bot's asset files on our hosting infrastructure and in any configured third-party services used for bot operations, such as Discord Bot List and optional webhooks.
+                        Data is stored in files on the server that runs the bot and the website and in a MongoDB Atlas cloud database, plus configured third-party services used for bot operations, such as Discord Bot List and optional webhooks. Website traffic passes through Cloudflare. Dex data and the website's code are kept in public GitHub repositories.
                     </p>
 
                     <h2>6. Data Sharing</h2>
@@ -157,12 +174,13 @@
                         <li>The Ballsdex API, called with your own Ballsdex sign-in, only when you connect, sync or check your Ballsdex account (and, for the BallIdentifier owner's account, to load the public specials and market data)</li>
                         <li>Discord DMs for optional thanks messages and upvote reminders</li>
                         <li>Configured log, error, report or upvote webhooks</li>
-                        <li>Hosting and storage infrastructure used to run the bot and website</li>
+                        <li>Cloudflare, which carries the website's traffic, and MongoDB Atlas, which hosts the database</li>
+                        <li>Hosting and storage infrastructure used to run the bot and website. The website passes your IP address to the bot only so request rate limits can be applied</li>
                     </ul>
 
                     <h2>7. Your Rights & Data Deletion</h2>
                     <p>
-                        You can request deletion of your personal data by contacting the developer on Discord. Include the relevant Discord user ID, username, or guild ID so we can locate the correct records.
+                        You can request deletion of your personal data by contacting the developer on Discord or with the contact form on the website (the “Contact and feedback” button in the top bar, after logging in with Discord). Include the relevant Discord user ID, username, or guild ID so we can locate the correct records.
                     </p>
                     <div class="callout"><span><strong>Contact:</strong> 
                         <a href="https://discord.com/users/334411435633541121" target="_blank" rel="noopener">
@@ -184,7 +202,7 @@
 
                     <h2>10. Contact Us</h2>
                     <p>
-                        If you have questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact the bot developer:
+                        If you have questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact the bot developer, either by Discord or with the contact form on the website (the “Contact and feedback” button in the top bar, after logging in with Discord):
                     </p>
                     <div class="callout"><span><strong>Discord:</strong> 
                         <a href="https://discord.com/users/334411435633541121" target="_blank" rel="noopener">

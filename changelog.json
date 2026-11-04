@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1793822001",
+            "type": "bot",
+            "changes": [
+                "Links in the bot's messages now open the website pages directly"
+            ]
+        },
+        {
             "timestamp": "1793818000",
             "type": "website",
             "changes": [

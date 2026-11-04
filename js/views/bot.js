@@ -223,7 +223,7 @@ export function createView() {
                 "How fast do you catch Ballsdex spawns? On servers where an admin turns it on, the bot answers each catch with your time.",
                 [
                     "Your average, your average and best for that ball, and a shout when you beat a record.",
-                    "Rankings of the fastest catchers: all time, 30 days and 7 days, per server or everywhere.",
+                    "Rankings of the fastest catchers over the last 30 and 7 days, per server or everywhere.",
                     "Private by default. Make your stats public in your profile, or opt out any time.",
                 ],
                 h("a.btn", { href: "#/bot/catch-stats" }, icon("timer"), h("span", "Catch stats settings")),
@@ -234,7 +234,7 @@ export function createView() {
                 "Everything the bot tells you lands under the bell on this website. Choose what you get, and which ones also come as a Discord DM.",
                 [
                     "Upvote thanks, and a reminder when your upvote runs out.",
-                    "Ballsdex: sync finished, sync available again, key linked or removed.",
+                    "Ballsdex: sync finished, sync available again, account connected or disconnected.",
                     "Dex updates and new website or bot features.",
                 ],
                 h("button.btn", { type: "button", onclick: () => openNotifications() }, icon("bell"), h("span", "Open notifications")),

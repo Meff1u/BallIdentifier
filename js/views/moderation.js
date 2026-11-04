@@ -49,7 +49,7 @@ export function createView() {
     const el = h(
         "section.view",
         { dataset: { view: "moderation" }, "aria-labelledby": "mod-title" },
-        h("div.page-head", h("h1", { id: "mod-title" }, "Moderation"), h("p", "Owner tools: sync status, bot health, users, dexes and recent logs. Refreshes every few seconds.")),
+        h("div.page-head", h("h1", { id: "mod-title" }, "Moderation"), h("p", "Owner tools: sync status, bot health, users, dexes and recent logs. The overview refreshes every few seconds; Resources and Users refresh on demand.")),
         body,
     );
 
