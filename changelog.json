@@ -1,6 +1,16 @@
 {
     "changes": [
         {
+            "timestamp": "1793825000",
+            "type": "bot",
+            "changes": [
+                "New /ballsdex completion command: see which Ballsdex balls you own and which are missing (optionally for one special), without syncing",
+                "New /ballsdex specials command: prices, event details and market info for any Ballsdex special",
+                "New /profile command: a short card of a public BallIdentifier profile, with a link to the full page",
+                "You can now add yourself as a collector straight from /collectors and /info with the \"I collect\" button"
+            ]
+        },
+        {
             "timestamp": "1793824000",
             "type": "website",
             "changes": [
