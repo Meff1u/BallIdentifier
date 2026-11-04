@@ -551,6 +551,22 @@ input, textarea { caret-color: var(--accent); }
 .icon-btn:active { transform: scale(0.94); }
 .icon-btn[aria-expanded="true"] { background: var(--surface-2); color: var(--text); }
 
+/* Navbar buttons that unfold their name on hover / keyboard focus (mouse devices only) */
+.icon-btn-label { display: none; }
+@media (hover: hover) and (pointer: fine) {
+    .icon-btn-expand { display: inline-flex; align-items: center; justify-content: center; width: auto; min-width: var(--ctl-md); transition: background-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out), transform var(--dur-1) var(--ease-out), padding var(--dur-2, 200ms) var(--ease-out); }
+    .icon-btn-expand .icon-btn-label {
+        display: block; max-width: 0; margin-left: 0; opacity: 0; overflow: hidden; white-space: nowrap;
+        font-size: var(--fs-sm); font-weight: 600;
+        transition: max-width var(--dur-2, 200ms) var(--ease-out), margin-left var(--dur-2, 200ms) var(--ease-out), opacity var(--dur-2, 200ms) var(--ease-out);
+    }
+    .icon-btn-expand:hover, .icon-btn-expand:focus-visible { padding-right: var(--space-3); }
+    .icon-btn-expand:hover .icon-btn-label, .icon-btn-expand:focus-visible .icon-btn-label { max-width: 8rem; margin-left: 6px; opacity: 1; }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: reduce) {
+    .icon-btn-expand, .icon-btn-expand .icon-btn-label { transition: none; }
+}
+
 .dot {
     position: absolute; top: 9px; right: 9px; width: 9px; height: 9px; border-radius: 50%;
     background: var(--accent); box-shadow: 0 0 0 2px var(--bg);

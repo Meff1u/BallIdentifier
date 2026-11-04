@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1793830000",
+            "type": "website",
+            "changes": [
+                "The Support, Contact, Notifications and What's new icons in the top bar now unfold their name when you hover over them"
+            ]
+        },
+        {
             "timestamp": "1793829000",
             "type": "website",
             "changes": [
