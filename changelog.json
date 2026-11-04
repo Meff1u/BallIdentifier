@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1793811000",
+            "type": "bot",
+            "changes": [
+                "Ballsdex sync: after a bot restart, people who were waiting for a free sync slot are remembered and still get the \"You can sync now\" notification, in the order they asked"
+            ]
+        },
+        {
             "timestamp": "1793810000",
             "type": "bot",
             "changes": [
