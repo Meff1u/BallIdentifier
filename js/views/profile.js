@@ -207,7 +207,7 @@ export function createView() {
                         item.ballName
                             ? h("span.pf-lf-art", img(compressedArtUrl(item.dex, item.ballName), "", "", { width: 44, height: 44 }))
                             : h("span.pf-lf-art", item.specialEmoji ? specialEmoji({ officialEmoji: item.specialEmoji }) : icon("sparkles")),
-                        h("div.pf-lf-text", h("b", text.title), h("span.subtle", img(dexIcon(item.dex), "", "badge-ico"), `${text.sub} · ${item.dex}`)),
+                        h("div.pf-lf-text", h("b", text.title), h("span.subtle", img(dexIcon(item.dex), "", "badge-ico"), item.ballName && item.version === "special" && item.specialEmoji ? specialEmoji({ officialEmoji: item.specialEmoji }) : null, `${text.sub} · ${item.dex}`)),
                         h("span.pf-lf-badge", { dataset: { priority: item.priority } }, LF_PRIORITY[item.priority]),
                     );
                 }),
