@@ -23,6 +23,13 @@ function closeOpenMenu({ focus = false } = {}) {
     if (focus) button.focus();
 }
 
+/** Optional emoji of an <option>: data-emoji (text) or data-emoji-url (custom emoji image). */
+function emojiOf(option) {
+    if (option.dataset.emojiUrl) return h("span.cs-emoji", { "aria-hidden": "true" }, h("img", { src: option.dataset.emojiUrl, alt: "", width: 20, height: 20, loading: "lazy" }));
+    if (option.dataset.emoji) return h("span.cs-emoji", { "aria-hidden": "true" }, option.dataset.emoji);
+    return null;
+}
+
 function choose(select, option) {
     if (option.disabled || select.value === option.value) return;
     valueDesc.set.call(select, option.value);
@@ -45,7 +52,7 @@ function open(select, button) {
             const item = h(
                 "div.cs-option",
                 { role: "option", tabindex: "-1", "aria-selected": String(selected), "aria-disabled": option.disabled ? "true" : undefined },
-                h("span.cs-text", option.textContent),
+                h("span.cs-text", ...[emojiOf(option), option.textContent].filter(Boolean)),
                 selected ? icon("check", "icon-sm cs-check") : null,
             );
             item.addEventListener("click", () => {
@@ -142,8 +149,9 @@ export function enhanceSelect(select) {
 
     function sync() {
         const option = select.options[select.selectedIndex];
-        label.textContent = option ? option.textContent : "";
-        button.setAttribute("aria-label", name ? `${name}: ${label.textContent}` : label.textContent);
+        const text = option ? option.textContent : "";
+        label.replaceChildren(...[option ? emojiOf(option) : null, text].filter(Boolean));
+        button.setAttribute("aria-label", name ? `${name}: ${text}` : text);
         button.hidden = select.hidden;
         button.disabled = select.disabled;
         if (openMenu?.button === button && (select.hidden || select.disabled)) closeOpenMenu();

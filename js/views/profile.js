@@ -516,7 +516,17 @@ export function createView() {
                 }
             }
             const previous = lfSpecial.value;
-            lfSpecial.replaceChildren(h("option", { value: "" }, "Pick a special…"), ...options.map((special) => h("option", { value: special.id }, special.name)));
+            lfSpecial.replaceChildren(
+                h("option", { value: "" }, "Pick a special…"),
+                ...options.map((special) => {
+                    const option = h("option", { value: special.id }, special.name);
+                    const custom = /^<a?:\w+:(\d+)>$/.exec(special.officialEmoji || "");
+                    if (special.emoji) option.dataset.emoji = special.emoji;
+                    else if (custom) option.dataset.emojiUrl = `https://cdn.discordapp.com/emojis/${custom[1]}.webp?size=64`;
+                    else if (special.officialEmoji) option.dataset.emoji = special.officialEmoji;
+                    return option;
+                }),
+            );
             lfSpecial.value = options.some((special) => String(special.id) === previous) ? previous : "";
         }
         async function lfChangeDex() {
@@ -573,7 +583,7 @@ export function createView() {
         (async () => {
             try {
                 const result = await api("specials");
-                allSpecials = (result.specials || []).map((special) => ({ id: special.id, name: special.alias || special.name || `Special #${special.id}` }));
+                allSpecials = (result.specials || []).map((special) => ({ id: special.id, name: special.alias || special.name || `Special #${special.id}`, emoji: special.emoji || null, officialEmoji: special.officialEmoji || null }));
                 for (const special of allSpecials) specialNames.set(special.id, { name: special.name });
             } catch {
                 // names fall back to ids
