@@ -3,19 +3,18 @@
  * Data: /.netlify/functions/catch-stats (bot keeps the stats; only users who made them public are ranked).
  */
 
-import { h, icon, img, initials, fmt } from "../core/dom.js";
+import { h, icon, img, initials, fmt, formatDate } from "../core/dom.js";
 import { toast, openDialog, confirmDialog } from "../core/ui.js";
 import { api, ApiError } from "../core/api.js";
 import { getUser, login, sessionExpired } from "../core/auth.js";
 import { renderDiscordMarkdown } from "../core/discord-md.js";
 
 const PERIODS = [
-    ["all", "All time"],
     ["30d", "30 days"],
     ["7d", "7 days"],
 ];
 const LINES = [
-    ["average", "Average time", "Their average over every tracked catch."],
+    ["average", "Average time", "Their average over the last 30 days."],
     ["ballAverage", "This ball", "Their average and best for the ball they just caught."],
     ["best", "Personal best", "Their fastest catch so far."],
     ["serverRank", "Server rank", "Their place on this server by average (last 30 days)."],
@@ -52,7 +51,7 @@ function periodPicker(current, onPick) {
 
 /** Two ranked lists (fastest catch, best average) for everyone or one server. */
 function rankingBoard({ guildId = null } = {}) {
-    let period = guildId ? "30d" : "all";
+    let period = "30d";
     const body = h("div.cs-boards");
     const note = h("p.subtle.cs-board-note");
     let request = 0;
@@ -116,7 +115,7 @@ function aboutCard() {
             "div.cs-about-grid",
             item("zap", "What it does", "After a catch the bot replies with the catch time, your average, your average and best for that ball, and tells you when you beat a record (yours or the server's). Admins choose what the reply shows, or make it reply only on records."),
             item("clock", "How it's measured", "The time between the spawn message and Ballsdex's catch message, both stamped by Discord. Typing the name and Ballsdex's own delay are included, so it's the same for everyone. Works with Ballsdex only."),
-            item("lock", "What's saved", "Your Discord ID, the server, the ball, the catch time and when it happened. Single catches are kept for 35 days (for the 7 and 30 day stats); totals, averages and records are kept until you opt out."),
+            item("lock", "What's saved", "Your Discord ID, the server, the ball, the catch time and when it happened. Single catches are kept for 35 days; every average and count covers the last 30 days only. Your fastest catch (and your fastest per ball) is kept with the date until you opt out."),
             item("eye", "Who sees it", "Only you, by default. Turn on “Show my catch stats publicly” in your profile (or /catchstats settings) to show them on your profile and in the rankings. “Don't track me” under any reply, or the switch below, stops tracking and deletes your data."),
         ),
     );
@@ -136,7 +135,7 @@ function yourStatsCard() {
     card.append(h("h2.section-title", icon("user"), "Your catch stats"), h("div.skeleton.cs-skel"));
 
     const render = (data) => {
-        const { settings = { public: false, tracking: true }, all, last30, last7 } = data;
+        const { settings = { public: false, tracking: true }, last30, last7, records } = data;
         const stat = (value, label) => h("div.pf-stat", h("b", value), h("span", label));
         const publicInput = h("input", { type: "checkbox", role: "switch", checked: settings.public, disabled: !settings.tracking });
         const trackInput = h("input", { type: "checkbox", role: "switch", checked: settings.tracking });
@@ -168,14 +167,14 @@ function yourStatsCard() {
 
         card.replaceChildren(
             h("div.cs-you-head", h("h2.section-title", icon("user"), "Your catch stats"), h("a.btn.btn-ghost.btn-sm", { href: `#/u/${user.id}` }, icon("user-round", "icon-sm"), h("span", "Profile"))),
-            all
+            last30?.count || records?.personal
                 ? h(
                       "div.cs-stats",
-                      stat(fmt(all.count), "Catches"),
-                      stat(formatMs(all.averageMs), "Average"),
-                      stat(formatMs(all.bestMs), all.best?.ball ? `Fastest · ${all.best.ball}` : "Fastest"),
+                      stat(fmt(last30?.count || 0), "Catches · 30 days"),
                       stat(last30?.count ? formatMs(last30.averageMs) : "—", "Avg · 30 days"),
                       stat(last7?.count ? formatMs(last7.averageMs) : "—", "Avg · 7 days"),
+                      stat(last30?.count ? formatMs(last30.bestMs) : "—", last30?.bestBall?.ball ? `Fastest · 30 days · ${last30.bestBall.ball}` : "Fastest · 30 days"),
+                      records?.personal ? stat(formatMs(records.personal.ms), `Record · ${records.personal.ball}${records.personal.at ? ` · ${formatDate(records.personal.at)}` : ""}`) : null,
                   )
                 : h("p.muted", settings.tracking ? "No catches tracked yet. They count on servers where Catch stats are on." : "You're not tracked. Turn tracking back on to start counting again."),
             h(
@@ -203,7 +202,7 @@ function previewReply(config) {
     const record = config.mode === "records";
     const lines = record ? ["⏱️ <@you> caught **Poland** in **2.481s**", "🥇 **New personal record!** (was 2.950s)"] : ["⏱️ <@you> caught **Poland** in **3.104s**"];
     const stats = [];
-    if (config.lines.average) stats.push("avg 4.120s (86 catches)");
+    if (config.lines.average) stats.push("avg 4.120s (86 catches, 30 days)");
     if (config.lines.ballAverage) stats.push(`Poland: avg 3.300s, best ${record ? "2.481s" : "2.950s"}`);
     if (config.lines.best && !record) stats.push("best 2.950s (Poland)");
     if (config.lines.serverRank) stats.push("#3 of 17 on this server (30 days)");

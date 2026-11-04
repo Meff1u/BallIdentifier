@@ -266,26 +266,26 @@ export function createView() {
 
     function catchSection(p) {
         const c = p.catches;
-        if (!c?.all) {
+        if (!c?.last30?.count) {
             if (!isSelf()) return null;
-            return hintCard("timer", "Catch stats", c ? "No catches tracked yet. They count on servers where an admin turned on Catch stats." : "Catch tracking is off. Turn on Track my catches in Edit profile to start counting.", "/bot/catch-stats");
+            return hintCard("timer", "Recent catch stats", c ? "No catches tracked in the last 30 days. They count on servers where an admin turned on Catch stats." : "Catch tracking is off. Turn on Track my catches in Edit profile to start counting.", "/bot/catch-stats");
         }
         const kv = (label, value, sub) => h("div", h("dt", label), h("dd", value), sub ? h("p.subtle", sub) : null);
-        const span = (w) => (w?.count ? `${fmt(w.count)} catches · best ${formatMs(w.bestMs)}` : "No catches");
-        const balls = c.all.fastestBalls || [];
+        const w = c.last30;
+        const balls = w.fastestBalls || [];
         return h(
             "section.pf-section",
-            h("h2.section-title", icon("timer"), "Catch stats", isSelf() ? h("span.subtle.pf-synced", c.public ? "Public" : "Only you can see this") : null),
+            h("h2.section-title", icon("timer"), "Recent catch stats", h("span.subtle.pf-synced", isSelf() ? `Last 30 days · ${c.public ? "Public" : "Only you can see this"}` : "Last 30 days")),
             h(
                 "div.bdx-grid",
                 h(
                     "section.card.panel.span-2",
                     h(
                         "dl.kv.cols-4",
-                        kv("Catches", fmt(c.all.count), c.all.uniqueBalls ? `${fmt(c.all.uniqueBalls)} different balls` : null),
-                        kv("Average", formatMs(c.all.averageMs)),
-                        kv("Fastest", formatMs(c.all.bestMs), c.all.best?.ball || null),
-                        kv("Last 30 days", c.last30?.count ? formatMs(c.last30.averageMs) : "—", span(c.last30)),
+                        kv("Catches", fmt(w.count), w.uniqueBalls ? `${fmt(w.uniqueBalls)} different balls` : null),
+                        kv("Average", formatMs(w.averageMs)),
+                        kv("Fastest", formatMs(w.bestMs), w.bestBall?.ball || null),
+                        kv("Last 7 days", c.last7?.count ? formatMs(c.last7.averageMs) : "—", c.last7?.count ? `${fmt(c.last7.count)} catches · best ${formatMs(c.last7.bestMs)}` : "No catches"),
                     ),
                 ),
                 balls.length

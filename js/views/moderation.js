@@ -1,6 +1,6 @@
 /**
  * Moderation (owner only): Ballsdex sync status with a cancel button, bot health,
- * a manual dex data refresh, the supported dexes (add / on-off / delete) and the latest important logs.
+ * database and disk usage, a manual dex data refresh, the supported dexes (add / on-off / delete) and the latest important logs.
  * Opened from the profile menu.
  */
 
@@ -37,6 +37,8 @@ export function createView() {
     let timer = null;
     let data = null;
     let logTab = "ERRORS";
+    let resources = null;
+    let resourcesError = "";
 
     const body = h("div.mod-body");
     // Kept between refreshes (it has its own data and open dialogs)
@@ -179,6 +181,69 @@ export function createView() {
         );
     }
 
+    function bytes(value) {
+        if (!Number.isFinite(value)) return "unknown";
+        const units = ["B", "KB", "MB", "GB", "TB"];
+        let i = 0;
+        let n = value;
+        while (n >= 1024 && i < units.length - 1) {
+            n /= 1024;
+            i++;
+        }
+        return `${n >= 100 || i === 0 ? Math.round(n) : n.toFixed(1)} ${units[i]}`;
+    }
+
+    /** Usage bar only when both numbers are real; otherwise the value and an "unknown" note. */
+    function usageRow(label, used, total, note) {
+        const known = Number.isFinite(used) && Number.isFinite(total) && total > 0;
+        const fill = h("div.meter-fill");
+        if (known) fill.style.width = `${Math.min(100, Math.round((used / total) * 100))}%`;
+        return h(
+            "div.meter",
+            h("div.meter-head", h("span", label), h("span.num", known ? `${bytes(used)} / ${bytes(total)} (${Math.round((used / total) * 100)}%)` : `${bytes(used)} used · capacity unknown`)),
+            known ? h("div.meter-track", fill) : null,
+            note ? h("p.subtle", note) : null,
+        );
+    }
+
+    function resourcesCard() {
+        const refreshBtn = h("button.btn.btn-sm", { type: "button" }, icon("refresh-cw", "icon-sm"), h("span", "Refresh"));
+        refreshBtn.addEventListener("click", loadResources);
+        const card = h("section.card.panel.mod-card", h("h2", icon("server"), "Resources"));
+        if (!resources) {
+            card.append(h("p.subtle", resourcesError || "Loading…"), h("div.mod-actions", refreshBtn));
+            return card;
+        }
+        const db = resources.database || {};
+        const disk = resources.disk || {};
+        if (!db.available) card.append(h("p.subtle", "Database: usage unavailable right now."));
+        else {
+            card.append(
+                h("h3", "Database"),
+                usageRow("Data stored", db.storageBytes ?? db.dataBytes, db.capacityBytes, db.capacitySource === "configured" ? "Capacity is the quota set in the bot's .env (DB_STORAGE_LIMIT_MB)." : "The database doesn't report its quota. Set DB_STORAGE_LIMIT_MB in the bot's .env to show it."),
+                h("dl.kv.mod-kv", h("div", h("dt", "Data size"), h("dd.text", bytes(db.dataBytes))), h("div", h("dt", "Indexes"), h("dd.text", bytes(db.indexBytes))), h("div", h("dt", "Collections"), h("dd", fmt(db.collections))), h("div", h("dt", "Documents"), h("dd", fmt(db.objects)))),
+                db.clusterDiskBytes ? h("p.subtle", `The server reports ${bytes(db.clusterDiskUsedBytes)} used of ${bytes(db.clusterDiskBytes)} on its disk (shared by everything on it).`) : null,
+            );
+        }
+        card.append(h("h3", "Bot disk"));
+        if (disk.totalBytes === null || disk.totalBytes === undefined) card.append(h("p.subtle", "The disk size can't be read here."));
+        else card.append(usageRow("Disk (the whole server disk, not only the bot)", disk.usedBytes, disk.totalBytes));
+        if (Number.isFinite(disk.botDataBytes)) card.append(h("p.subtle", `Bot data folder: ${bytes(disk.botDataBytes)}${disk.botDataComplete ? "" : " (partial count)"}.`));
+        card.append(h("p.subtle", `Checked ${timeAgo(resources.checkedAt)}.`), h("div.mod-actions", refreshBtn));
+        return card;
+    }
+
+    async function loadResources() {
+        try {
+            resources = await api("admin", { query: { view: "resources" } });
+            resourcesError = "";
+        } catch (error) {
+            if (error instanceof ApiError && error.status === 401) return handleError(error);
+            resourcesError = "Couldn't load the usage.";
+        }
+        render();
+    }
+
     function logsCard() {
         const logs = data.logs || {};
         const tabs = LOG_TABS.map(([id, label]) =>
@@ -210,7 +275,7 @@ export function createView() {
 
     function render() {
         if (!data) return;
-        body.replaceChildren(h("div.mod-grid", syncCard(), botCard()), dexes.el, deployCard.el, logsCard());
+        body.replaceChildren(h("div.mod-grid", syncCard(), botCard()), resourcesCard(), dexes.el, deployCard.el, logsCard());
     }
 
     function handleError(error) {
@@ -233,6 +298,7 @@ export function createView() {
         }
         if (!data) body.replaceChildren(h("div.skeleton", { style: { height: "240px" } }));
         if (!data) dexes.load();
+        if (!data) loadResources();
         deployCard.load();
         try {
             data = await api("admin");

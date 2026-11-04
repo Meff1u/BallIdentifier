@@ -1,6 +1,23 @@
 {
     "changes": [
         {
+            "timestamp": "1793810000",
+            "type": "bot",
+            "changes": [
+                "Catch stats now count only your last 30 days: the \"All time\" option is gone from the rankings, /catchstats and your own stats",
+                "Your fastest catch, your fastest catch per ball and the server record are still kept, now with the date they were set (shown in /catchstats)",
+                "Bot replies after a catch now say \"30 days\" next to your average"
+            ]
+        },
+        {
+            "timestamp": "1793809999",
+            "type": "website",
+            "changes": [
+                "Public profile: the \"Catch stats\" section is now \"Recent catch stats\" and shows only the last 30 days",
+                "Bot → Catch stats: rankings and your own stats cover 30 or 7 days, and your personal record is shown with its date"
+            ]
+        },
+        {
             "timestamp": "1793800500",
             "type": "bot",
             "changes": [

@@ -16,6 +16,9 @@
  * GET  /.netlify/functions/admin?view=deploy   -> { enabled, deploying, pending: [{ at, title, changes, url }], lastDeployAt }
  * POST { action: "deploy" }                    -> the website pulls the repo, the pending changes go live
  *
+ * Database / disk usage (the bot's utils/resources.js; null = unknown):
+ * GET  /.netlify/functions/admin?view=resources -> { checkedAt, database: {...}, disk: {...} }
+ *
  * Only the owner's Discord ID (from the encrypted session) gets through; the bot checks it again.
  */
 
@@ -43,6 +46,7 @@ exports.handler = async (event) => {
     try {
         if (event.httpMethod === "GET") {
             if (event.queryStringParameters?.view === "dexes") return forward(await botApiFetch(`${base}/dexes`));
+            if (event.queryStringParameters?.view === "resources") return forward(await botApiFetch(`${base}/resources`));
             if (event.queryStringParameters?.view === "deploy") return forward(await botApiFetch(`${base}/deploy`));
             return forward(await botApiFetch(`${base}/overview`));
         }

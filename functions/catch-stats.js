@@ -1,7 +1,7 @@
 /**
  * Catch stats (website: Bot -> Catch stats).
  *
- * GET  ?view=leaderboard&period=all|30d|7d[&guildId=]  -> public rankings (users with public catch stats)
+ * GET  ?view=leaderboard&period=30d|7d[&guildId=]  -> public rankings (users with public catch stats)
  * GET  ?view=servers                                  -> servers you administer + their Catch stats settings (login)
  * GET  ?view=me                                       -> your own catch stats (login)
  * POST { action: "save-server", guildId, enabled, mode, lines }   (Administrator on that server)
@@ -11,7 +11,7 @@
 const { botApiFetch } = require("../lib/bot-api");
 const { json, requireSession, isAllowedOrigin, parseJsonBody, discordApi, isGuildAdmin, discordErrorResponse, SNOWFLAKE } = require("../lib/http");
 
-const PERIODS = ["all", "30d", "7d"];
+const PERIODS = ["30d", "7d"];
 const LINES = ["average", "ballAverage", "best", "serverRank"];
 const cache = new Map(); // leaderboard key -> { at, data }
 const CACHE_MS = 60 * 1000;
@@ -33,7 +33,7 @@ exports.handler = async (event) => {
         const query = event.queryStringParameters || {};
 
         if (event.httpMethod === "GET" && query.view === "leaderboard") {
-            const period = PERIODS.includes(query.period) ? query.period : "all";
+            const period = PERIODS.includes(query.period) ? query.period : "30d";
             const guildId = SNOWFLAKE.test(String(query.guildId || "")) ? query.guildId : "";
             const key = `${period}:${guildId}`;
             const hit = cache.get(key);
