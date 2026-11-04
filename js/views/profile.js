@@ -144,6 +144,7 @@ export function createView() {
             showcaseSection(p),
             ballsdexSection(p),
             lastCatchesSection(p),
+            lastSpecialCatchesSection(p),
             catchSection(p),
             collectionsSection(p),
         ];
@@ -234,6 +235,29 @@ export function createView() {
                         h("span.pf-catch-art", img(compressedArtUrl("Ballsdex", ball.name), "", "", { width: 64, height: 64 })),
                         h("b", ball.name),
                         ball.special ? h("span.badge.badge-accent", ball.special) : null,
+                        h("span.subtle", ball.caughtAt ? timeAgo(ball.caughtAt) : ""),
+                    ),
+                ),
+            ),
+        );
+    }
+
+    function lastSpecialCatchesSection(p) {
+        const list = p.lastSpecialCatches?.items;
+        if (!list?.length) return null;
+        const synced = p.lastSpecialCatches.syncedAt;
+        return h(
+            "section.pf-section",
+            h("h2.section-title", icon("sparkles"), "Last special catches", h("span.subtle.pf-synced", synced ? `Ballsdex · from sync ${formatDate(synced)}` : "Ballsdex")),
+            h(
+                "div.pf-catches",
+                list.map((ball) =>
+                    h(
+                        "a.pf-catch",
+                        { href: artHref("Ballsdex", ball.name), title: ball.caughtAt ? `${ball.special} ${ball.name} · ${new Date(ball.caughtAt).toLocaleString()}` : `${ball.special} ${ball.name}` },
+                        h("span.pf-catch-art", img(compressedArtUrl("Ballsdex", ball.name), "", "", { width: 64, height: 64 })),
+                        h("b", ball.name),
+                        h("span.badge.badge-accent", ball.special),
                         h("span.subtle", ball.caughtAt ? timeAgo(ball.caughtAt) : ""),
                     ),
                 ),
@@ -427,7 +451,7 @@ export function createView() {
                     h("label.switch", h("span", h("b", "Show what I collect"), h("small.hint", "The balls you're a collector of, from the Collectors page.")), colInput),
                     h(
                         "label.switch",
-                        h("span", h("b", "Show my last catches"), h("small.hint", data.ballsdexLinked ? "Your newest Ballsdex catches, refreshed every 15 minutes at most." : "Link your Ballsdex account in the Ballsdex tab first.")),
+                        h("span", h("b", "Show my last catches"), h("small.hint", data.ballsdexLinked ? "Your newest Ballsdex catches (refreshed every 15 minutes at most)" : "Link your Ballsdex account in the Ballsdex tab first.")),
                         lastInput,
                     ),
                 ),

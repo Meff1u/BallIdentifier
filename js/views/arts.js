@@ -42,6 +42,7 @@ const DEFAULTS = { showWave: true, showRarity: true, showArtist: true, showID: f
 
 export function createView() {
     const settings = { ...DEFAULTS, ...(storage("displaySettings") || {}) };
+    settings.sortDir = { ...(settings.sortDir || {}) }; // direction per sort criterion: { rarity: "desc", ... }, "asc" when missing
     let dex = storage("artsDex", "Ballsdex");
     let balls = []; // [name, details, cardEl]
     let loadedDex = null;
@@ -89,6 +90,8 @@ export function createView() {
     function effectiveSort() {
         return settings.sort === "wave" && !DEX_WITH_WAVES.includes(dex) ? "rarity" : settings.sort;
     }
+
+    const sortDir = (by) => (settings.sortDir[by] === "desc" ? "desc" : "asc");
 
     /* ----- Data ----- */
 
@@ -178,7 +181,9 @@ export function createView() {
             wave: (a, b) => a[1].wave - b[1].wave || byName(a, b),
             id: (a, b) => a[1].id - b[1].id,
         };
-        balls.sort(sorters[by] || sorters.rarity);
+        const sorter = sorters[by] || sorters.rarity;
+        const sign = sortDir(by) === "desc" ? -1 : 1;
+        balls.sort((a, b) => sign * sorter(a, b));
         grid.replaceChildren(...balls.map((ball) => ball[2]));
         applyVisibility();
         filter();
@@ -193,7 +198,8 @@ export function createView() {
             if (match) visible += 1;
         }
         const sortLabel = SORTS.find((s) => s.id === effectiveSort())?.label.toLowerCase();
-        metaCount.textContent = query ? `${fmt(visible)} of ${fmt(balls.length)} entries` : `${fmt(balls.length)} entries · by ${sortLabel}`;
+        const direction = sortDir(effectiveSort()) === "desc" ? ", descending" : "";
+        metaCount.textContent = query ? `${fmt(visible)} of ${fmt(balls.length)} entries` : `${fmt(balls.length)} entries · by ${sortLabel}${direction}`;
         emptyEl.hidden = visible > 0 || !balls.length;
     }
 
@@ -371,6 +377,23 @@ export function createView() {
     optionsBtn.addEventListener("click", () => {
         const hasWaves = DEX_WITH_WAVES.includes(dex);
 
+        // Direction of the sort criterion that is selected now (each criterion remembers its own)
+        const dirBtn = h("button.icon-btn.sort-dir", { type: "button" });
+        function syncDirBtn() {
+            const desc = sortDir(effectiveSort()) === "desc";
+            dirBtn.replaceChildren(icon(desc ? "arrow-down-wide-narrow" : "arrow-up-narrow-wide"));
+            dirBtn.title = desc ? "Descending" : "Ascending";
+            dirBtn.setAttribute("aria-label", `${desc ? "Descending" : "Ascending"}. Switch to ${desc ? "ascending" : "descending"}`);
+        }
+        dirBtn.addEventListener("click", () => {
+            const by = effectiveSort();
+            settings.sortDir[by] = sortDir(by) === "desc" ? "asc" : "desc";
+            save();
+            syncDirBtn();
+            sortAndRender();
+        });
+        syncDirBtn();
+
         const sortButtons = SORTS.filter((s) => s.id !== "wave" || hasWaves).map((s) =>
             h(
                 "button",
@@ -381,6 +404,7 @@ export function createView() {
                         settings.sort = s.id;
                         save();
                         event.currentTarget.parentElement.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b === event.currentTarget)));
+                        syncDirBtn();
                         sortAndRender();
                     },
                 },
@@ -404,7 +428,7 @@ export function createView() {
             body: h(
                 "div.stack",
                 { style: { gap: "24px" } },
-                h("div.field", h("span.label", "Sort by"), h("div.segmented", { role: "group", "aria-label": "Sort by" }, sortButtons)),
+                h("div.field", h("span.label", "Sort by"), h("div.sort-row", h("div.segmented", { role: "group", "aria-label": "Sort by" }, sortButtons), dirBtn)),
                 h(
                     "div.field",
                     h("span.label", "Show on cards"),

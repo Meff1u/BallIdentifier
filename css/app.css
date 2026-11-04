@@ -678,6 +678,11 @@ input, textarea { caret-color: var(--accent); }
     background: var(--surface); color: var(--text); box-shadow: var(--shadow-1);
 }
 
+/* Sort criteria + direction toggle (Spawn Arts -> View) */
+.sort-row { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+.sort-row .segmented { min-width: 0; }
+.sort-dir { border: 1px solid var(--border); background: var(--surface-2); color: var(--text); }
+
 /* Chips (dex picker, filters) */
 .chips { display: flex; gap: var(--space-2); overflow-x: auto; scrollbar-width: none; padding: 2px; margin: -2px; scroll-snap-type: x proximity; }
 .chips::-webkit-scrollbar { display: none; }

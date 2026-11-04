@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1793795932",
+            "type": "website",
+            "changes": [
+                "Spawn Arts: new button next to \"Sort by\" in View switches between ascending and descending order (remembered for each sort option)",
+                "Public profiles: new \"Last special catches\" section with the newest special balls (shown together with Last catches)"
+            ]
+        },
+        {
             "timestamp": "1793791926",
             "type": "website",
             "changes": [
