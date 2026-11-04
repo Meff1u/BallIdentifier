@@ -332,10 +332,10 @@ export function createView() {
                             group.balls.map((ball) =>
                                 h(
                                     "a.pf-col-ball",
-                                    { href: artHref(group.dex, ball.name), title: ball.verified ? `${ball.name} · verified collector` : ball.name },
+                                    { href: artHref(group.dex, ball.name), title: `${ball.name} · ${ball.verified ? "verified" : "unverified"} collector` },
                                     img(compressedArtUrl(group.dex, ball.name), "", "", { width: 36, height: 36 }),
                                     h("span", ball.name),
-                                    ball.verified ? icon("shield-check", "icon-sm pf-verified") : null,
+                                    icon(ball.verified ? "shield-check" : "circle-x", `icon-sm ${ball.verified ? "pf-verified" : "pf-unverified"}`),
                                 ),
                             ),
                         ),

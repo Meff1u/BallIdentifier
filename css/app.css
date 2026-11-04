@@ -1779,6 +1779,7 @@ a.server:hover > .icon { color: var(--accent-text); }
 .pf-col-special .spc-emoji { width: 36px; height: 36px; font-size: 20px; border-radius: 50%; background: var(--surface-3); }
 .pf-col-special .spc-emoji img { width: 22px; height: 22px; }
 .pf-verified { color: var(--success); flex: none; }
+.pf-unverified { color: var(--text-muted, currentColor); opacity: .55; flex: none; }
 .pf-hint { padding: var(--space-4); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); }
 .pf-setup { display: grid; justify-items: center; text-align: center; gap: var(--space-3); padding: var(--space-8) var(--space-5); }
 .pf-setup p { max-width: 52ch; }
