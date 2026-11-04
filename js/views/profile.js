@@ -245,10 +245,9 @@ export function createView() {
     function lastSpecialCatchesSection(p) {
         const list = p.lastSpecialCatches?.items;
         if (!list?.length) return null;
-        const synced = p.lastSpecialCatches.syncedAt;
         return h(
             "section.pf-section",
-            h("h2.section-title", icon("sparkles"), "Last special catches", h("span.subtle.pf-synced", synced ? `Ballsdex · from sync ${formatDate(synced)}` : "Ballsdex")),
+            h("h2.section-title", icon("sparkles"), "Last special catches", h("span.subtle.pf-synced", "Ballsdex")),
             h(
                 "div.pf-catches",
                 list.map((ball) =>
