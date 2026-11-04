@@ -14,13 +14,13 @@ const DATA_TTL_MS = 10 * 60 * 1000;
 const PAGES = {
     arts: ["Spawn Arts", "Every spawn art of every supported dex, with rarity, artist, wave and collectors."],
     trainer: ["Catch Trainer", "Practice catching: name the ball from its spawn art as fast as you can."],
-    bot: ["BallIdentifier Discord bot", "Identify spawns in two clicks, get spawn notifications, track your Ballsdex collection and more, right in Discord."],
-    "bot/notifier": ["Spawn Notifier settings", "Set up spawn notifications for your Discord servers."],
+    bot: ["BallIdentifier Discord bot", "Identify spawns in two clicks, get spawn and tradesman notifications, track your Ballsdex collection and look up collectors, specials and profiles, right in Discord."],
+    "bot/notifier": ["Notifier settings", "Set up Spawn and Tradesman notifications for your Discord servers."],
     "bot/catch-stats": ["Catch stats", "How fast do you catch? Catch times, averages and records for every catch, plus rankings of the fastest catchers."],
-    collectors: ["Collectors", "See who collects which ball in every dex, and add yourself as a collector."],
-    users: ["Users", "Find BallIdentifier users with a public profile: what they collect, their showcase and Ballsdex stats."],
-    u: ["Profile", "Public BallIdentifier profiles: what someone collects, their showcase and Ballsdex stats."],
-    ballsdex: ["Ballsdex", "Link your Ballsdex account, sync your collection and see your stats, raws and every special."],
+    collectors: ["Collectors", "See who collects which ball in every dex, with verified and unverified collectors, and add yourself as a collector."],
+    users: ["Users", "Find BallIdentifier users with a public profile: what they collect, their showcase, what they are looking for and their Ballsdex stats."],
+    u: ["Profile", "Public BallIdentifier profiles: what someone collects, their showcase, what they are looking for and their Ballsdex stats."],
+    ballsdex: ["Ballsdex", "Sign in with Ballsdex, sync your collection and see your stats, raws, completion and every special."],
     "ballsdex/raws": ["Ballsdex raws", "Count your raws from your synced Ballsdex collection."],
     "ballsdex/completion": ["Ballsdex completion", "Which Ballsdex balls you own and which are still missing, for the whole dex or one special."],
     "ballsdex/limits": ["Ballsdex API limits", "How much of BallIdentifier's shared Ballsdex API limits is used right now, and your own account's limits."],
@@ -97,11 +97,11 @@ async function profileMeta(origin, idParam) {
     const collecting = (profile.collections || []).reduce((sum, group) => sum + group.balls.length, 0);
     return {
         title: `${name}${profile.username ? ` (@${profile.username})` : ""}`,
-        description: profile.bio ? profile.bio.replace(/\s+/g, " ").slice(0, 160) : "BallIdentifier profile: showcase, collections and stats.",
+        description: profile.bio ? profile.bio.replace(/\s+/g, " ").slice(0, 160) : "BallIdentifier profile: showcase, collections, looking for and stats.",
         image: cardUrl(origin, {
             type: "profile",
             id: idParam,
-            v: version([profile.updatedAt, profile.name, profile.avatarUrl, collecting, profile.ballsdex?.lastSyncedAt, profile.identifyAmount, "avatar-frame"]),
+            v: version([profile.updatedAt, profile.name, profile.avatarUrl, collecting, profile.ballsdex?.lastSyncedAt, profile.identifyAmount, profile.lookingFor?.length, profile.catches?.last30?.count, "avatar-frame"]),
         }),
         card: true,
     };
@@ -124,7 +124,23 @@ async function specialMeta(origin, idParam) {
 }
 
 // Pages with a generated card (functions/og.js); "" = the home page (Identify)
-const PAGE_CARDS = { "": "identify", identify: "identify", arts: "arts", trainer: "trainer", bot: "bot", "bot/notifier": "bot", "bot/catch-stats": "bot", collectors: "collectors", "ballsdex/specials": "specials" };
+const PAGE_CARDS = {
+    "": "identify",
+    identify: "identify",
+    arts: "arts",
+    trainer: "trainer",
+    bot: "bot",
+    "bot/notifier": "notifier",
+    "bot/catch-stats": "catchstats",
+    collectors: "collectors",
+    users: "users",
+    u: "users",
+    ballsdex: "ballsdex",
+    "ballsdex/raws": "raws",
+    "ballsdex/completion": "completion",
+    "ballsdex/limits": "limits",
+    "ballsdex/specials": "specials",
+};
 
 async function pageMeta(url) {
     const parts = url.pathname.split("/").filter(Boolean).map(decode);

@@ -1,6 +1,15 @@
 {
     "changes": [
         {
+            "timestamp": "1793827000",
+            "type": "website",
+            "changes": [
+                "Link previews (Discord, social media) refreshed: Users, the Ballsdex tabs (account, Raws, Completion, Limits), Notifier and Catch stats now have their own preview cards",
+                "Profile previews now also show what someone is looking for and their catches from the last 30 days, and the Collectors preview shows how many collectors are verified",
+                "Updated the descriptions in link previews for the Bot, Notifier, Collectors, Users, Profile and Ballsdex pages"
+            ]
+        },
+        {
             "timestamp": "1793826001",
             "type": "bot",
             "changes": [

@@ -3,7 +3,7 @@
  *
  * GET /.netlify/functions/og?type=ball&dex=Ballsdex&name=Poland   spawn art + rarity, wave, id, artist, collectors, values
  * GET /.netlify/functions/og?type=special&id=59                   special emoji + alias, price, spawn rate, dates
- * GET /.netlify/functions/og?type=page&page=<name>&v=<day>        identify, arts, trainer, bot, collectors, specials
+ * GET /.netlify/functions/og?type=page&page=<name>&v=<day>        identify, arts, trainer, bot, notifier, catchstats, collectors, users, ballsdex, raws, completion, limits, specials
  * GET /.netlify/functions/og?type=profile&id=<discord id>&v=<hash>  public profile: avatar, bio, showcase, stats
  *
  * Used as og:image by netlify/edge-functions/page-meta.js. Layout with satori (text becomes vector shapes,
@@ -490,6 +490,7 @@ async function collectorsCard() {
 
     const people = new Map(); // id -> { count, avatarUrl, name }
     let claims = 0;
+    let verified = 0;
     let balls = 0;
     results.forEach((result) => {
         for (const list of Object.values(result?.entries || {})) {
@@ -497,6 +498,7 @@ async function collectorsCard() {
             balls++;
             for (const collector of list) {
                 claims++;
+                if (collector.source === "verified") verified++;
                 const person = people.get(collector.id) || { count: 0, avatarUrl: collector.avatarUrl, name: collector.name || collector.username };
                 person.count++;
                 people.set(collector.id, person);
@@ -533,6 +535,7 @@ async function collectorsCard() {
         rows: [
             row("Collectors", fmt(people.size)),
             row("Collections", fmt(claims)),
+            row("Verified", fmt(verified)),
             row("Balls collected", fmt(balls)),
             top[0]?.name ? row("Top collector", `${top[0].name} · ${fmt(top[0].count)}`) : null,
         ],
@@ -635,6 +638,8 @@ async function profileCard(idParam) {
         rows: [
             p.collections !== null ? row("Collecting", `${fmt(collecting)} ${collecting === 1 ? "ball" : "balls"}`) : null,
             b?.totalBalls !== null && b?.totalBalls !== undefined ? row("Ballsdex balls", fmt(b.totalBalls)) : null,
+            p.lookingFor?.length ? row("Looking for", `${fmt(p.lookingFor.length)} ${p.lookingFor.length === 1 ? "ball" : "balls"}`) : null,
+            p.catches?.public && p.catches.last30?.count ? row("Catches, 30 days", fmt(p.catches.last30.count)) : null,
             b?.uniqueBalls ? row("Unique", b.dexSize ? `${fmt(b.uniqueBalls)} / ${fmt(b.dexSize)}` : fmt(b.uniqueBalls)) : null,
             b?.specialCount ? row("Specials", fmt(b.specialCount)) : null,
             p.identifyAmount ? row("Spawns identified", fmt(p.identifyAmount)) : null,
@@ -644,7 +649,112 @@ async function profileCard(idParam) {
     });
 }
 
-const PAGE_CARDS = { identify: identifyCard, arts: artsCard, trainer: trainerCard, bot: botCard, collectors: collectorsCard, specials: specialsCard };
+/* ----- cards for the remaining pages and tabs (mostly fixed text; the numbers come from the dex data and the bot) ----- */
+
+const logoVisual = (pill) =>
+    el(
+        "div",
+        { flexDirection: "column", alignItems: "center", gap: 26 },
+        el(
+            "div",
+            { width: 300, height: 300, borderRadius: 999, alignItems: "center", justifyContent: "center", background: "rgba(155,58,191,0.16)", border: `3px solid ${C.border}` },
+            img(dataUri(logoFile(), "image/svg+xml"), 210, 210),
+        ),
+        pill ? el("div", { alignItems: "center", padding: "10px 22px", borderRadius: 999, background: C.surface2, border: `2px solid ${C.border}`, color: C.text2, fontSize: 24, fontWeight: 700 }, pill) : null,
+    );
+
+const chips = (labels) => labels.map((label) => chip(label, { size: 22 }));
+const dexBalls = () => ballNames(getDexData("Ballsdex")).length;
+const specialsCount = () => getSpecials().then((result) => (result.specials || []).length).catch(() => null);
+
+const notifierCard = async () => {
+    const stats = await botStats();
+    return frame({
+        visual: logoVisual("Notifier"),
+        kicker: kickerRow("Discord bot"),
+        title: "Notifier",
+        subtitle: "Get a ping when a countryball spawns or a tradesman shows up, on your own server.",
+        chips: chips(["Spawn Notifier", "Tradesman Notifier", "Your own message"]),
+        rows: [stats?.guilds ? row("Servers", fmt(stats.guilds)) : null, row("Dexes", fmt(dexNames().length)), row("Set up", "On this website"), row("Needs", "Administrator")],
+    });
+};
+
+const catchStatsCard = async () =>
+    frame({
+        visual: logoVisual("Catch stats"),
+        kicker: kickerRow("Discord bot"),
+        title: "Catch stats",
+        subtitle: "How fast do you catch? Times, averages and records for every catch.",
+        chips: chips(["Last 30 days", "Last 7 days", "Rankings"]),
+        rows: [row("Rankings", "Per server or global"), row("Records", "Personal and server"), row("Visibility", "Private by default"), row("Turned on by", "Server admins")],
+    });
+
+const usersCard = async () =>
+    frame({
+        visual: logoVisual("Profiles"),
+        kicker: kickerRow("Community"),
+        title: "Users",
+        subtitle: "Find people with a public profile: what they collect, what they are looking for and their Ballsdex stats.",
+        chips: chips(["Showcase", "Collections", "Looking for", "Ballsdex stats"]),
+        rows: [row("Dexes", fmt(dexNames().length)), row("Profiles are", "Private by default")],
+    });
+
+const ballsdexCard = async () => {
+    const specials = await specialsCount();
+    return frame({
+        visual: logoVisual("Ballsdex"),
+        kicker: kickerRow("Ballsdex"),
+        title: "Your Ballsdex account",
+        subtitle: "Sign in with Ballsdex, sync your collection and see your stats, raws and specials.",
+        chips: chips(["Sync", "Fast Sync", "Completion", "Raws", "Specials"]),
+        rows: [row("Balls in the dex", fmt(dexBalls())), specials ? row("Specials", fmt(specials)) : null, row("Sync", "Once a day"), row("Access", "Read-only")],
+    });
+};
+
+const rawsCard = async () =>
+    frame({
+        visual: logoVisual("Raws"),
+        kicker: kickerRow("Ballsdex"),
+        title: "Raws",
+        subtitle: "Add up your rare non-special balls, weighted by tier.",
+        rows: [row("Rare tiers", "T1 to T23"), row("Top tier worth", "1"), row("Specials", "Not counted"), row("Source", "Your synced collection")],
+    });
+
+const completionCard = async () => {
+    const specials = await specialsCount();
+    return frame({
+        visual: logoVisual("Completion"),
+        kicker: kickerRow("Ballsdex"),
+        title: "Completion",
+        subtitle: "Which balls you own and which are still missing, for the whole dex or one special.",
+        rows: [row("Balls in the dex", fmt(dexBalls())), specials ? row("Specials", fmt(specials)) : null, row("Needs a sync", "No"), row("Source", "Ballsdex API")],
+    });
+};
+
+const limitsCard = async () =>
+    frame({
+        visual: logoVisual("API limits"),
+        kicker: kickerRow("Ballsdex"),
+        title: "Ballsdex API limits",
+        subtitle: "How much of BallIdentifier's shared Ballsdex limits is used right now, and your own account's.",
+        rows: [row("Shared by", "All users"), row("Syncs pause at", "20% left"), row("Your account", "Has its own limits")],
+    });
+
+const PAGE_CARDS = {
+    identify: identifyCard,
+    arts: artsCard,
+    trainer: trainerCard,
+    bot: botCard,
+    collectors: collectorsCard,
+    specials: specialsCard,
+    notifier: notifierCard,
+    catchstats: catchStatsCard,
+    users: usersCard,
+    ballsdex: ballsdexCard,
+    raws: rawsCard,
+    completion: completionCard,
+    limits: limitsCard,
+};
 
 async function render(tree) {
     const svg = await satori(tree, { width: W, height: H, fonts: getFonts() });
