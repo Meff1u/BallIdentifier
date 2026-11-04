@@ -1,6 +1,17 @@
 {
     "changes": [
         {
+            "timestamp": "1793818000",
+            "type": "website",
+            "changes": [
+                "Buttons and chips are bigger on touch screens, so they are easier to tap",
+                "Profile showcase cards line up evenly, and the Looking for editor fits narrow phones",
+                "Keyboard focus is now visible in menus and dropdowns",
+                "Small labels are a bit larger, and rows you can scroll sideways fade at the edge when there is more",
+                "Layouts now switch between phone, tablet and desktop at the same screen widths on every page"
+            ]
+        },
+        {
             "timestamp": "1793817000",
             "type": "website",
             "changes": [
