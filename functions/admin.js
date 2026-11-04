@@ -24,6 +24,7 @@
  * GET  /.netlify/functions/admin?view=user&id=<discordId>
  * POST { action: "user-block", id, reason }   (the user sees the reason)
  * POST { action: "user-unblock", id }
+ * POST { action: "users-logout-inactive", days (1-365), dryRun? }   (everyone inactive that long must log in again)
  *
  * Only the owner's Discord ID (from the encrypted session) gets through; the bot checks it again.
  */
@@ -76,6 +77,9 @@ exports.handler = async (event) => {
         const body = parseJsonBody(event);
         if (body?.action === "cancel-sync") return forward(await botApiFetch(`${base}/sync/cancel`, { method: "POST", body: {} }));
         if (body?.action === "refresh-data") return forward(await botApiFetch(`${base}/refresh-data`, { method: "POST", body: {} }));
+        if (body?.action === "users-logout-inactive") {
+            return forward(await botApiFetch(`${base}/users/logout-inactive`, { method: "POST", body: { days: Number(body.days), dryRun: body.dryRun === true } }));
+        }
         if (body?.action === "user-block" || body?.action === "user-unblock") {
             if (!SNOWFLAKE.test(String(body.id || ""))) return json(400, { error: "Invalid user" });
             const block = body.action === "user-block";

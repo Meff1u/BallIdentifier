@@ -4,7 +4,7 @@
  */
 
 import { h, icon, img, fmt, timeAgo } from "../core/dom.js";
-import { toast, openDialog } from "../core/ui.js";
+import { toast, openDialog, confirmDialog } from "../core/ui.js";
 import { api } from "../core/api.js";
 
 const STATUS = [
@@ -60,12 +60,13 @@ export function createUsersCard({ handleError }) {
     }
 
     const refresh = h("button.btn.btn-ghost.btn-sm", { type: "button", onclick: () => load() }, icon("refresh-cw", "icon-sm"), h("span", "Refresh"));
+    const logoutBtn = h("button.btn.btn-ghost.btn-sm", { type: "button", onclick: () => logoutInactiveDialog() }, icon("lock", "icon-sm"), h("span", "Log out inactive"));
     const el = h(
         "section.card.panel.mod-card.mod-users",
         h("h2", icon("users"), "Users"),
         h("p.subtle", "Everyone who logged in with Discord. A blocked account can't log in, use the site's features or the bot's commands, and its public profile is hidden."),
         summary,
-        h("div.mod-users-filters", search, selectOf("Status", STATUS, "status"), selectOf("Ballsdex", BALLSDEX, "ballsdex"), selectOf("Sort by", SORTS, "sort"), refresh),
+        h("div.mod-users-filters", search, selectOf("Status", STATUS, "status"), selectOf("Ballsdex", BALLSDEX, "ballsdex"), selectOf("Sort by", SORTS, "sort"), refresh, logoutBtn),
         list,
         pager,
     );
@@ -185,6 +186,54 @@ export function createUsersCard({ handleError }) {
         } catch (error) {
             handleError(error);
         }
+    }
+
+    function logoutInactiveDialog() {
+        const days = h("input.input", { type: "number", min: "1", max: "365", value: "30", inputmode: "numeric", "aria-label": "Days of inactivity" });
+        const submit = h("button.btn.btn-danger", { type: "button" }, icon("lock", "icon-sm"), h("span", "Continue"));
+        const { close } = openDialog({
+            title: "Log out inactive users",
+            body: h(
+                "div.mod-user-detail",
+                h("p.muted", "Everyone with no activity on the site for at least this long is logged out and has to log in again. People who were active more recently, and you, stay logged in. Accounts without a recorded activity date count as inactive."),
+                h("label.field", h("span", "Inactive for at least (days)"), days),
+            ),
+            footer: [h("button.btn.btn-ghost", { type: "button", onclick: () => close() }, "Cancel"), submit],
+        });
+        submit.addEventListener("click", async () => {
+            const value = Number(days.value);
+            if (!Number.isInteger(value) || value < 1 || value > 365) {
+                days.setAttribute("aria-invalid", "true");
+                days.focus();
+                return;
+            }
+            submit.disabled = true;
+            try {
+                const preview = await api("admin", { method: "POST", body: { action: "users-logout-inactive", days: value, dryRun: true } });
+                if (!preview.affected) {
+                    toast(`Nobody has been inactive for ${value}+ days.`, "info");
+                    submit.disabled = false;
+                    return;
+                }
+                const ok = await confirmDialog({
+                    title: "Log out these users?",
+                    message: `${fmt(preview.affected)} user${preview.affected === 1 ? "" : "s"} inactive for ${value}+ days will have to log in again.`,
+                    confirmLabel: "Log them out",
+                    danger: true,
+                });
+                if (!ok) {
+                    submit.disabled = false;
+                    return;
+                }
+                const result = await api("admin", { method: "POST", body: { action: "users-logout-inactive", days: value } });
+                toast(`${fmt(result.affected)} user${result.affected === 1 ? "" : "s"} will have to log in again.`, "success", 6000);
+                close();
+                load();
+            } catch (error) {
+                submit.disabled = false;
+                handleError(error);
+            }
+        });
     }
 
     function blockDialog(user, closeDetail) {

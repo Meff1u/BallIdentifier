@@ -68,6 +68,7 @@ async function session(event) {
     }
     // A blocked account is logged out here (and can't log in again)
     const blocked = current ? await accountBlock(current.user.id) : null;
+    if (blocked?.code === "LOGIN_REQUIRED") return json(200, { user: null, loginRequired: true }, { cookies: [clearCookie(SESSION_COOKIE, event)] });
     if (blocked) return json(200, { user: null, blocked: { reason: blocked.reason || "" } }, { cookies: [clearCookie(SESSION_COOKIE, event)] });
     return json(200, { user: current ? publicUser(current) : null });
 }

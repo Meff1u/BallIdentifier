@@ -14,7 +14,7 @@ exports.handler = async (event) => {
     if (auth.response) return auth.response;
 
     const blockedAccount = await accountBlock(auth.session.user.id);
-    if (blockedAccount) return json(403, blockedAccount);
+    if (blockedAccount) return json(blockedAccount.status, blockedAccount);
 
     try {
         const userGuilds = await discordApi("/users/@me/guilds", auth.session.token);
