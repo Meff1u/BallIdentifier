@@ -78,7 +78,6 @@ export function createView() {
             h(
                 "div.bot-actions",
                 h("a.btn.btn-discord", { href: INVITE_URL, target: "_blank", rel: "noopener" }, icon("discord"), h("span", "Add to Discord")),
-                h("a.btn", { href: "#/bot/notifier" }, icon("settings-2"), h("span", "Notifier settings")),
             ),
         ),
         h(
