@@ -6,6 +6,7 @@
 
 const { STATE_COOKIE, unseal, parseCookies, clearCookie, createSessionCookie, getRedirectUri } = require("../lib/session");
 const { redirect } = require("../lib/http");
+const { botApiFetch } = require("../lib/bot-api");
 
 const DISCORD_CLIENT_ID = "510775326310268930";
 
@@ -15,7 +16,7 @@ exports.handler = async (event) => {
     }
 
     const clearState = clearCookie(STATE_COOKIE, event);
-    const fail = (reason) => redirect(`/#/bot?login=${encodeURIComponent(reason)}`, [clearState]);
+    const fail = (reason, detail) => redirect(`/#/bot?login=${encodeURIComponent(reason)}${detail ? `&reason=${encodeURIComponent(detail)}` : ""}`, [clearState]);
 
     try {
         const { code, state, error } = event.queryStringParameters || {};
@@ -51,6 +52,21 @@ exports.handler = async (event) => {
         });
         if (!userResponse.ok) return fail("error");
         const user = await userResponse.json();
+
+        // Register the login with the bot; a blocked account gets no session. If the bot can't be reached the login goes through
+        // (the bot enforces blocks on every call anyway).
+        try {
+            const registered = await botApiFetch(`/api/users/${user.id}/login`, {
+                method: "POST",
+                body: { username: user.username, displayName: user.global_name || user.username, avatar: user.avatar || null },
+            });
+            if (registered.status === 403) {
+                const data = await registered.json().catch(() => ({}));
+                if (data.code === "ACCOUNT_BLOCKED") return fail("blocked", String(data.reason || "").slice(0, 300));
+            }
+        } catch (error) {
+            console.error("Login registration failed:", error.message);
+        }
 
         const sessionCookie = createSessionCookie(event, {
             user: {

@@ -8,7 +8,7 @@
  * POST { action: "settings", public?, tracking? }                 (your own privacy; tracking off deletes your data)
  */
 
-const { botApiFetch } = require("../lib/bot-api");
+const { botApiFetch, accountBlock } = require("../lib/bot-api");
 const { json, requireSession, isAllowedOrigin, parseJsonBody, discordApi, isGuildAdmin, discordErrorResponse, SNOWFLAKE } = require("../lib/http");
 
 const PERIODS = ["30d", "7d"];
@@ -45,6 +45,9 @@ exports.handler = async (event) => {
 
         const auth = requireSession(event);
         if (auth.response) return auth.response;
+
+        const blockedAccount = await accountBlock(auth.session.user.id);
+        if (blockedAccount) return json(403, blockedAccount);
         const userId = auth.session.user.id;
 
         if (event.httpMethod === "GET") {

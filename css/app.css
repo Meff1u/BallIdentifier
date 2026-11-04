@@ -1609,6 +1609,24 @@ a.server:hover > .icon { color: var(--accent-text); }
 .mod-list li { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
 .mod-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 .mod-kv dd { font-size: var(--fs-md); }
+.mod-users-filters { display: grid; gap: var(--space-2); }
+@media (min-width: 900px) { .mod-users-filters { grid-template-columns: minmax(0, 1fr) repeat(3, auto) auto; align-items: center; } }
+.mod-users-list { display: grid; gap: var(--space-2); }
+.mod-user-row { display: grid; grid-template-columns: 36px minmax(0, 1fr) auto; gap: var(--space-1) var(--space-3); align-items: center; width: 100%; padding: var(--space-2) var(--space-3); text-align: left; background: var(--surface-2, transparent); border: 1px solid var(--border); border-radius: var(--r-sm); color: inherit; cursor: pointer; }
+.mod-user-row:hover { border-color: var(--border-strong); }
+.mod-user-row .col-avatar { grid-row: span 2; }
+.mod-user-name { display: flex; flex-wrap: wrap; gap: 0 var(--space-2); align-items: baseline; min-width: 0; }
+.mod-user-id { font-size: var(--fs-xs, 0.75rem); }
+.mod-user-meta { grid-column: 2; font-size: var(--fs-sm); }
+.mod-user-row .mod-status { grid-column: 3; grid-row: 1 / span 2; }
+@media (min-width: 900px) { .mod-user-row { grid-template-columns: 36px minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr) auto; } .mod-user-row .col-avatar { grid-row: auto; } .mod-user-meta { grid-column: auto; } .mod-user-row .mod-status { grid-column: auto; grid-row: auto; } }
+.mod-status[data-status="blocked"] { background: var(--danger-soft); color: var(--danger); border-color: transparent; }
+.mod-status[data-status="active"] { background: var(--success-soft); color: var(--success); border-color: transparent; }
+.mod-users-pager { display: flex; align-items: center; justify-content: center; gap: var(--space-3); }
+.mod-user-detail { display: grid; gap: var(--space-4); }
+.mod-user-head { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+.mod-user-head > div { flex: 1; min-width: 0; }
+.mod-user-actions { display: contents; }
 .mod-ok { color: var(--success); }
 .mod-bad { color: var(--danger); }
 .mod-tabs { display: flex; flex-wrap: wrap; width: 100%; }

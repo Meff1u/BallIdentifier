@@ -20,6 +20,7 @@ const {
     missingLoginConfig,
 } = require("../lib/session");
 const { json, redirect, isAllowedOrigin } = require("../lib/http");
+const { accountBlock } = require("../lib/bot-api");
 
 const DISCORD_CLIENT_ID = "510775326310268930";
 const SCOPES = "identify guilds";
@@ -58,13 +59,16 @@ function login(event) {
     return redirect(`https://discord.com/oauth2/authorize?${params}`, [stateCookie]);
 }
 
-function session(event) {
+async function session(event) {
     let current = null;
     try {
         current = getSession(event);
     } catch (error) {
         console.error("Session error:", error.message);
     }
+    // A blocked account is logged out here (and can't log in again)
+    const blocked = current ? await accountBlock(current.user.id) : null;
+    if (blocked) return json(200, { user: null, blocked: { reason: blocked.reason || "" } }, { cookies: [clearCookie(SESSION_COOKIE, event)] });
     return json(200, { user: current ? publicUser(current) : null });
 }
 

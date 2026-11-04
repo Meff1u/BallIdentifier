@@ -19,11 +19,17 @@
  * Database / disk usage (the bot's utils/resources.js; null = unknown):
  * GET  /.netlify/functions/admin?view=resources -> { checkedAt, database: {...}, disk: {...} }
  *
+ * Website users (the bot's utils/site-users.js; everyone who logged in with Discord):
+ * GET  /.netlify/functions/admin?view=users[&search&status=all|active|blocked&ballsdex=all|linked|unlinked&sort=seen|login|first|sync|name&page&pageSize]
+ * GET  /.netlify/functions/admin?view=user&id=<discordId>
+ * POST { action: "user-block", id, reason }   (the user sees the reason)
+ * POST { action: "user-unblock", id }
+ *
  * Only the owner's Discord ID (from the encrypted session) gets through; the bot checks it again.
  */
 
 const { botApiFetch } = require("../lib/bot-api");
-const { json, requireSession, isAllowedOrigin, parseJsonBody } = require("../lib/http");
+const { json, requireSession, isAllowedOrigin, parseJsonBody, SNOWFLAKE } = require("../lib/http");
 
 const OWNER_ID = "334411435633541121";
 const MAX_BODY = 4 * 1024 * 1024; // a new dex's icon
@@ -47,6 +53,19 @@ exports.handler = async (event) => {
         if (event.httpMethod === "GET") {
             if (event.queryStringParameters?.view === "dexes") return forward(await botApiFetch(`${base}/dexes`));
             if (event.queryStringParameters?.view === "resources") return forward(await botApiFetch(`${base}/resources`));
+            if (event.queryStringParameters?.view === "users") {
+                const query = new URLSearchParams();
+                for (const key of ["search", "status", "ballsdex", "sort", "page", "pageSize"]) {
+                    const value = event.queryStringParameters[key];
+                    if (typeof value === "string" && value) query.set(key, value.slice(0, 60));
+                }
+                return forward(await botApiFetch(`${base}/users?${query}`));
+            }
+            if (event.queryStringParameters?.view === "user") {
+                const id = event.queryStringParameters.id;
+                if (!SNOWFLAKE.test(String(id || ""))) return json(400, { error: "Invalid user" });
+                return forward(await botApiFetch(`${base}/users/${id}`));
+            }
             if (event.queryStringParameters?.view === "deploy") return forward(await botApiFetch(`${base}/deploy`));
             return forward(await botApiFetch(`${base}/overview`));
         }
@@ -57,6 +76,11 @@ exports.handler = async (event) => {
         const body = parseJsonBody(event);
         if (body?.action === "cancel-sync") return forward(await botApiFetch(`${base}/sync/cancel`, { method: "POST", body: {} }));
         if (body?.action === "refresh-data") return forward(await botApiFetch(`${base}/refresh-data`, { method: "POST", body: {} }));
+        if (body?.action === "user-block" || body?.action === "user-unblock") {
+            if (!SNOWFLAKE.test(String(body.id || ""))) return json(400, { error: "Invalid user" });
+            const block = body.action === "user-block";
+            return forward(await botApiFetch(`${base}/users/${body.id}/${block ? "block" : "unblock"}`, { method: "POST", body: block ? { reason: typeof body.reason === "string" ? body.reason.slice(0, 300) : "" } : {} }));
+        }
         if (body?.action === "deploy") return forward(await botApiFetch(`${base}/deploy`, { method: "POST", body: {} }));
         if (body?.action === "sync-switches") {
             const switches = {};

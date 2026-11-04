@@ -148,13 +148,24 @@ const LOGIN_MESSAGES = {
     expired: ["The login link expired. Try again.", "error"],
     error: ["Couldn't log you in with Discord. Try again.", "error"],
     config: ["Login isn't configured on this deployment.", "error"],
+    blocked: ["Your account has been blocked.", "error"],
 };
+
+// Any call refused because the account was blocked (the session is gone after the next reload)
+let lastBlockedToast = 0;
+window.addEventListener("account-blocked", (event) => {
+    if (Date.now() - lastBlockedToast < 15000) return;
+    lastBlockedToast = Date.now();
+    toast(event.detail.message, "error", 12000);
+});
 
 function handleLoginResult(query) {
     const result = query.get("login");
     if (!result) return;
     let [message, type] = LOGIN_MESSAGES[result] || LOGIN_MESSAGES.error;
     const missing = (query.get("missing") || "").split(",").filter((name) => /^[A-Z_]{3,40}$/.test(name));
+    const reason = (query.get("reason") || "").slice(0, 300);
+    if (result === "blocked" && reason) message = `Your account has been blocked. Reason: ${reason}`;
     if (result === "config" && missing.length) message = `Login isn't set up here: add ${missing.join(" and ")} to the environment variables.`;
     toast(message, type, type === "error" ? 9000 : 4200);
     history.replaceState(null, "", location.pathname);

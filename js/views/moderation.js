@@ -10,6 +10,7 @@ import { api, ApiError } from "../core/api.js";
 import { getUser, onAuthChange, sessionReady, loadSession, sessionExpired } from "../core/auth.js";
 import { createDexesCard } from "./moderation-dexes.js";
 import { createDeployCard } from "./moderation-deploy.js";
+import { createUsersCard } from "./moderation-users.js";
 
 export const OWNER_ID = "334411435633541121";
 
@@ -44,10 +45,11 @@ export function createView() {
     // Kept between refreshes (it has its own data and open dialogs)
     const dexes = createDexesCard({ handleError: (error) => handleError(error) });
     const deployCard = createDeployCard({ handleError: (error) => handleError(error) });
+    const users = createUsersCard({ handleError: (error) => handleError(error) });
     const el = h(
         "section.view",
         { dataset: { view: "moderation" }, "aria-labelledby": "mod-title" },
-        h("div.page-head", h("h1", { id: "mod-title" }, "Moderation"), h("p", "Owner tools: sync status, bot health, dexes and recent logs. Refreshes every few seconds.")),
+        h("div.page-head", h("h1", { id: "mod-title" }, "Moderation"), h("p", "Owner tools: sync status, bot health, users, dexes and recent logs. Refreshes every few seconds.")),
         body,
     );
 
@@ -275,7 +277,7 @@ export function createView() {
 
     function render() {
         if (!data) return;
-        body.replaceChildren(h("div.mod-grid", syncCard(), botCard()), resourcesCard(), dexes.el, deployCard.el, logsCard());
+        body.replaceChildren(h("div.mod-grid", syncCard(), botCard()), resourcesCard(), users.el, dexes.el, deployCard.el, logsCard());
     }
 
     function handleError(error) {
@@ -298,6 +300,7 @@ export function createView() {
         }
         if (!data) body.replaceChildren(h("div.skeleton", { style: { height: "240px" } }));
         if (!data) dexes.load();
+        if (!data) users.load();
         if (!data) loadResources();
         deployCard.load();
         try {

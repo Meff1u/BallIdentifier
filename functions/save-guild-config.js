@@ -5,7 +5,7 @@
  * kind: "spawn" (default, Spawn notifier) or "tradesman" (Tradesman notifier)
  */
 
-const { botApiFetch } = require("../lib/bot-api");
+const { botApiFetch, accountBlock } = require("../lib/bot-api");
 const {
     json,
     requireSession,
@@ -24,6 +24,9 @@ exports.handler = async (event) => {
 
     const auth = requireSession(event);
     if (auth.response) return auth.response;
+
+    const blockedAccount = await accountBlock(auth.session.user.id);
+    if (blockedAccount) return json(403, blockedAccount);
 
     const body = parseJsonBody(event);
     if (!body) return json(400, { error: "Invalid JSON body" });

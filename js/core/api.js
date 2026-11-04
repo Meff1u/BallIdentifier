@@ -42,6 +42,7 @@ export async function api(name, { method = "GET", body, query, signal } = {}) {
 
     if (!response.ok) {
         const message = data.error || data.message || defaultMessage(response.status);
+        if (data.code === "ACCOUNT_BLOCKED") window.dispatchEvent(new CustomEvent("account-blocked", { detail: { message } }));
         throw new ApiError(message, response.status, data);
     }
     return data;

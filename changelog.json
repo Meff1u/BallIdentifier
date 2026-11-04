@@ -1,6 +1,21 @@
 {
     "changes": [
         {
+            "timestamp": "1793815001",
+            "type": "bot",
+            "changes": [
+                "Accounts blocked by the owner can no longer use the bot's commands and buttons"
+            ]
+        },
+        {
+            "timestamp": "1793815000",
+            "type": "website",
+            "changes": [
+                "Accounts can now be blocked by the owner: a blocked user is logged out, can't log in again and sees the reason",
+                "Profiles of blocked accounts are hidden"
+            ]
+        },
+        {
             "timestamp": "1793812000",
             "type": "website",
             "changes": [

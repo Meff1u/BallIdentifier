@@ -3,7 +3,7 @@
  * GET /.netlify/functions/get-guild-config?guildId=<id>  (session cookie)
  */
 
-const { botApiFetch } = require("../lib/bot-api");
+const { botApiFetch, accountBlock } = require("../lib/bot-api");
 const { json, requireSession, discordApi, isGuildAdmin, discordErrorResponse, SNOWFLAKE } = require("../lib/http");
 
 exports.handler = async (event) => {
@@ -14,6 +14,9 @@ exports.handler = async (event) => {
 
     const auth = requireSession(event);
     if (auth.response) return auth.response;
+
+    const blockedAccount = await accountBlock(auth.session.user.id);
+    if (blockedAccount) return json(403, blockedAccount);
 
     try {
         const userGuilds = await discordApi("/users/@me/guilds", auth.session.token);
