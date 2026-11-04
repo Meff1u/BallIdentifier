@@ -219,11 +219,14 @@ export function createView() {
             } else if (!mine) {
                 const addBtn = h("button.btn.btn-primary", { type: "button", onclick: () => add(ball, addBtn) }, icon("plus"), h("span", "I'm a collector"));
                 const needed = Math.ceil(Number(String(ball.cc ?? "").replace(/\D/g, "")) / 2);
+                // (replaceChildren turns a null into the text "null", so only real nodes are passed)
                 actions.replaceChildren(
-                    dex === "Ballsdex"
-                        ? h("p.subtle.col-req", `Checked against your last Ballsdex sync${Number.isFinite(needed) && needed > 0 ? `: you need at least ${needed} ${ball.name}` : ""}.`)
-                        : null,
-                    addBtn,
+                    ...[
+                        dex === "Ballsdex"
+                            ? h("p.subtle.col-req", `Checked against your last Ballsdex sync${Number.isFinite(needed) && needed > 0 ? `: you need at least ${needed} ${ball.name}` : ""}.`)
+                            : null,
+                        addBtn,
+                    ].filter(Boolean),
                 );
             } else if (mine.origin === "data" && !viewer?.canModerate) {
                 actions.replaceChildren(h("p.subtle", icon("shield-check", "icon-sm"), " You're on the verified list for this ball."));

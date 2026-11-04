@@ -1741,7 +1741,7 @@ a.server:hover > .icon { color: var(--accent-text); }
 .pf-section .bdx-grid { margin-top: 0; }
 .pf-meter { height: 6px; margin-top: 6px; border-radius: 99px; background: var(--surface-3); overflow: hidden; max-width: 140px; }
 .pf-meter .meter-fill { background: var(--pf-accent); }
-@media (min-width: 720px) { .pf-ranks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 720px) { .pf-ranks { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 .pf-showcase { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
 @media (min-width: 560px) { .pf-showcase { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

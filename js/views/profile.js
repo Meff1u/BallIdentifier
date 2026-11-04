@@ -214,7 +214,7 @@ export function createView() {
                         kv("Best day", s.mostActiveCatchCount ? `${fmt(s.mostActiveCatchCount)} catches` : "—", ".text"),
                     ),
                 ),
-                h("section.card.panel.span-2", h("div.rank-cols.pf-ranks", ranking("Most owned", s.topCountries), ranking("Top specials", s.topSpecials))),
+                h("section.card.panel.span-2", h("div.rank-cols.pf-ranks", ranking("Most owned", s.topCountries), ranking("Top specials", s.topSpecials), ranking("Most specials on one ball", s.topSpecialBalls))),
             ),
         );
     }

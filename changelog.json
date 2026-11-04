@@ -1,6 +1,15 @@
 {
     "changes": [
         {
+            "timestamp": "1793791926",
+            "type": "website",
+            "changes": [
+                "Public profiles with Ballsdex stats now also show \"Most specials on one ball\"",
+                "New site icon: the same countryball face as the bot's avatar",
+                "Collectors: fixed a stray \"null\" shown next to the \"I'm a collector\" button in dexes other than Ballsdex"
+            ]
+        },
+        {
             "timestamp": "1793789849",
             "type": "website",
             "changes": [
