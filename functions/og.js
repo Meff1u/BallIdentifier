@@ -7,8 +7,8 @@
  * GET /.netlify/functions/og?type=profile&id=<discord id>&v=<hash>  public profile: avatar, bio, showcase, stats
  *
  * Used as og:image by netlify/edge-functions/page-meta.js. Layout with satori (text becomes vector shapes,
- * so no system fonts are needed), PNG with resvg (kept off sharp so the function stays small). Cached by
- * Netlify's CDN for a day; the edge function adds a version parameter that changes with the data (pages: the day),
+ * so no system fonts are needed), PNG with resvg; spawn arts scaled with sharp. Cached by browsers and
+ * Cloudflare for a day; the edge function adds a version parameter that changes with the data (pages: the day),
  * so new previews show fresh numbers.
  */
 
@@ -16,6 +16,7 @@ const fs = require("fs");
 const path = require("path");
 const satori = require("satori").default;
 const { Resvg } = require("@resvg/resvg-js");
+const sharp = require("sharp");
 const { botApiFetch, botApiPublicFetch } = require("../lib/bot-api");
 
 const RAW = "https://raw.githubusercontent.com/Meff1u/BallIdentifier/refs/heads/main/assets";
@@ -25,8 +26,7 @@ const C = { bg: "#0E0B14", surface: "#1A1524", surface2: "#221C2E", border: "#2E
 const W = 1200;
 const H = 630;
 
-// Netlify runs functions with the site root as cwd. Each folder is spelled out on purpose: with a variable
-// folder the bundler would pack the whole assets/ folder (every spawn art) into the function.
+// Functions run with the site root as cwd (see the stack's web/server.js).
 const fontFile = (weight) => fs.readFileSync(path.join(process.cwd(), "assets/og", `outfit-latin-${weight}-normal.woff`));
 const iconFile = (dex) => fs.readFileSync(path.join(process.cwd(), "assets/icons", `${dex}.png`));
 const dexFile = (dex) => fs.readFileSync(path.join(process.cwd(), "assets/jsons", `${dex}.json`), "utf8");
@@ -76,11 +76,13 @@ function picture(buffer) {
     return dataUri(buffer, type);
 }
 
-/** Spawn art scaled down by Netlify's image CDN (falls back to the full PNG on GitHub). */
+/** Spawn art scaled down from the local file (falls back to the full PNG on GitHub). */
 async function artImage(dex, name, width) {
-    const file = `/assets/dexes/${encodeURIComponent(dex)}/${encodeURIComponent(name)}.png`;
+    const root = path.join(process.cwd(), "assets/dexes");
+    const file = path.join(root, String(dex), `${name}.png`);
     try {
-        return picture(await fetchBuffer(`${SITE}/.netlify/images?url=${encodeURIComponent(file)}&w=${width}&fm=png`, 4000));
+        if (!file.startsWith(root + path.sep)) throw new Error("Bad art path");
+        return picture(await sharp(file).resize({ width, withoutEnlargement: true }).png().toBuffer());
     } catch {
         return picture(await fetchBuffer(`${RAW}/dexes/${encodeURIComponent(dex)}/${encodeURIComponent(name)}.png`));
     }
@@ -655,8 +657,7 @@ exports.handler = async (event) => {
             statusCode: 200,
             headers: {
                 "Content-Type": "image/png",
-                "Cache-Control": "public, max-age=86400",
-                "Netlify-CDN-Cache-Control": "public, durable, s-maxage=86400, stale-while-revalidate=604800",
+                "Cache-Control": "public, max-age=86400, stale-while-revalidate=604800",
             },
             body: png.toString("base64"),
             isBase64Encoded: true,

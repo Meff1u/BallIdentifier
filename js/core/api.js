@@ -1,5 +1,5 @@
 /**
- * fetch wrapper for our Netlify functions. Always same-origin, always JSON.
+ * fetch wrapper for our functions (/.netlify/functions/*). Always same-origin, always JSON.
  * Throws ApiError with .status, .code and .data so views can branch on them.
  */
 

@@ -14,7 +14,7 @@
  *
  * Deferred website deploys (the bot's utils/deploy.js):
  * GET  /.netlify/functions/admin?view=deploy   -> { enabled, deploying, pending: [{ at, title, changes, url }], lastDeployAt }
- * POST { action: "deploy" }                    -> trigger the Netlify build hook, the pending changes go live
+ * POST { action: "deploy" }                    -> the website pulls the repo, the pending changes go live
  *
  * Only the owner's Discord ID (from the encrypted session) gets through; the bot checks it again.
  */

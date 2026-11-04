@@ -17,4 +17,5 @@
 /ballsdex/*    /index.html    200
 /moderation    /index.html    200
 /moderation/*    /index.html    200
+/auth/discord/callback    /.netlify/functions/discord-oauth-callback    200
 /*    /404.html   404

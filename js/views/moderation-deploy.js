@@ -1,6 +1,6 @@
 /**
- * Moderation -> Deploy (owner): dex changes the bot committed with "[skip netlify]" wait here (a preview of what will go
- * live); Deploy triggers the Netlify build hook so they all reach the website at once (bot: utils/deploy.js).
+ * Moderation -> Deploy (owner): dex changes the bot committed wait here (a preview of what will go live);
+ * Deploy makes the website pull the repo so they all go live at once (bot: utils/deploy.js).
  */
 
 import { h, icon, timeAgo } from "../core/dom.js";
@@ -54,7 +54,7 @@ export function createDeployCard({ handleError }) {
                 h(
                     "p.callout.callout-warning",
                     icon("triangle-alert", "icon-sm"),
-                    h("span", "NETLIFY_BUILD_HOOK isn't set in the bot's .env, so every change still deploys on its own. Add the build hook URL and restart the bot to collect changes here."),
+                    h("span", "SITE_DEPLOY_HOOK isn't set for the bot, so dex changes can't be deployed from here. Set it (and DEPLOY_SECRET) in the stack's .env and restart the bot."),
                 ),
             );
             return;
