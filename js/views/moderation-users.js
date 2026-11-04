@@ -126,13 +126,13 @@ export function createUsersCard({ handleError }) {
     }
 
     function fact(label, value) {
-        return h("div", h("dt", label), h("dd", value));
+        return h("div", h("dt", label), h("dd.text", value));
     }
 
     async function openDetail(id) {
         const body = h("div.mod-user-detail", h("div.skeleton", { style: { height: "180px" } }));
         const footer = h("div.mod-user-actions");
-        const { close } = openDialog({ title: "User", body, footer, wide: true });
+        const { close } = openDialog({ title: "User", body, footer });
         try {
             const user = await api("admin", { query: { view: "user", id } });
             renderDetail(user, body, footer, close);
@@ -142,6 +142,14 @@ export function createUsersCard({ handleError }) {
     }
 
     function renderDetail(user, body, footer, close) {
+        // replaceChildren() is the native one: a null child would be written as the text "null"
+        const note = user.block
+            ? h(
+                  "p.callout.callout-warning",
+                  icon("lock", "icon-sm"),
+                  h("span", `Blocked ${user.block.at ? timeAgo(user.block.at) : ""}${user.block.by ? ` by ${user.block.by.username || user.block.by.id}` : ""}. Reason shown to the user: ${user.block.reason || "none"}`),
+              )
+            : null;
         body.replaceChildren(
             h(
                 "div.mod-user-head",
@@ -149,17 +157,11 @@ export function createUsersCard({ handleError }) {
                 h("div", h("h3", nameOf(user)), h("p.subtle", user.username ? `@${user.username} · ${user.id}` : user.id)),
                 h("span.chip.chip-plain.mod-status", { dataset: { status: user.status } }, user.status === "blocked" ? "Blocked" : "Active"),
             ),
-            user.block
-                ? h(
-                      "p.callout.callout-warning",
-                      icon("lock", "icon-sm"),
-                      h("span", `Blocked ${user.block.at ? timeAgo(user.block.at) : ""}${user.block.by ? ` by ${user.block.by.username || user.block.by.id}` : ""}. Reason shown to the user: ${user.block.reason || "none"}`),
-                  )
-                : null,
+            ...(note ? [note] : []),
             h(
-                "dl.mod-kv",
+                "dl.kv.mod-kv",
                 fact("Ballsdex", user.ballsdexLinked ? "Linked" : "Not linked"),
-                fact("Last Ballsdex sync", user.ballsdexLinked || user.lastSyncAt ? when(user.lastSyncAt) : "-"),
+                fact("Last Ballsdex sync", when(user.lastSyncAt)),
                 fact("Last activity on the site", when(user.lastSeenAt)),
                 fact("Last login", user.imported ? h("span.subtle", "unknown (account existed before the registry)") : when(user.lastLoginAt)),
                 fact("First login", user.firstLoginAt ? when(user.firstLoginAt) : h("span.subtle", "unknown")),

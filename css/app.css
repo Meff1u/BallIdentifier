@@ -1610,7 +1610,7 @@ a.server:hover > .icon { color: var(--accent-text); }
 .mod-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 .mod-kv dd { font-size: var(--fs-md); }
 .mod-users-filters { display: grid; gap: var(--space-2); }
-@media (min-width: 900px) { .mod-users-filters { grid-template-columns: minmax(0, 1fr) repeat(3, auto) auto; align-items: center; } }
+@media (min-width: 900px) { .mod-users-filters { grid-template-columns: minmax(0, 1fr) repeat(3, auto) auto auto; align-items: center; } }
 .mod-users-list { display: grid; gap: var(--space-2); }
 .mod-user-row { display: grid; grid-template-columns: 36px minmax(0, 1fr) auto; gap: var(--space-1) var(--space-3); align-items: center; width: 100%; padding: var(--space-2) var(--space-3); text-align: left; background: var(--surface-2, transparent); border: 1px solid var(--border); border-radius: var(--r-sm); color: inherit; cursor: pointer; }
 .mod-user-row:hover { border-color: var(--border-strong); }
@@ -1624,6 +1624,9 @@ a.server:hover > .icon { color: var(--accent-text); }
 .mod-status[data-status="active"] { background: var(--success-soft); color: var(--success); border-color: transparent; }
 .mod-users-pager { display: flex; align-items: center; justify-content: center; gap: var(--space-3); }
 .mod-user-detail { display: grid; gap: var(--space-4); }
+.mod-user-head h3 { margin: 0; overflow-wrap: anywhere; }
+.mod-user-head p { margin: 0; overflow-wrap: anywhere; }
+.mod-user-detail .callout { margin: 0; }
 .mod-user-head { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
 .mod-user-head > div { flex: 1; min-width: 0; }
 .mod-user-actions { display: contents; }
