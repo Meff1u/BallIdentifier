@@ -5,7 +5,8 @@
             "type": "website",
             "changes": [
                 "Spawn Arts: new button next to \"Sort by\" in View switches between ascending and descending order (remembered for each sort option)",
-                "Public profiles: new \"Last special catches\" section with the newest special balls (shown together with Last catches)"
+                "Public profiles: new \"Last special catches\" section with the newest special balls you caught yourself (shown together with Last catches)",
+                "Public profiles: \"Last catches\" now shows only balls you caught yourself, not ones received in trades"
             ]
         },
         {
