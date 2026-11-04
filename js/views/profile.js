@@ -15,6 +15,21 @@ const displayName = (p) => p.name || p.username || `User ${p.id.slice(-4)}`;
 const profileUrl = (id) => `${location.origin}/u/${id}`;
 const artHref = (dex, name) => `/arts/${encodeURIComponent(dex)}/${encodeURIComponent(name)}`;
 
+const LF_PRIORITY = { high: "Top priority", medium: "Wanted", low: "Nice to have" };
+const LF_VERSIONS = [
+    ["any", "Any version"],
+    ["regular", "Regular only"],
+    ["anySpecial", "Any special"],
+    ["special", "Specific special"],
+];
+
+/** Title and subtitle of a Looking For entry (names come from ids: the bot on public profiles, the dex files in the editor). */
+function lfText({ ballName, version, specialName }) {
+    const versionLabel = version === "special" ? specialName || "Special" : version === "regular" ? "Regular only" : version === "anySpecial" ? "Any special" : "Any version";
+    if (ballName) return { title: ballName, sub: versionLabel };
+    return { title: version === "special" ? specialName || "Special" : "Any special", sub: "Any countryball" };
+}
+
 /** A special's emoji: custom Discord emoji as an image, otherwise the text emoji. */
 function specialEmoji(special) {
     if (special.emoji) return h("span.spc-emoji", { "aria-hidden": "true" }, special.emoji);
@@ -142,6 +157,7 @@ export function createView() {
                 actions,
             ),
             showcaseSection(p),
+            lookingForSection(p),
             ballsdexSection(p),
             lastCatchesSection(p),
             lastSpecialCatchesSection(p),
@@ -171,6 +187,30 @@ export function createView() {
                         h("span.subtle", img(dexIcon(ball.dex), "", "badge-ico"), ball.rarity !== null && ball.rarity !== undefined ? `${ball.dex} · T${ball.rarity}` : ball.dex),
                     ),
                 ),
+            ),
+        );
+    }
+
+    function lookingForSection(p) {
+        const list = p.lookingFor || [];
+        if (!list.length) return isSelf() ? hintCard("search", "Looking for", "List up to 10 balls or specials you want, with a priority, so others know what to offer you.") : null;
+        return h(
+            "section.pf-section",
+            h("h2.section-title", icon("search"), "Looking for", h("span.subtle", fmt(list.length))),
+            h(
+                "div.pf-lf",
+                list.map((item) => {
+                    const text = lfText(item);
+                    return h(
+                        "div.card.pf-lf-item",
+                        { dataset: { priority: item.priority } },
+                        item.ballName
+                            ? h("span.pf-lf-art", img(compressedArtUrl(item.dex, item.ballName), "", "", { width: 44, height: 44 }))
+                            : h("span.pf-lf-art", item.specialEmoji ? specialEmoji({ officialEmoji: item.specialEmoji }) : icon("sparkles")),
+                        h("div.pf-lf-text", h("b", text.title), h("span.subtle", img(dexIcon(item.dex), "", "badge-ico"), `${text.sub} · ${item.dex}`)),
+                        h("span.pf-lf-badge", { dataset: { priority: item.priority } }, LF_PRIORITY[item.priority]),
+                    );
+                }),
             ),
         );
     }
@@ -362,7 +402,7 @@ export function createView() {
         } catch (error) {
             return handleError(error);
         }
-        const s = { ...data.settings, showcase: [...data.settings.showcase] };
+        const s = { ...data.settings, showcase: [...data.settings.showcase], lookingFor: (data.settings.lookingFor || []).map((entry) => ({ ...entry })) };
         const { dexes } = await getDexList();
 
         const publicInput = h("input", { type: "checkbox", checked: s.public, disabled: data.blocked });
@@ -427,6 +467,123 @@ export function createView() {
         });
         paintShowcase();
 
+        // Looking For: up to 10 entries (a ball or "any countryball", version, priority), stored by ids
+        const lfList = h("div.pf-show-edit");
+        const lfCount = h("span.label");
+        const lfDex = h("select.select", { "aria-label": "Dex" }, dexes.map((dex) => h("option", { value: dex, selected: dex === (s.favoriteDex || "Ballsdex") }, dex)));
+        const lfListId = `pf-lf-${Math.random().toString(36).slice(2, 7)}`;
+        const lfBallList = h("datalist", { id: lfListId });
+        const lfBall = h("input.input", { type: "text", placeholder: "Ball name", autocomplete: "off", spellcheck: false });
+        lfBall.setAttribute("list", lfListId);
+        const lfVersion = h("select.select", { "aria-label": "Version" }, LF_VERSIONS.map(([value, label]) => h("option", { value }, label)));
+        const lfSpecial = h("select.select", { "aria-label": "Special", hidden: true });
+        const lfPriority = h("select.select", { "aria-label": "Priority" }, Object.entries(LF_PRIORITY).map(([value, label]) => h("option", { value, selected: value === "medium" }, label)));
+        const lfAdd = h("button.btn", { type: "button" }, icon("plus"), h("span", "Add"));
+        const lfHint = h("p.hint");
+        const lfBalls = new Map(); // dex -> { byName: lowercase name -> { id, name }, byId }
+        const specialNames = new Map(); // special id -> { name, emoji }
+        let allSpecials = [];
+        async function lfDexData(dex) {
+            if (!lfBalls.has(dex)) {
+                const byName = new Map();
+                const byId = new Map();
+                try {
+                    for (const [name, ball] of Object.entries(await getDex(dex))) {
+                        if (ball && Number.isInteger(ball.id)) {
+                            byName.set(name.toLowerCase(), { id: ball.id, name });
+                            byId.set(ball.id, name);
+                        }
+                    }
+                } catch {
+                    // dex file unavailable
+                }
+                lfBalls.set(dex, { byName, byId });
+            }
+            return lfBalls.get(dex);
+        }
+        const isBallsdex = () => lfDex.value === "Ballsdex";
+        async function lfFillSpecials() {
+            lfSpecial.hidden = !(isBallsdex() && lfVersion.value === "special");
+            if (lfSpecial.hidden) return;
+            const ball = (await lfDexData("Ballsdex")).byName.get(lfBall.value.trim().toLowerCase());
+            let options = allSpecials;
+            if (ball) {
+                try {
+                    const result = await api("specials", { query: { ball: ball.id } });
+                    if (result.loaded) options = result.specials;
+                } catch {
+                    // the bot checks it again on save
+                }
+            }
+            const previous = lfSpecial.value;
+            lfSpecial.replaceChildren(h("option", { value: "" }, "Pick a special…"), ...options.map((special) => h("option", { value: special.id }, special.name)));
+            lfSpecial.value = options.some((special) => String(special.id) === previous) ? previous : "";
+        }
+        async function lfChangeDex() {
+            const data = await lfDexData(lfDex.value);
+            lfBallList.replaceChildren(...[...data.byName.values()].sort((a, b) => a.name.localeCompare(b.name)).map((ball) => h("option", { value: ball.name })));
+            lfBall.placeholder = isBallsdex() ? "Ball name (empty = any countryball)" : "Ball name";
+            lfVersion.hidden = !isBallsdex();
+            lfFillSpecials();
+        }
+        lfDex.addEventListener("change", lfChangeDex);
+        lfVersion.addEventListener("change", lfFillSpecials);
+        lfBall.addEventListener("change", lfFillSpecials);
+        function paintLf() {
+            lfCount.textContent = `Looking for (${s.lookingFor.length} / ${data.limits.lookingFor})`;
+            lfAdd.disabled = s.lookingFor.length >= data.limits.lookingFor;
+            lfList.replaceChildren(
+                ...(s.lookingFor.length
+                    ? s.lookingFor.map((entry, index) => {
+                          const ballName = entry.ballId === null ? null : lfBalls.get(entry.dex)?.byId.get(entry.ballId) || `#${entry.ballId}`;
+                          const text = lfText({ ballName, version: entry.version, specialName: specialNames.get(entry.specialId)?.name });
+                          const priority = h("select.select", { "aria-label": "Priority" }, Object.entries(LF_PRIORITY).map(([value, label]) => h("option", { value, selected: value === entry.priority }, label)));
+                          priority.addEventListener("change", () => (entry.priority = priority.value));
+                          return h(
+                              "div.pf-show-item.pf-lf-edit",
+                              ballName ? img(compressedArtUrl(entry.dex, ballName), "", "", { width: 40, height: 40 }) : h("span.pf-lf-art", icon("sparkles")),
+                              h("div", h("b", text.title), h("span.subtle", `${text.sub} · ${entry.dex}`)),
+                              priority,
+                              h("button.icon-btn", { type: "button", "aria-label": `Remove ${text.title}`, onclick: () => (s.lookingFor.splice(index, 1), paintLf()) }, icon("x")),
+                          );
+                      })
+                    : [h("p.subtle", "Nothing added yet.")]),
+            );
+        }
+        lfAdd.addEventListener("click", async () => {
+            const dex = lfDex.value;
+            const typed = lfBall.value.trim();
+            const ball = typed ? (await lfDexData(dex)).byName.get(typed.toLowerCase()) : null;
+            if (typed && !ball) return toast(`No ball called "${typed}" in ${dex}.`, "error");
+            const version = isBallsdex() ? lfVersion.value : "any";
+            if (!ball && (!isBallsdex() || version === "any" || version === "regular")) return toast(isBallsdex() ? "Pick a ball, or choose a special for any countryball." : "Pick a ball.", "error");
+            const specialId = version === "special" ? Number(lfSpecial.value) || null : null;
+            if (version === "special" && !specialId) return toast("Pick a special.", "error");
+            const entry = { dex, ballId: ball ? ball.id : null, version, specialId, priority: lfPriority.value };
+            if (s.lookingFor.some((item) => item.dex === dex && item.ballId === entry.ballId && item.version === version && item.specialId === specialId)) return toast("It's already in your list.", "info");
+            if (specialId) {
+                const chosen = allSpecials.find((special) => special.id === specialId) || { id: specialId, name: lfSpecial.selectedOptions[0]?.textContent };
+                specialNames.set(specialId, { name: chosen.name });
+            }
+            s.lookingFor.push(entry);
+            lfBall.value = "";
+            paintLf();
+        });
+        // Names for the saved entries (dex files and the public specials list)
+        (async () => {
+            try {
+                const result = await api("specials");
+                allSpecials = (result.specials || []).map((special) => ({ id: special.id, name: special.alias || special.name || `Special #${special.id}` }));
+                for (const special of allSpecials) specialNames.set(special.id, { name: special.name });
+            } catch {
+                // names fall back to ids
+            }
+            for (const dex of new Set(s.lookingFor.map((entry) => entry.dex))) await lfDexData(dex);
+            paintLf();
+            lfChangeDex();
+        })();
+        paintLf();
+
         const saveBtn = h("button.btn.btn-primary", { type: "button" }, icon("check"), h("span", "Save"));
         const dialog = openDialog({
             title: "Edit profile",
@@ -440,6 +597,13 @@ export function createView() {
                 h("div.field", h("label.label", "Bio"), bio, bioCount),
                 h("div.grid-2", h("div.field", h("label.label", "Pronouns"), pronouns), h("div.field", h("label.label", "Favorite dex"), favDex)),
                 h("div.field", h("span.label", `Showcase (up to ${data.limits.showcase})`), showList, h("div.pf-show-add", showDex, ballInput, ballList, addBtn)),
+                h(
+                    "div.field",
+                    lfCount,
+                    lfList,
+                    h("div.pf-lf-add", lfDex, lfBall, lfBallList, lfVersion, lfSpecial, lfPriority, lfAdd),
+                    h("p.hint", "Add up to 10 balls or specials you want. Ballsdex also lets you pick a version or a special. Higher priority shows first on your profile."),
+                ),
                 h(
                     "section.pf-edit-block",
                     h(
@@ -471,6 +635,7 @@ export function createView() {
                 pronouns: pronouns.value,
                 favoriteDex: favDex.value || null,
                 showcase: s.showcase,
+                lookingFor: s.lookingFor,
                 showBallsdex: bdxInput.checked,
                 showCollections: colInput.checked,
                 showLastCatches: lastInput.checked,

@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1793817000",
+            "type": "website",
+            "changes": [
+                "New \"Looking for\" section on profiles: list up to 10 balls, versions or specials you want, each with a priority (Top priority, Wanted, Nice to have)",
+                "Manage it in Edit profile; Ballsdex entries can also target regular versions, any special or one specific special"
+            ]
+        },
+        {
             "timestamp": "1793815001",
             "type": "bot",
             "changes": [
