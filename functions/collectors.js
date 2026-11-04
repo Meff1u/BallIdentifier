@@ -4,6 +4,8 @@
  * GET  /.netlify/functions/collectors?dex=Ballsdex  -> { entries: { [ballId]: [collector] }, viewer }
  * GET  /.netlify/functions/collectors?kind=specials -> { entries: { [specialId]: [collector] }, limits, viewer }
  * POST /.netlify/functions/collectors  { action: "add" | "remove", dex, ballId, userId? }  (login required)
+ *   add -> { status: "verified" | "unverified", reason? } (Ballsdex: verified when the synced account owns half the CC requirement; other dexes: always unverified; max 5 unverified per dex)
+ * POST /.netlify/functions/collectors  { action: "set-status", dex, ballId, userId, status: "verified" | "unverified" }  (owner only)
  * POST /.netlify/functions/collectors  { kind: "specials", action: "add" | "remove", specialId, userId? }  (login required)
  *
  * The acting user always comes from the encrypted session. Removing someone else is only
@@ -97,12 +99,13 @@ exports.handler = async (event) => {
 
         const dexKey = DEX_KEYS[body.dex];
         const ballId = Number(body.ballId);
-        if (!dexKey || !Number.isInteger(ballId) || !["add", "remove"].includes(body.action)) return json(400, { error: "Invalid request" });
+        if (!dexKey || !Number.isInteger(ballId) || !["add", "remove", "set-status"].includes(body.action)) return json(400, { error: "Invalid request" });
+        if (body.action === "set-status" && (!targetUserId || !["verified", "unverified"].includes(body.status))) return json(400, { error: "Invalid request" });
 
         const { status, data } = await readBot(
             await botApiFetch(`/api/users/${auth.session.user.id}/collectors`, {
                 method: "POST",
-                body: { action: body.action, dexKey, ballId, targetUserId },
+                body: { action: body.action, dexKey, ballId, targetUserId, ...(body.action === "set-status" ? { status: body.status } : {}) },
             }),
         );
         if (status === 200) cache.delete(dexKey);

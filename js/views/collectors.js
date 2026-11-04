@@ -1,6 +1,7 @@
 /**
  * Collectors — who collects which ball, in every dex (same data as /collectors in the bot).
- * Logged-in users can add themselves as a collector of any ball, or remove themselves.
+ * Logged-in users can add themselves as a collector of any ball, or remove themselves. Entries are Verified or
+ * Unverified (Ballsdex: checked against the last sync; other dexes: the owner verifies by hand).
  */
 
 import { h, icon, img, fmt, storage, store, timeAgo } from "../core/dom.js";
@@ -16,10 +17,16 @@ const FILTERS = [
     { id: "all", label: "All balls" },
     { id: "mine", label: "Mine" },
 ];
+const STATUS_FILTERS = [
+    { id: "any", label: "Any status" },
+    { id: "verified", label: "Verified" },
+    { id: "unverified", label: "Unverified" },
+];
 
 export function createView() {
     let dex = storage("collectorsDex", "Ballsdex");
     let filter = "with";
+    let statusFilter = "any";
     let balls = []; // [{ id, name, rarity, cc }]
     let entries = {}; // ballId -> [collector]
     let viewer = null;
@@ -31,6 +38,7 @@ export function createView() {
     const dexSelect = h("select.select", { "aria-label": "Dex" });
     const search = h("input.input", { type: "search", placeholder: "Search balls", "aria-label": "Search balls", autocomplete: "off", spellcheck: false });
     const filterBtns = FILTERS.map((f) => h("button", { type: "button", "aria-pressed": String(f.id === filter), onclick: () => setFilter(f.id) }, f.label));
+    const statusBtns = STATUS_FILTERS.map((f) => h("button", { type: "button", "aria-pressed": String(f.id === statusFilter), onclick: () => setStatusFilter(f.id) }, f.label));
     const metaCount = h("span.num");
     const metaHint = h("span");
     const grid = h("div.col-grid", { role: "list" });
@@ -44,7 +52,7 @@ export function createView() {
             h("div.toolbar-row", h("label.input-icon", icon("search"), search)),
             h("div.toolbar-row", dexSelect),
         ),
-        h("div.col-filters", h("div.segmented", { role: "group", "aria-label": "Show" }, filterBtns)),
+        h("div.col-filters", h("div.segmented", { role: "group", "aria-label": "Show" }, filterBtns), h("div.segmented", { role: "group", "aria-label": "Status" }, statusBtns)),
         h("div.arts-meta", metaCount, metaHint),
         grid,
         h("div.col-more", moreBtn),
@@ -117,16 +125,18 @@ export function createView() {
 
     const myId = () => viewer?.id || getUser()?.id || null;
     const collectorsOf = (ball) => entries[ball.id] || [];
+    // The collectors shown on the cards: all of them, or only the verified / unverified ones
+    const listedOf = (ball) => (statusFilter === "any" ? collectorsOf(ball) : collectorsOf(ball).filter((c) => (c.source === "verified") === (statusFilter === "verified")));
     const isMine = (ball) => Boolean(myId()) && collectorsOf(ball).some((c) => c.id === myId());
     const displayName = (c) => c.name || (c.missing ? "Unknown user" : `User ${c.id.slice(-4)}`);
 
     function filtered() {
         const query = search.value.trim().toLowerCase();
         let list = balls.filter((ball) => !query || ball.name.toLowerCase().includes(query) || String(ball.id) === query);
-        if (filter === "with") list = list.filter((ball) => collectorsOf(ball).length);
+        if (filter === "with" || statusFilter !== "any") list = list.filter((ball) => listedOf(ball).length);
         if (filter === "mine") list = list.filter(isMine);
         const byRarity = (a, b) => (a.rarity ?? 9999) - (b.rarity ?? 9999) || a.name.localeCompare(b.name);
-        return filter === "all" ? list.sort(byRarity) : list.sort((a, b) => collectorsOf(b).length - collectorsOf(a).length || byRarity(a, b));
+        return filter === "all" ? list.sort(byRarity) : list.sort((a, b) => listedOf(b).length - listedOf(a).length || byRarity(a, b));
     }
 
     function avatarStack(collectors) {
@@ -139,7 +149,7 @@ export function createView() {
     }
 
     function card(ball) {
-        const collectors = collectorsOf(ball);
+        const collectors = listedOf(ball);
         const mine = isMine(ball);
         return h(
             "button.col-card",
@@ -158,7 +168,7 @@ export function createView() {
 
     function paint() {
         const list = filtered();
-        const people = new Set(Object.values(entries).flat().map((c) => c.id));
+        const people = new Set(Object.values(entries).flat().filter((c) => statusFilter === "any" || (c.source === "verified") === (statusFilter === "verified")).map((c) => c.id));
         metaCount.textContent = `${fmt(list.length)} ${list.length === 1 ? "ball" : "balls"}`;
         metaHint.textContent = `${fmt(people.size)} collectors in ${dex}`;
         grid.replaceChildren(...list.slice(0, shown).map(card));
@@ -169,7 +179,14 @@ export function createView() {
             emptyEl.querySelector("p").textContent = filter === "with" ? "Switch to All balls to find one and add yourself." : search.value ? "Try a different spelling." : "Pick a ball from All balls and add yourself.";
         }
         filterBtns.forEach((btn, index) => btn.setAttribute("aria-pressed", String(FILTERS[index].id === filter)));
+        statusBtns.forEach((btn, index) => btn.setAttribute("aria-pressed", String(STATUS_FILTERS[index].id === statusFilter)));
         filterBtns[2].hidden = !myId();
+    }
+
+    function setStatusFilter(id) {
+        statusFilter = id;
+        shown = PAGE;
+        paint();
     }
 
     function setFilter(id) {
@@ -203,7 +220,10 @@ export function createView() {
                               ),
                               h(
                                   "div.col-tags",
-                                  c.source === "verified" ? h("span.badge.badge-success", icon("shield-check", "icon-sm"), "Verified") : h("span.badge", { title: c.addedAt ? `Added ${timeAgo(c.addedAt)}` : "" }, "Self-added"),
+                                  c.source === "verified" ? h("span.badge.badge-success", icon("shield-check", "icon-sm"), "Verified") : h("span.badge", { title: c.addedAt ? `Added ${timeAgo(c.addedAt)}` : "" }, "Unverified"),
+                                  viewer?.canModerate && c.origin !== "data"
+                                      ? h("button.icon-btn", { type: "button", "aria-label": c.source === "verified" ? `Make ${displayName(c)} unverified` : `Verify ${displayName(c)}`, title: c.source === "verified" ? "Make unverified" : "Verify", onclick: () => setStatus(ball, c) }, icon(c.source === "verified" ? "shield-off" : "shield-check"))
+                                      : null,
                                   viewer?.canModerate || (c.id === me && c.origin !== "data")
                                       ? h("button.icon-btn", { type: "button", "aria-label": c.id === me ? "Remove me" : `Remove ${displayName(c)}`, onclick: () => remove(ball, c) }, icon("trash-2"))
                                       : null,
@@ -223,8 +243,8 @@ export function createView() {
                 actions.replaceChildren(
                     ...[
                         dex === "Ballsdex"
-                            ? h("p.subtle.col-req", `Checked against your last Ballsdex sync${Number.isFinite(needed) && needed > 0 ? `: you need at least ${needed} ${ball.name}` : ""}.`)
-                            : null,
+                            ? h("p.subtle.col-req", `You get Verified if your last Ballsdex sync shows${Number.isFinite(needed) && needed > 0 ? ` at least ${needed} ${ball.name}` : " enough of this ball"}; otherwise (or without a sync) you're added as Unverified.`)
+                            : h("p.subtle.col-req", "You're added as Unverified; the owner can verify you. Max 5 unverified per dex."),
                         addBtn,
                     ].filter(Boolean),
                 );
@@ -267,13 +287,25 @@ export function createView() {
         async function add(ballToAdd, btn) {
             btn.disabled = true;
             try {
-                await api("collectors", { method: "POST", body: { action: "add", dex, ballId: ballToAdd.id } });
-                toast(`You're now a collector of ${ballToAdd.name}.`, "success");
+                const result = await api("collectors", { method: "POST", body: { action: "add", dex, ballId: ballToAdd.id } });
+                toast(result.status === "verified" ? `You're now a verified collector of ${ballToAdd.name}.` : `You're now an unverified collector of ${ballToAdd.name}.${result.reason ? ` ${result.reason}` : ""}`, "success");
                 await reloadCollectors({ fresh: true });
                 fill();
             } catch (error) {
                 handleError(error);
                 btn.disabled = false;
+            }
+        }
+
+        async function setStatus(ballToChange, collector) {
+            const status = collector.source === "verified" ? "unverified" : "verified";
+            try {
+                await api("collectors", { method: "POST", body: { action: "set-status", dex, ballId: ballToChange.id, userId: collector.id, status } });
+                toast(`${displayName(collector)} is now ${status}.`, "success");
+                await reloadCollectors({ fresh: true });
+                if (dialogRef?.dialog.isConnected) fill();
+            } catch (error) {
+                handleError(error);
             }
         }
 
@@ -314,7 +346,7 @@ export function createView() {
                 ),
                 listEl,
                 adminRow,
-                h("p.subtle.col-note", "Verified collectors are confirmed by the BallIdentifier owner. Self-added ones were added by the users themselves."),
+                h("p.subtle.col-note", "Verified: from the dex data, confirmed by the owner, or (Ballsdex) checked against a synced collection. Unverified: added by the user without a check."),
             ],
             footer: actions,
         });

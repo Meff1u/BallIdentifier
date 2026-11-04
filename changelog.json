@@ -1,6 +1,18 @@
 {
     "changes": [
         {
+            "timestamp": "1793812000",
+            "type": "website",
+            "changes": [
+                "Collectors: you can now add yourself without syncing your Ballsdex account first",
+                "Collectors now have two statuses: Verified and Unverified",
+                "Ballsdex: if your synced account owns at least half of the required balls you are added as Verified, otherwise as Unverified",
+                "Other dexes: you are always added as Unverified, and the owner can verify you",
+                "You can have at most 5 Unverified collections per dex",
+                "New filter on the Collectors page to show only Verified or only Unverified collectors"
+            ]
+        },
+        {
             "timestamp": "1793811000",
             "type": "bot",
             "changes": [
