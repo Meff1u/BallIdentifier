@@ -222,7 +222,12 @@ export function createView() {
                                   "div.col-tags",
                                   c.source === "verified" ? h("span.badge.badge-success", icon("shield-check", "icon-sm"), "Verified") : h("span.badge", { title: c.addedAt ? `Added ${timeAgo(c.addedAt)}` : "" }, "Unverified"),
                                   viewer?.canModerate && c.origin !== "data"
-                                      ? h("button.icon-btn", { type: "button", "aria-label": c.source === "verified" ? `Make ${displayName(c)} unverified` : `Verify ${displayName(c)}`, title: c.source === "verified" ? "Make unverified" : "Verify", onclick: () => setStatus(ball, c) }, icon(c.source === "verified" ? "shield-off" : "shield-check"))
+                                      ? h(
+                                            "button.btn.btn-sm",
+                                            { type: "button", "aria-label": c.source === "verified" ? `Make ${displayName(c)} unverified` : `Verify ${displayName(c)}`, onclick: () => setStatus(ball, c) },
+                                            icon("shield-check", "icon-sm"),
+                                            h("span", c.source === "verified" ? "Make unverified" : "Verify"),
+                                        )
                                       : null,
                                   viewer?.canModerate || (c.id === me && c.origin !== "data")
                                       ? h("button.icon-btn", { type: "button", "aria-label": c.id === me ? "Remove me" : `Remove ${displayName(c)}`, onclick: () => remove(ball, c) }, icon("trash-2"))
