@@ -136,7 +136,7 @@ export function createView() {
             card.append(h("h3", "Waiting"), h("ul.mod-list", queue.map(([id, why]) => h("li", person(id), h("span.badge", why)))));
         }
         card.append(
-            h("dl.kv.mod-kv", h("div", h("dt", "Linked accounts"), h("dd", fmt(sync.linkedAccounts))), h("div", h("dt", "Synced in the last 24 h"), h("dd", fmt(sync.syncedLast24h)))),
+            h("dl.kv.mod-kv", h("div", h("dt", "Linked accounts"), h("dd", fmt(sync.linkedAccounts))), h("div", h("dt", "Synced in the last 24 h"), h("dd", fmt(sync.syncedLast24h))), h("div", h("dt", "Synced all time"), h("dd", fmt(sync.syncedAllTime)))),
         );
         return card;
     }
