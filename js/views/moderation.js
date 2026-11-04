@@ -222,7 +222,7 @@ export function createView() {
                 h("h3", "Database"),
                 usageRow("Data stored", db.storageBytes ?? db.dataBytes, db.capacityBytes, db.capacitySource === "configured" ? "Capacity is the quota set in the bot's .env (DB_STORAGE_LIMIT_MB)." : "The database doesn't report its quota. Set DB_STORAGE_LIMIT_MB in the bot's .env to show it."),
                 h("dl.kv.mod-kv", h("div", h("dt", "Data size"), h("dd.text", bytes(db.dataBytes))), h("div", h("dt", "Indexes"), h("dd.text", bytes(db.indexBytes))), h("div", h("dt", "Collections"), h("dd", fmt(db.collections))), h("div", h("dt", "Documents"), h("dd", fmt(db.objects)))),
-                db.clusterDiskBytes ? h("p.subtle", `The server reports ${bytes(db.clusterDiskUsedBytes)} used of ${bytes(db.clusterDiskBytes)} on its disk (shared by everything on it).`) : null,
+                ...(db.clusterDiskBytes ? [h("p.subtle", `The server reports ${bytes(db.clusterDiskUsedBytes)} used of ${bytes(db.clusterDiskBytes)} on its disk (shared by everything on it).`)] : []),
             );
         }
         card.append(h("h3", "Bot disk"));
