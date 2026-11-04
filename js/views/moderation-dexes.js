@@ -55,15 +55,21 @@ function ask({ title, body, confirmLabel, danger = false, read = () => ({}), can
     });
 }
 
-export function createDexesCard({ handleError }) {
+export function createDexesCard({ handleError, onChange = () => {} }) {
     let state = null; // { dexes, github }
     let busy = false;
     const list = h("ul.mod-dex-list", h("li.skeleton.mod-dex-skel"));
     const addBtn = h("button.btn.btn-sm.btn-primary", { type: "button" }, icon("plus", "icon-sm"), h("span", "Add dex"));
+    const refreshBtn = h("button.btn.btn-sm.btn-ghost", { type: "button" }, icon("refresh-cw", "icon-sm"), h("span", "Refresh"));
+    refreshBtn.addEventListener("click", async () => {
+        refreshBtn.disabled = true;
+        await load();
+        refreshBtn.disabled = false;
+    });
     const warning = h("p.callout.callout-warning", { hidden: true }, icon("triangle-alert", "icon-sm"), h("span", "GITHUB_TOKEN isn't set in the bot's .env, so the list can't be changed from here."));
     const el = h(
         "section.card.panel.mod-card.mod-dexes",
-        h("div.mod-dexes-head", h("h2", icon("layers"), "Dexes"), addBtn),
+        h("div.mod-dexes-head", h("h2", icon("layers"), "Dexes"), h("div.mod-actions", refreshBtn, addBtn)),
         h("p.subtle", "Every change is committed to the website repo. ", DEPLOY_NOTE),
         warning,
         list,
@@ -77,6 +83,7 @@ export function createDexesCard({ handleError }) {
             const result = await api("admin", { method: "POST", body });
             state = { dexes: result.dexes, github: result.github };
             render();
+            onChange();
             toast(success, "success");
             return true;
         } catch (error) {

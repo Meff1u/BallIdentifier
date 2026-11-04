@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1793829000",
+            "type": "website",
+            "changes": [
+                "Replies to your messages from Contact & Support now arrive as a Discord DM from the bot, and when allowed you can answer once with the Reply button. If the bot can't DM you, the answer shows up in your website notifications instead",
+                "Public profiles now show your 6 newest catches and 6 newest special catches instead of 5"
+            ]
+        },
+        {
             "timestamp": "1793828000",
             "type": "website",
             "changes": [

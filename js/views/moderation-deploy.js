@@ -48,6 +48,16 @@ export function createDeployCard({ handleError }) {
         );
     }
 
+    function refreshButton() {
+        const refresh = h("button.btn.btn-ghost.btn-sm", { type: "button", disabled: busy }, icon("refresh-cw", "icon-sm"), h("span", "Refresh"));
+        refresh.addEventListener("click", async () => {
+            refresh.disabled = true;
+            await loadState();
+            refresh.disabled = false;
+        });
+        return refresh;
+    }
+
     function render() {
         if (!state) return;
         const { enabled, pending, lastDeployAt } = state;
@@ -67,21 +77,20 @@ export function createDeployCard({ handleError }) {
             pending.length
                 ? h("ul.mod-deploy-list", [...pending].reverse().map(change))
                 : h("p.subtle", "No dex changes waiting. They show up here until a deploy; Deploy also pulls any other pushed commits."),
-            h("div.mod-deploy-foot", button, h("span.subtle", lastDeployAt ? `Last deploy ${timeAgo(lastDeployAt)}` : "No deploy from here yet")),
+            h("div.mod-deploy-foot", button, refreshButton(), h("span.subtle", lastDeployAt ? `Last deploy ${timeAgo(lastDeployAt)}` : "No deploy from here yet")),
         );
     }
 
-    return {
-        el,
-        async load() {
-            if (busy) return;
-            try {
-                state = await api("admin", { query: { view: "deploy" } });
-                render();
-            } catch (error) {
-                if (!state) content.replaceChildren(h("p.subtle", error.message));
-                else handleError(error);
-            }
-        },
-    };
+    async function loadState() {
+        if (busy) return;
+        try {
+            state = await api("admin", { query: { view: "deploy" } });
+            render();
+        } catch (error) {
+            if (!state) content.replaceChildren(h("p.subtle", error.message));
+            else handleError(error);
+        }
+    }
+
+    return { el, load: loadState };
 }

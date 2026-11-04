@@ -21,7 +21,6 @@ function etaText({ phase, etaMs, total } = {}) {
     const seconds = Math.max(1, Math.round(etaMs / 1000));
     return ` · about ${seconds < 60 ? `${seconds}s` : formatDuration(Math.round(seconds / 5) * 5000)} left`;
 }
-const REFRESH_MS = 5000;
 const LOG_TABS = [
     ["ERRORS", "Errors"],
     ["BALLSDEX", "Ballsdex"],
@@ -35,7 +34,6 @@ const LOG_TABS = [
 
 export function createView() {
     let visible = false;
-    let timer = null;
     let data = null;
     let logTab = "ERRORS";
     let resources = null;
@@ -43,15 +41,33 @@ export function createView() {
 
     const body = h("div.mod-body");
     // Kept between refreshes (it has its own data and open dialogs)
-    const dexes = createDexesCard({ handleError: (error) => handleError(error) });
+    const dexes = createDexesCard({
+        handleError: (error) => handleError(error),
+        onChange: () => {
+            deployCard.load();
+            loadOverview();
+        },
+    });
     const deployCard = createDeployCard({ handleError: (error) => handleError(error) });
     const users = createUsersCard({ handleError: (error) => handleError(error) });
     const el = h(
         "section.view",
         { dataset: { view: "moderation" }, "aria-labelledby": "mod-title" },
-        h("div.page-head", h("h1", { id: "mod-title" }, "Moderation"), h("p", "Owner tools: sync status, bot health, users, dexes and recent logs. The overview refreshes every few seconds; Resources and Users refresh on demand.")),
+        h("div.page-head", h("h1", { id: "mod-title" }, "Moderation"), h("p", "Owner tools: sync status, bot health, users, dexes and recent logs. Everything loads when you open the page; use the refresh button on a tile to update it. Changes you make refresh the affected tiles.")),
         body,
     );
+
+    /** Refresh button of the tiles fed by the overview request (sync, bot, logs). */
+    function refreshOverviewButton() {
+        const button = h("button.btn.btn-ghost.btn-sm", { type: "button" }, icon("refresh-cw", "icon-sm"), h("span", "Refresh"));
+        button.addEventListener("click", () => {
+            button.disabled = true;
+            loadOverview().finally(() => {
+                button.disabled = false;
+            });
+        });
+        return button;
+    }
 
     function person(id) {
         const p = data?.people?.[id] || { id };
@@ -113,7 +129,7 @@ export function createView() {
                 try {
                     await api("admin", { method: "POST", body: { action: "cancel-sync" } });
                     toast("Sync cancelled.", "success");
-                    load();
+                    loadOverview();
                 } catch (error) {
                     handleError(error);
                     cancelBtn.disabled = false;
@@ -141,6 +157,7 @@ export function createView() {
         }
         card.append(
             h("dl.kv.mod-kv", h("div", h("dt", "Linked accounts"), h("dd", fmt(sync.linkedAccounts))), h("div", h("dt", "Synced in the last 24 h"), h("dd", fmt(sync.syncedLast24h))), h("div", h("dt", "Synced all time"), h("dd", fmt(sync.syncedAllTime)))),
+            h("div.mod-actions", refreshOverviewButton()),
         );
         return card;
     }
@@ -153,7 +170,7 @@ export function createView() {
             try {
                 await api("admin", { method: "POST", body: { action: "refresh-data" } });
                 toast("Dex data reloaded.", "success");
-                load();
+                loadOverview();
             } catch (error) {
                 handleError(error);
             } finally {
@@ -179,7 +196,7 @@ export function createView() {
                     .map(([key, count]) => `${key} ${fmt(count)}`)
                     .join(" · "),
             ),
-            h("div.mod-actions", refreshBtn),
+            h("div.mod-actions", refreshBtn, refreshOverviewButton()),
         );
     }
 
@@ -272,6 +289,7 @@ export function createView() {
                 ? h("ol.mod-log", lines.map((line) => h("li", h("time", { dateTime: line.at, title: new Date(line.at).toLocaleString("en-GB") }, timeAgo(line.at)), h("span", line.text))))
                 : h("p.subtle", "Nothing since the bot started."),
             h("p.subtle", "Kept in memory since the last restart. Everything is also in the log threads on Discord."),
+            h("div.mod-actions", refreshOverviewButton()),
         );
     }
 
@@ -288,8 +306,8 @@ export function createView() {
         toast(error.message, "error");
     }
 
-    async function load() {
-        clearTimeout(timer);
+    /** Opening the page: the session and owner check, then every tile loads once. */
+    async function loadAll() {
         if (!visible) return;
         if (!sessionReady()) {
             await loadSession();
@@ -299,10 +317,15 @@ export function createView() {
             return;
         }
         if (!data) body.replaceChildren(h("div.skeleton", { style: { height: "240px" } }));
-        if (!data) dexes.load();
-        if (!data) users.load();
-        if (!data) loadResources();
+        dexes.load();
+        users.load();
+        loadResources();
         deployCard.load();
+        await loadOverview();
+    }
+
+    /** Sync status, bot health and logs (one request; the tiles using it have their own refresh buttons). */
+    async function loadOverview() {
         try {
             data = await api("admin");
             render();
@@ -310,23 +333,21 @@ export function createView() {
             if (!data) body.replaceChildren(h("div.card.empty", h("h2", "Couldn't load"), h("p", error.message)));
             else if (!(error instanceof ApiError && error.status === 429)) handleError(error);
         }
-        if (visible) timer = setTimeout(load, REFRESH_MS);
     }
 
     onAuthChange(() => {
         data = null;
-        if (visible) load();
+        if (visible) loadAll();
     });
 
     return {
         el,
         show() {
             visible = true;
-            load();
+            loadAll();
         },
         hide() {
             visible = false;
-            clearTimeout(timer);
         },
     };
 }

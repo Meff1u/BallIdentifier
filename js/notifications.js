@@ -25,6 +25,7 @@ const TYPE_ICONS = {
     collector_status: "trophy",
     account_status: "lock",
     notifier_issue: "triangle-alert",
+    support_reply: "mail",
 };
 
 let bell;
