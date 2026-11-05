@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1793875934",
+            "type": "dex",
+            "dex": "MapsDex",
+            "changes": [
+                "New spawn art for Red Finland"
+            ]
+        },
+        {
             "timestamp": "1793830000",
             "type": "website",
             "changes": [
@@ -20,7 +28,7 @@
             "type": "website",
             "changes": [
                 "Link previews of the Bot, Notifier, Catch stats, Users and Ballsdex pages now use the same bot icon as the favicon",
-                "The Collectors \u2192 Specials page now has its own link preview card"
+                "The Collectors → Specials page now has its own link preview card"
             ]
         },
         {
