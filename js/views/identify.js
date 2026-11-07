@@ -98,7 +98,7 @@ export function createView() {
         countEl.textContent = "";
         try {
             const data = await getDex(current);
-            if (current === dex) countEl.textContent = `${fmt(Object.keys(data).length)} entries in ${dex}`;
+            if (current === dex) countEl.textContent = `${fmt(Object.keys(data).length)} collectibles in ${dex}`;
         } catch {
             /* count is decorative */
         }

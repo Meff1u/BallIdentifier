@@ -25,7 +25,7 @@ const SORTS = [
     { id: "id", label: "ID" },
 ];
 
-// The owner can add, edit and remove entries here (the bot checks it again and commits to GitHub)
+// The owner can add, edit and remove collectibles here (the bot checks it again and commits to GitHub)
 const OWNER_ID = "334411435633541121";
 
 /** A special's emoji: custom Discord emoji as an image, otherwise the text emoji (same as the Specials tab). */
@@ -52,7 +52,7 @@ export function createView() {
     const dexSelect = h("select.select", { "aria-label": "Dex" });
     const search = h("input.input", { type: "search", placeholder: "Search balls", "aria-label": "Search balls", autocomplete: "off", spellcheck: false, "data-search": "" });
     const optionsBtn = h("button.btn", { type: "button", "aria-label": "View options" }, icon("sliders-horizontal"), h("span.hide-sm", "View"));
-    const addBtn = h("button.btn.btn-primary", { type: "button", hidden: true, "aria-label": "Add entry", onclick: () => editEntry(null) }, icon("plus"), h("span.hide-sm", "Add entry"));
+    const addBtn = h("button.btn.btn-primary", { type: "button", hidden: true, "aria-label": "Add New", onclick: () => editEntry(null) }, icon("plus"), h("span.hide-sm", "Add New"));
 
     const metaCount = h("span.num");
     const metaHint = h("span");
@@ -138,7 +138,7 @@ export function createView() {
             {
                 role: "button",
                 tabindex: "0",
-                title: "Edit entry",
+                title: "Edit collectible",
                 "aria-label": `Edit ${name}`,
                 onclick: (event) => {
                     event.stopPropagation();
@@ -199,7 +199,7 @@ export function createView() {
         }
         const sortLabel = SORTS.find((s) => s.id === effectiveSort())?.label.toLowerCase();
         const direction = sortDir(effectiveSort()) === "desc" ? ", descending" : "";
-        metaCount.textContent = query ? `${fmt(visible)} of ${fmt(balls.length)} entries` : `${fmt(balls.length)} entries · by ${sortLabel}${direction}`;
+        metaCount.textContent = query ? `${fmt(visible)} of ${fmt(balls.length)} collectibles` : `${fmt(balls.length)} collectibles · by ${sortLabel}${direction}`;
         emptyEl.hidden = visible > 0 || !balls.length;
     }
 
@@ -441,7 +441,7 @@ export function createView() {
         doneBtn.addEventListener("click", () => dialog.close());
     });
 
-    /* ----- Owner: add / edit / remove entries ----- */
+    /* ----- Owner: add / edit / remove collectibles ----- */
 
     function paintOwner() {
         const owner = getUser()?.id === OWNER_ID;
@@ -569,7 +569,7 @@ export function createView() {
         );
         let saved = false;
         const dialog = openDialog({
-            title: isNew ? `Add entry · ${dexName}` : `Edit ${originalName}`,
+            title: isNew ? `Add collectible · ${dexName}` : `Edit ${originalName}`,
             body: form,
             wide: true,
             footer: h("div.row.dex-foot", deleteBtn, h("button.btn", { type: "button", onclick: () => dialog.close() }, "Cancel"), saveBtn),

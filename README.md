@@ -60,7 +60,7 @@ Leave out optional fields you don't know. Don't add or edit `collectors`: collec
 
 **New ball**
 1. Add `assets/dexes/<Dex>/<Name>.png`.
-2. Add its entry to `<Dex>.json` with at least `rarity`, `artist` and `id`.
+2. Add its collectible to `<Dex>.json` with at least `rarity`, `artist` and `id`.
 
 **Renamed ball**
 Rename the PNG **and** the key in `<Dex>.json` (and in `previous-arts.json` / the `previous` folder for Ballsdex). The script moves the preview and hash.

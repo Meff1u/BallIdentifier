@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1794086000",
+            "type": "website",
+            "changes": [
+                "Newly added dex items are now announced as \"New collectible\" instead of \"New spawn art\"",
+                "\"Entry\" is now \"collectible\" across the website and the bot."
+            ]
+        },
+        {
             "timestamp": "1794085596",
             "type": "dex",
             "dex": "HistoryDex",

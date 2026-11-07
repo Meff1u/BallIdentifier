@@ -29,7 +29,7 @@ const JSONS_DIR = path.join(ROOT, "assets", "jsons");
 const ART_SOURCE_EXTENSIONS = [".png", ".jpg", ".jpeg", ".webp", ".gif", ".tiff"];
 const PREVIEW_WIDTH = 200;
 
-// Every entry needs these; the optional ones are checked only when present.
+// Every collectible needs these; the optional ones are checked only when present.
 // "collectors" is managed from the website (Collectors tab), contributors don't edit it.
 const REQUIRED_FIELDS = { rarity: "number", artist: "string", id: "integer" };
 const OPTIONAL_FIELDS = { wave: "number", common_value: "string", demand: "string", cc: "string", collectors: "collectors" };
@@ -116,7 +116,7 @@ function checkDex(dex) {
     }
 
     for (const art of arts) {
-        if (!(art.name in data)) errors.push(`${path.basename(art.file)}: art without an entry in ${dex}.json (check the spelling)`);
+        if (!(art.name in data)) errors.push(`${path.basename(art.file)}: art without a collectible in ${dex}.json (check the spelling)`);
         if (art.ext !== ".png") errors.push(`${path.basename(art.file)}: arts must be .png (npm run dex:build converts it)`);
         if (!previews.has(art.name)) errors.push(`${art.name}: no compressed preview (run npm run dex:build -- "${dex}")`);
         if (!hashes[art.name]) errors.push(`${art.name}: no hash (run npm run dex:build -- "${dex}")`);

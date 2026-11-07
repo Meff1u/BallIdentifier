@@ -132,7 +132,7 @@ export function createDexesCard({ handleError, onChange = () => {} }) {
     async function settings(dex) {
         const phrases = h("textarea.textarea", { rows: 4, placeholder: "One per line. Empty: the default (Ballsdex) phrases.", value: (dex.catchPhrases || []).join("\n") });
         const ignore = h("textarea.textarea", { rows: 3, placeholder: "One per line", value: (dex.catchIgnore ?? ["Wrong name", "already been caught", "not the right"]).join("\n") });
-        const waves = checkbox("Waves", "Entries have a wave (shown and sortable on Spawn Arts).", Boolean(dex.waves));
+        const waves = checkbox("Waves", "Collectibles have a wave (shown and sortable on Spawn Arts).", Boolean(dex.waves));
         const incomplete = checkbox("Trainer abbreviations are incomplete", "The trainer warns that short names may not be accepted.", Boolean(dex.incomplete));
         const catchStats = CATCH_STATS_BOTS.includes(dex.botId);
         const answer = await ask({
@@ -186,8 +186,8 @@ export function createDexesCard({ handleError, onChange = () => {} }) {
         const botId = h("input.input", { type: "text", inputMode: "numeric", autocomplete: "off", placeholder: "Discord ID of the dex bot" });
         const key = h("input.input", { type: "text", maxLength: 5, autocomplete: "off", placeholder: "e.g. CD" });
         const iconInput = h("input.input", { type: "file", accept: "image/png,image/webp,image/jpeg,image/gif" });
-        const waves = checkbox("Waves", "Entries have a wave.", false);
-        const enabled = checkbox("Turn on now", "Off: add its entries in Spawn Arts first, then turn it on here.", false);
+        const waves = checkbox("Waves", "Collectibles have a wave.", false);
+        const enabled = checkbox("Turn on now", "Off: add its collectibles in Spawn Arts first, then turn it on here.", false);
         const valid = () => name.value.trim() && /^\d{17,20}$/.test(botId.value.trim()) && /^[A-Za-z0-9]{2,5}$/.test(key.value.trim());
         const answer = await ask({
             title: "Add a dex",
@@ -224,7 +224,7 @@ export function createDexesCard({ handleError, onChange = () => {} }) {
             ...state.dexes.map((dex) => {
                 const toggleInput = h("input", { type: "checkbox", checked: dex.enabled, disabled: state.github === false, "aria-label": `${dex.name} on` });
                 toggleInput.addEventListener("change", () => toggle(dex, toggleInput));
-                const details = [dex.key, `bot ${dex.botId}`, dex.enabled && dex.entries !== null ? `${fmt(dex.entries)} entries` : null].filter(Boolean).join(" · ");
+                const details = [dex.key, `bot ${dex.botId}`, dex.enabled && dex.entries !== null ? `${fmt(dex.entries)} collectibles` : null].filter(Boolean).join(" · ");
                 return h(
                     "li.mod-dex",
                     { class: dex.enabled ? "" : "is-off" },

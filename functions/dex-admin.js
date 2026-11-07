@@ -1,5 +1,5 @@
 /**
- * Owner-only dex entry editing (Spawn Arts tab). The bot does the work: it builds the art preview
+ * Owner-only dex collectible editing (Spawn Arts tab). The bot does the work: it builds the art preview
  * and hash, and commits the change (with a changelog entry) to the GitHub repo.
  *
  * POST /.netlify/functions/dex-admin

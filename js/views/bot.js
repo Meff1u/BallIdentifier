@@ -148,8 +148,8 @@ export function createView() {
     const COMMANDS = [
         [[h("b", "Identify")], "Right-click a spawn → Apps", "Names the ball in a spawn message, with similarity, rarity and artist. Once every 10 minutes, no cooldown for upvoters.", "Servers"],
         [[h("b", "Check collections")], "Right-click a member → Apps", "Lists the balls that member is a collector of, in every supported dex.", "Servers"],
-        [[code("/info"), " ", h("span.cmd-arg", "dex"), " ", h("span.cmd-arg", "name or ID")], null, "Rarity, wave, common value, collector requirement and demand tier of one entry, with a button to see its collectors.", "Anywhere"],
-        [[code("/collectors"), " ", h("span.cmd-arg", "dex")], null, "Browse the entries of a dex that have collectors, search one by name or ID, and add yourself as a collector with one button.", "Anywhere"],
+        [[code("/info"), " ", h("span.cmd-arg", "dex"), " ", h("span.cmd-arg", "name or ID")], null, "Rarity, wave, common value, collector requirement and demand tier of one collectible, with a button to see its collectors.", "Anywhere"],
+        [[code("/collectors"), " ", h("span.cmd-arg", "dex")], null, "Browse the collectibles of a dex that have collectors, search one by name or ID, and add yourself as a collector with one button.", "Anywhere"],
         [[code("/ballsdex link"), " · ", code("unlink")], null, "Connect your Ballsdex account with Sign in with Ballsdex, or disconnect it (this also deletes your saved collection data).", "Anywhere"],
         [[code("/ballsdex sync")], null, "Import your Ballsdex collection, with live progress and a cancel button. Once every 24 hours.", "Anywhere"],
         [[code("/ballsdex collection")], null, "Totals, specials, rankings and catch times from your last sync.", "Anywhere"],
@@ -245,7 +245,7 @@ export function createView() {
             infoCard(
                 "book-open",
                 "Dex lookups",
-                "Look up any entry of a supported dex without leaving Discord.",
+                "Look up any collectible of a supported dex without leaving Discord.",
                 [
                     h("span", code("/info"), " gives rarity, wave, common value, collector requirement and demand tier."),
                     h("span", code("/collectors"), " lists who owns each collector ball, with search by name or ID."),
