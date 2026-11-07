@@ -1,6 +1,18 @@
 {
     "changes": [
         {
+            "timestamp": "1794080753",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "Kingdom of Sweden is now called Medieval Kingdom of Sweden",
+                "Kingdom of Norway is now called Medieval Kingdom of Norway",
+                "Japanese Cambodia is now called Kingdom of Kampuchea",
+                "State of Guayaquil is now called Free Province of Guayaquil",
+                "Zand Dynasty is now called Zand Iran"
+            ]
+        },
+        {
             "timestamp": "1794080536",
             "type": "dex",
             "dex": "HistoryDex",
