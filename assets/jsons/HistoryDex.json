@@ -2464,6 +2464,11 @@
         "artist": "lilhector_",
         "id": 979
     },
+    "Lan Xang": {
+        "rarity": 61,
+        "artist": "unfunnichez_",
+        "id": 293
+    },
     "Mi'kma'ki": {
         "rarity": 63,
         "artist": "cherriichez_",
@@ -4542,11 +4547,6 @@
         "rarity": 230,
         "artist": "barnabdulla",
         "id": 748
-    },
-    "Lan Xang": {
-        "rarity": 230,
-        "artist": "unfunnichez_",
-        "id": 293
     },
     "New Atlantis": {
         "rarity": 230,
