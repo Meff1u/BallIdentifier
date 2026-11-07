@@ -1040,6 +1040,11 @@
         "artist": "kobersv2",
         "id": 87
     },
+    "Kingdom of Egypt": {
+        "rarity": 21,
+        "artist": "tkon_ymshrolltree_top218",
+        "id": 159
+    },
     "Armenian Empire": {
         "rarity": 22,
         "artist": "hortaas",
@@ -1614,11 +1619,6 @@
         "rarity": 39,
         "artist": "lordaxolotl7",
         "id": 381
-    },
-    "Kingdom of Egypt": {
-        "rarity": 39,
-        "artist": "tkon_ymshrolltree_top218",
-        "id": 159
     },
     "Kingdom of Hanover": {
         "rarity": 39,
