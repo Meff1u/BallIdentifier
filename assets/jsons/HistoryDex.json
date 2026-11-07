@@ -2343,6 +2343,11 @@
         "artist": "ethan_heathcliff",
         "id": 408
     },
+    "Azerbaijan Soviet Socialist Republic": {
+        "rarity": 56,
+        "artist": "floridianirishguy",
+        "id": 52
+    },
     "Crimean Regional Government": {
         "rarity": 57,
         "artist": "lordaxolotl7",
@@ -3496,11 +3501,6 @@
         "rarity": 151,
         "artist": "not_woterbottle",
         "id": 1123
-    },
-    "Azerbaijan Soviet Socialist Republic": {
-        "rarity": 152,
-        "artist": "floridianirishguy",
-        "id": 52
     },
     "Italian Somaliland": {
         "rarity": 152,
