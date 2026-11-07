@@ -1235,11 +1235,6 @@
         "artist": "joykoten7219_849284",
         "id": 91
     },
-    "Central African Empire": {
-        "rarity": 27,
-        "artist": "Arga#1008",
-        "id": 246
-    },
     "Emirate of Cyrenaica": {
         "rarity": 27,
         "artist": "._pudd_.",
@@ -2921,6 +2916,11 @@
         "rarity": 89,
         "artist": "mmm_chloroform",
         "id": 357
+    },
+    "Central African Empire": {
+        "rarity": 90,
+        "artist": "Arga#1008",
+        "id": 246
     },
     "Alodia": {
         "rarity": 90,
