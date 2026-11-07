@@ -699,11 +699,6 @@
         "artist": "n0tch21_98933",
         "id": 280
     },
-    "Empire of China": {
-        "rarity": 16,
-        "artist": "claythekat",
-        "id": 78
-    },
     "Imperial Lisbon": {
         "rarity": 16,
         "artist": "acrestronk",
@@ -1699,6 +1694,11 @@
         "rarity": 39,
         "artist": "aydin_kai22",
         "id": 876
+    },
+    "Empire of China": {
+        "rarity": 40,
+        "artist": "claythekat",
+        "id": 78
     },
     "American-Occupied Greenland": {
         "rarity": 40,
