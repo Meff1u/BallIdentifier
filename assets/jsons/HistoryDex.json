@@ -2414,6 +2414,11 @@
         "artist": "sof_240",
         "id": 57
     },
+    "Kingdom of Zimbabwe": {
+        "rarity": 60,
+        "artist": "sksjssm",
+        "id": 927
+    },
     "Despotate of the Morea": {
         "rarity": 61,
         "artist": "ivn457",
@@ -3123,11 +3128,6 @@
         "rarity": 105,
         "artist": "not_woterbottle",
         "id": 1095
-    },
-    "Kingdom of Zimbabwe": {
-        "rarity": 105,
-        "artist": "sksjssm",
-        "id": 927
     },
     "State of Syria": {
         "rarity": 106,
