@@ -2866,6 +2866,12 @@
         "artist": "justabdulla_previously",
         "id": 1133
     },
+    "Tibet": {
+        "rarity": 86,
+        "artist": "mistythewhisty_",
+        "id": 124,
+        "collectors": ["935901262715699290"]
+    },
     "Duchy of Savoy": {
         "rarity": 87,
         "artist": "vexab",
@@ -4065,12 +4071,6 @@
         "rarity": 190,
         "artist": "not_woterbottle",
         "id": 911
-    },
-    "Tibet": {
-        "rarity": 190,
-        "artist": "mistythewhisty_",
-        "id": 124,
-        "collectors": ["935901262715699290"]
     },
     "British Singapore": {
         "rarity": 191,
