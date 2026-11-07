@@ -1480,11 +1480,6 @@
         "artist": "aydin_kai22",
         "id": 934
     },
-    "Dominion of New Zealand": {
-        "rarity": 35,
-        "artist": "censorbar_",
-        "id": 1037
-    },
     "Herodian Kingdom of Judea": {
         "rarity": 35,
         "artist": "._pudd_.",
@@ -2257,6 +2252,11 @@
         "rarity": 54,
         "artist": "dark3nd",
         "id": 67
+    },
+    "Dominion of New Zealand": {
+        "rarity": 55,
+        "artist": "censorbar_",
+        "id": 1037
     },
     "French Louisiana": {
         "rarity": 55,
