@@ -564,6 +564,11 @@
         "artist": "ocean_wav3",
         "id": 30
     },
+    "First French Republic": {
+        "rarity": 13,
+        "artist": "n0tch21_98933",
+        "id": 373
+    },
     "Belgian Empire": {
         "rarity": 14,
         "artist": "kobersv2 & semana0359",
@@ -1074,11 +1079,6 @@
         "rarity": 23,
         "artist": "._pudd_.",
         "id": 630
-    },
-    "First French Republic": {
-        "rarity": 23,
-        "artist": "n0tch21_98933",
-        "id": 373
     },
     "Kingdom of Yugoslavia": {
         "rarity": 23,
