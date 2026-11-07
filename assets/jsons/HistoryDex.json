@@ -1521,6 +1521,11 @@
         "artist": "4rgenti",
         "id": 96
     },
+    "Tsardom of Bulgaria": {
+        "rarity": 35,
+        "artist": "._pudd_.",
+        "id": 68
+    },
     "Brazilian Military Dictatorship": {
         "rarity": 36,
         "artist": "acrestronk",
@@ -1770,11 +1775,6 @@
         "rarity": 42,
         "artist": "navid_habibi",
         "id": 623
-    },
-    "Tsardom of Bulgaria": {
-        "rarity": 42,
-        "artist": "._pudd_.",
-        "id": 68
     },
     "Ajuran Sultanate": {
         "rarity": 43,
