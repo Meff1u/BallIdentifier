@@ -1230,6 +1230,11 @@
         "artist": "dark3nd",
         "id": 90
     },
+    "Republican Spain": {
+        "rarity": 26,
+        "artist": "joykoten7219_849284",
+        "id": 91
+    },
     "Central African Empire": {
         "rarity": 27,
         "artist": "Arga#1008",
@@ -1419,11 +1424,6 @@
         "rarity": 31,
         "artist": "aydin_kai22",
         "id": 290
-    },
-    "Republican Spain": {
-        "rarity": 31,
-        "artist": "joykoten7219_849284",
-        "id": 91
     },
     "Buyid Dynasty": {
         "rarity": 32,
