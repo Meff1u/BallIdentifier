@@ -1390,6 +1390,11 @@
         "artist": "___.artycal.___",
         "id": 61
     },
+    "Kingdom of Hungary": {
+        "rarity": 30,
+        "artist": "atsui_aki_anii",
+        "id": 310
+    },
     "Bornu Empire": {
         "rarity": 31,
         "artist": "lordaxolotl7",
@@ -2479,11 +2484,6 @@
         "rarity": 65,
         "artist": "average_countryballs_fan",
         "id": 1013
-    },
-    "Kingdom of Hungary": {
-        "rarity": 65,
-        "artist": "atsui_aki_anii",
-        "id": 310
     },
     "Knight's Hospitaller": {
         "rarity": 65,
