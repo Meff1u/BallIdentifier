@@ -694,11 +694,6 @@
         "artist": ".crean",
         "id": 389
     },
-    "Azad Hind": {
-        "rarity": 16,
-        "artist": "n0tch21_98933",
-        "id": 280
-    },
     "Imperial Lisbon": {
         "rarity": 16,
         "artist": "acrestronk",
@@ -2759,6 +2754,11 @@
         "rarity": 74,
         "artist": "chxser_official",
         "id": 1234
+    },
+    "Azad Hind": {
+        "rarity": 75,
+        "artist": "n0tch21_98933",
+        "id": 280
     },
     "German East Africa": {
         "rarity": 75,
