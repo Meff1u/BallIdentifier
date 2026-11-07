@@ -1897,11 +1897,6 @@
         "artist": "ocean_wav3",
         "id": 29
     },
-    "Catalan Republic": {
-        "rarity": 46,
-        "artist": "average_countryballs_fan",
-        "id": 143
-    },
     "Dominion of Australia": {
         "rarity": 46,
         "artist": "ltzbrw",
@@ -4557,6 +4552,11 @@
         "rarity": 230,
         "artist": "orangejuicedrinker69",
         "id": 756
+    },
+    "Catalan Republic": {
+        "rarity": 231,
+        "artist": "average_countryballs_fan",
+        "id": 143
     },
     "German-Occupied Sealand": {
         "rarity": 235,
