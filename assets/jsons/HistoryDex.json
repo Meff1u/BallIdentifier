@@ -149,6 +149,11 @@
         "artist": "pleb0o",
         "id": 963
     },
+    "Han Dynasty": {
+        "rarity": 5,
+        "artist": "___.artycami.___",
+        "id": 133
+    },
     "Jagiellonian Dynasty": {
         "rarity": 5.5,
         "artist": "._pudd_.",
@@ -250,11 +255,6 @@
         "rarity": 8,
         "artist": "claythekat",
         "id": 117
-    },
-    "Han Dynasty": {
-        "rarity": 8,
-        "artist": "___.artycami.___",
-        "id": 133
     },
     "Imperial Berlintangle": {
         "rarity": 8,
