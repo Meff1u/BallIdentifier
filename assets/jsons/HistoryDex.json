@@ -740,6 +740,11 @@
         "id": 1077,
         "collectors": ["558678655945932801"]
     },
+    "Ethiopian Empire": {
+        "rarity": 16,
+        "artist": "dynsic",
+        "id": 162
+    },
     "Assyrian Empire": {
         "rarity": 17,
         "artist": "coruptl3n",
@@ -1154,11 +1159,6 @@
         "rarity": 25,
         "artist": ".oolong_tea.",
         "id": 535
-    },
-    "Ethiopian Empire": {
-        "rarity": 25,
-        "artist": "dynsic",
-        "id": 162
     },
     "Iroquois Confederacy": {
         "rarity": 25,
