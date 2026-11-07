@@ -94,6 +94,11 @@
         "artist": "ethan_heathcliff",
         "id": 65
     },
+    "Spanish Empire": {
+        "rarity": 2,
+        "artist": "acrestronk",
+        "id": 84
+    },
     "Golden Circle": {
         "rarity": 3,
         "artist": "n0tch21_98933",
@@ -108,11 +113,6 @@
         "rarity": 3,
         "artist": "claythekat",
         "id": 99
-    },
-    "Spanish Empire": {
-        "rarity": 3,
-        "artist": "acrestronk",
-        "id": 84
     },
     "Dutch Empire": {
         "rarity": 4,
@@ -148,6 +148,11 @@
         "rarity": 5,
         "artist": "pleb0o",
         "id": 963
+    },
+    "Han Dynasty": {
+        "rarity": 5,
+        "artist": "___.artycami.___",
+        "id": 133
     },
     "Jagiellonian Dynasty": {
         "rarity": 5.5,
@@ -221,11 +226,6 @@
         "artist": "calcenaintnormal",
         "id": 1114
     },
-    "Inca Empire": {
-        "rarity": 7,
-        "artist": "n0tch21_98933",
-        "id": 444
-    },
     "Kingdom of Great Britain": {
         "rarity": 7,
         "artist": "hortaas",
@@ -255,11 +255,6 @@
         "rarity": 8,
         "artist": "claythekat",
         "id": 117
-    },
-    "Han Dynasty": {
-        "rarity": 8,
-        "artist": "___.artycami.___",
-        "id": 133
     },
     "Imperial Berlintangle": {
         "rarity": 8,
@@ -356,6 +351,11 @@
         "rarity": 9,
         "artist": "akirasoku_",
         "id": 103
+    },
+    "Inca Empire": {
+        "rarity": 10,
+        "artist": "n0tch21_98933",
+        "id": 444
     },
     "Ancient Egypt": {
         "rarity": 10,
@@ -464,6 +464,11 @@
         "artist": "kobersv2",
         "id": 639
     },
+    "Aztec Empire": {
+        "rarity": 11,
+        "artist": "Arga#1008",
+        "id": 173
+    },
     "Bolsheviks": {
         "rarity": 12,
         "artist": "edougamer",
@@ -509,6 +514,11 @@
         "artist": "ragnitxt",
         "id": 106
     },
+    "Mayan Empire": {
+        "rarity": 12,
+        "artist": "ethan_heathcliff",
+        "id": 664
+    },
     "European Coal and Steel Community": {
         "rarity": 13,
         "artist": "n0tch21_98933",
@@ -553,6 +563,11 @@
         "rarity": 13,
         "artist": "ocean_wav3",
         "id": 30
+    },
+    "First French Republic": {
+        "rarity": 13,
+        "artist": "n0tch21_98933",
+        "id": 373
     },
     "Belgian Empire": {
         "rarity": 14,
@@ -664,6 +679,11 @@
         "artist": "._pudd_.",
         "id": 18
     },
+    "Akkadian Empire": {
+        "rarity": 15,
+        "artist": ".crean",
+        "id": 389
+    },
     "Azad Hind": {
         "rarity": 16,
         "artist": "n0tch21_98933",
@@ -725,6 +745,11 @@
         "id": 1077,
         "collectors": ["558678655945932801"]
     },
+    "Ethiopian Empire": {
+        "rarity": 16,
+        "artist": "dynsic",
+        "id": 162
+    },
     "Assyrian Empire": {
         "rarity": 17,
         "artist": "coruptl3n",
@@ -755,11 +780,6 @@
         "artist": "unfunnichez_",
         "id": 792
     },
-    "Mayan Empire": {
-        "rarity": 17,
-        "artist": "ethan_heathcliff",
-        "id": 664
-    },
     "Palmyrene Empire": {
         "rarity": 17,
         "artist": "ashesofbliss",
@@ -774,11 +794,6 @@
         "rarity": 17,
         "artist": "ragnitxt",
         "id": 862
-    },
-    "Aztec Empire": {
-        "rarity": 18,
-        "artist": "Arga#1008",
-        "id": 173
     },
     "First Mexican Empire": {
         "rarity": 18,
@@ -1015,7 +1030,7 @@
         "artist": "finski._.",
         "id": 418
     },
-    "Kingdom of Norway": {
+    "Medieval Kingdom of Norway": {
         "rarity": 21,
         "artist": "dudewholikescountryballs",
         "id": 109
@@ -1024,6 +1039,11 @@
         "rarity": 21,
         "artist": "kobersv2",
         "id": 87
+    },
+    "Kingdom of Egypt": {
+        "rarity": 21,
+        "artist": "tkon_ymshrolltree_top218",
+        "id": 159
     },
     "Armenian Empire": {
         "rarity": 22,
@@ -1075,11 +1095,6 @@
         "artist": "._pudd_.",
         "id": 630
     },
-    "First French Republic": {
-        "rarity": 23,
-        "artist": "n0tch21_98933",
-        "id": 373
-    },
     "Kingdom of Yugoslavia": {
         "rarity": 23,
         "artist": "kobersv2",
@@ -1089,6 +1104,11 @@
         "rarity": 23,
         "artist": "ivn457",
         "id": 395
+    },
+    "Mali Empire": {
+        "rarity": 23,
+        "artist": "navid_habibi",
+        "id": 39
     },
     "Adal Sultanate": {
         "rarity": 24,
@@ -1104,11 +1124,6 @@
         "rarity": 24,
         "artist": "ragnitxt",
         "id": 328
-    },
-    "Kingdom of Sikkim": {
-        "rarity": 24,
-        "artist": "aydin_kai22",
-        "id": 145
     },
     "Korean Empire": {
         "rarity": 24,
@@ -1155,11 +1170,6 @@
         "artist": ".oolong_tea.",
         "id": 535
     },
-    "Ethiopian Empire": {
-        "rarity": 25,
-        "artist": "dynsic",
-        "id": 162
-    },
     "Iroquois Confederacy": {
         "rarity": 25,
         "artist": "bhapydageek",
@@ -1184,6 +1194,11 @@
         "rarity": 25,
         "artist": "shellfish72",
         "id": 679
+    },
+    "Grand Duchy of Moscow": {
+        "rarity": 25,
+        "artist": "dynsic",
+        "id": 614
     },
     "Dacia": {
         "rarity": 26,
@@ -1210,10 +1225,15 @@
         "artist": "bfbrobloxplayz",
         "id": 270
     },
-    "Central African Empire": {
-        "rarity": 27,
-        "artist": "Arga#1008",
-        "id": 246
+    "Francoist Spain": {
+        "rarity": 26,
+        "artist": "dark3nd",
+        "id": 90
+    },
+    "Republican Spain": {
+        "rarity": 26,
+        "artist": "joykoten7219_849284",
+        "id": 91
     },
     "Emirate of Cyrenaica": {
         "rarity": 27,
@@ -1229,16 +1249,6 @@
         "rarity": 27,
         "artist": "yourlocal_shit_stain",
         "id": 1163
-    },
-    "Roanoke Colony": {
-        "rarity": 27,
-        "artist": "ethan_heathcliff",
-        "id": 297
-    },
-    "Akkadian Empire": {
-        "rarity": 28,
-        "artist": ".crean",
-        "id": 389
     },
     "Arab Islamic Republic": {
         "rarity": 28,
@@ -1280,6 +1290,11 @@
         "artist": "king_of_pingas",
         "id": 368
     },
+    "Sweden-Norway": {
+        "rarity": 28,
+        "artist": "pixology",
+        "id": 392
+    },
     "Middle Francia": {
         "rarity": 29,
         "artist": "cawthedwal",
@@ -1315,11 +1330,6 @@
         "artist": "bhapydageek",
         "id": 349
     },
-    "Grand Duchy of Moscow": {
-        "rarity": 30,
-        "artist": "dynsic",
-        "id": 614
-    },
     "Italian Regency of Carnaro": {
         "rarity": 30,
         "artist": "vexab",
@@ -1345,11 +1355,6 @@
         "artist": "._pudd_.",
         "id": 841
     },
-    "Mali Empire": {
-        "rarity": 30,
-        "artist": "navid_habibi",
-        "id": 39
-    },
     "New France": {
         "rarity": 30,
         "artist": "argahalakbatak",
@@ -1365,6 +1370,16 @@
         "artist": "dark3nd",
         "id": 561
     },
+    "Russian Soviet Federative Socialist Republic": {
+        "rarity": 30,
+        "artist": "___.artycal.___",
+        "id": 61
+    },
+    "Kingdom of Hungary": {
+        "rarity": 30,
+        "artist": "atsui_aki_anii",
+        "id": 310
+    },
     "Bornu Empire": {
         "rarity": 31,
         "artist": "lordaxolotl7",
@@ -1379,11 +1394,6 @@
         "rarity": 31,
         "artist": "shellfish72",
         "id": 462
-    },
-    "Francoist Spain": {
-        "rarity": 31,
-        "artist": "dark3nd",
-        "id": 90
     },
     "Ghaznavid Empire": {
         "rarity": 31,
@@ -1419,11 +1429,6 @@
         "rarity": 31,
         "artist": "aydin_kai22",
         "id": 290
-    },
-    "Republican Spain": {
-        "rarity": 31,
-        "artist": "joykoten7219_849284",
-        "id": 91
     },
     "Buyid Dynasty": {
         "rarity": 32,
@@ -1470,10 +1475,10 @@
         "artist": "unfunnichez_",
         "id": 725
     },
-    "Dominion of New Zealand": {
-        "rarity": 35,
-        "artist": "censorbar_",
-        "id": 1037
+    "Kingdom of Kongo": {
+        "rarity": 34,
+        "artist": "aydin_kai22",
+        "id": 934
     },
     "Herodian Kingdom of Judea": {
         "rarity": 35,
@@ -1501,11 +1506,6 @@
         "artist": "navid_habibi",
         "id": 542
     },
-    "Sweden-Norway": {
-        "rarity": 35,
-        "artist": "pixology",
-        "id": 392
-    },
     "Swedish Overseas Colonies": {
         "rarity": 35,
         "artist": "n0tch21_98933",
@@ -1515,6 +1515,11 @@
         "rarity": 35,
         "artist": "4rgenti",
         "id": 96
+    },
+    "Tsardom of Bulgaria": {
+        "rarity": 35,
+        "artist": "._pudd_.",
+        "id": 68
     },
     "Brazilian Military Dictatorship": {
         "rarity": 36,
@@ -1545,6 +1550,21 @@
         "rarity": 36,
         "artist": "santiguti08_2011",
         "id": 724
+    },
+    "Argentine Confederation": {
+        "rarity": 36,
+        "artist": "mrgabriel_art",
+        "id": 449
+    },
+    "Dominion of Canada": {
+        "rarity": 36,
+        "artist": "m.oxxy",
+        "id": 130
+    },
+    "Kingdom of Sardinia": {
+        "rarity": 36,
+        "artist": "fordcraft",
+        "id": 256
     },
     "Congress Poland": {
         "rarity": 37,
@@ -1599,7 +1619,7 @@
         "artist": "ongbro",
         "id": 440
     },
-    "Kingdom of Sweden": {
+    "Medieval Kingdom of Sweden": {
         "rarity": 38,
         "artist": "._pudd_.",
         "id": 625
@@ -1610,15 +1630,15 @@
         "id": 853,
         "collectors": ["1163451939997093968"]
     },
+    "Gran Colombia": {
+        "rarity": 38,
+        "artist": "Fished",
+        "id": 45
+    },
     "Grand Duchy of Lithuania": {
         "rarity": 39,
         "artist": "lordaxolotl7",
         "id": 381
-    },
-    "Kingdom of Egypt": {
-        "rarity": 39,
-        "artist": "tkon_ymshrolltree_top218",
-        "id": 159
     },
     "Kingdom of Hanover": {
         "rarity": 39,
@@ -1716,10 +1736,10 @@
         "artist": "unfunnichez_",
         "id": 654
     },
-    "Argentine Confederation": {
-        "rarity": 41,
-        "artist": "mrgabriel_art",
-        "id": 449
+    "Kingdom of Serbia": {
+        "rarity": 40,
+        "artist": "finski._.",
+        "id": 17
     },
     "Democratic Republic of Georgia": {
         "rarity": 41,
@@ -1770,11 +1790,6 @@
         "rarity": 42,
         "artist": "navid_habibi",
         "id": 623
-    },
-    "Tsardom of Bulgaria": {
-        "rarity": 42,
-        "artist": "._pudd_.",
-        "id": 68
     },
     "Ajuran Sultanate": {
         "rarity": 43,
@@ -1897,11 +1912,6 @@
         "artist": "ocean_wav3",
         "id": 29
     },
-    "Catalan Republic": {
-        "rarity": 46,
-        "artist": "average_countryballs_fan",
-        "id": 143
-    },
     "Dominion of Australia": {
         "rarity": 46,
         "artist": "ltzbrw",
@@ -1911,11 +1921,6 @@
         "rarity": 46,
         "artist": "mmm_chloroform",
         "id": 937
-    },
-    "Gran Colombia": {
-        "rarity": 46,
-        "artist": "Fished",
-        "id": 45
     },
     "Irish Free State": {
         "rarity": 46,
@@ -1932,7 +1937,7 @@
         "artist": "ssr.nebulous",
         "id": 302
     },
-    "Zand Dynasty": {
+    "Zand Iran": {
         "rarity": 46,
         "artist": "araxinagisa",
         "id": 532
@@ -1972,11 +1977,6 @@
         "rarity": 48,
         "artist": "gusta._.vo",
         "id": 1121
-    },
-    "Russian Soviet Federative Socialist Republic": {
-        "rarity": 48,
-        "artist": "___.artycal.___",
-        "id": 61
     },
     "United States of Colombia": {
         "rarity": 48,
@@ -2103,15 +2103,10 @@
         "artist": "drugbus",
         "id": 652
     },
-    "Yakut Autonomous Soviet Socialist Republic": {
+    "Tu'i Tonga": {
         "rarity": 50,
-        "artist": "ivn457",
-        "id": 518
-    },
-    "Dominion of Canada": {
-        "rarity": 51,
-        "artist": "m.oxxy",
-        "id": 130
+        "artist": "unfunnichez_",
+        "id": 151
     },
     "Emirate of Diriyah": {
         "rarity": 51,
@@ -2143,11 +2138,6 @@
         "artist": "margraviate.of.austria",
         "id": 1174
     },
-    "Georgian Soviet Socialist Republic": {
-        "rarity": 52,
-        "artist": "themiaumiautonk",
-        "id": 55
-    },
     "Hawaiian Kingdom": {
         "rarity": 52,
         "artist": "akirasoku_",
@@ -2172,6 +2162,16 @@
         "rarity": 52,
         "artist": "franc_spain",
         "id": 980
+    },
+    "Byelorussian Soviet Socialist Republic": {
+        "rarity": 52,
+        "artist": "dark3nd",
+        "id": 53
+    },
+    "Georgian Soviet Socialist Republic": {
+        "rarity": 53,
+        "artist": "themiaumiautonk",
+        "id": 55
     },
     "First Spanish Republic": {
         "rarity": 53,
@@ -2213,11 +2213,6 @@
         "artist": "lunaticsolarian",
         "id": 1118
     },
-    "Tajik Soviet Socialist Republic": {
-        "rarity": 53,
-        "artist": "pixology",
-        "id": 62
-    },
     "Afsharid Empire": {
         "rarity": 54,
         "artist": "dotrer666_lhentsi",
@@ -2248,6 +2243,11 @@
         "artist": "dark3nd",
         "id": 67
     },
+    "Dominion of New Zealand": {
+        "rarity": 55,
+        "artist": "censorbar_",
+        "id": 1037
+    },
     "French Louisiana": {
         "rarity": 55,
         "artist": "carloz4567_46650",
@@ -2277,6 +2277,16 @@
         "rarity": 55,
         "artist": "unfunnichez_",
         "id": 422
+    },
+    "Turkmen Soviet Socialist Republic": {
+        "rarity": 55,
+        "artist": "pixology",
+        "id": 63
+    },
+    "Latvian Soviet Socialist Republic": {
+        "rarity": 55,
+        "artist": "unfunnyguy_.",
+        "id": 60
     },
     "American Confederation of Venezuela": {
         "rarity": 56,
@@ -2323,6 +2333,11 @@
         "artist": "ethan_heathcliff",
         "id": 408
     },
+    "Azerbaijan Soviet Socialist Republic": {
+        "rarity": 56,
+        "artist": "floridianirishguy",
+        "id": 52
+    },
     "Crimean Regional Government": {
         "rarity": 57,
         "artist": "lordaxolotl7",
@@ -2363,15 +2378,15 @@
         "artist": "dynsic",
         "id": 353
     },
+    "Tajik Soviet Socialist Republic": {
+        "rarity": 60,
+        "artist": "pixology",
+        "id": 62
+    },
     "Bahrain and its Dependencies": {
         "rarity": 60,
         "artist": "barnabdulla",
         "id": 810
-    },
-    "Byelorussian Soviet Socialist Republic": {
-        "rarity": 60,
-        "artist": "dark3nd",
-        "id": 53
     },
     "Democratic Republic of Afghanistan": {
         "rarity": 60,
@@ -2389,15 +2404,20 @@
         "id": 701,
         "collectors": ["558678655945932801"]
     },
-    "Turkmen Soviet Socialist Republic": {
-        "rarity": 60,
-        "artist": "pixology",
-        "id": 63
-    },
     "United Tribes Of New Zealand": {
         "rarity": 60,
         "artist": "king_of_pingas",
         "id": 969
+    },
+    "Kirghiz Soviet Socialist Republic": {
+        "rarity": 60,
+        "artist": "sof_240",
+        "id": 57
+    },
+    "Kingdom of Zimbabwe": {
+        "rarity": 60,
+        "artist": "sksjssm",
+        "id": 927
     },
     "Despotate of the Morea": {
         "rarity": 61,
@@ -2419,10 +2439,15 @@
         "artist": "shellfish72",
         "id": 541
     },
-    "Latvian Soviet Socialist Republic": {
-        "rarity": 63,
-        "artist": "unfunnyguy_.",
-        "id": 60
+    "Champasak Kingdom": {
+        "rarity": 61,
+        "artist": "lilhector_",
+        "id": 979
+    },
+    "Lan Xang": {
+        "rarity": 61,
+        "artist": "unfunnichez_",
+        "id": 293
     },
     "Mi'kma'ki": {
         "rarity": 63,
@@ -2444,15 +2469,20 @@
         "artist": "gusta._.vo",
         "id": 1074
     },
+    "Yakut Autonomous Soviet Socialist Republic": {
+        "rarity": 64,
+        "artist": "ivn457",
+        "id": 518
+    },
+    "Kingdom of Sikkim": {
+        "rarity": 64,
+        "artist": "aydin_kai22",
+        "id": 145
+    },
     "Kingdom of Württemberg": {
         "rarity": 64,
         "artist": "oreo_eater5892",
         "id": 175
-    },
-    "Kirghiz Soviet Socialist Republic": {
-        "rarity": 64,
-        "artist": "sof_240",
-        "id": 57
     },
     "Moldavian Soviet Socialist Republic": {
         "rarity": 64,
@@ -2484,11 +2514,6 @@
         "rarity": 65,
         "artist": "average_countryballs_fan",
         "id": 1013
-    },
-    "Kingdom of Hungary": {
-        "rarity": 65,
-        "artist": "atsui_aki_anii",
-        "id": 310
     },
     "Knight's Hospitaller": {
         "rarity": 65,
@@ -2529,11 +2554,6 @@
         "rarity": 66,
         "artist": "neburra_28409 & kobersv2",
         "id": 149
-    },
-    "Kingdom of Sardinia": {
-        "rarity": 66,
-        "artist": "fordcraft",
-        "id": 256
     },
     "New York Colony": {
         "rarity": 66,
@@ -2590,11 +2610,6 @@
         "artist": "hortaas",
         "id": 582
     },
-    "Danish West Indies": {
-        "rarity": 70,
-        "artist": "dudewholikescountryballs",
-        "id": 251
-    },
     "French Algeria": {
         "rarity": 70,
         "artist": "n0tch21_98933",
@@ -2619,6 +2634,11 @@
         "rarity": 70,
         "artist": "lilhector_",
         "id": 893
+    },
+    "People's Republic of Mongolia": {
+        "rarity": 70,
+        "artist": "neburra_28409",
+        "id": 592
     },
     "Alash Autonomy": {
         "rarity": 71,
@@ -2664,6 +2684,11 @@
         "rarity": 72,
         "artist": "damian_randomnumbers",
         "id": 1089
+    },
+    "Democratic Kampuchea": {
+        "rarity": 72,
+        "artist": "kobersv2",
+        "id": 284
     },
     "Emirate of Bukhara": {
         "rarity": 73,
@@ -2724,11 +2749,6 @@
         "rarity": 78,
         "artist": "4rgenti",
         "id": 507
-    },
-    "Curonian Gambia": {
-        "rarity": 79,
-        "artist": "average_countryballs_fan",
-        "id": 929
     },
     "Principality of Wallachia": {
         "rarity": 79,
@@ -2846,6 +2866,12 @@
         "artist": "justabdulla_previously",
         "id": 1133
     },
+    "Tibet": {
+        "rarity": 86,
+        "artist": "mistythewhisty_",
+        "id": 124,
+        "collectors": ["935901262715699290"]
+    },
     "Duchy of Savoy": {
         "rarity": 87,
         "artist": "vexab",
@@ -2880,6 +2906,11 @@
         "rarity": 89,
         "artist": "mmm_chloroform",
         "id": 357
+    },
+    "Central African Empire": {
+        "rarity": 90,
+        "artist": "Arga#1008",
+        "id": 246
     },
     "Alodia": {
         "rarity": 90,
@@ -2947,16 +2978,15 @@
         "artist": "n0tch21_98933",
         "id": 751
     },
+    "Republic of the Sudan": {
+        "rarity": 90,
+        "artist": "bfbrobloxplayz",
+        "id": 932
+    },
     "Colony of Greenland": {
         "rarity": 91,
         "artist": "norwaybestvideos",
         "id": 1111
-    },
-    "New Hebrides Condominium": {
-        "rarity": 91,
-        "artist": "dudewholikescountryballs",
-        "id": 366,
-        "collectors": ["926528778061094962"]
     },
     "Anglo-Egyptian Sudan": {
         "rarity": 92,
@@ -3129,11 +3159,6 @@
         "artist": "not_woterbottle",
         "id": 1095
     },
-    "Kingdom of Zimbabwe": {
-        "rarity": 105,
-        "artist": "sksjssm",
-        "id": 927
-    },
     "State of Syria": {
         "rarity": 106,
         "artist": "chilecountryball2",
@@ -3174,11 +3199,6 @@
         "artist": "gusta._.vo",
         "id": 1135
     },
-    "Republic of the Sudan": {
-        "rarity": 110,
-        "artist": "bfbrobloxplayz",
-        "id": 932
-    },
     "Second Republic of Uganda": {
         "rarity": 110,
         "artist": "lordaxolotl7",
@@ -3214,6 +3234,11 @@
         "rarity": 119,
         "artist": "lordaxolotl7",
         "id": 988
+    },
+    "Roanoke Colony": {
+        "rarity": 120,
+        "artist": "ethan_heathcliff",
+        "id": 297
     },
     "Antillean Confederation": {
         "rarity": 120,
@@ -3341,6 +3366,11 @@
         "artist": "your.polish.parent",
         "id": 450
     },
+    "Orange Free State": {
+        "rarity": 130,
+        "artist": "kyp4rissos",
+        "id": 94
+    },
     "Colony of Liberia": {
         "rarity": 131,
         "artist": "_.lamia_",
@@ -3381,11 +3411,6 @@
         "artist": "censorbar_",
         "id": 504
     },
-    "Empire of Vietnam": {
-        "rarity": 135,
-        "artist": "elizaveta_hedervary",
-        "id": 1092
-    },
     "Italian Eritrea": {
         "rarity": 135,
         "artist": "ltzbrw",
@@ -3405,6 +3430,11 @@
         "rarity": 138,
         "artist": "adamtheteckel",
         "id": 1046
+    },
+    "Danish West Indies": {
+        "rarity": 140,
+        "artist": "dudewholikescountryballs",
+        "id": 251
     },
     "British Gold Coast": {
         "rarity": 140,
@@ -3502,11 +3532,6 @@
         "artist": "not_woterbottle",
         "id": 1123
     },
-    "Azerbaijan Soviet Socialist Republic": {
-        "rarity": 152,
-        "artist": "floridianirishguy",
-        "id": 52
-    },
     "Italian Somaliland": {
         "rarity": 152,
         "artist": "scotto6353",
@@ -3541,11 +3566,6 @@
         "rarity": 155,
         "artist": "yourlocal_shit_stain",
         "id": 1146
-    },
-    "People's Republic of Mongolia": {
-        "rarity": 155,
-        "artist": "neburra_28409",
-        "id": 592
     },
     "Protectorate of Qatar": {
         "rarity": 155,
@@ -3608,15 +3628,21 @@
         "artist": "not_woterbottle",
         "id": 595
     },
-    "Kingdom of Kongo": {
-        "rarity": 159,
-        "artist": "aydin_kai22",
-        "id": 934
-    },
     "Russian Sagallo": {
         "rarity": 159,
         "artist": "mmm_chloroform",
         "id": 496
+    },
+    "New Hebrides Condominium": {
+        "rarity": 160,
+        "artist": "dudewholikescountryballs",
+        "id": 366,
+        "collectors": ["926528778061094962"]
+    },
+    "Curonian Gambia": {
+        "rarity": 160,
+        "artist": "average_countryballs_fan",
+        "id": 929
     },
     "Biafra": {
         "rarity": 160,
@@ -3652,6 +3678,11 @@
         "rarity": 160,
         "artist": "namasayaadhit",
         "id": 572
+    },
+    "Empire of Vietnam": {
+        "rarity": 161,
+        "artist": "elizaveta_hedervary",
+        "id": 1092
     },
     "Union of African States": {
         "rarity": 161,
@@ -3708,7 +3739,7 @@
         "artist": "thefloridianirishguy",
         "id": 1011
     },
-    "Japanese Cambodia": {
+    "Kingdom of Kampuchea": {
         "rarity": 165,
         "artist": "dudewholikescountryballs",
         "id": 465
@@ -3856,7 +3887,7 @@
         "artist": "hortaas",
         "id": 931
     },
-    "State of Guayaquil": {
+    "Free Province of Guayaquil": {
         "rarity": 175,
         "artist": "kobersv2",
         "id": 573
@@ -3911,11 +3942,6 @@
         "artist": "lilhector_",
         "id": 730
     },
-    "Kingdom of Serbia": {
-        "rarity": 180,
-        "artist": "finski._.",
-        "id": 17
-    },
     "Republic of Entre Ríos": {
         "rarity": 180,
         "artist": "._pudd_.",
@@ -3946,7 +3972,7 @@
         "artist": "hortaas",
         "id": 943
     },
-    "Imperial German General Government of Belgium":{
+    "Imperial German General Government of Belgium": {
         "rarity": 182,
         "artist": "theendermans",
         "id": 872
@@ -4071,12 +4097,6 @@
         "artist": "not_woterbottle",
         "id": 911
     },
-    "Tibet": {
-        "rarity": 190,
-        "artist": "mistythewhisty_",
-        "id": 124,
-        "collectors": ["935901262715699290"]
-    },
     "British Singapore": {
         "rarity": 191,
         "artist": "capithecap",
@@ -4096,11 +4116,6 @@
         "rarity": 192,
         "artist": "aydin_kai22",
         "id": 1110
-    },
-    "Tu'i Tonga": {
-        "rarity": 192,
-        "artist": "unfunnichez_",
-        "id": 151
     },
     "British Solomon Islands": {
         "rarity": 193,
@@ -4127,11 +4142,6 @@
         "artist": "argahalakbatak",
         "id": 976
     },
-    "Orange Free State": {
-        "rarity": 194,
-        "artist": "kyp4rissos",
-        "id": 94
-    },
     "American Tientsin": {
         "rarity": 195,
         "artist": "_.lamia_",
@@ -4156,11 +4166,6 @@
         "rarity": 196,
         "artist": "unfunnyguy_.",
         "id": 248
-    },
-    "Democratic Kampuchea": {
-        "rarity": 197,
-        "artist": "kobersv2",
-        "id": 284
     },
     "British Seychelles": {
         "rarity": 198,
@@ -4538,25 +4543,20 @@
         "artist": "lilhector_",
         "id": 638
     },
-    "Champasak Kingdom": {
-        "rarity": 230,
-        "artist": "lilhector_",
-        "id": 979
-    },
     "Chiefdom of Cocollán": {
         "rarity": 230,
         "artist": "barnabdulla",
         "id": 748
     },
-    "Lan Xang": {
-        "rarity": 230,
-        "artist": "unfunnichez_",
-        "id": 293
-    },
     "New Atlantis": {
         "rarity": 230,
         "artist": "orangejuicedrinker69",
         "id": 756
+    },
+    "Catalan Republic": {
+        "rarity": 231,
+        "artist": "average_countryballs_fan",
+        "id": 143
     },
     "German-Occupied Sealand": {
         "rarity": 235,
