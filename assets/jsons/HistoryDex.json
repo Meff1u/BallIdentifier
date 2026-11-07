@@ -94,6 +94,11 @@
         "artist": "ethan_heathcliff",
         "id": 65
     },
+    "Spanish Empire": {
+        "rarity": 2,
+        "artist": "acrestronk",
+        "id": 84
+    },
     "Golden Circle": {
         "rarity": 3,
         "artist": "n0tch21_98933",
@@ -108,11 +113,6 @@
         "rarity": 3,
         "artist": "claythekat",
         "id": 99
-    },
-    "Spanish Empire": {
-        "rarity": 3,
-        "artist": "acrestronk",
-        "id": 84
     },
     "Dutch Empire": {
         "rarity": 4,
