@@ -2459,6 +2459,11 @@
         "artist": "shellfish72",
         "id": 541
     },
+    "Champasak Kingdom": {
+        "rarity": 61,
+        "artist": "lilhector_",
+        "id": 979
+    },
     "Mi'kma'ki": {
         "rarity": 63,
         "artist": "cherriichez_",
@@ -4532,11 +4537,6 @@
         "rarity": 229,
         "artist": "lilhector_",
         "id": 638
-    },
-    "Champasak Kingdom": {
-        "rarity": 230,
-        "artist": "lilhector_",
-        "id": 979
     },
     "Chiefdom of Cocollán": {
         "rarity": 230,
