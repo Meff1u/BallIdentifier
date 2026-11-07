@@ -1576,6 +1576,11 @@
         "artist": "m.oxxy",
         "id": 130
     },
+    "Kingdom of Sardinia": {
+        "rarity": 36,
+        "artist": "fordcraft",
+        "id": 256
+    },
     "Congress Poland": {
         "rarity": 37,
         "artist": "reichmann",
@@ -2524,11 +2529,6 @@
         "rarity": 66,
         "artist": "neburra_28409 & kobersv2",
         "id": 149
-    },
-    "Kingdom of Sardinia": {
-        "rarity": 66,
-        "artist": "fordcraft",
-        "id": 256
     },
     "New York Colony": {
         "rarity": 66,
