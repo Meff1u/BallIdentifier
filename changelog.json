@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1794081387",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "Removed German Marshall Islands"
+            ]
+        },
+        {
             "timestamp": "1794080753",
             "type": "dex",
             "dex": "HistoryDex",
