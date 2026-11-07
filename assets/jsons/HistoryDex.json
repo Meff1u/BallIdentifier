@@ -1225,6 +1225,11 @@
         "artist": "bfbrobloxplayz",
         "id": 270
     },
+    "Francoist Spain": {
+        "rarity": 26,
+        "artist": "dark3nd",
+        "id": 90
+    },
     "Central African Empire": {
         "rarity": 27,
         "artist": "Arga#1008",
@@ -1379,11 +1384,6 @@
         "rarity": 31,
         "artist": "shellfish72",
         "id": 462
-    },
-    "Francoist Spain": {
-        "rarity": 31,
-        "artist": "dark3nd",
-        "id": 90
     },
     "Ghaznavid Empire": {
         "rarity": 31,
