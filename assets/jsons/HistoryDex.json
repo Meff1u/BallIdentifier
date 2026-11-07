@@ -2625,6 +2625,11 @@
         "artist": "lilhector_",
         "id": 893
     },
+    "People's Republic of Mongolia": {
+        "rarity": 70,
+        "artist": "neburra_28409",
+        "id": 592
+    },
     "Alash Autonomy": {
         "rarity": 71,
         "artist": "dynsic",
@@ -3536,11 +3541,6 @@
         "rarity": 155,
         "artist": "yourlocal_shit_stain",
         "id": 1146
-    },
-    "People's Republic of Mongolia": {
-        "rarity": 155,
-        "artist": "neburra_28409",
-        "id": 592
     },
     "Protectorate of Qatar": {
         "rarity": 155,
