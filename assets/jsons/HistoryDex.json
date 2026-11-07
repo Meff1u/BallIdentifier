@@ -2213,11 +2213,6 @@
         "artist": "lunaticsolarian",
         "id": 1118
     },
-    "Tajik Soviet Socialist Republic": {
-        "rarity": 53,
-        "artist": "pixology",
-        "id": 62
-    },
     "Afsharid Empire": {
         "rarity": 54,
         "artist": "dotrer666_lhentsi",
@@ -2382,6 +2377,11 @@
         "rarity": 59,
         "artist": "dynsic",
         "id": 353
+    },
+    "Tajik Soviet Socialist Republic": {
+        "rarity": 60,
+        "artist": "pixology",
+        "id": 62
     },
     "Bahrain and its Dependencies": {
         "rarity": 60,
