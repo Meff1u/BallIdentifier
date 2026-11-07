@@ -2103,11 +2103,6 @@
         "artist": "drugbus",
         "id": 652
     },
-    "Yakut Autonomous Soviet Socialist Republic": {
-        "rarity": 50,
-        "artist": "ivn457",
-        "id": 518
-    },
     "Tu'i Tonga": {
         "rarity": 50,
         "artist": "unfunnichez_",
@@ -2473,6 +2468,11 @@
         "rarity": 63,
         "artist": "gusta._.vo",
         "id": 1074
+    },
+    "Yakut Autonomous Soviet Socialist Republic": {
+        "rarity": 64,
+        "artist": "ivn457",
+        "id": 518
     },
     "Kingdom of Sikkim": {
         "rarity": 64,
