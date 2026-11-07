@@ -2128,6 +2128,11 @@
         "artist": "ivn457",
         "id": 518
     },
+    "Tu'i Tonga": {
+        "rarity": 50,
+        "artist": "unfunnichez_",
+        "id": 151
+    },
     "Emirate of Diriyah": {
         "rarity": 51,
         "artist": "___ultrawatermelon___",
@@ -4091,11 +4096,6 @@
         "rarity": 192,
         "artist": "aydin_kai22",
         "id": 1110
-    },
-    "Tu'i Tonga": {
-        "rarity": 192,
-        "artist": "unfunnichez_",
-        "id": 151
     },
     "British Solomon Islands": {
         "rarity": 193,
