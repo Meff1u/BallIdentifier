@@ -2750,11 +2750,6 @@
         "artist": "4rgenti",
         "id": 507
     },
-    "Curonian Gambia": {
-        "rarity": 79,
-        "artist": "average_countryballs_fan",
-        "id": 929
-    },
     "Principality of Wallachia": {
         "rarity": 79,
         "artist": "finski._.",
@@ -3648,6 +3643,11 @@
         "rarity": 159,
         "artist": "mmm_chloroform",
         "id": 496
+    },
+    "Curonian Gambia": {
+        "rarity": 160,
+        "artist": "average_countryballs_fan",
+        "id": 929
     },
     "Biafra": {
         "rarity": 160,
