@@ -1566,6 +1566,11 @@
         "artist": "mrgabriel_art",
         "id": 449
     },
+    "Dominion of Canada": {
+        "rarity": 36,
+        "artist": "m.oxxy",
+        "id": 130
+    },
     "Congress Poland": {
         "rarity": 37,
         "artist": "reichmann",
@@ -2102,11 +2107,6 @@
         "rarity": 50,
         "artist": "ivn457",
         "id": 518
-    },
-    "Dominion of Canada": {
-        "rarity": 51,
-        "artist": "m.oxxy",
-        "id": 130
     },
     "Emirate of Diriyah": {
         "rarity": 51,
