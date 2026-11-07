@@ -3367,6 +3367,11 @@
         "artist": "your.polish.parent",
         "id": 450
     },
+    "Orange Free State": {
+        "rarity": 130,
+        "artist": "kyp4rissos",
+        "id": 94
+    },
     "Colony of Liberia": {
         "rarity": 131,
         "artist": "_.lamia_",
@@ -4121,11 +4126,6 @@
         "rarity": 194,
         "artist": "argahalakbatak",
         "id": 976
-    },
-    "Orange Free State": {
-        "rarity": 194,
-        "artist": "kyp4rissos",
-        "id": 94
     },
     "American Tientsin": {
         "rarity": 195,
