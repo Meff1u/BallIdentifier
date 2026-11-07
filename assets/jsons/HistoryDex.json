@@ -2168,6 +2168,11 @@
         "artist": "franc_spain",
         "id": 980
     },
+    "Byelorussian Soviet Socialist Republic": {
+        "rarity": 52,
+        "artist": "dark3nd",
+        "id": 53
+    },
     "First Spanish Republic": {
         "rarity": 53,
         "artist": "dudewholikescountryballs",
@@ -2362,11 +2367,6 @@
         "rarity": 60,
         "artist": "barnabdulla",
         "id": 810
-    },
-    "Byelorussian Soviet Socialist Republic": {
-        "rarity": 60,
-        "artist": "dark3nd",
-        "id": 53
     },
     "Democratic Republic of Afghanistan": {
         "rarity": 60,
