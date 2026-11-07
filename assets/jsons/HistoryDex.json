@@ -2690,6 +2690,11 @@
         "artist": "damian_randomnumbers",
         "id": 1089
     },
+    "Democratic Kampuchea": {
+        "rarity": 72,
+        "artist": "kobersv2",
+        "id": 284
+    },
     "Emirate of Bukhara": {
         "rarity": 73,
         "artist": "average_countryballs_fan",
@@ -4151,11 +4156,6 @@
         "rarity": 196,
         "artist": "unfunnyguy_.",
         "id": 248
-    },
-    "Democratic Kampuchea": {
-        "rarity": 197,
-        "artist": "kobersv2",
-        "id": 284
     },
     "British Seychelles": {
         "rarity": 198,
