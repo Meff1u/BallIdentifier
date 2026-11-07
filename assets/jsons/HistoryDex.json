@@ -2278,6 +2278,11 @@
         "artist": "unfunnichez_",
         "id": 422
     },
+    "Turkmen Soviet Socialist Republic": {
+        "rarity": 55,
+        "artist": "pixology",
+        "id": 63
+    },
     "American Confederation of Venezuela": {
         "rarity": 56,
         "artist": "yourlocal_shit_stain",
@@ -2383,11 +2388,6 @@
         "artist": "santiguti08_2011",
         "id": 701,
         "collectors": ["558678655945932801"]
-    },
-    "Turkmen Soviet Socialist Republic": {
-        "rarity": 60,
-        "artist": "pixology",
-        "id": 63
     },
     "United Tribes Of New Zealand": {
         "rarity": 60,
