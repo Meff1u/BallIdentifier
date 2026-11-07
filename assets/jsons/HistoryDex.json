@@ -2988,12 +2988,6 @@
         "artist": "norwaybestvideos",
         "id": 1111
     },
-    "New Hebrides Condominium": {
-        "rarity": 91,
-        "artist": "dudewholikescountryballs",
-        "id": 366,
-        "collectors": ["926528778061094962"]
-    },
     "Anglo-Egyptian Sudan": {
         "rarity": 92,
         "artist": "n0tch21_98933",
@@ -3643,6 +3637,12 @@
         "rarity": 159,
         "artist": "mmm_chloroform",
         "id": 496
+    },
+    "New Hebrides Condominium": {
+        "rarity": 160,
+        "artist": "dudewholikescountryballs",
+        "id": 366,
+        "collectors": ["926528778061094962"]
     },
     "Curonian Gambia": {
         "rarity": 160,
