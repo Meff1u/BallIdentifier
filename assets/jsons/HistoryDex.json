@@ -1490,6 +1490,11 @@
         "artist": "unfunnichez_",
         "id": 725
     },
+    "Kingdom of Kongo": {
+        "rarity": 34,
+        "artist": "aydin_kai22",
+        "id": 934
+    },
     "Dominion of New Zealand": {
         "rarity": 35,
         "artist": "censorbar_",
@@ -3602,11 +3607,6 @@
         "rarity": 159,
         "artist": "not_woterbottle",
         "id": 595
-    },
-    "Kingdom of Kongo": {
-        "rarity": 159,
-        "artist": "aydin_kai22",
-        "id": 934
     },
     "Russian Sagallo": {
         "rarity": 159,
