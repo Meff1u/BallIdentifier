@@ -2394,6 +2394,11 @@
         "artist": "king_of_pingas",
         "id": 969
     },
+    "Kirghiz Soviet Socialist Republic": {
+        "rarity": 60,
+        "artist": "sof_240",
+        "id": 57
+    },
     "Despotate of the Morea": {
         "rarity": 61,
         "artist": "ivn457",
@@ -2443,11 +2448,6 @@
         "rarity": 64,
         "artist": "oreo_eater5892",
         "id": 175
-    },
-    "Kirghiz Soviet Socialist Republic": {
-        "rarity": 64,
-        "artist": "sof_240",
-        "id": 57
     },
     "Moldavian Soviet Socialist Republic": {
         "rarity": 64,
