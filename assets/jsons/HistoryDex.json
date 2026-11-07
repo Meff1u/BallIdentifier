@@ -1125,11 +1125,6 @@
         "artist": "ragnitxt",
         "id": 328
     },
-    "Kingdom of Sikkim": {
-        "rarity": 24,
-        "artist": "aydin_kai22",
-        "id": 145
-    },
     "Korean Empire": {
         "rarity": 24,
         "artist": "pepsikosc",
@@ -2488,6 +2483,11 @@
         "rarity": 63,
         "artist": "gusta._.vo",
         "id": 1074
+    },
+    "Kingdom of Sikkim": {
+        "rarity": 64,
+        "artist": "aydin_kai22",
+        "id": 145
     },
     "Kingdom of Württemberg": {
         "rarity": 64,
