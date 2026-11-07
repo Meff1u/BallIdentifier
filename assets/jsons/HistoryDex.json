@@ -1385,6 +1385,11 @@
         "artist": "dark3nd",
         "id": 561
     },
+    "Russian Soviet Federative Socialist Republic": {
+        "rarity": 30,
+        "artist": "___.artycal.___",
+        "id": 61
+    },
     "Bornu Empire": {
         "rarity": 31,
         "artist": "lordaxolotl7",
@@ -1967,11 +1972,6 @@
         "rarity": 48,
         "artist": "gusta._.vo",
         "id": 1121
-    },
-    "Russian Soviet Federative Socialist Republic": {
-        "rarity": 48,
-        "artist": "___.artycal.___",
-        "id": 61
     },
     "United States of Colombia": {
         "rarity": 48,
