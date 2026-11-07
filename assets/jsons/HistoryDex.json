@@ -2610,11 +2610,6 @@
         "artist": "hortaas",
         "id": 582
     },
-    "Danish West Indies": {
-        "rarity": 70,
-        "artist": "dudewholikescountryballs",
-        "id": 251
-    },
     "French Algeria": {
         "rarity": 70,
         "artist": "n0tch21_98933",
@@ -3451,6 +3446,11 @@
         "rarity": 138,
         "artist": "adamtheteckel",
         "id": 1046
+    },
+    "Danish West Indies": {
+        "rarity": 140,
+        "artist": "dudewholikescountryballs",
+        "id": 251
     },
     "British Gold Coast": {
         "rarity": 140,
