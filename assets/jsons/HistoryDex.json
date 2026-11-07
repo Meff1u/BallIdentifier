@@ -2283,6 +2283,11 @@
         "artist": "pixology",
         "id": 63
     },
+    "Latvian Soviet Socialist Republic": {
+        "rarity": 55,
+        "artist": "unfunnyguy_.",
+        "id": 60
+    },
     "American Confederation of Venezuela": {
         "rarity": 56,
         "artist": "yourlocal_shit_stain",
@@ -2418,11 +2423,6 @@
         "rarity": 61,
         "artist": "shellfish72",
         "id": 541
-    },
-    "Latvian Soviet Socialist Republic": {
-        "rarity": 63,
-        "artist": "unfunnyguy_.",
-        "id": 60
     },
     "Mi'kma'ki": {
         "rarity": 63,
