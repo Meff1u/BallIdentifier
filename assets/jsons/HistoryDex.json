@@ -514,6 +514,11 @@
         "artist": "ragnitxt",
         "id": 106
     },
+    "Mayan Empire": {
+        "rarity": 12,
+        "artist": "ethan_heathcliff",
+        "id": 664
+    },
     "European Coal and Steel Community": {
         "rarity": 13,
         "artist": "n0tch21_98933",
@@ -759,11 +764,6 @@
         "rarity": 17,
         "artist": "unfunnichez_",
         "id": 792
-    },
-    "Mayan Empire": {
-        "rarity": 17,
-        "artist": "ethan_heathcliff",
-        "id": 664
     },
     "Palmyrene Empire": {
         "rarity": 17,
