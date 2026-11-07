@@ -1756,6 +1756,11 @@
         "artist": "unfunnichez_",
         "id": 654
     },
+    "Kingdom of Serbia": {
+        "rarity": 40,
+        "artist": "finski._.",
+        "id": 17
+    },
     "Democratic Republic of Georgia": {
         "rarity": 41,
         "artist": "pixology",
@@ -3905,11 +3910,6 @@
         "rarity": 180,
         "artist": "lilhector_",
         "id": 730
-    },
-    "Kingdom of Serbia": {
-        "rarity": 180,
-        "artist": "finski._.",
-        "id": 17
     },
     "Republic of Entre Ríos": {
         "rarity": 180,
