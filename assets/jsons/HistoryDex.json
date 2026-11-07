@@ -679,6 +679,11 @@
         "artist": "._pudd_.",
         "id": 18
     },
+    "Akkadian Empire": {
+        "rarity": 15,
+        "artist": ".crean",
+        "id": 389
+    },
     "Azad Hind": {
         "rarity": 16,
         "artist": "n0tch21_98933",
@@ -1234,11 +1239,6 @@
         "rarity": 27,
         "artist": "ethan_heathcliff",
         "id": 297
-    },
-    "Akkadian Empire": {
-        "rarity": 28,
-        "artist": ".crean",
-        "id": 389
     },
     "Arab Islamic Republic": {
         "rarity": 28,
