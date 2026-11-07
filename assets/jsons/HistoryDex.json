@@ -1190,6 +1190,11 @@
         "artist": "shellfish72",
         "id": 679
     },
+    "Grand Duchy of Moscow": {
+        "rarity": 25,
+        "artist": "dynsic",
+        "id": 614
+    },
     "Dacia": {
         "rarity": 26,
         "artist": "drugbus",
@@ -1314,11 +1319,6 @@
         "rarity": 30,
         "artist": "bhapydageek",
         "id": 349
-    },
-    "Grand Duchy of Moscow": {
-        "rarity": 30,
-        "artist": "dynsic",
-        "id": 614
     },
     "Italian Regency of Carnaro": {
         "rarity": 30,
