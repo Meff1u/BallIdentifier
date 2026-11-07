@@ -464,6 +464,11 @@
         "artist": "kobersv2",
         "id": 639
     },
+    "Aztec Empire": {
+        "rarity": 11,
+        "artist": "Arga#1008",
+        "id": 173
+    },
     "Bolsheviks": {
         "rarity": 12,
         "artist": "edougamer",
@@ -774,11 +779,6 @@
         "rarity": 17,
         "artist": "ragnitxt",
         "id": 862
-    },
-    "Aztec Empire": {
-        "rarity": 18,
-        "artist": "Arga#1008",
-        "id": 173
     },
     "First Mexican Empire": {
         "rarity": 18,
@@ -3946,7 +3946,7 @@
         "artist": "hortaas",
         "id": 943
     },
-    "Imperial German General Government of Belgium":{
+    "Imperial German General Government of Belgium": {
         "rarity": 182,
         "artist": "theendermans",
         "id": 872
