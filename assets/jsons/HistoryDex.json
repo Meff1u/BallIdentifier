@@ -1100,6 +1100,11 @@
         "artist": "ivn457",
         "id": 395
     },
+    "Mali Empire": {
+        "rarity": 23,
+        "artist": "navid_habibi",
+        "id": 39
+    },
     "Adal Sultanate": {
         "rarity": 24,
         "artist": "lilhector_",
@@ -1344,11 +1349,6 @@
         "rarity": 30,
         "artist": "._pudd_.",
         "id": 841
-    },
-    "Mali Empire": {
-        "rarity": 30,
-        "artist": "navid_habibi",
-        "id": 39
     },
     "New France": {
         "rarity": 30,
