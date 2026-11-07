@@ -2138,11 +2138,6 @@
         "artist": "margraviate.of.austria",
         "id": 1174
     },
-    "Georgian Soviet Socialist Republic": {
-        "rarity": 52,
-        "artist": "themiaumiautonk",
-        "id": 55
-    },
     "Hawaiian Kingdom": {
         "rarity": 52,
         "artist": "akirasoku_",
@@ -2172,6 +2167,11 @@
         "rarity": 52,
         "artist": "dark3nd",
         "id": 53
+    },
+    "Georgian Soviet Socialist Republic": {
+        "rarity": 53,
+        "artist": "themiaumiautonk",
+        "id": 55
     },
     "First Spanish Republic": {
         "rarity": 53,
