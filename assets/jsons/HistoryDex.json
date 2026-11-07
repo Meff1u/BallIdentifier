@@ -1551,6 +1551,11 @@
         "artist": "santiguti08_2011",
         "id": 724
     },
+    "Argentine Confederation": {
+        "rarity": 36,
+        "artist": "mrgabriel_art",
+        "id": 449
+    },
     "Congress Poland": {
         "rarity": 37,
         "artist": "reichmann",
@@ -1715,11 +1720,6 @@
         "rarity": 40,
         "artist": "unfunnichez_",
         "id": 654
-    },
-    "Argentine Confederation": {
-        "rarity": 41,
-        "artist": "mrgabriel_art",
-        "id": 449
     },
     "Democratic Republic of Georgia": {
         "rarity": 41,
