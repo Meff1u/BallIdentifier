@@ -221,11 +221,6 @@
         "artist": "calcenaintnormal",
         "id": 1114
     },
-    "Inca Empire": {
-        "rarity": 7,
-        "artist": "n0tch21_98933",
-        "id": 444
-    },
     "Kingdom of Great Britain": {
         "rarity": 7,
         "artist": "hortaas",
@@ -356,6 +351,11 @@
         "rarity": 9,
         "artist": "akirasoku_",
         "id": 103
+    },
+    "Inca Empire": {
+        "rarity": 10,
+        "artist": "n0tch21_98933",
+        "id": 444
     },
     "Ancient Egypt": {
         "rarity": 10,
