@@ -3411,11 +3411,6 @@
         "artist": "censorbar_",
         "id": 504
     },
-    "Empire of Vietnam": {
-        "rarity": 135,
-        "artist": "elizaveta_hedervary",
-        "id": 1092
-    },
     "Italian Eritrea": {
         "rarity": 135,
         "artist": "ltzbrw",
@@ -3683,6 +3678,11 @@
         "rarity": 160,
         "artist": "namasayaadhit",
         "id": 572
+    },
+    "Empire of Vietnam": {
+        "rarity": 161,
+        "artist": "elizaveta_hedervary",
+        "id": 1092
     },
     "Union of African States": {
         "rarity": 161,
