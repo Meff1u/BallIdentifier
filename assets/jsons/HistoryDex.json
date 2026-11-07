@@ -1300,6 +1300,11 @@
         "artist": "king_of_pingas",
         "id": 368
     },
+    "Sweden-Norway": {
+        "rarity": 28,
+        "artist": "pixology",
+        "id": 392
+    },
     "Middle Francia": {
         "rarity": 29,
         "artist": "cawthedwal",
@@ -1500,11 +1505,6 @@
         "rarity": 35,
         "artist": "navid_habibi",
         "id": 542
-    },
-    "Sweden-Norway": {
-        "rarity": 35,
-        "artist": "pixology",
-        "id": 392
     },
     "Swedish Overseas Colonies": {
         "rarity": 35,
