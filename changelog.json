@@ -1,6 +1,28 @@
 {
     "changes": [
         {
+            "timestamp": "1794139006",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "Azad Hind: rarity T16 → T75",
+                "British Empire: artist definition_of_peak → undertaleisfun777",
+                "Dutch Republic: rarity T19 → T10",
+                "Republic of Genoa: rarity T67 → T18",
+                "Siberian Republic: rarity T24 → T51",
+                "Pahlavi Dynasty is now called Pahlavi Iran",
+                "Pahlavi Iran: rarity T19 → T25",
+                "Kievan Rus': rarity T24 → T13",
+                "British Raj: rarity T19 → T15",
+                "First French Colonial Empire: rarity T4 → T3",
+                "Confederation of the Rhine: rarity T181 → T30",
+                "Italian Regency of Carnaro: rarity T30 → T60",
+                "Proto-German Empire: rarity T17 → T40",
+                "Maurya Empire: rarity T8 → T6",
+                "Kingdom of Montenegro: rarity T84 → T60"
+            ]
+        },
+        {
             "timestamp": "1794086000",
             "type": "website",
             "changes": [
