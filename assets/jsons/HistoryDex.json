@@ -887,11 +887,6 @@
         "artist": "lilhector_",
         "id": 515
     },
-    "Pahlavi Dynasty": {
-        "rarity": 19,
-        "artist": "navid_habibi",
-        "id": 92
-    },
     "Qajar Dynasty": {
         "rarity": 19,
         "artist": "n0tch21_98933",
@@ -1149,6 +1144,11 @@
         "rarity": 24,
         "artist": "pepsikosc",
         "id": 1087
+    },
+    "Pahlavi Iran": {
+        "rarity": 25,
+        "artist": "navid_habibi",
+        "id": 92
     },
     "Almohad Caliphate": {
         "rarity": 25,
