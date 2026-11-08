@@ -584,6 +584,11 @@
         "artist": "n0tch21_98933",
         "id": 373
     },
+    "Kievan Rus'": {
+        "rarity": 13,
+        "artist": "ragnitxt",
+        "id": 328
+    },
     "Belgian Empire": {
         "rarity": 14,
         "artist": "kobersv2 & semana0359",
@@ -1134,11 +1139,6 @@
         "rarity": 24,
         "artist": "._pudd_.",
         "id": 459
-    },
-    "Kievan Rus'": {
-        "rarity": 24,
-        "artist": "ragnitxt",
-        "id": 328
     },
     "Korean Empire": {
         "rarity": 24,
