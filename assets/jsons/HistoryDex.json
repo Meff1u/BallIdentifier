@@ -454,6 +454,11 @@
         "artist": "fireonastick",
         "id": 700
     },
+    "Dutch Republic": {
+        "rarity": 10,
+        "artist": "carolea_ii_of_citrus",
+        "id": 643
+    },
     "Austrian Empire": {
         "rarity": 11,
         "artist": "dark3nd",
@@ -856,11 +861,6 @@
         "artist": "aml401_9716",
         "id": 1091,
         "collectors": ["558678655945932801"]
-    },
-    "Dutch Republic": {
-        "rarity": 19,
-        "artist": "carolea_ii_of_citrus",
-        "id": 643
     },
     "Kingdom of Spain": {
         "rarity": 19,
