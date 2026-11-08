@@ -1,14 +1,6 @@
 {
     "changes": [
         {
-            "timestamp": "1794165228",
-            "type": "dex",
-            "dex": "HistoryDex",
-            "changes": [
-                "New collectible: Republic of North Peru (T119)"
-            ]
-        },
-        {
             "timestamp": "1794165120",
             "type": "dex",
             "dex": "HistoryDex",
@@ -27,8 +19,7 @@
                 "New collectible: Novgorod Republic (T30)",
                 "New collectible: Quraysh Tribal Confederation (T70)",
                 "New collectible: Republic of Bolivia (T45)",
-                "New collectible: Republic of North Peru (T119)",
-                "285 balls rarer than T119 moved one rarity down"
+                "New collectible: Republic of North Peru (T119)"
             ]
         },
         {
