@@ -1,6 +1,18 @@
 {
     "changes": [
         {
+            "timestamp": "1794165544",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "New collectible: Republic of South Peru (T120)",
+                "New collectible: Socialist Republic of the Union of Burma (T83)",
+                "New collectible: Ukrainian State (T51)",
+                "New collectible: Ras Rumman (T200)",
+                "Ras Rumman: rarity T200 → T234"
+            ]
+        },
+        {
             "timestamp": "1794165120",
             "type": "dex",
             "dex": "HistoryDex",
