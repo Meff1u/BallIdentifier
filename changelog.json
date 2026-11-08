@@ -1,6 +1,29 @@
 {
     "changes": [
         {
+            "timestamp": "1794165120",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "New collectible: Duchy of Amalfi (T60)",
+                "New collectible: Republic of Ancona (T100)",
+                "New collectible: Republic of Noli (T210)",
+                "New collectible: Durrani Empire (T16)",
+                "New collectible: Dzungar Khanate (T17.5)",
+                "New collectible: Emirate of Granada (T50)",
+                "New collectible: First Syrian Republic (T68)",
+                "New collectible: Imperial Vienna (T15)",
+                "New collectible: Iraqi Republic (T55)",
+                "New collectible: Mengjiang (T40)",
+                "New collectible: New Amsterdam (T48)",
+                "New collectible: Novgorod Republic (T30)",
+                "New collectible: Quraysh Tribal Confederation (T70)",
+                "New collectible: Republic of Bolivia (T45)",
+                "New collectible: Republic of North Peru (T119)",
+                "285 balls rarer than T119 moved one rarity down"
+            ]
+        },
+        {
             "timestamp": "1794163286",
             "type": "dex",
             "dex": "HistoryDex",
