@@ -4,7 +4,10 @@
  *
  * POST /.netlify/functions/dex-admin
  *   { action: "save", dex, originalName?, name, details, image?: base64, shift?: "higher" | "same", previousAlt?: string, previousUntil?: string }
+ *   artType (with an image, editing): "new" | "fixed" | "frame" (frame: Ballsdex only)
  *   { action: "delete", dex, name }
+ *   { action: "frames", dex }                                      -> { names } Ballsdex collectibles with a frame art
+ *   { action: "restore", dex, name, previousAlt?, previousUntil? } -> puts the original art back
  */
 
 const { botApiFetch } = require("../lib/bot-api");
@@ -22,7 +25,7 @@ exports.handler = async (event) => {
     if ((event.body || "").length > MAX_BODY) return json(413, { error: "The image is too big." });
 
     const body = parseJsonBody(event);
-    if (!body || typeof body.dex !== "string" || typeof body.name !== "string") return json(400, { error: "Invalid request" });
+    if (!body || typeof body.dex !== "string" || (body.action !== "frames" && typeof body.name !== "string")) return json(400, { error: "Invalid request" });
 
     let path;
     let payload;
@@ -35,6 +38,18 @@ exports.handler = async (event) => {
             details: body.details && typeof body.details === "object" ? body.details : {},
             image: typeof body.image === "string" && body.image ? body.image : null,
             shift: body.shift === "higher" || body.shift === "same" ? body.shift : null,
+            previousAlt: typeof body.previousAlt === "string" ? body.previousAlt.slice(0, 200) : "",
+            previousUntil: typeof body.previousUntil === "string" ? body.previousUntil.slice(0, 60) : "",
+            artType: body.artType === "fixed" || body.artType === "frame" ? body.artType : "new",
+        };
+    } else if (body.action === "frames") {
+        path = "frames";
+        payload = { dex: body.dex };
+    } else if (body.action === "restore") {
+        path = "restore";
+        payload = {
+            dex: body.dex,
+            name: body.name,
             previousAlt: typeof body.previousAlt === "string" ? body.previousAlt.slice(0, 200) : "",
             previousUntil: typeof body.previousUntil === "string" ? body.previousUntil.slice(0, 60) : "",
         };

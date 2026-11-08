@@ -342,6 +342,15 @@ export function createView() {
             }
         });
 
+        // Owner, Ballsdex: a collectible with a frame art can get its original art back
+        const restoreBtn = h("button.btn", { type: "button", hidden: true }, icon("history"), h("span", "Restore original art"));
+        restoreBtn.addEventListener("click", () => restoreOriginal(name, dexName));
+        if (getUser()?.id === OWNER_ID && dexName === "Ballsdex") {
+            frameNames().then((names) => {
+                restoreBtn.hidden = !names.has(name);
+            });
+        }
+
         openDialog({
             title: name,
             wide: true,
@@ -361,6 +370,7 @@ export function createView() {
                         specialsSection,
                         h(
                             "div.bd-actions",
+                            restoreBtn,
                             prevBtn,
                             copyBtn,
                             h("a.btn.btn-ghost", { href: `https://github.com/Meff1u/BallIdentifier/blob/main/assets/jsons/${encodeURIComponent(dexName)}.json`, target: "_blank", rel: "noopener" }, icon("external-link"), h("span", "Wrong details? Fix on GitHub")),
@@ -491,6 +501,78 @@ export function createView() {
         });
     }
 
+    /**
+     * A new art for an existing collectible: what kind of change is it? (the changelog line depends on it)
+     * "new" | "fixed" | "frame" (Ballsdex only), null = cancel
+     */
+    function askArtType(name, dexName) {
+        return new Promise((resolve) => {
+            let answer = null;
+            const choose = (value) => {
+                answer = value;
+                dialog.close();
+            };
+            const ballsdex = dexName === "Ballsdex";
+            const dialog = openDialog({
+                title: "What kind of spawn art is this?",
+                body: h(
+                    "div.stack",
+                    h("p.muted", `New art for ${name}. The changelog and what happens to the old art depend on your choice.`),
+                    h(
+                        "ul.shift-options",
+                        h("li", h("b", "New spawn art: "), ballsdex ? "a new art for the ball. The old art moves to Previous arts (with the details you filled in)." : "a new art for the ball. The old art is replaced."),
+                        h("li", h("b", "Fixed spawn art: "), "a fix of the current art. The old art is replaced and doesn't go to Previous arts."),
+                        ballsdex ? h("li", h("b", "Frame art: "), "a temporary art. The old art is kept aside and doesn't go to Previous arts; you can restore it any time from the ball's window.") : null,
+                    ),
+                ),
+                footer: [
+                    h("button.btn.btn-ghost", { type: "button", onclick: () => choose(null) }, "Cancel"),
+                    h("button.btn", { type: "button", onclick: () => choose("fixed") }, "Fixed spawn art"),
+                    ballsdex ? h("button.btn", { type: "button", onclick: () => choose("frame") }, "Frame art") : null,
+                    h("button.btn.btn-primary", { type: "button", onclick: () => choose("new") }, "New spawn art"),
+                ].filter(Boolean),
+                onClose: () => resolve(answer),
+            });
+        });
+    }
+
+    // Ballsdex collectibles that have a frame art (read from the repo by the bot, so it is current before the next deploy)
+    let framePromise = null;
+    const frameNames = () => (framePromise ??= api("dex-admin", { method: "POST", body: { action: "frames", dex: "Ballsdex", name: "" } }).then((result) => new Set(result.names || [])).catch(() => new Set()));
+
+    /** Frame art -> the original comes back and the frame art goes to Previous arts */
+    function restoreOriginal(name, dexName) {
+        const thisMonth = new Date().toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+        const untilInput = h("input.input", { id: "dex-restore-until", type: "text", maxLength: 60, autocomplete: "off", value: thisMonth });
+        const altInput = h("input.input", { id: "dex-restore-alt", type: "text", maxLength: 200, autocomplete: "off", placeholder: "e.g. Frame art for the birthday event" });
+        const restoreBtn = h("button.btn.btn-primary", { type: "button" }, icon("history"), h("span", "Restore"));
+        const dialog = openDialog({
+            title: `Restore the original art of ${name}`,
+            body: h(
+                "div.stack",
+                h("p.muted", "The frame art moves to Previous arts and the original art, with its artist, comes back."),
+                h("div.dex-form-grid", h("div.field", h("label.label", { for: "dex-restore-until" }, "Frame art used until"), untilInput), h("div.field", h("label.label", { for: "dex-restore-alt" }, "Alt text for the frame art (optional)"), altInput)),
+            ),
+            footer: [h("button.btn", { type: "button", onclick: () => dialog.close() }, "Cancel"), restoreBtn],
+        });
+        restoreBtn.addEventListener("click", async () => {
+            restoreBtn.disabled = true;
+            try {
+                const result = await api("dex-admin", { method: "POST", body: { action: "restore", dex: dexName, name, previousAlt: altInput.value.trim(), previousUntil: untilInput.value.trim() || thisMonth } });
+                framePromise = null;
+                if (loadedDex === dexName) {
+                    balls = balls.map(([ballName, details, cardEl]) => (ballName === name ? [ballName, result.entry, card(ballName, result.entry)] : [ballName, details, cardEl]));
+                    sortAndRender();
+                }
+                toast(`The original art of ${name} is back. The site shows it after the next deploy (about a minute).`, "success", 6000);
+                dialog.close();
+            } catch (error) {
+                restoreBtn.disabled = false;
+                toast(error.message, "error", 8000);
+            }
+        });
+    }
+
     const FORM_FIELDS = [
         ["rarity", "Rarity", "e.g. 13", true],
         ["artist", "Artist", "", true],
@@ -540,7 +622,7 @@ export function createView() {
             { hidden: true },
             h("div.field", h("label.label", { for: "dex-until" }, "Old art used until"), untilInput),
             h("div.field", h("label.label", { for: "dex-alt" }, "Alt text for the old art (optional)"), altInput),
-            h("span.hint", { style: { "grid-column": "1 / -1" } }, "The current art moves to Previous arts with these details."),
+            h("span.hint", { style: { "grid-column": "1 / -1" } }, "With New spawn art the current art moves to Previous arts with these details."),
         );
         fileInput.addEventListener("change", () => {
             const file = fileInput.files[0];
@@ -603,11 +685,18 @@ export function createView() {
                 }
             }
 
+            let artType = "new";
+            if (file && !isNew) {
+                artType = await askArtType(originalName, dexName);
+                if (artType === null) return;
+            }
+
             busy(true, "Saving…");
             try {
                 const image = file ? await readBase64(file) : null;
-                const result = await api("dex-admin", { method: "POST", body: { action: "save", dex: dexName, originalName, name, details, image, shift, previousAlt: image ? altInput.value.trim() : "", previousUntil: image ? untilInput.value.trim() || thisMonth : "" } });
+                const result = await api("dex-admin", { method: "POST", body: { action: "save", dex: dexName, originalName, name, details, image, shift, artType, previousAlt: image ? altInput.value.trim() : "", previousUntil: image ? untilInput.value.trim() || thisMonth : "" } });
                 saved = true;
+                framePromise = null;
                 if (loadedDex === dexName) applySaved(originalName, result, pickedUrl);
                 toast(`${result.name} saved. The site shows it after the next deploy (about a minute).`, "success", 6000);
                 dialog.close();
