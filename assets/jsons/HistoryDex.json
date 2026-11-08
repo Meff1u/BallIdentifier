@@ -704,6 +704,11 @@
         "artist": ".crean",
         "id": 389
     },
+    "British Raj": {
+        "rarity": 15,
+        "artist": "n0tch21_98933",
+        "id": 77
+    },
     "Imperial Lisbon": {
         "rarity": 16,
         "artist": "acrestronk",
@@ -860,11 +865,6 @@
         "rarity": 18,
         "artist": "oreo_eater5892",
         "id": 564
-    },
-    "British Raj": {
-        "rarity": 19,
-        "artist": "n0tch21_98933",
-        "id": 77
     },
     "Commonwealth Warsaw": {
         "rarity": 19,
