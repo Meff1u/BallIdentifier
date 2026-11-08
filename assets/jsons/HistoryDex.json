@@ -4647,11 +4647,6 @@
         "artist": "pepsikosc",
         "id": 1124
     },
-    "Ras Rumman": {
-        "rarity": 200,
-        "artist": "mohthemapper",
-        "id": 1248
-    },
     "Danish India": {
         "rarity": 201,
         "artist": "pixology",
@@ -4987,6 +4982,11 @@
         "rarity": 233,
         "artist": "undertaleisfun777",
         "id": 1276
+    },
+    "Ras Rumman": {
+        "rarity": 234,
+        "artist": "mohthemapper",
+        "id": 1248
     },
     "German-Occupied Sealand": {
         "rarity": 235,
