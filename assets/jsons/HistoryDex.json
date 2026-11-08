@@ -226,6 +226,11 @@
         "artist": "lilhector_",
         "id": 101
     },
+    "Maurya Empire": {
+        "rarity": 6,
+        "artist": "edougamer & adamtheteckel",
+        "id": 820
+    },
     "Abbasid Caliphate": {
         "rarity": 7,
         "artist": "ashesofbliss",
@@ -285,11 +290,6 @@
         "rarity": 8,
         "artist": "ragnitxt",
         "id": 20
-    },
-    "Maurya Empire": {
-        "rarity": 8,
-        "artist": "edougamer & adamtheteckel",
-        "id": 820
     },
     "Mughal Empire": {
         "rarity": 8,
