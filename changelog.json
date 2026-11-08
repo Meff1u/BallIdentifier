@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1794170540",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "Angevin Hungary: rarity T7 → T15"
+            ]
+        },
+        {
             "timestamp": "1794168331",
             "type": "dex",
             "dex": "Ballsdex",
