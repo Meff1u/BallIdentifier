@@ -1150,11 +1150,6 @@
         "artist": "pepsikosc",
         "id": 1087
     },
-    "Siberian Republic": {
-        "rarity": 24,
-        "artist": "baconmaxyy",
-        "id": 254
-    },
     "Almohad Caliphate": {
         "rarity": 25,
         "artist": "landau_fr",
@@ -2137,6 +2132,11 @@
         "rarity": 50,
         "artist": "unfunnichez_",
         "id": 151
+    },
+    "Siberian Republic": {
+        "rarity": 51,
+        "artist": "baconmaxyy",
+        "id": 254
     },
     "Emirate of Diriyah": {
         "rarity": 51,
