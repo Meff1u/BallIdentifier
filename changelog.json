@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1794145163",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "Soviet Union: the old art moved to Previous arts"
+            ]
+        },
+        {
             "timestamp": "1794144337",
             "type": "dex",
             "dex": "HistoryDex",
