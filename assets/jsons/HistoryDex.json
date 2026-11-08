@@ -1345,11 +1345,6 @@
         "artist": "bhapydageek",
         "id": 349
     },
-    "Italian Regency of Carnaro": {
-        "rarity": 30,
-        "artist": "vexab",
-        "id": 840
-    },
     "Kingdom of Hejaz and Nejd": {
         "rarity": 30,
         "artist": "kyp4rissos",
@@ -2417,6 +2412,11 @@
         "rarity": 59,
         "artist": "dynsic",
         "id": 353
+    },
+    "Italian Regency of Carnaro": {
+        "rarity": 60,
+        "artist": "vexab",
+        "id": 840
     },
     "Tajik Soviet Socialist Republic": {
         "rarity": 60,
