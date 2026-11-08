@@ -800,11 +800,6 @@
         "artist": "ashesofbliss",
         "id": 793
     },
-    "Proto-German Empire": {
-        "rarity": 17,
-        "artist": "ilia2008",
-        "id": 1136
-    },
     "Soviet Leningrad": {
         "rarity": 17,
         "artist": "ragnitxt",
@@ -1689,6 +1684,11 @@
         "rarity": 39,
         "artist": "aydin_kai22",
         "id": 876
+    },
+    "Proto-German Empire": {
+        "rarity": 40,
+        "artist": "ilia2008",
+        "id": 1136
     },
     "Empire of China": {
         "rarity": 40,
