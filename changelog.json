@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1794165228",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "New collectible: Republic of North Peru (T119)"
+            ]
+        },
+        {
             "timestamp": "1794165120",
             "type": "dex",
             "dex": "HistoryDex",
