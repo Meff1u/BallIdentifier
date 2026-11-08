@@ -568,10 +568,13 @@ export function createView() {
                 dialog.close();
             } catch (error) {
                 restoreBtn.disabled = false;
-                toast(error.message, "error", 8000);
+                toast(ownerError(error), "error", 10000);
             }
         });
     }
+
+    /** Owner actions commit to GitHub and can outlast the proxy: after a gateway error the change may still have gone through. */
+    const ownerError = (error) => (error.data?.gateway ? `${error.message} The change may still have been saved: check Spawn Arts and the changelog in a minute before trying again.` : error.message);
 
     const FORM_FIELDS = [
         ["rarity", "Rarity", "e.g. 13", true],
@@ -702,7 +705,7 @@ export function createView() {
                 dialog.close();
             } catch (error) {
                 busy(false);
-                toast(error.message, "error", 8000);
+                toast(ownerError(error), "error", 10000);
             }
         });
 
@@ -720,7 +723,7 @@ export function createView() {
                 dialog.close();
             } catch (error) {
                 busy(false);
-                toast(error.message, "error", 8000);
+                toast(ownerError(error), "error", 10000);
             }
         });
     }
