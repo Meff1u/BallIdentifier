@@ -1694,6 +1694,11 @@
         "id": 393,
         "collectors": ["558678655945932801"]
     },
+    "Hawaiian Kingdom": {
+        "rarity": 37,
+        "artist": "ocean_wav3",
+        "id": 698
+    },
     "Argentinian Military Dictatorship": {
         "rarity": 38,
         "artist": "leonardo_rosape",
@@ -2242,11 +2247,6 @@
         "rarity": 51,
         "artist": "margraviate.of.austria",
         "id": 1174
-    },
-    "Hawaiian Kingdom": {
-        "rarity": 52,
-        "artist": "akirasoku_",
-        "id": 698
     },
     "Republic of Cuba": {
         "rarity": 52,
