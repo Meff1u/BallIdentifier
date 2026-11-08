@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1794163286",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "New collectible: Republic of Ragusa (T90)"
+            ]
+        },
+        {
             "timestamp": "1794163104",
             "type": "dex",
             "dex": "HistoryDex",
