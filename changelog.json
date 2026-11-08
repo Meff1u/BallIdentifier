@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1794166418",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "Updated rarities"
+            ]
+        },
+        {
             "timestamp": "1794165544",
             "type": "dex",
             "dex": "HistoryDex",
