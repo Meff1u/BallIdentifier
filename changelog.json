@@ -1,6 +1,23 @@
 {
     "changes": [
         {
+            "timestamp": "1794167703",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "Carthaginian Empire: renamed from Carthage",
+                "Removed Venetian Republic",
+                "New collectible: Republic of Venice (T17)",
+                "Crown of Castile: renamed from Crown of Castille",
+                "United Provinces of Río de la Plata: renamed from United Provinces of Rio de la Plata",
+                "Northern Inspectorate of Greenland: renamed from North Inspectorate of Greenland",
+                "Third Rwandan Republic: renamed from First Republic of Rwanda",
+                "Chōsen: renamed from Japanese Korea",
+                "Removed Swedish Overseas Colonies",
+                "Removed Three Kingdoms"
+            ]
+        },
+        {
             "timestamp": "1794166418",
             "type": "dex",
             "dex": "HistoryDex",
