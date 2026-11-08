@@ -1,6 +1,23 @@
 {
     "changes": [
         {
+            "timestamp": "1794144337",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "Achaemenid Empire: new spawn art",
+                "Great Yuan: fixed spawn art"
+            ]
+        },
+        {
+            "timestamp": "1794144336",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "United Kingdom: the old art moved to Previous arts"
+            ]
+        },
+        {
             "timestamp": "1794142636",
             "type": "dex",
             "dex": "HistoryDex",
