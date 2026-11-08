@@ -1400,6 +1400,11 @@
         "artist": "mohthemapper",
         "id": 1280
     },
+    "Confederation of the Rhine": {
+        "rarity": 30,
+        "artist": "unfunnyguy_.",
+        "id": 19
+    },
     "Bornu Empire": {
         "rarity": 31,
         "artist": "lordaxolotl7",
@@ -4076,11 +4081,6 @@
         "rarity": 180,
         "artist": ".astrokat.",
         "id": 1080
-    },
-    "Confederation of the Rhine": {
-        "rarity": 181,
-        "artist": "unfunnyguy_.",
-        "id": 19
     },
     "Couto Misto": {
         "rarity": 181,
