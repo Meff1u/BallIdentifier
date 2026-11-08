@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1794168331",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "Kingdom of Greece: new spawn art, artist Galaxyotype & Cubic → mangle_1375, the old art moved to Previous arts"
+            ]
+        },
+        {
             "timestamp": "1794167703",
             "type": "dex",
             "dex": "HistoryDex",
