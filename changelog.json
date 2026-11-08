@@ -1,6 +1,22 @@
 {
     "changes": [
         {
+            "timestamp": "1794163104",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "New collectible: Reichskommissariat Ostland (T78)",
+                "New collectible: Reichskommissariat Ukraine (T87)",
+                "New collectible: Songhai Empire (T30)",
+                "New collectible: Angevin Hungary (T7)",
+                "New collectible: Caribbean Free Trade Association (T93)",
+                "New collectible: Colony of Curaçao and Dependencies (T70)",
+                "New collectible: Country of Suriname (T163)",
+                "New collectible: Dervish State (T134)",
+                "New collectible: Duchy of Gaeta (T150)"
+            ]
+        },
+        {
             "timestamp": "1794145163",
             "type": "dex",
             "dex": "Ballsdex",
