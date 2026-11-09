@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1794214662",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "Weimar Republic: temporary frame art, artist v3rdammt → mist.fi"
+            ]
+        },
+        {
             "timestamp": "1794213243",
             "type": "dex",
             "dex": "HistoryDex",
