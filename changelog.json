@@ -1,6 +1,15 @@
 {
     "changes": [
         {
+            "timestamp": "1794234357",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "Federation of South Arabia: fixed spawn art",
+                "Panama Canal Zone: new spawn art, artist dotrer666_lhentsi → n0tch21_98933"
+            ]
+        },
+        {
             "timestamp": "1794233865",
             "type": "dex",
             "dex": "HistoryDex",
