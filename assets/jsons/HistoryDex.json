@@ -4982,5 +4982,10 @@
         "rarity": 17,
         "artist": "my.name.is.angelia",
         "id": 1177
+    },
+    "Ottoman Caliphate": {
+        "rarity": 0,
+        "artist": "lilhector_",
+        "id": 852
     }
 }
