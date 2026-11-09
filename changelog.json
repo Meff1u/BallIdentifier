@@ -1,6 +1,15 @@
 {
     "changes": [
         {
+            "timestamp": "1794233865",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "Free Province of Guayaquil: new spawn art, artist kobersv2 → dinosamer",
+                "Kingdom of Kampuchea: new spawn art, artist dudewholikescountryballs → pepsikosc"
+            ]
+        },
+        {
             "timestamp": "1794214662",
             "type": "dex",
             "dex": "Ballsdex",
