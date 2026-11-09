@@ -1,6 +1,21 @@
 {
     "changes": [
         {
+            "timestamp": "1794213243",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "New collectible: Ottoman Caliphate (T0)",
+                "New collectible: Hanseatic Wismar (T30)",
+                "New collectible: Hanseatic Königsberg (T30)",
+                "New collectible: Hanseatic Stettin (T32)",
+                "New collectible: Suvadiva (T70)",
+                "New collectible: Centralist Republic of Mexico (T39)",
+                "New collectible: Euskadi Ta Askatasuna (T137)",
+                "New collectible: Federation of South Arabia (T88)"
+            ]
+        },
+        {
             "timestamp": "1794170540",
             "type": "dex",
             "dex": "HistoryDex",
