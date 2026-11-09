@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1794259579",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "Kingdom of Brandenburg: new spawn art, artist der_union → gr3y.g4tes, the old art moved to Previous arts"
+            ]
+        },
+        {
             "timestamp": "1794234357",
             "type": "dex",
             "dex": "HistoryDex",
