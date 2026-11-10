@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1794314221",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "Weimar Republic: original spawn art restored, the old art moved to Previous arts, artist mist.fi → v3rdammt"
+            ]
+        },
+        {
             "timestamp": "1794259579",
             "type": "dex",
             "dex": "Ballsdex",
