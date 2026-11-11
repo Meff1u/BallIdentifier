@@ -1,6 +1,15 @@
 {
     "changes": [
         {
+            "timestamp": "1794427444",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "Azerbaijan Democratic Republic: new spawn art",
+                "Ancient Sparta: new spawn art, artist imstillstanding0469 → carolea_ii_of_citrus"
+            ]
+        },
+        {
             "timestamp": "1794314221",
             "type": "dex",
             "dex": "Ballsdex",
