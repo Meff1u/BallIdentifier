@@ -308,14 +308,14 @@ export function createView() {
         const c = p.catches;
         if (!c?.last30?.count) {
             if (!isSelf()) return null;
-            return hintCard("timer", "Recent catch stats", c ? "No catches tracked in the last 30 days. They count on servers where an admin turned on Catch stats." : "Catch tracking is off. Turn on Track my catches in Edit profile to start counting.", "/bot/catch-stats");
+            return hintCard("timer", "Recent catch stats", c ? "No catches found in the last 30 days. These come from your last Ballsdex sync, so sync your collection to update them." : "Catch tracking is off. Turn on Track my catches in Edit profile to start counting.", "/bot/catch-stats");
         }
         const kv = (label, value, sub) => h("div", h("dt", label), h("dd", value), sub ? h("p.subtle", sub) : null);
         const w = c.last30;
         const balls = w.fastestBalls || [];
         return h(
             "section.pf-section",
-            h("h2.section-title", icon("timer"), "Recent catch stats", h("span.subtle.pf-synced", isSelf() ? `Last 30 days · ${c.public ? "Public" : "Only you can see this"}` : "Last 30 days")),
+            h("h2.section-title", icon("timer"), "Recent catch stats", h("span.subtle.pf-synced", isSelf() ? `Last 30 days · from Ballsdex sync · ${c.public ? "Public" : "Only you can see this"}` : "Last 30 days · from Ballsdex sync")),
             h(
                 "div.bdx-grid",
                 h(

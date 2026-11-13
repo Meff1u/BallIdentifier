@@ -24,6 +24,7 @@ const PAGES = {
     ballsdex: ["Ballsdex", "Sign in with Ballsdex, sync your collection and see your stats, raws, completion and every special."],
     "ballsdex/raws": ["Ballsdex raws", "Count your raws from your synced Ballsdex collection."],
     "ballsdex/completion": ["Ballsdex completion", "Which Ballsdex balls you own and which are still missing, for the whole dex or one special."],
+    "ballsdex/crafting": ["Ballsdex crafting", "What you can craft from your synced Ballsdex collection: Kievan Rus' and the Dragon special."],
     "ballsdex/limits": ["Ballsdex API limits", "How much of BallIdentifier's shared Ballsdex API limits is used right now, and your own account's limits."],
     "ballsdex/specials": ["Ballsdex Specials", "Every Ballsdex special with its nickname, estimated common price, spawn rate, event length and market data."],
     moderation: ["Moderation", "BallIdentifier moderation."],
@@ -140,6 +141,7 @@ const PAGE_CARDS = {
     ballsdex: "ballsdex",
     "ballsdex/raws": "raws",
     "ballsdex/completion": "completion",
+    "ballsdex/crafting": "crafting",
     "ballsdex/limits": "limits",
     "ballsdex/specials": "specials",
 };

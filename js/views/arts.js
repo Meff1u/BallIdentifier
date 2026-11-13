@@ -18,6 +18,10 @@ import {
     WAVE_COLORS,
 } from "../core/data.js";
 
+// Search ignores case and accents/special letters ("chosen" finds "Chōsen", "rio de" finds "Río de la Plata")
+const FOLD_EXTRA = { ł: "l", ø: "o", đ: "d", ð: "d", ß: "ss", æ: "ae", œ: "oe", þ: "th", ı: "i" };
+const fold = (text) => String(text).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[łøđðßæœþı]/g, (ch) => FOLD_EXTRA[ch]);
+
 const SORTS = [
     { id: "rarity", label: "Rarity" },
     { id: "a-z", label: "A–Z" },
@@ -155,7 +159,7 @@ export function createView() {
         );
         return h(
             "button.art-card",
-            { type: "button", role: "listitem", dataset: { name: name.toLowerCase() }, onclick: () => open(name) },
+            { type: "button", role: "listitem", dataset: { name: fold(name) }, onclick: () => open(name) },
             h(
                 "div.art-tags",
                 wave !== undefined
@@ -190,7 +194,7 @@ export function createView() {
     }
 
     function filter() {
-        const query = search.value.trim().toLowerCase();
+        const query = fold(search.value.trim());
         let visible = 0;
         for (const [, , cardEl] of balls) {
             const match = !query || cardEl.dataset.name.includes(query);

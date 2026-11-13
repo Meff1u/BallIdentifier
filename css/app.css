@@ -1398,6 +1398,20 @@ a.nf-item:hover { background: var(--surface-2); text-decoration: none; }
 .raws-row.is-missing { color: var(--text-3); }
 .raws-row.is-missing .raws-thumb { opacity: 0.4; filter: grayscale(1); }
 .raws-thumb { width: 36px; height: 36px; object-fit: contain; }
+.craft-wrap { display: grid; gap: var(--space-4); }
+.craft-head { display: flex; gap: var(--space-3); align-items: center; margin-bottom: var(--space-3); }
+.craft-head h2 { margin: 0; }
+.craft-count { display: flex; align-items: baseline; gap: var(--space-2); margin-bottom: var(--space-3); }
+.craft-count b { color: var(--accent-text); font-size: var(--fs-2xl); }
+.craft-controls { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; margin-bottom: var(--space-3); }
+.craft-pick { display: flex; gap: var(--space-2); align-items: center; flex: 1 1 220px; min-width: 0; }
+.craft-pick .input { min-width: 0; flex: 1; }
+.craft-list { list-style: none; margin: 0; padding: 0; display: grid; }
+.craft-ball { display: grid; gap: var(--space-2); padding: var(--space-3) 0; border-bottom: 1px solid var(--border); }
+.craft-ball-head { display: flex; align-items: center; gap: var(--space-3); }
+.craft-items { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.craft-item { display: inline-flex; gap: var(--space-2); align-items: baseline; padding: 4px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm, 8px); font-size: var(--fs-sm); color: var(--text-3); }
+.craft-item.is-done { color: var(--text); border-color: var(--accent-text); }
 .raws-name { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .raws-count { color: var(--text-2); font-size: var(--fs-sm); }
 .raws-value { text-align: right; font-weight: 700; }
@@ -1505,7 +1519,7 @@ a.server:hover > .icon { color: var(--accent-text); }
 .col-toolbar .input[type="search"] { -webkit-appearance: none; appearance: none; padding-right: var(--space-3); }
 .col-toolbar .input[type="search"]::-webkit-search-cancel-button { margin-left: var(--space-2); }
 .view[data-view="collectors"] .tabs-bar { margin: var(--space-4) 0 var(--space-4); }
-.col-filters { margin-bottom: var(--space-3); }
+.col-filters { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3); margin-bottom: var(--space-3); }
 .col-filters .segmented { width: 100%; flex-wrap: wrap; }
 .col-filters .segmented button { flex: 1 1 auto; justify-content: center; white-space: nowrap; padding: 0 var(--space-3); }
 @media (min-width: 560px) { .col-filters .segmented { width: auto; } }

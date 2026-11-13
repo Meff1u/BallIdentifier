@@ -3,7 +3,7 @@
  * Data: /.netlify/functions/catch-stats (bot keeps the stats; only users who made them public are ranked).
  */
 
-import { h, icon, img, initials, fmt, formatDate } from "../core/dom.js";
+import { h, icon, img, initials, fmt, formatDate, timeAgo } from "../core/dom.js";
 import { toast, openDialog, confirmDialog } from "../core/ui.js";
 import { api, ApiError } from "../core/api.js";
 import { getUser, login, sessionExpired } from "../core/auth.js";
@@ -49,8 +49,8 @@ function periodPicker(current, onPick) {
     return h("div.segmented", { role: "group", "aria-label": "Time range" }, buttons);
 }
 
-/** Two ranked lists (fastest catch, best average) for everyone or one server. */
-function rankingBoard({ guildId = null } = {}) {
+/** Two ranked lists (fastest catch, best average) for everyone, from their last Ballsdex sync. */
+function rankingBoard() {
     let period = "30d";
     const body = h("div.cs-boards");
     const note = h("p.subtle.cs-board-note");
@@ -78,14 +78,14 @@ function rankingBoard({ guildId = null } = {}) {
         body.setAttribute("aria-busy", "true");
         body.replaceChildren(h("div.skeleton.cs-skel"), h("div.skeleton.cs-skel"));
         try {
-            const data = await api("catch-stats", { query: { view: "leaderboard", period, ...(guildId ? { guildId } : {}) } });
+            const data = await api("catch-stats", { query: { view: "leaderboard", period } });
             if (mine !== request) return;
             body.removeAttribute("aria-busy");
             body.replaceChildren(
                 list("Fastest catch", "zap", data.fastest || [], (row) => h("span", h("b", formatMs(row.bestMs)), row.best?.ball ? h("small", row.best.ball) : null)),
                 list("Best average", "timer", data.average || [], (row) => h("span", h("b", formatMs(row.averageMs)), h("small", `${fmt(row.count)} catches`))),
             );
-            note.textContent = `Averages need at least ${data.minCount} catches in this range. Only people who made their catch stats public are listed.`;
+            note.textContent = `Averages need at least ${data.minCount} catches in this range. Only people who made their catch stats public are listed. Times come from each person's last Ballsdex sync.`;
         } catch (error) {
             if (mine !== request) return;
             body.removeAttribute("aria-busy");
@@ -116,7 +116,7 @@ function aboutCard() {
             item("zap", "What it does", "After a catch the bot replies with the catch time, your average, your average and best for that ball, and tells you when you beat a record (yours or the server's). Admins choose what the reply shows, or make it reply only on records."),
             item("clock", "How it's measured", "The time between the spawn message and Ballsdex's catch message, both stamped by Discord. Typing the name and Ballsdex's own delay are included, so it's the same for everyone. Works with Ballsdex only."),
             item("lock", "What's saved", "Your Discord ID, the server, the ball, the catch time and when it happened. Single catches are kept for 35 days; every average and count covers the last 30 days only. Your fastest catch (and your fastest per ball) is kept with the date until you opt out."),
-            item("eye", "Who sees it", "Only you, by default. Turn on “Show my catch stats publicly” in your profile (or /catchstats settings) to show them on your profile and in the rankings. “Don't track me” under any reply, or the switch below, stops tracking and deletes your data."),
+            item("eye", "Who sees it", "Only you, by default. Turn on “Show my catch stats publicly” in your profile (or /catchstats settings) to show them on your profile and in the rankings. Both use your last Ballsdex sync, so sync your collection to refresh them. “Don't track me” under any reply, or the switch below, stops tracking and deletes your data."),
         ),
     );
 }
@@ -176,7 +176,8 @@ function yourStatsCard() {
                       stat(last30?.count ? formatMs(last30.bestMs) : "—", last30?.bestBall?.ball ? `Fastest · 30 days · ${last30.bestBall.ball}` : "Fastest · 30 days"),
                       records?.personal ? stat(formatMs(records.personal.ms), `Record · ${records.personal.ball}${records.personal.at ? ` · ${formatDate(records.personal.at)}` : ""}`) : null,
                   )
-                : h("p.muted", settings.tracking ? "No catches tracked yet. They count on servers where Catch stats are on." : "You're not tracked. Turn tracking back on to start counting again."),
+                : h("p.muted", settings.tracking ? "No catches found in your last Ballsdex sync. Sync your collection on the Ballsdex tab to update them." : "You're not tracked. Turn tracking back on to start counting again."),
+            data.syncedAt ? h("p.subtle", `The 30 and 7 day numbers come from your Ballsdex sync (${timeAgo(data.syncedAt)}); sync again to refresh them. Your record is tracked live.`) : null,
             h(
                 "div.cs-you-switches",
                 h("label.switch", h("span", h("b", "Show my catch stats publicly"), h("small.hint", "On your profile and in the rankings. Off: only you see them.")), publicInput),
@@ -279,8 +280,6 @@ function serverRow(server, inviteFor) {
             });
             return h("label.cs-line", input, h("span", h("b", label), h("small.hint", hint)));
         });
-        const rankingBtn = h("button.btn.btn-sm", { type: "button" }, icon("trophy", "icon-sm"), h("span", "Server ranking"));
-        rankingBtn.addEventListener("click", () => openDialog({ title: `Fastest catchers · ${server.name}`, body: rankingBoard({ guildId: server.id }), wide: true }));
 
         row.replaceChildren(
             head,
@@ -290,7 +289,6 @@ function serverRow(server, inviteFor) {
                     "div.cs-options-form",
                     h("div.config-section", h("h3", "Reply"), mode, h("p.hint", "Records: a personal best, the fastest catch of that ball, or a new server record.")),
                     h("div.config-section", h("h3", "Show in the reply"), h("div.cs-lines", lineInputs)),
-                    h("div", rankingBtn),
                 ),
                 previewReply(config),
             ),

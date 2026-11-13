@@ -1,7 +1,7 @@
 /**
  * Catch stats (website: Bot -> Catch stats).
  *
- * GET  ?view=leaderboard&period=30d|7d[&guildId=]  -> public rankings (users with public catch stats)
+ * GET  ?view=leaderboard&period=30d|7d  -> public rankings (from Ballsdex syncs) (users with public catch stats)
  * GET  ?view=servers                                  -> servers you administer + their Catch stats settings (login)
  * GET  ?view=me                                       -> your own catch stats (login)
  * POST { action: "save-server", guildId, enabled, mode, lines }   (Administrator on that server)
@@ -34,11 +34,10 @@ exports.handler = async (event) => {
 
         if (event.httpMethod === "GET" && query.view === "leaderboard") {
             const period = PERIODS.includes(query.period) ? query.period : "30d";
-            const guildId = SNOWFLAKE.test(String(query.guildId || "")) ? query.guildId : "";
-            const key = `${period}:${guildId}`;
+            const key = period;
             const hit = cache.get(key);
             if (hit && Date.now() - hit.at < CACHE_MS) return json(200, hit.data, { headers: { "Cache-Control": "public, max-age=60" } });
-            const { status, data } = await readBot(await botApiFetch(`/api/catch-stats/leaderboard?period=${period}${guildId ? `&guildId=${guildId}` : ""}`));
+            const { status, data } = await readBot(await botApiFetch(`/api/catch-stats/leaderboard?period=${period}`));
             if (status === 200) cache.set(key, { at: Date.now(), data });
             return json(status, data, { headers: status === 200 ? { "Cache-Control": "public, max-age=60" } : {} });
         }
@@ -47,7 +46,7 @@ exports.handler = async (event) => {
         if (auth.response) return auth.response;
 
         const blockedAccount = await accountBlock(auth.session.user.id);
-        if (blockedAccount) return json(blockedAccount.status, blockedAccount);
+        if (blockedAccount) return json(403, blockedAccount);
         const userId = auth.session.user.id;
 
         if (event.httpMethod === "GET") {

@@ -55,6 +55,13 @@ exports.handler = async (event) => {
                 if (event.queryStringParameters?.refresh === "1") query.set("refresh", "1");
                 return forward(await botApiFetch(`${base}/completion${query.toString() ? `?${query}` : ""}`));
             }
+            if (view === "crafting") {
+                const query = new URLSearchParams();
+                const { mode, ball } = event.queryStringParameters || {};
+                if (mode === "any") query.set("mode", "any");
+                if (typeof ball === "string" && ball && ball.length <= 100) query.set("ball", ball);
+                return forward(await botApiFetch(`${base}/crafting${query.toString() ? `?${query}` : ""}`));
+            }
             const path = view === "raws" ? `${base}/raws` : view === "ratelimit" ? `${base}/ratelimit` : base;
             return forward(await botApiFetch(path));
         }

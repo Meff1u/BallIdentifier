@@ -757,6 +757,15 @@ const rawsCard = async () =>
         rows: [row("Rare tiers", "T1 to T23"), row("Top tier worth", "1"), row("Specials", "Not counted"), row("Source", "Your synced collection")],
     });
 
+const craftingCard = async () =>
+    frame({
+        visual: logoVisual("Crafting"),
+        kicker: kickerRow("Ballsdex"),
+        title: "Crafting",
+        subtitle: "See what you can craft from your synced collection.",
+        rows: [row("Kievan Rus'", "Novgorod + Kiev"), row("Dragon special", "Blood, Candy, Skull, Wolf"), row("Needs a sync", "Yes"), row("Source", "Your synced collection")],
+    });
+
 const completionCard = async () => {
     const specials = await specialsCount();
     return frame({
@@ -790,6 +799,7 @@ const PAGE_CARDS = {
     users: usersCard,
     ballsdex: ballsdexCard,
     raws: rawsCard,
+    crafting: craftingCard,
     completion: completionCard,
     limits: limitsCard,
 };

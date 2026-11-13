@@ -1,6 +1,20 @@
 {
     "changes": [
         {
+            "timestamp": "1794598856",
+            "type": "website",
+            "changes": [
+                "Spawn Arts search now ignores accents and special letters.",
+                "A special with only an average common price now shows \"avg\" next to it",
+                "New Crafting tab in Ballsdex: see how many Kievan Rus' you can craft and your progress towards the Dragon special on each ball",
+                "Catch stats rankings and Recent catch stats on profiles now come from your Ballsdex sync, so sync again to refresh them (the bot still replies to your catches with times and records)",
+                "A Ballsdex sync paused by the daily API limit now continues as soon as enough requests are available again, instead of waiting for a full reset",
+                "Your own catch stats on the website and /catchstats me now also come from your Ballsdex sync (your fastest-catch record is still tracked live)",
+                "/catchstats server is now /catchstats global and shows the ranking of everyone with public catch stats",
+                "Removed the per-server ranking button from Catch stats"
+            ]
+        },
+        {
             "timestamp": "1794314221",
             "type": "dex",
             "dex": "Ballsdex",

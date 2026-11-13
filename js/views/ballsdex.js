@@ -47,23 +47,27 @@ export function createView() {
     let completionSpecial = "";
     let completionShow = "missing";
     let completionQuery = "";
+    // Crafting tab
+    let craftingMode = "wolf";
+    let craftingBall = "";
 
     const body = h("div");
     const tabProfile = h("a", { href: "#/ballsdex" }, icon("user-round", "icon-sm"), "Profile");
     const tabRaws = h("a", { href: "#/ballsdex/raws" }, icon("gem", "icon-sm"), "Raws");
     const tabSpecials = h("a", { href: "#/ballsdex/specials" }, icon("sparkles", "icon-sm"), "Specials");
     const tabCompletion = h("a", { href: "#/ballsdex/completion" }, icon("check-check", "icon-sm"), "Completion");
+    const tabCrafting = h("a", { href: "#/ballsdex/crafting" }, icon("sparkle", "icon-sm"), "Crafting");
     const tabLimits = h("a", { href: "#/ballsdex/limits" }, icon("gauge", "icon-sm"), "Limits");
     const el = h(
         "section.view",
         { dataset: { view: "ballsdex" }, "aria-labelledby": "bdx-title" },
         h("div.page-head", h("h1", { id: "bdx-title" }, "Ballsdex"), h("p", "Your Ballsdex account, collection stats, raws and every special.")),
-        h("div.tabs-bar.bdx-tabs", h("nav.segmented", { "aria-label": "Ballsdex sections" }, tabProfile, tabRaws, tabCompletion, tabSpecials, tabLimits)),
+        h("div.tabs-bar.bdx-tabs", h("nav.segmented", { "aria-label": "Ballsdex sections" }, tabProfile, tabRaws, tabCompletion, tabCrafting, tabSpecials, tabLimits)),
         body,
     );
 
     function paintTabs() {
-        for (const [tab, on] of [[tabProfile, section === "profile"], [tabRaws, section === "raws"], [tabCompletion, section === "completion"], [tabSpecials, section === "specials"], [tabLimits, section === "limits"]]) {
+        for (const [tab, on] of [[tabProfile, section === "profile"], [tabRaws, section === "raws"], [tabCompletion, section === "completion"], [tabCrafting, section === "crafting"], [tabSpecials, section === "specials"], [tabLimits, section === "limits"]]) {
             if (on) tab.setAttribute("aria-current", "page");
             else tab.removeAttribute("aria-current");
         }
@@ -107,6 +111,7 @@ export function createView() {
         }
         if (section === "raws") return loadRaws(token);
         if (section === "completion") return loadCompletion(token);
+        if (section === "crafting") return loadCrafting(token);
         if (!quiet || !data) skeleton();
         try {
             const next = await api("ballsdex");
@@ -631,7 +636,7 @@ export function createView() {
         const avg = special.priceAverage;
         const high = special.priceHighest;
         if (avg && high && avg !== high) add("Common price", "gem", h("span", avg, h("span.subtle", " avg · "), high, h("span.subtle", " highest")));
-        else if (avg || high) add("Common price", "gem", avg || high);
+        else if (avg || high) add("Common price", "gem", avg ? h("span", avg, h("span.subtle", " avg")) : high);
         add("Spawn rate", "gauge", special.spawnRate);
         add("Duration", "timer", special.duration);
         if (special.startDate || special.endDate) {
@@ -1070,6 +1075,90 @@ export function createView() {
         );
     }
 
+    /* ----- Crafting ----- */
+
+    async function loadCrafting(token) {
+        stopTimers();
+        if (!body.querySelector(".craft-wrap")) skeleton();
+        let result;
+        try {
+            result = await api("ballsdex", { query: { view: "crafting", ...(craftingBall ? { ball: craftingBall } : craftingMode === "any" ? { mode: "any" } : {}) } });
+        } catch (error) {
+            if (token !== renderToken) return null;
+            if (handleAuthError(error)) return null;
+            body.replaceChildren(
+                h("div.card.empty", h("div.empty-icon", icon("triangle-alert", "icon-lg")), h("h2", "Couldn't load crafting"), h("p", error.message), h("button.btn", { type: "button", onclick: () => refresh() }, icon("refresh-cw"), h("span", "Try again"))),
+            );
+            return null;
+        }
+        if (token !== renderToken) return null;
+
+        if (!result.available) {
+            const copy = {
+                NOT_LINKED: ["Connect your Ballsdex account first", "Crafting is worked out from your synced collection. Sign in with Ballsdex on the Profile tab."],
+                NO_DATA: ["Sync your collection first", "Crafting is worked out from your synced collection. Start a sync on the Profile tab."],
+                RESYNC: ["Sync once more to see crafting", "Your saved collection is from before crafting existed. One sync on the Profile tab fills this page."],
+            }[result.reason] || ["No crafting yet", ""];
+            body.replaceChildren(h("div.card.empty", h("div.empty-icon", icon("sparkle", "icon-lg")), h("h2", copy[0]), h("p", copy[1]), h("a.btn.btn-primary", { href: "#/ballsdex" }, icon("user-round"), h("span", "Go to Profile"))));
+            return null;
+        }
+        await renderCrafting(result, token);
+        return result;
+    }
+
+    async function renderCrafting(result, token) {
+        const names = Object.keys(await getDex("Ballsdex").catch(() => ({}))).sort((a, b) => a.localeCompare(b));
+        if (token !== renderToken) return;
+        const reload = () => loadCrafting(++renderToken);
+
+        const { kievanRus, dragon } = result;
+        const kievan = h(
+            "section.card.panel.craft-card",
+            h("div.craft-head", img(compressedArtUrl("Ballsdex", kievanRus.result), "", "raws-thumb"), h("div", h("h2", kievanRus.result), h("p.subtle", `Made from ${kievanRus.ingredients.map((item) => item.name).join(" and ")}, one of each (any version).`))),
+            h("div.craft-count", h("b.num", fmt(kievanRus.craftable)), h("span", "can be crafted now")),
+            h(
+                "ul.raws-rows",
+                kievanRus.ingredients.map((item) =>
+                    h("li.raws-row", { class: item.owned ? "" : "is-missing" }, img(compressedArtUrl("Ballsdex", item.name), "", "raws-thumb"), h("span.raws-name", item.name), h("span.raws-count.num", item.owned ? `×${fmt(item.owned)}` : "—"), h("span.raws-value")),
+                ),
+            ),
+        );
+
+        const modeBtns = [["wolf", "Balls with Wolf"], ["any", "Any ingredient"]].map(([id, label]) =>
+            h("button", { type: "button", "aria-pressed": String(!dragon.ball && craftingMode === id), onclick: () => ((craftingMode = id), (craftingBall = ""), reload()) }, label),
+        );
+        const picker = h("input.input", { type: "search", list: "craft-balls", placeholder: "Check any ball", "aria-label": "Check any ball", autocomplete: "off", spellcheck: false, value: craftingBall });
+        const pick = () => {
+            const wanted = picker.value.trim().toLowerCase();
+            const name = names.find((entry) => entry.toLowerCase() === wanted);
+            if (!name) return toast(wanted ? "No Ballsdex ball with that name." : "Type a ball name first.", "info");
+            craftingBall = name;
+            reload();
+        };
+        picker.addEventListener("keydown", (event) => event.key === "Enter" && (event.preventDefault(), pick()));
+        picker.addEventListener("change", () => names.some((entry) => entry.toLowerCase() === picker.value.trim().toLowerCase()) && pick());
+
+        const row = (entry) =>
+            h(
+                "li.craft-ball",
+                { class: entry.craftable ? "is-ready" : "" },
+                h("div.craft-ball-head", img(compressedArtUrl("Ballsdex", entry.ball), "", "raws-thumb"), h("span.raws-name", entry.ball), entry.craftable ? h("span.badge", `Ready ×${fmt(entry.craftable)}`) : null),
+                h("div.craft-items", entry.items.map((item) => h("span.craft-item", { class: item.have >= item.need ? "is-done" : "" }, h("b", item.special), h("span.num", `${fmt(item.have)} / ${fmt(item.need)}`)))),
+            );
+        const empty = dragon.ball ? "That ball isn't in the Ballsdex dex." : craftingMode === "any" ? "You don't have any of the Dragon ingredients yet." : "You don't have a Wolf special yet. Pick any ball above to see what it needs.";
+
+        const dragonCard = h(
+            "section.card.panel.craft-card",
+            h("div.craft-head", h("div", h("h2", `${dragon.result} special`), h("p.subtle", `Made from ${dragon.requirements.map((item) => `${item.need}× ${item.special}`).join(", ")} of the same ball.`))),
+            h("div.craft-controls", h("div.segmented", { role: "group", "aria-label": "Balls to show" }, modeBtns), h("div.craft-pick", picker, h("button.btn.btn-sm", { type: "button", onclick: pick }, icon("search", "icon-sm"), h("span", "Check")), dragon.ball ? h("button.btn.btn-sm.btn-ghost", { type: "button", onclick: () => ((craftingBall = ""), reload()) }, "Clear") : null), h("datalist", { id: "craft-balls" }, names.map((name) => h("option", { value: name })))),
+            h("ul.craft-list", dragon.balls.length ? dragon.balls.map(row) : [h("li.subtle", { style: { padding: "16px 0" } }, empty)]),
+        );
+
+        body.replaceChildren(
+            h("div.craft-wrap", h("p.subtle", `Worked out from your last sync (${result.lastSyncedAt ? timeAgo(result.lastSyncedAt) : "unknown"}). Sync again to refresh it.`), kievan, dragonCard),
+        );
+    }
+
     /* ----- Actions ----- */
 
     /* ----- Fast Sync (file import) ----- */
@@ -1186,7 +1275,7 @@ export function createView() {
         el,
         show(params = []) {
             visible = true;
-            const next = ["raws", "completion", "specials", "limits"].includes(params[0]) ? params[0] : "profile";
+            const next = ["raws", "completion", "crafting", "specials", "limits"].includes(params[0]) ? params[0] : "profile";
             if (next !== section) stopTimers();
             section = next;
             paintTabs();
