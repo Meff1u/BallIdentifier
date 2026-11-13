@@ -1,6 +1,16 @@
 {
     "changes": [
         {
+            "timestamp": "1794582047",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "Dzungar Khanate: fixed spawn art",
+                "Athenian Empire: new spawn art, artist edougamer → imstillstanding0469",
+                "Nazi Germany: new spawn art, artist dark3nd → ragnitxt"
+            ]
+        },
+        {
             "timestamp": "1794577318",
             "type": "dex",
             "dex": "HistoryDex",
