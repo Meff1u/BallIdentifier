@@ -1,6 +1,16 @@
 {
     "changes": [
         {
+            "timestamp": "1794577318",
+            "type": "dex",
+            "dex": "HistoryDex",
+            "changes": [
+                "Third Republic of Korea: fixed spawn art",
+                "Banate of Bosnia: new spawn art, artist not_woterbottle → dinosamer",
+                "Kingdom of Great Britain: new spawn art, artist hortaas → ocean_wav3"
+            ]
+        },
+        {
             "timestamp": "1794427444",
             "type": "dex",
             "dex": "HistoryDex",
