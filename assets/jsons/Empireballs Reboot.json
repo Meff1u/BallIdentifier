@@ -69,6 +69,11 @@
         "artist": "ocean_wav3",
         "id": 111
     },
+    "Russian Empire": {
+        "rarity": 2.5,
+        "artist": "topwanted_",
+        "id": 268
+    },
     "Han Dynasty": {
         "rarity": 3,
         "artist": "topwanted_",
