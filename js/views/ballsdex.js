@@ -29,9 +29,8 @@ const CONNECT_RESULTS = {
 };
 const waitText = (sec) => (sec < 60 ? `${Math.ceil(sec)} s` : sec < 3600 ? `${Math.ceil(sec / 60)} min` : `${Math.floor(sec / 3600)} h ${Math.round((sec % 3600) / 60)} min`);
 const connectButton = (label = "Sign in with Ballsdex") => h("a.btn.btn-primary.btn-lg", { href: CONNECT_URL }, icon("log-in"), h("span", label));
-// Fast Sync: link to player_data.zip that Ballsdex posts in your DMs (the bot downloads and checks it)
-const EXPORT_LINK = /^https:\/\/(cdn\.discordapp\.com|media\.discordapp\.net)\/attachments\/\d{17,20}\/(\d{17,20})\/player_data\.zip\?\S*hm=\S+$/i;
-const exportUploadedAt = (attachmentId) => Number((BigInt(attachmentId) >> 22n) + 1420070400000n);
+const EXPORT_PAGE = "https://ballsdex.com/account/#data-privacy";
+const EXPORT_NAME = /^collection-\d{17,20}-\d{8}(?: ?\(\d+\))?\.json$/i;
 
 export function createView() {
     let data = null;
@@ -203,7 +202,7 @@ export function createView() {
         const name = summary?.displayName && summary.displayName !== "Unknown" ? summary.displayName : user?.displayName || "You";
 
         const syncBtn = h("button.btn.btn-primary", { type: "button" });
-        const fastBtn = h("button.btn", { type: "button", title: "Import your collection from the export of Ballsdex's /player settings" });
+        const fastBtn = h("button.btn", { type: "button", title: "Import your collection from the JSON file of ballsdex.com/account" });
         const cancelBtn = h("button.btn", { type: "button", hidden: !sync.inProgress && !sync.paused, disabled: Boolean(sync.cancelRequested) }, icon("circle-stop"), h("span", sync.cancelRequested ? "Cancelling…" : sync.paused ? "Discard paused sync" : "Cancel sync"));
         const unlinkBtn = h("button.btn.btn-danger", { type: "button", hidden: Boolean(sync.inProgress) }, icon("unlink"), h("span", "Unlink"));
         const status = h("p.sync-status", { "aria-live": "polite" });
@@ -395,7 +394,7 @@ export function createView() {
         return h(
             "div.bdx-grid",
             s.source === "file"
-                ? h("p.callout.span-2", icon("info", "icon-sm"), h("span", "Imported with Fast Sync. Ballsdex exports don't include favorites, frames or catch times, and self-caught counts balls that were never traded. A normal sync fills those in."))
+                ? h("p.callout.span-2", icon("info", "icon-sm"), h("span", "Imported with Fast Sync. Frames, catch times and catch stats come from your last normal sync and don't change with it, and self-caught counts balls that were never traded."))
                 : null,
             h(
                 "section.card.panel.span-2",
@@ -1167,55 +1166,111 @@ export function createView() {
         const user = getUser();
         if (!user) return;
 
-        const input = h("input.input", { id: "fs-link", type: "url", autocomplete: "off", spellcheck: false, placeholder: "https://cdn.discordapp.com/attachments/…/player_data.zip?ex=…" });
+        const fileInput = h("input", { type: "file", accept: ".json,application/json", hidden: true });
+        const drop = h("button.fs-drop", { type: "button" }, icon("upload"), h("b", "Drop your collection-….json here"), h("span", "or click to choose it"));
         const result = h("div.fs-result", { "aria-live": "polite" });
-        const importBtn = h("button.btn.btn-primary", { type: "button", disabled: true }, icon("upload"), h("span", "Import"));
+        const confirmBtn = h("button.btn.btn-primary", { type: "button", disabled: true }, icon("circle-check"), h("span", "Confirm and save"));
+        const list = (items) => h("ul.fs-list", items.map((text) => h("li", text)));
 
         const body = h(
             "div.stack.fs-body",
-            h("p", "Import your whole collection in a few seconds from the export Ballsdex sends you, instead of pulling it from the API 50 balls at a time."),
+            h("p", "Import your whole collection in a few seconds from the file Ballsdex gives you, instead of pulling it from the API 50 balls at a time. Nothing is saved until you check what was read and confirm."),
             h(
                 "ol.fs-steps",
-                h("li", "In any server with Ballsdex, run ", h("code", "/player settings"), " and export your countryballs. Ballsdex sends ", h("code", "player_data.zip"), " in your DMs."),
-                h("li", "Right-click the file (on a phone: hold it) and choose ", h("b", "Copy Link"), ". Don't download or change it."),
-                h("li", "Paste the link here. BallIdentifier downloads the file straight from Discord, checks it and compares it with your Ballsdex account."),
+                h("li", "Open ", h("a", { href: EXPORT_PAGE, target: "_blank", rel: "noopener" }, "ballsdex.com/account"), " (Data & privacy) and press the ", h("b", "JSON"), " button. The file ", h("code", "collection-<id>-<date>.json"), " is downloaded."),
+                h("li", "Drop that file below as it is: don't open, edit or rename it. It has to be from today or yesterday."),
+                h("li", "BallIdentifier checks it against your Ballsdex account and shows what it read and what would change. Then you confirm."),
             ),
-            h("div.field", h("label.label", { for: "fs-link" }, "Link to player_data.zip"), input),
+            h(
+                "div.fs-compare",
+                h("div", h("h4", icon("circle-check", "icon-sm"), "Updated from the file"), list(["Every countryball and special you own, and totals", "Self-caught vs traded balls", "Favorites", "Collections, completion, raws and crafting", "Collector pages (checked again per ball)"])),
+                h("div", h("h4", icon("lock", "icon-sm"), "Stays as it was (from your last normal sync)"), list(["Frames", "Catch times and records", "Catch stats rankings and Recent catch stats"])),
+            ),
+            h("p.hint", "Fast Sync reads your own file, a normal sync asks the Ballsdex API for every ball. A normal sync is slower and limited by the API, but it is the only one that brings frames and catch times. Fast Sync can be used once every 30 minutes."),
+            fileInput,
+            drop,
             result,
-            h("p.hint", "The export has no favorites, frames or catch times; a normal sync fills those in. Fast Sync can be used once every 30 minutes, with an export from the last 24 hours. Random balls from the file are checked in your Ballsdex account, and adding yourself as a collector checks that ball again."),
         );
-        const dialog = openDialog({ title: "Fast Sync", body, footer: [h("button.btn.btn-ghost", { type: "button", onclick: () => dialog.close() }, "Cancel"), importBtn] });
+        const dialog = openDialog({ title: "Fast Sync", body, footer: [h("button.btn.btn-ghost", { type: "button", onclick: () => dialog.close() }, "Cancel"), confirmBtn] });
 
-        function check() {
-            const value = input.value.trim();
-            importBtn.disabled = true;
-            if (!value) return result.replaceChildren();
-            const match = EXPORT_LINK.exec(value);
-            let problem = "";
-            if (!match) problem = "That isn't a Discord link to player_data.zip. Copy the link of the file Ballsdex sent you (it ends with ?ex=…&is=…&hm=…).";
-            else if (Date.now() - exportUploadedAt(match[2]) > 24 * 60 * 60 * 1000) problem = "This export is more than a day old. Run /player settings again and use the new file.";
-            if (problem) return result.replaceChildren(h("p.callout.callout-danger", icon("circle-x", "icon-sm"), h("span", problem)));
-            result.replaceChildren(h("p.callout.callout-success", icon("circle-check", "icon-sm"), h("span", `Export from ${timeAgo(exportUploadedAt(match[2]))}. Ready to import.`)));
-            importBtn.disabled = false;
+        const renderChecks = (checks) =>
+            h("ul.fs-checks", checks.map((item) => h("li", { class: item.ok ? "ok" : "bad" }, icon(item.ok ? "circle-check" : "circle-x", "icon-sm"), h("span", item.label, item.detail ? h("small", ` ${item.detail}`) : ""))));
+        const failure = (message, checks) =>
+            result.replaceChildren(h("p.callout.callout-danger", icon("circle-x", "icon-sm"), h("span", message)), ...(checks?.length ? [renderChecks(checks)] : []));
+
+        function renderPreview(preview) {
+            const { file, current } = preview;
+            const row = (label, now, next) => {
+                const known = now !== null && now !== undefined;
+                const diff = known ? next - now : null;
+                const change = !known ? "new" : diff === 0 ? "same" : `${diff > 0 ? "+" : "−"}${fmt(Math.abs(diff))}`;
+                return h("tr", h("td", label), h("td", known ? fmt(now) : "—"), h("td", fmt(next)), h("td", { class: diff ? (diff > 0 ? "fs-up" : "fs-down") : "fs-same" }, change));
+            };
+            const day = (value) => (value ? formatDate(value) : "—");
+            result.replaceChildren(
+                h("p.callout.callout-success", icon("circle-check", "icon-sm"), h("span", "The file passed every check. Here is what it contains compared with what is saved now.")),
+                renderChecks(preview.checks),
+                h(
+                    "div.table-wrap",
+                    h(
+                        "table.fs-table",
+                        h("thead", h("tr", h("th", "Data"), h("th", current ? `Saved (${current.source}, ${current.syncedAt ? timeAgo(current.syncedAt) : "earlier"})` : "Saved"), h("th", "In the file"), h("th", "Change"))),
+                        h(
+                            "tbody",
+                            row("Balls", current?.totalBalls, file.totalBalls),
+                            row("Different countryballs", current?.uniqueBalls, file.uniqueBalls),
+                            row("Specials", current?.specialCount, file.specialCount),
+                            row("Self-caught", current?.selfCaughtCount, file.selfCaughtCount),
+                            row("Favorites", current?.favoriteCount, file.favoriteCount),
+                            h("tr", h("td", "Traded to you"), h("td", "—"), h("td", fmt(file.tradedCount)), h("td", "new")),
+                            h("tr", h("td", "Newest catch"), h("td", day(current?.newestCaughtAt)), h("td", day(file.newestCaughtAt)), h("td", "")),
+                            h("tr", h("td", "Oldest catch"), h("td", "—"), h("td", day(file.oldestCaughtAt)), h("td", "")),
+                        ),
+                    ),
+                ),
+                h("p.hint", `Frames, catch times and catch stats stay as they are. Confirm within ${Math.max(1, Math.round((new Date(preview.expiresAt) - Date.now()) / 60000))} minutes.`),
+            );
+            confirmBtn.disabled = false;
+            confirmBtn.onclick = async () => {
+                confirmBtn.disabled = true;
+                try {
+                    const done = await api("ballsdex", { method: "POST", body: { action: "fast-sync-confirm", token: preview.token } });
+                    dialog.close();
+                    data = { ...data, sync: done.sync || { inProgress: true, source: "file" } };
+                    render();
+                } catch (error) {
+                    if (handleAuthError(error)) return dialog.close();
+                    failure(error.message);
+                }
+            };
         }
-        input.addEventListener("input", check);
 
-        importBtn.addEventListener("click", async () => {
-            importBtn.disabled = true;
-            input.disabled = true;
+        async function pick(file) {
+            confirmBtn.disabled = true;
+            if (!file) return;
+            if (!EXPORT_NAME.test(file.name)) return failure("That isn't the Ballsdex export. The file should be named collection-<your Discord id>-<date>.json.");
+            if (file.size > 14 * 1024 * 1024) return failure("The file is too big (limit 14 MB).");
+            drop.disabled = true;
+            result.replaceChildren(h("p.callout.callout-info", spinner(), h("span", "Checking the file against your Ballsdex account…")));
             try {
-                const done = await api("ballsdex", { method: "POST", body: { action: "fast-sync", url: input.value.trim() } });
-                dialog.close();
-                data = { ...data, sync: done.sync || { inProgress: true, source: "file" } };
-                render();
+                const text = await file.text();
+                const response = await api("ballsdex", {
+                    method: "POST",
+                    body: { action: "fast-sync", file: text, fileName: file.name, lastModified: file.lastModified, tzOffset: new Date().getTimezoneOffset() },
+                });
+                renderPreview(response.preview);
             } catch (error) {
                 if (handleAuthError(error)) return dialog.close();
-                input.disabled = false;
-                importBtn.disabled = false;
-                result.replaceChildren(h("p.callout.callout-danger", icon("circle-x", "icon-sm"), h("span", error.message)));
+                failure(error.message, error.data?.checks);
+            } finally {
+                drop.disabled = false;
             }
-        });
-        input.focus();
+        }
+        drop.addEventListener("click", () => fileInput.click());
+        fileInput.addEventListener("change", () => pick(fileInput.files?.[0]));
+        for (const type of ["dragenter", "dragover"]) drop.addEventListener(type, (event) => (event.preventDefault(), drop.classList.add("is-over")));
+        for (const type of ["dragleave", "drop"]) drop.addEventListener(type, (event) => (event.preventDefault(), drop.classList.remove("is-over")));
+        drop.addEventListener("drop", (event) => pick(event.dataTransfer?.files?.[0]));
     }
 
     async function startSync() {

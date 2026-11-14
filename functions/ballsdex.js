@@ -80,9 +80,16 @@ exports.handler = async (event) => {
             case "cancel":
                 return forward(await botApiFetch(`${base}/cancel`, { method: "POST", body: {} }));
             case "fast-sync": {
-                const url = typeof body.url === "string" ? body.url.trim() : "";
-                if (!url || url.length > 600) return json(400, { error: "Paste the link of player_data.zip from Discord." });
-                return forward(await botApiFetch(`${base}/fast-sync`, { method: "POST", body: { url } }));
+                // step 1: the dropped export file is checked (nothing is saved yet)
+                if (typeof body.file !== "string" || !body.file || body.file.length > 14 * 1024 * 1024) return json(413, { error: "The file is empty or too big (limit 14 MB)." });
+                const fileName = typeof body.fileName === "string" ? body.fileName.slice(0, 200) : "";
+                return forward(await botApiFetch(`${base}/fast-sync`, { method: "POST", body: { file: body.file, fileName, lastModified: Number(body.lastModified), tzOffset: Number(body.tzOffset) } }));
+            }
+            case "fast-sync-confirm": {
+                // step 2: the user approved the preview
+                const token = typeof body.token === "string" ? body.token.slice(0, 64) : "";
+                if (!token) return json(400, { error: "Drop the file again." });
+                return forward(await botApiFetch(`${base}/fast-sync/confirm`, { method: "POST", body: { token } }));
             }
             default:
                 return json(400, { error: "Unknown action" });

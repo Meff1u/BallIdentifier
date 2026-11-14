@@ -1,6 +1,13 @@
 {
     "changes": [
         {
+            "timestamp": "1794665613",
+            "type": "website",
+            "changes": [
+                "Fast Sync now uses the JSON file from ballsdex.com/account: drop it in, it is checked against your Ballsdex account, and you see what it contains compared with your saved data before you confirm. Frames, catch times and catch stats stay as they were"
+            ]
+        },
+        {
             "timestamp": "1794665166",
             "type": "dex",
             "dex": "Ballsdex",
