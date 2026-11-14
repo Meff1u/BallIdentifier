@@ -1,6 +1,15 @@
 {
     "changes": [
         {
+            "timestamp": "1794665166",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "Tokugawa Shogunate: rarity T15 → T16",
+                "Kalmar Union: rarity T15 → T16"
+            ]
+        },
+        {
             "timestamp": "1794658413",
             "type": "dex",
             "dex": "Empireballs Reboot",
