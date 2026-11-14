@@ -1245,7 +1245,7 @@ export function createView() {
             confirmBtn.disabled = true;
             if (!file) return;
             if (!EXPORT_NAME.test(file.name)) return failure("That isn't the Ballsdex export. The file should be named collection-<your Discord id>-<date>.json.");
-            if (file.size > 14 * 1024 * 1024) return failure("The file is too big (limit 14 MB).");
+            if (file.size > 50 * 1024 * 1024) return failure("The file is too big (limit 50 MB).");
             drop.disabled = true;
             result.replaceChildren(h("p.callout.callout-info", spinner(), h("span", "Checking the file against your Ballsdex account…")));
             try {

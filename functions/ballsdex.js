@@ -81,7 +81,7 @@ exports.handler = async (event) => {
                 return forward(await botApiFetch(`${base}/cancel`, { method: "POST", body: {} }));
             case "fast-sync": {
                 // step 1: the dropped export file is checked (nothing is saved yet)
-                if (typeof body.file !== "string" || !body.file || body.file.length > 14 * 1024 * 1024) return json(413, { error: "The file is empty or too big (limit 14 MB)." });
+                if (typeof body.file !== "string" || !body.file || body.file.length > 50 * 1024 * 1024) return json(413, { error: "The file is empty or too big (limit 50 MB)." });
                 const fileName = typeof body.fileName === "string" ? body.fileName.slice(0, 200) : "";
                 return forward(await botApiFetch(`${base}/fast-sync`, { method: "POST", body: { file: body.file, fileName, lastModified: Number(body.lastModified), tzOffset: Number(body.tzOffset) } }));
             }
