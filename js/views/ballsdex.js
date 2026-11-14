@@ -1193,10 +1193,7 @@ export function createView() {
         );
         const dialog = openDialog({ title: "Fast Sync", body, footer: [h("button.btn.btn-ghost", { type: "button", onclick: () => dialog.close() }, "Cancel"), confirmBtn] });
 
-        const renderChecks = (checks) =>
-            h("ul.fs-checks", checks.map((item) => h("li", { class: item.ok ? "ok" : "bad" }, icon(item.ok ? "circle-check" : "circle-x", "icon-sm"), h("span", item.label, item.detail ? h("small", ` ${item.detail}`) : ""))));
-        const failure = (message, checks) =>
-            result.replaceChildren(h("p.callout.callout-danger", icon("circle-x", "icon-sm"), h("span", message)), ...(checks?.length ? [renderChecks(checks)] : []));
+        const failure = (message) => result.replaceChildren(h("p.callout.callout-danger", icon("circle-x", "icon-sm"), h("span", message)));
 
         function renderPreview(preview) {
             const { file, current } = preview;
@@ -1208,8 +1205,7 @@ export function createView() {
             };
             const day = (value) => (value ? formatDate(value) : "—");
             result.replaceChildren(
-                h("p.callout.callout-success", icon("circle-check", "icon-sm"), h("span", "The file passed every check. Here is what it contains compared with what is saved now.")),
-                renderChecks(preview.checks),
+                h("p.callout.callout-success", icon("circle-check", "icon-sm"), h("span", "The file was verified. Here is what it contains compared with what is saved now.")),
                 h(
                     "div.table-wrap",
                     h(
@@ -1261,7 +1257,7 @@ export function createView() {
                 renderPreview(response.preview);
             } catch (error) {
                 if (handleAuthError(error)) return dialog.close();
-                failure(error.message, error.data?.checks);
+                failure(error.message);
             } finally {
                 drop.disabled = false;
             }
