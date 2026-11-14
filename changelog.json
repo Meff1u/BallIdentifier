@@ -1,6 +1,30 @@
 {
     "changes": [
         {
+            "timestamp": "1794658413",
+            "type": "dex",
+            "dex": "Empireballs Reboot",
+            "changes": [
+                "New collectible: British Empire (T0.3)",
+                "New collectible: Reichtangle (T0.4)",
+                "Roman Empire: new spawn art, rarity T0.8 → T0.7, artist drael.heart → smasherbutcool",
+                "Mongol Empire: new spawn art, artist repancdg → topwanted_",
+                "First French Colonial Empire: rarity T2 → T1.5",
+                "Imperialist United States: rarity T2 → T1.5",
+                "Nazi Germany: new spawn art, artist edougamer → m.axii",
+                "New collectible: Union of Soviet Socialist Republics (T2)",
+                "Japanese Empire: new spawn art, artist elizaveta_hedervary → topwanted_",
+                "Qing Dynasty: new spawn art, artist repancdg → ocean_wav3",
+                "New collectible: Russian Empire (T2.5)",
+                "Removed Atlantis",
+                "Spanish Empire: rarity T0.9 → T0.8",
+                "New collectible: Portuguese Empire (T0.8)",
+                "New collectible: Abbasid Caliphate (T2.5)",
+                "New collectible: Umayyad Caliphate (T3)",
+                "Napoleonic France: new spawn art, artist edougamer → myballsitch0683"
+            ]
+        },
+        {
             "timestamp": "1794598856",
             "type": "website",
             "changes": [
