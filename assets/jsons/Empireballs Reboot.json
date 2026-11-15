@@ -309,11 +309,6 @@
         "id": 6,
         "collectors": ["1495379516376223761"]
     },
-    "Fatimid Caliphate": {
-        "rarity": 13,
-        "artist": "drael.heart",
-        "id": 9
-    },
     "Western Roman Empire": {
         "rarity": 14,
         "artist": ".micko.",
@@ -374,6 +369,11 @@
         "rarity": 20.5,
         "artist": "deutsches_.kaiserreich",
         "id": 82
+    },
+    "Fatimid Caliphate": {
+        "rarity": 21,
+        "artist": "drael.heart",
+        "id": 9
     },
     "Kamakura Shogunate": {
         "rarity": 21,
