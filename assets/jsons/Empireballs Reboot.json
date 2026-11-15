@@ -188,6 +188,11 @@
         "artist": "ocean_wav3",
         "id": 299
     },
+    "Maurya Empire": {
+        "rarity": 7.5,
+        "artist": "99292599",
+        "id": 182
+    },
     "Gupta Empire": {
         "rarity": 8,
         "artist": "estonia0786",
@@ -238,11 +243,6 @@
         "artist": "fordcraft",
         "id": 6,
         "collectors": ["1495379516376223761"]
-    },
-    "Maurya Empire": {
-        "rarity": 10,
-        "artist": "99292599",
-        "id": 182
     },
     "Sassanid Empire": {
         "rarity": 10,
