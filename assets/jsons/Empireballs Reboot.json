@@ -162,6 +162,12 @@
         "artist": "zetahatcat",
         "id": 199
     },
+    "Timurid Empire": {
+        "rarity": 6.5,
+        "artist": "drael.heart",
+        "id": 108,
+        "collectors": ["644693239420682279"]
+    },
     "Shang Dynasty": {
         "rarity": 7,
         "artist": "idk_empire14",
@@ -216,12 +222,6 @@
         "rarity": 9.5,
         "artist": "djiyippy_.",
         "id": 60
-    },
-    "Timurid Empire": {
-        "rarity": 9.5,
-        "artist": "drael.heart",
-        "id": 108,
-        "collectors": ["644693239420682279"]
     },
     "Kingdom of England": {
         "rarity": 10,
