@@ -283,11 +283,6 @@
         "artist": "thebaldball_lol",
         "id": 106
     },
-    "Dzungar Khanate": {
-        "rarity": 11,
-        "artist": "repancdg",
-        "id": 97
-    },
     "Bengal Sultanate": {
         "rarity": 12,
         "artist": "defrosted_xahloing",
@@ -410,6 +405,11 @@
         "rarity": 26,
         "artist": "99292599",
         "id": 58
+    },
+    "Dzungar Khanate": {
+        "rarity": 27,
+        "artist": "repancdg",
+        "id": 97
     },
     "Goryeo Dynasty": {
         "rarity": 27,
