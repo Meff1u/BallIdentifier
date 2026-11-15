@@ -309,6 +309,11 @@
         "id": 6,
         "collectors": ["1495379516376223761"]
     },
+    "Grand Duchy of Lithuania": {
+        "rarity": 13,
+        "artist": "fordcraft",
+        "id": 277
+    },
     "Western Roman Empire": {
         "rarity": 14,
         "artist": ".micko.",
