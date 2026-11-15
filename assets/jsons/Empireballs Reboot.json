@@ -288,11 +288,6 @@
         "artist": "drael.heart",
         "id": 91
     },
-    "Bengal Sultanate": {
-        "rarity": 12,
-        "artist": "defrosted_xahloing",
-        "id": 151
-    },
     "Austro-Hungarian Empire": {
         "rarity": 12.5,
         "artist": "idk_empire14",
@@ -333,6 +328,11 @@
         "rarity": 16,
         "artist": "moravianguy.cz",
         "id": 102
+    },
+    "Bengal Sultanate": {
+        "rarity": 17,
+        "artist": ".mangoey",
+        "id": 151
     },
     "Hunnic Empire": {
         "rarity": 17,
