@@ -248,12 +248,6 @@
         "artist": "myballsitch0683",
         "id": 69
     },
-    "Kingdom of Italy": {
-        "rarity": 10,
-        "artist": "fordcraft",
-        "id": 6,
-        "collectors": ["1495379516376223761"]
-    },
     "Seleucid Empire": {
         "rarity": 10,
         "artist": "zetahatcat",
@@ -298,6 +292,12 @@
         "rarity": 12.5,
         "artist": "idk_empire14",
         "id": 120
+    },
+    "Kingdom of Italy": {
+        "rarity": 13,
+        "artist": "myballsitch0673",
+        "id": 6,
+        "collectors": ["1495379516376223761"]
     },
     "Fatimid Caliphate": {
         "rarity": 13,
