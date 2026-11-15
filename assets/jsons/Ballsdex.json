@@ -5,7 +5,8 @@
         "wave": 8.3,
         "id": 561,
         "demand": "B",
-        "cc": "850"
+        "cc": "850",
+        "common_value": "15"
     },
     "British Empire": {
         "rarity": 1,
