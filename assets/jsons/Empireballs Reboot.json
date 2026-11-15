@@ -79,12 +79,6 @@
         "artist": "estonia0786",
         "id": 295
     },
-    "Han Dynasty": {
-        "rarity": 3,
-        "artist": "topwanted_",
-        "id": 94,
-        "collectors": ["1343265063615856773"]
-    },
     "Napoleonic France": {
         "rarity": 3,
         "artist": "myballsitch0683",
@@ -94,6 +88,12 @@
         "rarity": 3,
         "artist": "topwanted_",
         "id": 266
+    },
+    "Han Dynasty": {
+        "rarity": 3.5,
+        "artist": "topwanted_",
+        "id": 94,
+        "collectors": ["1343265063615856773"]
     },
     "Ming Dynasty": {
         "rarity": 3.5,
