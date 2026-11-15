@@ -173,11 +173,6 @@
         "artist": "idk_empire14",
         "id": 55
     },
-    "Crown of Castile": {
-        "rarity": 7,
-        "artist": "drael.heart",
-        "id": 10
-    },
     "Jagiellonian Dynasty": {
         "rarity": 7,
         "artist": "repancdg",
@@ -227,6 +222,11 @@
         "rarity": 9,
         "artist": "drael.heart",
         "id": 71
+    },
+    "Crown of Castile": {
+        "rarity": 9.5,
+        "artist": "myballsitch0683",
+        "id": 10
     },
     "Mughal Empire": {
         "rarity": 9.5,
