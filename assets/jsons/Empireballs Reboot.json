@@ -127,11 +127,6 @@
         "artist": "zetahatcat",
         "id": 269
     },
-    "Austrian Empire": {
-        "rarity": 5.5,
-        "artist": "topwanted_",
-        "id": 2
-    },
     "Rashidun Caliphate": {
         "rarity": 5.5,
         "artist": "zetahatcat",
@@ -156,6 +151,11 @@
         "rarity": 6,
         "artist": "zetahatcat",
         "id": 289
+    },
+    "Austrian Empire": {
+        "rarity": 6.5,
+        "artist": "topwanted_",
+        "id": 2
     },
     "Shang Dynasty": {
         "rarity": 6.5,
