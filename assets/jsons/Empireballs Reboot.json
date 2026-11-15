@@ -380,6 +380,11 @@
         "id": 110,
         "collectors": ["835569593266339911"]
     },
+    "Ptolemaic Kingdom": {
+        "rarity": 19,
+        "artist": "the_artist_omarv2",
+        "id": 244
+    },
     "Kievan Rus": {
         "rarity": 20,
         "artist": "anjabbon",
