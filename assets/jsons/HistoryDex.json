@@ -5022,5 +5022,10 @@
         "rarity": 225,
         "artist": "pxrp1e_00",
         "id": 1285
+    },
+    "Ancient China (na spawn art yet)": {
+        "rarity": 0,
+        "artist": "?",
+        "id": 1273
     }
 }
