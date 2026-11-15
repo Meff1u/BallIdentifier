@@ -122,6 +122,11 @@
         "id": 127,
         "collectors": ["558678655945932801"]
     },
+    "Polish-Lithuanian Commonwealth": {
+        "rarity": 5,
+        "artist": "zetahatcat",
+        "id": 269
+    },
     "Austrian Empire": {
         "rarity": 5.5,
         "artist": "topwanted_",
