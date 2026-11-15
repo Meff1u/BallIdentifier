@@ -218,6 +218,11 @@
         "artist": "drael.heart",
         "id": 71
     },
+    "Sassanid Empire": {
+        "rarity": 9,
+        "artist": "topwanted_",
+        "id": 74
+    },
     "Crown of Castile": {
         "rarity": 9.5,
         "artist": "myballsitch0683",
@@ -238,11 +243,6 @@
         "artist": "fordcraft",
         "id": 6,
         "collectors": ["1495379516376223761"]
-    },
-    "Sassanid Empire": {
-        "rarity": 10,
-        "artist": "topwanted_",
-        "id": 74
     },
     "Jagiellonian Dynasty": {
         "rarity": 10.5,
