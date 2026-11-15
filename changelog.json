@@ -1,6 +1,34 @@
 {
     "changes": [
         {
+            "timestamp": "1794777312",
+            "type": "dex",
+            "dex": "Empireballs Reboot",
+            "changes": [
+                "New collectible: Parthian Empire (T10.5)",
+                "Dzungar Khanate: rarity T11 → T27",
+                "Tsardom of Russia: rarity T12 → T11",
+                "Bengal Sultanate: new spawn art, rarity T12 → T17, artist defrosted_xahloing → .mangoey",
+                "New collectible: Tokugawa Shogunate (T12)",
+                "New collectible: Lands of the Bohemian Crown (T12)",
+                "Fatimid Caliphate: rarity T13 → T21",
+                "New collectible: Grand Duchy of Lithuania (T13)",
+                "New collectible: Republic of China (T14)",
+                "New collectible: Ashikaga Shogunate (T14)",
+                "Aztec Empire: new spawn art, artist ._themagicalflame_. → estonia0786",
+                "Great Moravia: new spawn art, artist moravianguy.cz → estonia0786",
+                "Hunnic Empire: new spawn art, artist estonia0786 → myballsitch0683",
+                "New collectible: Uyghur Khaganate (T17)",
+                "Assyrian Empire: rarity T18 → T19",
+                "New collectible: Sui Dynasty (T18)",
+                "New collectible: Jin Dynasty (T18)",
+                "Golden Horde: rarity T19 → T21",
+                "Kievan Rus: rarity T19 → T20",
+                "New collectible: Ptolemaic Kingdom (T19)",
+                "New collectible: Toyotomi Clan (T19.5)"
+            ]
+        },
+        {
             "timestamp": "1794763096",
             "type": "dex",
             "dex": "Empireballs Reboot",
