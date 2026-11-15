@@ -213,11 +213,6 @@
         "artist": "drael.heart",
         "id": 46
     },
-    "Austro-Hungarian Empire": {
-        "rarity": 9,
-        "artist": "idk_empire14",
-        "id": 120
-    },
     "Holy Roman Empire": {
         "rarity": 9,
         "artist": "drael.heart",
@@ -283,6 +278,11 @@
         "rarity": 12,
         "artist": "drael.heart",
         "id": 91
+    },
+    "Austro-Hungarian Empire": {
+        "rarity": 12.5,
+        "artist": "idk_empire14",
+        "id": 120
     },
     "Fatimid Caliphate": {
         "rarity": 13,
