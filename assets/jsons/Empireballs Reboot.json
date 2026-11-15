@@ -380,11 +380,6 @@
         "id": 110,
         "collectors": ["835569593266339911"]
     },
-    "Golden Horde": {
-        "rarity": 19,
-        "artist": "idk_empire14",
-        "id": 3
-    },
     "Kievan Rus": {
         "rarity": 19,
         "artist": "anjabbon",
@@ -399,6 +394,11 @@
         "rarity": 20.5,
         "artist": "deutsches_.kaiserreich",
         "id": 82
+    },
+    "Golden Horde": {
+        "rarity": 21,
+        "artist": "idk_empire14",
+        "id": 3
     },
     "Fatimid Caliphate": {
         "rarity": 21,
