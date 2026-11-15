@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1794777477",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "Kievan Rus': common value none → 15"
+            ]
+        },
+        {
             "timestamp": "1794777312",
             "type": "dex",
             "dex": "Empireballs Reboot",
