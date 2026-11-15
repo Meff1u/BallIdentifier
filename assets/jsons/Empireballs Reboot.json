@@ -254,6 +254,11 @@
         "id": 6,
         "collectors": ["1495379516376223761"]
     },
+    "Seleucid Empire": {
+        "rarity": 10,
+        "artist": "zetahatcat",
+        "id": 301
+    },
     "Jagiellonian Dynasty": {
         "rarity": 10.5,
         "artist": "repancdg",
