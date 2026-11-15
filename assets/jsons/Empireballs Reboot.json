@@ -203,6 +203,11 @@
         "artist": "estonia0786",
         "id": 49
     },
+    "Mughal Empire": {
+        "rarity": 8,
+        "artist": "zetahatcat",
+        "id": 60
+    },
     "Neo-Babylonian Empire": {
         "rarity": 8.5,
         "artist": "Deleted user",
@@ -227,11 +232,6 @@
         "rarity": 9.5,
         "artist": "myballsitch0683",
         "id": 10
-    },
-    "Mughal Empire": {
-        "rarity": 9.5,
-        "artist": "djiyippy_.",
-        "id": 60
     },
     "Magadha Kingdom": {
         "rarity": 10,
