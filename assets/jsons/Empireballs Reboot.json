@@ -208,11 +208,6 @@
         "artist": "zetahatcat",
         "id": 60
     },
-    "Neo-Babylonian Empire": {
-        "rarity": 8.5,
-        "artist": "Deleted user",
-        "id": 106
-    },
     "Zhou Dynasty": {
         "rarity": 8.5,
         "artist": "account_gmd",
@@ -268,6 +263,11 @@
         "rarity": 10.5,
         "artist": "drael.heart",
         "id": 29
+    },
+    "Neo-Babylonian Empire": {
+        "rarity": 11,
+        "artist": "thebaldball_lol",
+        "id": 106
     },
     "Dzungar Khanate": {
         "rarity": 11,
