@@ -203,11 +203,6 @@
         "artist": "estonia0786",
         "id": 49
     },
-    "Magadha Kingdom": {
-        "rarity": 8,
-        "artist": "carolea_ii_of_citrus",
-        "id": 181
-    },
     "Neo-Babylonian Empire": {
         "rarity": 8.5,
         "artist": "Deleted user",
@@ -237,6 +232,11 @@
         "rarity": 9.5,
         "artist": "djiyippy_.",
         "id": 60
+    },
+    "Magadha Kingdom": {
+        "rarity": 10,
+        "artist": "carolea_ii_of_citrus",
+        "id": 181
     },
     "Kingdom of England": {
         "rarity": 10,
