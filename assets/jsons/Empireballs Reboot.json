@@ -173,11 +173,6 @@
         "artist": "idk_empire14",
         "id": 55
     },
-    "Jagiellonian Dynasty": {
-        "rarity": 7,
-        "artist": "repancdg",
-        "id": 118
-    },
     "Second French Colonial Empire": {
         "rarity": 7,
         "artist": "fordcraft",
@@ -253,6 +248,11 @@
         "rarity": 10,
         "artist": "topwanted_",
         "id": 74
+    },
+    "Jagiellonian Dynasty": {
+        "rarity": 10.5,
+        "artist": "repancdg",
+        "id": 118
     },
     "Gokturk Khaganate": {
         "rarity": 10.5,
