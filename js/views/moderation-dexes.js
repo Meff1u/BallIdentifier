@@ -157,6 +157,7 @@ export function createDexesCard({ handleError, onChange = () => {} }) {
     async function remove(dex) {
         const confirmInput = h("input.input", { type: "text", autocomplete: "off", spellcheck: false, placeholder: dex.name });
         const announce = checkbox("Announce in the changelog", "Users get the update notification.", true);
+        const reasonInput = h("input.input", { type: "text", maxLength: 200, autocomplete: "off", placeholder: "Optional, shown in the changelog" });
         const answer = await ask({
             title: `Delete ${dex.name}?`,
             body: [
@@ -170,15 +171,16 @@ export function createDexesCard({ handleError, onChange = () => {} }) {
                 ),
                 h("p.subtle", "Only git history keeps it. To hide it for a while, turn it off instead."),
                 field(`Type ${dex.name} to confirm`, confirmInput),
+                field("Reason", reasonInput),
                 announce.el,
             ],
             confirmLabel: "Delete for good",
             danger: true,
             canConfirm: () => confirmInput.value === dex.name,
-            read: () => ({ announce: announce.input.checked }),
+            read: () => ({ announce: announce.input.checked, reason: reasonInput.value.trim() }),
         });
         if (!answer) return;
-        await run({ action: "dex-delete", name: dex.name, confirm: dex.name, announce: answer.announce }, `${dex.name} was deleted. ${DEPLOY_NOTE}`);
+        await run({ action: "dex-delete", name: dex.name, confirm: dex.name, announce: answer.announce, reason: answer.reason }, `${dex.name} was deleted. ${DEPLOY_NOTE}`);
     }
 
     async function add() {

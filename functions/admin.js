@@ -10,7 +10,7 @@
  * GET  /.netlify/functions/admin?view=dexes                                          -> { dexes, github }
  * POST { action: "dex-add", name, botId, key, waves?, enabled?, icon?: base64, announce? }
  * POST { action: "dex-update", name, enabled?, waves?, incomplete?, catchPhrases?, catchIgnore?, announce? }
- * POST { action: "dex-delete", name, confirm (= name), announce? }
+ * POST { action: "dex-delete", name, confirm (= name), announce?, reason? (up to 200 characters, shown in the changelog) }
  *
  * Deferred website deploys (the bot's utils/deploy.js):
  * GET  /.netlify/functions/admin?view=deploy   -> { enabled, deploying, pending: [{ at, title, changes, url }], lastDeployAt }
@@ -103,7 +103,7 @@ exports.handler = async (event) => {
             return forward(await botApiFetch(`${base}/dexes/update`, { method: "POST", body: out }));
         }
         if (body?.action === "dex-delete") {
-            return forward(await botApiFetch(`${base}/dexes/delete`, { method: "POST", body: { name: body.name, confirm: body.confirm, announce: body.announce !== false } }));
+            return forward(await botApiFetch(`${base}/dexes/delete`, { method: "POST", body: { name: body.name, confirm: body.confirm, announce: body.announce !== false, reason: typeof body.reason === "string" ? body.reason.trim().slice(0, 200) : "" } }));
         }
         return json(400, { error: "Unknown action" });
     } catch (error) {
