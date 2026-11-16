@@ -1,14 +1,12 @@
 {
     "dexes": [
         "Ballsdex",
-        "HistoryDex",
         "JoJoDex",
         "Empireballs Reboot",
         "MapsDex",
         "FlagsDex"
     ],
     "incompleteAbbreviations": [
-        "HistoryDex",
         "Empireballs Reboot",
         "JoJoDex",
         "MapsDex",
@@ -20,15 +18,8 @@
             "botId": "999736048596816014",
             "key": "BD",
             "enabled": true,
-            "launched": true,
             "waves": true,
-            "previousArts": true
-        },
-        {
-            "name": "HistoryDex",
-            "botId": "1120942938126553190",
-            "key": "HD",
-            "enabled": true,
+            "previousArts": true,
             "launched": true
         },
         {
