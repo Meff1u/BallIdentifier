@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1795725887",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "French Indochina: new spawn art, artist Epik#0083 → the_only_fan_of_enceladus, the old art moved to Previous arts"
+            ]
+        },
+        {
             "timestamp": "1795696089",
             "type": "dex",
             "dex": "Ballsdex",
