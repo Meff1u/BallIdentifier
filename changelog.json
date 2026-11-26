@@ -1,6 +1,14 @@
 {
     "changes": [
         {
+            "timestamp": "1795696089",
+            "type": "dex",
+            "dex": "Ballsdex",
+            "changes": [
+                "Kingdom of Iberia: new spawn art, artist cattian → kapukvati, the old art moved to Previous arts"
+            ]
+        },
+        {
             "timestamp": "1794837574",
             "type": "website",
             "changes": [
